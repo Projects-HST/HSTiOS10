@@ -19,6 +19,7 @@
 		7904AD3A26DA0FFD00D6F2C2 /* TeachersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904AD3926DA0FFD00D6F2C2 /* TeachersPresenter.swift */; };
 		7904AD3F26DA103000D6F2C2 /* TeachersAdminModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904AD3E26DA103000D6F2C2 /* TeachersAdminModels.swift */; };
 		7904AD4426DA138100D6F2C2 /* AdminTeachers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7904AD4326DA138100D6F2C2 /* AdminTeachers.storyboard */; };
+		79531F6526DE5B4F000BE78A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79531F6426DE5B4F000BE78A /* APIManager.swift */; };
 		7956CD8126DCCE2B001D0A41 /* StudentsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956CD8026DCCE2B001D0A41 /* StudentsListCell.swift */; };
 		798A1B1B26D62A4B0081105B /* StudentListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A1B1A26D62A4B0081105B /* StudentListInteracter.swift */; };
 		798A1B2326D62A700081105B /* StudentListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A1B2226D62A700081105B /* StudentListWorker.swift */; };
@@ -31,7 +32,6 @@
 		798DE3EA26CE61AF0017C5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798DE3E826CE61AF0017C5FD /* LaunchScreen.storyboard */; };
 		798DE3F526CE61B00017C5FD /* EnsyfiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE3F426CE61B00017C5FD /* EnsyfiTests.swift */; };
 		798DE40026CE61B00017C5FD /* EnsyfiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE3FF26CE61B00017C5FD /* EnsyfiUITests.swift */; };
-		798DE46E26CE798C0017C5FD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE46D26CE798C0017C5FD /* APIManager.swift */; };
 		798DE47326CE79990017C5FD /* APIFunctionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE47226CE79990017C5FD /* APIFunctionName.swift */; };
 		798DE47826CE79A30017C5FD /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE47726CE79A30017C5FD /* APIUrl.swift */; };
 		798DE48326CE7B150017C5FD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE48226CE7B150017C5FD /* LoginVC.swift */; };
@@ -127,6 +127,7 @@
 		7904AD3E26DA103000D6F2C2 /* TeachersAdminModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersAdminModels.swift; sourceTree = "<group>"; };
 		7904AD4326DA138100D6F2C2 /* AdminTeachers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminTeachers.storyboard; sourceTree = "<group>"; };
 		791DD01F26CE93DB00B94D9D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		79531F6426DE5B4F000BE78A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7956CD8026DCCE2B001D0A41 /* StudentsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsListCell.swift; sourceTree = "<group>"; };
 		798A1B1A26D62A4B0081105B /* StudentListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListInteracter.swift; sourceTree = "<group>"; };
 		798A1B2226D62A700081105B /* StudentListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListWorker.swift; sourceTree = "<group>"; };
@@ -145,7 +146,6 @@
 		798DE3FB26CE61B00017C5FD /* EnsyfiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnsyfiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		798DE3FF26CE61B00017C5FD /* EnsyfiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnsyfiUITests.swift; sourceTree = "<group>"; };
 		798DE40126CE61B00017C5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		798DE46D26CE798C0017C5FD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = ../../../../../APIManager.swift; sourceTree = "<group>"; };
 		798DE47226CE79990017C5FD /* APIFunctionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFunctionName.swift; sourceTree = "<group>"; };
 		798DE47726CE79A30017C5FD /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		798DE48226CE7B150017C5FD /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -391,9 +391,9 @@
 		798DE46926CE79720017C5FD /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
-				798DE46D26CE798C0017C5FD /* APIManager.swift */,
 				798DE47226CE79990017C5FD /* APIFunctionName.swift */,
 				798DE47726CE79A30017C5FD /* APIUrl.swift */,
+				79531F6426DE5B4F000BE78A /* APIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -769,7 +769,6 @@
 				79956C3126CF7FDA00E012BB /* BottomBorder.swift in Sources */,
 				798DE47826CE79A30017C5FD /* APIUrl.swift in Sources */,
 				7904AD1826D9F11600D6F2C2 /* StudentsDetailsModel.swift in Sources */,
-				798DE46E26CE798C0017C5FD /* APIManager.swift in Sources */,
 				79956C3726CF7FDA00E012BB /* GlobalVariables.swift in Sources */,
 				79956C3526CF7FDA00E012BB /* ActivityIndicator.swift in Sources */,
 				7904AD0E26D9F03100D6F2C2 /* StudentsDetailsInteracter.swift in Sources */,
@@ -828,6 +827,7 @@
 				798DE48B26CE7B260017C5FD /* LoginInteracter.swift in Sources */,
 				7904AD1326D9F0A100D6F2C2 /* StudentsDetailsWorker.swift in Sources */,
 				79956C5126CF7FE900E012BB /* GradientView.swift in Sources */,
+				79531F6526DE5B4F000BE78A /* APIManager.swift in Sources */,
 				79956C3626CF7FDA00E012BB /* Reachability.swift in Sources */,
 				798DE48D26CE7B2F0017C5FD /* LoginWorker.swift in Sources */,
 			);
