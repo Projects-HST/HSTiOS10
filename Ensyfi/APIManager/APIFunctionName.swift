@@ -16,6 +16,7 @@ struct APIFunctionName {
     static let sectionListUrl = "/apiadmin/get_all_sections/"
     static let studentsListUrl = "/apiadmin/get_all_students_in_classes/"
     static let studentsDetailsUrl = "/apiadmin/get_student_details/"
+    static let HomeWorkTestListUrl = "/apistudent/disp_Homework/"
     
 }
 

@@ -132,6 +132,8 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
             }
         }
     }
+    
+   
 }
 
 extension StudentsVC {
@@ -229,6 +231,8 @@ extension StudentsVC: UITableViewDelegate,UITableViewDataSource {
         {
         let vc = segue.destination as! StudentsDetailsVC
             vc.studentEnroolId = self.selectedStudentId
+            vc.selectedClassId = self.selectedClassId
+            
         }
     }
 }

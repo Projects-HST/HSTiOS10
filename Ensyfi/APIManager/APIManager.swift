@@ -355,5 +355,42 @@ class APIManager: NSObject {
          }
       )
    }
+    
+    func callAPIHomeWorkTestList(class_id:String,hw_type:String, onSuccess successCallback: ((_ resp: [HomeWorkTestListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.HomeWorkTestListUrl
+         // Set Parameters
+        let parameters: Parameters = ["class_id": class_id,"hw_type":hw_type]
+        print(hw_type)
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["data"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [HomeWorkTestListModels]()
+                  for item in toModel {
+                      let single = HomeWorkTestListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
 }
 

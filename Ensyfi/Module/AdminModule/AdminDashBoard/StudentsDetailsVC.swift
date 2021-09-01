@@ -45,6 +45,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
     @IBOutlet weak var studentPic: UIImageView!
     
     var studentEnroolId = String()
+    var selectedClassId = String()
     var interactor: StudentDetailsBusinessLogic?
     var displayedStudentDetailsData: [StudentDetailsModel.Fetch.ViewModel.DisplayedStudentDetailsData] = []
     
@@ -75,6 +76,23 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = viewController
+    }
+    
+    @IBAction func homeWork_testAction(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "to_homeWork_test", sender: self)
+    }
+    
+    @IBAction func feesAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func attendanceAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func examResultsAction(_ sender: Any) {
+        
     }
 }
 
@@ -117,5 +135,15 @@ extension StudentsDetailsVC  {
     
     func errorFetchingItems(viewModel: StudentDetailsModel.Fetch.ViewModel) {
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "to_homeWork_test")
+        {
+        let vc = segue.destination as! HomeWorkTestVC
+            vc.stsudentId = self.studentEnroolId
+            vc.selectedClassId = self.selectedClassId
+        }
     }
 }
