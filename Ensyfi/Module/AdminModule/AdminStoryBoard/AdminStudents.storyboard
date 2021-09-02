@@ -8,6 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Light.otf">
+            <string>SFProText-Light</string>
+        </array>
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
         <array key="SF-Pro-Text-Semibold.otf">
             <string>SFProText-Semibold</string>
         </array>
@@ -1119,6 +1125,7 @@
                         <outlet property="studentPic" destination="eQL-M5-PnQ" id="V7m-KX-XPK"/>
                         <outlet property="tc" destination="Kik-1c-cfM" id="6Iu-WL-YUM"/>
                         <segue destination="Sgy-UL-fEO" kind="show" identifier="to_homeWork_test" id="CWx-Gq-dUf"/>
+                        <segue destination="Ijj-1z-NpA" kind="show" identifier="students_attendance" id="s6v-37-u4g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qu-nj-wbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1185,10 +1192,13 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="334" id="APK-Ey-BSf"/>
                                             <constraint firstItem="YTl-AN-L7d" firstAttribute="top" secondItem="6TY-Dw-raU" secondAttribute="top" constant="23" id="Cr1-Z9-JwZ"/>
@@ -1206,7 +1216,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cs5-C5-z2p">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cs5-C5-z2p">
                                         <rect key="frame" x="0.0" y="156" width="414" height="686"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
@@ -1227,7 +1237,7 @@
                                                                         <constraint firstAttribute="height" constant="21" id="YIk-zs-9KB"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="textColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xv-UZ-DPU">
@@ -1236,7 +1246,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="23" id="tJ9-CQ-64Z"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1252,7 +1262,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="22" id="3IK-Mt-xTQ"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1285,6 +1295,9 @@
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
@@ -1338,11 +1351,422 @@
                     <connections>
                         <outlet property="TestTextField" destination="ESH-ot-nGe" id="nbt-RM-Y3N"/>
                         <outlet property="selectBtn" destination="Xkz-SD-tJd" id="eTU-EX-SbP"/>
+                        <outlet property="tableView" destination="cs5-C5-z2p" id="7yj-u5-0yy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHP-uv-jRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1902.8985507246377" y="100.44642857142857"/>
+        </scene>
+        <!--Students AttendanceVC-->
+        <scene sceneID="d9K-Na-DiQ">
+            <objects>
+                <viewController id="Ijj-1z-NpA" customClass="StudentsAttendanceVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KA6-lo-dWf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSJ-28-sgZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="893"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6c-8f-8s6">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="893"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ex5-XG-GKZ">
+                                                <rect key="frame" x="20" y="22" width="374" height="175"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Working Days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1g-yi-t6C">
+                                                        <rect key="frame" x="5" y="8" width="241" height="32"/>
+                                                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="gDC-6y-FUR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJI-Ty-suT">
+                                                        <rect key="frame" x="246" y="8" width="120" height="32"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="mXZ-SV-sT5"/>
+                                                            <constraint firstAttribute="height" constant="32" id="pdd-3U-948"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Days Present" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q76-7O-vpk">
+                                                        <rect key="frame" x="5" y="40" width="241" height="32"/>
+                                                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="66c-i3-5Td"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2n-Sw-8Kb">
+                                                        <rect key="frame" x="246" y="40" width="120" height="32"/>
+                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="KU8-OK-VLa"/>
+                                                            <constraint firstAttribute="width" constant="120" id="gTW-hE-RkR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" On Duty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-wg-nRN">
+                                                        <rect key="frame" x="5" y="72" width="241" height="32"/>
+                                                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="9Jp-d4-MhX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmt-LC-Kdz">
+                                                        <rect key="frame" x="246" y="72" width="120" height="32"/>
+                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="5hS-ex-j6y"/>
+                                                            <constraint firstAttribute="width" constant="120" id="QS2-zP-mzp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Leaves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QG8-BB-4qy">
+                                                        <rect key="frame" x="5" y="104" width="241" height="32"/>
+                                                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="sa0-DP-iik"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb2-wM-DIA">
+                                                        <rect key="frame" x="246" y="104" width="120" height="32"/>
+                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="da0-Nb-Nxv"/>
+                                                            <constraint firstAttribute="height" constant="32" id="rv0-cS-Y4B"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Days Absent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PJ-XW-A6V">
+                                                        <rect key="frame" x="5" y="136" width="241" height="32"/>
+                                                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="fil-0C-SLA"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzs-ff-tOC">
+                                                        <rect key="frame" x="246" y="136" width="120" height="32"/>
+                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="RqU-MM-WSj"/>
+                                                            <constraint firstAttribute="width" constant="120" id="auN-CN-pG1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.69999999999999996"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Zmt-LC-Kdz" firstAttribute="leading" secondItem="jQs-wg-nRN" secondAttribute="trailing" id="7XE-Se-J1q"/>
+                                                    <constraint firstItem="uzs-ff-tOC" firstAttribute="leading" secondItem="2PJ-XW-A6V" secondAttribute="trailing" id="8fH-sk-lKU"/>
+                                                    <constraint firstItem="2PJ-XW-A6V" firstAttribute="top" secondItem="QG8-BB-4qy" secondAttribute="bottom" id="9i5-qR-wjy"/>
+                                                    <constraint firstItem="xJI-Ty-suT" firstAttribute="top" secondItem="ex5-XG-GKZ" secondAttribute="top" constant="8" id="9pn-ye-5jm"/>
+                                                    <constraint firstItem="uzs-ff-tOC" firstAttribute="leading" secondItem="2PJ-XW-A6V" secondAttribute="trailing" id="Amc-eL-7rj"/>
+                                                    <constraint firstItem="A2n-Sw-8Kb" firstAttribute="leading" secondItem="Q76-7O-vpk" secondAttribute="trailing" id="BwR-gN-16b"/>
+                                                    <constraint firstItem="Zmt-LC-Kdz" firstAttribute="top" secondItem="Q76-7O-vpk" secondAttribute="bottom" id="Ete-1F-9aB"/>
+                                                    <constraint firstItem="Zmt-LC-Kdz" firstAttribute="leading" secondItem="jQs-wg-nRN" secondAttribute="trailing" id="JOd-3k-U0R"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uzs-ff-tOC" secondAttribute="trailing" constant="8" id="KKn-Eq-QWd"/>
+                                                    <constraint firstItem="wb2-wM-DIA" firstAttribute="top" secondItem="jQs-wg-nRN" secondAttribute="bottom" id="LDM-pK-G1G"/>
+                                                    <constraint firstItem="wb2-wM-DIA" firstAttribute="leading" secondItem="QG8-BB-4qy" secondAttribute="trailing" id="NK3-g8-wjv"/>
+                                                    <constraint firstItem="xJI-Ty-suT" firstAttribute="leading" secondItem="i1g-yi-t6C" secondAttribute="trailing" id="Omh-Qe-Hb7"/>
+                                                    <constraint firstItem="uzs-ff-tOC" firstAttribute="leading" secondItem="2PJ-XW-A6V" secondAttribute="trailing" id="PAc-gi-Ka7"/>
+                                                    <constraint firstItem="jQs-wg-nRN" firstAttribute="top" secondItem="Q76-7O-vpk" secondAttribute="bottom" id="R5d-VQ-fl9"/>
+                                                    <constraint firstItem="uzs-ff-tOC" firstAttribute="top" secondItem="QG8-BB-4qy" secondAttribute="bottom" id="Tt9-od-jda"/>
+                                                    <constraint firstItem="Q76-7O-vpk" firstAttribute="leading" secondItem="ex5-XG-GKZ" secondAttribute="leading" constant="5" id="Uef-fD-WpX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xJI-Ty-suT" secondAttribute="trailing" constant="8" id="Wxc-93-cZR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="A2n-Sw-8Kb" secondAttribute="trailing" constant="8" id="YEs-yi-HVY"/>
+                                                    <constraint firstItem="jQs-wg-nRN" firstAttribute="leading" secondItem="ex5-XG-GKZ" secondAttribute="leading" constant="5" id="Ysz-X4-SKd"/>
+                                                    <constraint firstAttribute="height" constant="175" id="ZO7-gJ-sHY"/>
+                                                    <constraint firstItem="QG8-BB-4qy" firstAttribute="top" secondItem="jQs-wg-nRN" secondAttribute="bottom" id="afY-0d-9hT"/>
+                                                    <constraint firstItem="wb2-wM-DIA" firstAttribute="top" secondItem="Zmt-LC-Kdz" secondAttribute="bottom" id="buz-OB-F7w"/>
+                                                    <constraint firstItem="2PJ-XW-A6V" firstAttribute="leading" secondItem="ex5-XG-GKZ" secondAttribute="leading" constant="5" id="hHd-ZP-6N4"/>
+                                                    <constraint firstItem="Q76-7O-vpk" firstAttribute="top" secondItem="i1g-yi-t6C" secondAttribute="bottom" id="hPU-hs-UMy"/>
+                                                    <constraint firstItem="QG8-BB-4qy" firstAttribute="leading" secondItem="ex5-XG-GKZ" secondAttribute="leading" constant="5" id="iDt-Zh-Dlg"/>
+                                                    <constraint firstItem="i1g-yi-t6C" firstAttribute="top" secondItem="ex5-XG-GKZ" secondAttribute="top" constant="8" id="iOx-Qo-cRY"/>
+                                                    <constraint firstItem="A2n-Sw-8Kb" firstAttribute="top" secondItem="xJI-Ty-suT" secondAttribute="bottom" id="j7j-vq-SGL"/>
+                                                    <constraint firstItem="wb2-wM-DIA" firstAttribute="leading" secondItem="QG8-BB-4qy" secondAttribute="trailing" id="jwo-Ox-ZjV"/>
+                                                    <constraint firstItem="uzs-ff-tOC" firstAttribute="leading" secondItem="2PJ-XW-A6V" secondAttribute="trailing" id="mlH-Nv-4m1"/>
+                                                    <constraint firstItem="uzs-ff-tOC" firstAttribute="leading" secondItem="2PJ-XW-A6V" secondAttribute="trailing" id="nMP-7D-GBu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Zmt-LC-Kdz" secondAttribute="trailing" constant="8" id="oJu-uR-ODH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wb2-wM-DIA" secondAttribute="trailing" constant="8" id="oWJ-X9-lLN"/>
+                                                    <constraint firstItem="A2n-Sw-8Kb" firstAttribute="leading" secondItem="Q76-7O-vpk" secondAttribute="trailing" id="pEh-Nr-4ZW"/>
+                                                    <constraint firstItem="i1g-yi-t6C" firstAttribute="leading" secondItem="ex5-XG-GKZ" secondAttribute="leading" constant="5" id="rGS-nG-ROq"/>
+                                                    <constraint firstItem="wb2-wM-DIA" firstAttribute="leading" secondItem="QG8-BB-4qy" secondAttribute="trailing" id="sxH-Fx-xm7"/>
+                                                    <constraint firstItem="QG8-BB-4qy" firstAttribute="top" secondItem="jQs-wg-nRN" secondAttribute="bottom" id="wFW-oD-MHR"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNJ-I1-2FQ" customClass="FSCalendar">
+                                                <rect key="frame" x="8" y="235" width="398" height="372"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="372" id="RjT-eH-2VH"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="Ijj-1z-NpA" id="5Ef-Vc-bmh"/>
+                                                    <outlet property="delegate" destination="Ijj-1z-NpA" id="DBR-sr-Vu4"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upr-Lc-Qg3">
+                                                <rect key="frame" x="20" y="634" width="43" height="43"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="KaA-4J-qoK"/>
+                                                    <constraint firstAttribute="width" constant="43" id="zdL-4d-CfI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gdg-EM-wcH">
+                                                <rect key="frame" x="20" y="702" width="43" height="43"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="43" id="51X-aB-M4J"/>
+                                                    <constraint firstAttribute="height" constant="43" id="SI1-1y-CFe"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Za-Wn-RbP">
+                                                <rect key="frame" x="20" y="770" width="43" height="43"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="OfM-fr-Nbq"/>
+                                                    <constraint firstAttribute="width" constant="43" id="d1J-DM-GTM"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Days Absent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnW-sg-GF7">
+                                                <rect key="frame" x="80" y="639" width="314" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="mGh-kC-K83"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.69999999999999996"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0C-qR-dcd">
+                                                <rect key="frame" x="80" y="707" width="314" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="UNU-GY-U4M"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.69999999999999996"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Duty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qm-w3-jjj">
+                                                <rect key="frame" x="80" y="775" width="314" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="0j4-Ef-FEm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.69999999999999996"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="T0C-qR-dcd" firstAttribute="leading" secondItem="Gdg-EM-wcH" secondAttribute="trailing" constant="17" id="00G-NX-hhz"/>
+                                            <constraint firstAttribute="trailing" secondItem="ex5-XG-GKZ" secondAttribute="trailing" constant="20" id="24J-6C-Chw"/>
+                                            <constraint firstAttribute="trailing" secondItem="T0C-qR-dcd" secondAttribute="trailing" constant="20" symbolic="YES" id="6iY-qV-F8x"/>
+                                            <constraint firstItem="Gdg-EM-wcH" firstAttribute="leading" secondItem="R6c-8f-8s6" secondAttribute="leading" constant="20" symbolic="YES" id="Db2-32-KbA"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Za-Wn-RbP" secondAttribute="bottom" constant="80" id="Fcx-Vt-MJb"/>
+                                            <constraint firstItem="Upr-Lc-Qg3" firstAttribute="top" secondItem="DNJ-I1-2FQ" secondAttribute="bottom" constant="27" id="G7K-Vk-Wlr"/>
+                                            <constraint firstItem="ex5-XG-GKZ" firstAttribute="leading" secondItem="R6c-8f-8s6" secondAttribute="leading" constant="20" id="M2A-b3-Yad"/>
+                                            <constraint firstItem="3qm-w3-jjj" firstAttribute="top" secondItem="T0C-qR-dcd" secondAttribute="bottom" constant="36" id="MrL-za-qYu"/>
+                                            <constraint firstItem="Upr-Lc-Qg3" firstAttribute="leading" secondItem="R6c-8f-8s6" secondAttribute="leading" constant="20" symbolic="YES" id="Ncb-l5-CHN"/>
+                                            <constraint firstItem="T0C-qR-dcd" firstAttribute="top" secondItem="cnW-sg-GF7" secondAttribute="bottom" constant="36" id="TEZ-Vd-G4Y"/>
+                                            <constraint firstItem="1Za-Wn-RbP" firstAttribute="top" secondItem="Gdg-EM-wcH" secondAttribute="bottom" constant="25" id="Vgh-7J-S7l"/>
+                                            <constraint firstItem="DNJ-I1-2FQ" firstAttribute="top" secondItem="ex5-XG-GKZ" secondAttribute="bottom" constant="38" id="WHb-OS-Na1"/>
+                                            <constraint firstItem="ex5-XG-GKZ" firstAttribute="top" secondItem="R6c-8f-8s6" secondAttribute="top" constant="22" id="Wtx-1B-zJN"/>
+                                            <constraint firstItem="cnW-sg-GF7" firstAttribute="leading" secondItem="Upr-Lc-Qg3" secondAttribute="trailing" constant="17" id="Ze0-b8-n9J"/>
+                                            <constraint firstItem="1Za-Wn-RbP" firstAttribute="top" secondItem="Gdg-EM-wcH" secondAttribute="bottom" constant="25" id="Zq9-qw-143"/>
+                                            <constraint firstItem="Gdg-EM-wcH" firstAttribute="top" secondItem="Upr-Lc-Qg3" secondAttribute="bottom" constant="25" id="dIJ-ga-PQy"/>
+                                            <constraint firstItem="cnW-sg-GF7" firstAttribute="top" secondItem="DNJ-I1-2FQ" secondAttribute="bottom" constant="32" id="ek7-aa-7Mh"/>
+                                            <constraint firstItem="3qm-w3-jjj" firstAttribute="leading" secondItem="1Za-Wn-RbP" secondAttribute="trailing" constant="17" id="gZP-lJ-Sh5"/>
+                                            <constraint firstAttribute="trailing" secondItem="3qm-w3-jjj" secondAttribute="trailing" constant="20" symbolic="YES" id="hvI-3g-VOP"/>
+                                            <constraint firstAttribute="bottom" secondItem="3qm-w3-jjj" secondAttribute="bottom" constant="86" id="n3r-FN-G55"/>
+                                            <constraint firstAttribute="trailing" secondItem="DNJ-I1-2FQ" secondAttribute="trailing" constant="8" id="nqf-a5-h7y"/>
+                                            <constraint firstItem="1Za-Wn-RbP" firstAttribute="leading" secondItem="R6c-8f-8s6" secondAttribute="leading" constant="20" symbolic="YES" id="sYZ-t1-cxW"/>
+                                            <constraint firstAttribute="trailing" secondItem="cnW-sg-GF7" secondAttribute="trailing" constant="20" symbolic="YES" id="wLb-m3-sUd"/>
+                                            <constraint firstItem="DNJ-I1-2FQ" firstAttribute="leading" secondItem="R6c-8f-8s6" secondAttribute="leading" constant="8" id="z4x-Lx-ogs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="R6c-8f-8s6" firstAttribute="width" secondItem="pSJ-28-sgZ" secondAttribute="width" id="COi-5G-u4z"/>
+                                    <constraint firstItem="R6c-8f-8s6" firstAttribute="height" secondItem="pSJ-28-sgZ" secondAttribute="height" priority="250" id="LAi-VN-FQb"/>
+                                    <constraint firstAttribute="bottom" secondItem="R6c-8f-8s6" secondAttribute="bottom" id="S3R-CO-6j6"/>
+                                    <constraint firstAttribute="trailing" secondItem="R6c-8f-8s6" secondAttribute="trailing" id="gBZ-mJ-MUA"/>
+                                    <constraint firstItem="R6c-8f-8s6" firstAttribute="leading" secondItem="pSJ-28-sgZ" secondAttribute="leading" id="tdW-p4-ZGy"/>
+                                    <constraint firstItem="R6c-8f-8s6" firstAttribute="top" secondItem="pSJ-28-sgZ" secondAttribute="top" id="vzR-E0-enJ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1UQ-Ho-Tz7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pSJ-28-sgZ" firstAttribute="leading" secondItem="1UQ-Ho-Tz7" secondAttribute="leading" id="83S-uN-QWV"/>
+                            <constraint firstAttribute="trailing" secondItem="pSJ-28-sgZ" secondAttribute="trailing" id="KoH-V1-hy1"/>
+                            <constraint firstItem="pSJ-28-sgZ" firstAttribute="top" secondItem="1UQ-Ho-Tz7" secondAttribute="top" id="NEc-IA-L3C"/>
+                            <constraint firstAttribute="bottom" secondItem="pSJ-28-sgZ" secondAttribute="bottom" constant="3" id="t3p-Mc-A9U"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2df-oj-PrG"/>
+                    <size key="freeformSize" width="414" height="950"/>
+                    <connections>
+                        <outlet property="calendar" destination="DNJ-I1-2FQ" id="ZxM-3o-vgx"/>
+                        <outlet property="daysAbsent" destination="uzs-ff-tOC" id="kdJ-93-N4i"/>
+                        <outlet property="daysPresent" destination="A2n-Sw-8Kb" id="HHg-Hq-b2I"/>
+                        <outlet property="leaves" destination="wb2-wM-DIA" id="Okv-r4-pCv"/>
+                        <outlet property="onDuty" destination="Zmt-LC-Kdz" id="toF-oE-Hpt"/>
+                        <outlet property="workingDays" destination="xJI-Ty-suT" id="u2M-GT-W40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MyO-eA-zws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2753.6231884057975" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>
@@ -1351,6 +1775,12 @@
         <image name="ensyfi bg-01 (1)" width="1562" height="2779"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

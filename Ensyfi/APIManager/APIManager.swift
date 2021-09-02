@@ -372,7 +372,7 @@ class APIManager: NSObject {
                failureCallback?(responseObject["msg"].string!)
                return
          }
-          if let responseDict = responseObject["data"].arrayObject
+          if let responseDict = responseObject["homeworkDetails"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -392,5 +392,48 @@ class APIManager: NSObject {
          }
       )
    }
-}
+    
+    func callAPIStudentAttendance(class_id:String,stud_id:String, onSuccess successCallback: ((_ resp: [StudentAttendanceModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.studentAttendanceUrl
+         // Set Parameters
+        let parameters: Parameters = ["class_id": class_id,"stud_id":stud_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
 
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+           
+            GlobalVariables.shared.leave_days = responseObject["attendenceHistory"]["leave_days"].int!
+            GlobalVariables.shared.absent_days = responseObject["attendenceHistory"]["absent_days"].int!
+            GlobalVariables.shared.od_days = responseObject["attendenceHistory"]["od_days"].int!
+            GlobalVariables.shared.total_working_days = responseObject["attendenceHistory"]["total_working_days"].int!
+            GlobalVariables.shared.present_days = responseObject["attendenceHistory"]["present_days"].int!
+            
+          if let responseDict = responseObject["attendenceDetails"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [StudentAttendanceModels]()
+                  for item in toModel {
+                      let single = StudentAttendanceModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+}

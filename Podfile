@@ -11,4 +11,5 @@ platform :ios, '10.0'
    pod 'SideMenu'
    pod 'MBProgressHUD', '~> 1.2.0'
    pod 'DropDown'
+   pod 'FSCalendar'
    end

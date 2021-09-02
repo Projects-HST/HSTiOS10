@@ -17,13 +17,17 @@ protocol HomeWorkTestListDisplayLogic: class
 class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
  
     @IBOutlet weak var selectBtn: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var TestTextField: UITextField!
     
+    var displayedHomeWorkTestListData: [HomeWorkTestListModel.Fetch.ViewModel.DisplayedHomeWorkTestListData] = []
     var interactor: HomeWorkTestListBusinessLogic?
     let dropDown = DropDown()
     var dropDownData = [String]()
     var stsudentId = String()
     var selectedClassId = String()
+    var selectedStudentId = String()
+    var selectedHomeWorkId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +86,8 @@ extension HomeWorkTestVC {
     
     func successFetchedItems(viewModel: HomeWorkTestListModel.Fetch.ViewModel) {
         
+        displayedHomeWorkTestListData = viewModel.displayedHomeWorkTestListData
+        self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: HomeWorkTestListModel.Fetch.ViewModel) {
@@ -89,7 +95,50 @@ extension HomeWorkTestVC {
     }
 }
 
-extension HomeWorkTestVC : UITableViewDelegate,UITableViewDataSource {
+extension HomeWorkTestVC: UITableViewDelegate,UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return displayedHomeWorkTestListData.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeWorkListCell
+        
+        let data = displayedHomeWorkTestListData[indexPath.row]
+        
+        cell.title.text = data.title
+        cell.date.text = " Due Date : \(data.test_date!)"
+        
+        if data.hw_type == "HT" {
+            cell.subName.text = "\(data.subject_name!) - CLASS TEST"
+        }
+        else {
+            cell.subName.text = "\(data.subject_name!) - HOME WORK"
+        }
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let data = displayedHomeWorkTestListData[indexPath.row]
+        self.selectedHomeWorkId = data.hw_id!
+        
+        self.performSegue(withIdentifier: "student_detail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "student_detail")
+        {
+//        let vc = segue.destination as! StudentsDetailsVC
+//            vc.studentEnroolId = self.selectedStudentId
+//            vc.selectedClassId = self.selectedClassId
+            
+        }
+    }
 }
+
