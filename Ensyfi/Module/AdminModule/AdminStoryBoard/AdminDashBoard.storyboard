@@ -164,6 +164,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjm-DT-QL9">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="XNu-cn-t6n" kind="show" id="Ivw-Cb-0EY"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Parents" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-q6-OBv">
                                                                         <rect key="frame" x="50.5" y="41" width="80" height="80"/>
@@ -213,6 +216,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0M-Yi-BEU">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="lKS-oQ-vbK" kind="show" id="PGR-qi-yJ5"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -244,6 +250,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWV-Xe-X2q">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="ttf-vX-qPN" kind="show" id="fDh-CO-dK1"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exam" translatesAutoresizingMaskIntoConstraints="NO" id="9NJ-MM-R2p">
                                                                         <rect key="frame" x="50.5" y="41" width="80" height="80"/>
@@ -324,6 +333,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcO-hm-rQg">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="aj9-VP-ENe" kind="show" id="AMj-lA-6IA"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event" translatesAutoresizingMaskIntoConstraints="NO" id="vk6-Yw-DWE">
                                                                         <rect key="frame" x="50.5" y="41" width="80" height="80"/>
@@ -563,6 +575,9 @@
                                                         <state key="normal" title="Parents">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="XNu-cn-t6n" kind="show" id="n79-cd-bCB"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNj-Ur-fYX">
                                                         <rect key="frame" x="0.0" y="204" width="132" height="30"/>
@@ -593,6 +608,9 @@
                                                         <state key="normal" title="Classes">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="lKS-oQ-vbK" kind="show" id="p1W-pU-VsK"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlP-O1-vjt">
                                                         <rect key="frame" x="0.0" y="357" width="112" height="30"/>
@@ -603,6 +621,9 @@
                                                         <state key="normal" title="Examinations">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="ttf-vX-qPN" kind="show" id="iKe-6H-52a"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGQ-AT-c14">
                                                         <rect key="frame" x="0.0" y="408" width="62" height="30"/>
@@ -633,6 +654,9 @@
                                                         <state key="normal" title="Events">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="aj9-VP-ENe" kind="show" id="deQ-QV-COS"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecI-v4-198">
                                                         <rect key="frame" x="0.0" y="561" width="75" height="30"/>
@@ -802,6 +826,46 @@
             </objects>
             <point key="canvasLocation" x="3794" y="309"/>
         </scene>
+        <!--adminParentsVC-->
+        <scene sceneID="wSK-ee-YcU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminParents" referencedIdentifier="adminParentsVC" id="XNu-cn-t6n" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2WF-kb-Yn2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="37C-E5-AXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3801" y="370"/>
+        </scene>
+        <!--classVc-->
+        <scene sceneID="zPi-u3-roa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminClasses" referencedIdentifier="classVc" id="lKS-oQ-vbK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oP6-GE-dbx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcq-Bc-olG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3761" y="425"/>
+        </scene>
+        <!--examsVC-->
+        <scene sceneID="dFV-kN-Zmr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminExaminations" referencedIdentifier="examsVC" id="ttf-vX-qPN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4yi-ex-ncG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Sj-qO-uJp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3768" y="478"/>
+        </scene>
+        <!--eventsListVc-->
+        <scene sceneID="LQ4-lD-GYt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminEvents" referencedIdentifier="eventsListVc" id="aj9-VP-ENe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HYw-e1-hpY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBn-v2-M2R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3783" y="531"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0NK-C5-1Jm">
             <objects>
@@ -828,6 +892,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="AMj-lA-6IA"/>
+        <segue reference="fDh-CO-dK1"/>
+        <segue reference="PGR-qi-yJ5"/>
+        <segue reference="Ivw-Cb-0EY"/>
         <segue reference="gvM-BY-QNx"/>
         <segue reference="PoF-jv-NTc"/>
     </inferredMetricsTieBreakers>

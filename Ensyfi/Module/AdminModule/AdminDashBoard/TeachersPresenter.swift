@@ -22,7 +22,7 @@ class TeachersListPresenter: TeachersListPresentationLogic
         var displayedTeachersListData: [TeachersListModel.Fetch.ViewModel.DisplayedTeachersListData] = []
        
         for data in resp.testObj {
-        let displayedTeachersListDatas = TeachersListModel.Fetch.ViewModel.DisplayedTeachersListData(class_id: data.class_id!,class_name: data.class_name!)
+        let displayedTeachersListDatas = TeachersListModel.Fetch.ViewModel.DisplayedTeachersListData(subject: data.subject!,class_name: data.class_name!,name: data.name!,sec_name: data.sec_name!,teacher_id: data.teacher_id!,sex: data.sex!,age: data.age!,class_teacher: data.class_teacher!)
             displayedTeachersListData.append(displayedTeachersListDatas)
         }
         let viewModel = TeachersListModel.Fetch.ViewModel(displayedTeachersListData: displayedTeachersListData)

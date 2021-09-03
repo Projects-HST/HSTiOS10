@@ -284,7 +284,7 @@ class APIManager: NSObject {
 
     func callAPITeachersList(user_id:String, onSuccess successCallback: ((_ resp: [TeachersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-        let url = APIURL.base_URL  + APIFunctionName.studentsListUrl
+        let url = APIURL.base_URL  + APIFunctionName.teacherListUrl
          // Set Parameters
         let parameters: Parameters = ["":""]
         print(user_id)
@@ -409,7 +409,6 @@ class APIManager: NSObject {
                failureCallback?(responseObject["msg"].string!)
                return
          }
-           
             GlobalVariables.shared.leave_days = responseObject["attendenceHistory"]["leave_days"].int!
             GlobalVariables.shared.absent_days = responseObject["attendenceHistory"]["absent_days"].int!
             GlobalVariables.shared.od_days = responseObject["attendenceHistory"]["od_days"].int!
@@ -423,6 +422,233 @@ class APIManager: NSObject {
                   var data = [StudentAttendanceModels]()
                   for item in toModel {
                       let single = StudentAttendanceModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPIExamResults(class_id:String, onSuccess successCallback: ((_ resp: [ExamResultsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.examListUrl
+         // Set Parameters
+        let parameters: Parameters = ["class_id": class_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+            
+          if let responseDict = responseObject["Exams"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [ExamResultsModels]()
+                  for item in toModel {
+                      let single = ExamResultsModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPITeacherDetails(teacher_id:String, onSuccess successCallback: ((_ resp: [TeacherDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.teacherDetailUrl
+         // Set Parameters
+        let parameters: Parameters = ["teacher_id": teacher_id]
+        print(parameters)
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["teacherProfile"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [TeacherDetailsModels]()
+                  for item in toModel {
+                      let single = TeacherDetailsModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+  
+    func callAPIClassForTeacherList(class_id:String,section_id:String, onSuccess successCallback: ((_ resp: [ClassForTeacherListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.clasForTeacherListurl
+         // Set Parameters
+        let parameters: Parameters = ["class_id":class_id,"section_id":section_id]
+        print(class_id)
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["data"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [ClassForTeacherListModels]()
+                  for item in toModel {
+                      let single = ClassForTeacherListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPIExamList(class_id:String,section_id:String,onSuccess successCallback: ((_ resp: [ExamListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.examsListUrl
+         // Set Parameters
+        let parameters: Parameters = ["class_id": class_id,"section_id": section_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+            
+          if let responseDict = responseObject["Exams"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [ExamListModels]()
+                  for item in toModel {
+                      let single = ExamListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+        
+   }
+    
+    func callAPIEventsList(class_id:String,section_id:String,onSuccess successCallback: ((_ resp: [EventsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.eventsListUrl
+         // Set Parameters
+        let parameters: Parameters = ["class_id": class_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+            
+          if let responseDict = responseObject["eventDetails"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [EventsListModels]()
+                  for item in toModel {
+                      let single = EventsListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPISubEvents(event_id:String,onSuccess successCallback: ((_ resp: [SubEventsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.subEventsListUrl
+         // Set Parameters
+        let parameters: Parameters = ["event_id": event_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+            
+          if let responseDict = responseObject["eventDetails"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [SubEventsModels]()
+                  for item in toModel {
+                      let single = SubEventsModels.build(item)
                       data.append(single)
                   }
                   // Fire callback

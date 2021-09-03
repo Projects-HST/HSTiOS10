@@ -93,6 +93,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
     
     @IBAction func examResultsAction(_ sender: Any) {
         
+        self.performSegue(withIdentifier: "to_exams", sender: self)
     }
 }
 
@@ -149,6 +150,11 @@ extension StudentsDetailsVC  {
         {
         let vc = segue.destination as! StudentsAttendanceVC
             vc.stsudentId = self.studentEnroolId
+            vc.selectedClassId = self.selectedClassId
+        }
+        else if (segue.identifier == "to_exams")
+        {
+        let vc = segue.destination as! ExamResultsVC
             vc.selectedClassId = self.selectedClassId
         }
     }

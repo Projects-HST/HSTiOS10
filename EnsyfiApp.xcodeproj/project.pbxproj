@@ -19,6 +19,12 @@
 		7904AD3A26DA0FFD00D6F2C2 /* TeachersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904AD3926DA0FFD00D6F2C2 /* TeachersPresenter.swift */; };
 		7904AD3F26DA103000D6F2C2 /* TeachersAdminModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904AD3E26DA103000D6F2C2 /* TeachersAdminModels.swift */; };
 		7904AD4426DA138100D6F2C2 /* AdminTeachers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7904AD4326DA138100D6F2C2 /* AdminTeachers.storyboard */; };
+		7949931D26E0F41F0013A38C /* TeacherListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949931C26E0F41F0013A38C /* TeacherListCell.swift */; };
+		7949932626E0F7DC0013A38C /* TeacherDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949932526E0F7DC0013A38C /* TeacherDetailsVC.swift */; };
+		7949932B26E0F8940013A38C /* TeacherDetailsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949932A26E0F8940013A38C /* TeacherDetailsInteracter.swift */; };
+		7949933026E0F89E0013A38C /* TeacherDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949932F26E0F89E0013A38C /* TeacherDetailsWorker.swift */; };
+		7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949933426E0F8A90013A38C /* TeacherDetailsModel.swift */; };
+		7949933A26E0F8B20013A38C /* TeacherDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949933926E0F8B20013A38C /* TeacherDetailsPresenter.swift */; };
 		79531F6526DE5B4F000BE78A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79531F6426DE5B4F000BE78A /* APIManager.swift */; };
 		7956CD8126DCCE2B001D0A41 /* StudentsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956CD8026DCCE2B001D0A41 /* StudentsListCell.swift */; };
 		798A1B1B26D62A4B0081105B /* StudentListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A1B1A26D62A4B0081105B /* StudentListInteracter.swift */; };
@@ -85,12 +91,54 @@
 		79A82E4A26DFA66500EA4FEF /* HomeWorkTestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A82E4926DFA66500EA4FEF /* HomeWorkTestPresenter.swift */; };
 		79A82E4F26DFA67700EA4FEF /* HomeWorkTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A82E4E26DFA67700EA4FEF /* HomeWorkTestModels.swift */; };
 		79A82E5426DFACBA00EA4FEF /* HomeWorkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A82E5326DFACBA00EA4FEF /* HomeWorkListCell.swift */; };
+		79BAB7CB26E1E34600DEE3C3 /* AdminParents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BAB7CA26E1E34600DEE3C3 /* AdminParents.storyboard */; };
+		79BAB7D326E1E4C100DEE3C3 /* AdminParentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7D226E1E4C100DEE3C3 /* AdminParentsVC.swift */; };
+		79BAB7DA26E1E5C900DEE3C3 /* ParentsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7D926E1E5C900DEE3C3 /* ParentsDetailsVC.swift */; };
+		79BAB7DF26E1E5F900DEE3C3 /* ParentDetailsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7DE26E1E5F900DEE3C3 /* ParentDetailsInteracter.swift */; };
+		79BAB7E426E1E60200DEE3C3 /* ParentDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7E326E1E60200DEE3C3 /* ParentDetailsWorker.swift */; };
+		79BAB7E926E1E61100DEE3C3 /* ParentDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7E826E1E61100DEE3C3 /* ParentDetailsModel.swift */; };
+		79BAB7EE26E1E61800DEE3C3 /* ParentDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7ED26E1E61800DEE3C3 /* ParentDetailsPresenter.swift */; };
+		79BAB7F326E1E62900DEE3C3 /* ParentDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7F226E1E62900DEE3C3 /* ParentDetailsModels.swift */; };
+		79BAB7F826E1F2EE00DEE3C3 /* AdminClasses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BAB7F726E1F2EE00DEE3C3 /* AdminClasses.storyboard */; };
+		79BAB7FE26E1F37400DEE3C3 /* AdminClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB7FD26E1F37400DEE3C3 /* AdminClassVC.swift */; };
+		79BAB80426E1FE5800DEE3C3 /* ClassForTeacherListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB80326E1FE5800DEE3C3 /* ClassForTeacherListInteracter.swift */; };
+		79BAB80926E1FE6700DEE3C3 /* ClassForTeacherListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB80826E1FE6700DEE3C3 /* ClassForTeacherListWorker.swift */; };
+		79BAB80B26E1FE7000DEE3C3 /* ClassForTeacherListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB80A26E1FE7000DEE3C3 /* ClassForTeacherListModel.swift */; };
+		79BAB81026E1FE7A00DEE3C3 /* ClassForTeacherListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB80F26E1FE7A00DEE3C3 /* ClassForTeacherListPresenter.swift */; };
+		79BAB81526E1FEE200DEE3C3 /* ClassViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB81426E1FEE200DEE3C3 /* ClassViewModels.swift */; };
+		79BAB82426E2082800DEE3C3 /* AdminExaminations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BAB82326E2082800DEE3C3 /* AdminExaminations.storyboard */; };
+		79BAB82A26E208F900DEE3C3 /* ExamsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB82926E208F900DEE3C3 /* ExamsVc.swift */; };
+		79BAB83026E21E5C00DEE3C3 /* ExamsListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB82F26E21E5C00DEE3C3 /* ExamsListInteracter.swift */; };
+		79BAB83826E21E7B00DEE3C3 /* ExamsListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB83726E21E7B00DEE3C3 /* ExamsListWorker.swift */; };
+		79BAB83A26E21E9000DEE3C3 /* ExamListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB83926E21E9000DEE3C3 /* ExamListModel.swift */; };
+		79BAB83C26E21EA000DEE3C3 /* ExamListPresnetr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BAB83B26E21EA000DEE3C3 /* ExamListPresnetr.swift */; };
+		79C33E9326E2293D006341E9 /* AdminEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C33E9226E2293D006341E9 /* AdminEvents.storyboard */; };
+		79C33E9926E22A59006341E9 /* AdminEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33E9826E22A59006341E9 /* AdminEventsVC.swift */; };
+		79C33E9E26E22A6C006341E9 /* EventsListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33E9D26E22A6C006341E9 /* EventsListInteracter.swift */; };
+		79C33EA026E22A75006341E9 /* EventsListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33E9F26E22A75006341E9 /* EventsListWorker.swift */; };
+		79C33EA526E22A7B006341E9 /* EventsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EA426E22A7B006341E9 /* EventsListModel.swift */; };
+		79C33EAA26E22A8E006341E9 /* EventsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EA926E22A8E006341E9 /* EventsListPresenter.swift */; };
+		79C33EAF26E22D60006341E9 /* EvenetsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EAE26E22D60006341E9 /* EvenetsModels.swift */; };
+		79C33EB726E239CF006341E9 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EB626E239CF006341E9 /* EventListCell.swift */; };
+		79C33EC626E242F5006341E9 /* SubEventsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EC526E242F5006341E9 /* SubEventsInteracter.swift */; };
+		79C33ECB26E24305006341E9 /* SubEventsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33ECA26E24305006341E9 /* SubEventsWorker.swift */; };
+		79C33ED026E245DE006341E9 /* SubEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33ECF26E245DE006341E9 /* SubEventsModel.swift */; };
+		79C33ED526E245EB006341E9 /* SubEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33ED426E245EB006341E9 /* SubEventsPresenter.swift */; };
+		79C33EF026E2479D006341E9 /* SubEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EEF26E2479C006341E9 /* SubEventsVC.swift */; };
+		79C33EF826E2480F006341E9 /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EF726E2480F006341E9 /* EventDetailsVC.swift */; };
 		79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */; };
 		79E51FD726E0A1F300991D34 /* StudenceAttendanceInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */; };
 		79E51FDC26E0A20300991D34 /* StudenceAttendanceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */; };
 		79E51FE126E0A21000991D34 /* StudenceAttendanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FE026E0A21000991D34 /* StudenceAttendanceModel.swift */; };
 		79E51FE626E0A21B00991D34 /* StudenceAttendancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FE526E0A21B00991D34 /* StudenceAttendancePresenter.swift */; };
 		79E51FEB26E0A22800991D34 /* StudenceAttendanceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FEA26E0A22800991D34 /* StudenceAttendanceModels.swift */; };
+		79E51FF126E0B59300991D34 /* ExamResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FF026E0B59300991D34 /* ExamResultsVC.swift */; };
+		79E51FF626E0B5D700991D34 /* ExamResultsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FF526E0B5D700991D34 /* ExamResultsInteracter.swift */; };
+		79E51FFE26E0B60100991D34 /* ExamResultsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FFD26E0B60100991D34 /* ExamResultsWorker.swift */; };
+		79E5200326E0B60F00991D34 /* ExamResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5200226E0B60F00991D34 /* ExamResultsModel.swift */; };
+		79E5200826E0B61800991D34 /* ExamResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5200726E0B61800991D34 /* ExamResultsPresenter.swift */; };
+		79E5201026E0B63000991D34 /* ExamModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5200F26E0B63000991D34 /* ExamModels.swift */; };
+		79E5201526E0D07500991D34 /* ExamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5201426E0D07400991D34 /* ExamsCell.swift */; };
 		79F0ECFF26D362DD00DFDE61 /* ForgotPswdInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ECFE26D362DD00DFDE61 /* ForgotPswdInteracter.swift */; };
 		79F0ED0426D362F400DFDE61 /* ForgotPswdWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED0326D362F400DFDE61 /* ForgotPswdWorker.swift */; };
 		79F0ED0926D3630300DFDE61 /* ForgotPswdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED0826D3630300DFDE61 /* ForgotPswdModel.swift */; };
@@ -140,6 +188,12 @@
 		7904AD3E26DA103000D6F2C2 /* TeachersAdminModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersAdminModels.swift; sourceTree = "<group>"; };
 		7904AD4326DA138100D6F2C2 /* AdminTeachers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminTeachers.storyboard; sourceTree = "<group>"; };
 		791DD01F26CE93DB00B94D9D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		7949931C26E0F41F0013A38C /* TeacherListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherListCell.swift; sourceTree = "<group>"; };
+		7949932526E0F7DC0013A38C /* TeacherDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsVC.swift; sourceTree = "<group>"; };
+		7949932A26E0F8940013A38C /* TeacherDetailsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsInteracter.swift; sourceTree = "<group>"; };
+		7949932F26E0F89E0013A38C /* TeacherDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsWorker.swift; sourceTree = "<group>"; };
+		7949933426E0F8A90013A38C /* TeacherDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsModel.swift; sourceTree = "<group>"; };
+		7949933926E0F8B20013A38C /* TeacherDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsPresenter.swift; sourceTree = "<group>"; };
 		79531F6426DE5B4F000BE78A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7956CD8026DCCE2B001D0A41 /* StudentsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsListCell.swift; sourceTree = "<group>"; };
 		798A1B1A26D62A4B0081105B /* StudentListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListInteracter.swift; sourceTree = "<group>"; };
@@ -211,12 +265,54 @@
 		79A82E4926DFA66500EA4FEF /* HomeWorkTestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkTestPresenter.swift; sourceTree = "<group>"; };
 		79A82E4E26DFA67700EA4FEF /* HomeWorkTestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkTestModels.swift; sourceTree = "<group>"; };
 		79A82E5326DFACBA00EA4FEF /* HomeWorkListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkListCell.swift; sourceTree = "<group>"; };
+		79BAB7CA26E1E34600DEE3C3 /* AdminParents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminParents.storyboard; sourceTree = "<group>"; };
+		79BAB7D226E1E4C100DEE3C3 /* AdminParentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminParentsVC.swift; sourceTree = "<group>"; };
+		79BAB7D926E1E5C900DEE3C3 /* ParentsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsDetailsVC.swift; sourceTree = "<group>"; };
+		79BAB7DE26E1E5F900DEE3C3 /* ParentDetailsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDetailsInteracter.swift; sourceTree = "<group>"; };
+		79BAB7E326E1E60200DEE3C3 /* ParentDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDetailsWorker.swift; sourceTree = "<group>"; };
+		79BAB7E826E1E61100DEE3C3 /* ParentDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDetailsModel.swift; sourceTree = "<group>"; };
+		79BAB7ED26E1E61800DEE3C3 /* ParentDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDetailsPresenter.swift; sourceTree = "<group>"; };
+		79BAB7F226E1E62900DEE3C3 /* ParentDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDetailsModels.swift; sourceTree = "<group>"; };
+		79BAB7F726E1F2EE00DEE3C3 /* AdminClasses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = AdminClasses.storyboard; path = ../../../../../../../AdminClasses.storyboard; sourceTree = "<group>"; };
+		79BAB7FD26E1F37400DEE3C3 /* AdminClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClassVC.swift; sourceTree = "<group>"; };
+		79BAB80326E1FE5800DEE3C3 /* ClassForTeacherListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassForTeacherListInteracter.swift; sourceTree = "<group>"; };
+		79BAB80826E1FE6700DEE3C3 /* ClassForTeacherListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassForTeacherListWorker.swift; sourceTree = "<group>"; };
+		79BAB80A26E1FE7000DEE3C3 /* ClassForTeacherListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassForTeacherListModel.swift; sourceTree = "<group>"; };
+		79BAB80F26E1FE7A00DEE3C3 /* ClassForTeacherListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassForTeacherListPresenter.swift; sourceTree = "<group>"; };
+		79BAB81426E1FEE200DEE3C3 /* ClassViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewModels.swift; sourceTree = "<group>"; };
+		79BAB82326E2082800DEE3C3 /* AdminExaminations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminExaminations.storyboard; sourceTree = "<group>"; };
+		79BAB82926E208F900DEE3C3 /* ExamsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsVc.swift; sourceTree = "<group>"; };
+		79BAB82F26E21E5C00DEE3C3 /* ExamsListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsListInteracter.swift; sourceTree = "<group>"; };
+		79BAB83726E21E7B00DEE3C3 /* ExamsListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsListWorker.swift; sourceTree = "<group>"; };
+		79BAB83926E21E9000DEE3C3 /* ExamListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamListModel.swift; sourceTree = "<group>"; };
+		79BAB83B26E21EA000DEE3C3 /* ExamListPresnetr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamListPresnetr.swift; sourceTree = "<group>"; };
+		79C33E9226E2293D006341E9 /* AdminEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminEvents.storyboard; sourceTree = "<group>"; };
+		79C33E9826E22A59006341E9 /* AdminEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEventsVC.swift; sourceTree = "<group>"; };
+		79C33E9D26E22A6C006341E9 /* EventsListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListInteracter.swift; sourceTree = "<group>"; };
+		79C33E9F26E22A75006341E9 /* EventsListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListWorker.swift; sourceTree = "<group>"; };
+		79C33EA426E22A7B006341E9 /* EventsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListModel.swift; sourceTree = "<group>"; };
+		79C33EA926E22A8E006341E9 /* EventsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListPresenter.swift; sourceTree = "<group>"; };
+		79C33EAE26E22D60006341E9 /* EvenetsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EvenetsModels.swift; path = ../../../../../../EvenetsModels.swift; sourceTree = "<group>"; };
+		79C33EB626E239CF006341E9 /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
+		79C33EC526E242F5006341E9 /* SubEventsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubEventsInteracter.swift; sourceTree = "<group>"; };
+		79C33ECA26E24305006341E9 /* SubEventsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubEventsWorker.swift; sourceTree = "<group>"; };
+		79C33ECF26E245DE006341E9 /* SubEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubEventsModel.swift; sourceTree = "<group>"; };
+		79C33ED426E245EB006341E9 /* SubEventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubEventsPresenter.swift; sourceTree = "<group>"; };
+		79C33EEF26E2479C006341E9 /* SubEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubEventsVC.swift; sourceTree = "<group>"; };
+		79C33EF726E2480F006341E9 /* EventDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
 		79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAttendanceVC.swift; sourceTree = "<group>"; };
 		79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceInteracter.swift; sourceTree = "<group>"; };
 		79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceWorker.swift; sourceTree = "<group>"; };
 		79E51FE026E0A21000991D34 /* StudenceAttendanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceModel.swift; sourceTree = "<group>"; };
 		79E51FE526E0A21B00991D34 /* StudenceAttendancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendancePresenter.swift; sourceTree = "<group>"; };
 		79E51FEA26E0A22800991D34 /* StudenceAttendanceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceModels.swift; sourceTree = "<group>"; };
+		79E51FF026E0B59300991D34 /* ExamResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsVC.swift; sourceTree = "<group>"; };
+		79E51FF526E0B5D700991D34 /* ExamResultsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsInteracter.swift; sourceTree = "<group>"; };
+		79E51FFD26E0B60100991D34 /* ExamResultsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsWorker.swift; sourceTree = "<group>"; };
+		79E5200226E0B60F00991D34 /* ExamResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsModel.swift; sourceTree = "<group>"; };
+		79E5200726E0B61800991D34 /* ExamResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsPresenter.swift; sourceTree = "<group>"; };
+		79E5200F26E0B63000991D34 /* ExamModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamModels.swift; sourceTree = "<group>"; };
+		79E5201426E0D07400991D34 /* ExamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsCell.swift; sourceTree = "<group>"; };
 		79F0ECFE26D362DD00DFDE61 /* ForgotPswdInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdInteracter.swift; sourceTree = "<group>"; };
 		79F0ED0326D362F400DFDE61 /* ForgotPswdWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdWorker.swift; sourceTree = "<group>"; };
 		79F0ED0826D3630300DFDE61 /* ForgotPswdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdModel.swift; sourceTree = "<group>"; };
@@ -304,6 +400,18 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
+		7949932126E0F79A0013A38C /* TeacherDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7949932526E0F7DC0013A38C /* TeacherDetailsVC.swift */,
+				7949932A26E0F8940013A38C /* TeacherDetailsInteracter.swift */,
+				7949932F26E0F89E0013A38C /* TeacherDetailsWorker.swift */,
+				7949933426E0F8A90013A38C /* TeacherDetailsModel.swift */,
+				7949933926E0F8B20013A38C /* TeacherDetailsPresenter.swift */,
+			);
+			name = TeacherDetails;
+			sourceTree = "<group>";
+		};
 		7956CD7B26DCCDDF001D0A41 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +425,9 @@
 			children = (
 				7956CD8026DCCE2B001D0A41 /* StudentsListCell.swift */,
 				79A82E5326DFACBA00EA4FEF /* HomeWorkListCell.swift */,
+				79E5201426E0D07400991D34 /* ExamsCell.swift */,
+				7949931C26E0F41F0013A38C /* TeacherListCell.swift */,
+				79C33EB626E239CF006341E9 /* EventListCell.swift */,
 			);
 			path = AdminCells;
 			sourceTree = "<group>";
@@ -463,8 +574,7 @@
 		798DE4C426CE7BBA0017C5FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				798DE4CB26CE7C020017C5FD /* LoginModels.swift */,
-				79F0ED1226D3635C00DFDE61 /* ForgotPswdModels.swift */,
+				79BAB81926E2018500DEE3C3 /* LoginModels */,
 				79FE1B3226D5091F00E62F00 /* AdminModels */,
 			);
 			path = Model;
@@ -474,13 +584,20 @@
 			isa = PBXGroup;
 			children = (
 				79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */,
+				79C33E9726E22A35006341E9 /* Events */,
+				79BAB82826E208DC00DEE3C3 /* Examinations */,
 				79F0ED4026D3AFA500DFDE61 /* StudentsAdmin */,
 				79BDD80F26D609F4009F9EBE /* SectionList */,
 				798A1B1926D62A2D0081105B /* StudentsList */,
 				7904AD0726D9EEEB00D6F2C2 /* StudentsDetails */,
 				7904AD2126DA0F2900D6F2C2 /* Teachers */,
+				7949932126E0F79A0013A38C /* TeacherDetails */,
 				79A82E2E26DF97F600EA4FEF /* HomeWorks_Tests */,
 				79E51FCD26E0A1AE00991D34 /* Attendance */,
+				79E51FEF26E0B55D00991D34 /* ExamResults */,
+				79BAB7D726E1E4C500DEE3C3 /* Parents */,
+				79BAB7D826E1E5A100DEE3C3 /* ParentsDetails */,
+				79BAB7FC26E1F30200DEE3C3 /* Classes */,
 			);
 			path = AdminDashBoard;
 			sourceTree = "<group>";
@@ -539,6 +656,10 @@
 				79956C6026CF892C00E012BB /* AdminDashBoard.storyboard */,
 				79F0ED3B26D3AF8800DFDE61 /* AdminStudents.storyboard */,
 				7904AD4326DA138100D6F2C2 /* AdminTeachers.storyboard */,
+				79BAB7CA26E1E34600DEE3C3 /* AdminParents.storyboard */,
+				79BAB7F726E1F2EE00DEE3C3 /* AdminClasses.storyboard */,
+				79BAB82326E2082800DEE3C3 /* AdminExaminations.storyboard */,
+				79C33E9226E2293D006341E9 /* AdminEvents.storyboard */,
 			);
 			path = AdminStoryBoard;
 			sourceTree = "<group>";
@@ -578,6 +699,75 @@
 			name = HomeWorks_Tests;
 			sourceTree = "<group>";
 		};
+		79BAB7D726E1E4C500DEE3C3 /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				79BAB7D226E1E4C100DEE3C3 /* AdminParentsVC.swift */,
+			);
+			name = Parents;
+			sourceTree = "<group>";
+		};
+		79BAB7D826E1E5A100DEE3C3 /* ParentsDetails */ = {
+			isa = PBXGroup;
+			children = (
+				79BAB7D926E1E5C900DEE3C3 /* ParentsDetailsVC.swift */,
+				79BAB7DE26E1E5F900DEE3C3 /* ParentDetailsInteracter.swift */,
+				79BAB7E326E1E60200DEE3C3 /* ParentDetailsWorker.swift */,
+				79BAB7E826E1E61100DEE3C3 /* ParentDetailsModel.swift */,
+				79BAB7ED26E1E61800DEE3C3 /* ParentDetailsPresenter.swift */,
+			);
+			name = ParentsDetails;
+			sourceTree = "<group>";
+		};
+		79BAB7FC26E1F30200DEE3C3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				79BAB7FD26E1F37400DEE3C3 /* AdminClassVC.swift */,
+				79BAB80226E1FE2300DEE3C3 /* ClassForTeacherList */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		79BAB80226E1FE2300DEE3C3 /* ClassForTeacherList */ = {
+			isa = PBXGroup;
+			children = (
+				79BAB80326E1FE5800DEE3C3 /* ClassForTeacherListInteracter.swift */,
+				79BAB80826E1FE6700DEE3C3 /* ClassForTeacherListWorker.swift */,
+				79BAB80A26E1FE7000DEE3C3 /* ClassForTeacherListModel.swift */,
+				79BAB80F26E1FE7A00DEE3C3 /* ClassForTeacherListPresenter.swift */,
+			);
+			name = ClassForTeacherList;
+			sourceTree = "<group>";
+		};
+		79BAB81926E2018500DEE3C3 /* LoginModels */ = {
+			isa = PBXGroup;
+			children = (
+				798DE4CB26CE7C020017C5FD /* LoginModels.swift */,
+				79F0ED1226D3635C00DFDE61 /* ForgotPswdModels.swift */,
+			);
+			path = LoginModels;
+			sourceTree = "<group>";
+		};
+		79BAB82826E208DC00DEE3C3 /* Examinations */ = {
+			isa = PBXGroup;
+			children = (
+				79BAB82926E208F900DEE3C3 /* ExamsVc.swift */,
+				79BAB82E26E21E2900DEE3C3 /* ExamsList */,
+			);
+			name = Examinations;
+			sourceTree = "<group>";
+		};
+		79BAB82E26E21E2900DEE3C3 /* ExamsList */ = {
+			isa = PBXGroup;
+			children = (
+				79BAB82F26E21E5C00DEE3C3 /* ExamsListInteracter.swift */,
+				79BAB83726E21E7B00DEE3C3 /* ExamsListWorker.swift */,
+				79BAB83926E21E9000DEE3C3 /* ExamListModel.swift */,
+				79BAB83B26E21EA000DEE3C3 /* ExamListPresnetr.swift */,
+			);
+			name = ExamsList;
+			sourceTree = "<group>";
+		};
 		79BDD80F26D609F4009F9EBE /* SectionList */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +777,48 @@
 				799274E926D6144F00CBB8AC /* SectionListPresenter.swift */,
 			);
 			name = SectionList;
+			sourceTree = "<group>";
+		};
+		79C33E9726E22A35006341E9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				79C33E9826E22A59006341E9 /* AdminEventsVC.swift */,
+				79C33EBC26E240EA006341E9 /* EventList */,
+				79C33EBB26E240E7006341E9 /* EventDeatils */,
+				79C33EDF26E246D7006341E9 /* SubEvents */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		79C33EBB26E240E7006341E9 /* EventDeatils */ = {
+			isa = PBXGroup;
+			children = (
+				79C33EF726E2480F006341E9 /* EventDetailsVC.swift */,
+			);
+			name = EventDeatils;
+			sourceTree = "<group>";
+		};
+		79C33EBC26E240EA006341E9 /* EventList */ = {
+			isa = PBXGroup;
+			children = (
+				79C33E9D26E22A6C006341E9 /* EventsListInteracter.swift */,
+				79C33E9F26E22A75006341E9 /* EventsListWorker.swift */,
+				79C33EA426E22A7B006341E9 /* EventsListModel.swift */,
+				79C33EA926E22A8E006341E9 /* EventsListPresenter.swift */,
+			);
+			name = EventList;
+			sourceTree = "<group>";
+		};
+		79C33EDF26E246D7006341E9 /* SubEvents */ = {
+			isa = PBXGroup;
+			children = (
+				79C33EEF26E2479C006341E9 /* SubEventsVC.swift */,
+				79C33EC526E242F5006341E9 /* SubEventsInteracter.swift */,
+				79C33ECA26E24305006341E9 /* SubEventsWorker.swift */,
+				79C33ECF26E245DE006341E9 /* SubEventsModel.swift */,
+				79C33ED426E245EB006341E9 /* SubEventsPresenter.swift */,
+			);
+			name = SubEvents;
 			sourceTree = "<group>";
 		};
 		79E51FCD26E0A1AE00991D34 /* Attendance */ = {
@@ -599,6 +831,18 @@
 				79E51FE526E0A21B00991D34 /* StudenceAttendancePresenter.swift */,
 			);
 			name = Attendance;
+			sourceTree = "<group>";
+		};
+		79E51FEF26E0B55D00991D34 /* ExamResults */ = {
+			isa = PBXGroup;
+			children = (
+				79E51FF026E0B59300991D34 /* ExamResultsVC.swift */,
+				79E51FF526E0B5D700991D34 /* ExamResultsInteracter.swift */,
+				79E51FFD26E0B60100991D34 /* ExamResultsWorker.swift */,
+				79E5200226E0B60F00991D34 /* ExamResultsModel.swift */,
+				79E5200726E0B61800991D34 /* ExamResultsPresenter.swift */,
+			);
+			name = ExamResults;
 			sourceTree = "<group>";
 		};
 		79F0ED4026D3AFA500DFDE61 /* StudentsAdmin */ = {
@@ -620,6 +864,10 @@
 				7904AD3E26DA103000D6F2C2 /* TeachersAdminModels.swift */,
 				79A82E4E26DFA67700EA4FEF /* HomeWorkTestModels.swift */,
 				79E51FEA26E0A22800991D34 /* StudenceAttendanceModels.swift */,
+				79E5200F26E0B63000991D34 /* ExamModels.swift */,
+				79BAB7F226E1E62900DEE3C3 /* ParentDetailsModels.swift */,
+				79BAB81426E1FEE200DEE3C3 /* ClassViewModels.swift */,
+				79C33EAE26E22D60006341E9 /* EvenetsModels.swift */,
 			);
 			path = AdminModels;
 			sourceTree = "<group>";
@@ -741,14 +989,18 @@
 				798DE3E726CE61AF0017C5FD /* Assets.xcassets in Resources */,
 				798DE4F326CE83230017C5FD /* SF-Pro-Display-Bold.otf in Resources */,
 				7904AD4426DA138100D6F2C2 /* AdminTeachers.storyboard in Resources */,
+				79BAB7F826E1F2EE00DEE3C3 /* AdminClasses.storyboard in Resources */,
 				79956C6126CF892C00E012BB /* AdminDashBoard.storyboard in Resources */,
 				798DE4D726CE82C70017C5FD /* SF-Pro-Text-Semibold.otf in Resources */,
 				798DE4E926CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf in Resources */,
 				798DE4EE26CE830D0017C5FD /* SF-Pro-Text-Medium.otf in Resources */,
 				798DE4D226CE82980017C5FD /* SFUIText-Regular.otf in Resources */,
 				798DE4E126CE82D50017C5FD /* SF-Pro-Text-Light.otf in Resources */,
+				79BAB7CB26E1E34600DEE3C3 /* AdminParents.storyboard in Resources */,
+				79BAB82426E2082800DEE3C3 /* AdminExaminations.storyboard in Resources */,
 				79956BFB26CF6E2100E012BB /* Login.storyboard in Resources */,
 				79F0ED3C26D3AF8800DFDE61 /* AdminStudents.storyboard in Resources */,
+				79C33E9326E2293D006341E9 /* AdminEvents.storyboard in Resources */,
 				798DE3E526CE61A90017C5FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,6 +1072,7 @@
 				79FE1B1C26D4B43000E62F00 /* StudentsVC.swift in Sources */,
 				79F0ED2526D37A4B00DFDE61 /* AdminDashboardVC.swift in Sources */,
 				7904AD3026DA0FEA00D6F2C2 /* TeachersWorker.swift in Sources */,
+				79BAB7E926E1E61100DEE3C3 /* ParentDetailsModel.swift in Sources */,
 				79E51FDC26E0A20300991D34 /* StudenceAttendanceWorker.swift in Sources */,
 				7904AD3A26DA0FFD00D6F2C2 /* TeachersPresenter.swift in Sources */,
 				79956C3126CF7FDA00E012BB /* BottomBorder.swift in Sources */,
@@ -827,10 +1080,14 @@
 				798DE47826CE79A30017C5FD /* APIUrl.swift in Sources */,
 				7904AD1826D9F11600D6F2C2 /* StudentsDetailsModel.swift in Sources */,
 				79956C3726CF7FDA00E012BB /* GlobalVariables.swift in Sources */,
+				79BAB7DA26E1E5C900DEE3C3 /* ParentsDetailsVC.swift in Sources */,
 				79E51FE126E0A21000991D34 /* StudenceAttendanceModel.swift in Sources */,
 				79956C3526CF7FDA00E012BB /* ActivityIndicator.swift in Sources */,
+				79BAB80B26E1FE7000DEE3C3 /* ClassForTeacherListModel.swift in Sources */,
 				79E51FEB26E0A22800991D34 /* StudenceAttendanceModels.swift in Sources */,
+				79BAB7F326E1E62900DEE3C3 /* ParentDetailsModels.swift in Sources */,
 				7904AD0E26D9F03100D6F2C2 /* StudentsDetailsInteracter.swift in Sources */,
+				79BAB80926E1FE6700DEE3C3 /* ClassForTeacherListWorker.swift in Sources */,
 				79A82E4F26DFA67700EA4FEF /* HomeWorkTestModels.swift in Sources */,
 				79956C3026CF7FDA00E012BB /* userDefault.swift in Sources */,
 				79E51FE626E0A21B00991D34 /* StudenceAttendancePresenter.swift in Sources */,
@@ -838,66 +1095,105 @@
 				798DE48326CE7B150017C5FD /* LoginVC.swift in Sources */,
 				798DE47326CE79990017C5FD /* APIFunctionName.swift in Sources */,
 				79F0ED0426D362F400DFDE61 /* ForgotPswdWorker.swift in Sources */,
+				79BAB7DF26E1E5F900DEE3C3 /* ParentDetailsInteracter.swift in Sources */,
+				79C33EB726E239CF006341E9 /* EventListCell.swift in Sources */,
+				79E5201526E0D07500991D34 /* ExamsCell.swift in Sources */,
+				79BAB83826E21E7B00DEE3C3 /* ExamsListWorker.swift in Sources */,
 				79956C3226CF7FDA00E012BB /* LocalizationSystem.swift in Sources */,
 				7904AD1D26D9F18300D6F2C2 /* StudentsDetailsPresenter.swift in Sources */,
 				79956C5326CF7FE900E012BB /* ShadowEffectForUIView.swift in Sources */,
+				79C33ED026E245DE006341E9 /* SubEventsModel.swift in Sources */,
+				79BAB7EE26E1E61800DEE3C3 /* ParentDetailsPresenter.swift in Sources */,
+				79BAB7FE26E1F37400DEE3C3 /* AdminClassVC.swift in Sources */,
 				79956C4D26CF7FE900E012BB /* RoundedcornerForUIView.swift in Sources */,
 				798DE49726CE7B4D0017C5FD /* LoginPresenter.swift in Sources */,
 				799274E526D6143600CBB8AC /* SectionListModel.swift in Sources */,
 				79956C4B26CF7FE900E012BB /* NavigationBarTitleOnLeftSide.swift in Sources */,
 				79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */,
+				79C33EA526E22A7B006341E9 /* EventsListModel.swift in Sources */,
 				798DE49226CE7B3F0017C5FD /* LoginModel.swift in Sources */,
 				79A82E4A26DFA66500EA4FEF /* HomeWorkTestPresenter.swift in Sources */,
 				7904AD2326DA0FC700D6F2C2 /* TeachersVC.swift in Sources */,
 				799274EA26D6144F00CBB8AC /* SectionListPresenter.swift in Sources */,
+				79E5201026E0B63000991D34 /* ExamModels.swift in Sources */,
+				79C33EC626E242F5006341E9 /* SubEventsInteracter.swift in Sources */,
 				798DE4A626CE7B810017C5FD /* InstituteLoginInteracter.swift in Sources */,
 				79FE1B2E26D4C86D00E62F00 /* StudentsAdminPresenter.swift in Sources */,
 				79F0ED0926D3630300DFDE61 /* ForgotPswdModel.swift in Sources */,
 				79FE1B2926D4C85A00E62F00 /* StudentsAdminModel.swift in Sources */,
 				79956C4C26CF7FE900E012BB /* HexToUIColor.swift in Sources */,
+				7949932626E0F7DC0013A38C /* TeacherDetailsVC.swift in Sources */,
 				79956C5426CF7FE900E012BB /* NavigationBarGradient.swift in Sources */,
+				79C33ED526E245EB006341E9 /* SubEventsPresenter.swift in Sources */,
 				79F0ECFF26D362DD00DFDE61 /* ForgotPswdInteracter.swift in Sources */,
+				79C33E9E26E22A6C006341E9 /* EventsListInteracter.swift in Sources */,
+				79E51FF626E0B5D700991D34 /* ExamResultsInteracter.swift in Sources */,
 				79956C3426CF7FDA00E012BB /* AlertController.swift in Sources */,
 				79FE1B3426D50B2E00E62F00 /* StudentsAdminModels.swift in Sources */,
 				7956CD8126DCCE2B001D0A41 /* StudentsListCell.swift in Sources */,
 				798A1B2826D62A830081105B /* StudentListModel.swift in Sources */,
+				7949931D26E0F41F0013A38C /* TeacherListCell.swift in Sources */,
 				798DE4BB26CE7B940017C5FD /* InstituteLoginModel.swift in Sources */,
+				79E5200326E0B60F00991D34 /* ExamResultsModel.swift in Sources */,
+				79C33EAA26E22A8E006341E9 /* EventsListPresenter.swift in Sources */,
 				798DE4C026CE7BAA0017C5FD /* InstituteLoginPresenter.swift in Sources */,
+				7949933026E0F89E0013A38C /* TeacherDetailsWorker.swift in Sources */,
 				798A1B2326D62A700081105B /* StudentListWorker.swift in Sources */,
 				798DE3DE26CE61A90017C5FD /* AppDelegate.swift in Sources */,
 				79A82E4026DFA65700EA4FEF /* HomeWorkTestWorker.swift in Sources */,
 				79F0ED1326D3635C00DFDE61 /* ForgotPswdModels.swift in Sources */,
+				79C33EA026E22A75006341E9 /* EventsListWorker.swift in Sources */,
 				798DE3E026CE61A90017C5FD /* SceneDelegate.swift in Sources */,
 				79956C2F26CF7FD900E012BB /* constants.swift in Sources */,
+				79BAB83C26E21EA000DEE3C3 /* ExamListPresnetr.swift in Sources */,
+				79E51FFE26E0B60100991D34 /* ExamResultsWorker.swift in Sources */,
 				79956C5526CF7FE900E012BB /* ViewBindToKeypad.swift in Sources */,
+				79BAB81026E1FE7A00DEE3C3 /* ClassForTeacherListPresenter.swift in Sources */,
 				798DE4CC26CE7C020017C5FD /* LoginModels.swift in Sources */,
+				79C33EF826E2480F006341E9 /* EventDetailsVC.swift in Sources */,
 				798DE49C26CE7B5F0017C5FD /* InstituteLoginVC.swift in Sources */,
+				79E51FF126E0B59300991D34 /* ExamResultsVC.swift in Sources */,
 				798A1B2D26D62A900081105B /* StudentListPresenter.swift in Sources */,
+				79BAB82A26E208F900DEE3C3 /* ExamsVc.swift in Sources */,
 				79FE1B1726D4A93500E62F00 /* SudentsAdminInteracter.swift in Sources */,
 				799274DB26D6141100CBB8AC /* SectionListInteracter.swift in Sources */,
+				79E5200826E0B61800991D34 /* ExamResultsPresenter.swift in Sources */,
 				79956C8626CFDA5B00E012BB /* ForgotPasswordVC.swift in Sources */,
 				79F0ED0E26D3630F00DFDE61 /* ForgotPswdPresenter.swift in Sources */,
 				7904AD0926D9EFC300D6F2C2 /* StudentsDetailsVC.swift in Sources */,
 				799274E026D6142900CBB8AC /* SectionListWorker.swift in Sources */,
+				79BAB83026E21E5C00DEE3C3 /* ExamsListInteracter.swift in Sources */,
 				79A82E5426DFACBA00EA4FEF /* HomeWorkListCell.swift in Sources */,
 				7904AD2B26DA0FE000D6F2C2 /* TeachersInteracter.swift in Sources */,
 				79956C5026CF7FE900E012BB /* DateFormatter.swift in Sources */,
+				79BAB81526E1FEE200DEE3C3 /* ClassViewModels.swift in Sources */,
 				79A82E3B26DFA65000EA4FEF /* HomeWorkTestInteracter.swift in Sources */,
+				7949932B26E0F8940013A38C /* TeacherDetailsInteracter.swift in Sources */,
+				79BAB7D326E1E4C100DEE3C3 /* AdminParentsVC.swift in Sources */,
 				79956C4926CF7FE900E012BB /* ViewController.swift in Sources */,
 				798DE4A126CE7B730017C5FD /* InstituteLoginWorker.swift in Sources */,
 				79A82E3026DF984600EA4FEF /* HomeWorkTestVC.swift in Sources */,
 				79956C4F26CF7FE900E012BB /* TapToDismissKeypad.swift in Sources */,
 				79956C5226CF7FE900E012BB /* CustomNavigationBackButtonTitle.swift in Sources */,
 				7904AD3F26DA103000D6F2C2 /* TeachersAdminModels.swift in Sources */,
+				79BAB7E426E1E60200DEE3C3 /* ParentDetailsWorker.swift in Sources */,
 				79956C4E26CF7FE900E012BB /* HTMLToString.swift in Sources */,
+				79C33ECB26E24305006341E9 /* SubEventsWorker.swift in Sources */,
 				79FE1B2126D4C84F00E62F00 /* StudentsAdminWorker.swift in Sources */,
 				798DE48B26CE7B260017C5FD /* LoginInteracter.swift in Sources */,
+				79BAB83A26E21E9000DEE3C3 /* ExamListModel.swift in Sources */,
+				7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */,
 				7904AD1326D9F0A100D6F2C2 /* StudentsDetailsWorker.swift in Sources */,
 				79956C5126CF7FE900E012BB /* GradientView.swift in Sources */,
+				79C33EF026E2479D006341E9 /* SubEventsVC.swift in Sources */,
 				79531F6526DE5B4F000BE78A /* APIManager.swift in Sources */,
 				79956C3626CF7FDA00E012BB /* Reachability.swift in Sources */,
+				79BAB80426E1FE5800DEE3C3 /* ClassForTeacherListInteracter.swift in Sources */,
 				798DE48D26CE7B2F0017C5FD /* LoginWorker.swift in Sources */,
+				7949933A26E0F8B20013A38C /* TeacherDetailsPresenter.swift in Sources */,
 				79A82E4526DFA65E00EA4FEF /* HomeWorkTestModel.swift in Sources */,
+				79C33E9926E22A59006341E9 /* AdminEventsVC.swift in Sources */,
+				79C33EAF26E22D60006341E9 /* EvenetsModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

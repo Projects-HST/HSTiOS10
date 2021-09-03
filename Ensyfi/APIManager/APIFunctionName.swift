@@ -19,7 +19,37 @@ struct APIFunctionName {
     static let HomeWorkTestListUrl = "/apistudent/disp_Homework/"
     static let classTestDetailsUrl = "/apistudent/get_classtest_details/"
     static let studentAttendanceUrl = "/apistudent/disp_Attendence/"
+    static let examListUrl = "/apistudent/disp_Exams/"
     
+//    Teachers
+    static let teacherListUrl = "/apiadmin/get_all_teachers/"
+    static let teacherDetailUrl = "/apiadmin/get_teacher_class_details/"
+    
+//    clasess
+    static let clasForTeacherListurl = "/apiadmin/list_of_teachers_for_class/"
+    
+//    exams
+    static let examsListUrl = "/apiadmin/list_of_exams_class/"
+    
+//    Events
+    static let eventsListUrl = "/apimain/disp_Events/"
+    static let subEventsListUrl = "/apimain/disp_subEvents/"
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
