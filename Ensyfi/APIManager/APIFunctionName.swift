@@ -20,6 +20,8 @@ struct APIFunctionName {
     static let classTestDetailsUrl = "/apistudent/get_classtest_details/"
     static let studentAttendanceUrl = "/apistudent/disp_Attendence/"
     static let examListUrl = "/apistudent/disp_Exams/"
+    static let getParentDetailsUrl = "/apiadmin/get_parent_details/"
+    
     
 //    Teachers
     static let teacherListUrl = "/apiadmin/get_all_teachers/"
@@ -34,22 +36,22 @@ struct APIFunctionName {
 //    Events
     static let eventsListUrl = "/apimain/disp_Events/"
     static let subEventsListUrl = "/apimain/disp_subEvents/"
+    
+//    Circulars
+    static let adminCircularListUrl = "/apiadmin/get_all_circular_view/"
+    
+//    Fees
+    static let feesClassListUrl = "/apiadmin/get_fees_details/"
+    
+//    OnDuty
+    static let ODstudentsListUrl = "/apiadmin/get_students_od_view/"
+    static let ODteachersListUrl = "/apiadmin/get_teachers_od_view/"
+    static let ODApprovalUrl = "/apiadmin/update_teachers_od/"
+    
+//    Groups
+    static let groupListUrl = "/apiadmin/list_groupmaster/"
+    static let techerIDnameListUrl = "/apiadmin/get_allteachersuserid/"
+    static let createGroupUrl = "/apiadmin/add_groupmaster/"
+    static let groupMembersListUrl = "/apiadmin/list_gn_members/"
+    static let updategroupUrl = "/apiadmin/update_groupmaster/"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

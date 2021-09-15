@@ -44,9 +44,12 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="IXS-2r-tLS">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="IXS-2r-tLS">
                                                         <rect key="frame" x="261" y="11" width="25" height="25"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="0mJ-qe-6wl"/>
+                                                            <constraint firstAttribute="width" constant="25" id="2fl-D4-48z"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2A-fw-gHQ">
                                                         <rect key="frame" x="254" y="0.0" width="40" height="48"/>
@@ -63,9 +66,12 @@
                                                 <constraints>
                                                     <constraint firstItem="zOw-99-3D2" firstAttribute="leading" secondItem="WS6-4o-5qc" secondAttribute="leading" constant="8" id="0g3-Eo-ext"/>
                                                     <constraint firstItem="zOw-99-3D2" firstAttribute="top" secondItem="WS6-4o-5qc" secondAttribute="top" id="8w5-fy-auQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IXS-2r-tLS" secondAttribute="trailing" constant="8" id="Ek2-uq-491"/>
+                                                    <constraint firstItem="IXS-2r-tLS" firstAttribute="top" secondItem="WS6-4o-5qc" secondAttribute="top" constant="11" id="FeV-Om-R4o"/>
                                                     <constraint firstAttribute="bottom" secondItem="o2A-fw-gHQ" secondAttribute="bottom" id="Se5-Td-t4c"/>
                                                     <constraint firstItem="o2A-fw-gHQ" firstAttribute="top" secondItem="WS6-4o-5qc" secondAttribute="top" id="U4I-Lw-LSG"/>
                                                     <constraint firstAttribute="height" constant="48" id="cU3-HI-iwd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IXS-2r-tLS" secondAttribute="bottom" constant="12" id="dt8-Jq-Boq"/>
                                                     <constraint firstAttribute="bottom" secondItem="zOw-99-3D2" secondAttribute="bottom" id="kH0-Ob-XzK"/>
                                                     <constraint firstItem="o2A-fw-gHQ" firstAttribute="leading" secondItem="zOw-99-3D2" secondAttribute="trailing" constant="1" id="pS2-k3-zWv"/>
                                                     <constraint firstAttribute="trailing" secondItem="o2A-fw-gHQ" secondAttribute="trailing" id="xYk-iN-UpZ"/>

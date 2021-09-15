@@ -377,6 +377,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0l-o3-Iee">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="qKw-EE-ebg" kind="show" id="Om8-Oe-RPX"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result" translatesAutoresizingMaskIntoConstraints="NO" id="G14-Xu-mp2">
                                                                         <rect key="frame" x="50.5" y="41" width="80" height="80"/>
@@ -667,6 +670,9 @@
                                                         <state key="normal" title="Circulars">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="qKw-EE-ebg" kind="show" id="4gJ-dw-B8o"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-Zf-3FR">
                                                         <rect key="frame" x="0.0" y="612" width="89" height="30"/>
@@ -677,6 +683,9 @@
                                                         <state key="normal" title="Fee Status">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="qF1-0Z-YNX" kind="show" id="Hdr-oD-3lY"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMe-RP-cXL">
                                                         <rect key="frame" x="0.0" y="663" width="68" height="30"/>
@@ -687,6 +696,9 @@
                                                         <state key="normal" title="On Duty">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="1Y6-aa-AMR" kind="show" id="aL5-BD-p5K"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-Z6-iQy">
                                                         <rect key="frame" x="0.0" y="714" width="61" height="30"/>
@@ -697,6 +709,9 @@
                                                         <state key="normal" title="Groups">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="6cp-BM-7hr" kind="show" id="1t7-nn-1vq"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVg-zD-TnF">
                                                         <rect key="frame" x="0.0" y="765" width="58" height="30"/>
@@ -866,6 +881,46 @@
             </objects>
             <point key="canvasLocation" x="3783" y="531"/>
         </scene>
+        <!--circularVC-->
+        <scene sceneID="w8R-9v-TDq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminCirculars" referencedIdentifier="circularVC" id="qKw-EE-ebg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ee1-kB-WKL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCD-vX-Se1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3774" y="582"/>
+        </scene>
+        <!--onDutyListVC-->
+        <scene sceneID="VQQ-9V-gKA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminOnDuty" referencedIdentifier="onDutyListVC" id="1Y6-aa-AMR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="49G-9f-JOY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0c-O5-6xP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3788" y="633"/>
+        </scene>
+        <!--feesListVC-->
+        <scene sceneID="bmi-21-uGC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminFees" referencedIdentifier="feesListVC" id="qF1-0Z-YNX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uPC-Bm-1co"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odI-bt-ypS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3775" y="686"/>
+        </scene>
+        <!--groupListVC-->
+        <scene sceneID="eM6-El-tUj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminGroups" referencedIdentifier="groupListVC" id="6cp-BM-7hr" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TFE-bn-x7K"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIp-eI-KAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3772" y="745"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0NK-C5-1Jm">
             <objects>
@@ -892,12 +947,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AMj-lA-6IA"/>
-        <segue reference="fDh-CO-dK1"/>
-        <segue reference="PGR-qi-yJ5"/>
-        <segue reference="Ivw-Cb-0EY"/>
-        <segue reference="gvM-BY-QNx"/>
-        <segue reference="PoF-jv-NTc"/>
+        <segue reference="4gJ-dw-B8o"/>
+        <segue reference="deQ-QV-COS"/>
+        <segue reference="iKe-6H-52a"/>
+        <segue reference="p1W-pU-VsK"/>
+        <segue reference="n79-cd-bCB"/>
+        <segue reference="ze0-Dp-xun"/>
+        <segue reference="J1i-kC-S7T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Parents" width="100" height="100"/>

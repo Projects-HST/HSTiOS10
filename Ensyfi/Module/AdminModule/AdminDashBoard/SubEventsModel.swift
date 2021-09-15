@@ -29,13 +29,8 @@ struct SubEventsModel{
         {
            struct DisplayedSubEventsData
            {
-            var event_date : String?
-            var status : String?
-            var sub_event_status : String?
-            var year_id : String?
-            var event_details : String?
-            var event_name : String?
-            var event_id : String?
+            var sub_event_name : String?
+            var name : String?
            
             }
               var displayedSubEventsData: [DisplayedSubEventsData]

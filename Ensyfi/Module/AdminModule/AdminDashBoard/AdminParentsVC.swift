@@ -114,8 +114,6 @@ class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayL
             }
         }
     }
-    
-   
 }
 
 extension AdminParentsVC {
@@ -158,7 +156,6 @@ extension AdminParentsVC {
         
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
-        
     }
     
 //    StudentsListDisplayLogic

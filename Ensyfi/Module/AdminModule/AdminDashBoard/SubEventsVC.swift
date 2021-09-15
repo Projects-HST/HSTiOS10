@@ -15,9 +15,11 @@ protocol SubEventsDisplayLogic: class
 
 class SubEventsVC: UIViewController, SubEventsDisplayLogic {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var selectedEventId = String()
     var interactor: SubEventsBusinessLogic?
-    var displayedEventsListData: [SubEventsModel.Fetch.ViewModel.DisplayedSubEventsData] = []
+    var displayedSubEventsData: [SubEventsModel.Fetch.ViewModel.DisplayedSubEventsData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +55,33 @@ extension SubEventsVC{
     
     func successFetchedItems(viewModel: SubEventsModel.Fetch.ViewModel) {
         
+        displayedSubEventsData = viewModel.displayedSubEventsData
+        self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: SubEventsModel.Fetch.ViewModel) {
         
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
+        })
+    }
+}
+extension SubEventsVC : UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return displayedSubEventsData.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SubEventListCell
+        
+        let data = displayedSubEventsData[indexPath.row]
+         
+        cell.title.text = data.sub_event_name
+        cell.name.text = data.name
+        cell.selectionStyle = .none
+        
+        return cell
+    }
 }

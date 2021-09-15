@@ -56,9 +56,12 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="tIh-fz-o6Y">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="tIh-fz-o6Y">
                                                         <rect key="frame" x="261" y="11" width="25" height="25"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="oQa-HS-1FH"/>
+                                                            <constraint firstAttribute="height" constant="25" id="sWR-bd-Ced"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTE-Ch-zmZ">
                                                         <rect key="frame" x="254" y="0.0" width="40" height="48"/>
@@ -74,11 +77,14 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="42F-Vx-hzN"/>
+                                                    <constraint firstItem="tIh-fz-o6Y" firstAttribute="top" secondItem="g64-x3-A1q" secondAttribute="top" constant="11" id="5Kv-UC-SgX"/>
                                                     <constraint firstItem="cTE-Ch-zmZ" firstAttribute="leading" secondItem="d7Z-2f-SbJ" secondAttribute="trailing" constant="1" id="8ZO-2r-Tl6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tIh-fz-o6Y" secondAttribute="trailing" constant="8" id="Hg2-Bx-aoj"/>
                                                     <constraint firstAttribute="trailing" secondItem="cTE-Ch-zmZ" secondAttribute="trailing" id="I13-mU-IrQ"/>
                                                     <constraint firstAttribute="bottom" secondItem="cTE-Ch-zmZ" secondAttribute="bottom" id="MR1-ze-s8n"/>
                                                     <constraint firstItem="d7Z-2f-SbJ" firstAttribute="leading" secondItem="g64-x3-A1q" secondAttribute="leading" constant="8" id="bV0-Yv-eZn"/>
                                                     <constraint firstAttribute="bottom" secondItem="d7Z-2f-SbJ" secondAttribute="bottom" id="fY2-tP-Nug"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tIh-fz-o6Y" secondAttribute="bottom" constant="12" id="sM1-oS-FfS"/>
                                                     <constraint firstItem="cTE-Ch-zmZ" firstAttribute="top" secondItem="g64-x3-A1q" secondAttribute="top" id="txB-DY-SU0"/>
                                                     <constraint firstItem="d7Z-2f-SbJ" firstAttribute="top" secondItem="g64-x3-A1q" secondAttribute="top" id="vnB-0S-Ncr"/>
                                                 </constraints>
@@ -333,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqd-ZG-scL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257.97101449275362" y="43.526785714285715"/>
+            <point key="canvasLocation" x="264" y="99"/>
         </scene>
         <!--Students DetailsVC-->
         <scene sceneID="CEh-nj-pxq">
@@ -1159,9 +1165,12 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-98-5U6">
-                                                        <rect key="frame" x="261" y="11" width="25" height="25"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-98-5U6">
+                                                        <rect key="frame" x="255" y="11" width="31" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="5nI-XY-dF3"/>
+                                                            <constraint firstAttribute="width" constant="31" id="Bl5-39-HFM"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkz-SD-tJd">
                                                         <rect key="frame" x="254" y="0.0" width="40" height="48"/>
@@ -1178,12 +1187,15 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="ESH-ot-nGe" secondAttribute="bottom" id="0If-aU-p6P"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rHy-98-5U6" secondAttribute="trailing" constant="8" id="DWh-7T-eXp"/>
                                                     <constraint firstItem="Xkz-SD-tJd" firstAttribute="leading" secondItem="ESH-ot-nGe" secondAttribute="trailing" constant="1" id="Ge9-rm-QTn"/>
                                                     <constraint firstItem="Xkz-SD-tJd" firstAttribute="top" secondItem="YTl-AN-L7d" secondAttribute="top" id="HeR-nM-rXB"/>
                                                     <constraint firstAttribute="height" constant="48" id="LsU-it-W7t"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rHy-98-5U6" secondAttribute="bottom" constant="12" id="Rx6-QY-ygH"/>
                                                     <constraint firstAttribute="bottom" secondItem="Xkz-SD-tJd" secondAttribute="bottom" id="hRt-Ca-pjv"/>
                                                     <constraint firstAttribute="trailing" secondItem="Xkz-SD-tJd" secondAttribute="trailing" id="iDg-nr-o0B"/>
                                                     <constraint firstItem="ESH-ot-nGe" firstAttribute="leading" secondItem="YTl-AN-L7d" secondAttribute="leading" constant="8" id="im9-Iz-bTx"/>
+                                                    <constraint firstItem="rHy-98-5U6" firstAttribute="top" secondItem="YTl-AN-L7d" secondAttribute="top" constant="11" id="uvB-f8-dLG"/>
                                                     <constraint firstItem="ESH-ot-nGe" firstAttribute="top" secondItem="YTl-AN-L7d" secondAttribute="top" id="w2h-tH-aGF"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -1357,7 +1369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHP-uv-jRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902.8985507246377" y="100.44642857142857"/>
+            <point key="canvasLocation" x="1806" y="100"/>
         </scene>
         <!--Students AttendanceVC-->
         <scene sceneID="d9K-Na-DiQ">
@@ -1767,7 +1779,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyO-eA-zws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678" y="118"/>
+            <point key="canvasLocation" x="2536" y="117"/>
         </scene>
         <!--Exam ResultsVC-->
         <scene sceneID="8EX-qE-13u">
@@ -1921,7 +1933,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1z4-qw-6Tn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3450.7246376811595" y="99.776785714285708"/>
+            <point key="canvasLocation" x="3267" y="100"/>
         </scene>
     </scenes>
     <resources>

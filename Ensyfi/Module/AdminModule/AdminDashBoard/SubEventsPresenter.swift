@@ -22,7 +22,7 @@ class SubEventsPresenter: SubEventsPresentationLogic
         var displayedSubEventsData: [SubEventsModel.Fetch.ViewModel.DisplayedSubEventsData] = []
        
         for data in resp.testObj {
-        let displayedSubEventsDatas = SubEventsModel.Fetch.ViewModel.DisplayedSubEventsData(event_date: data.event_date!,status: data.status!,sub_event_status: data.sub_event_status!,year_id: data.year_id!,event_details: data.event_details!,event_name: data.event_name!,event_id: data.event_id!)
+        let displayedSubEventsDatas = SubEventsModel.Fetch.ViewModel.DisplayedSubEventsData(sub_event_name: data.sub_event_name!,name: data.name!)
             displayedSubEventsData.append(displayedSubEventsDatas)
         }
         let viewModel = SubEventsModel.Fetch.ViewModel(displayedSubEventsData: displayedSubEventsData)

@@ -150,3 +150,30 @@ class TeacherDetailsModels : NSObject {
         return model
      }
 }
+
+class TeacherListIDModels : NSObject {
+    
+    var name : String?
+    var user_id : String?
+    
+   
+  
+     // MARK: Instance Method
+func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+    if let data = dict["name"] as? String {
+        self.name = data
+    }
+    if let data = dict["user_id"] as? String {
+        self.user_id = data
+    }
+    
+}
+    
+     // MARK: Class Method
+class func build(_ dict: [String: AnyObject]) -> TeacherListIDModels{
+    let model = TeacherListIDModels()
+    model.loadFromDictionary(dict)
+    return model
+ }
+}

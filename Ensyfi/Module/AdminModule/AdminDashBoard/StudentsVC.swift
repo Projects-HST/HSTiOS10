@@ -45,7 +45,6 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
     var secId = [String]()
     var studentIdArr = [String]()
     var serialNoArr = [Int]()
-    
     var selectedClassId = String()
     var selectedSecId = String()
     var selectedStudentId = String()
@@ -132,8 +131,6 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
             }
         }
     }
-    
-   
 }
 
 extension StudentsVC {
@@ -176,7 +173,6 @@ extension StudentsVC {
         
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
-        
     }
     
 //    StudentsListDisplayLogic
