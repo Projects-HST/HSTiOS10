@@ -484,6 +484,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ENSYFI Admin" id="YfZ-NC-Wo9">
+                        <barButtonItem key="backBarButtonItem" title="  " id="j4a-KL-oQr"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="side_menu" id="kuL-0B-XX2">
                             <connections>
                                 <segue destination="N8g-gi-HnU" kind="show" identifier="to_sideMenu" id="Ocf-gU-LBL"/>
@@ -516,10 +517,10 @@
             </objects>
             <point key="canvasLocation" x="2455" y="352"/>
         </scene>
-        <!--Admin DashboardVC-->
+        <!--Admin MenuVC-->
         <scene sceneID="lf8-HE-Hi2">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="aID-hf-aHr" customClass="AdminDashboardVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="aID-hf-aHr" customClass="AdminMenuVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ceh-cH-4c4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -742,6 +743,9 @@
                                                         <state key="normal" title="Sign Out">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="signOutAction:" destination="aID-hf-aHr" eventType="touchUpInside" id="sZK-Pq-OXy"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -816,6 +820,9 @@
                     <navigationItem key="navigationItem" id="1kU-ew-aO1"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <segue destination="zLw-9a-LKa" kind="show" identifier="" id="u8L-pZ-dxs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AqW-T9-gWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -909,7 +916,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odI-bt-ypS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3775" y="686"/>
+            <point key="canvasLocation" x="3775" y="675"/>
         </scene>
         <!--groupListVC-->
         <scene sceneID="eM6-El-tUj">
@@ -919,7 +926,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIp-eI-KAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3772" y="745"/>
+            <point key="canvasLocation" x="3783" y="720"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="sT1-rk-uRs">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="loginVC" storyboardName="Login" id="zLw-9a-LKa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MPI-LB-weV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJ1-RU-JHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3790" y="788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0NK-C5-1Jm">

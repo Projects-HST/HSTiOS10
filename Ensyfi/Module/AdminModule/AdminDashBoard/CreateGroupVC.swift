@@ -4,7 +4,7 @@
 //
 //  Created by HappysanziMac on 14/09/21.
 //
-
+                                                 
 import UIKit
 import DropDown
 
@@ -84,7 +84,6 @@ class CreateGroupVC: UIViewController, TeacherListIDDisplayLogic, CreateGroupDis
             let slectedId = teacherIdArr[index]
             self.selectedTecherId = String(slectedId)
             print(selectedTecherId)
-        
         }
     }
     

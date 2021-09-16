@@ -18,6 +18,8 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var interactor: InstituteLoginBusinessLogic?
     var institute_code = String()
     var login_type = String()
+    var user_id = String()
+    var user_type = String()
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -105,6 +107,14 @@ extension InstituteLoginVC {
         self.login_type = viewModel.user_type_name!
         UserDefaults.standard.set(login_type, forKey: UserDefaultsKey.user_login_type_Key.rawValue)
         GlobalVariables.shared.user_loginType = login_type
+        
+        self.user_id = viewModel.user_id!
+        UserDefaults.standard.set(user_id, forKey: UserDefaultsKey.user_idkey.rawValue)
+        GlobalVariables.shared.user_id = user_id
+        
+        self.user_type = viewModel.user_type!
+        UserDefaults.standard.set(user_type, forKey: UserDefaultsKey.userTypeKey.rawValue)
+        GlobalVariables.shared.user_type = user_type
         
         if login_type == "Admin" {
             

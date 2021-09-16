@@ -209,6 +209,9 @@
 		79C33ED526E245EB006341E9 /* SubEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33ED426E245EB006341E9 /* SubEventsPresenter.swift */; };
 		79C33EF026E2479D006341E9 /* SubEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EEF26E2479C006341E9 /* SubEventsVC.swift */; };
 		79C33EF826E2480F006341E9 /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33EF726E2480F006341E9 /* EventDetailsVC.swift */; };
+		79CC45CC26F3096600448486 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC45CB26F3096600448486 /* ProfileVC.swift */; };
+		79CC45D126F3099E00448486 /* AdminProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC45D026F3099E00448486 /* AdminProfile.storyboard */; };
+		79CC45D726F3187600448486 /* AdminMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC45D626F3187600448486 /* AdminMenuVC.swift */; };
 		79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */; };
 		79E51FD726E0A1F300991D34 /* StudenceAttendanceInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */; };
 		79E51FDC26E0A20300991D34 /* StudenceAttendanceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */; };
@@ -466,6 +469,9 @@
 		79C33ED426E245EB006341E9 /* SubEventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubEventsPresenter.swift; sourceTree = "<group>"; };
 		79C33EEF26E2479C006341E9 /* SubEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubEventsVC.swift; sourceTree = "<group>"; };
 		79C33EF726E2480F006341E9 /* EventDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
+		79CC45CB26F3096600448486 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		79CC45D026F3099E00448486 /* AdminProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = AdminProfile.storyboard; path = ../../../../../../../AdminProfile.storyboard; sourceTree = "<group>"; };
+		79CC45D626F3187600448486 /* AdminMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuVC.swift; sourceTree = "<group>"; };
 		79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAttendanceVC.swift; sourceTree = "<group>"; };
 		79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceInteracter.swift; sourceTree = "<group>"; };
 		79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceWorker.swift; sourceTree = "<group>"; };
@@ -843,6 +849,9 @@
 			isa = PBXGroup;
 			children = (
 				79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */,
+				79CC45F826F3279B00448486 /* Attendance */,
+				79CC45D526F3185200448486 /* SideMenu */,
+				79CC45CA26F3093F00448486 /* Profile */,
 				79F0ED4026D3AFA500DFDE61 /* StudentsAdmin */,
 				79BDD80F26D609F4009F9EBE /* SectionList */,
 				798A1B1926D62A2D0081105B /* StudentsList */,
@@ -1006,6 +1015,7 @@
 				7900628326E3495E00C43D94 /* AdminOnDuty.storyboard */,
 				7995324526E87DFB0033A49B /* AdminFees.storyboard */,
 				79BEF57D26F0763E0056DCBF /* AdminGroups.storyboard */,
+				79CC45D026F3099E00448486 /* AdminProfile.storyboard */,
 			);
 			path = AdminStoryBoard;
 			sourceTree = "<group>";
@@ -1234,6 +1244,29 @@
 			name = SubEvents;
 			sourceTree = "<group>";
 		};
+		79CC45CA26F3093F00448486 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				79CC45CB26F3096600448486 /* ProfileVC.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		79CC45D526F3185200448486 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				79CC45D626F3187600448486 /* AdminMenuVC.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		79CC45F826F3279B00448486 /* Attendance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Attendance;
+			sourceTree = "<group>";
+		};
 		79E51FCD26E0A1AE00991D34 /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
@@ -1410,6 +1443,7 @@
 				79BAB7F826E1F2EE00DEE3C3 /* AdminClasses.storyboard in Resources */,
 				79956C6126CF892C00E012BB /* AdminDashBoard.storyboard in Resources */,
 				798DE4D726CE82C70017C5FD /* SF-Pro-Text-Semibold.otf in Resources */,
+				79CC45D126F3099E00448486 /* AdminProfile.storyboard in Resources */,
 				798DE4E926CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf in Resources */,
 				798DE4EE26CE830D0017C5FD /* SF-Pro-Text-Medium.otf in Resources */,
 				798DE4D226CE82980017C5FD /* SFUIText-Regular.otf in Resources */,
@@ -1673,12 +1707,14 @@
 				798DE48B26CE7B260017C5FD /* LoginInteracter.swift in Sources */,
 				79BAB83A26E21E9000DEE3C3 /* ExamListModel.swift in Sources */,
 				7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */,
+				79CC45CC26F3096600448486 /* ProfileVC.swift in Sources */,
 				790C21FA26F1BBD500B9A318 /* GroupMembersListWorker.swift in Sources */,
 				7904AD1326D9F0A100D6F2C2 /* StudentsDetailsWorker.swift in Sources */,
 				79BEF59226F089BC0056DCBF /* GroupDetailsVC.swift in Sources */,
 				79956C5126CF7FE900E012BB /* GradientView.swift in Sources */,
 				79C33EF026E2479D006341E9 /* SubEventsVC.swift in Sources */,
 				799532B626E897490033A49B /* ODTeachersListWorker.swift in Sources */,
+				79CC45D726F3187600448486 /* AdminMenuVC.swift in Sources */,
 				793503E926E39BCC00B4FDFA /* MotherDeatilsWorker.swift in Sources */,
 				79BEF56226F075EE0056DCBF /* GroupListInteracter.swift in Sources */,
 				79BEF57926F0761F0056DCBF /* GroupsModels.swift in Sources */,
