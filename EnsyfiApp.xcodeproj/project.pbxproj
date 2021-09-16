@@ -22,6 +22,7 @@
 		7900629426E353F600C43D94 /* OnDutyStudentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900629326E353F600C43D94 /* OnDutyStudentsListModel.swift */; };
 		7900629626E353FC00C43D94 /* OnDutyStudentsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900629526E353FC00C43D94 /* OnDutyStudentsListPresenter.swift */; };
 		7900629826E3540E00C43D94 /* OnDutyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900629726E3540E00C43D94 /* OnDutyModels.swift */; };
+		79013C8526F3711500300CCC /* GroupAddMemberListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79013C8426F3711500300CCC /* GroupAddMemberListCell.swift */; };
 		7904AD0926D9EFC300D6F2C2 /* StudentsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904AD0826D9EFC300D6F2C2 /* StudentsDetailsVC.swift */; };
 		7904AD0E26D9F03100D6F2C2 /* StudentsDetailsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904AD0D26D9F03100D6F2C2 /* StudentsDetailsInteracter.swift */; };
 		7904AD1326D9F0A100D6F2C2 /* StudentsDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904AD1226D9F0A100D6F2C2 /* StudentsDetailsWorker.swift */; };
@@ -212,6 +213,20 @@
 		79CC45CC26F3096600448486 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC45CB26F3096600448486 /* ProfileVC.swift */; };
 		79CC45D126F3099E00448486 /* AdminProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC45D026F3099E00448486 /* AdminProfile.storyboard */; };
 		79CC45D726F3187600448486 /* AdminMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC45D626F3187600448486 /* AdminMenuVC.swift */; };
+		79CC45FE26F32D1700448486 /* AddGroupMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC45FD26F32D1600448486 /* AddGroupMemberVC.swift */; };
+		79CC460426F3428F00448486 /* RoleListIntercter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC460326F3428F00448486 /* RoleListIntercter.swift */; };
+		79CC460926F3429600448486 /* RoleListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC460826F3429600448486 /* RoleListWorker.swift */; };
+		79CC460B26F3429C00448486 /* RoleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC460A26F3429C00448486 /* RoleListModel.swift */; };
+		79CC460D26F342A200448486 /* RoleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC460C26F342A200448486 /* RoleListPresenter.swift */; };
+		79CC461326F34C6900448486 /* GroupSectionListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC461226F34C6900448486 /* GroupSectionListInteracter.swift */; };
+		79CC461826F34C7300448486 /* GroupSectionListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC461726F34C7300448486 /* GroupSectionListWorker.swift */; };
+		79CC461A26F34C7D00448486 /* GroupSectionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC461926F34C7D00448486 /* GroupSectionListModel.swift */; };
+		79CC461C26F34C8A00448486 /* GroupSectionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC461B26F34C8A00448486 /* GroupSectionListPresenter.swift */; };
+		79CC462526F361AC00448486 /* StudentAddGroupListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC462426F361AC00448486 /* StudentAddGroupListInteracter.swift */; };
+		79CC462D26F361BB00448486 /* StudentAddGroupListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC462C26F361BB00448486 /* StudentAddGroupListWorker.swift */; };
+		79CC462F26F361C900448486 /* StudentAddGroupListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC462E26F361C900448486 /* StudentAddGroupListModel.swift */; };
+		79CC463126F361D100448486 /* StudentAddGroupListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC463026F361D100448486 /* StudentAddGroupListPresenter.swift */; };
+		79CC463326F361E800448486 /* GroupMembersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC463226F361E800448486 /* GroupMembersModels.swift */; };
 		79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */; };
 		79E51FD726E0A1F300991D34 /* StudenceAttendanceInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */; };
 		79E51FDC26E0A20300991D34 /* StudenceAttendanceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */; };
@@ -276,6 +291,7 @@
 		7900629326E353F600C43D94 /* OnDutyStudentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDutyStudentsListModel.swift; sourceTree = "<group>"; };
 		7900629526E353FC00C43D94 /* OnDutyStudentsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDutyStudentsListPresenter.swift; sourceTree = "<group>"; };
 		7900629726E3540E00C43D94 /* OnDutyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDutyModels.swift; sourceTree = "<group>"; };
+		79013C8426F3711500300CCC /* GroupAddMemberListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAddMemberListCell.swift; sourceTree = "<group>"; };
 		7904AD0826D9EFC300D6F2C2 /* StudentsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsDetailsVC.swift; sourceTree = "<group>"; };
 		7904AD0D26D9F03100D6F2C2 /* StudentsDetailsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsDetailsInteracter.swift; sourceTree = "<group>"; };
 		7904AD1226D9F0A100D6F2C2 /* StudentsDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsDetailsWorker.swift; sourceTree = "<group>"; };
@@ -472,6 +488,20 @@
 		79CC45CB26F3096600448486 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		79CC45D026F3099E00448486 /* AdminProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = AdminProfile.storyboard; path = ../../../../../../../AdminProfile.storyboard; sourceTree = "<group>"; };
 		79CC45D626F3187600448486 /* AdminMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuVC.swift; sourceTree = "<group>"; };
+		79CC45FD26F32D1600448486 /* AddGroupMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberVC.swift; sourceTree = "<group>"; };
+		79CC460326F3428F00448486 /* RoleListIntercter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleListIntercter.swift; sourceTree = "<group>"; };
+		79CC460826F3429600448486 /* RoleListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleListWorker.swift; sourceTree = "<group>"; };
+		79CC460A26F3429C00448486 /* RoleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleListModel.swift; sourceTree = "<group>"; };
+		79CC460C26F342A200448486 /* RoleListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleListPresenter.swift; sourceTree = "<group>"; };
+		79CC461226F34C6900448486 /* GroupSectionListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSectionListInteracter.swift; sourceTree = "<group>"; };
+		79CC461726F34C7300448486 /* GroupSectionListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSectionListWorker.swift; sourceTree = "<group>"; };
+		79CC461926F34C7D00448486 /* GroupSectionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSectionListModel.swift; sourceTree = "<group>"; };
+		79CC461B26F34C8A00448486 /* GroupSectionListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSectionListPresenter.swift; sourceTree = "<group>"; };
+		79CC462426F361AC00448486 /* StudentAddGroupListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListInteracter.swift; sourceTree = "<group>"; };
+		79CC462C26F361BB00448486 /* StudentAddGroupListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListWorker.swift; sourceTree = "<group>"; };
+		79CC462E26F361C900448486 /* StudentAddGroupListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListModel.swift; sourceTree = "<group>"; };
+		79CC463026F361D100448486 /* StudentAddGroupListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListPresenter.swift; sourceTree = "<group>"; };
+		79CC463226F361E800448486 /* GroupMembersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersModels.swift; sourceTree = "<group>"; };
 		79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAttendanceVC.swift; sourceTree = "<group>"; };
 		79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceInteracter.swift; sourceTree = "<group>"; };
 		79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceWorker.swift; sourceTree = "<group>"; };
@@ -693,6 +723,7 @@
 				7995324A26E87E3F0033A49B /* FeesListCell.swift */,
 				79BEF58226F07B3D0056DCBF /* GroupListCell.swift */,
 				790C220526F1DD3700B9A318 /* GroupMembersListCell.swift */,
+				79013C8426F3711500300CCC /* GroupAddMemberListCell.swift */,
 			);
 			path = AdminCells;
 			sourceTree = "<group>";
@@ -1166,6 +1197,7 @@
 				79BEF58C26F089350056DCBF /* GroupUpdateVC */,
 				79BB8CE526F0AD630015C088 /* GetTeachersListID */,
 				790C21EE26F1BA9100B9A318 /* ViewGroupMembers */,
+				79CC45F926F32ADE00448486 /* AddMember */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -1267,6 +1299,50 @@
 			name = Attendance;
 			sourceTree = "<group>";
 		};
+		79CC45F926F32ADE00448486 /* AddMember */ = {
+			isa = PBXGroup;
+			children = (
+				79CC45FD26F32D1600448486 /* AddGroupMemberVC.swift */,
+				79CC460226F3426C00448486 /* RoleList */,
+				79CC461126F34C3000448486 /* GroupSectionList */,
+				79CC462326F355AA00448486 /* StudentAddGroupList */,
+			);
+			name = AddMember;
+			sourceTree = "<group>";
+		};
+		79CC460226F3426C00448486 /* RoleList */ = {
+			isa = PBXGroup;
+			children = (
+				79CC460326F3428F00448486 /* RoleListIntercter.swift */,
+				79CC460826F3429600448486 /* RoleListWorker.swift */,
+				79CC460A26F3429C00448486 /* RoleListModel.swift */,
+				79CC460C26F342A200448486 /* RoleListPresenter.swift */,
+			);
+			name = RoleList;
+			sourceTree = "<group>";
+		};
+		79CC461126F34C3000448486 /* GroupSectionList */ = {
+			isa = PBXGroup;
+			children = (
+				79CC461226F34C6900448486 /* GroupSectionListInteracter.swift */,
+				79CC461726F34C7300448486 /* GroupSectionListWorker.swift */,
+				79CC461926F34C7D00448486 /* GroupSectionListModel.swift */,
+				79CC461B26F34C8A00448486 /* GroupSectionListPresenter.swift */,
+			);
+			name = GroupSectionList;
+			sourceTree = "<group>";
+		};
+		79CC462326F355AA00448486 /* StudentAddGroupList */ = {
+			isa = PBXGroup;
+			children = (
+				79CC462426F361AC00448486 /* StudentAddGroupListInteracter.swift */,
+				79CC462C26F361BB00448486 /* StudentAddGroupListWorker.swift */,
+				79CC462E26F361C900448486 /* StudentAddGroupListModel.swift */,
+				79CC463026F361D100448486 /* StudentAddGroupListPresenter.swift */,
+			);
+			name = StudentAddGroupList;
+			sourceTree = "<group>";
+		};
 		79E51FCD26E0A1AE00991D34 /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,6 +1394,7 @@
 				7900629726E3540E00C43D94 /* OnDutyModels.swift */,
 				7995323A26E87D700033A49B /* FeesModels.swift */,
 				79BEF57826F0761F0056DCBF /* GroupsModels.swift */,
+				79CC463226F361E800448486 /* GroupMembersModels.swift */,
 			);
 			path = AdminModels;
 			sourceTree = "<group>";
@@ -1540,6 +1617,7 @@
 				799532C826E8BC760033A49B /* ODApprovalVC.swift in Sources */,
 				79E51FD726E0A1F300991D34 /* StudenceAttendanceInteracter.swift in Sources */,
 				7995325D26E87F7A0033A49B /* FeesListWorker.swift in Sources */,
+				79CC462D26F361BB00448486 /* StudentAddGroupListWorker.swift in Sources */,
 				798DE47826CE79A30017C5FD /* APIUrl.swift in Sources */,
 				7904AD1826D9F11600D6F2C2 /* StudentsDetailsModel.swift in Sources */,
 				79956C3726CF7FDA00E012BB /* GlobalVariables.swift in Sources */,
@@ -1561,6 +1639,7 @@
 				793503FA26E39C3800B4FDFA /* GuardianDetailsWorker.swift in Sources */,
 				79BB8CEE26F0ADA50015C088 /* GetTeachersListIDModel.swift in Sources */,
 				798A1B1B26D62A4B0081105B /* StudentListInteracter.swift in Sources */,
+				79CC462526F361AC00448486 /* StudentAddGroupListInteracter.swift in Sources */,
 				793503EB26E39BE800B4FDFA /* MotherDeatilsModel.swift in Sources */,
 				798DE48326CE7B150017C5FD /* LoginVC.swift in Sources */,
 				798DE47326CE79990017C5FD /* APIFunctionName.swift in Sources */,
@@ -1586,6 +1665,7 @@
 				79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */,
 				79BB8D0626F0CF250015C088 /* CreateGroupModel.swift in Sources */,
 				793503F526E39C2600B4FDFA /* GuardianDetailsInteracter.swift in Sources */,
+				79CC460426F3428F00448486 /* RoleListIntercter.swift in Sources */,
 				7900629226E353F100C43D94 /* OnDutyStudentsListWorker.swift in Sources */,
 				79C33EA526E22A7B006341E9 /* EventsListModel.swift in Sources */,
 				790C220626F1DD3700B9A318 /* GroupMembersListCell.swift in Sources */,
@@ -1595,6 +1675,7 @@
 				7995329326E888F30033A49B /* FeesSectionListInteracter.swift in Sources */,
 				7995329D26E888FF0033A49B /* FeesSectionListModel.swift in Sources */,
 				7904AD2326DA0FC700D6F2C2 /* TeachersVC.swift in Sources */,
+				79CC463326F361E800448486 /* GroupMembersModels.swift in Sources */,
 				799274EA26D6144F00CBB8AC /* SectionListPresenter.swift in Sources */,
 				79E5201026E0B63000991D34 /* ExamModels.swift in Sources */,
 				79C33EC626E242F5006341E9 /* SubEventsInteracter.swift in Sources */,
@@ -1611,22 +1692,26 @@
 				790C21FF26F1BBE800B9A318 /* GroupMembersListModel.swift in Sources */,
 				7949932626E0F7DC0013A38C /* TeacherDetailsVC.swift in Sources */,
 				79BB8CEC26F0AD9A0015C088 /* GetTeachersListIDWorker.swift in Sources */,
+				79CC461A26F34C7D00448486 /* GroupSectionListModel.swift in Sources */,
 				79956C5426CF7FE900E012BB /* NavigationBarGradient.swift in Sources */,
 				79C33ED526E245EB006341E9 /* SubEventsPresenter.swift in Sources */,
 				799532AE26E8973F0033A49B /* ODTeachersListInteracter.swift in Sources */,
 				79F0ECFF26D362DD00DFDE61 /* ForgotPswdInteracter.swift in Sources */,
 				79C33E9E26E22A6C006341E9 /* EventsListInteracter.swift in Sources */,
 				79E51FF626E0B5D700991D34 /* ExamResultsInteracter.swift in Sources */,
+				79CC461C26F34C8A00448486 /* GroupSectionListPresenter.swift in Sources */,
 				79956C3426CF7FDA00E012BB /* AlertController.swift in Sources */,
 				7995326726E87FA80033A49B /* FeesListPresenter.swift in Sources */,
 				79FE1B3426D50B2E00E62F00 /* StudentsAdminModels.swift in Sources */,
 				7956CD8126DCCE2B001D0A41 /* StudentsListCell.swift in Sources */,
 				798A1B2826D62A830081105B /* StudentListModel.swift in Sources */,
+				79CC460D26F342A200448486 /* RoleListPresenter.swift in Sources */,
 				799532CD26E8BC980033A49B /* ODAprovalInteracter.swift in Sources */,
 				7949931D26E0F41F0013A38C /* TeacherListCell.swift in Sources */,
 				798DE4BB26CE7B940017C5FD /* InstituteLoginModel.swift in Sources */,
 				799532B826E897530033A49B /* ODTeachersListModel.swift in Sources */,
 				79E5200326E0B60F00991D34 /* ExamResultsModel.swift in Sources */,
+				79CC463126F361D100448486 /* StudentAddGroupListPresenter.swift in Sources */,
 				79C33EAA26E22A8E006341E9 /* EventsListPresenter.swift in Sources */,
 				798DE4C026CE7BAA0017C5FD /* InstituteLoginPresenter.swift in Sources */,
 				7949933026E0F89E0013A38C /* TeacherDetailsWorker.swift in Sources */,
@@ -1643,7 +1728,9 @@
 				798DE3E026CE61A90017C5FD /* SceneDelegate.swift in Sources */,
 				79956C2F26CF7FD900E012BB /* constants.swift in Sources */,
 				79BB8D0126F0CF180015C088 /* CreateGroupWorker.swift in Sources */,
+				79CC45FE26F32D1700448486 /* AddGroupMemberVC.swift in Sources */,
 				7900628A26E353E600C43D94 /* OnDutyStudentsListInteracter.swift in Sources */,
+				79CC462F26F361C900448486 /* StudentAddGroupListModel.swift in Sources */,
 				7900625C26E3386700C43D94 /* CircularsListVC.swift in Sources */,
 				79BAB83C26E21EA000DEE3C3 /* ExamListPresnetr.swift in Sources */,
 				79E51FFE26E0B60100991D34 /* ExamResultsWorker.swift in Sources */,
@@ -1655,6 +1742,7 @@
 				79C33EF826E2480F006341E9 /* EventDetailsVC.swift in Sources */,
 				7900626F26E3389800C43D94 /* CircularListModel.swift in Sources */,
 				799532BA26E8975B0033A49B /* ODTeachersListPresenter.swift in Sources */,
+				79CC461826F34C7300448486 /* GroupSectionListWorker.swift in Sources */,
 				79BEF56726F075FA0056DCBF /* GroupListWorker.swift in Sources */,
 				7900626A26E3389300C43D94 /* CircularListWorker.swift in Sources */,
 				7900625126E332A100C43D94 /* SubEventListCell.swift in Sources */,
@@ -1667,6 +1755,7 @@
 				790C221D26F1F24700B9A318 /* GroupUpdatePresenter.swift in Sources */,
 				79BAB82A26E208F900DEE3C3 /* ExamsVc.swift in Sources */,
 				79FE1B1726D4A93500E62F00 /* SudentsAdminInteracter.swift in Sources */,
+				79013C8526F3711500300CCC /* GroupAddMemberListCell.swift in Sources */,
 				799274DB26D6141100CBB8AC /* SectionListInteracter.swift in Sources */,
 				79E5200826E0B61800991D34 /* ExamResultsPresenter.swift in Sources */,
 				79956C8626CFDA5B00E012BB /* ForgotPasswordVC.swift in Sources */,
@@ -1706,6 +1795,7 @@
 				790C21F526F1BBBE00B9A318 /* GroupMembersListInteracter.swift in Sources */,
 				798DE48B26CE7B260017C5FD /* LoginInteracter.swift in Sources */,
 				79BAB83A26E21E9000DEE3C3 /* ExamListModel.swift in Sources */,
+				79CC460B26F3429C00448486 /* RoleListModel.swift in Sources */,
 				7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */,
 				79CC45CC26F3096600448486 /* ProfileVC.swift in Sources */,
 				790C21FA26F1BBD500B9A318 /* GroupMembersListWorker.swift in Sources */,
@@ -1714,6 +1804,7 @@
 				79956C5126CF7FE900E012BB /* GradientView.swift in Sources */,
 				79C33EF026E2479D006341E9 /* SubEventsVC.swift in Sources */,
 				799532B626E897490033A49B /* ODTeachersListWorker.swift in Sources */,
+				79CC461326F34C6900448486 /* GroupSectionListInteracter.swift in Sources */,
 				79CC45D726F3187600448486 /* AdminMenuVC.swift in Sources */,
 				793503E926E39BCC00B4FDFA /* MotherDeatilsWorker.swift in Sources */,
 				79BEF56226F075EE0056DCBF /* GroupListInteracter.swift in Sources */,
@@ -1730,6 +1821,7 @@
 				79C33EAF26E22D60006341E9 /* EvenetsModels.swift in Sources */,
 				793503FF26E39C5100B4FDFA /* GuardianDetailsModel.swift in Sources */,
 				79BEF58326F07B3D0056DCBF /* GroupListCell.swift in Sources */,
+				79CC460926F3429600448486 /* RoleListWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

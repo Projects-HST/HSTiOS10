@@ -24,6 +24,7 @@ class GroupListVC: UIViewController, GroupListDisplayLogic {
     var selectedGrpAdmin = String()
     var selectedStatus = String()
     var selectedID = String()
+    var selectedleadId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,7 @@ extension GroupListVC : UITableViewDelegate,UITableViewDataSource {
         self.selectedGrpAdmin = data.lead_name!
         self.selectedStatus = data.status!
         self.selectedID = data.id!
+        self.selectedleadId = data.group_lead_id!
         self.performSegue(withIdentifier: "groupDetails", sender: self)
     }
     
@@ -117,6 +119,7 @@ extension GroupListVC : UITableViewDelegate,UITableViewDataSource {
             vc.selectedGrpAdmin = self.selectedGrpAdmin
             vc.selectedStatus = self.selectedStatus
             vc.selectedID = self.selectedID
+            vc.selectedleadId = self.selectedleadId
             
         }
     }

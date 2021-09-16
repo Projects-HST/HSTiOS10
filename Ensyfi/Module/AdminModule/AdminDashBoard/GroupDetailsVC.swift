@@ -17,6 +17,7 @@ class GroupDetailsVC: UIViewController {
     var selectedGrpAdmin = String()
     var selectedStatus = String()
     var selectedID = String()
+    var selectedleadId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class GroupDetailsVC: UIViewController {
     
     @IBAction func addAction(_ sender: Any) {
         
+        self.performSegue(withIdentifier: "to_addgroupMember", sender: self)
         
     }
     
@@ -66,6 +68,16 @@ class GroupDetailsVC: UIViewController {
             vc.selectedStatus = self.selectedStatus
             vc.selectedID = self.selectedID
             
+        }
+       else if (segue.identifier == "to_addgroupMember")
+       {
+        let vc = segue.destination as! AddGroupMemberVC
+            
+            vc.selectedTitle = self.selectedTitle
+            vc.selectedGrpAdmin = self.selectedGrpAdmin
+            vc.selectedStatus = self.selectedStatus
+            vc.selectedID = self.selectedID
+            vc.selectedleadId = self.selectedleadId
         }
     }
 }
