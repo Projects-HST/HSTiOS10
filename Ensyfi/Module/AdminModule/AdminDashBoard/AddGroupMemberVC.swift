@@ -26,8 +26,20 @@ protocol StudentGroupAddListDisplayLogic: class
     func errorFetchingItems(viewModel: StudentGroupAddListModel.Fetch.ViewModel)
 }
 
-class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListDisplayLogic, StudentGroupAddListDisplayLogic {
-   
+protocol StaffGroupAddListDisplayLogic: class
+{
+    func successFetchedItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel)
+}
+
+protocol AddGroupMemberDisplayLogic: class
+{
+    func successFetchedItems(viewModel: AddGroupMemberModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: AddGroupMemberModel.Fetch.ViewModel)
+}
+
+class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListDisplayLogic, StudentGroupAddListDisplayLogic, StaffGroupAddListDisplayLogic, AddGroupMemberDisplayLogic {
+ 
   
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var groupAdmin: UILabel!
@@ -45,20 +57,31 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     var interactor2: StudentGroupAddListBusinessLogic?
     var displayedStudentGroupAddListData: [StudentGroupAddListModel.Fetch.ViewModel.DisplayedStudentGroupAddListData] = []
     
+    var interactor3: StaffGroupAddListBusinessLogic?
+    
+    var displayedStaffGroupAddListData: [StaffGroupAddListModel.Fetch.ViewModel.DisplayedStaffGroupAddListData] = []
+    
+    var interactor4: AddGroupMemberBusinessLogic?
+    
     let dropDown = DropDown()
     var roleTypeArr = [String]()
     var roleIdArr = [String]()
     var sectionArr = [String]()
     var sectionIdArr = [String]()
+    var selectedIdArr = [String]()
+    var staffUserIdArr = [String]()
     
+    var slectedIDforAdd = String()
     var selectedRoleId = String()
     var selectedSectionId = String()
+    var selectedRoleType = String()
     
     var selectedTitle = String()
     var selectedGrpAdmin = String()
     var selectedStatus = String()
     var selectedID = String()
     var selectedleadId = String()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +133,21 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
         viewController2.interactor2 = interactor2
         interactor2.presenter2 = presenter2
         presenter2.viewController2 = viewController2
-
+        
+        let viewController3 = self
+        let interactor3 = StaffGroupAddListInteractor()
+        let presenter3 = StaffGroupAddListPresenter()
+        viewController3.interactor3 = interactor3
+        interactor3.presenter3 = presenter3
+        presenter3.viewController3 = viewController3
+        
+        let viewController4 = self
+        let interactor4 = AddGroupMemberInteractor()
+        let presenter4 = AddGroupMemberPresenter()
+        viewController4.interactor4 = interactor4
+        interactor4.presenter4 = presenter4
+        presenter4.viewController4 = viewController4
+        
     }
     
     @IBAction func selectTypeAction(_ sender: Any) {
@@ -127,6 +164,9 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
             
             if selectTypeTextfield.text == "Teachers" || selectTypeTextfield.text == "Board Members" {
                 self.secTextView.alpha = 0
+                
+                interactor3?.fetchItems(request: StaffGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId))
+                selectedRoleType = "Staffs"
             }
             else {
                 self.secTextView.alpha = 1
@@ -147,11 +187,13 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
             print(selectedSectionId)
             
             interactor2?.fetchItems(request: StudentGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId))
+            selectedRoleType = "Students"
         }
     }
    
     @IBAction func addAction(_ sender: Any) {
         
+        interactor4?.fetchItems(request: AddGroupMemberModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, group_member_id: slectedIDforAdd, group_user_type: selectedRoleId, status: selectedStatus, group_id: selectedID))
     }
 }
 
@@ -203,6 +245,16 @@ extension AddGroupMemberVC{
     func successFetchedItems(viewModel: StudentGroupAddListModel.Fetch.ViewModel) {
         
         displayedStudentGroupAddListData = viewModel.displayedStudentGroupAddListData
+        
+        self.staffUserIdArr.removeAll()
+        self.selectedIdArr.removeAll()
+        self.slectedIDforAdd = ""
+        
+        for data in displayedStudentGroupAddListData {
+            let id = data.user_id
+
+            self.staffUserIdArr.append(id!)
+        }
         self.tableView.reloadData()
     }
     
@@ -210,26 +262,104 @@ extension AddGroupMemberVC{
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
+    
+//    StaffGroupAddListDisplayLogic
+    func successFetchedItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel) {
+        
+        displayedStaffGroupAddListData = viewModel.displayedStaffGroupAddListData
+        
+        self.staffUserIdArr.removeAll()
+        self.selectedIdArr.removeAll()
+        self.slectedIDforAdd = ""
+        
+        for data in displayedStaffGroupAddListData {
+            let id = data.user_id
+
+            self.staffUserIdArr.append(id!)
+        }
+        self.tableView.reloadData()
+    }
+    
+    func errorFetchingItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel) {
+        
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
+        })
+    }
+    
+//     AddGroupMemberDisplayLogic
+    func successFetchedItems(viewModel: AddGroupMemberModel.Fetch.ViewModel) {
+        
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
+            self.navigationController?.popViewController(animated: true)
+        })
+    }
+    
+    func errorFetchingItems(viewModel: AddGroupMemberModel.Fetch.ViewModel) {
+        
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
+        })
+    }
 }
+
 
 extension AddGroupMemberVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return displayedStudentGroupAddListData.count
+        if selectedRoleType == "Students"{
+            return displayedStudentGroupAddListData.count
+        }
+        else {
+            return displayedStaffGroupAddListData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupAddMemberListCell
         
-        let data = displayedStudentGroupAddListData[indexPath.row]
+         if selectedRoleType == "Students"{
+            let data = displayedStudentGroupAddListData[indexPath.row]
         
-        cell.name.text = data.name
-        cell.id.text = data.user_id
-        cell.status.backgroundColor = UIColor.systemGreen
-        cell.selectionStyle = .none
-        
+            cell.name.text = data.name
+            cell.id.text = data.user_id
+            cell.addBtn.tag = indexPath.row
+            cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
+            cell.selectionStyle = .none
+        }
+        else {
+            let data = displayedStaffGroupAddListData[indexPath.row]
+            
+            cell.name.text = data.name
+            cell.id.text = data.user_id
+            cell.addBtn.tag = indexPath.row
+            cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
+            cell.selectionStyle = .none
+        }
         return cell
     }
+    
+    @objc func addBtnClicked(sender: UIButton){
+        
+      let buttonClicked = sender.tag
+        print(buttonClicked)
+        let selectedIndex = Int(buttonClicked)
+        let sel = self.staffUserIdArr[selectedIndex]
+        self.selectedIdArr.append(sel)
+        slectedIDforAdd = selectedIdArr.joined(separator:",")
+        print(slectedIDforAdd)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        
+    }
+    
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//
+//        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+//    }
+    
 }

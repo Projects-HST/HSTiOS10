@@ -57,4 +57,6 @@ struct APIFunctionName {
     static let roleListUrl = "/apiadmin/list_roles/"
     static let groupSectionUrl = "/apiadmin/list_class_section/"
     static let studentListGroupAddUrl = "/apiadmin/gn_studentlist/"
+    static let staffListGroupAddUrl = "/apiadmin/gn_stafflist/"
+    static let AddGroupMemberUrl = "/apiadmin/add_gn_members/"
 }

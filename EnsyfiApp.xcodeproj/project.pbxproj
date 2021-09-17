@@ -240,6 +240,14 @@
 		79E5200826E0B61800991D34 /* ExamResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5200726E0B61800991D34 /* ExamResultsPresenter.swift */; };
 		79E5201026E0B63000991D34 /* ExamModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5200F26E0B63000991D34 /* ExamModels.swift */; };
 		79E5201526E0D07500991D34 /* ExamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5201426E0D07400991D34 /* ExamsCell.swift */; };
+		79EBC84E26F47AA900CF9FAF /* StaffsAddGroupListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC84D26F47AA900CF9FAF /* StaffsAddGroupListInteracter.swift */; };
+		79EBC85326F47AB500CF9FAF /* StaffsAddGroupListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC85226F47AB500CF9FAF /* StaffsAddGroupListWorker.swift */; };
+		79EBC85826F47AB900CF9FAF /* StaffsAddGroupListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC85726F47AB900CF9FAF /* StaffsAddGroupListModel.swift */; };
+		79EBC85D26F47ABE00CF9FAF /* StaffsAddGroupListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC85C26F47ABE00CF9FAF /* StaffsAddGroupListPresenter.swift */; };
+		79EBC86A26F49E0500CF9FAF /* AddGroupMemberIntercater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC86926F49E0500CF9FAF /* AddGroupMemberIntercater.swift */; };
+		79EBC86F26F49E1F00CF9FAF /* AddGroupMemberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC86E26F49E1F00CF9FAF /* AddGroupMemberWorker.swift */; };
+		79EBC87126F49E2400CF9FAF /* AddGroupMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC87026F49E2400CF9FAF /* AddGroupMemberModel.swift */; };
+		79EBC87326F49E2D00CF9FAF /* AddGroupMemberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC87226F49E2D00CF9FAF /* AddGroupMemberPresenter.swift */; };
 		79F0ECFF26D362DD00DFDE61 /* ForgotPswdInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ECFE26D362DD00DFDE61 /* ForgotPswdInteracter.swift */; };
 		79F0ED0426D362F400DFDE61 /* ForgotPswdWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED0326D362F400DFDE61 /* ForgotPswdWorker.swift */; };
 		79F0ED0926D3630300DFDE61 /* ForgotPswdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED0826D3630300DFDE61 /* ForgotPswdModel.swift */; };
@@ -515,6 +523,14 @@
 		79E5200726E0B61800991D34 /* ExamResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsPresenter.swift; sourceTree = "<group>"; };
 		79E5200F26E0B63000991D34 /* ExamModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamModels.swift; sourceTree = "<group>"; };
 		79E5201426E0D07400991D34 /* ExamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsCell.swift; sourceTree = "<group>"; };
+		79EBC84D26F47AA900CF9FAF /* StaffsAddGroupListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffsAddGroupListInteracter.swift; sourceTree = "<group>"; };
+		79EBC85226F47AB500CF9FAF /* StaffsAddGroupListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffsAddGroupListWorker.swift; sourceTree = "<group>"; };
+		79EBC85726F47AB900CF9FAF /* StaffsAddGroupListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffsAddGroupListModel.swift; sourceTree = "<group>"; };
+		79EBC85C26F47ABE00CF9FAF /* StaffsAddGroupListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffsAddGroupListPresenter.swift; sourceTree = "<group>"; };
+		79EBC86926F49E0500CF9FAF /* AddGroupMemberIntercater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberIntercater.swift; sourceTree = "<group>"; };
+		79EBC86E26F49E1F00CF9FAF /* AddGroupMemberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberWorker.swift; sourceTree = "<group>"; };
+		79EBC87026F49E2400CF9FAF /* AddGroupMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberModel.swift; sourceTree = "<group>"; };
+		79EBC87226F49E2D00CF9FAF /* AddGroupMemberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberPresenter.swift; sourceTree = "<group>"; };
 		79F0ECFE26D362DD00DFDE61 /* ForgotPswdInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdInteracter.swift; sourceTree = "<group>"; };
 		79F0ED0326D362F400DFDE61 /* ForgotPswdWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdWorker.swift; sourceTree = "<group>"; };
 		79F0ED0826D3630300DFDE61 /* ForgotPswdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdModel.swift; sourceTree = "<group>"; };
@@ -1306,6 +1322,8 @@
 				79CC460226F3426C00448486 /* RoleList */,
 				79CC461126F34C3000448486 /* GroupSectionList */,
 				79CC462326F355AA00448486 /* StudentAddGroupList */,
+				79EBC86126F47AC400CF9FAF /* StaffAddGrpList */,
+				79EBC86826F49DD600CF9FAF /* AddGroupMember */,
 			);
 			name = AddMember;
 			sourceTree = "<group>";
@@ -1365,6 +1383,28 @@
 				79E5200726E0B61800991D34 /* ExamResultsPresenter.swift */,
 			);
 			name = ExamResults;
+			sourceTree = "<group>";
+		};
+		79EBC86126F47AC400CF9FAF /* StaffAddGrpList */ = {
+			isa = PBXGroup;
+			children = (
+				79EBC84D26F47AA900CF9FAF /* StaffsAddGroupListInteracter.swift */,
+				79EBC85226F47AB500CF9FAF /* StaffsAddGroupListWorker.swift */,
+				79EBC85726F47AB900CF9FAF /* StaffsAddGroupListModel.swift */,
+				79EBC85C26F47ABE00CF9FAF /* StaffsAddGroupListPresenter.swift */,
+			);
+			name = StaffAddGrpList;
+			sourceTree = "<group>";
+		};
+		79EBC86826F49DD600CF9FAF /* AddGroupMember */ = {
+			isa = PBXGroup;
+			children = (
+				79EBC86926F49E0500CF9FAF /* AddGroupMemberIntercater.swift */,
+				79EBC86E26F49E1F00CF9FAF /* AddGroupMemberWorker.swift */,
+				79EBC87026F49E2400CF9FAF /* AddGroupMemberModel.swift */,
+				79EBC87226F49E2D00CF9FAF /* AddGroupMemberPresenter.swift */,
+			);
+			name = AddGroupMember;
 			sourceTree = "<group>";
 		};
 		79F0ED4026D3AFA500DFDE61 /* StudentsAdmin */ = {
@@ -1618,6 +1658,7 @@
 				79E51FD726E0A1F300991D34 /* StudenceAttendanceInteracter.swift in Sources */,
 				7995325D26E87F7A0033A49B /* FeesListWorker.swift in Sources */,
 				79CC462D26F361BB00448486 /* StudentAddGroupListWorker.swift in Sources */,
+				79EBC87326F49E2D00CF9FAF /* AddGroupMemberPresenter.swift in Sources */,
 				798DE47826CE79A30017C5FD /* APIUrl.swift in Sources */,
 				7904AD1826D9F11600D6F2C2 /* StudentsDetailsModel.swift in Sources */,
 				79956C3726CF7FDA00E012BB /* GlobalVariables.swift in Sources */,
@@ -1635,6 +1676,7 @@
 				79BAB80926E1FE6700DEE3C3 /* ClassForTeacherListWorker.swift in Sources */,
 				79A82E4F26DFA67700EA4FEF /* HomeWorkTestModels.swift in Sources */,
 				79956C3026CF7FDA00E012BB /* userDefault.swift in Sources */,
+				79EBC84E26F47AA900CF9FAF /* StaffsAddGroupListInteracter.swift in Sources */,
 				79E51FE626E0A21B00991D34 /* StudenceAttendancePresenter.swift in Sources */,
 				793503FA26E39C3800B4FDFA /* GuardianDetailsWorker.swift in Sources */,
 				79BB8CEE26F0ADA50015C088 /* GetTeachersListIDModel.swift in Sources */,
@@ -1707,6 +1749,8 @@
 				798A1B2826D62A830081105B /* StudentListModel.swift in Sources */,
 				79CC460D26F342A200448486 /* RoleListPresenter.swift in Sources */,
 				799532CD26E8BC980033A49B /* ODAprovalInteracter.swift in Sources */,
+				79EBC85326F47AB500CF9FAF /* StaffsAddGroupListWorker.swift in Sources */,
+				79EBC87126F49E2400CF9FAF /* AddGroupMemberModel.swift in Sources */,
 				7949931D26E0F41F0013A38C /* TeacherListCell.swift in Sources */,
 				798DE4BB26CE7B940017C5FD /* InstituteLoginModel.swift in Sources */,
 				799532B826E897530033A49B /* ODTeachersListModel.swift in Sources */,
@@ -1727,6 +1771,7 @@
 				7995325526E87F6D0033A49B /* FeesListInteracter.swift in Sources */,
 				798DE3E026CE61A90017C5FD /* SceneDelegate.swift in Sources */,
 				79956C2F26CF7FD900E012BB /* constants.swift in Sources */,
+				79EBC86F26F49E1F00CF9FAF /* AddGroupMemberWorker.swift in Sources */,
 				79BB8D0126F0CF180015C088 /* CreateGroupWorker.swift in Sources */,
 				79CC45FE26F32D1700448486 /* AddGroupMemberVC.swift in Sources */,
 				7900628A26E353E600C43D94 /* OnDutyStudentsListInteracter.swift in Sources */,
@@ -1734,6 +1779,7 @@
 				7900625C26E3386700C43D94 /* CircularsListVC.swift in Sources */,
 				79BAB83C26E21EA000DEE3C3 /* ExamListPresnetr.swift in Sources */,
 				79E51FFE26E0B60100991D34 /* ExamResultsWorker.swift in Sources */,
+				79EBC86A26F49E0500CF9FAF /* AddGroupMemberIntercater.swift in Sources */,
 				7995328226E888960033A49B /* FeesClassListInteracter.swift in Sources */,
 				79956C5526CF7FE900E012BB /* ViewBindToKeypad.swift in Sources */,
 				79BAB81026E1FE7A00DEE3C3 /* ClassForTeacherListPresenter.swift in Sources */,
@@ -1741,6 +1787,7 @@
 				798DE4CC26CE7C020017C5FD /* LoginModels.swift in Sources */,
 				79C33EF826E2480F006341E9 /* EventDetailsVC.swift in Sources */,
 				7900626F26E3389800C43D94 /* CircularListModel.swift in Sources */,
+				79EBC85D26F47ABE00CF9FAF /* StaffsAddGroupListPresenter.swift in Sources */,
 				799532BA26E8975B0033A49B /* ODTeachersListPresenter.swift in Sources */,
 				79CC461826F34C7300448486 /* GroupSectionListWorker.swift in Sources */,
 				79BEF56726F075FA0056DCBF /* GroupListWorker.swift in Sources */,
@@ -1748,6 +1795,7 @@
 				7900625126E332A100C43D94 /* SubEventListCell.swift in Sources */,
 				7900627426E338A000C43D94 /* CircularListPresenter.swift in Sources */,
 				798DE49C26CE7B5F0017C5FD /* InstituteLoginVC.swift in Sources */,
+				79EBC85826F47AB900CF9FAF /* StaffsAddGroupListModel.swift in Sources */,
 				79E51FF126E0B59300991D34 /* ExamResultsVC.swift in Sources */,
 				7995324B26E87E3F0033A49B /* FeesListCell.swift in Sources */,
 				79BB8D0B26F0CF320015C088 /* CreateGroupPresenter.swift in Sources */,

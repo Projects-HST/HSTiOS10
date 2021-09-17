@@ -1284,4 +1284,71 @@ class APIManager: NSObject {
       )
    }
     
+    func callAPIStaffGroupAddList(group_id:String,group_user_type:String,class_id:String,onSuccess successCallback: ((_ resp: [StaffGroupAddListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.staffListGroupAddUrl
+         // Set Parameters
+        let parameters: Parameters = ["group_id": group_id,"group_user_type": group_user_type]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "sucess" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["gnMemberlist"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [StaffGroupAddListModels]()
+                  for item in toModel {
+                      let single = StaffGroupAddListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPIAddGroupMember(user_id:String,group_member_id:String,group_user_type:String,status:String,group_id:String,onSuccess successCallback: ((_ login: AddGroupMemberModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+   // Build URL
+        let url = APIURL.base_URL + APIFunctionName.AddGroupMemberUrl
+   // Set Parameters
+         let parameters: Parameters =  ["user_id": user_id,"group_member_id": group_member_id,"group_user_type": group_user_type,"status": status,"group_id": group_id]
+        print(parameters)
+   // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+   // Create dictionary
+         print(responseObject)
+
+         guard let status = responseObject["status"].string, status == "success" else {
+         failureCallback?(responseObject["msg"].string!)
+         return
+       }
+          let msg = responseObject["msg"].string
+
+          let sendToModel = AddGroupMemberModels()
+
+          sendToModel.status = status
+          sendToModel.msg = msg
+
+          successCallback?(sendToModel)
+       },
+         onFailure: {(errorMessage: String) -> Void in
+         failureCallback?(errorMessage)
+       }
+     )
+  }
 }
+

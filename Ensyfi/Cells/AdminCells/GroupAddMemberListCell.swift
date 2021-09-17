@@ -11,7 +11,7 @@ class GroupAddMemberListCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var id: UILabel!
-    @IBOutlet weak var status: UIView!
+    @IBOutlet weak var addBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
