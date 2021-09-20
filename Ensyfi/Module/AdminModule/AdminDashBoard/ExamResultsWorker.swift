@@ -13,10 +13,10 @@ typealias ExamResultsresponseHandler = (_ response:ExamResultsModel.Fetch.Respon
 class ExamResultsWorker{
     
    var respData = [ExamResultsModels]()
-   func fetch(class_id:String, onSuccess successCallback:(ExamResultsresponseHandler)?,onFailure failureCallback: @escaping(ExamResultsresponseHandler)) {
+   func fetch(class_id:String,section_id:String, onSuccess successCallback:(ExamResultsresponseHandler)?,onFailure failureCallback: @escaping(ExamResultsresponseHandler)) {
        let manager = APIManager()
        manager.callAPIExamResults(
-        class_id:class_id, onSuccess: { (resp)  in
+        class_id:class_id,section_id:section_id, onSuccess: { (resp)  in
                successCallback?(ExamResultsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class ExamResultsWorker{
        )
    }
 }
+
 

@@ -14,6 +14,7 @@ struct ExamResultsModel{
         struct Request
         {
             var class_id : String?
+            var section_id : String?
            
         }
         

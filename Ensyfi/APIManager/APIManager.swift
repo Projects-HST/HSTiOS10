@@ -436,11 +436,11 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIExamResults(class_id:String, onSuccess successCallback: ((_ resp: [ExamResultsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIExamResults(class_id:String,section_id:String, onSuccess successCallback: ((_ resp: [ExamResultsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-        let url = APIURL.base_URL  + APIFunctionName.examListUrl
+        let url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id]
+        let parameters: Parameters = ["class_id": class_id,"section_id": section_id]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -550,7 +550,7 @@ class APIManager: NSObject {
     
     func callAPIExamList(class_id:String,section_id:String,onSuccess successCallback: ((_ resp: [ExamListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-        let url = APIURL.base_URL  + APIFunctionName.examsListUrl
+        let url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
          // Set Parameters
         let parameters: Parameters = ["class_id": class_id,"section_id": section_id]
       
@@ -1111,11 +1111,9 @@ class APIManager: NSObject {
         let url = APIURL.base_URL  + APIFunctionName.groupMembersListUrl
          // Set Parameters
         let parameters: Parameters = ["group_id": group_id]
-      
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
-
          print(responseObject)
 
            guard let status = responseObject["status"].string, status == "success" else{
@@ -1159,7 +1157,6 @@ class APIManager: NSObject {
          return
        }
           let msg = responseObject["msg"].string
-
           let sendToModel = UpdateGroupModels()
 
           sendToModel.status = status
@@ -1335,10 +1332,78 @@ class APIManager: NSObject {
          guard let status = responseObject["status"].string, status == "success" else {
          failureCallback?(responseObject["msg"].string!)
          return
-       }
+        }
           let msg = responseObject["msg"].string
 
           let sendToModel = AddGroupMemberModels()
+
+          sendToModel.status = status
+          sendToModel.msg = msg
+
+          successCallback?(sendToModel)
+         },
+         onFailure: {(errorMessage: String) -> Void in
+         failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPILeavesList(user_id:String,onSuccess successCallback: ((_ resp: [LeavesListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.leaveListUrl
+         // Set Parameters
+        let parameters: Parameters = ["user_id": user_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+            
+          if let responseDict = responseObject["leaveDetails"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [LeavesListModels]()
+                  for item in toModel {
+                      let single = LeavesListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPILeaveApproval(status:String,leave_id:String,onSuccess successCallback: ((_ login: LeaveApprovalModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+   // Build URL
+        let url = APIURL.base_URL + APIFunctionName.leaveApprovalUrl
+   // Set Parameters
+         let parameters: Parameters =  ["status": status,"leave_id": leave_id]
+        print(parameters)
+   // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+   // Create dictionary
+         print(responseObject)
+
+         guard let status = responseObject["status"].string, status == "sucess" else {
+         failureCallback?(responseObject["msg"].string!)
+         return
+       }
+          let msg = responseObject["msg"].string
+
+          let sendToModel = LeaveApprovalModels()
 
           sendToModel.status = status
           sendToModel.msg = msg
@@ -1350,5 +1415,5 @@ class APIManager: NSObject {
        }
      )
   }
+    
 }
-

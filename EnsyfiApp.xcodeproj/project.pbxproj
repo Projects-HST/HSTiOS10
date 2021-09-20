@@ -255,12 +255,27 @@
 		79F0ED1326D3635C00DFDE61 /* ForgotPswdModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED1226D3635C00DFDE61 /* ForgotPswdModels.swift */; };
 		79F0ED2526D37A4B00DFDE61 /* AdminDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */; };
 		79F0ED3C26D3AF8800DFDE61 /* AdminStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79F0ED3B26D3AF8800DFDE61 /* AdminStudents.storyboard */; };
+		79FC8C7426F5B2E10041A54B /* AdminExamResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FC8C7326F5B2E10041A54B /* AdminExamResults.storyboard */; };
+		79FC8C7D26F5C7470041A54B /* ExamResultsStudentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC8C7C26F5C7470041A54B /* ExamResultsStudentsListVC.swift */; };
 		79FE1B1726D4A93500E62F00 /* SudentsAdminInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B1626D4A93500E62F00 /* SudentsAdminInteracter.swift */; };
 		79FE1B1C26D4B43000E62F00 /* StudentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B1B26D4B43000E62F00 /* StudentsVC.swift */; };
 		79FE1B2126D4C84F00E62F00 /* StudentsAdminWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B2026D4C84F00E62F00 /* StudentsAdminWorker.swift */; };
 		79FE1B2926D4C85A00E62F00 /* StudentsAdminModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B2826D4C85A00E62F00 /* StudentsAdminModel.swift */; };
 		79FE1B2E26D4C86D00E62F00 /* StudentsAdminPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B2D26D4C86D00E62F00 /* StudentsAdminPresenter.swift */; };
 		79FE1B3426D50B2E00E62F00 /* StudentsAdminModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B3326D50B2D00E62F00 /* StudentsAdminModels.swift */; };
+		79FF79B326F88EC8007E86A6 /* AdminLeaves.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FF79B226F88EC8007E86A6 /* AdminLeaves.storyboard */; };
+		79FF79B526F88F11007E86A6 /* LeaveApplicationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79B426F88F11007E86A6 /* LeaveApplicationListVC.swift */; };
+		79FF79BA26F88F76007E86A6 /* LeavesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79B926F88F76007E86A6 /* LeavesListCell.swift */; };
+		79FF79C626F891B3007E86A6 /* LeaveListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79C526F891B3007E86A6 /* LeaveListInteracter.swift */; };
+		79FF79D326F891D9007E86A6 /* LeaveListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79D226F891D9007E86A6 /* LeaveListWorker.swift */; };
+		79FF79D826F891EF007E86A6 /* LeaveListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79D726F891EF007E86A6 /* LeaveListModel.swift */; };
+		79FF79DD26F891F7007E86A6 /* LeaveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79DC26F891F7007E86A6 /* LeaveListPresenter.swift */; };
+		79FF79E226F8922D007E86A6 /* LeaveModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79E126F8922D007E86A6 /* LeaveModels.swift */; };
+		79FF79EE26F89E32007E86A6 /* LeaveApprovalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79ED26F89E32007E86A6 /* LeaveApprovalVC.swift */; };
+		79FF79F926F8A0FB007E86A6 /* LeaveApprovalInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79F826F8A0FB007E86A6 /* LeaveApprovalInteracter.swift */; };
+		79FF79FE26F8A109007E86A6 /* LeaveApprovalWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF79FD26F8A109007E86A6 /* LeaveApprovalWorker.swift */; };
+		79FF7A0326F8A115007E86A6 /* LeaveApprovalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF7A0226F8A115007E86A6 /* LeaveApprovalModel.swift */; };
+		79FF7A0826F8A123007E86A6 /* LeaveApprovalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF7A0726F8A123007E86A6 /* LeaveApprovalPresenter.swift */; };
 		A5B7FDDCB67425B1D3A0E20A /* Pods_EnsyfiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBACB98DA36A558366803D1 /* Pods_EnsyfiApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -538,12 +553,27 @@
 		79F0ED1226D3635C00DFDE61 /* ForgotPswdModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdModels.swift; sourceTree = "<group>"; };
 		79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardVC.swift; sourceTree = "<group>"; };
 		79F0ED3B26D3AF8800DFDE61 /* AdminStudents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStudents.storyboard; sourceTree = "<group>"; };
+		79FC8C7326F5B2E10041A54B /* AdminExamResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminExamResults.storyboard; sourceTree = "<group>"; };
+		79FC8C7C26F5C7470041A54B /* ExamResultsStudentsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsStudentsListVC.swift; sourceTree = "<group>"; };
 		79FE1B1626D4A93500E62F00 /* SudentsAdminInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudentsAdminInteracter.swift; sourceTree = "<group>"; };
 		79FE1B1B26D4B43000E62F00 /* StudentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsVC.swift; sourceTree = "<group>"; };
 		79FE1B2026D4C84F00E62F00 /* StudentsAdminWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAdminWorker.swift; sourceTree = "<group>"; };
 		79FE1B2826D4C85A00E62F00 /* StudentsAdminModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAdminModel.swift; sourceTree = "<group>"; };
 		79FE1B2D26D4C86D00E62F00 /* StudentsAdminPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAdminPresenter.swift; sourceTree = "<group>"; };
 		79FE1B3326D50B2D00E62F00 /* StudentsAdminModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAdminModels.swift; sourceTree = "<group>"; };
+		79FF79B226F88EC8007E86A6 /* AdminLeaves.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminLeaves.storyboard; sourceTree = "<group>"; };
+		79FF79B426F88F11007E86A6 /* LeaveApplicationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveApplicationListVC.swift; sourceTree = "<group>"; };
+		79FF79B926F88F76007E86A6 /* LeavesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavesListCell.swift; sourceTree = "<group>"; };
+		79FF79C526F891B3007E86A6 /* LeaveListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveListInteracter.swift; sourceTree = "<group>"; };
+		79FF79D226F891D9007E86A6 /* LeaveListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveListWorker.swift; sourceTree = "<group>"; };
+		79FF79D726F891EF007E86A6 /* LeaveListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveListModel.swift; sourceTree = "<group>"; };
+		79FF79DC26F891F7007E86A6 /* LeaveListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveListPresenter.swift; sourceTree = "<group>"; };
+		79FF79E126F8922D007E86A6 /* LeaveModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveModels.swift; sourceTree = "<group>"; };
+		79FF79ED26F89E32007E86A6 /* LeaveApprovalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveApprovalVC.swift; sourceTree = "<group>"; };
+		79FF79F826F8A0FB007E86A6 /* LeaveApprovalInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveApprovalInteracter.swift; sourceTree = "<group>"; };
+		79FF79FD26F8A109007E86A6 /* LeaveApprovalWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveApprovalWorker.swift; sourceTree = "<group>"; };
+		79FF7A0226F8A115007E86A6 /* LeaveApprovalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveApprovalModel.swift; sourceTree = "<group>"; };
+		79FF7A0726F8A123007E86A6 /* LeaveApprovalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveApprovalPresenter.swift; sourceTree = "<group>"; };
 		A2CB71E5133AA0BFF7AB3DDC /* Pods-EnsyfiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnsyfiApp.debug.xcconfig"; path = "Target Support Files/Pods-EnsyfiApp/Pods-EnsyfiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C4267392658E7DF696C0B1F0 /* Pods-Ensyfi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ensyfi.release.xcconfig"; path = "Target Support Files/Pods-Ensyfi/Pods-Ensyfi.release.xcconfig"; sourceTree = "<group>"; };
 		CAB231609A4CED3E53204B5F /* Pods-Ensyfi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ensyfi.debug.xcconfig"; path = "Target Support Files/Pods-Ensyfi/Pods-Ensyfi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -740,6 +770,7 @@
 				79BEF58226F07B3D0056DCBF /* GroupListCell.swift */,
 				790C220526F1DD3700B9A318 /* GroupMembersListCell.swift */,
 				79013C8426F3711500300CCC /* GroupAddMemberListCell.swift */,
+				79FF79B926F88F76007E86A6 /* LeavesListCell.swift */,
 			);
 			path = AdminCells;
 			sourceTree = "<group>";
@@ -917,6 +948,7 @@
 				7900627D26E3492100C43D94 /* OnDuty */,
 				7995323F26E87D7B0033A49B /* Fees */,
 				79BEF55726F0758C0056DCBF /* Groups */,
+				79FF79AD26F88E66007E86A6 /* Leaves */,
 			);
 			path = AdminDashBoard;
 			sourceTree = "<group>";
@@ -1058,10 +1090,12 @@
 				79BAB7F726E1F2EE00DEE3C3 /* AdminClasses.storyboard */,
 				79C33E9226E2293D006341E9 /* AdminEvents.storyboard */,
 				79BAB82326E2082800DEE3C3 /* AdminExaminations.storyboard */,
+				79FC8C7326F5B2E10041A54B /* AdminExamResults.storyboard */,
 				7900625526E3374F00C43D94 /* AdminCirculars.storyboard */,
 				7900628326E3495E00C43D94 /* AdminOnDuty.storyboard */,
 				7995324526E87DFB0033A49B /* AdminFees.storyboard */,
 				79BEF57D26F0763E0056DCBF /* AdminGroups.storyboard */,
+				79FF79B226F88EC8007E86A6 /* AdminLeaves.storyboard */,
 				79CC45D026F3099E00448486 /* AdminProfile.storyboard */,
 			);
 			path = AdminStoryBoard;
@@ -1381,6 +1415,7 @@
 				79E51FFD26E0B60100991D34 /* ExamResultsWorker.swift */,
 				79E5200226E0B60F00991D34 /* ExamResultsModel.swift */,
 				79E5200726E0B61800991D34 /* ExamResultsPresenter.swift */,
+				79FC8C7B26F5C6FD0041A54B /* ExamResultsStudentsList */,
 			);
 			name = ExamResults;
 			sourceTree = "<group>";
@@ -1419,6 +1454,14 @@
 			name = StudentsAdmin;
 			sourceTree = "<group>";
 		};
+		79FC8C7B26F5C6FD0041A54B /* ExamResultsStudentsList */ = {
+			isa = PBXGroup;
+			children = (
+				79FC8C7C26F5C7470041A54B /* ExamResultsStudentsListVC.swift */,
+			);
+			name = ExamResultsStudentsList;
+			sourceTree = "<group>";
+		};
 		79FE1B3226D5091F00E62F00 /* AdminModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1434,9 +1477,43 @@
 				7900629726E3540E00C43D94 /* OnDutyModels.swift */,
 				7995323A26E87D700033A49B /* FeesModels.swift */,
 				79BEF57826F0761F0056DCBF /* GroupsModels.swift */,
+				79FF79E126F8922D007E86A6 /* LeaveModels.swift */,
 				79CC463226F361E800448486 /* GroupMembersModels.swift */,
 			);
 			path = AdminModels;
+			sourceTree = "<group>";
+		};
+		79FF79AD26F88E66007E86A6 /* Leaves */ = {
+			isa = PBXGroup;
+			children = (
+				79FF79BE26F89193007E86A6 /* LeavesList */,
+				79FF79EC26F89DAB007E86A6 /* LeaveAprroval */,
+			);
+			name = Leaves;
+			sourceTree = "<group>";
+		};
+		79FF79BE26F89193007E86A6 /* LeavesList */ = {
+			isa = PBXGroup;
+			children = (
+				79FF79B426F88F11007E86A6 /* LeaveApplicationListVC.swift */,
+				79FF79C526F891B3007E86A6 /* LeaveListInteracter.swift */,
+				79FF79D226F891D9007E86A6 /* LeaveListWorker.swift */,
+				79FF79D726F891EF007E86A6 /* LeaveListModel.swift */,
+				79FF79DC26F891F7007E86A6 /* LeaveListPresenter.swift */,
+			);
+			name = LeavesList;
+			sourceTree = "<group>";
+		};
+		79FF79EC26F89DAB007E86A6 /* LeaveAprroval */ = {
+			isa = PBXGroup;
+			children = (
+				79FF79ED26F89E32007E86A6 /* LeaveApprovalVC.swift */,
+				79FF79F826F8A0FB007E86A6 /* LeaveApprovalInteracter.swift */,
+				79FF79FD26F8A109007E86A6 /* LeaveApprovalWorker.swift */,
+				79FF7A0226F8A115007E86A6 /* LeaveApprovalModel.swift */,
+				79FF7A0726F8A123007E86A6 /* LeaveApprovalPresenter.swift */,
+			);
+			name = LeaveAprroval;
 			sourceTree = "<group>";
 		};
 		AEB942BEFF76196A173431DF /* Frameworks */ = {
@@ -1568,11 +1645,13 @@
 				79BAB7CB26E1E34600DEE3C3 /* AdminParents.storyboard in Resources */,
 				79BEF57E26F0763E0056DCBF /* AdminGroups.storyboard in Resources */,
 				79BAB82426E2082800DEE3C3 /* AdminExaminations.storyboard in Resources */,
+				79FC8C7426F5B2E10041A54B /* AdminExamResults.storyboard in Resources */,
 				79956BFB26CF6E2100E012BB /* Login.storyboard in Resources */,
 				79F0ED3C26D3AF8800DFDE61 /* AdminStudents.storyboard in Resources */,
 				7900625626E3374F00C43D94 /* AdminCirculars.storyboard in Resources */,
 				79C33E9326E2293D006341E9 /* AdminEvents.storyboard in Resources */,
 				798DE3E526CE61A90017C5FD /* Main.storyboard in Resources */,
+				79FF79B326F88EC8007E86A6 /* AdminLeaves.storyboard in Resources */,
 				7995324626E87DFB0033A49B /* AdminFees.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1640,6 +1719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FF7A0826F8A123007E86A6 /* LeaveApprovalPresenter.swift in Sources */,
 				7904AD3526DA0FF400D6F2C2 /* TeachersModel.swift in Sources */,
 				79FE1B1C26D4B43000E62F00 /* StudentsVC.swift in Sources */,
 				79F0ED2526D37A4B00DFDE61 /* AdminDashboardVC.swift in Sources */,
@@ -1659,6 +1739,7 @@
 				7995325D26E87F7A0033A49B /* FeesListWorker.swift in Sources */,
 				79CC462D26F361BB00448486 /* StudentAddGroupListWorker.swift in Sources */,
 				79EBC87326F49E2D00CF9FAF /* AddGroupMemberPresenter.swift in Sources */,
+				79FF79BA26F88F76007E86A6 /* LeavesListCell.swift in Sources */,
 				798DE47826CE79A30017C5FD /* APIUrl.swift in Sources */,
 				7904AD1826D9F11600D6F2C2 /* StudentsDetailsModel.swift in Sources */,
 				79956C3726CF7FDA00E012BB /* GlobalVariables.swift in Sources */,
@@ -1668,6 +1749,7 @@
 				79E51FE126E0A21000991D34 /* StudenceAttendanceModel.swift in Sources */,
 				79956C3526CF7FDA00E012BB /* ActivityIndicator.swift in Sources */,
 				79BAB80B26E1FE7000DEE3C3 /* ClassForTeacherListModel.swift in Sources */,
+				79FF79E226F8922D007E86A6 /* LeaveModels.swift in Sources */,
 				799532A226E889050033A49B /* FeesSectionListPresenter.swift in Sources */,
 				79E51FEB26E0A22800991D34 /* StudenceAttendanceModels.swift in Sources */,
 				790C21F026F1BAF600B9A318 /* ViewGroupMemVC.swift in Sources */,
@@ -1676,6 +1758,7 @@
 				79BAB80926E1FE6700DEE3C3 /* ClassForTeacherListWorker.swift in Sources */,
 				79A82E4F26DFA67700EA4FEF /* HomeWorkTestModels.swift in Sources */,
 				79956C3026CF7FDA00E012BB /* userDefault.swift in Sources */,
+				79FF79D826F891EF007E86A6 /* LeaveListModel.swift in Sources */,
 				79EBC84E26F47AA900CF9FAF /* StaffsAddGroupListInteracter.swift in Sources */,
 				79E51FE626E0A21B00991D34 /* StudenceAttendancePresenter.swift in Sources */,
 				793503FA26E39C3800B4FDFA /* GuardianDetailsWorker.swift in Sources */,
@@ -1687,6 +1770,7 @@
 				798DE47326CE79990017C5FD /* APIFunctionName.swift in Sources */,
 				799532BF26E89B020033A49B /* ONDutyListCell.swift in Sources */,
 				79BB8CFC26F0CF060015C088 /* CreateGroupInteracter.swift in Sources */,
+				79FF79C626F891B3007E86A6 /* LeaveListInteracter.swift in Sources */,
 				79F0ED0426D362F400DFDE61 /* ForgotPswdWorker.swift in Sources */,
 				79BAB7DF26E1E5F900DEE3C3 /* FatherDetailsInteracter.swift in Sources */,
 				79C33EB726E239CF006341E9 /* EventListCell.swift in Sources */,
@@ -1701,12 +1785,14 @@
 				79BAB7EE26E1E61800DEE3C3 /* FatherDetailsPresenter.swift in Sources */,
 				79BAB7FE26E1F37400DEE3C3 /* AdminClassVC.swift in Sources */,
 				79956C4D26CF7FE900E012BB /* RoundedcornerForUIView.swift in Sources */,
+				79FF79B526F88F11007E86A6 /* LeaveApplicationListVC.swift in Sources */,
 				798DE49726CE7B4D0017C5FD /* LoginPresenter.swift in Sources */,
 				799274E526D6143600CBB8AC /* SectionListModel.swift in Sources */,
 				79956C4B26CF7FE900E012BB /* NavigationBarTitleOnLeftSide.swift in Sources */,
 				79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */,
 				79BB8D0626F0CF250015C088 /* CreateGroupModel.swift in Sources */,
 				793503F526E39C2600B4FDFA /* GuardianDetailsInteracter.swift in Sources */,
+				79FF7A0326F8A115007E86A6 /* LeaveApprovalModel.swift in Sources */,
 				79CC460426F3428F00448486 /* RoleListIntercter.swift in Sources */,
 				7900629226E353F100C43D94 /* OnDutyStudentsListWorker.swift in Sources */,
 				79C33EA526E22A7B006341E9 /* EventsListModel.swift in Sources */,
@@ -1726,6 +1812,8 @@
 				790C221326F1F23100B9A318 /* GroupUpdateWorker.swift in Sources */,
 				7995327B26E87FE50033A49B /* StudentsFeesListPresenter.swift in Sources */,
 				798DE4A626CE7B810017C5FD /* InstituteLoginInteracter.swift in Sources */,
+				79FF79F926F8A0FB007E86A6 /* LeaveApprovalInteracter.swift in Sources */,
+				79FC8C7D26F5C7470041A54B /* ExamResultsStudentsListVC.swift in Sources */,
 				79FE1B2E26D4C86D00E62F00 /* StudentsAdminPresenter.swift in Sources */,
 				79BB8CDE26F0A8C30015C088 /* CreateGroupVC.swift in Sources */,
 				79F0ED0926D3630300DFDE61 /* ForgotPswdModel.swift in Sources */,
@@ -1764,6 +1852,7 @@
 				79A82E4026DFA65700EA4FEF /* HomeWorkTestWorker.swift in Sources */,
 				790C221826F1F23E00B9A318 /* GroupUpdateModel.swift in Sources */,
 				7995324126E87DAE0033A49B /* FeesListVC.swift in Sources */,
+				79FF79FE26F8A109007E86A6 /* LeaveApprovalWorker.swift in Sources */,
 				79F0ED1326D3635C00DFDE61 /* ForgotPswdModels.swift in Sources */,
 				79BB8CE726F0AD8D0015C088 /* GetTeachersListIDIntercter.swift in Sources */,
 				7935040426E39C9500B4FDFA /* GuardianDetailsPresenter.swift in Sources */,
@@ -1813,6 +1902,7 @@
 				7900626526E3388A00C43D94 /* CircularListInteracter.swift in Sources */,
 				799274E026D6142900CBB8AC /* SectionListWorker.swift in Sources */,
 				79BAB83026E21E5C00DEE3C3 /* ExamsListInteracter.swift in Sources */,
+				79FF79EE26F89E32007E86A6 /* LeaveApprovalVC.swift in Sources */,
 				7995327626E87FD70033A49B /* StudentsFeesListModel.swift in Sources */,
 				7960638126E77999000F972E /* CircularsListCell.swift in Sources */,
 				79A82E5426DFACBA00EA4FEF /* HomeWorkListCell.swift in Sources */,
@@ -1822,6 +1912,7 @@
 				79956C5026CF7FE900E012BB /* DateFormatter.swift in Sources */,
 				79BAB81526E1FEE200DEE3C3 /* ClassViewModels.swift in Sources */,
 				79A82E3B26DFA65000EA4FEF /* HomeWorkTestInteracter.swift in Sources */,
+				79FF79DD26F891F7007E86A6 /* LeaveListPresenter.swift in Sources */,
 				7949932B26E0F8940013A38C /* TeacherDetailsInteracter.swift in Sources */,
 				79BAB7D326E1E4C100DEE3C3 /* AdminParentsVC.swift in Sources */,
 				79956C4926CF7FE900E012BB /* ViewController.swift in Sources */,
@@ -1847,6 +1938,7 @@
 				7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */,
 				79CC45CC26F3096600448486 /* ProfileVC.swift in Sources */,
 				790C21FA26F1BBD500B9A318 /* GroupMembersListWorker.swift in Sources */,
+				79FF79D326F891D9007E86A6 /* LeaveListWorker.swift in Sources */,
 				7904AD1326D9F0A100D6F2C2 /* StudentsDetailsWorker.swift in Sources */,
 				79BEF59226F089BC0056DCBF /* GroupDetailsVC.swift in Sources */,
 				79956C5126CF7FE900E012BB /* GradientView.swift in Sources */,

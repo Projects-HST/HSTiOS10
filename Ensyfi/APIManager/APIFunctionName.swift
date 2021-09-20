@@ -21,6 +21,8 @@ struct APIFunctionName {
     static let studentAttendanceUrl = "/apistudent/disp_Attendence/"
     static let examListUrl = "/apistudent/disp_Exams/"
     static let getParentDetailsUrl = "/apiadmin/get_parent_details/"
+    static let leaveListUrl = "/apiadmin/get_teachers_leaves/"
+    static let leaveApprovalUrl = "/apiadmin/update_teachers_leaves/"
     
     
 //    Teachers
@@ -31,7 +33,7 @@ struct APIFunctionName {
     static let clasForTeacherListurl = "/apiadmin/list_of_teachers_for_class/"
     
 //    exams
-    static let examsListUrl = "/apiadmin/list_of_exams_class/"
+    static let examsRsultsListUrl = "/apiadmin/list_of_exams_class/"
     
 //    Events
     static let eventsListUrl = "/apimain/disp_Events/"

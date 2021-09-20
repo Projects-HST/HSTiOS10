@@ -302,6 +302,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvL-1w-qds">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="fn9-BA-wUk" kind="show" id="RiB-kz-Zki"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -638,6 +641,9 @@
                                                         <state key="normal" title="Results">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="fn9-BA-wUk" kind="show" id="3GT-qK-jN6"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubL-T7-NzA">
                                                         <rect key="frame" x="0.0" y="459" width="112" height="30"/>
@@ -723,6 +729,9 @@
                                                         <state key="normal" title="Leaves">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="E0s-xk-GQo" kind="show" id="xQx-2N-W9B"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IE-dg-Mc4">
                                                         <rect key="frame" x="0.0" y="816" width="70" height="30"/>
@@ -836,7 +845,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qf-P3-QMt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3800" y="250"/>
+            <point key="canvasLocation" x="3799" y="313"/>
         </scene>
         <!--adminTeachers-->
         <scene sceneID="MNd-LG-1xy">
@@ -846,7 +855,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgT-9R-aJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3794" y="309"/>
+            <point key="canvasLocation" x="3793" y="352"/>
         </scene>
         <!--adminParentsVC-->
         <scene sceneID="wSK-ee-YcU">
@@ -856,7 +865,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37C-E5-AXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3801" y="370"/>
+            <point key="canvasLocation" x="3801" y="389"/>
         </scene>
         <!--classVc-->
         <scene sceneID="zPi-u3-roa">
@@ -866,7 +875,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcq-Bc-olG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3761" y="425"/>
+            <point key="canvasLocation" x="3761" y="429"/>
         </scene>
         <!--examsVC-->
         <scene sceneID="dFV-kN-Zmr">
@@ -936,7 +945,27 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ1-RU-JHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3790" y="788"/>
+            <point key="canvasLocation" x="3751" y="761"/>
+        </scene>
+        <!--leavesListVc-->
+        <scene sceneID="vBI-no-lqr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminLeaves" referencedIdentifier="leavesListVc" id="E0s-xk-GQo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uRX-TP-6bc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EGl-ER-nkU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3781" y="234"/>
+        </scene>
+        <!--examResultsVC-->
+        <scene sceneID="SI5-pE-IGB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminExamResults" referencedIdentifier="examResultsVC" id="fn9-BA-wUk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3b4-Hq-KC1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tqz-k9-yeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3794" y="275"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0NK-C5-1Jm">
@@ -964,6 +993,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="3GT-qK-jN6"/>
         <segue reference="4gJ-dw-B8o"/>
         <segue reference="deQ-QV-COS"/>
         <segue reference="iKe-6H-52a"/>

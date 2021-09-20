@@ -14,7 +14,7 @@ protocol ExamResultsPresentationLogic
 
 class ExamResultsPresenter: ExamResultsPresentationLogic
 {
-  weak var viewController: ExamResultsDisplayLogic?
+  weak var viewController2: ExamResultsDisplayLogic?
     
     // MARK: - Presentation logic
     func presentFetchResults(resp: ExamResultsModel.Fetch.Response) {
@@ -26,6 +26,6 @@ class ExamResultsPresenter: ExamResultsPresentationLogic
             displayedExamResultsData.append(displayedExamResultsDatas)
         }
         let viewModel = ExamResultsModel.Fetch.ViewModel(displayedExamResultsData: displayedExamResultsData)
-        viewController?.successFetchedItems(viewModel: viewModel)
+        viewController2?.successFetchedItems(viewModel: viewModel)
     }
 }

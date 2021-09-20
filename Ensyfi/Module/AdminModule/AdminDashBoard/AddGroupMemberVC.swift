@@ -39,8 +39,7 @@ protocol AddGroupMemberDisplayLogic: class
 }
 
 class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListDisplayLogic, StudentGroupAddListDisplayLogic, StaffGroupAddListDisplayLogic, AddGroupMemberDisplayLogic {
- 
-  
+   
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var groupAdmin: UILabel!
     @IBOutlet weak var selectTypeTextfield: UITextField!
@@ -58,7 +57,6 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     var displayedStudentGroupAddListData: [StudentGroupAddListModel.Fetch.ViewModel.DisplayedStudentGroupAddListData] = []
     
     var interactor3: StaffGroupAddListBusinessLogic?
-    
     var displayedStaffGroupAddListData: [StaffGroupAddListModel.Fetch.ViewModel.DisplayedStaffGroupAddListData] = []
     
     var interactor4: AddGroupMemberBusinessLogic?
@@ -81,7 +79,6 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     var selectedStatus = String()
     var selectedID = String()
     var selectedleadId = String()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
