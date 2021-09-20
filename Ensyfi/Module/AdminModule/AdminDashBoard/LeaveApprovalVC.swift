@@ -27,7 +27,6 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
     var selectedStatus = String()
     var selectedId = String()
     var selectedDescription = String()
-    
     var selectedLeaveStatus = String()
     
     override func viewDidLoad() {
@@ -58,11 +57,9 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
         presenter.viewController = viewController
     }
     
-    
     @IBAction func sementAction(_ sender: Any) {
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            
             self.selectedLeaveStatus = "Rejected"
         }
         else if segmentedControl.selectedSegmentIndex == 1{
