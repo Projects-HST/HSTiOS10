@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 
-protocol ExamListDisplayLogic: class
+protocol ExamListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: ExamListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ExamListModel.Fetch.ViewModel)

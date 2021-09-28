@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol GroupMembersListDisplayLogic: class
+protocol GroupMembersListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: GroupMembersListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: GroupMembersListModel.Fetch.ViewModel)

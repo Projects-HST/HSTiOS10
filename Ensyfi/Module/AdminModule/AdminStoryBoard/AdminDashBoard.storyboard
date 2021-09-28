@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="luM-Jl-bi1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="luM-Jl-bi1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -546,6 +546,9 @@
                                                         <state key="normal" title="Profile">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="maw-2e-k1d" kind="show" id="iNg-R4-lBz"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L85-Xy-AAi">
                                                         <rect key="frame" x="0.0" y="51" width="76" height="30"/>
@@ -605,6 +608,9 @@
                                                         <state key="normal" title="Attendance">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="Bgn-yD-U6q" kind="show" id="cND-3z-Uhy"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n46-dw-YAp">
                                                         <rect key="frame" x="0.0" y="306" width="65" height="30"/>
@@ -742,6 +748,9 @@
                                                         <state key="normal" title="Settings">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="zsc-PH-3JE" kind="show" id="fqc-G8-tWS"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-fF-LHK">
                                                         <rect key="frame" x="0.0" y="867" width="72" height="30"/>
@@ -865,7 +874,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37C-E5-AXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3801" y="389"/>
+            <point key="canvasLocation" x="3801" y="394"/>
         </scene>
         <!--classVc-->
         <scene sceneID="zPi-u3-roa">
@@ -875,7 +884,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcq-Bc-olG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3761" y="429"/>
+            <point key="canvasLocation" x="3759" y="435"/>
         </scene>
         <!--examsVC-->
         <scene sceneID="dFV-kN-Zmr">
@@ -895,7 +904,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBn-v2-M2R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3783" y="531"/>
+            <point key="canvasLocation" x="3784" y="520"/>
         </scene>
         <!--circularVC-->
         <scene sceneID="w8R-9v-TDq">
@@ -905,7 +914,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCD-vX-Se1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="582"/>
+            <point key="canvasLocation" x="3774" y="558"/>
         </scene>
         <!--onDutyListVC-->
         <scene sceneID="VQQ-9V-gKA">
@@ -915,7 +924,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0c-O5-6xP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3788" y="633"/>
+            <point key="canvasLocation" x="3788" y="600"/>
         </scene>
         <!--feesListVC-->
         <scene sceneID="bmi-21-uGC">
@@ -925,7 +934,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odI-bt-ypS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3775" y="675"/>
+            <point key="canvasLocation" x="3774" y="643"/>
         </scene>
         <!--groupListVC-->
         <scene sceneID="eM6-El-tUj">
@@ -935,7 +944,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIp-eI-KAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3783" y="720"/>
+            <point key="canvasLocation" x="3780" y="686"/>
         </scene>
         <!--Login-->
         <scene sceneID="sT1-rk-uRs">
@@ -945,7 +954,37 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ1-RU-JHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3751" y="761"/>
+            <point key="canvasLocation" x="3751" y="724"/>
+        </scene>
+        <!--adminSettingsVC-->
+        <scene sceneID="ipK-9K-1jb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminSettings" referencedIdentifier="adminSettingsVC" id="zsc-PH-3JE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PRL-nH-iAT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kz-yM-EL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3804" y="123"/>
+        </scene>
+        <!--adminProfileVC-->
+        <scene sceneID="YNs-hA-5GY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminProfile" referencedIdentifier="adminProfileVC" id="maw-2e-k1d" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gla-v4-9Ch"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fd4-Pm-J2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3796" y="160"/>
+        </scene>
+        <!--attendanceVC-->
+        <scene sceneID="a0a-qZ-oQ2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminAttendances" referencedIdentifier="attendanceVC" id="Bgn-yD-U6q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fDi-O9-RFl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhG-85-asI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3786" y="196"/>
         </scene>
         <!--leavesListVc-->
         <scene sceneID="vBI-no-lqr">
@@ -993,14 +1032,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3GT-qK-jN6"/>
+        <segue reference="RiB-kz-Zki"/>
         <segue reference="4gJ-dw-B8o"/>
         <segue reference="deQ-QV-COS"/>
         <segue reference="iKe-6H-52a"/>
         <segue reference="p1W-pU-VsK"/>
         <segue reference="n79-cd-bCB"/>
-        <segue reference="ze0-Dp-xun"/>
-        <segue reference="J1i-kC-S7T"/>
+        <segue reference="gvM-BY-QNx"/>
+        <segue reference="PoF-jv-NTc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Parents" width="100" height="100"/>

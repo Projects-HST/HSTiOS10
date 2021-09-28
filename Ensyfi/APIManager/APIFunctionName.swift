@@ -4,7 +4,6 @@
 //
 //  Created by HappysanziMac on 19/08/21.
 //
-
 import Foundation
 import UIKit
 
@@ -23,33 +22,26 @@ struct APIFunctionName {
     static let getParentDetailsUrl = "/apiadmin/get_parent_details/"
     static let leaveListUrl = "/apiadmin/get_teachers_leaves/"
     static let leaveApprovalUrl = "/apiadmin/update_teachers_leaves/"
-    
-    
 //    Teachers
     static let teacherListUrl = "/apiadmin/get_all_teachers/"
     static let teacherDetailUrl = "/apiadmin/get_teacher_class_details/"
-    
 //    clasess
     static let clasForTeacherListurl = "/apiadmin/list_of_teachers_for_class/"
-    
 //    exams
     static let examsRsultsListUrl = "/apiadmin/list_of_exams_class/"
-    
 //    Events
     static let eventsListUrl = "/apimain/disp_Events/"
     static let subEventsListUrl = "/apimain/disp_subEvents/"
-    
 //    Circulars
     static let adminCircularListUrl = "/apiadmin/get_all_circular_view/"
-    
 //    Fees
-    static let feesClassListUrl = "/apiadmin/get_fees_details/"
-    
+    static let feesClassListUrl = "/apiadmin/get_all_classes/"
+    static let feesSectionListUrl = "/apiadmin/get_all_sections/"
+    static let feesListUrl = "/apiadmin/get_fees_master_class/"
 //    OnDuty
     static let ODstudentsListUrl = "/apiadmin/get_students_od_view/"
     static let ODteachersListUrl = "/apiadmin/get_teachers_od_view/"
     static let ODApprovalUrl = "/apiadmin/update_teachers_od/"
-    
 //    Groups
     static let groupListUrl = "/apiadmin/list_groupmaster/"
     static let techerIDnameListUrl = "/apiadmin/get_allteachersuserid/"
@@ -61,4 +53,10 @@ struct APIFunctionName {
     static let studentListGroupAddUrl = "/apiadmin/gn_studentlist/"
     static let staffListGroupAddUrl = "/apiadmin/gn_stafflist/"
     static let AddGroupMemberUrl = "/apiadmin/add_gn_members/"
+//    Attendance
+    static let classSectionListUrl = "/apimain/list_class_section/"
+    static let classAttendanceListUrl = "/apimain/view_class_day_attendence/"
+//    password
+    
+    static let changePasswordUrl = "/apimain/change_Password/"
 }

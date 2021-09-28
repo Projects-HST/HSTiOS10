@@ -20,6 +20,8 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var login_type = String()
     var user_id = String()
     var user_type = String()
+    var profilePic = String()
+    var name = String()
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -116,10 +118,20 @@ extension InstituteLoginVC {
         UserDefaults.standard.set(user_type, forKey: UserDefaultsKey.userTypeKey.rawValue)
         GlobalVariables.shared.user_type = user_type
         
+        self.profilePic = viewModel.user_pic!
+        UserDefaults.standard.set(profilePic, forKey: UserDefaultsKey.profile_picturekey.rawValue)
+        GlobalVariables.shared.profilePic = profilePic
+        
+        self.name = viewModel.name!
+        UserDefaults.standard.set(name, forKey: UserDefaultsKey.namekey.rawValue)
+        GlobalVariables.shared.userName = name
+        
         if login_type == "Admin" {
-            
         self.performSegue(withIdentifier: "to_AdminDashboard", sender: self)
-            
+        }
+        
+        else if login_type == "Students" {
+        self.performSegue(withIdentifier: "to_studentsDashboard", sender: self)
         }
     }
 
@@ -132,6 +144,12 @@ extension InstituteLoginVC {
         if (segue.identifier == "to_AdminDashboard")
         {
             _ = segue.destination as! UINavigationController
+           
+        }
+        
+        else if (segue.identifier == "to_studentsDashboard")
+        {
+            _ = segue.destination as! StudentsLoginProfileVC
            
         }
     }

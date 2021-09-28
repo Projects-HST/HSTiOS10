@@ -6,3 +6,33 @@
 //
 
 import Foundation
+import UIKit
+
+struct FeesSectionListModel{
+    struct Fetch {
+        
+        struct Request
+        {
+            var class_id : String?
+        }
+        
+        struct Response
+        {
+            var testObj: [FeesSectionListModels]
+            var isError: Bool
+            var message: String?
+        }
+
+        struct ViewModel
+        {
+           struct DisplayedFeesSectionListData
+           {
+            var sec_id : String?
+            var sec_name : String?
+            
+            }
+              var displayedFeesSectionListData: [DisplayedFeesSectionListData]
+
+        }
+    }
+}

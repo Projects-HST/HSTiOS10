@@ -17,5 +17,8 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.titleName.text = GlobalVariables.shared.userName
+        self.moduleType.text = GlobalVariables.shared.user_loginType
+        self.userNmae.text = GlobalVariables.shared.user_type
     }
 }

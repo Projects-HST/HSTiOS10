@@ -7,20 +7,30 @@
 
 import UIKit
 import DropDown
+import MBProgressHUD
 
-protocol FeesClassListDisplayLogic: class
+protocol FeesListDisplayLogic: AnyObject
 {
-    func successFetchedItems(viewModel: FeesClassListModel.Fetch.ViewModel)
-    func errorFetchingItems(viewModel: FeesClassListModel.Fetch.ViewModel)
+    func successFetchedItems(viewModel: FeesListModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: FeesListModel.Fetch.ViewModel)
 }
 
-class FeesListVC: UIViewController, FeesClassListDisplayLogic,ClassViewDisplayLogic {
+protocol FeesSectionListDisplayLogic: AnyObject
+{
+    func successFetchedItems(viewModel: FeesSectionListModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: FeesSectionListModel.Fetch.ViewModel)
+}
+
+class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,FeesSectionListDisplayLogic {
+   
  
     let dropDown = DropDown()
-    var interactor1: FeesClassListBusinessLogic?
+    var interactor2: FeesListBusinessLogic?
+    var interactor1: FeesSectionListBusinessLogic?
     var interactor: ClassViewBusinessLogic?
     var displayedClassViewData: [ClassViewModel.Fetch.ViewModel.DisplayedClassViewData] = []
-    var displayedFeesClassListData: [FeesClassListModel.Fetch.ViewModel.DisplayedFeesClassListData] = []
+    var displayedFeesListData: [FeesListModel.Fetch.ViewModel.DisplayedFeesListData] = []
+    var displayedFeesSectionListData: [FeesSectionListModel.Fetch.ViewModel.DisplayedFeesSectionListData] = []
     
     var className = [String]()
     var classId = [String]()
@@ -42,7 +52,8 @@ class FeesListVC: UIViewController, FeesClassListDisplayLogic,ClassViewDisplayLo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+       
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -67,11 +78,18 @@ class FeesListVC: UIViewController, FeesClassListDisplayLogic,ClassViewDisplayLo
         presenter.viewController = viewController
         
         let viewController1 = self
-        let interactor1 = FeesClassListInteractor()
-        let presenter1 = FeesClassListPresenter()
+        let interactor1 = FeesSectionListInteractor()
+        let presenter1 = FeesSectionListPresenter()
         viewController1.interactor1 = interactor1
         interactor1.presenter1 = presenter1
         presenter1.viewController1 = viewController1
+        
+        let viewController2 = self
+        let interactor2 = FeesListInteractor()
+        let presenter2 = FeesListPresenter()
+        viewController2.interactor2 = interactor2
+        interactor2.presenter2 = presenter2
+        presenter2.viewController2 = viewController2
     }
     
     @IBAction func cllasListrAction(_ sender: Any) {
@@ -85,7 +103,22 @@ class FeesListVC: UIViewController, FeesClassListDisplayLogic,ClassViewDisplayLo
             let slecteId = classId[index]
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
-            interactor1?.fetchItems(request: FeesClassListModel.Fetch.Request(user_id :self.selectedClassId))
+            interactor1?.fetchItems(request: FeesSectionListModel.Fetch.Request(class_id :self.selectedClassId))
+        }
+    }
+    
+    @IBAction func selectSection(_ sender: Any) {
+        
+            dropDown.show()
+            dropDown.anchorView = sectionTextfield
+            dropDown.dataSource = secName
+            dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+              print("Selected item: \(item) at index: \(index)")
+                sectionTextfield.text = item
+                let slecteId = secId[index]
+                self.selectedSecId = String(slecteId)
+                print(selectedSecId)
+                interactor2?.fetchItems(request: FeesListModel.Fetch.Request(class_id:self.selectedClassId , section_id: self.selectedSecId))
         }
     }
 }
@@ -108,14 +141,36 @@ extension FeesListVC {
     }
     
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel) {
-        
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
+        })
     }
-   
-    func successFetchedItems(viewModel: FeesClassListModel.Fetch.ViewModel) {
+    
+//  SectionListDisplayLogic
+    func successFetchedItems(viewModel: FeesSectionListModel.Fetch.ViewModel) {
+        displayedFeesSectionListData = viewModel.displayedFeesSectionListData
+        
+        for data in displayedFeesSectionListData {
+            
+            let secName = data.sec_name
+            let secId = data.sec_id
+            
+            self.secId.append(secId!)
+            self.secName.append(secName!)
+        }
+    }
+    
+    func errorFetchingItems(viewModel: FeesSectionListModel.Fetch.ViewModel) {
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
+        })
+    }
+    
+//   FeesListDisplayLogic
+    func successFetchedItems(viewModel: FeesListModel.Fetch.ViewModel) {
         
     }
     
-    func errorFetchingItems(viewModel: FeesClassListModel.Fetch.ViewModel) {
-        
+    func errorFetchingItems(viewModel: FeesListModel.Fetch.ViewModel) {
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
+        })
     }
 }

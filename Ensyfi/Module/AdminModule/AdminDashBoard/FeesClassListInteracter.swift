@@ -8,29 +8,29 @@
 import Foundation
 import UIKit
 
-protocol FeesClassListBusinessLogic
+protocol FeesListBusinessLogic
 {
-    func fetchItems(request: FeesClassListModel.Fetch.Request)
+    func fetchItems(request: FeesListModel.Fetch.Request)
 }
-protocol FeesClassListDataStore
+protocol FeesListDataStore
 {
   
 }
 
-class FeesClassListInteractor: FeesClassListBusinessLogic, FeesClassListDataStore
+class FeesListInteractor: FeesListBusinessLogic, FeesListDataStore
 {
-    var presenter1: FeesClassListPresentationLogic?
-    var worker: FeesClassListWorker?
-    var respData = [FeesClassListModels]()
-    func fetchItems(request: FeesClassListModel.Fetch.Request) {
-        if request.user_id == nil {
-        self.presenter1?.presentFetchResults(resp: FeesClassListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
+    var presenter2: FeesListPresentationLogic?
+    var worker: FeesListWorker?
+    var respData = [FeesListModels]()
+    func fetchItems(request: FeesListModel.Fetch.Request) {
+        if request.class_id == nil {
+        self.presenter2?.presentFetchResults(resp: FeesListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
-        worker = FeesClassListWorker()
-        worker!.fetch(user_id:request.user_id!, onSuccess: { (resp) in
-            self.presenter1?.presentFetchResults(resp: FeesClassListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
+        worker = FeesListWorker()
+        worker!.fetch(class_id:request.class_id!,section_id:request.section_id!, onSuccess: { (resp) in
+            self.presenter2?.presentFetchResults(resp: FeesListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
-            self.presenter1?.presentFetchResults(resp: FeesClassListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
+            self.presenter2?.presentFetchResults(resp: FeesListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }

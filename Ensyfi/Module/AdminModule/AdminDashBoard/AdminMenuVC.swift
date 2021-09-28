@@ -55,5 +55,7 @@ class AdminMenuVC: UIViewController {
             GlobalVariables.shared.total_working_days = 0
             GlobalVariables.shared.present_days = 0
             GlobalVariables.shared.user_id = ""
+            GlobalVariables.shared.profilePic = ""
+            GlobalVariables.shared.userName = ""
     }
 }

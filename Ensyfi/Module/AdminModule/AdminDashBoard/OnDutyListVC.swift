@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol ODStudentsListDisplayLogic: class
+protocol ODStudentsListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: ODStudentsListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ODStudentsListModel.Fetch.ViewModel)
 }
 
-protocol ODTeachersListDisplayLogic: class
+protocol ODTeachersListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: ODTeachersListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ODTeachersListModel.Fetch.ViewModel)

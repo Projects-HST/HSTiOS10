@@ -8,31 +8,31 @@
 import UIKit
 import DropDown
 
-protocol RoleListDisplayLogic: class
+protocol RoleListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: RoleListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: RoleListModel.Fetch.ViewModel)
 }
 
-protocol GroupSectionListDisplayLogic: class
+protocol GroupSectionListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: GroupSectionListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: GroupSectionListModel.Fetch.ViewModel)
 }
 
-protocol StudentGroupAddListDisplayLogic: class
+protocol StudentGroupAddListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: StudentGroupAddListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: StudentGroupAddListModel.Fetch.ViewModel)
 }
 
-protocol StaffGroupAddListDisplayLogic: class
+protocol StaffGroupAddListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel)
 }
 
-protocol AddGroupMemberDisplayLogic: class
+protocol AddGroupMemberDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: AddGroupMemberModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: AddGroupMemberModel.Fetch.ViewModel)

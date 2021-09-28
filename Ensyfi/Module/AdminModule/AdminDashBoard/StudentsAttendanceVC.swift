@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 
-protocol StudentAttendanceDisplayLogic: class
+protocol StudentAttendanceDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: StudentAttendanceModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: StudentAttendanceModel.Fetch.ViewModel)
@@ -33,7 +33,6 @@ class StudentsAttendanceVC: UIViewController, StudentAttendanceDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: StudentAttendanceModel.Fetch.Request(class_id :self.selectedClassId,stud_id :self.stsudentId))
-       
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

@@ -8,21 +8,22 @@
 import Foundation
 import UIKit
 
-typealias FeesClassListresponseHandler = (_ response:FeesClassListModel.Fetch.Response) ->()
+typealias FeesListresponseHandler = (_ response:FeesListModel.Fetch.Response) ->()
 
-class FeesClassListWorker{
+class FeesListWorker{
     
-   var respData = [FeesClassListModels]()
-   func fetch(user_id:String, onSuccess successCallback:(FeesClassListresponseHandler)?,onFailure failureCallback: @escaping(FeesClassListresponseHandler)) {
+   var respData = [FeesListModels]()
+   func fetch(class_id:String,section_id:String, onSuccess successCallback:(FeesListresponseHandler)?,onFailure failureCallback: @escaping(FeesListresponseHandler)) {
        let manager = APIManager()
-       manager.callAPIFeesClassList(
-        user_id:user_id, onSuccess: { (resp)  in
-               successCallback?(FeesClassListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
+       manager.callAPIFeesList(
+        class_id:class_id,section_id:section_id, onSuccess: { (resp)  in
+               successCallback?(FeesListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
-                   failureCallback(FeesClassListModel.Fetch.Response(testObj: self.respData , isError: true, message:nil))
+                   failureCallback(FeesListModel.Fetch.Response(testObj: self.respData , isError: true, message:nil))
            }
        )
    }
 }
-
+var class_id : String?
+var section_id : String?

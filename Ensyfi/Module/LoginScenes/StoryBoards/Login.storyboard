@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AiD-XP-xE0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AiD-XP-xE0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -349,6 +349,7 @@
                         <outlet property="password" destination="KGR-c4-Xm5" id="dYw-4u-kna"/>
                         <outlet property="userName" destination="gY7-uh-7h8" id="Fch-cS-NYx"/>
                         <segue destination="w4v-ef-mAh" kind="show" identifier="to_AdminDashboard" id="BCg-mC-Qz4"/>
+                        <segue destination="KRF-II-y3V" kind="show" identifier="to_studentsDashboard" id="gex-ja-BYW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hc7-8f-UuZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -496,6 +497,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylK-qO-B7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1464" y="467"/>
+        </scene>
+        <!--studentsLoginProfile-->
+        <scene sceneID="lWM-dW-NdJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StudentsDashBoard" referencedIdentifier="studentsLoginProfile" id="KRF-II-y3V" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tPQ-Ub-TOJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dy9-Me-MGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711" y="467"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Asf-tP-e0Q">

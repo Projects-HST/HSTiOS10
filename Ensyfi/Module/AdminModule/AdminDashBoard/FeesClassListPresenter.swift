@@ -7,25 +7,25 @@
 
 import Foundation
 
-protocol FeesClassListPresentationLogic
+protocol FeesListPresentationLogic
 {
-  func presentFetchResults(resp: FeesClassListModel.Fetch.Response)
+  func presentFetchResults(resp: FeesListModel.Fetch.Response)
 }
 
-class FeesClassListPresenter: FeesClassListPresentationLogic
+class FeesListPresenter: FeesListPresentationLogic
 {
-  weak var viewController1: FeesClassListDisplayLogic?
+  weak var viewController2: FeesListDisplayLogic?
     
     // MARK: - Presentation logic
-    func presentFetchResults(resp:FeesClassListModel.Fetch.Response) {
+    func presentFetchResults(resp:FeesListModel.Fetch.Response) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        var displayedFeesClassListData: [FeesClassListModel.Fetch.ViewModel.DisplayedFeesClassListData] = []
+        var displayedFeesListData: [FeesListModel.Fetch.ViewModel.DisplayedFeesListData] = []
        
         for data in resp.testObj {
-        let displayedFeesClassListDatas = FeesClassListModel.Fetch.ViewModel.DisplayedFeesClassListData(class_id: data.class_id!,class_name: data.class_name!)
-            displayedFeesClassListData.append(displayedFeesClassListDatas)
+        let displayedFeesListDatas = FeesListModel.Fetch.ViewModel.DisplayedFeesListData(fees_id: data.fees_id!,from_year: data.from_year!,term_name: data.term_name!,to_year: data.to_year!,due_date_to: data.due_date_to!,due_date_from: data.due_date_from!)
+            displayedFeesListData.append(displayedFeesListDatas)
         }
-        let viewModel = FeesClassListModel.Fetch.ViewModel(displayedFeesClassListData: displayedFeesClassListData)
-        viewController1?.successFetchedItems(viewModel: viewModel)
+        let viewModel = FeesListModel.Fetch.ViewModel(displayedFeesListData: displayedFeesListData)
+        viewController2?.successFetchedItems(viewModel: viewModel)
     }
 }

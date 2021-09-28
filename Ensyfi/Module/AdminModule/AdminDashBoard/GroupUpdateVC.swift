@@ -141,13 +141,14 @@ extension GroupUpdateVC {
     func errorFetchingItems(viewModel: TeacherListIDModel.Fetch.ViewModel) {
         
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
-            self.navigationController?.popViewController(animated: true)
+            
         })
     }
     
     func successFetchedItems(viewModel: UpdateGroupModel.Fetch.ViewModel) {
         
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
+            self.navigationController?.popViewController(animated: true)
         })
     }
 

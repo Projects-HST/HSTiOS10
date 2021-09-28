@@ -6,21 +6,22 @@
 //
 
 import UIKit
+import MBProgressHUD
 import DropDown
 
-protocol ClassViewDisplayLogic: class
+protocol ClassViewDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: ClassViewModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel)
 }
 
-protocol SectionListDisplayLogic: class
+protocol SectionListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: SectionListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: SectionListModel.Fetch.ViewModel)
 }
 
-protocol StudentsListDisplayLogic: class
+protocol StudentsListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: StudentsListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: StudentsListModel.Fetch.ViewModel)
@@ -52,11 +53,12 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
     var displayedClassViewData: [ClassViewModel.Fetch.ViewModel.DisplayedClassViewData] = []
     var displayedSectionListData: [SectionListModel.Fetch.ViewModel.DisplayedSectionListData] = []
     var displayedStudentsListData: [StudentsListModel.Fetch.ViewModel.DisplayedStudentsListData] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -107,6 +109,7 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
             interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId))
+            MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }
     
@@ -128,6 +131,7 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
                 self.selectedSecId = String(slecteId)
                 print(selectedSecId)
                 interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+                MBProgressHUD.showAdded(to: self.view, animated: true)
             }
         }
     }
@@ -137,6 +141,7 @@ extension StudentsVC {
     
 //    ClassViewDisplayLogic
     func successFetchedItems(viewModel: ClassViewModel.Fetch.ViewModel) {
+        
         displayedClassViewData = viewModel.displayedClassViewData
         
         for data in displayedClassViewData {
@@ -147,12 +152,14 @@ extension StudentsVC {
             self.className.append(class_name!)
             self.classId.append(class_id!)
         }
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
 //    SectionListDisplayLogic
@@ -167,12 +174,14 @@ extension StudentsVC {
             self.secId.append(secId!)
             self.secName.append(secName!)
         }
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     func errorFetchingItems(viewModel: SectionListModel.Fetch.ViewModel) {
         
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
 //    StudentsListDisplayLogic
@@ -183,12 +192,14 @@ extension StudentsVC {
             self.serialNoArr.append(i)
         }
         self.tableView.reloadData()
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     func errorFetchingItems(viewModel: StudentsListModel.Fetch.ViewModel) {
         
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
 
@@ -209,7 +220,6 @@ extension StudentsVC: UITableViewDelegate,UITableViewDataSource {
         cell.admissionNo.text = data.admisn_no
         cell.studentName.text = data.name
         cell.selectionStyle = .none
-        
         return cell
     }
     
@@ -228,7 +238,6 @@ extension StudentsVC: UITableViewDelegate,UITableViewDataSource {
         let vc = segue.destination as! StudentsDetailsVC
             vc.studentEnroolId = self.selectedStudentId
             vc.selectedClassId = self.selectedClassId
-            
         }
     }
 }

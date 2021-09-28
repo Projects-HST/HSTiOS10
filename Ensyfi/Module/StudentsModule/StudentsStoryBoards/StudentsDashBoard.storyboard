@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Student Dash BoardVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="StudentDashBoardVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hMs-15-yy0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="side_menu" id="SIX-4D-tg7">
+                            <connections>
+                                <segue destination="diG-Kb-TpK" kind="show" id="WOm-ES-g70"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="82"/>
+        </scene>
+        <!--Students Login ProfileVC-->
+        <scene sceneID="Q9F-F7-B8Z">
+            <objects>
+                <viewController storyboardIdentifier="studentsLoginProfile" id="0R2-4V-RKg" customClass="StudentsLoginProfileVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="00C-Sb-E8l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Cx-oc-ACl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="640 x 1136" translatesAutoresizingMaskIntoConstraints="NO" id="PYB-hV-09o">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    </imageView>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2e-Bl-2ts">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="810"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="VfR-xe-79o">
+                                                <rect key="frame" x="147" y="25" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="DMH-aF-Eg6"/>
+                                                    <constraint firstAttribute="width" constant="120" id="WHP-43-0SL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="60"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aO6-KO-zRc">
+                                                <rect key="frame" x="50.5" y="165" width="313" height="269"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="269" id="37B-7n-vjl"/>
+                                                    <constraint firstAttribute="width" constant="313" id="AG8-ya-DKC"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="aO6-KO-zRc" firstAttribute="top" secondItem="VfR-xe-79o" secondAttribute="bottom" constant="20" id="Zqa-51-ez0"/>
+                                            <constraint firstItem="VfR-xe-79o" firstAttribute="top" secondItem="p2e-Bl-2ts" secondAttribute="top" constant="25" id="gob-Fp-cGK"/>
+                                            <constraint firstItem="aO6-KO-zRc" firstAttribute="centerX" secondItem="p2e-Bl-2ts" secondAttribute="centerX" id="iwc-cB-p0q"/>
+                                            <constraint firstItem="VfR-xe-79o" firstAttribute="centerX" secondItem="p2e-Bl-2ts" secondAttribute="centerX" id="wSc-dC-5hn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="PYB-hV-09o" firstAttribute="leading" secondItem="9Cx-oc-ACl" secondAttribute="leading" id="7b4-Iu-CcZ"/>
+                                    <constraint firstItem="PYB-hV-09o" firstAttribute="top" secondItem="9Cx-oc-ACl" secondAttribute="top" id="FJY-9D-IhC"/>
+                                    <constraint firstAttribute="bottom" secondItem="p2e-Bl-2ts" secondAttribute="bottom" constant="8" id="KKu-Yl-9Iu"/>
+                                    <constraint firstItem="p2e-Bl-2ts" firstAttribute="leading" secondItem="9Cx-oc-ACl" secondAttribute="leading" id="XlL-WZ-sso"/>
+                                    <constraint firstAttribute="bottom" secondItem="PYB-hV-09o" secondAttribute="bottom" id="j9a-n4-J9l"/>
+                                    <constraint firstItem="p2e-Bl-2ts" firstAttribute="top" secondItem="9Cx-oc-ACl" secondAttribute="top" id="oPS-0f-Aod"/>
+                                    <constraint firstAttribute="trailing" secondItem="PYB-hV-09o" secondAttribute="trailing" id="sFE-qx-YUO"/>
+                                    <constraint firstAttribute="trailing" secondItem="p2e-Bl-2ts" secondAttribute="trailing" id="vsJ-i7-fXw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="azQ-0G-Ljt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Cx-oc-ACl" firstAttribute="leading" secondItem="azQ-0G-Ljt" secondAttribute="leading" id="2vE-81-yK7"/>
+                            <constraint firstItem="9Cx-oc-ACl" firstAttribute="top" secondItem="azQ-0G-Ljt" secondAttribute="top" id="aZu-v3-yQn"/>
+                            <constraint firstItem="9Cx-oc-ACl" firstAttribute="bottom" secondItem="azQ-0G-Ljt" secondAttribute="bottom" id="hx5-LD-MUW"/>
+                            <constraint firstItem="9Cx-oc-ACl" firstAttribute="trailing" secondItem="azQ-0G-Ljt" secondAttribute="trailing" id="oW4-2r-sic"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4C-he-5qU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-449.27536231884062" y="80.357142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uHr-iE-42I">
+            <objects>
+                <navigationController storyboardIdentifier="studentsDashboardVC" automaticallyAdjustsScrollViewInsets="NO" id="h6l-Gr-odS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Tz7-cT-8fi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PVG-Ie-0o4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="HOZ-72-CuX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njK-6W-oAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="381" y="82"/>
+        </scene>
+        <!--Students Menu-->
+        <scene sceneID="3CV-gz-Yaq">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="GKq-id-E0p" customClass="StudentsMenu" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BQ4-SQ-uA8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI2-Ip-Whq">
+                                <rect key="frame" x="0.0" y="242" width="414" height="958"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFX-nU-CSQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="958"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="qIw-rE-S7H">
+                                                <rect key="frame" x="33" y="36" width="371" height="897"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAx-pE-hTf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="sF5-s8-XAP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Profile">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWj-qj-MBs">
+                                                        <rect key="frame" x="0.0" y="51" width="76" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="6v5-gj-6yv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Students">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shj-Cq-afm">
+                                                        <rect key="frame" x="0.0" y="102" width="76" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Ebc-Pa-GaY"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Teachers">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6O-gW-gJE">
+                                                        <rect key="frame" x="0.0" y="153" width="64" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="hXK-Qo-ite"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Parents">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpC-hg-WJ7">
+                                                        <rect key="frame" x="0.0" y="204" width="132" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Jct-tl-OOg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Board Members">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmN-va-54Y">
+                                                        <rect key="frame" x="0.0" y="255" width="97" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="FIU-IO-zDU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Attendance">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llO-zT-erj">
+                                                        <rect key="frame" x="0.0" y="306" width="65" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="AWN-Vp-6mt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Classes">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAW-Ce-R6B">
+                                                        <rect key="frame" x="0.0" y="357" width="112" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Dwf-zK-D1W"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Examinations">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNS-AH-CHs">
+                                                        <rect key="frame" x="0.0" y="408" width="62" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="jOo-Ht-MU9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Results">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmV-yp-CJU">
+                                                        <rect key="frame" x="0.0" y="459" width="112" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="RBR-Ap-Ig1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Special Class">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0M-kJ-Jme">
+                                                        <rect key="frame" x="0.0" y="510" width="57" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="cMd-Vy-Of4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Events">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9E-Wm-PUT">
+                                                        <rect key="frame" x="0.0" y="561" width="75" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="v6V-sS-Ywr"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Circulars">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQy-d5-VkU">
+                                                        <rect key="frame" x="0.0" y="612" width="89" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Srs-Kq-5Se"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Fee Status">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJx-Tk-uMW">
+                                                        <rect key="frame" x="0.0" y="663" width="68" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="G3M-FB-qMy"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="On Duty">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjO-Q6-67N">
+                                                        <rect key="frame" x="0.0" y="714" width="61" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="1qC-d6-nj3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Groups">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYB-cS-od8">
+                                                        <rect key="frame" x="0.0" y="765" width="58" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ibp-0c-gTw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Leaves">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erd-Ka-E4J">
+                                                        <rect key="frame" x="0.0" y="816" width="70" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="AYX-nO-XfP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Settings">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnn-qc-m3H">
+                                                        <rect key="frame" x="0.0" y="867" width="72" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="doV-bw-uKx"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                        <state key="normal" title="Sign Out">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="signOutAction:" destination="GKq-id-E0p" eventType="touchUpInside" id="NLc-Ao-c1K"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="qIw-rE-S7H" firstAttribute="top" secondItem="SFX-nU-CSQ" secondAttribute="top" constant="36" id="YtY-Mi-x46"/>
+                                            <constraint firstItem="qIw-rE-S7H" firstAttribute="leading" secondItem="SFX-nU-CSQ" secondAttribute="leading" constant="33" id="aXG-II-ite"/>
+                                            <constraint firstAttribute="trailing" secondItem="qIw-rE-S7H" secondAttribute="trailing" constant="10" id="cJO-9J-PIK"/>
+                                            <constraint firstAttribute="bottom" secondItem="qIw-rE-S7H" secondAttribute="bottom" constant="25" id="ucG-KF-Go7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SFX-nU-CSQ" firstAttribute="width" secondItem="iI2-Ip-Whq" secondAttribute="width" id="7nI-yW-C2G"/>
+                                    <constraint firstAttribute="bottom" secondItem="SFX-nU-CSQ" secondAttribute="bottom" id="Pb0-2j-DhI"/>
+                                    <constraint firstItem="SFX-nU-CSQ" firstAttribute="leading" secondItem="iI2-Ip-Whq" secondAttribute="leading" id="V1b-qG-kpe"/>
+                                    <constraint firstItem="SFX-nU-CSQ" firstAttribute="top" secondItem="iI2-Ip-Whq" secondAttribute="top" id="cle-xF-qaa"/>
+                                    <constraint firstItem="SFX-nU-CSQ" firstAttribute="height" secondItem="iI2-Ip-Whq" secondAttribute="height" priority="250" id="fuY-vR-3eS"/>
+                                    <constraint firstAttribute="trailing" secondItem="SFX-nU-CSQ" secondAttribute="trailing" id="no1-Of-Cad"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1r7-rD-CoW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="198"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-D1-RQb">
+                                        <rect key="frame" x="51" y="30" width="110" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="BkW-Zu-kob"/>
+                                            <constraint firstAttribute="width" constant="110" id="h5e-4e-hjw"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="55"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-hz-Gvp">
+                                        <rect key="frame" x="31" y="148" width="150" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Q5x-L9-odA"/>
+                                            <constraint firstAttribute="height" constant="28" id="r8h-f4-gdd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iX6-hz-Gvp" secondAttribute="bottom" constant="22" id="BF2-HJ-XhV"/>
+                                    <constraint firstAttribute="height" constant="198" id="DTn-xp-MjU"/>
+                                    <constraint firstItem="AbO-D1-RQb" firstAttribute="leading" secondItem="1r7-rD-CoW" secondAttribute="leading" constant="51" id="EKy-oT-NbI"/>
+                                    <constraint firstItem="iX6-hz-Gvp" firstAttribute="leading" secondItem="1r7-rD-CoW" secondAttribute="leading" constant="31" id="FQE-XJ-u17"/>
+                                    <constraint firstItem="AbO-D1-RQb" firstAttribute="top" secondItem="1r7-rD-CoW" secondAttribute="top" constant="30" id="Nax-mX-Rcd"/>
+                                    <constraint firstItem="iX6-hz-Gvp" firstAttribute="top" secondItem="AbO-D1-RQb" secondAttribute="bottom" constant="8" symbolic="YES" id="yzF-z3-x7A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="65o-4v-eHQ"/>
+                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iI2-Ip-Whq" firstAttribute="trailing" secondItem="65o-4v-eHQ" secondAttribute="trailing" id="IsX-7o-hZE"/>
+                            <constraint firstItem="1r7-rD-CoW" firstAttribute="leading" secondItem="65o-4v-eHQ" secondAttribute="leading" id="JPf-Kj-ncs"/>
+                            <constraint firstItem="1r7-rD-CoW" firstAttribute="top" secondItem="65o-4v-eHQ" secondAttribute="top" id="Z9j-yT-Rv2"/>
+                            <constraint firstItem="iI2-Ip-Whq" firstAttribute="leading" secondItem="65o-4v-eHQ" secondAttribute="leading" id="cD8-2g-98n"/>
+                            <constraint firstAttribute="bottom" secondItem="iI2-Ip-Whq" secondAttribute="bottom" id="g5h-XC-h0H"/>
+                            <constraint firstAttribute="trailing" secondItem="1r7-rD-CoW" secondAttribute="trailing" id="nLF-em-V6r"/>
+                            <constraint firstItem="iI2-Ip-Whq" firstAttribute="top" secondItem="1r7-rD-CoW" secondAttribute="bottom" id="wX6-I7-Dp5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ke0-p0-HyC"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <size key="freeformSize" width="414" height="1200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFy-mG-8Ji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2649" y="170"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="UGm-tH-U3v">
+            <objects>
+                <navigationController storyboardIdentifier="LeftMenuNavigationController" navigationBarHidden="YES" id="diG-Kb-TpK" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7Ap-mC-ZhW"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jg7-yD-obc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="GKq-id-E0p" kind="relationship" relationship="rootViewController" id="vvR-Ka-kDa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRt-3H-O86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="640 x 1136" width="621" height="1104"/>
+        <image name="profile" width="50" height="50"/>
+        <image name="side_menu" width="19" height="14.5"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

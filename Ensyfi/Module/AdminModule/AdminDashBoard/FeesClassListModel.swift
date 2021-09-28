@@ -8,30 +8,35 @@
 import Foundation
 import UIKit
 
-struct FeesClassListModel{
+struct FeesListModel{
     struct Fetch {
         
         struct Request
         {
-            var user_id : String?
+            var class_id : String?
+            var section_id : String?
         }
         
         struct Response
         {
-            var testObj: [FeesClassListModels]
+            var testObj: [FeesListModels]
             var isError: Bool
             var message: String?
         }
 
         struct ViewModel
         {
-           struct DisplayedFeesClassListData
+           struct DisplayedFeesListData
            {
-            var class_id : String?
-            var class_name : String?
+            var fees_id : String?
+            var from_year : String?
+            var term_name : String?
+            var to_year : String?
+            var due_date_to : String?
+            var due_date_from : String?
             
             }
-              var displayedFeesClassListData: [DisplayedFeesClassListData]
+              var displayedFeesListData: [DisplayedFeesListData]
 
         }
     }
