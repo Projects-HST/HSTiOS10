@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol SubEventsDisplayLogic: class
+protocol SubEventsDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: SubEventsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: SubEventsModel.Fetch.ViewModel)
@@ -26,6 +27,7 @@ class SubEventsVC: UIViewController, SubEventsDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: SubEventsModel.Fetch.Request(event_id :self.selectedEventId))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -55,12 +57,14 @@ extension SubEventsVC{
     
     func successFetchedItems(viewModel: SubEventsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedSubEventsData = viewModel.displayedSubEventsData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: SubEventsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

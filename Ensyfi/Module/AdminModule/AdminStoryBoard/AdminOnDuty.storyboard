@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +35,7 @@
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="class" translatesAutoresizingMaskIntoConstraints="NO" id="Yse-Dg-rf3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected1" translatesAutoresizingMaskIntoConstraints="NO" id="Yse-Dg-rf3">
                                         <rect key="frame" x="182" y="26" width="19" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="19" id="5aD-Xo-HNo"/>
@@ -64,14 +64,14 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exam" translatesAutoresizingMaskIntoConstraints="NO" id="mtQ-oa-xO4">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected" translatesAutoresizingMaskIntoConstraints="NO" id="mtQ-oa-xO4">
                                         <rect key="frame" x="40" y="25" width="19" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="dB6-aO-Ftu"/>
                                             <constraint firstAttribute="width" constant="19" id="r9o-Gg-oYQ"/>
                                         </constraints>
                                     </imageView>
-                                    <segmentedControl opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VhV-FO-7jO">
+                                    <segmentedControl opaque="NO" alpha="0.14999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VhV-FO-7jO">
                                         <rect key="frame" x="40" y="19" width="264" height="31"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -94,7 +94,7 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="NQ6-dT-yq3" secondAttribute="bottom" constant="26" id="1yz-gL-51n"/>
                                     <constraint firstItem="Y1f-00-ze8" firstAttribute="leading" secondItem="Yse-Dg-rf3" secondAttribute="trailing" constant="8" symbolic="YES" id="7Fw-SK-epZ"/>
@@ -127,7 +127,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="106" id="biT-wZ-vyP" customClass="ONDutyListCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="106"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="biT-wZ-vyP" id="Ka3-b4-lEm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
@@ -146,7 +146,7 @@
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TTd-Fh-TvI">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="TTd-Fh-TvI">
                                                             <rect key="frame" x="10" y="55" width="23" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="23" id="bK6-uA-Ujb"/>
@@ -173,7 +173,7 @@
                                                             <color key="textColor" systemColor="systemRedColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OGL-bJ-OYs">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pending" translatesAutoresizingMaskIntoConstraints="NO" id="OGL-bJ-OYs">
                                                             <rect key="frame" x="269.5" y="34" width="18" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="HJ4-H3-jcL"/>
@@ -280,7 +280,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opI-eh-sTX">
-                                <rect key="frame" x="20" y="25" width="374" height="292"/>
+                                <rect key="frame" x="20" y="25" width="374" height="290"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZZ-Nb-br9">
                                         <rect key="frame" x="15" y="155" width="344" height="70"/>
@@ -296,7 +296,7 @@
                                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="class" translatesAutoresizingMaskIntoConstraints="NO" id="ftq-8R-PhT">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenunselected" translatesAutoresizingMaskIntoConstraints="NO" id="ftq-8R-PhT">
                                                 <rect key="frame" x="182" y="26" width="19" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="jKQ-PM-U6I"/>
@@ -325,14 +325,14 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exam" translatesAutoresizingMaskIntoConstraints="NO" id="28f-0Q-FBS">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="28f-0Q-FBS">
                                                 <rect key="frame" x="40" y="25" width="19" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="19" id="QgT-Aw-3Be"/>
                                                     <constraint firstAttribute="height" constant="18" id="z1y-NX-Q2U"/>
                                                 </constraints>
                                             </imageView>
-                                            <segmentedControl opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rCm-Pb-xMz">
+                                            <segmentedControl opaque="NO" alpha="0.14999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rCm-Pb-xMz">
                                                 <rect key="frame" x="40" y="19" width="264" height="31"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -449,7 +449,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-x8-b3c">
-                                        <rect key="frame" x="149" y="243" width="79" height="28"/>
+                                        <rect key="frame" x="149" y="243" width="79" height="32"/>
                                         <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="79" id="00k-F2-Cnr"/>
@@ -476,7 +476,7 @@
                                     <constraint firstItem="bN9-oQ-qvS" firstAttribute="leading" secondItem="opI-eh-sTX" secondAttribute="leading" constant="8" id="6ZC-JN-uhU"/>
                                     <constraint firstItem="Nmw-Uv-uPD" firstAttribute="top" secondItem="opI-eh-sTX" secondAttribute="top" constant="12" id="7CT-VB-6cg"/>
                                     <constraint firstItem="Vex-x8-b3c" firstAttribute="centerX" secondItem="opI-eh-sTX" secondAttribute="centerX" constant="1.5" id="ARo-p8-DrH"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vex-x8-b3c" secondAttribute="bottom" constant="19" id="AYT-rq-gqo"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vex-x8-b3c" secondAttribute="bottom" constant="17" id="AYT-rq-gqo"/>
                                     <constraint firstItem="rhO-Wa-gcX" firstAttribute="leading" secondItem="opI-eh-sTX" secondAttribute="leading" constant="8" id="AwI-xi-OQ2"/>
                                     <constraint firstItem="6su-sf-bTa" firstAttribute="top" secondItem="rhO-Wa-gcX" secondAttribute="bottom" constant="7.5" id="Bqn-B1-eOg"/>
                                     <constraint firstItem="Vex-x8-b3c" firstAttribute="top" secondItem="xZZ-Nb-br9" secondAttribute="bottom" constant="18" id="JRu-OF-5aB"/>
@@ -494,6 +494,12 @@
                                     <constraint firstItem="MId-2B-Cjs" firstAttribute="leading" secondItem="Nmw-Uv-uPD" secondAttribute="trailing" constant="3" id="nRE-ox-eqo"/>
                                     <constraint firstAttribute="trailing" secondItem="rhO-Wa-gcX" secondAttribute="trailing" constant="4" id="nVz-kW-gjk"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eyT-EJ-qO2"/>
@@ -507,9 +513,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="jvR-SJ-XPn"/>
                     <connections>
+                        <outlet property="date" destination="TpT-Jn-Qz5" id="0zz-rk-KAx"/>
                         <outlet property="img1" destination="ftq-8R-PhT" id="jHm-D7-lsm"/>
                         <outlet property="img2" destination="28f-0Q-FBS" id="7i2-4q-QA3"/>
+                        <outlet property="reason" destination="rhO-Wa-gcX" id="wm1-qb-F0V"/>
                         <outlet property="segmentedControl" destination="rCm-Pb-xMz" id="QYR-MM-tOc"/>
+                        <outlet property="typeLbl" destination="MId-2B-Cjs" id="5ga-wt-NYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZY-7A-xOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -518,8 +527,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="class" width="100" height="100"/>
-        <image name="exam" width="100" height="100"/>
+        <image name="Calendar" width="50.5" height="50.5"/>
+        <image name="greenunselected" width="50.5" height="50.5"/>
+        <image name="pending" width="75" height="75"/>
+        <image name="red" width="50" height="50"/>
+        <image name="unselected" width="50.5" height="50.5"/>
+        <image name="unselected1" width="50.5" height="50.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol TeachersListDisplayLogic: class
+protocol TeachersListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: TeachersListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: TeachersListModel.Fetch.ViewModel)
@@ -28,6 +29,7 @@ class TeachersVC: UIViewController,TeachersListDisplayLogic {
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: TeachersListModel.Fetch.Request(user_id :""))
         print("1234")
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -57,6 +59,7 @@ extension TeachersVC {
     
     func successFetchedItems(viewModel: TeachersListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedTeachersListData = viewModel.displayedTeachersListData
         for i in 1...10000 {
             self.serialNoArr.append(i)
@@ -66,6 +69,7 @@ extension TeachersVC {
     
     func errorFetchingItems(viewModel: TeachersListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
 extension TeachersVC: UITableViewDelegate,UITableViewDataSource {

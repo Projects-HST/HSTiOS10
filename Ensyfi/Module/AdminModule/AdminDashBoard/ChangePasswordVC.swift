@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 protocol ChangePasswordDisplayLogic: AnyObject
 {
@@ -34,6 +35,7 @@ class ChangePasswordVC: UIViewController, ChangePasswordDisplayLogic {
         }
         
         interactor?.fetchItems(request: ChangePasswordModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, old_password: self.currentPassword.text, password: self.confirmPassword.text))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -99,13 +101,16 @@ extension ChangePasswordVC {
     
     func successFetchedItems(viewModel: ChangePasswordModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
             self.navigationController?.popViewController(animated: true)
         })
+        
     }
     
     func errorFetchingItems(viewModel: ChangePasswordModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.errorAlertMsg, message:viewModel.msg!, complition: {
         })
     }

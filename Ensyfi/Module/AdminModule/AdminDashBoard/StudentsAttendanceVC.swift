@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import MBProgressHUD
 
 protocol StudentAttendanceDisplayLogic: AnyObject
 {
@@ -33,6 +34,7 @@ class StudentsAttendanceVC: UIViewController, StudentAttendanceDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: StudentAttendanceModel.Fetch.Request(class_id :self.selectedClassId,stud_id :self.stsudentId))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -62,6 +64,7 @@ extension StudentsAttendanceVC {
     
     func successFetchedItems(viewModel: StudentAttendanceModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.workingDays.text = "  \(GlobalVariables.shared.total_working_days) Days"
         self.daysPresent.text = "  \(GlobalVariables.shared.present_days) Days"
         self.onDuty.text = "  \(GlobalVariables.shared.od_days) Days"
@@ -72,6 +75,7 @@ extension StudentsAttendanceVC {
     
     func errorFetchingItems(viewModel: StudentAttendanceModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
 }

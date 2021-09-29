@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol LoginDisplayLogic: class
+protocol LoginDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: LoginModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: LoginModel.Fetch.ViewModel)
@@ -62,6 +63,7 @@ class LoginVC: UIViewController,LoginDisplayLogic {
                    return
         }
         interactor?.fetchItems(request: LoginModel.Fetch.Request(institue_id :self.InstituteIdTextfield.text))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     func CheckValuesAreEmpty () -> Bool{
@@ -86,16 +88,17 @@ class LoginVC: UIViewController,LoginDisplayLogic {
 extension LoginVC {
     
     func successFetchedItems(viewModel: LoginModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.institute_code = viewModel.institute_code!
-        
         UserDefaults.standard.set(institute_code, forKey: UserDefaultsKey.institude_Code_Key.rawValue)
-        
         GlobalVariables.shared.Institute_Code = institute_code
         self.performSegue(withIdentifier: "to_instituteLogin", sender: self)
     }
     
     func errorFetchingItems(viewModel: LoginModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Invalid Institute code", complition: {
         })
     }

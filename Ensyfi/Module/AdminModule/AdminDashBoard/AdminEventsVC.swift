@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol EventsListDisplayLogic: class
+protocol EventsListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: EventsListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: EventsListModel.Fetch.ViewModel)
@@ -32,6 +33,7 @@ class AdminEventsVC: UIViewController, EventsListDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: EventsListModel.Fetch.Request(class_id :"",section_id:""))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -61,12 +63,14 @@ extension AdminEventsVC {
     
     func successFetchedItems(viewModel: EventsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedEventsListData = viewModel.displayedEventsListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: EventsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

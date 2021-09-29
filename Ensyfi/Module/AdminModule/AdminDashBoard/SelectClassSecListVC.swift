@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 protocol ClassSectionListDelegate
 {
@@ -38,6 +39,7 @@ class SelectClassSecListVC: UIViewController,Class_SectionDisplayLogic {
         tableView.allowsSelection = false
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: Class_SectionModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -66,14 +68,13 @@ class SelectClassSecListVC: UIViewController,Class_SectionDisplayLogic {
         
         self.dismiss(animated: true, completion: nil)
     }
-    
-   
 }
 
 extension SelectClassSecListVC {
     
     func successFetchedItems(viewModel: Class_SectionModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedClass_SectionData = viewModel.displayedClass_SectionData
         
         for data in displayedClass_SectionData {
@@ -89,6 +90,7 @@ extension SelectClassSecListVC {
     
     func errorFetchingItems(viewModel: Class_SectionModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }
@@ -111,11 +113,11 @@ extension SelectClassSecListVC : UITableViewDelegate,UITableViewDataSource {
         
         if selectedRows.contains(indexPath)
            {
-             cell.checkBox.setImage(UIImage(named:"mail1"), for: .normal)
+             cell.checkBox.setImage(UIImage(named:"tick"), for: .normal)
            }
         else
            {
-             cell.checkBox.setImage(UIImage(named:"mail"), for: .normal)
+             cell.checkBox.setImage(UIImage(named:"unselected1"), for: .normal)
            }
         cell.checkBox.tag = indexPath.row
         cell.checkBox.addTarget(self, action: #selector(checkBoxSelection(sender:)), for: .touchUpInside)

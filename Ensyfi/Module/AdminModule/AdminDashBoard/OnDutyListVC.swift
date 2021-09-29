@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 protocol ODStudentsListDisplayLogic: AnyObject
 {
@@ -44,6 +45,7 @@ class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersList
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ODStudentsListModel.Fetch.Request(user_type :"1"))
         self.selectedType = "ST"
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -81,10 +83,15 @@ class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersList
             
             interactor?.fetchItems(request: ODStudentsListModel.Fetch.Request(user_type :"1"))
             self.selectedType = "ST"
+            self.img2.image = UIImage(named:"unselected1")
+            self.img1.image = UIImage(named:"selected")
         }
         else {
             interactor1?.fetchItems(request: ODTeachersListModel.Fetch.Request(user_type :"1"))
             self.selectedType = "TC"
+         
+            self.img2.image = UIImage(named:"selected")
+            self.img1.image = UIImage(named:"unselected1")
         }
     }
 }
@@ -94,12 +101,14 @@ extension OnDutyListVC {
 //
     func successFetchedItems(viewModel: ODStudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedODStudentsListData = viewModel.displayedODStudentsListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: ODStudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -107,12 +116,14 @@ extension OnDutyListVC {
 //
     func successFetchedItems(viewModel: ODTeachersListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedODTeachersListData = viewModel.displayedODTeachersListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: ODTeachersListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -146,14 +157,17 @@ extension OnDutyListVC : UITableViewDataSource,UITableViewDelegate {
             if data.status == "Approved" {
                 cell.status.textColor = UIColor.systemGreen
                 cell.sideView.backgroundColor = UIColor.systemGreen
+                cell.statusImg.image = UIImage(named:"Completed ")
             }
             else if data.status == "Rejected" {
                 cell.status.textColor = UIColor.systemRed
                 cell.sideView.backgroundColor = UIColor.systemRed
+                cell.statusImg.image = UIImage(named:"rejected")
             }
             else if data.status == "Pending" {
                 cell.status.textColor = UIColor.systemYellow
                 cell.sideView.backgroundColor = UIColor.systemYellow
+                cell.statusImg.image = UIImage(named:"pending")
             }
             cell.selectionStyle = .none
         }
@@ -167,14 +181,17 @@ extension OnDutyListVC : UITableViewDataSource,UITableViewDelegate {
             if data.status == "Approved" {
                 cell.status.textColor = UIColor.systemGreen
                 cell.sideView.backgroundColor = UIColor.systemGreen
+                cell.statusImg.image = UIImage(named:"Completed ")
             }
             else if data.status == "Rejected" {
                 cell.status.textColor = UIColor.systemRed
                 cell.sideView.backgroundColor = UIColor.systemRed
+                cell.statusImg.image = UIImage(named:"rejected")
             }
             else if data.status == "Pending" {
                 cell.status.textColor = UIColor.systemYellow
                 cell.sideView.backgroundColor = UIColor.systemYellow
+                cell.statusImg.image = UIImage(named:"pending")
             }
             cell.selectionStyle = .none
         }

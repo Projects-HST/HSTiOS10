@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import MBProgressHUD
 
 class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, StudentsListDisplayLogic {
 
@@ -40,6 +41,7 @@ class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayL
         super.viewDidLoad()
         
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -122,6 +124,7 @@ extension AdminParentsVC {
     func successFetchedItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         displayedClassViewData = viewModel.displayedClassViewData
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         for data in displayedClassViewData {
             
             let class_name = data.class_name
@@ -134,12 +137,15 @@ extension AdminParentsVC {
     
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }
     
 //    SectionListDisplayLogic
     func successFetchedItems(viewModel: SectionListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedSectionListData = viewModel.displayedSectionListData
         
         for data in displayedSectionListData {
@@ -154,6 +160,7 @@ extension AdminParentsVC {
     
     func errorFetchingItems(viewModel: SectionListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }
@@ -161,6 +168,7 @@ extension AdminParentsVC {
 //    StudentsListDisplayLogic
     func successFetchedItems(viewModel: StudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedStudentsListData = viewModel.displayedStudentsListData
         for i in 1...10000 {
             self.serialNoArr.append(i)
@@ -170,6 +178,7 @@ extension AdminParentsVC {
     
     func errorFetchingItems(viewModel: StudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }

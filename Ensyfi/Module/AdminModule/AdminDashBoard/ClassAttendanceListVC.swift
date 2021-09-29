@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 protocol ClassAttendanceListDisplayLogic: AnyObject
 {
@@ -27,6 +28,7 @@ class ClassAttendanceListVC: UIViewController, ClassAttendanceListDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ClassAttendanceListModel.Fetch.Request(date:self.selectedDate, class_ids:self.selectedClassID))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -55,12 +57,15 @@ class ClassAttendanceListVC: UIViewController, ClassAttendanceListDisplayLogic {
 extension ClassAttendanceListVC {
     
     func successFetchedItems(viewModel: ClassAttendanceListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedClassAttendanceListData = viewModel.displayedClassAttendanceListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: ClassAttendanceListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }

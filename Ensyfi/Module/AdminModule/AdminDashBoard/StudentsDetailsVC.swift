@@ -7,8 +7,9 @@
 
 import UIKit
 import SDWebImage
+import MBProgressHUD
 
-protocol StudentDetailsDisplayLogic: class
+protocol StudentDetailsDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: StudentDetailsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: StudentDetailsModel.Fetch.ViewModel)
@@ -54,6 +55,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: StudentDetailsModel.Fetch.Request(student_id :self.studentEnroolId))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -100,6 +102,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
 extension StudentsDetailsVC  {
     
     func successFetchedItems(viewModel: StudentDetailsModel.Fetch.ViewModel) {
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedStudentDetailsData = viewModel.displayedStudentDetailsData
         
         for data in displayedStudentDetailsData {
@@ -130,12 +133,12 @@ extension StudentsDetailsVC  {
             self.status.text = data.status
             self.parentStatus.text = data.parents_status
             
-            self.studentPic.sd_setImage(with: URL(string:data.student_pic!), placeholderImage: UIImage(named: ""))
+//            self.studentPic.sd_setImage(with: URL(string:data.student_pic!), placeholderImage: UIImage(named: ""))
         }
     }
     
     func errorFetchingItems(viewModel: StudentDetailsModel.Fetch.ViewModel) {
-        
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

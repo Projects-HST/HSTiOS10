@@ -95,3 +95,42 @@ class func build(_ dict: [String: AnyObject]) -> ExamListModels{
     return model
  }
 }
+
+
+class ExamTimeTableModels : NSObject {
+    
+       var exam_name : String?
+       var exam_id : String?
+       var times : String?
+       var subject_name : String?
+       var exam_date : String?
+      
+   
+     // MARK: Instance Method
+   func loadFromDictionary(_ dict: [String: AnyObject])
+       {
+        if let data = dict["exam_name"] as? String {
+        self.exam_name = data
+         }
+         if let data = dict["exam_id"] as? String {
+         self.exam_id = data
+         }
+         if let data = dict["times"] as? String {
+         self.times = data
+         }
+         if let data = dict["subject_name"] as? String {
+          self.subject_name = data
+          }
+          if let data = dict["exam_date"] as? String {
+          self.exam_date = data
+           }
+  }
+    
+      // MARK: Class Method
+class func build(_ dict: [String: AnyObject]) -> ExamTimeTableModels{
+    
+       let model = ExamTimeTableModels()
+       model.loadFromDictionary(dict)
+       return model
+ }
+}

@@ -7,8 +7,9 @@
 
 import UIKit
 import DropDown
+import MBProgressHUD
 
-protocol ExamResultsDisplayLogic: class
+protocol ExamResultsDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: ExamResultsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ExamResultsModel.Fetch.ViewModel)
@@ -46,6 +47,7 @@ class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplay
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -128,6 +130,7 @@ extension ExamResultsVC {
     func successFetchedItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         displayedClassViewData = viewModel.displayedClassViewData
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         for data in displayedClassViewData {
             
             let class_name = data.class_name
@@ -140,6 +143,7 @@ extension ExamResultsVC {
     
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }

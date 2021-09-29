@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-
-protocol LeavesListDisplayLogic: class
+protocol LeavesListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: LeavesListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: LeavesListModel.Fetch.ViewModel)
@@ -33,6 +33,7 @@ class LeaveApplicationListVC: UIViewController, LeavesListDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: LeavesListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -62,12 +63,13 @@ extension LeaveApplicationListVC {
     
     func successFetchedItems(viewModel: LeavesListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedLeavesListData = viewModel.displayedLeavesListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: LeavesListModel.Fetch.ViewModel) {
-        
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
 
@@ -90,14 +92,17 @@ extension LeaveApplicationListVC : UITableViewDataSource,UITableViewDelegate {
             if data.status == "Approved" {
                 cell.status.textColor = UIColor.systemGreen
                 cell.statusView.backgroundColor = UIColor.systemGreen
+                cell.statusImg.image = UIImage(named:"Completed ")
             }
             else if data.status == "Rejected" {
                 cell.status.textColor = UIColor.systemRed
                 cell.statusView.backgroundColor = UIColor.systemRed
+                cell.statusImg.image = UIImage(named:"rejected")
             }
             else if data.status == "Pending" {
                 cell.status.textColor = UIColor.systemYellow
                 cell.statusView.backgroundColor = UIColor.systemYellow
+                cell.statusImg.image = UIImage(named:"pending")
             }
             cell.selectionStyle = .none
         return cell

@@ -40,19 +40,21 @@ class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,F
     var serialNoArr = [Int]()
     var selectedClassId = String()
     var selectedSecId = String()
-    var selectedStudentId = String()
+    var selectedFeesId = String()
+    
     
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
     @IBOutlet weak var sectionBtnOutlet: UIButton!
-//    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
        
     }
     
@@ -128,6 +130,7 @@ extension FeesListVC {
 // ClassViewDisplayLogic
     func successFetchedItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedClassViewData = viewModel.displayedClassViewData
         
         for data in displayedClassViewData {
@@ -141,12 +144,16 @@ extension FeesListVC {
     }
     
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }
     
 //  SectionListDisplayLogic
     func successFetchedItems(viewModel: FeesSectionListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedFeesSectionListData = viewModel.displayedFeesSectionListData
         
         for data in displayedFeesSectionListData {
@@ -160,6 +167,8 @@ extension FeesListVC {
     }
     
     func errorFetchingItems(viewModel: FeesSectionListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }
@@ -167,10 +176,55 @@ extension FeesListVC {
 //   FeesListDisplayLogic
     func successFetchedItems(viewModel: FeesListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
+        displayedFeesListData = viewModel.displayedFeesListData
+        self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: FeesListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
+    }
+}
+
+extension FeesListVC: UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return displayedFeesListData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FeesListCell
+        
+        let data = displayedFeesListData[indexPath.row]
+        
+        cell.title.text = data.term_name
+        cell.date.text = "\(data.due_date_from!) - \(data.due_date_to!) "
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let data = displayedFeesListData[indexPath.row]
+        self.selectedFeesId = data.fees_id!
+        
+        self.performSegue(withIdentifier: "toFeesStatus", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "toFeesStatus")
+        {
+        let vc = segue.destination as! FeesStatusListVC
+            
+            vc.selectedClassId = self.selectedClassId
+            vc.selectedSecId = self.selectedSecId
+            vc.selectedFeesId = self.selectedFeesId
+        }
     }
 }

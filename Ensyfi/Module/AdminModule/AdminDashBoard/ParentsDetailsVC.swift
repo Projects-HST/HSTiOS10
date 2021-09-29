@@ -6,18 +6,19 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol FatherDeatilsDisplayLogic: class
+protocol FatherDeatilsDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: FatherDeatilsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: FatherDeatilsModel.Fetch.ViewModel)
 }
-protocol MotherDetailsDisplayLogic: class
+protocol MotherDetailsDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: MotherDetailsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: MotherDetailsModel.Fetch.ViewModel)
 }
-protocol GuardianDetailsDisplayLogic: class
+protocol GuardianDetailsDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: GuardianDetailsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: GuardianDetailsModel.Fetch.ViewModel)
@@ -48,6 +49,7 @@ class ParentsDetailsVC: UIViewController, FatherDeatilsDisplayLogic, MotherDetai
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:self.selectedStudentId))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -109,6 +111,7 @@ extension ParentsDetailsVC {
 //    FatherDeatilsDisplayLogic
     func successFetchedItems(viewModel: FatherDeatilsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.name.text = viewModel.name
         self.addres.text = viewModel.home_address
         self.emailId.text = viewModel.email
@@ -121,11 +124,13 @@ extension ParentsDetailsVC {
     
     func errorFetchingItems(viewModel: FatherDeatilsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
 //    MotherDetailsDisplayLogic
     func successFetchedItems(viewModel: MotherDetailsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.name.text = viewModel.name
         self.addres.text = viewModel.home_address
         self.emailId.text = viewModel.email
@@ -138,11 +143,13 @@ extension ParentsDetailsVC {
     
     func errorFetchingItems(viewModel: MotherDetailsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
 //    GuardianDetailsDisplayLogic
     func successFetchedItems(viewModel: GuardianDetailsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.name.text = viewModel.name
         self.addres.text = viewModel.home_address
         self.emailId.text = viewModel.email
@@ -155,5 +162,6 @@ extension ParentsDetailsVC {
     
     func errorFetchingItems(viewModel: GuardianDetailsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol CircularsListDisplayLogic: class
+protocol CircularsListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: CircularsListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: CircularsListModel.Fetch.ViewModel)
@@ -25,6 +26,7 @@ class CircularsListVC: UIViewController, CircularsListDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: CircularsListModel.Fetch.Request(user_id :""))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -54,12 +56,14 @@ extension CircularsListVC {
     
     func successFetchedItems(viewModel: CircularsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedCircularsListData = viewModel.displayedCircularsListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: CircularsListModel.Fetch.ViewModel) {
        
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

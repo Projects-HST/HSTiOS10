@@ -27,7 +27,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32S-gU-DNz">
                                 <rect key="frame" x="20" y="64" width="374" height="180"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2QH-z5-j1d">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guardian1 " translatesAutoresizingMaskIntoConstraints="NO" id="2QH-z5-j1d">
                                         <rect key="frame" x="15" y="16" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="QDY-Gc-NDS"/>
@@ -52,7 +52,7 @@
                                             <segue destination="xd6-Xl-dsj" kind="show" id="IB3-gH-hcq"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-ed-jbK">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwored" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-ed-jbK">
                                         <rect key="frame" x="15" y="63" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="HPm-2Q-mcn"/>
@@ -77,7 +77,7 @@
                                             <segue destination="O64-2E-J3i" kind="show" id="3py-Si-fPg"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A9R-1n-YZT">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="A9R-1n-YZT">
                                         <rect key="frame" x="15" y="112" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="9vS-gs-88K"/>
@@ -219,7 +219,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5en-9k-YAI">
                                                 <rect key="frame" x="20" y="25" width="374" height="490"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xtf-fM-j46">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Change password_1" translatesAutoresizingMaskIntoConstraints="NO" id="Xtf-fM-j46">
                                                         <rect key="frame" x="132" y="20" width="110" height="110"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="7vY-Nl-Ege"/>
@@ -412,6 +412,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Change password_1" width="100" height="100"/>
+        <image name="Guardian1 " width="50.5" height="50.5"/>
+        <image name="about" width="50.5" height="50.5"/>
+        <image name="passwored" width="50.5" height="50.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

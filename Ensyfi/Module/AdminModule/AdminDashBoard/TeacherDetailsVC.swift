@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol TeacherDetailsDisplayLogic: class
+protocol TeacherDetailsDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: TeacherDetailsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: TeacherDetailsModel.Fetch.ViewModel)
@@ -42,6 +43,7 @@ class TeacherDetailsVC: UIViewController, TeacherDetailsDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: TeacherDetailsModel.Fetch.Request(teacher_id :self.teacher_ID))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
 
     }
     
@@ -74,6 +76,7 @@ extension TeacherDetailsVC {
         
         displayedTeacherDetailsData = viewModel.displayedTeacherDetailsData
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         for data in displayedTeacherDetailsData {
             
             self.address.text = data.address
@@ -97,6 +100,7 @@ extension TeacherDetailsVC {
     
     func errorFetchingItems(viewModel: TeacherDetailsModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
 }

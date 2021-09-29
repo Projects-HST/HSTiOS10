@@ -25,5 +25,3 @@ class FeesListWorker{
        )
    }
 }
-var class_id : String?
-var section_id : String?

@@ -598,6 +598,9 @@
                                                         <state key="normal" title="Board Members">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="uyZ-UN-V76" kind="show" id="vMd-tk-zn0"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIv-vU-yZe">
                                                         <rect key="frame" x="0.0" y="255" width="97" height="30"/>
@@ -839,6 +842,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="name" destination="QY8-bD-SL8" id="pNp-4T-MML"/>
+                        <outlet property="userPic" destination="ce7-VY-H7p" id="SVN-RE-0og"/>
                         <segue destination="zLw-9a-LKa" kind="show" identifier="" id="u8L-pZ-dxs"/>
                     </connections>
                 </viewController>
@@ -956,6 +961,16 @@
             </objects>
             <point key="canvasLocation" x="3751" y="724"/>
         </scene>
+        <!--boardMembersVC-->
+        <scene sceneID="bpa-h0-dCf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BoardMembers" referencedIdentifier="boardMembersVC" id="uyZ-UN-V76" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0jn-PB-4lA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mDY-Rm-o2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3807" y="84"/>
+        </scene>
         <!--adminSettingsVC-->
         <scene sceneID="ipK-9K-1jb">
             <objects>
@@ -1032,14 +1047,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RiB-kz-Zki"/>
+        <segue reference="3GT-qK-jN6"/>
         <segue reference="4gJ-dw-B8o"/>
         <segue reference="deQ-QV-COS"/>
         <segue reference="iKe-6H-52a"/>
         <segue reference="p1W-pU-VsK"/>
         <segue reference="n79-cd-bCB"/>
-        <segue reference="gvM-BY-QNx"/>
-        <segue reference="PoF-jv-NTc"/>
+        <segue reference="ze0-Dp-xun"/>
+        <segue reference="J1i-kC-S7T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Parents" width="100" height="100"/>

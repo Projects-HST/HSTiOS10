@@ -204,28 +204,27 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-u0-Y4F">
-                                                            <rect key="frame" x="10" y="4" width="6" height="25"/>
+                                                            <rect key="frame" x="10" y="4" width="7" height="25"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COT-so-PTX">
-                                                            <rect key="frame" x="295" y="3" width="27" height="27"/>
+                                                            <rect key="frame" x="310" y="10.5" width="12" height="12"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="27" id="Vry-ku-Ms0"/>
-                                                                <constraint firstAttribute="width" constant="27" id="ac6-GK-BF3"/>
+                                                                <constraint firstAttribute="width" constant="12" id="E0U-P8-h7t"/>
+                                                                <constraint firstAttribute="height" constant="12" id="leJ-al-MgU"/>
                                                             </constraints>
-                                                            <state key="normal" image="mail"/>
+                                                            <state key="normal" image="unselected1"/>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="5rx-u0-Y4F" firstAttribute="top" secondItem="2w2-O5-6Vk" secondAttribute="top" constant="4" id="2AQ-z6-nrE"/>
                                                         <constraint firstItem="5rx-u0-Y4F" firstAttribute="leading" secondItem="2w2-O5-6Vk" secondAttribute="leading" constant="10" id="KmT-ZY-Azt"/>
-                                                        <constraint firstAttribute="trailing" secondItem="COT-so-PTX" secondAttribute="trailing" constant="7" id="Ndz-YV-dn7"/>
-                                                        <constraint firstItem="COT-so-PTX" firstAttribute="top" secondItem="2w2-O5-6Vk" secondAttribute="top" constant="3" id="WcA-GW-noX"/>
-                                                        <constraint firstAttribute="bottom" secondItem="COT-so-PTX" secondAttribute="bottom" constant="3" id="YiV-wW-acu"/>
+                                                        <constraint firstItem="COT-so-PTX" firstAttribute="centerY" secondItem="2w2-O5-6Vk" secondAttribute="centerY" id="XtK-tz-1iJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="5rx-u0-Y4F" secondAttribute="bottom" constant="4" id="bhX-6c-Eqh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="COT-so-PTX" secondAttribute="trailing" constant="7" id="gtf-bK-ncj"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -381,7 +380,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-1" width="31" height="19"/>
-        <image name="mail" width="50" height="50"/>
+        <image name="unselected1" width="50.5" height="50.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import MBProgressHUD
 
 protocol RoleListDisplayLogic: AnyObject
 {
@@ -68,6 +69,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     var sectionIdArr = [String]()
     var selectedIdArr = [String]()
     var staffUserIdArr = [String]()
+    var selectedRows:[IndexPath] = []
     
     var slectedIDforAdd = String()
     var selectedRoleId = String()
@@ -86,6 +88,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: RoleListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
         interactor1?.fetchItems(request: GroupSectionListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         self.groupName.text = self.selectedTitle
         self.groupAdmin.text = self.selectedGrpAdmin
@@ -199,6 +202,7 @@ extension AddGroupMemberVC{
 //    RoleListDisplayLogic
     func successFetchedItems(viewModel: RoleListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedRoleListData = viewModel.displayedRoleListData
         
         for data in displayedRoleListData {
@@ -213,6 +217,7 @@ extension AddGroupMemberVC{
     
     func errorFetchingItems(viewModel: RoleListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -220,6 +225,7 @@ extension AddGroupMemberVC{
 //  GroupSectionListDisplayLogic
     func successFetchedItems(viewModel: GroupSectionListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedGroupSectionListData = viewModel.displayedGroupSectionListData
         
         for data in displayedGroupSectionListData {
@@ -234,6 +240,7 @@ extension AddGroupMemberVC{
     
     func errorFetchingItems(viewModel: GroupSectionListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -241,6 +248,7 @@ extension AddGroupMemberVC{
 //  StudentGroupAddListDisplayLogic
     func successFetchedItems(viewModel: StudentGroupAddListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedStudentGroupAddListData = viewModel.displayedStudentGroupAddListData
         
         self.staffUserIdArr.removeAll()
@@ -256,6 +264,8 @@ extension AddGroupMemberVC{
     }
     
     func errorFetchingItems(viewModel: StudentGroupAddListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -263,6 +273,7 @@ extension AddGroupMemberVC{
 //    StaffGroupAddListDisplayLogic
     func successFetchedItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedStaffGroupAddListData = viewModel.displayedStaffGroupAddListData
         
         self.staffUserIdArr.removeAll()
@@ -279,6 +290,7 @@ extension AddGroupMemberVC{
     
     func errorFetchingItems(viewModel: StaffGroupAddListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -286,6 +298,7 @@ extension AddGroupMemberVC{
 //     AddGroupMemberDisplayLogic
     func successFetchedItems(viewModel: AddGroupMemberModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
             self.navigationController?.popViewController(animated: true)
         })
@@ -293,6 +306,7 @@ extension AddGroupMemberVC{
     
     func errorFetchingItems(viewModel: AddGroupMemberModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -322,6 +336,14 @@ extension AddGroupMemberVC : UITableViewDelegate,UITableViewDataSource {
             cell.id.text = data.user_id
             cell.addBtn.tag = indexPath.row
             cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
+            if selectedRows.contains(indexPath){
+                 cell.addBtn.setImage(UIImage(named:"tick"), for: .normal)
+            }
+            else{
+                 cell.addBtn.setImage(UIImage(named:"unselected1"), for: .normal)
+            }
+            cell.addBtn.tag = indexPath.row
+            cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
             cell.selectionStyle = .none
         }
         else {
@@ -338,6 +360,14 @@ extension AddGroupMemberVC : UITableViewDelegate,UITableViewDataSource {
     
     @objc func addBtnClicked(sender: UIButton){
         
+        let selectedIndexPath = IndexPath(row: sender.tag, section: 0)
+       
+       if self.selectedRows.contains(selectedIndexPath){
+        self.selectedRows.remove(at: self.selectedRows.firstIndex(of: selectedIndexPath)!)
+       }
+       else{
+         self.selectedRows.append(selectedIndexPath)
+       }
       let buttonClicked = sender.tag
         print(buttonClicked)
         let selectedIndex = Int(buttonClicked)
@@ -345,7 +375,7 @@ extension AddGroupMemberVC : UITableViewDelegate,UITableViewDataSource {
         self.selectedIdArr.append(sel)
         slectedIDforAdd = selectedIdArr.joined(separator:",")
         print(slectedIDforAdd)
-        
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

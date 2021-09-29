@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ExamResultsStudentsListVC: UIViewController, StudentsListDisplayLogic {
     
@@ -26,6 +27,7 @@ class ExamResultsStudentsListVC: UIViewController, StudentsListDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -55,6 +57,7 @@ extension ExamResultsStudentsListVC {
     
     func successFetchedItems(viewModel: StudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedStudentsListData = viewModel.displayedStudentsListData
         for i in 1...10000 {
             self.serialNoArr.append(i)
@@ -64,6 +67,7 @@ extension ExamResultsStudentsListVC {
     
     func errorFetchingItems(viewModel: StudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"An error occured", complition: {
         })
     }

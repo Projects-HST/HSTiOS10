@@ -7,8 +7,9 @@
 
 import UIKit
 import DropDown
+import MBProgressHUD
 
-protocol HomeWorkTestListDisplayLogic: class
+protocol HomeWorkTestListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: HomeWorkTestListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: HomeWorkTestListModel.Fetch.ViewModel)
@@ -28,6 +29,10 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
     var selectedClassId = String()
     var selectedStudentId = String()
     var selectedHomeWorkId = String()
+    var selectedHomeWorkType = String()
+    var selectedMark = String()
+    var selectedTopic = String()
+    var selectedDescription = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,7 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
         self.dropDownData = ["Class Test","Home Work"]
         self.TestTextField.text = "Class Test"
         interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT"))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -86,12 +92,14 @@ extension HomeWorkTestVC {
     
     func successFetchedItems(viewModel: HomeWorkTestListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedHomeWorkTestListData = viewModel.displayedHomeWorkTestListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: HomeWorkTestListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
 
@@ -125,20 +133,25 @@ extension HomeWorkTestVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let data = displayedHomeWorkTestListData[indexPath.row]
-        self.selectedHomeWorkId = data.hw_id!
+        self.selectedHomeWorkType = data.hw_type!
+        self.selectedDescription = data.hw_details!
+        self.selectedTopic = data.title!
+        self.selectedMark = data.mark_status!
         
-        self.performSegue(withIdentifier: "student_detail", sender: self)
+        self.performSegue(withIdentifier: "toHomeWorkDetails", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (segue.identifier == "student_detail")
+        if (segue.identifier == "toHomeWorkDetails")
         {
-//        let vc = segue.destination as! StudentsDetailsVC
-//            vc.studentEnroolId = self.selectedStudentId
-//            vc.selectedClassId = self.selectedClassId
+        let vc = segue.destination as! HomeWorkDetailsVC
+            vc.selectedHomeWorkType = self.selectedHomeWorkType
+            vc.selectedClassId = self.selectedClassId
+            vc.selectedDescription = self.selectedDescription
+            vc.selectedTopic = self.selectedTopic
+            vc.selectedMark = self.selectedMark
             
         }
     }
 }
-

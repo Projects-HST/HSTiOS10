@@ -6,8 +6,9 @@
 //
 import UIKit
 import DropDown
+import MBProgressHUD
 
-protocol UpdateGroupDisplayLogic: class
+protocol UpdateGroupDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel:UpdateGroupModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: UpdateGroupModel.Fetch.ViewModel)
@@ -41,6 +42,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :"1", user_type :""))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         self.titleTextfield.text = selectedTitle
         self.grpAdminTextfield.text = selectedGrpAdmin
@@ -126,6 +128,7 @@ extension GroupUpdateVC {
 //    TeacherListIDDisplayLogic
     func successFetchedItems(viewModel: TeacherListIDModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedTeacherListIDData = viewModel.displayedTeacherListIDData
         
         for data in displayedTeacherListIDData {
@@ -140,6 +143,7 @@ extension GroupUpdateVC {
     
     func errorFetchingItems(viewModel: TeacherListIDModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
             
         })
@@ -147,6 +151,7 @@ extension GroupUpdateVC {
     
     func successFetchedItems(viewModel: UpdateGroupModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
             self.navigationController?.popViewController(animated: true)
         })
@@ -154,6 +159,7 @@ extension GroupUpdateVC {
 
     func errorFetchingItems(viewModel: UpdateGroupModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol GroupListDisplayLogic: class
+protocol GroupListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: GroupListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: GroupListModel.Fetch.ViewModel)
@@ -31,6 +32,7 @@ class GroupListVC: UIViewController, GroupListDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: GroupListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :"1"))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -65,12 +67,14 @@ extension GroupListVC {
     
     func successFetchedItems(viewModel: GroupListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedGroupListData = viewModel.displayedGroupListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: GroupListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

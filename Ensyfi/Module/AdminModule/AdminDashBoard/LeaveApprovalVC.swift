@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol LeaveApprovalDisplayLogic: class
+protocol LeaveApprovalDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: LeaveApprovalModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: LeaveApprovalModel.Fetch.ViewModel)
@@ -18,6 +19,9 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var typeLbl: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var reason: UILabel!
     
     var interactor: LeaveApprovalBusinessLogic?
     
@@ -33,6 +37,9 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.date.text = "\(selectedfromDate) To : \(selectedtoDate)"
+        self.typeLbl.text = selectedLeaveType
+        self.reason.text = selectedDescription
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -61,9 +68,13 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
         
         if segmentedControl.selectedSegmentIndex == 0 {
             self.selectedLeaveStatus = "Rejected"
+            self.img2.image = UIImage(named:"red click")
+            self.img1.image = UIImage(named:"greenunselected")
         }
         else if segmentedControl.selectedSegmentIndex == 1{
             self.selectedLeaveStatus = "Approved"
+            self.img2.image = UIImage(named:"red")
+            self.img1.image = UIImage(named:"greenselected")
         }
     }
     
@@ -77,6 +88,7 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
         else {
             
         interactor?.fetchItems(request:LeaveApprovalModel.Fetch.Request(status:self.selectedLeaveStatus, leave_id:self.selectedLeaveStatus))
+            MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }
 }
@@ -84,10 +96,10 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
 extension  LeaveApprovalVC {
     
     func successFetchedItems(viewModel: LeaveApprovalModel.Fetch.ViewModel) {
-        
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     func errorFetchingItems(viewModel: LeaveApprovalModel.Fetch.ViewModel) {
-        
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }

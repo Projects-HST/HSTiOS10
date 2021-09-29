@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-protocol InstituteLoginDisplayLogic: class
+protocol InstituteLoginDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: InstituteLoginModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: InstituteLoginModel.Fetch.ViewModel)
@@ -70,6 +71,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
         }
         
         interactor?.fetchItems(request: InstituteLoginModel.Fetch.Request(institue_code :self.institute_code,userName:self.userName.text!,password:self.password.text!))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
   
     @IBAction func forgotPasswordAction(_ sender: Any) {
@@ -106,6 +108,7 @@ extension InstituteLoginVC {
     
     func successFetchedItems(viewModel: InstituteLoginModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.login_type = viewModel.user_type_name!
         UserDefaults.standard.set(login_type, forKey: UserDefaultsKey.user_login_type_Key.rawValue)
         GlobalVariables.shared.user_loginType = login_type
@@ -136,7 +139,7 @@ extension InstituteLoginVC {
     }
 
     func errorFetchingItems(viewModel: InstituteLoginModel.Fetch.ViewModel) {
-        
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

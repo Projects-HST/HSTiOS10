@@ -7,6 +7,7 @@
                                                  
 import UIKit
 import DropDown
+import MBProgressHUD
 
 protocol TeacherListIDDisplayLogic: AnyObject
 {
@@ -42,6 +43,7 @@ class CreateGroupVC: UIViewController, TeacherListIDDisplayLogic, CreateGroupDis
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :""))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -139,6 +141,7 @@ extension CreateGroupVC {
 //    TeacherListIDDisplayLogic
     func successFetchedItems(viewModel: TeacherListIDModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedTeacherListIDData = viewModel.displayedTeacherListIDData
         
         for data in displayedTeacherListIDData {
@@ -153,6 +156,7 @@ extension CreateGroupVC {
     
     func errorFetchingItems(viewModel: TeacherListIDModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -160,12 +164,14 @@ extension CreateGroupVC {
 //  CreateGroupDisplayLogic
     func successFetchedItems(viewModel: CreateGroupModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
         })
     }
     
     func errorFetchingItems(viewModel: CreateGroupModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

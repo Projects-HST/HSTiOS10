@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import MBProgressHUD
 
 protocol ExamListDisplayLogic: AnyObject
 {
@@ -37,6 +38,8 @@ class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, E
     var selectedClassId = String()
     var selectedSecId = String()
     var selectedStudentId = String()
+    var selectedExamId = String()
+    
     
     var displayedClassViewData: [ClassViewModel.Fetch.ViewModel.DisplayedClassViewData] = []
     var displayedSectionListData: [SectionListModel.Fetch.ViewModel.DisplayedSectionListData] = []
@@ -47,6 +50,7 @@ class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, E
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -127,6 +131,8 @@ extension ExamsVc {
     
 //    ClassViewDisplayLogic
     func successFetchedItems(viewModel: ClassViewModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedClassViewData = viewModel.displayedClassViewData
         
         for data in displayedClassViewData {
@@ -141,12 +147,15 @@ extension ExamsVc {
     
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
     
 //    SectionListDisplayLogic
     func successFetchedItems(viewModel: SectionListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedSectionListData = viewModel.displayedSectionListData
         
         for data in displayedSectionListData {
@@ -161,6 +170,7 @@ extension ExamsVc {
     
     func errorFetchingItems(viewModel: SectionListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -168,12 +178,16 @@ extension ExamsVc {
 //    ExamsListDisplayLogic
     func successFetchedItems(viewModel: ExamListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedExamListData = viewModel.displayedExamListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: ExamListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
+        })
     }
 }
 
@@ -196,5 +210,25 @@ extension ExamsVc : UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let data = displayedExamListData[indexPath.row]
+        
+        self.selectedExamId = data.exam_id!
+        
+        self.performSegue(withIdentifier: "toExamTimeTable", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "toExamTimeTable")
+        {
+        let vc = segue.destination as! ExamTimeTableVC
+            
+            vc.selectedClassId = self.selectedClassId
+            vc.selectedExamId = self.selectedExamId
+        }
     }
 }

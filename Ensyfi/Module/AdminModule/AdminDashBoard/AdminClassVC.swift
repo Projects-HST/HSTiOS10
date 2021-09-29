@@ -7,8 +7,9 @@
 
 import UIKit
 import DropDown
+import MBProgressHUD
 
-protocol ClassForTeacherListDisplayLogic: class
+protocol ClassForTeacherListDisplayLogic: AnyObject
 {
     func successFetchedItems(viewModel: ClassForTeacherListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ClassForTeacherListModel.Fetch.ViewModel)
@@ -57,6 +58,7 @@ class AdminClassVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLog
         
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
         self.categoryArr = ["Student","Teacher"]
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -174,6 +176,8 @@ extension AdminClassVC {
     
 //    ClassViewDisplayLogic
     func successFetchedItems(viewModel: ClassViewModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedClassViewData = viewModel.displayedClassViewData
         
         for data in displayedClassViewData {
@@ -188,12 +192,15 @@ extension AdminClassVC {
     
     func errorFetchingItems(viewModel: ClassViewModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
     
 //    SectionListDisplayLogic
     func successFetchedItems(viewModel: SectionListModel.Fetch.ViewModel) {
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedSectionListData = viewModel.displayedSectionListData
         
         for data in displayedSectionListData {
@@ -208,6 +215,7 @@ extension AdminClassVC {
     
     func errorFetchingItems(viewModel: SectionListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
         
@@ -216,6 +224,7 @@ extension AdminClassVC {
 //    StudentsListDisplayLogic
     func successFetchedItems(viewModel: StudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedStudentsListData = viewModel.displayedStudentsListData
         
         self.headerTitle1.text = "Student Name"
@@ -229,6 +238,7 @@ extension AdminClassVC {
     
     func errorFetchingItems(viewModel: StudentsListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
@@ -236,6 +246,7 @@ extension AdminClassVC {
 //    ClassForStaffListDisplayLogic
     func successFetchedItems(viewModel: ClassForTeacherListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedClassForTeacherListData = viewModel.displayedClassForTeacherListData
         
         self.headerTitle1.text = "Teacher"
@@ -246,6 +257,7 @@ extension AdminClassVC {
     
     func errorFetchingItems(viewModel: ClassForTeacherListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

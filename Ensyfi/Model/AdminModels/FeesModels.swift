@@ -49,6 +49,55 @@ class FeesListModels : NSObject {
 }
 
 
+class FeesStatusListModels : NSObject {
+    
+    var student_id : String?
+    var name : String?
+    var id : String?
+    var quota_name : String?
+    var status : String?
+    var quota_id : String?
+    var updated_at : String?
+    var paid_by : String?
+    
+     // MARK: Instance Method
+     func loadFromDictionary(_ dict: [String: AnyObject])
+     {
+        if let data = dict["student_id"] as? String {
+             self.student_id = data
+        }
+        if let data = dict["name"] as? String {
+            self.name = data
+        }
+        if let data = dict["id"] as? String {
+             self.id = data
+        }
+        if let data = dict["quota_name"] as? String {
+            self.quota_name = data
+        }
+        if let data = dict["status"] as? String {
+             self.status = data
+        }
+        if let data = dict["quota_id"] as? String {
+            self.quota_id = data
+        }
+        if let data = dict["updated_at"] as? String {
+             self.updated_at = data
+        }
+        if let data = dict["paid_by"] as? String {
+            self.paid_by = data
+        }
+     }
+    
+     // MARK: Class Method
+     class func build(_ dict: [String: AnyObject]) -> FeesStatusListModels {
+         let model = FeesStatusListModels()
+         model.loadFromDictionary(dict)
+         return model
+     }
+}
+
+
 class FeesSectionListModels : NSObject {
     
     var sec_id : String?

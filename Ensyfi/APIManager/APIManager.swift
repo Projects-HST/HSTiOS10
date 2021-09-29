@@ -393,6 +393,43 @@ class APIManager: NSObject {
       )
    }
     
+    func callAPIHomeWorkDetails(class_id:String,hw_type:String, onSuccess successCallback: ((_ resp: [HomeWorkDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.HomeWorkTestListUrl
+         // Set Parameters
+        let parameters: Parameters = ["class_id": class_id,"hw_type":hw_type]
+        print(hw_type)
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["homeworkDetails"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [HomeWorkDetailsModels]()
+                  for item in toModel {
+                      let single = HomeWorkDetailsModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
     func callAPIStudentAttendance(class_id:String,stud_id:String, onSuccess successCallback: ((_ resp: [StudentAttendanceModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentAttendanceUrl
@@ -699,6 +736,44 @@ class APIManager: NSObject {
          }
       )
    }
+    
+    func callAPIExamTimeTable(class_id:String,exam_id:String,onSuccess successCallback: ((_ resp: [ExamTimeTableModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.examDetailsTableListUrl
+         // Set Parameters
+        let parameters: Parameters = ["class_id": class_id,"exam_id": exam_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+            
+          if let responseDict = responseObject["examDetails"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [ExamTimeTableModels]()
+                  for item in toModel {
+                      let single = ExamTimeTableModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
 //
     
     func callAPIFatherDeatils(admission_id:String,onSuccess successCallback: ((_ login: FatherDeatilsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
@@ -895,6 +970,44 @@ class APIManager: NSObject {
          onFailure: {(errorMessage: String) -> Void in
              failureCallback?(errorMessage)
          }
+       )
+    }
+    
+    func callAPIFeesStatusList(class_id:String,section_id:String,fees_id:String, onSuccess successCallback: ((_ resp: [FeesStatusListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL + APIFunctionName.feesStatusListUrl
+         // Set Parameters
+        print(url)
+         let parameters: Parameters =  ["class_id": class_id,"section_id": section_id,"fees_id": fees_id]
+        print(parameters)
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+         print(url)
+           guard let status = responseObject["status"].string, status == "success" else {
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["data"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [FeesStatusListModels]()
+                  for item in toModel {
+                      let single = FeesStatusListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+          } else {
+              failureCallback?("An error has occured.")
+          }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+          }
        )
     }
     
@@ -1324,7 +1437,7 @@ class APIManager: NSObject {
         let url = APIURL.base_URL  + APIFunctionName.staffListGroupAddUrl
          // Set Parameters
         let parameters: Parameters = ["group_id": group_id,"group_user_type": group_user_type]
-      
+      print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1555,5 +1668,41 @@ class APIManager: NSObject {
        }
      )
   }
+    
+    func callAPIBoardMembersList(user_id:String, onSuccess successCallback: ((_ resp: [BoardMembersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.boardMemListUrl
+         // Set Parameters
+        let parameters: Parameters = ["user_id": user_id]
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["data"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [BoardMembersListModels]()
+                  for item in toModel {
+                      let single = BoardMembersListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
     
 }

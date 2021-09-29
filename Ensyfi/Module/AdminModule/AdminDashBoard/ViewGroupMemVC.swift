@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 protocol GroupMembersListDisplayLogic: AnyObject
 {
@@ -26,6 +27,7 @@ class ViewGroupMemVC: UIViewController, GroupMembersListDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: GroupMembersListModel.Fetch.Request(group_id :self.selectedID))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -55,12 +57,14 @@ extension ViewGroupMemVC {
     
     func successFetchedItems(viewModel: GroupMembersListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedGroupMembersListData = viewModel.displayedGroupMembersListData
         self.tableView.reloadData()
     }
     
     func errorFetchingItems(viewModel: GroupMembersListModel.Fetch.ViewModel) {
         
+        MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }

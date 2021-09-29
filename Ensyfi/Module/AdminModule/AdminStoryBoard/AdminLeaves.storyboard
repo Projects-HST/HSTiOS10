@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="3gk-dM-XRo" customClass="LeavesListCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gk-dM-XRo" id="iYY-VH-1SL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
@@ -35,7 +35,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nds-aM-cTW">
                                                     <rect key="frame" x="20" y="15" width="374" height="75"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Admin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZf-UM-BKO">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZf-UM-BKO">
                                                             <rect key="frame" x="32" y="44" width="234" height="23"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -50,7 +50,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="knQ-vX-PR3">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Completed " translatesAutoresizingMaskIntoConstraints="NO" id="knQ-vX-PR3">
                                                             <rect key="frame" x="269" y="27.5" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="IYx-EB-0bY"/>
@@ -80,7 +80,7 @@
                                                                 <constraint firstAttribute="width" constant="4" id="uxU-zA-8H2"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Admin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1Z-Pn-UEn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1Z-Pn-UEn">
                                                             <rect key="frame" x="8" y="8" width="258" height="27"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -95,6 +95,13 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="aEK-to-9DZ">
+                                                            <rect key="frame" x="4" y="48.5" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="Xhw-Z4-4yC"/>
+                                                                <constraint firstAttribute="width" constant="20" id="b02-bN-c1U"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -104,6 +111,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="z1Z-Pn-UEn" secondAttribute="trailing" constant="108" id="Eep-E3-R3W"/>
                                                         <constraint firstItem="z1Z-Pn-UEn" firstAttribute="leading" secondItem="nds-aM-cTW" secondAttribute="leading" constant="8" id="NwA-wH-lto"/>
                                                         <constraint firstItem="z1Z-Pn-UEn" firstAttribute="top" secondItem="nds-aM-cTW" secondAttribute="top" constant="8" id="PiZ-eS-b97"/>
+                                                        <constraint firstItem="aEK-to-9DZ" firstAttribute="top" secondItem="z1Z-Pn-UEn" secondAttribute="bottom" constant="13.5" id="cc2-j9-mwM"/>
                                                         <constraint firstAttribute="trailing" secondItem="yET-Ho-Ypk" secondAttribute="trailing" constant="11" id="dzP-Ob-dLe"/>
                                                         <constraint firstItem="knQ-vX-PR3" firstAttribute="centerY" secondItem="nds-aM-cTW" secondAttribute="centerY" id="fiC-F0-r0R"/>
                                                         <constraint firstItem="knQ-vX-PR3" firstAttribute="leading" secondItem="z1Z-Pn-UEn" secondAttribute="trailing" constant="3" id="h6C-pA-FQt"/>
@@ -111,6 +119,7 @@
                                                         <constraint firstItem="Zyo-8b-4zH" firstAttribute="top" secondItem="nds-aM-cTW" secondAttribute="top" id="i3M-Es-kgv"/>
                                                         <constraint firstAttribute="bottom" secondItem="Zyo-8b-4zH" secondAttribute="bottom" id="iE0-5u-1BV"/>
                                                         <constraint firstItem="yET-Ho-Ypk" firstAttribute="leading" secondItem="knQ-vX-PR3" secondAttribute="trailing" constant="3" id="klv-Cb-jmu"/>
+                                                        <constraint firstItem="aEK-to-9DZ" firstAttribute="leading" secondItem="nds-aM-cTW" secondAttribute="leading" constant="4" id="nhH-m7-t2L"/>
                                                         <constraint firstItem="mZf-UM-BKO" firstAttribute="top" secondItem="z1Z-Pn-UEn" secondAttribute="bottom" constant="9" id="s2b-qp-2Ih"/>
                                                         <constraint firstAttribute="trailing" secondItem="Zyo-8b-4zH" secondAttribute="trailing" id="yBs-Er-ETm"/>
                                                     </constraints>
@@ -187,7 +196,7 @@
                                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="class" translatesAutoresizingMaskIntoConstraints="NO" id="pSC-qz-6h3">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenunselected" translatesAutoresizingMaskIntoConstraints="NO" id="pSC-qz-6h3">
                                                 <rect key="frame" x="182" y="26" width="19" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="IDE-hS-n2q"/>
@@ -216,7 +225,7 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exam" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-Nm-azW">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-Nm-azW">
                                                 <rect key="frame" x="40" y="25" width="19" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="SfF-vS-ZDw"/>
@@ -397,9 +406,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="uZl-wH-vAB"/>
                     <connections>
+                        <outlet property="date" destination="9k4-DB-TL2" id="fEG-sB-xa5"/>
                         <outlet property="img1" destination="pSC-qz-6h3" id="jwU-Cc-TIi"/>
                         <outlet property="img2" destination="Lkl-Nm-azW" id="FKW-Fv-rNF"/>
+                        <outlet property="reason" destination="ape-h8-9ec" id="LxQ-Fh-bgo"/>
                         <outlet property="segmentedControl" destination="aeo-hR-487" id="pPZ-8T-eaN"/>
+                        <outlet property="typeLbl" destination="ku3-RE-XRa" id="qDY-X5-g0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnV-tu-043" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -408,8 +420,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="class" width="100" height="100"/>
-        <image name="exam" width="100" height="100"/>
+        <image name="Calendar" width="50.5" height="50.5"/>
+        <image name="Completed " width="50.5" height="50.5"/>
+        <image name="greenunselected" width="50.5" height="50.5"/>
+        <image name="red" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

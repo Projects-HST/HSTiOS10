@@ -29,6 +29,9 @@ struct APIFunctionName {
     static let clasForTeacherListurl = "/apiadmin/list_of_teachers_for_class/"
 //    exams
     static let examsRsultsListUrl = "/apiadmin/list_of_exams_class/"
+    static let examDetailsTableListUrl = "/apistudent/disp_Examdetails/"
+    
+    
 //    Events
     static let eventsListUrl = "/apimain/disp_Events/"
     static let subEventsListUrl = "/apimain/disp_subEvents/"
@@ -38,6 +41,7 @@ struct APIFunctionName {
     static let feesClassListUrl = "/apiadmin/get_all_classes/"
     static let feesSectionListUrl = "/apiadmin/get_all_sections/"
     static let feesListUrl = "/apiadmin/get_fees_master_class/"
+    static let feesStatusListUrl = "/apiadmin/get_fees_status/"
 //    OnDuty
     static let ODstudentsListUrl = "/apiadmin/get_students_od_view/"
     static let ODteachersListUrl = "/apiadmin/get_teachers_od_view/"
@@ -59,4 +63,6 @@ struct APIFunctionName {
 //    password
     
     static let changePasswordUrl = "/apimain/change_Password/"
+    static let boardMemListUrl = "/apiadmin/get_all_board_members/"
 }
+

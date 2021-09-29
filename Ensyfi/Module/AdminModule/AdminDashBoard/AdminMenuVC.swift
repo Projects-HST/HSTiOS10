@@ -9,10 +9,14 @@ import UIKit
 
 class AdminMenuVC: UIViewController {
 
+    @IBOutlet weak var userPic: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.name.text = "Hi \(GlobalVariables.shared.userName)"
     }
     
     @IBAction func signOutAction(_ sender: Any) {
