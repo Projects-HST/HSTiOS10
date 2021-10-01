@@ -350,6 +350,7 @@
                         <outlet property="userName" destination="gY7-uh-7h8" id="Fch-cS-NYx"/>
                         <segue destination="w4v-ef-mAh" kind="show" identifier="to_AdminDashboard" id="BCg-mC-Qz4"/>
                         <segue destination="KRF-II-y3V" kind="show" identifier="to_studentsDashboard" id="gex-ja-BYW"/>
+                        <segue destination="9hH-vv-7lM" kind="show" identifier="to_TeachersDashBoard" id="gnA-jl-04u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hc7-8f-UuZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -487,6 +488,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPU-BS-zEU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2235" y="82"/>
+        </scene>
+        <!--teachersDashBoardVC-->
+        <scene sceneID="MZg-2F-9Hu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TeachersDashBoard" referencedIdentifier="teachersDashBoardVC" id="9hH-vv-7lM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DKO-7l-6pI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lr8-WW-PhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="470"/>
         </scene>
         <!--adminNavVc-->
         <scene sceneID="saP-oH-nP4">

@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--TeachersVC-->
+        <!--Teachers-->
         <scene sceneID="gXT-7u-Kqr">
             <objects>
                 <viewController storyboardIdentifier="adminTeachers" id="j9M-id-JJy" customClass="TeachersVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,6 +178,9 @@
                             <constraint firstItem="3EX-m4-SEw" firstAttribute="leading" secondItem="FLG-pQ-812" secondAttribute="trailing" id="rYB-Az-qHw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Teachers" id="hr6-da-Pwy">
+                        <barButtonItem key="backBarButtonItem" title="  " id="m43-nh-sBc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Nq7-Kn-vb0" id="v8h-E3-9hJ"/>
                         <segue destination="iDM-Oj-qpw" kind="show" identifier="to_TeacherDetails" id="geg-UF-1l0"/>
@@ -187,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="153.62318840579712" y="-10.044642857142856"/>
         </scene>
-        <!--Teacher DetailsVC-->
+        <!-- Teacher Details-->
         <scene sceneID="fOG-M7-nIm">
             <objects>
                 <viewController storyboardIdentifier="teacherDetailsVC" id="iDM-Oj-qpw" customClass="TeacherDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -607,7 +610,9 @@
                             <constraint firstItem="hWj-mO-H06" firstAttribute="centerX" secondItem="ny2-ty-WTu" secondAttribute="centerX" id="xcf-7F-ZRx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="g3E-n2-fFO"/>
+                    <navigationItem key="navigationItem" title=" Teacher Details" id="g3E-n2-fFO">
+                        <barButtonItem key="backBarButtonItem" title="  " id="v8v-gH-uxn"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="850"/>
                     <connections>
                         <outlet property="address" destination="Ffj-YK-CWb" id="XBl-f3-BF6"/>

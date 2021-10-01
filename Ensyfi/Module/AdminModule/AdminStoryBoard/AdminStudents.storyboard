@@ -22,7 +22,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--StudentsVC-->
+        <!--Students-->
         <scene sceneID="d5D-67-4kJ">
             <objects>
                 <viewController storyboardIdentifier="students_Admin" id="287-YK-99G" customClass="StudentsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -328,6 +328,9 @@
                             <constraint firstItem="lN5-Aq-Rao" firstAttribute="top" secondItem="TDK-vO-Laa" secondAttribute="top" id="WHo-F0-F4x"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Students" id="sij-zZ-E4y">
+                        <barButtonItem key="backBarButtonItem" title="  " id="dBk-yH-Cwy"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="classBtnOutlet" destination="cTE-Ch-zmZ" id="rHe-zU-X0n"/>
                         <outlet property="classTextfield" destination="d7Z-2f-SbJ" id="qSb-dq-Wl1"/>
@@ -341,7 +344,7 @@
             </objects>
             <point key="canvasLocation" x="167" y="100"/>
         </scene>
-        <!--Students DetailsVC-->
+        <!--Students Details-->
         <scene sceneID="CEh-nj-pxq">
             <objects>
                 <viewController storyboardIdentifier="studentsDeatilsVC" id="CRP-Rv-V8O" customClass="StudentsDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1100,7 +1103,9 @@
                             <constraint firstItem="3d9-07-YPy" firstAttribute="trailing" secondItem="e8T-rS-1S0" secondAttribute="trailing" id="iby-m0-5SV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gpv-hv-Lqa"/>
+                    <navigationItem key="navigationItem" title="Students Details" id="gpv-hv-Lqa">
+                        <barButtonItem key="backBarButtonItem" title="  " id="Qep-Kk-sSo"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="EmsiNo" destination="4Yd-1v-l1B" id="DJP-VI-jyP"/>
@@ -1140,7 +1145,7 @@
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="43.526785714285715"/>
         </scene>
-        <!--Home Work TestVC-->
+        <!--Home Work-->
         <scene sceneID="Uan-Ju-ES0">
             <objects>
                 <viewController id="Sgy-UL-fEO" customClass="HomeWorkTestVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1360,7 +1365,9 @@
                             <constraint firstAttribute="bottom" secondItem="BFe-1M-Nno" secondAttribute="bottom" id="yR3-mQ-fVv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TRP-zh-4Gp"/>
+                    <navigationItem key="navigationItem" title="Home Work" id="TRP-zh-4Gp">
+                        <barButtonItem key="backBarButtonItem" title="  " id="fhC-zj-a6B"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="TestTextField" destination="ESH-ot-nGe" id="nbt-RM-Y3N"/>
                         <outlet property="selectBtn" destination="Xkz-SD-tJd" id="eTU-EX-SbP"/>
@@ -1372,7 +1379,7 @@
             </objects>
             <point key="canvasLocation" x="1806" y="100"/>
         </scene>
-        <!--Students AttendanceVC-->
+        <!--Attendance Details-->
         <scene sceneID="d9K-Na-DiQ">
             <objects>
                 <viewController id="Ijj-1z-NpA" customClass="StudentsAttendanceVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1767,7 +1774,9 @@
                             <constraint firstAttribute="bottom" secondItem="pSJ-28-sgZ" secondAttribute="bottom" constant="3" id="t3p-Mc-A9U"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2df-oj-PrG"/>
+                    <navigationItem key="navigationItem" title="Attendance Details" id="2df-oj-PrG">
+                        <barButtonItem key="backBarButtonItem" title="   " id="9iW-QW-e8T"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="950"/>
                     <connections>
                         <outlet property="calendar" destination="DNJ-I1-2FQ" id="ZxM-3o-vgx"/>
@@ -1782,7 +1791,7 @@
             </objects>
             <point key="canvasLocation" x="2536" y="117"/>
         </scene>
-        <!--Exam ResultsVC-->
+        <!--Exam Results-->
         <scene sceneID="8EX-qE-13u">
             <objects>
                 <viewController id="dxV-uc-5iE" customClass="ExamResultsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1927,7 +1936,9 @@
                             <constraint firstAttribute="bottom" secondItem="eaY-6n-PdW" secondAttribute="bottom" id="b6t-gb-aRY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wQQ-Kt-4hX"/>
+                    <navigationItem key="navigationItem" title="Exam Results" id="wQQ-Kt-4hX">
+                        <barButtonItem key="backBarButtonItem" title=" " id="6OP-TB-aWo"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="eaY-6n-PdW" id="UCv-EP-h2A"/>
                     </connections>
@@ -1936,7 +1947,7 @@
             </objects>
             <point key="canvasLocation" x="3267" y="100"/>
         </scene>
-        <!--Home Work DetailsVC-->
+        <!--Home Work Details-->
         <scene sceneID="i5S-89-AAR">
             <objects>
                 <viewController storyboardIdentifier="HomeWorkDetailsVC" id="iKt-V3-1Ug" customClass="HomeWorkDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -2130,7 +2141,7 @@
                             <constraint firstItem="x96-94-Oyl" firstAttribute="centerX" secondItem="zvK-uh-pDj" secondAttribute="centerX" id="n0O-xV-Dfi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JiP-25-fyc"/>
+                    <navigationItem key="navigationItem" title="Home Work Details" id="JiP-25-fyc"/>
                     <connections>
                         <outlet property="commentDetLbl" destination="Jvu-J4-5fZ" id="2C0-O8-E9d"/>
                         <outlet property="commentLbl" destination="mnb-lZ-AYq" id="Bmo-Uv-hxj"/>

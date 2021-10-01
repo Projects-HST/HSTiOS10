@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Leave Application ListVC-->
+        <!--Leave Application-->
         <scene sceneID="AFf-RB-dBm">
             <objects>
                 <viewController storyboardIdentifier="leavesListVc" id="x9h-RC-GH5" customClass="LeaveApplicationListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,6 +162,9 @@
                             <constraint firstItem="gBH-0n-hF4" firstAttribute="top" secondItem="3OX-32-8eP" secondAttribute="top" id="xIM-9b-Eut"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Leave Application" id="7Hz-1p-v60">
+                        <barButtonItem key="backBarButtonItem" title=" " id="zlP-wy-QUU"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="gBH-0n-hF4" id="giK-fJ-EST"/>
                         <segue destination="eGO-WD-GMW" kind="show" identifier="to_leaveAprroval" id="h8m-04-3bV"/>
@@ -171,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="-230.43478260869566" y="56.919642857142854"/>
         </scene>
-        <!--Leave ApprovalVC-->
+        <!--Leave Approval-->
         <scene sceneID="Rit-BK-0Yw">
             <objects>
                 <viewController id="eGO-WD-GMW" customClass="LeaveApprovalVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -404,7 +407,9 @@
                             <constraint firstItem="JGc-3y-FR8" firstAttribute="centerX" secondItem="zV1-Ac-kdO" secondAttribute="centerX" id="vS3-iJ-Kmg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uZl-wH-vAB"/>
+                    <navigationItem key="navigationItem" title="Leave Approval" id="uZl-wH-vAB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="5OQ-et-0dF"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="date" destination="9k4-DB-TL2" id="fEG-sB-xa5"/>
                         <outlet property="img1" destination="pSC-qz-6h3" id="jwU-Cc-TIi"/>

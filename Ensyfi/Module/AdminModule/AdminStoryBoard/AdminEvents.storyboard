@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Admin EventsVC-->
+        <!--Events-->
         <scene sceneID="aIf-uM-4Iw">
             <objects>
                 <viewController storyboardIdentifier="eventsListVc" id="d1j-G5-bAT" customClass="AdminEventsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,6 +122,9 @@
                             <constraint firstItem="Vib-73-hcG" firstAttribute="leading" secondItem="So5-j7-ifq" secondAttribute="leading" id="mYB-Ib-V84"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Events" id="0L8-VQ-FhC">
+                        <barButtonItem key="backBarButtonItem" title="   " id="OxT-w6-v9v"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Vib-73-hcG" id="b5D-J0-dP1"/>
                         <segue destination="pru-Oh-dDy" kind="show" identifier="toEvent_details" id="Saz-S5-ecO"/>
@@ -131,7 +134,7 @@
             </objects>
             <point key="canvasLocation" x="108.69565217391305" y="112.5"/>
         </scene>
-        <!--Event DetailsVC-->
+        <!--Event Details-->
         <scene sceneID="VsR-2m-827">
             <objects>
                 <viewController id="pru-Oh-dDy" customClass="EventDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,7 +244,9 @@
                             <constraint firstItem="aS0-r7-eg7" firstAttribute="centerX" secondItem="JGC-Cn-Su8" secondAttribute="centerX" id="JrR-sc-nb7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CoV-bf-K1B"/>
+                    <navigationItem key="navigationItem" title="Event Details" id="CoV-bf-K1B">
+                        <barButtonItem key="backBarButtonItem" title="  " id="jKZ-fC-C9b"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="date" destination="7xe-Jz-5O8" id="MU8-bM-xSB"/>
                         <outlet property="decription" destination="sS3-D3-eke" id="FpR-v4-dVB"/>
@@ -255,7 +260,7 @@
             </objects>
             <point key="canvasLocation" x="784" y="113"/>
         </scene>
-        <!--Sub EventsVC-->
+        <!--Sub Events-->
         <scene sceneID="6dw-rh-bcl">
             <objects>
                 <viewController id="CVd-Ze-H30" customClass="SubEventsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -346,7 +351,9 @@
                             <constraint firstAttribute="bottom" secondItem="uSB-or-KVG" secondAttribute="bottom" id="yI1-og-hi8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FaY-i3-wiH"/>
+                    <navigationItem key="navigationItem" title="Sub Events" id="FaY-i3-wiH">
+                        <barButtonItem key="backBarButtonItem" title="  " id="waG-xa-Yfp"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="uSB-or-KVG" id="ygU-dj-vWQ"/>
                     </connections>

@@ -144,14 +144,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="o5q-VZ-cEW">
-                        <barButtonItem key="backBarButtonItem" title="   " id="RqN-bh-Fyw"/>
+                        <barButtonItem key="backBarButtonItem" title="  " id="RqN-bh-Fyw"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-274" y="42"/>
         </scene>
-        <!--View Controller-->
+        <!--About Ensyfi-->
         <scene sceneID="zQc-bF-I5N">
             <objects>
                 <viewController id="O64-2E-J3i" sceneMemberID="viewController">
@@ -186,7 +186,9 @@
                             <constraint firstItem="iuG-sb-lAC" firstAttribute="top" secondItem="h88-3E-d4k" secondAttribute="bottom" constant="10" id="wFx-nX-yjh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ekx-rG-6mz"/>
+                    <navigationItem key="navigationItem" title="About Ensyfi" id="Ekx-rG-6mz">
+                        <barButtonItem key="backBarButtonItem" title="  " id="4oD-Hm-jtr"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39Z-h3-Lwh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="-275" y="410"/>
         </scene>
-        <!--Change PasswordVC-->
+        <!--Change Password-->
         <scene sceneID="dZS-pl-huJ">
             <objects>
                 <viewController id="Yrv-CP-V4n" customClass="ChangePasswordVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -399,7 +401,9 @@
                             <constraint firstItem="gim-IB-eZb" firstAttribute="bottom" secondItem="ae6-Jl-uJ9" secondAttribute="bottom" id="eqd-9q-KSy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="21C-qK-KWJ"/>
+                    <navigationItem key="navigationItem" title="Change Password" id="21C-qK-KWJ">
+                        <barButtonItem key="backBarButtonItem" title="  " id="oPI-DH-Ot0"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmPassword" destination="MwS-9h-PPP" id="Zki-8r-cBw"/>
                         <outlet property="currentPassword" destination="d4f-6d-Aqy" id="FT0-wn-5Xq"/>

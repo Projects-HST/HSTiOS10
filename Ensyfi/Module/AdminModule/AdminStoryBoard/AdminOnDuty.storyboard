@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--On Duty ListVC-->
+        <!--On Duty-->
         <scene sceneID="hXS-WW-Me9">
             <objects>
                 <viewController storyboardIdentifier="onDutyListVC" id="jbk-kQ-gzw" customClass="OnDutyListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -259,6 +259,9 @@
                             <constraint firstItem="b0E-tI-S3W" firstAttribute="top" secondItem="aTA-oo-U8d" secondAttribute="bottom" constant="30" id="zw7-uP-w64"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="On Duty" id="4eJ-tZ-PmP">
+                        <barButtonItem key="backBarButtonItem" title=" " id="rJD-3n-DCU"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="img1" destination="mtQ-oa-xO4" id="LeK-wb-79r"/>
                         <outlet property="img2" destination="Yse-Dg-rf3" id="Ojm-ir-e8B"/>
@@ -271,7 +274,7 @@
             </objects>
             <point key="canvasLocation" x="189.85507246376812" y="-131.25"/>
         </scene>
-        <!--ApprovalVC-->
+        <!--On Duty Approval-->
         <scene sceneID="B7a-k0-jmz">
             <objects>
                 <viewController id="ktA-sr-iXa" customClass="ODApprovalVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -511,7 +514,9 @@
                             <constraint firstItem="opI-eh-sTX" firstAttribute="top" secondItem="eyT-EJ-qO2" secondAttribute="top" constant="25" id="ipm-63-Adg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jvR-SJ-XPn"/>
+                    <navigationItem key="navigationItem" title="On Duty Approval" id="jvR-SJ-XPn">
+                        <barButtonItem key="backBarButtonItem" title=" " id="QZV-Ld-j0u"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="date" destination="TpT-Jn-Qz5" id="0zz-rk-KAx"/>
                         <outlet property="img1" destination="ftq-8R-PhT" id="jHm-D7-lsm"/>

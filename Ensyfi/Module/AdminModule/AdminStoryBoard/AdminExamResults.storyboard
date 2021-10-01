@@ -19,7 +19,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Exam ResultsVC-->
+        <!--Exam Results-->
         <scene sceneID="0d3-Xi-JiD">
             <objects>
                 <viewController storyboardIdentifier="examResultsVC" id="7vb-eh-i0l" customClass="ExamResultsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wL-tj-4BM">
                                         <rect key="frame" x="20" y="23" width="294" height="48"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fm6-rW-o1v">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Select Class" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fm6-rW-o1v">
                                                 <rect key="frame" x="8" y="0.0" width="245" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -82,7 +82,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abU-ka-EFO">
                                         <rect key="frame" x="20" y="86" width="294" height="48"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXp-96-044">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Select Section" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXp-96-044">
                                                 <rect key="frame" x="8" y="0.0" width="244" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -293,6 +293,9 @@
                             <constraint firstItem="vcB-rL-yA5" firstAttribute="top" secondItem="byY-ji-Ezu" secondAttribute="bottom" constant="20" id="p3y-Ny-Vh0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Exam Results" id="H0r-dZ-FDN">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fZu-aU-d9J"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="classBtnOutlet" destination="eU7-rE-wTd" id="gtQ-kz-gE2"/>
                         <outlet property="classTextfield" destination="fm6-rW-o1v" id="Tbd-ud-4aN"/>
@@ -306,7 +309,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="137.94642857142856"/>
         </scene>
-        <!--Exam Results Students ListVC-->
+        <!--Students -->
         <scene sceneID="Noo-2Q-iZ6">
             <objects>
                 <viewController id="xe6-Ee-pKS" customClass="ExamResultsStudentsListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -464,7 +467,9 @@
                             <constraint firstItem="BDK-07-bhg" firstAttribute="leading" secondItem="SZo-59-vzN" secondAttribute="leading" id="tkw-SO-vxF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QGH-Sd-gL5"/>
+                    <navigationItem key="navigationItem" title="Students " id="QGH-Sd-gL5">
+                        <barButtonItem key="backBarButtonItem" title="  " id="byh-p7-YVK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="BDK-07-bhg" id="umU-6X-fAI"/>
                     </connections>

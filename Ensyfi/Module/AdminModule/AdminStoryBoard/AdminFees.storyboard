@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Fees ListVC-->
+        <!--Fees-->
         <scene sceneID="t6Y-uL-Yfy">
             <objects>
                 <viewController storyboardIdentifier="feesListVC" id="BEn-df-gMh" customClass="FeesListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDa-i2-4Hz">
                                         <rect key="frame" x="20" y="23" width="294" height="48"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9An-vr-UWx">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Select Class" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9An-vr-UWx">
                                                 <rect key="frame" x="8" y="0.0" width="245" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -79,7 +79,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJO-Xk-ENI">
                                         <rect key="frame" x="20" y="86" width="294" height="48"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21l-4b-207">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Select Section" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21l-4b-207">
                                                 <rect key="frame" x="8" y="0.0" width="244" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -261,6 +261,9 @@
                             <constraint firstItem="ArT-xB-khB" firstAttribute="leading" secondItem="IWf-gK-3wH" secondAttribute="leading" constant="40" id="zhJ-r6-eOX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Fees" id="egP-og-5Lj">
+                        <barButtonItem key="backBarButtonItem" title=" " id="TMa-Qe-dKf"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="classBtnOutlet" destination="MR7-Wm-gZ9" id="wt0-Uo-FUe"/>
                         <outlet property="classTextfield" destination="9An-vr-UWx" id="egg-ob-Toh"/>
@@ -274,7 +277,7 @@
             </objects>
             <point key="canvasLocation" x="808.69565217391312" y="-118.52678571428571"/>
         </scene>
-        <!--Fees Status ListVC-->
+        <!--Fees Status-->
         <scene sceneID="VzO-Tf-j3J">
             <objects>
                 <viewController id="THM-Cd-XEX" customClass="FeesStatusListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -400,7 +403,9 @@
                             <constraint firstItem="3jR-QK-33s" firstAttribute="leading" secondItem="8dY-9Q-b95" secondAttribute="leading" id="ULO-aJ-UVX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RvE-wj-OWr"/>
+                    <navigationItem key="navigationItem" title="Fees Status" id="RvE-wj-OWr">
+                        <barButtonItem key="backBarButtonItem" title="  " id="HeQ-a7-yjx"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="3jR-QK-33s" id="ePY-nK-SgD"/>
                     </connections>

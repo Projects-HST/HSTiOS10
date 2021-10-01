@@ -19,7 +19,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Exams Vc-->
+        <!--Exams-->
         <scene sceneID="bcN-AZ-FQN">
             <objects>
                 <viewController storyboardIdentifier="examsVC" id="MuD-0z-vwj" customClass="ExamsVc" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WS6-4o-5qc">
                                                 <rect key="frame" x="20" y="23" width="294" height="48"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Select Class" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOw-99-3D2">
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Class" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOw-99-3D2">
                                                         <rect key="frame" x="8" y="0.0" width="245" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -88,7 +88,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4o-eZ-QCa">
                                                 <rect key="frame" x="20" y="86" width="294" height="48"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Select Section" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5F-2u-p3p">
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Select Section" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5F-2u-p3p">
                                                         <rect key="frame" x="8" y="0.0" width="244" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -312,6 +312,9 @@
                             <constraint firstAttribute="bottom" secondItem="3Rq-wy-rrw" secondAttribute="bottom" id="vnn-Xk-w0q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Exams" id="EgD-LR-rIi">
+                        <barButtonItem key="backBarButtonItem" title="  " id="jNR-6h-QkC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="classBtnOutlet" destination="o2A-fw-gHQ" id="pR6-bd-2il"/>
                         <outlet property="classTextfield" destination="zOw-99-3D2" id="zVg-tS-k4Q"/>
@@ -325,7 +328,7 @@
             </objects>
             <point key="canvasLocation" x="86.956521739130437" y="-200.22321428571428"/>
         </scene>
-        <!--Exam Time TableVC-->
+        <!--Time Table-->
         <scene sceneID="rDD-d2-jUW">
             <objects>
                 <viewController id="TM3-8R-WFu" customClass="ExamTimeTableVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -445,7 +448,9 @@
                             <constraint firstItem="hVv-c9-6h8" firstAttribute="top" secondItem="K6a-6Q-W6s" secondAttribute="bottom" id="yli-Ff-bhE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zNY-Gq-khe"/>
+                    <navigationItem key="navigationItem" title="Time Table" id="zNY-Gq-khe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="bcD-uy-wH6"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hVv-c9-6h8" id="bVI-DT-WUn"/>
                     </connections>

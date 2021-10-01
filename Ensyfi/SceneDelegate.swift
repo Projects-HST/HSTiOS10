@@ -53,6 +53,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
         }
+        else if user_loginType as! String == "Teachers"
+        {
+            let storyboard = UIStoryboard.init(name: "TeachersDashBoard", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "teachersDashBoardVC") as! UINavigationController
+           
+                self.window?.rootViewController = viewController
+                self.window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

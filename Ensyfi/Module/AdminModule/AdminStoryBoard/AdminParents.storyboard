@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Admin ParentsVC-->
+        <!--Parents-->
         <scene sceneID="QgP-9O-B44">
             <objects>
                 <viewController storyboardIdentifier="adminParentsVC" id="Imn-AU-0Dq" customClass="AdminParentsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -322,6 +322,9 @@
                             <constraint firstItem="xHh-ng-X1f" firstAttribute="leading" secondItem="poq-3x-tHF" secondAttribute="leading" id="pMP-0E-DxK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Parents" id="2Vx-gz-oAc">
+                        <barButtonItem key="backBarButtonItem" title="  " id="e6R-D5-lY0"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="classBtnOutlet" destination="BPY-Gk-JbL" id="cyI-kd-Wsx"/>
                         <outlet property="classTextfield" destination="QkS-Zv-4pI" id="gAD-1g-wbj"/>
@@ -335,7 +338,7 @@
             </objects>
             <point key="canvasLocation" x="6" y="157"/>
         </scene>
-        <!--Parents DetailsVC-->
+        <!--Parents Details-->
         <scene sceneID="omk-No-NWC">
             <objects>
                 <viewController id="lHt-LB-JHe" customClass="ParentsDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -765,7 +768,9 @@
                             <constraint firstItem="0fO-jF-XLF" firstAttribute="trailing" secondItem="1g7-G3-R77" secondAttribute="trailing" id="sVz-5S-zYi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ODu-OX-X0f"/>
+                    <navigationItem key="navigationItem" title="Parents Details" id="ODu-OX-X0f">
+                        <barButtonItem key="backBarButtonItem" title="  " id="Ut5-s7-XcH"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addres" destination="k7Z-AD-2CP" id="oim-Hi-jyH"/>
                         <outlet property="emailId" destination="Q8Y-5V-Wob" id="acl-RC-ZGS"/>

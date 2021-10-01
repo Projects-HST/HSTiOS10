@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--AttendanceVC-->
+        <!--Attendance-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="attendanceVC" id="Y6W-OH-hqX" customClass="AttendanceVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJF-8g-UXd">
                                         <rect key="frame" x="20" y="23" width="294" height="48"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="7gA-cB-pBA">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="7gA-cB-pBA">
                                                 <rect key="frame" x="5" y="11" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="CrS-Wl-pbZ"/>
@@ -63,7 +63,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-an-93x">
                                         <rect key="frame" x="20" y="91" width="294" height="48"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-1" translatesAutoresizingMaskIntoConstraints="NO" id="3hU-3R-KW0">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="3hU-3R-KW0">
                                                 <rect key="frame" x="5" y="11" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="cdt-WX-kwR"/>
@@ -156,6 +156,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="M0c-9D-jtD" secondAttribute="trailing" constant="40" id="wob-VF-SxM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Attendance" id="UlW-Kr-ogN">
+                        <barButtonItem key="backBarButtonItem" title="  " id="wYP-hq-KHl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="classTextfield" destination="Ili-ry-pOG" id="daZ-LS-BbT"/>
                         <outlet property="dateTextfield" destination="ZfU-fL-vzL" id="2x4-9J-01t"/>
@@ -268,7 +271,7 @@
             </objects>
             <point key="canvasLocation" x="821.73913043478262" y="105.80357142857143"/>
         </scene>
-        <!--Class Attendance ListVC-->
+        <!--Class Attendance-->
         <scene sceneID="Uqg-ad-gyv">
             <objects>
                 <viewController id="s3z-n9-zm4" customClass="ClassAttendanceListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -365,7 +368,9 @@
                             <constraint firstAttribute="bottom" secondItem="H8o-gI-owe" secondAttribute="bottom" id="cmw-L1-mZf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KPD-fV-MXN"/>
+                    <navigationItem key="navigationItem" title="Class Attendance" id="KPD-fV-MXN">
+                        <barButtonItem key="backBarButtonItem" title="  " id="eW5-sc-KtC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="H8o-gI-owe" id="5y0-yB-Yna"/>
                     </connections>
@@ -376,10 +381,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="03t-It-r2k"/>
+        <segue reference="NwW-8l-BaM"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="back-1" width="31" height="19"/>
+        <image name="Calendar" width="50.5" height="50.5"/>
+        <image name="Downarrow" width="50.5" height="50.5"/>
         <image name="unselected1" width="50.5" height="50.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

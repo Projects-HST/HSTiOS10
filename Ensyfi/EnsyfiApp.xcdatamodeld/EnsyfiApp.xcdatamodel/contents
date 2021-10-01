@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ClassSubjects" representedClassName="ClassSubjects" syncable="YES" codeGenerationType="class">
+        <attribute name="class_master_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="class_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="sec_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="teacher_id" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="ExamDetails" representedClassName="ExamDetails" syncable="YES" codeGenerationType="class">
+        <attribute name="class_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="classmaster_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="exam_date" optional="YES" attributeType="Transformable"/>
+        <attribute name="exam_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="exam_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="external_mark" optional="YES" attributeType="Transformable"/>
+        <attribute name="internal_mark" optional="YES" attributeType="Transformable"/>
+        <attribute name="is_internal_external" optional="YES" attributeType="Transformable"/>
+        <attribute name="sec_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_total" optional="YES" attributeType="Transformable"/>
+        <attribute name="times" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="ExamsDatas" representedClassName="ExamsDatas" syncable="YES" codeGenerationType="class">
+        <attribute name="class_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="classmaster_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="exam_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="exam_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="fromdate" optional="YES" attributeType="Transformable"/>
+        <attribute name="is_internal_external" optional="YES" attributeType="Transformable"/>
+        <attribute name="markStatus" optional="YES" attributeType="Transformable"/>
+        <attribute name="sec_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="todate" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="StudentDetails" representedClassName="StudentDetails" syncable="YES" codeGenerationType="class">
+        <attribute name="admission_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="class_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="class_section" optional="YES" attributeType="Transformable"/>
+        <attribute name="enroll_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="name" optional="YES" attributeType="Transformable"/>
+        <attribute name="pref_language" optional="YES" attributeType="Transformable"/>
+        <attribute name="sex" optional="YES" attributeType="Transformable"/>
+        <attribute name="status" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="TeacherProfile" representedClassName="TeacherProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="age" optional="YES" attributeType="String"/>
+        <attribute name="class_taken" optional="YES" attributeType="String"/>
+        <attribute name="class_teacher" optional="YES" attributeType="String"/>
+        <attribute name="community" optional="YES" attributeType="String"/>
+        <attribute name="community_class" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nationality" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="profile_pic" optional="YES" attributeType="String"/>
+        <attribute name="religion" optional="YES" attributeType="String"/>
+        <attribute name="sec_email" optional="YES" attributeType="String"/>
+        <attribute name="sec_phone" optional="YES" attributeType="String"/>
+        <attribute name="sex" optional="YES" attributeType="String"/>
+        <attribute name="subject" optional="YES" attributeType="String"/>
+        <attribute name="teacher_id" optional="YES" attributeType="String"/>
+        <attribute name="update_at" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="ClassSubjects" positionX="-54" positionY="126" width="128" height="119"/>
+        <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
+        <element name="StudentDetails" positionX="-54" positionY="126" width="128" height="149"/>
+        <element name="ExamsDatas" positionX="-45" positionY="135" width="128" height="164"/>
+        <element name="ExamDetails" positionX="-18" positionY="162" width="128" height="14"/>
+    </elements>
+</model>
