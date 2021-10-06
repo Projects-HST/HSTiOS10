@@ -137,7 +137,7 @@
 		798DE4E926CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798DE4E826CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf */; };
 		798DE4EE26CE830D0017C5FD /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798DE4ED26CE830D0017C5FD /* SF-Pro-Text-Medium.otf */; };
 		798DE4F326CE83230017C5FD /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798DE4F226CE83230017C5FD /* SF-Pro-Display-Bold.otf */; };
-		7990184F27058D2200A6CED2 /* TeachersDashBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7990184E27058D2200A6CED2 /* TeachersDashBoardVC.swift */; };
+		7990184F27058D2200A6CED2 /* TeachersDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7990184E27058D2200A6CED2 /* TeachersDashBoard.swift */; };
 		7990185127058D9500A6CED2 /* TeachersDashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7990185027058D9500A6CED2 /* TeachersDashBoard.storyboard */; };
 		799018542705919400A6CED2 /* TeacherSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799018532705919400A6CED2 /* TeacherSideMenuVC.swift */; };
 		7990185E2705B1F800A6CED2 /* EnsyfiApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7990185C2705B1F800A6CED2 /* EnsyfiApp.xcdatamodeld */; };
@@ -294,6 +294,17 @@
 		79CC462F26F361C900448486 /* StudentAddGroupListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC462E26F361C900448486 /* StudentAddGroupListModel.swift */; };
 		79CC463126F361D100448486 /* StudentAddGroupListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC463026F361D100448486 /* StudentAddGroupListPresenter.swift */; };
 		79CC463326F361E800448486 /* GroupMembersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC463226F361E800448486 /* GroupMembersModels.swift */; };
+		79E42926270D681000967951 /* SyncDatas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E42925270D681000967951 /* SyncDatas.storyboard */; };
+		79E42929270D68CF00967951 /* SyncDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E42928270D68CF00967951 /* SyncDataVC.swift */; };
+		79E4292B270D7E2B00967951 /* AttendanceUserdefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4292A270D7E2900967951 /* AttendanceUserdefault.swift */; };
+		79E4292D270DBEFB00967951 /* SyncAttendanceInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4292C270DBEFB00967951 /* SyncAttendanceInteracter.swift */; };
+		79E42930270DBF7E00967951 /* SyncAttendanceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4292F270DBF7E00967951 /* SyncAttendanceWorker.swift */; };
+		79E42932270DBF9500967951 /* SyncAttendanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E42931270DBF9500967951 /* SyncAttendanceModel.swift */; };
+		79E42934270DBFAA00967951 /* SyncAttendancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E42933270DBFAA00967951 /* SyncAttendancePresenter.swift */; };
+		79E42936270DBFC700967951 /* SyncDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E42935270DBFC700967951 /* SyncDataModels.swift */; };
+		79E42938270DC74300967951 /* TeachersHomeWork.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E42937270DC74300967951 /* TeachersHomeWork.storyboard */; };
+		79E4293B270DCA3600967951 /* TeachersHomeWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4293A270DCA3600967951 /* TeachersHomeWorkVC.swift */; };
+		79E4293D270DCE1A00967951 /* AssignHW_TestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4293C270DCE1A00967951 /* AssignHW_TestsVC.swift */; };
 		79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */; };
 		79E51FD726E0A1F300991D34 /* StudenceAttendanceInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */; };
 		79E51FDC26E0A20300991D34 /* StudenceAttendanceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */; };
@@ -315,6 +326,12 @@
 		79EBC86F26F49E1F00CF9FAF /* AddGroupMemberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC86E26F49E1F00CF9FAF /* AddGroupMemberWorker.swift */; };
 		79EBC87126F49E2400CF9FAF /* AddGroupMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC87026F49E2400CF9FAF /* AddGroupMemberModel.swift */; };
 		79EBC87326F49E2D00CF9FAF /* AddGroupMemberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC87226F49E2D00CF9FAF /* AddGroupMemberPresenter.swift */; };
+		79EDE968270AD75800B85ADB /* TeacherProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EDE967270AD75800B85ADB /* TeacherProfile.storyboard */; };
+		79EDE96B270AD94A00B85ADB /* TeacherProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EDE96A270AD94A00B85ADB /* TeacherProfileVC.swift */; };
+		79EDE96D270ADA0D00B85ADB /* TeacherPersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EDE96C270ADA0D00B85ADB /* TeacherPersonalInfoVC.swift */; };
+		79EDE970270AE1A100B85ADB /* TeacherAttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EDE96F270AE1A100B85ADB /* TeacherAttendanceVC.swift */; };
+		79EDE972270AE1F800B85ADB /* TeacherAttendanceVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EDE971270AE1F800B85ADB /* TeacherAttendanceVC.storyboard */; };
+		79EDE975270B295C00B85ADB /* TakeAttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EDE974270B295C00B85ADB /* TakeAttendanceVC.swift */; };
 		79F0ECFF26D362DD00DFDE61 /* ForgotPswdInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ECFE26D362DD00DFDE61 /* ForgotPswdInteracter.swift */; };
 		79F0ED0426D362F400DFDE61 /* ForgotPswdWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED0326D362F400DFDE61 /* ForgotPswdWorker.swift */; };
 		79F0ED0926D3630300DFDE61 /* ForgotPswdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED0826D3630300DFDE61 /* ForgotPswdModel.swift */; };
@@ -322,6 +339,7 @@
 		79F0ED1326D3635C00DFDE61 /* ForgotPswdModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED1226D3635C00DFDE61 /* ForgotPswdModels.swift */; };
 		79F0ED2526D37A4B00DFDE61 /* AdminDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */; };
 		79F0ED3C26D3AF8800DFDE61 /* AdminStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79F0ED3B26D3AF8800DFDE61 /* AdminStudents.storyboard */; };
+		79F179E0270C614A00F969D1 /* AttendanceTakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F179DF270C614A00F969D1 /* AttendanceTakeCell.swift */; };
 		79FC8C7426F5B2E10041A54B /* AdminExamResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FC8C7326F5B2E10041A54B /* AdminExamResults.storyboard */; };
 		79FC8C7D26F5C7470041A54B /* ExamResultsStudentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC8C7C26F5C7470041A54B /* ExamResultsStudentsListVC.swift */; };
 		79FE1B1726D4A93500E62F00 /* SudentsAdminInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B1626D4A93500E62F00 /* SudentsAdminInteracter.swift */; };
@@ -503,7 +521,7 @@
 		798DE4E826CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		798DE4ED26CE830D0017C5FD /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		798DE4F226CE83230017C5FD /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		7990184E27058D2200A6CED2 /* TeachersDashBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersDashBoardVC.swift; sourceTree = "<group>"; };
+		7990184E27058D2200A6CED2 /* TeachersDashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersDashBoard.swift; sourceTree = "<group>"; };
 		7990185027058D9500A6CED2 /* TeachersDashBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeachersDashBoard.storyboard; sourceTree = "<group>"; };
 		799018532705919400A6CED2 /* TeacherSideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSideMenuVC.swift; sourceTree = "<group>"; };
 		7990185D2705B1F800A6CED2 /* EnsyfiApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EnsyfiApp.xcdatamodel; sourceTree = "<group>"; };
@@ -659,6 +677,17 @@
 		79CC462E26F361C900448486 /* StudentAddGroupListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListModel.swift; sourceTree = "<group>"; };
 		79CC463026F361D100448486 /* StudentAddGroupListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListPresenter.swift; sourceTree = "<group>"; };
 		79CC463226F361E800448486 /* GroupMembersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersModels.swift; sourceTree = "<group>"; };
+		79E42925270D681000967951 /* SyncDatas.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SyncDatas.storyboard; sourceTree = "<group>"; };
+		79E42928270D68CF00967951 /* SyncDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDataVC.swift; sourceTree = "<group>"; };
+		79E4292A270D7E2900967951 /* AttendanceUserdefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceUserdefault.swift; sourceTree = "<group>"; };
+		79E4292C270DBEFB00967951 /* SyncAttendanceInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncAttendanceInteracter.swift; sourceTree = "<group>"; };
+		79E4292F270DBF7E00967951 /* SyncAttendanceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncAttendanceWorker.swift; sourceTree = "<group>"; };
+		79E42931270DBF9500967951 /* SyncAttendanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncAttendanceModel.swift; sourceTree = "<group>"; };
+		79E42933270DBFAA00967951 /* SyncAttendancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncAttendancePresenter.swift; sourceTree = "<group>"; };
+		79E42935270DBFC700967951 /* SyncDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncDataModels.swift; path = ../../../../../../SyncDataModels.swift; sourceTree = "<group>"; };
+		79E42937270DC74300967951 /* TeachersHomeWork.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = TeachersHomeWork.storyboard; path = ../../../../../../../TeachersHomeWork.storyboard; sourceTree = "<group>"; };
+		79E4293A270DCA3600967951 /* TeachersHomeWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersHomeWorkVC.swift; sourceTree = "<group>"; };
+		79E4293C270DCE1A00967951 /* AssignHW_TestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignHW_TestsVC.swift; sourceTree = "<group>"; };
 		79E51FCE26E0A1D800991D34 /* StudentsAttendanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsAttendanceVC.swift; sourceTree = "<group>"; };
 		79E51FD626E0A1F300991D34 /* StudenceAttendanceInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceInteracter.swift; sourceTree = "<group>"; };
 		79E51FDB26E0A20300991D34 /* StudenceAttendanceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenceAttendanceWorker.swift; sourceTree = "<group>"; };
@@ -680,6 +709,12 @@
 		79EBC86E26F49E1F00CF9FAF /* AddGroupMemberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberWorker.swift; sourceTree = "<group>"; };
 		79EBC87026F49E2400CF9FAF /* AddGroupMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberModel.swift; sourceTree = "<group>"; };
 		79EBC87226F49E2D00CF9FAF /* AddGroupMemberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberPresenter.swift; sourceTree = "<group>"; };
+		79EDE967270AD75800B85ADB /* TeacherProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeacherProfile.storyboard; sourceTree = "<group>"; };
+		79EDE96A270AD94A00B85ADB /* TeacherProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeacherProfileVC.swift; path = ../../../../../../../../TeacherProfileVC.swift; sourceTree = "<group>"; };
+		79EDE96C270ADA0D00B85ADB /* TeacherPersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPersonalInfoVC.swift; sourceTree = "<group>"; };
+		79EDE96F270AE1A100B85ADB /* TeacherAttendanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAttendanceVC.swift; sourceTree = "<group>"; };
+		79EDE971270AE1F800B85ADB /* TeacherAttendanceVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeacherAttendanceVC.storyboard; sourceTree = "<group>"; };
+		79EDE974270B295C00B85ADB /* TakeAttendanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAttendanceVC.swift; sourceTree = "<group>"; };
 		79F0ECFE26D362DD00DFDE61 /* ForgotPswdInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdInteracter.swift; sourceTree = "<group>"; };
 		79F0ED0326D362F400DFDE61 /* ForgotPswdWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdWorker.swift; sourceTree = "<group>"; };
 		79F0ED0826D3630300DFDE61 /* ForgotPswdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdModel.swift; sourceTree = "<group>"; };
@@ -687,6 +722,7 @@
 		79F0ED1226D3635C00DFDE61 /* ForgotPswdModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPswdModels.swift; sourceTree = "<group>"; };
 		79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardVC.swift; sourceTree = "<group>"; };
 		79F0ED3B26D3AF8800DFDE61 /* AdminStudents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStudents.storyboard; sourceTree = "<group>"; };
+		79F179DF270C614A00F969D1 /* AttendanceTakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTakeCell.swift; sourceTree = "<group>"; };
 		79FC8C7326F5B2E10041A54B /* AdminExamResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminExamResults.storyboard; sourceTree = "<group>"; };
 		79FC8C7C26F5C7470041A54B /* ExamResultsStudentsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsStudentsListVC.swift; sourceTree = "<group>"; };
 		79FE1B1626D4A93500E62F00 /* SudentsAdminInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudentsAdminInteracter.swift; sourceTree = "<group>"; };
@@ -973,6 +1009,7 @@
 		7956CD7B26DCCDDF001D0A41 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				79F179DE270C610200F969D1 /* TeachersCells */,
 				7956CD7C26DCCDED001D0A41 /* AdminCells */,
 			);
 			path = Cells;
@@ -1232,6 +1269,10 @@
 			isa = PBXGroup;
 			children = (
 				7990185027058D9500A6CED2 /* TeachersDashBoard.storyboard */,
+				79EDE967270AD75800B85ADB /* TeacherProfile.storyboard */,
+				79EDE971270AE1F800B85ADB /* TeacherAttendanceVC.storyboard */,
+				79E42925270D681000967951 /* SyncDatas.storyboard */,
+				79E42937270DC74300967951 /* TeachersHomeWork.storyboard */,
 			);
 			path = TeachersStoryBoards;
 			sourceTree = "<group>";
@@ -1239,8 +1280,12 @@
 		7990184D27058CEF00A6CED2 /* TeachersDashBoard */ = {
 			isa = PBXGroup;
 			children = (
-				7990184E27058D2200A6CED2 /* TeachersDashBoardVC.swift */,
+				7990184E27058D2200A6CED2 /* TeachersDashBoard.swift */,
+				79E42939270DC9D700967951 /* TeachersHomeWorks */,
 				799018522705916E00A6CED2 /* TeachersSideMenu */,
+				79EDE969270AD93100B85ADB /* TeacherProfile */,
+				79EDE96E270AE11300B85ADB /* TeacherAttendance */,
+				79E42927270D688E00967951 /* SyncData */,
 			);
 			path = TeachersDashBoard;
 			sourceTree = "<group>";
@@ -1277,6 +1322,7 @@
 			children = (
 				7990186E2705BFA700A6CED2 /* TeachersDetailsModels.swift */,
 				799018782705D7E800A6CED2 /* TeachersDataModels.swift */,
+				79E42935270DBFC700967951 /* SyncDataModels.swift */,
 			);
 			path = TeacherModels;
 			sourceTree = "<group>";
@@ -1385,6 +1431,7 @@
 			isa = PBXGroup;
 			children = (
 				79956C2626CF7FD900E012BB /* constants.swift */,
+				79E4292A270D7E2900967951 /* AttendanceUserdefault.swift */,
 				79045D6927018207009A3084 /* UserDefaults.swift */,
 				79956C2826CF7FD900E012BB /* BottomBorder.swift */,
 				79956C2926CF7FD900E012BB /* LocalizationSystem.swift */,
@@ -1759,6 +1806,35 @@
 			name = StudentAddGroupList;
 			sourceTree = "<group>";
 		};
+		79E42927270D688E00967951 /* SyncData */ = {
+			isa = PBXGroup;
+			children = (
+				79E42928270D68CF00967951 /* SyncDataVC.swift */,
+				79E4292E270DBF5A00967951 /* SyncAttendance */,
+			);
+			path = SyncData;
+			sourceTree = "<group>";
+		};
+		79E4292E270DBF5A00967951 /* SyncAttendance */ = {
+			isa = PBXGroup;
+			children = (
+				79E4292C270DBEFB00967951 /* SyncAttendanceInteracter.swift */,
+				79E4292F270DBF7E00967951 /* SyncAttendanceWorker.swift */,
+				79E42931270DBF9500967951 /* SyncAttendanceModel.swift */,
+				79E42933270DBFAA00967951 /* SyncAttendancePresenter.swift */,
+			);
+			path = SyncAttendance;
+			sourceTree = "<group>";
+		};
+		79E42939270DC9D700967951 /* TeachersHomeWorks */ = {
+			isa = PBXGroup;
+			children = (
+				79E4293A270DCA3600967951 /* TeachersHomeWorkVC.swift */,
+				79E4293C270DCE1A00967951 /* AssignHW_TestsVC.swift */,
+			);
+			path = TeachersHomeWorks;
+			sourceTree = "<group>";
+		};
 		79E51FCD26E0A1AE00991D34 /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
@@ -1806,6 +1882,24 @@
 			name = AddGroupMember;
 			sourceTree = "<group>";
 		};
+		79EDE969270AD93100B85ADB /* TeacherProfile */ = {
+			isa = PBXGroup;
+			children = (
+				79EDE96A270AD94A00B85ADB /* TeacherProfileVC.swift */,
+				79EDE96C270ADA0D00B85ADB /* TeacherPersonalInfoVC.swift */,
+			);
+			path = TeacherProfile;
+			sourceTree = "<group>";
+		};
+		79EDE96E270AE11300B85ADB /* TeacherAttendance */ = {
+			isa = PBXGroup;
+			children = (
+				79EDE96F270AE1A100B85ADB /* TeacherAttendanceVC.swift */,
+				79EDE974270B295C00B85ADB /* TakeAttendanceVC.swift */,
+			);
+			path = TeacherAttendance;
+			sourceTree = "<group>";
+		};
 		79F0ED4026D3AFA500DFDE61 /* StudentsAdmin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1818,6 +1912,14 @@
 				798A1B1926D62A2D0081105B /* StudentsList */,
 			);
 			name = StudentsAdmin;
+			sourceTree = "<group>";
+		};
+		79F179DE270C610200F969D1 /* TeachersCells */ = {
+			isa = PBXGroup;
+			children = (
+				79F179DF270C614A00F969D1 /* AttendanceTakeCell.swift */,
+			);
+			path = TeachersCells;
 			sourceTree = "<group>";
 		};
 		79FC8C7B26F5C6FD0041A54B /* ExamResultsStudentsList */ = {
@@ -2006,6 +2108,8 @@
 				7904AD4426DA138100D6F2C2 /* AdminTeachers.storyboard in Resources */,
 				7900628426E3495E00C43D94 /* AdminOnDuty.storyboard in Resources */,
 				79BAB7F826E1F2EE00DEE3C3 /* AdminClasses.storyboard in Resources */,
+				79EDE968270AD75800B85ADB /* TeacherProfile.storyboard in Resources */,
+				79E42938270DC74300967951 /* TeachersHomeWork.storyboard in Resources */,
 				79956C6126CF892C00E012BB /* AdminDashBoard.storyboard in Resources */,
 				798DE4D726CE82C70017C5FD /* SF-Pro-Text-Semibold.otf in Resources */,
 				7910A0CC27043F91009B06BC /* BoardMembers.storyboard in Resources */,
@@ -2019,11 +2123,13 @@
 				79BEF57E26F0763E0056DCBF /* AdminGroups.storyboard in Resources */,
 				79BAB82426E2082800DEE3C3 /* AdminExaminations.storyboard in Resources */,
 				79FC8C7426F5B2E10041A54B /* AdminExamResults.storyboard in Resources */,
+				79E42926270D681000967951 /* SyncDatas.storyboard in Resources */,
 				79956BFB26CF6E2100E012BB /* Login.storyboard in Resources */,
 				79F0ED3C26D3AF8800DFDE61 /* AdminStudents.storyboard in Resources */,
 				7900625626E3374F00C43D94 /* AdminCirculars.storyboard in Resources */,
 				79C33E9326E2293D006341E9 /* AdminEvents.storyboard in Resources */,
 				798DE3E526CE61A90017C5FD /* Main.storyboard in Resources */,
+				79EDE972270AE1F800B85ADB /* TeacherAttendanceVC.storyboard in Resources */,
 				79FF79B326F88EC8007E86A6 /* AdminLeaves.storyboard in Resources */,
 				7995324626E87DFB0033A49B /* AdminFees.storyboard in Resources */,
 				7990185127058D9500A6CED2 /* TeachersDashBoard.storyboard in Resources */,
@@ -2156,6 +2262,7 @@
 				79BAB7DF26E1E5F900DEE3C3 /* FatherDetailsInteracter.swift in Sources */,
 				79C33EB726E239CF006341E9 /* EventListCell.swift in Sources */,
 				79BEF58826F0892F0056DCBF /* GroupUpdateVC.swift in Sources */,
+				79E42936270DBFC700967951 /* SyncDataModels.swift in Sources */,
 				79BEF56C26F076040056DCBF /* GroupListModel.swift in Sources */,
 				79E5201526E0D07500991D34 /* ExamsCell.swift in Sources */,
 				79BAB83826E21E7B00DEE3C3 /* ExamsListWorker.swift in Sources */,
@@ -2166,6 +2273,7 @@
 				79C33ED026E245DE006341E9 /* SubEventsModel.swift in Sources */,
 				79A6453C2702EAE600E7F83C /* AdminSettings.swift in Sources */,
 				79BAB7EE26E1E61800DEE3C3 /* FatherDetailsPresenter.swift in Sources */,
+				79E42934270DBFAA00967951 /* SyncAttendancePresenter.swift in Sources */,
 				79BAB7FE26E1F37400DEE3C3 /* AdminClassVC.swift in Sources */,
 				79045D772701A398009A3084 /* StudentDashBoardVC.swift in Sources */,
 				79956C4D26CF7FE900E012BB /* RoundedcornerForUIView.swift in Sources */,
@@ -2188,8 +2296,11 @@
 				7910A0C427043EDE009B06BC /* BoardMembersWorker.swift in Sources */,
 				7910A0C027043DE1009B06BC /* BoardMembersVC.swift in Sources */,
 				798DE49226CE7B3F0017C5FD /* LoginModel.swift in Sources */,
+				79EDE975270B295C00B85ADB /* TakeAttendanceVC.swift in Sources */,
+				79E4293D270DCE1A00967951 /* AssignHW_TestsVC.swift in Sources */,
 				79A82E4A26DFA66500EA4FEF /* HomeWorkTestPresenter.swift in Sources */,
 				7995329326E888F30033A49B /* FeesSectionListInteracter.swift in Sources */,
+				79F179E0270C614A00F969D1 /* AttendanceTakeCell.swift in Sources */,
 				7995329D26E888FF0033A49B /* FeesSectionListModel.swift in Sources */,
 				7904AD2326DA0FC700D6F2C2 /* TeachersVC.swift in Sources */,
 				7990186A2705BE5100A6CED2 /* TeachersTeacherDetailModel.swift in Sources */,
@@ -2203,6 +2314,7 @@
 				790C221326F1F23100B9A318 /* GroupUpdateWorker.swift in Sources */,
 				7995327B26E87FE50033A49B /* StudentsFeesListPresenter.swift in Sources */,
 				798DE4A626CE7B810017C5FD /* InstituteLoginInteracter.swift in Sources */,
+				79E4293B270DCA3600967951 /* TeachersHomeWorkVC.swift in Sources */,
 				79FF79F926F8A0FB007E86A6 /* LeaveApprovalInteracter.swift in Sources */,
 				79FC8C7D26F5C7470041A54B /* ExamResultsStudentsListVC.swift in Sources */,
 				7948E168270493E2004DB4D4 /* ExamTimeTableVC.swift in Sources */,
@@ -2214,6 +2326,7 @@
 				79A6454C27031C1400E7F83C /* PasswordsModels.swift in Sources */,
 				79045D6827017E6A009A3084 /* GlobVariables.swift in Sources */,
 				79956C4C26CF7FE900E012BB /* HexToUIColor.swift in Sources */,
+				79E4292D270DBEFB00967951 /* SyncAttendanceInteracter.swift in Sources */,
 				790C21FF26F1BBE800B9A318 /* GroupMembersListModel.swift in Sources */,
 				7949932626E0F7DC0013A38C /* TeacherDetailsVC.swift in Sources */,
 				79BB8CEC26F0AD9A0015C088 /* GetTeachersListIDWorker.swift in Sources */,
@@ -2227,6 +2340,7 @@
 				7910A0C627043F02009B06BC /* BoardMembersModel.swift in Sources */,
 				79C33E9E26E22A6C006341E9 /* EventsListInteracter.swift in Sources */,
 				79E51FF626E0B5D700991D34 /* ExamResultsInteracter.swift in Sources */,
+				79E42932270DBF9500967951 /* SyncAttendanceModel.swift in Sources */,
 				79CC461C26F34C8A00448486 /* GroupSectionListPresenter.swift in Sources */,
 				79956C3426CF7FDA00E012BB /* AlertController.swift in Sources */,
 				7995326726E87FA80033A49B /* FeesListPresenter.swift in Sources */,
@@ -2236,6 +2350,7 @@
 				79CC460D26F342A200448486 /* RoleListPresenter.swift in Sources */,
 				7910A0D327044E7B009B06BC /* HomeWorkDetailsIntercter.swift in Sources */,
 				796401AF27034A0E00D7B5BE /* FeesStatusListCell.swift in Sources */,
+				79E42930270DBF7E00967951 /* SyncAttendanceWorker.swift in Sources */,
 				799532CD26E8BC980033A49B /* ODAprovalInteracter.swift in Sources */,
 				79EBC85326F47AB500CF9FAF /* StaffsAddGroupListWorker.swift in Sources */,
 				79EBC87126F49E2400CF9FAF /* AddGroupMemberModel.swift in Sources */,
@@ -2259,6 +2374,7 @@
 				79045D6D270186F7009A3084 /* AttendanceVC.swift in Sources */,
 				79FF79FE26F8A109007E86A6 /* LeaveApprovalWorker.swift in Sources */,
 				79F0ED1326D3635C00DFDE61 /* ForgotPswdModels.swift in Sources */,
+				79EDE96B270AD94A00B85ADB /* TeacherProfileVC.swift in Sources */,
 				79BB8CE726F0AD8D0015C088 /* GetTeachersListIDIntercter.swift in Sources */,
 				7935040426E39C9500B4FDFA /* GuardianDetailsPresenter.swift in Sources */,
 				79C33EA026E22A75006341E9 /* EventsListWorker.swift in Sources */,
@@ -2281,6 +2397,7 @@
 				79EBC86A26F49E0500CF9FAF /* AddGroupMemberIntercater.swift in Sources */,
 				796F4F2E2701F02F00E78465 /* ClassAttendanceListVC.swift in Sources */,
 				7910A0CE2704462C009B06BC /* BoardMembersListCell.swift in Sources */,
+				79EDE970270AE1A100B85ADB /* TeacherAttendanceVC.swift in Sources */,
 				7995328226E888960033A49B /* FeesClassListInteracter.swift in Sources */,
 				79956C5526CF7FE900E012BB /* ViewBindToKeypad.swift in Sources */,
 				79BAB81026E1FE7A00DEE3C3 /* ClassForTeacherListPresenter.swift in Sources */,
@@ -2339,10 +2456,11 @@
 				79A6453F2703137B00E7F83C /* AboutEducationAppVC.swift in Sources */,
 				7949932B26E0F8940013A38C /* TeacherDetailsInteracter.swift in Sources */,
 				79BAB7D326E1E4C100DEE3C3 /* AdminParentsVC.swift in Sources */,
+				79E4292B270D7E2B00967951 /* AttendanceUserdefault.swift in Sources */,
 				7948E17227049D6D004DB4D4 /* ExamTimeTableCell.swift in Sources */,
 				799018662705BE2100A6CED2 /* TeachersTeacherDetailsInteracter.swift in Sources */,
 				79956C4926CF7FE900E012BB /* ViewController.swift in Sources */,
-				7990184F27058D2200A6CED2 /* TeachersDashBoardVC.swift in Sources */,
+				7990184F27058D2200A6CED2 /* TeachersDashBoard.swift in Sources */,
 				796F4F342701FC4A00E78465 /* ClassAttendanceModel.swift in Sources */,
 				798DE4A126CE7B730017C5FD /* InstituteLoginWorker.swift in Sources */,
 				79A82E3026DF984600EA4FEF /* HomeWorkTestVC.swift in Sources */,
@@ -2350,6 +2468,7 @@
 				79A6454827031BC800E7F83C /* ChangePasswordModel.swift in Sources */,
 				79956C4F26CF7FE900E012BB /* TapToDismissKeypad.swift in Sources */,
 				7948E16E27049453004DB4D4 /* ExamTimeTableModel.swift in Sources */,
+				79EDE96D270ADA0D00B85ADB /* TeacherPersonalInfoVC.swift in Sources */,
 				793503F026E39C0200B4FDFA /* MotherDeatilsPresenter.swift in Sources */,
 				79956C5226CF7FE900E012BB /* CustomNavigationBackButtonTitle.swift in Sources */,
 				7995323B26E87D700033A49B /* FeesModels.swift in Sources */,
@@ -2369,6 +2488,7 @@
 				799018732705C01700A6CED2 /* TeacherAPIFunctionName.swift in Sources */,
 				79045D882701AF04009A3084 /* ClassSectionListPresenter.swift in Sources */,
 				7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */,
+				79E42929270D68CF00967951 /* SyncDataVC.swift in Sources */,
 				79CC45CC26F3096600448486 /* ProfileVC.swift in Sources */,
 				790C21FA26F1BBD500B9A318 /* GroupMembersListWorker.swift in Sources */,
 				79FF79D326F891D9007E86A6 /* LeaveListWorker.swift in Sources */,
@@ -2579,6 +2699,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V986NC4N5;
 				INFOPLIST_FILE = Ensyfi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2601,6 +2722,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V986NC4N5;
 				INFOPLIST_FILE = Ensyfi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

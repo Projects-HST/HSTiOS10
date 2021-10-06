@@ -6,17 +6,22 @@
 //
 
 import UIKit
+import CoreData
 
 class TeacherSideMenuVC: UIViewController {
     
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var context : NSManagedObjectContext?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.name.text = "Hi \(GlobalVariables.shared.userName)"
+        context = appDelegate.persistentContainer.viewContext
     }
     
     @IBAction func signOutAction(_ sender: Any) {
@@ -24,13 +29,24 @@ class TeacherSideMenuVC: UIViewController {
         let alertController = UIAlertController(title: Globals.alertTitle, message: "Are you sure want to sign out", preferredStyle: .alert)
 
         // Create the actions
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { [self]
             UIAlertAction in
             NSLog("OK Pressed")
           
             UserDefaults.standard.clearUserData()
             self.clearGlobalVariables ()
             self.reNew()
+            deleteAllData(entity:"AcademicMonths")
+            deleteAllData(entity:"AcademicMarks")
+            deleteAllData(entity:"ClassSubjects")
+            deleteAllData(entity:"ExamDetails")
+            deleteAllData(entity:"ExamsDatas")
+            deleteAllData(entity:"HomeWorkDetails")
+            deleteAllData(entity:"Reminders")
+            deleteAllData(entity:"StudentDetails")
+            deleteAllData(entity:"TeacherProfile")
+            deleteAllData(entity:"ClassAttenadance")
+            
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
             UIAlertAction in
@@ -61,6 +77,14 @@ class TeacherSideMenuVC: UIViewController {
             GlobalVariables.shared.user_id = ""
             GlobalVariables.shared.profilePic = ""
             GlobalVariables.shared.userName = ""
+    }
+    
+    func deleteAllData(entity: String)
+    {
+        let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
+        do { try context!.execute(DelAllReqVar) }
+        catch { print(error) }
     }
 }
 

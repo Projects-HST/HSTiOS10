@@ -102,3 +102,26 @@ extension InstituteLoginVC {
 //
 //        }
 //    }
+//
+//
+//func fetchData(){
+//
+//    subjectArr.removeAll()
+//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AcademicMonth")
+//
+//    do {
+//        let results = try context.fetch(fetchRequest)
+//        let  classSubData = results as! [AcademicMonth]
+//
+//        for data in classSubData {
+//            subjectArr = data.academic_month as! [String]
+//            print(subjectArr)
+//
+////                classArr = data.class_name as! [String]
+////                print(classArr)
+//        }
+//    } catch let err as NSError {
+//        print(err.debugDescription)
+//    }
+//}

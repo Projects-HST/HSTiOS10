@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+        <array key="SFUIText-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TeacherProfileVC" id="Y6W-OH-hqX" customClass="TeacherProfileVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dny-dg-5C6">
+                                <rect key="frame" x="20" y="64" width="374" height="293"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="VTa-jR-EWZ">
+                                        <rect key="frame" x="20" y="19" width="95" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="j6o-4H-3oI"/>
+                                            <constraint firstAttribute="width" constant="95" id="pvm-k0-WXe"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="42.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Do-zk-fap">
+                                        <rect key="frame" x="123" y="19" width="245" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="u4t-wB-FKI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLk-Ic-3VN">
+                                        <rect key="frame" x="123" y="70" width="245" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="wfA-2W-bzf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qr-QZ-NT2">
+                                        <rect key="frame" x="20" y="130" width="346" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="UGe-VR-5M2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQe-tp-uyh">
+                                        <rect key="frame" x="20" y="175" width="346" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="79e-ro-ZVc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zh-2Y-nSp">
+                                        <rect key="frame" x="20" y="218" width="346" height="1"/>
+                                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="5Ft-L1-kt0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn5-tk-ucn">
+                                        <rect key="frame" x="127" y="235" width="120" height="38"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="SIY-1w-s9v"/>
+                                            <constraint firstAttribute="height" constant="38" id="jOl-Ap-rcP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
+                                        <state key="normal" title="Personal Info">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="personalInfoAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EV2-H4-avc"/>
+                                            <segue destination="8zX-HC-QX8" kind="show" id="lRO-1I-y06"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Sn5-tk-ucn" secondAttribute="bottom" constant="20" id="1m2-Fv-d1J"/>
+                                    <constraint firstItem="Sn5-tk-ucn" firstAttribute="centerX" secondItem="dny-dg-5C6" secondAttribute="centerX" id="8yY-6h-oGg"/>
+                                    <constraint firstAttribute="trailing" secondItem="JQe-tp-uyh" secondAttribute="trailing" constant="8" id="Agk-cO-rDJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Zh-2Y-nSp" secondAttribute="trailing" constant="8" id="EM1-Hw-jrx"/>
+                                    <constraint firstAttribute="height" constant="293" id="GSq-je-jAf"/>
+                                    <constraint firstItem="2Do-zk-fap" firstAttribute="leading" secondItem="VTa-jR-EWZ" secondAttribute="trailing" constant="8" symbolic="YES" id="Gtq-cc-6il"/>
+                                    <constraint firstItem="6Zh-2Y-nSp" firstAttribute="leading" secondItem="dny-dg-5C6" secondAttribute="leading" constant="20" symbolic="YES" id="IWt-K9-O9p"/>
+                                    <constraint firstItem="JQe-tp-uyh" firstAttribute="leading" secondItem="dny-dg-5C6" secondAttribute="leading" constant="20" symbolic="YES" id="JCJ-qX-mGg"/>
+                                    <constraint firstItem="7Qr-QZ-NT2" firstAttribute="top" secondItem="VTa-jR-EWZ" secondAttribute="bottom" constant="16" id="TLi-MT-0Ic"/>
+                                    <constraint firstItem="VTa-jR-EWZ" firstAttribute="leading" secondItem="dny-dg-5C6" secondAttribute="leading" constant="20" symbolic="YES" id="US2-cT-nIT"/>
+                                    <constraint firstItem="VTa-jR-EWZ" firstAttribute="top" secondItem="dny-dg-5C6" secondAttribute="top" constant="19" id="ZAe-tn-U7R"/>
+                                    <constraint firstItem="qLk-Ic-3VN" firstAttribute="top" secondItem="2Do-zk-fap" secondAttribute="bottom" constant="14" id="cHf-Eg-TUX"/>
+                                    <constraint firstItem="JQe-tp-uyh" firstAttribute="top" secondItem="7Qr-QZ-NT2" secondAttribute="bottom" constant="8" symbolic="YES" id="cui-oj-hXF"/>
+                                    <constraint firstItem="6Zh-2Y-nSp" firstAttribute="top" secondItem="JQe-tp-uyh" secondAttribute="bottom" constant="6" id="mKm-SG-XNJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Do-zk-fap" secondAttribute="trailing" constant="6" id="mlg-Oq-l4B"/>
+                                    <constraint firstItem="7Qr-QZ-NT2" firstAttribute="leading" secondItem="dny-dg-5C6" secondAttribute="leading" constant="20" symbolic="YES" id="rxT-YQ-cdd"/>
+                                    <constraint firstAttribute="trailing" secondItem="qLk-Ic-3VN" secondAttribute="trailing" constant="6" id="uhz-Ch-cr7"/>
+                                    <constraint firstItem="qLk-Ic-3VN" firstAttribute="leading" secondItem="VTa-jR-EWZ" secondAttribute="trailing" constant="8" symbolic="YES" id="uur-aU-Dfi"/>
+                                    <constraint firstItem="2Do-zk-fap" firstAttribute="top" secondItem="dny-dg-5C6" secondAttribute="top" constant="19" id="xFG-A8-uLc"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Qr-QZ-NT2" secondAttribute="trailing" constant="8" id="yvF-Ya-bzz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dny-dg-5C6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="QrZ-It-MMQ"/>
+                            <constraint firstItem="dny-dg-5C6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Rbj-0r-SAp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dny-dg-5C6" secondAttribute="trailing" constant="20" id="nF5-K1-xRG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="0F9-qn-WGR">
+                        <barButtonItem key="backBarButtonItem" title="  " id="cyM-mI-hos"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="moduleType" destination="qLk-Ic-3VN" id="79Q-OA-Dp9"/>
+                        <outlet property="titleName" destination="2Do-zk-fap" id="WJJ-6A-PAn"/>
+                        <outlet property="userNmae" destination="JQe-tp-uyh" id="92B-hA-gMe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </scene>
+        <!-- Teacher Details-->
+        <scene sceneID="dXT-8S-Rnc">
+            <objects>
+                <viewController storyboardIdentifier="TeacherPersonalInfoVC" id="8zX-HC-QX8" customClass="TeacherPersonalInfoVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Keg-TX-VDH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USN-bP-2Rf">
+                                <rect key="frame" x="0.0" y="143" width="414" height="653"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuT-qM-RbD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="707"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM5-8y-ZYj">
+                                                <rect key="frame" x="30" y="25" width="354" height="639"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1qX-6N-zKz">
+                                                        <rect key="frame" x="8" y="24" width="147.5" height="532"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKU-7I-fpb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="0Gn-sM-mJo"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="CHV-zm-5S2"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce6-rR-iMg">
+                                                                <rect key="frame" x="0.0" y="36" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="7NQ-kQ-Ka7"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="GCB-eP-Hoc"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeF-ei-j5M">
+                                                                <rect key="frame" x="0.0" y="72" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="QZN-No-S0o"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="muo-XR-F6q"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUs-yp-usc">
+                                                                <rect key="frame" x="0.0" y="108" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="2x8-qB-kkY"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="S9H-P6-okp"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nationality" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhm-aU-Gfm">
+                                                                <rect key="frame" x="0.0" y="144" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="XIt-6I-SlP"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="nfL-Ho-xEk"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Religion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1Q-e1-aOz">
+                                                                <rect key="frame" x="0.0" y="180" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="VHY-Jx-jUP"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="aUP-kH-DZE"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community Class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb1-bT-Kf1">
+                                                                <rect key="frame" x="0.0" y="216" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="fdb-02-8AE"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="sFX-Yc-ZlM"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEK-Jv-0SE">
+                                                                <rect key="frame" x="0.0" y="252" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="5Qh-Nu-gKg"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="Kcr-yg-TQC"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handling Subject" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-1e-zWR">
+                                                                <rect key="frame" x="0.0" y="288" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="DEe-IL-EWv"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="rjH-RG-0s4"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Teacher For" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtP-av-9Lb">
+                                                                <rect key="frame" x="0.0" y="324" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="0lY-gt-gKX"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="mpd-h9-fxf"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-Co-OQ7">
+                                                                <rect key="frame" x="0.0" y="360" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="GaL-mD-RbJ"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="Ves-3V-sDO"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternate Mobile No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-cA-5A9">
+                                                                <rect key="frame" x="0.0" y="396" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="O5L-Dv-Rys"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="yBf-OZ-umb"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PA-bs-2Cc">
+                                                                <rect key="frame" x="0.0" y="432" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="hoJ-B4-802"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="nNV-XS-p8B"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternate Email Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jE-dZ-SA5">
+                                                                <rect key="frame" x="0.0" y="468" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="A6M-KK-JnB"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="akb-xM-iQP"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Section" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izR-VF-WkL">
+                                                                <rect key="frame" x="0.0" y="504" width="147.5" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="jsN-LQ-EQE"/>
+                                                                    <constraint firstAttribute="width" constant="147.5" id="kcQ-Zd-iyn"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZWM-E5-3Fy">
+                                                        <rect key="frame" x="189.5" y="24" width="160" height="532"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86V-dB-OAy">
+                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="G8L-gk-onn"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QY-hl-m95">
+                                                                <rect key="frame" x="0.0" y="36" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="qiS-md-ELX"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb0-WI-MKd">
+                                                                <rect key="frame" x="0.0" y="72" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="WkY-Kh-QG0"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxf-V6-K43">
+                                                                <rect key="frame" x="0.0" y="108" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="5wU-0X-ItT"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEV-sY-ltO">
+                                                                <rect key="frame" x="0.0" y="144" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="rLv-C3-Vo4"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxh-Jq-Jjp">
+                                                                <rect key="frame" x="0.0" y="180" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="6cy-ax-LB6"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lx3-tK-ypQ">
+                                                                <rect key="frame" x="0.0" y="216" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="Qxa-ca-YXB"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w38-Rd-9vM">
+                                                                <rect key="frame" x="0.0" y="252" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="bA0-Hh-HW7"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SK8-gz-Za5">
+                                                                <rect key="frame" x="0.0" y="288" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="LE6-UJ-zZH"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45a-pU-7mo">
+                                                                <rect key="frame" x="0.0" y="324" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="pZE-hr-781"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNa-EV-cwp">
+                                                                <rect key="frame" x="0.0" y="360" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="x6X-aq-7Kf"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC2-w7-SUV">
+                                                                <rect key="frame" x="0.0" y="396" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="ieK-rl-avb"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPu-p6-5tz">
+                                                                <rect key="frame" x="0.0" y="432" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="2Qq-po-nBA"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJd-7p-Ulj">
+                                                                <rect key="frame" x="0.0" y="468" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="6Pn-Qd-30s"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poh-yD-wIH">
+                                                                <rect key="frame" x="0.0" y="504" width="160" height="28"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="168-xZ-vGO"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="160" id="Es9-YA-D1d"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ZWM-E5-3Fy" secondAttribute="trailing" constant="4.5" id="1UZ-xB-A9v"/>
+                                                    <constraint firstItem="1qX-6N-zKz" firstAttribute="leading" secondItem="dM5-8y-ZYj" secondAttribute="leading" constant="8" id="2lM-hS-6MU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1qX-6N-zKz" secondAttribute="bottom" constant="83" id="932-tI-3g3"/>
+                                                    <constraint firstAttribute="height" constant="639" id="9t7-yE-Fuv"/>
+                                                    <constraint firstItem="ZWM-E5-3Fy" firstAttribute="top" secondItem="dM5-8y-ZYj" secondAttribute="top" constant="24" id="MLY-Vm-t4M"/>
+                                                    <constraint firstItem="1qX-6N-zKz" firstAttribute="top" secondItem="dM5-8y-ZYj" secondAttribute="top" constant="24" id="VX7-E2-JmZ"/>
+                                                    <constraint firstItem="ZWM-E5-3Fy" firstAttribute="leading" secondItem="1qX-6N-zKz" secondAttribute="trailing" constant="34" id="u0Y-ur-EGZ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dM5-8y-ZYj" secondAttribute="bottom" constant="43" id="FkE-47-b0I"/>
+                                            <constraint firstItem="dM5-8y-ZYj" firstAttribute="top" secondItem="TuT-qM-RbD" secondAttribute="top" constant="25" id="I98-qO-6lH"/>
+                                            <constraint firstItem="dM5-8y-ZYj" firstAttribute="leading" secondItem="TuT-qM-RbD" secondAttribute="leading" constant="30" id="lpg-uY-Web"/>
+                                            <constraint firstAttribute="trailing" secondItem="dM5-8y-ZYj" secondAttribute="trailing" constant="30" id="s3b-Sg-Pty"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TuT-qM-RbD" firstAttribute="height" secondItem="USN-bP-2Rf" secondAttribute="height" priority="250" id="JY1-8P-Xdk"/>
+                                    <constraint firstAttribute="bottom" secondItem="TuT-qM-RbD" secondAttribute="bottom" id="LiT-oW-5Qz"/>
+                                    <constraint firstAttribute="trailing" secondItem="TuT-qM-RbD" secondAttribute="trailing" id="LoH-r5-KGh"/>
+                                    <constraint firstItem="TuT-qM-RbD" firstAttribute="leading" secondItem="USN-bP-2Rf" secondAttribute="leading" id="RBK-SR-SEn"/>
+                                    <constraint firstItem="TuT-qM-RbD" firstAttribute="top" secondItem="USN-bP-2Rf" secondAttribute="top" id="nee-zD-GIH"/>
+                                    <constraint firstItem="TuT-qM-RbD" firstAttribute="width" secondItem="USN-bP-2Rf" secondAttribute="width" id="yTP-VN-xFA"/>
+                                </constraints>
+                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="gZt-d1-dhB">
+                                <rect key="frame" x="152" y="20" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="9lb-Rq-e7u"/>
+                                    <constraint firstAttribute="height" constant="110" id="x1p-d8-wfW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LQq-H0-V0M"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gZt-d1-dhB" firstAttribute="centerX" secondItem="Keg-TX-VDH" secondAttribute="centerX" id="3cC-Qe-lCL"/>
+                            <constraint firstItem="LQq-H0-V0M" firstAttribute="trailing" secondItem="USN-bP-2Rf" secondAttribute="trailing" id="6PM-Er-4pm"/>
+                            <constraint firstItem="USN-bP-2Rf" firstAttribute="top" secondItem="Keg-TX-VDH" secondAttribute="top" constant="143" id="N4s-FS-4uA"/>
+                            <constraint firstItem="gZt-d1-dhB" firstAttribute="top" secondItem="Keg-TX-VDH" secondAttribute="top" constant="20" id="TUZ-hd-5SH"/>
+                            <constraint firstItem="LQq-H0-V0M" firstAttribute="bottom" secondItem="USN-bP-2Rf" secondAttribute="bottom" id="ekU-rV-9zJ"/>
+                            <constraint firstItem="USN-bP-2Rf" firstAttribute="leading" secondItem="Keg-TX-VDH" secondAttribute="leading" id="w6D-o5-Go7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title=" Teacher Details" id="haR-jW-C4r">
+                        <barButtonItem key="backBarButtonItem" title="  " id="VTc-QR-CqJ"/>
+                    </navigationItem>
+                    <size key="freeformSize" width="414" height="850"/>
+                    <connections>
+                        <outlet property="address" destination="sb0-WI-MKd" id="JHE-3a-U3u"/>
+                        <outlet property="age" destination="Nxf-V6-K43" id="WFv-fa-OH6"/>
+                        <outlet property="alternateEmailId" destination="wJd-7p-Ulj" id="J60-T8-eOF"/>
+                        <outlet property="claasTeacherFor" destination="45a-pU-7mo" id="Jwv-j9-na8"/>
+                        <outlet property="classSection" destination="izR-VF-WkL" id="a6M-Oz-KFx"/>
+                        <outlet property="commmunityCLass" destination="lx3-tK-ypQ" id="2jR-eO-Hyr"/>
+                        <outlet property="community" destination="w38-Rd-9vM" id="7w1-pM-9l0"/>
+                        <outlet property="emailId" destination="XPu-p6-5tz" id="5qk-E4-hw6"/>
+                        <outlet property="gender" destination="2QY-hl-m95" id="jKm-jB-4kc"/>
+                        <outlet property="handSubject" destination="SK8-gz-Za5" id="3Mk-0M-0zW"/>
+                        <outlet property="mobilNo" destination="xNa-EV-cwp" id="VU8-yf-eCp"/>
+                        <outlet property="name" destination="86V-dB-OAy" id="ed0-vo-fhR"/>
+                        <outlet property="nationality" destination="iEV-sY-ltO" id="VHK-on-8sJ"/>
+                        <outlet property="religion" destination="vxh-Jq-Jjp" id="ZOo-nm-FCV"/>
+                        <outlet property="secMobileNo" destination="dC2-w7-SUV" id="4w7-rq-PBf"/>
+                        <outlet property="techerImage" destination="gZt-d1-dhB" id="BA0-M6-bgh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPr-HY-9PQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

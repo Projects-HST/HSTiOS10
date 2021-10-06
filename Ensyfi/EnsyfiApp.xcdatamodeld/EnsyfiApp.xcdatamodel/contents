@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AcademicMarks" representedClassName="AcademicMarks" syncable="YES" codeGenerationType="class">
+        <attribute name="academic_marks" optional="YES" attributeType="String"/>
+        <attribute name="externals" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="AcademicMonths" representedClassName="AcademicMonths" syncable="YES" codeGenerationType="class">
+        <attribute name="academic_month" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="ClassAttenadance" representedClassName="ClassAttenadance" syncable="YES" codeGenerationType="class">
+        <attribute name="ac_year" optional="YES" attributeType="Transformable"/>
+        <attribute name="attendence_period" optional="YES" attributeType="Transformable"/>
+        <attribute name="class_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="class_total" optional="YES" attributeType="Transformable"/>
+        <attribute name="created_at" optional="YES" attributeType="Transformable"/>
+        <attribute name="created_by" optional="YES" attributeType="Transformable"/>
+        <attribute name="no_of_absent" optional="YES" attributeType="Transformable"/>
+        <attribute name="no_of_present" optional="YES" attributeType="Transformable"/>
+        <attribute name="status" optional="YES" attributeType="Transformable"/>
+    </entity>
     <entity name="ClassSubjects" representedClassName="ClassSubjects" syncable="YES" codeGenerationType="class">
         <attribute name="class_master_id" optional="YES" attributeType="Transformable"/>
         <attribute name="class_name" optional="YES" attributeType="Transformable"/>
@@ -34,8 +52,36 @@
         <attribute name="sec_name" optional="YES" attributeType="Transformable"/>
         <attribute name="todate" optional="YES" attributeType="Transformable"/>
     </entity>
+    <entity name="HomeWorkDetails" representedClassName="HomeWorkDetails" syncable="YES" codeGenerationType="class">
+        <attribute name="class_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="class_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="due_date" optional="YES" attributeType="Transformable"/>
+        <attribute name="hw_details" optional="YES" attributeType="Transformable"/>
+        <attribute name="hw_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="hw_type" optional="YES" attributeType="Transformable"/>
+        <attribute name="mark_status" optional="YES" attributeType="Transformable"/>
+        <attribute name="sec_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_name" optional="YES" attributeType="Transformable"/>
+        <attribute name="test_date" optional="YES" attributeType="Transformable"/>
+        <attribute name="times" optional="YES" attributeType="Transformable"/>
+        <attribute name="title" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="Reminders" representedClassName="Reminders" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Transformable"/>
+        <attribute name="created_by" optional="YES" attributeType="Transformable"/>
+        <attribute name="id" optional="YES" attributeType="Transformable"/>
+        <attribute name="status" optional="YES" attributeType="Transformable"/>
+        <attribute name="to_do_date" optional="YES" attributeType="Transformable"/>
+        <attribute name="to_do_description" optional="YES" attributeType="Transformable"/>
+        <attribute name="to_do_title" optional="YES" attributeType="Transformable"/>
+        <attribute name="updated_at" optional="YES" attributeType="Transformable"/>
+        <attribute name="updated_by" optional="YES" attributeType="Transformable"/>
+        <attribute name="user_id" optional="YES" attributeType="Transformable"/>
+    </entity>
     <entity name="StudentDetails" representedClassName="StudentDetails" syncable="YES" codeGenerationType="class">
         <attribute name="admission_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="attendanceStatus" optional="YES" attributeType="Transformable"/>
         <attribute name="class_id" optional="YES" attributeType="Transformable"/>
         <attribute name="class_section" optional="YES" attributeType="Transformable"/>
         <attribute name="enroll_id" optional="YES" attributeType="Transformable"/>
@@ -65,10 +111,15 @@
         <attribute name="update_at" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="AcademicMarks" positionX="9" positionY="189" width="128" height="59"/>
+        <element name="AcademicMonths" positionX="27" positionY="198" width="128" height="44"/>
         <element name="ClassSubjects" positionX="-54" positionY="126" width="128" height="119"/>
-        <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
-        <element name="StudentDetails" positionX="-54" positionY="126" width="128" height="149"/>
+        <element name="ExamDetails" positionX="-18" positionY="162" width="128" height="224"/>
         <element name="ExamsDatas" positionX="-45" positionY="135" width="128" height="164"/>
-        <element name="ExamDetails" positionX="-18" positionY="162" width="128" height="14"/>
+        <element name="HomeWorkDetails" positionX="-36" positionY="135" width="128" height="224"/>
+        <element name="Reminders" positionX="-18" positionY="171" width="128" height="179"/>
+        <element name="StudentDetails" positionX="-54" positionY="126" width="128" height="164"/>
+        <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
+        <element name="ClassAttenadance" positionX="-9" positionY="153" width="128" height="164"/>
     </elements>
 </model>

@@ -25,6 +25,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var user_type = String()
     var profilePic = String()
     var name = String()
+    var nameArr = [String]()
     
 //    TeacherSubject
     var subNameArr = [String]()
@@ -36,6 +37,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     
 //    StudentsData
     var enroll_idArr = [String]()
+    var attendanceStatus = [String]()
     var statusArr = [String]()
     var admission_idArr = [String]()
     var class_idArr = [String]()
@@ -71,13 +73,43 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var sec_nameDetailsArr = [String]()
 
     
-    var nameArr = [String]()
+    //    HWDetails
+    var hw_idArr = [String]()
+    var hw_typeArr = [String]()
+    var titleArr = [String]()
+    var test_datedArr = [String]()
+    var due_dateArr = [String]()
+    var timesArr = [String]()
+    var hWClass_idArr = [String]()
+    var hw_detailsArr = [String]()
+    var mark_statusArr = [String]()
+    var hwSubject_idArr = [String]()
+    var subject_nameArr = [String]()
+    var hwClass_nameArr = [String]()
+    var hwSec_nameArr = [String]()
+    
+// RemindersData
+    var reminderIddArr = [String]()
+    var reminderUser_idArr = [String]()
+    var to_do_titleeArr = [String]()
+    var to_do_dateArr = [String]()
+    var to_do_descriptionArr = [String]()
+    var remindersStatusArr = [String]()
+    var created_byArr = [String]()
+    var created_atArr = [String]()
+    var updated_byArr = [String]()
+    var updated_atArr = [String]()
+    
+    var academicMonthArr = [String]()
+   
     var teachersDataArr = [TeachersDataList]()
     var teachersClassSubjectArr = [ClassSubjectData]()
     var studentsDetailsDataArr = [StudentDetailsData]()
     var examsDataArr = [ExamData]()
     var examsDetilsDataArr = [ExamDetailsData]()
-    
+    var hwDetailsArr = [HomeWorksData]()
+    var remindersArr = [RemindersData]()
+    var acadaamicMonthDataArr = [AdcademicMonthData]()
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -160,7 +192,6 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
           return true
      }
 }
-
 extension InstituteLoginVC {
     
     func successFetchedItems(viewModel: InstituteLoginModel.Fetch.ViewModel) {
@@ -235,35 +266,51 @@ extension InstituteLoginVC {
                            MBProgressHUD.hide(for: self.view, animated: true)
                            print(JSONResponse)
                            let json = JSON(JSONResponse)
-                           
+                                                
                            let status = json["status"].stringValue
                            if  status == "loggedIn"
                            {
+                            let jsonArr:[JSON] = json["academic_month"].arrayValue
+                            
+                            if jsonArr.count > 0 {
+                                
+                                let stringArr:[String] = json["academic_month"].arrayValue.map { $0.stringValue}
+                                
+                                self.academicMonthArr = stringArr
+                            }
+                            print(academicMonthArr)
+                            saveAcadamicMonthData(academic_month:academicMonthArr)
+                            
+                            let academic_marks = json["academic_marks"]["academic_marks"].stringValue
+                            let externals = json["academic_marks"]["externals"].stringValue
+                            
+                            self.saveAcadamicMarksData(externals:academic_marks,academic_marks:externals)
+                            
                                if json["teacherProfile"].count > 0 {
                                    
                                    for i in 0..<json["teacherProfile"].count {
                                        let teachers = TeachersDataList.init(json: json["teacherProfile"][i])
                                        self.teachersDataArr.append(teachers)
 
-//                                    let teacher_id = teachers.teacher_id
-//                                    let nationality = teachers.nationality
-//                                    let name = teachers.name
-//                                    let community = teachers.community
-//                                    let class_taken = teachers.class_taken
-//                                    let class_teacher = teachers.class_teacher
-//                                    let profile_pic = teachers.profile_pic
-//                                    let community_class = teachers.community_class
-//                                    let sec_email = teachers.sec_email
-//                                    let subject = teachers.subject
-//                                    let email = teachers.email
-//                                    let address = teachers.address
-//                                    let sex = teachers.sex
-//                                    let phone = teachers.phone
-//                                    let age = teachers.age
-//                                    let sec_phone = teachers.sec_phone
-//                                    let religion = teachers.religion
-//                                    let update_at = teachers.update_at
-//                                    self.save(name:name!,teacher_id:teacher_id!,sex:sex!,nationality:nationality!,age:age!,religion:religion!,community_class:community_class!,community:community!,address:address!,email:email!,phone:phone!,sec_email:sec_email!,sec_phone:sec_phone!,profile_pic:profile_pic!,update_at:update_at!,subject:subject!,class_taken:class_taken!,class_teacher:class_teacher!)
+                                    let teacher_id = teachers.teacher_id
+                                    let nationality = teachers.nationality
+                                    let name = teachers.name
+                                    let community = teachers.community
+                                    let class_taken = teachers.class_taken
+                                    let class_teacher = teachers.class_teacher
+                                    let profile_pic = teachers.profile_pic
+                                    let community_class = teachers.community_class
+                                    let sec_email = teachers.sec_email
+                                    let subject = teachers.subject
+                                    let email = teachers.email
+                                    let address = teachers.address
+                                    let sex = teachers.sex
+                                    let phone = teachers.phone
+                                    let age = teachers.age
+                                    let sec_phone = teachers.sec_phone
+                                    let religion = teachers.religion
+                                    let update_at = teachers.update_at
+                                    self.save(name:name!,teacher_id:teacher_id!,sex:sex!,nationality:nationality!,age:age!,religion:religion!,community_class:community_class!,community:community!,address:address!,email:email!,phone:phone!,sec_email:sec_email!,sec_phone:sec_phone!,profile_pic:profile_pic!,update_at:update_at!,subject:subject!,class_taken:class_taken!,class_teacher:class_teacher!)
                                    }
                                }
                            }
@@ -295,6 +342,8 @@ extension InstituteLoginVC {
                              print("karan\(subject_name!)")
                             }
                         }
+                        saveClassSubject(subject_name:self.subNameArr,class_master_id:self.class_master_idArr,subject_id:self.subject_idArr,sec_name:self.sec_nameArr,class_name:self.class_nameArr,teacher_id:self.teacher_idArr)
+                        
                         
                         if json["studDetails"]["data"].count > 0 {
                             
@@ -327,7 +376,7 @@ extension InstituteLoginVC {
                                 self.class_sectionArr.append(class_section!)
                             }
                         }
-//                        saveStudentDetailsData(enroll_id:self.enroll_idArr,status:self.statusArr,admission_id:self.admission_idArr,class_id:self.class_idArr,name:self.studentnameArr,sex:self.sexArr,pref_language:self.pref_languageArr,class_section:self.class_sectionArr)
+                        saveStudentDetailsData(enroll_id:self.enroll_idArr,status:self.statusArr,admission_id:self.admission_idArr,class_id:self.class_idArr,name:self.studentnameArr,sex:self.sexArr,pref_language:self.pref_languageArr,class_section:self.class_sectionArr)
                         
                         if json["Exams"]["data"].count > 0 {
                             
@@ -362,7 +411,7 @@ extension InstituteLoginVC {
                                 let MarkStatus = examDetails.MarkStatus
                                 self.MarkStatusArr.append(MarkStatus!)
                             }
-//                            self.saveExamsData(exam_id:self.exam_idArr,exam_name:self.exam_nameArr,is_internal_external:self.is_internal_externalArr,classmaster_id:self.classmaster_idArr,sec_name:self.sec_nameExamsArr,class_name:self.class_nameExamsArr,Fromdate:self.FromdateArr,Todate:self.TodateArr,MarkStatus:self.MarkStatusArr)
+                            self.saveExamsData(exam_id:self.exam_idArr,exam_name:self.exam_nameArr,is_internal_external:self.is_internal_externalArr,classmaster_id:self.classmaster_idArr,sec_name:self.sec_nameExamsArr,class_name:self.class_nameExamsArr,Fromdate:self.FromdateArr,Todate:self.TodateArr,MarkStatus:self.MarkStatusArr)
                             
                         }
                         
@@ -412,10 +461,103 @@ extension InstituteLoginVC {
                                 self.sec_nameDetailsArr.append(sec_name!)
                                 
                             }
+                         
 
                             self.saveExamsDetailsData(exam_id:self.exam_idDetailsArr,exam_name:self.exam_nameDetailsArr,subject_name:self.subject_nameDetailsArr,subject_id:self.subject_idDetailsdArr,exam_date:self.exam_dateDetailsArr,times:self.timesDetailsArr,is_internal_external:self.is_internal_externalDetailsArr,subject_total:self.subject_totalDetailsArr,internal_mark:self.internal_markDetailsArr,external_mark:self.external_markDetailsArr,classmaster_id:self.classmaster_idDetailsArr,class_name:self.class_nameDetailsArr, sec_name:self.sec_nameDetailsArr)
                       
                         }
+                       
+                        if json["homeWork"]["data"].count > 0 {
+                            
+                            for i in 0..<json["homeWork"]["data"].count {
+                                let HWDetails = HomeWorksData.init(json: json["homeWork"]["data"][i])
+                                self.hwDetailsArr.append(HWDetails)
+                                
+                                let hw_id = HWDetails.hw_id
+                                self.hw_idArr.append(hw_id!)
+                                
+                                let hw_type = HWDetails.hw_type
+                                self.hw_idArr.append(hw_type!)
+                                
+                                let title = HWDetails.title
+                                self.titleArr.append(title!)
+                                
+                                let test_date = HWDetails.test_date
+                                self.test_datedArr.append(test_date!)
+                                
+                                let due_date = HWDetails.due_date
+                                self.due_dateArr.append(due_date!)
+                                
+                                let times = HWDetails.times
+                                self.timesArr.append(times!)
+                                
+                                let class_id = HWDetails.class_id
+                                self.hWClass_idArr.append(class_id!)
+                                
+                                let hw_details = HWDetails.hw_details
+                                self.hw_detailsArr.append(hw_details!)
+                                
+                                let mark_status = HWDetails.mark_status
+                                self.mark_statusArr.append(mark_status!)
+                        
+                                let subject_id = HWDetails.subject_id
+                                self.hwSubject_idArr.append(subject_id!)
+                                
+                                let subject_name = HWDetails.subject_name
+                                self.subject_nameArr.append(subject_name!)
+                                
+                                let class_name = HWDetails.class_name
+                                self.hwClass_nameArr.append(class_name!)
+                                
+                                let sec_name = HWDetails.sec_name
+                                self.hwSec_nameArr.append(sec_name!)
+                            }
+                            saveHWDetailsData(hw_id:hw_idArr,hw_type:hw_typeArr,title:titleArr,test_date:test_datedArr,due_date:due_dateArr,times:timesArr,class_id:hWClass_idArr,hw_details:hw_detailsArr,mark_status:mark_statusArr,subject_id:hwSubject_idArr,subject_name:subject_nameArr,class_name:hwClass_nameArr,sec_name:hwSec_nameArr)
+                            
+                            }
+                        
+                        if json["Reminders"]["data"].count > 0 {
+                            
+                            for i in 0..<json["Reminders"]["data"].count {
+                                let remainderList = RemindersData.init(json: json["Reminders"]["data"][i])
+                                self.remindersArr.append(remainderList)
+                                
+                                let id = remainderList.id
+                                self.reminderIddArr.append(id!)
+                                
+                                let user_id = remainderList.user_id
+                                self.reminderUser_idArr.append(user_id!)
+                                
+                                let to_do_date = remainderList.to_do_date
+                                self.to_do_dateArr.append(to_do_date!)
+                                
+                                let to_do_title = remainderList.to_do_title
+                                self.to_do_titleeArr.append(to_do_title!)
+                                
+                                let to_do_description = remainderList.to_do_description
+                                self.to_do_descriptionArr.append(to_do_description!)
+                                
+                                let status = remainderList.status
+                                self.remindersStatusArr.append(status!)
+                                
+                                let created_by = remainderList.created_by
+                                self.created_byArr.append(created_by!)
+                                
+                                let created_at = remainderList.created_at
+                                self.created_atArr.append(created_at!)
+                                
+                                let updated_by = remainderList.updated_by
+                                self.updated_byArr.append(updated_by!)
+                        
+                                let updated_at = remainderList.updated_at
+                                self.updated_atArr.append(updated_at!)
+
+                            }
+                            saveRemindersDatasData(id:reminderIddArr,user_id:reminderUser_idArr,to_do_date:to_do_dateArr,to_do_title:to_do_titleeArr,to_do_description:to_do_descriptionArr,status:remindersStatusArr,created_by:created_byArr,created_at:created_atArr,updated_by:updated_byArr,updated_at:updated_atArr)
+//
+                            }
+                  
+                      
                        }) {
                            (error) -> Void in
                            print(error)
@@ -453,10 +595,10 @@ extension InstituteLoginVC {
         
         do {
             try context?.save()
-                print(" Karan - suucess")
+                print("suucess")
             }
         catch {
-            print("Karan -error")
+            print("error")
         }
     }
     
@@ -473,10 +615,10 @@ extension InstituteLoginVC {
         
         do {
             try context?.save()
-                print(" Karan - suucess")
+                print("suucess")
             }
         catch {
-            print("Karan -error")
+            print("error")
         }
     }
     
@@ -492,13 +634,14 @@ extension InstituteLoginVC {
         teacherProfile.setValue(sexArr, forKey: "sex")
         teacherProfile.setValue(pref_languageArr, forKey: "pref_language")
         teacherProfile.setValue(class_sectionArr, forKey: "class_section")
+        teacherProfile.setValue(attendanceStatus, forKey: "attendanceStatus")
         
         do {
             try context?.save()
-                print(" Karan - suucess")
+                print("suucess")
             }
         catch {
-            print("Karan -error")
+            print("error")
         }
     }
   
@@ -518,10 +661,10 @@ extension InstituteLoginVC {
         
         do {
             try context?.save()
-                print(" Karan - suucess")
+                print("suucess")
             }
         catch {
-            print("Karan -error")
+            print("error")
         }
     }
  
@@ -546,10 +689,92 @@ extension InstituteLoginVC {
         
         do {
             try context?.save()
-                print(" Karan - suucess")
+                print(" suucess")
             }
         catch {
-            print("Karan -error")
+            print("error")
+        }
+    }
+    
+    func saveHWDetailsData(hw_id:[String],hw_type:[String],title:[String],test_date:[String],due_date:[String],times:[String],class_id:[String],hw_details:[String],mark_status:[String],subject_id:[String],subject_name:[String],class_name:[String],sec_name:[String]){
+        
+        let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "HomeWorkDetails", into: context!)
+        
+        teacherProfile.setValue(hw_id, forKey: "hw_id")
+        teacherProfile.setValue(hw_type, forKey: "hw_type")
+        teacherProfile.setValue(title, forKey: "title")
+        teacherProfile.setValue(test_date, forKey: "test_date")
+        teacherProfile.setValue(due_date, forKey: "due_date")
+        teacherProfile.setValue(times, forKey: "times")
+        teacherProfile.setValue(class_id, forKey: "class_id")
+        teacherProfile.setValue(hw_details, forKey: "hw_details")
+        teacherProfile.setValue(mark_status, forKey: "mark_status")
+        teacherProfile.setValue(subject_id, forKey: "subject_id")
+        teacherProfile.setValue(subject_name, forKey: "subject_name")
+        teacherProfile.setValue(class_name, forKey: "class_name")
+        teacherProfile.setValue(sec_name, forKey: "sec_name")
+        
+        do {
+            try context?.save()
+                print("suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveRemindersDatasData(id:[String],user_id:[String],to_do_date:[String],to_do_title:[String],to_do_description:[String],status:[String],created_by:[String],created_at:[String],updated_by:[String],updated_at:[String]){
+        
+        let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "Reminders", into: context!)
+        
+        teacherProfile.setValue(id, forKey: "id")
+        teacherProfile.setValue(user_id, forKey: "user_id")
+        teacherProfile.setValue(to_do_date, forKey: "to_do_date")
+        teacherProfile.setValue(to_do_title, forKey: "to_do_title")
+        teacherProfile.setValue(to_do_description, forKey: "to_do_description")
+        teacherProfile.setValue(status, forKey: "status")
+        teacherProfile.setValue(created_by, forKey: "created_by")
+        teacherProfile.setValue(created_at, forKey: "created_at")
+        teacherProfile.setValue(updated_by, forKey: "updated_by")
+        teacherProfile.setValue(updated_at, forKey: "updated_at")
+   
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveAcadamicMonthData(academic_month:[String]){
+        
+        let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "AcademicMonths", into: context!)
+        
+        teacherProfile.setValue(academicMonthArr, forKey: "academic_month")
+       
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveAcadamicMarksData(externals:String,academic_marks:String){
+        
+        let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "AcademicMarks", into: context!)
+        
+        teacherProfile.setValue(academic_marks, forKey: "academic_marks")
+        teacherProfile.setValue(externals, forKey: "externals")
+   
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
         }
     }
 }
