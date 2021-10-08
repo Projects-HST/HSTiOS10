@@ -14,7 +14,6 @@ protocol SyncAttendanceDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: SyncAttendanceModel.Fetch.ViewModel)
 }
 
-
 class SyncDataVC: UIViewController, SyncAttendanceDisplayLogic {
     
 
@@ -26,6 +25,11 @@ class SyncDataVC: UIViewController, SyncAttendanceDisplayLogic {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
     var interactor: SyncAttendanceBusinessLogic?
+    
+    var syncArray = ["karan","Minesh","bhuganesh","karthi"]
+    var syncArray1 = ["ios","andriod","design","design12"]
+    var syncArray2 = ["cbe","udt","thek","slaem"]
+    var arraysss = [String()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,28 +64,56 @@ class SyncDataVC: UIViewController, SyncAttendanceDisplayLogic {
     func fetchData(){
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ClassAttenadance")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ClassAttendances")
     
         do {
             let results = try context.fetch(fetchRequest)
-            let  datas = results as! [ClassAttenadance]
+            let  datas = results as! [ClassAttendances]
     
             for data in datas {
-                
                 let classId = data.class_id
-                print(classId!)
+                arraysss.append(String(classId!.count))
             }
+            print(arraysss)
         } catch let err as NSError {
             print(err.debugDescription)
         }
     }
     
     @IBAction func attendanceSync(_ sender: Any) {
-        
+
+        if syncArray.count > 0 {
+            print(syncArray.last!)
+            print(syncArray1.last!)
+            print(syncArray2.last!)
+            syncArray.removeLast()
+            syncArray1.removeLast()
+            syncArray2.removeLast()
+        }
+        else {
+            
+            print("no")
+        }
     }
     
     @IBAction func assignmentSync(_ sender: Any) {
-        
+       
+            
+                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ClassAttendanceHistory")
+                do {
+                    let results = try context.fetch(fetchRequest)
+                    let data = results as! [ClassAttendanceHistory]
+                    
+                    for dataa in data {
+                        let name = dataa.a_taken_by
+                        let id = dataa.id
+                        print(name!)
+                        print(id!)
+                    }
+                } catch let err as NSError {
+                    print(err.debugDescription)
+                }
     }
     
     @IBAction func classTestSync(_ sender: Any) {

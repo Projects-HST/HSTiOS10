@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Teachers Dash BoardVC-->
+        <!-- ENSYFI - Teachers-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="TeachersDashBoardVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -406,7 +406,8 @@
                             <constraint firstItem="SDb-Vt-pDS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="yBI-Yk-iy4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WW0-2s-10l">
+                    <navigationItem key="navigationItem" title=" ENSYFI - Teachers" id="WW0-2s-10l">
+                        <barButtonItem key="backBarButtonItem" title="   " id="531-rk-rOf"/>
                         <barButtonItem key="leftBarButtonItem" image="side_menu" id="ArT-YT-98c">
                             <connections>
                                 <segue destination="cH7-bl-CEF" kind="show" id="sob-Pu-HPf"/>

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol SyncAttendancePresentationLogic
 {
@@ -29,3 +30,10 @@ class SyncAttendancePresenter: SyncAttendancePresentationLogic
         }
     }
 }
+//
+//@objc(ClassAttenadance)
+//
+//extension ClassAttenadance {
+//
+//    @NSManaged var id: AnyObject!
+//}

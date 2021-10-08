@@ -7,16 +7,38 @@
     <entity name="AcademicMonths" representedClassName="AcademicMonths" syncable="YES" codeGenerationType="class">
         <attribute name="academic_month" optional="YES" attributeType="Transformable"/>
     </entity>
-    <entity name="ClassAttenadance" representedClassName="ClassAttenadance" syncable="YES" codeGenerationType="class">
-        <attribute name="ac_year" optional="YES" attributeType="Transformable"/>
-        <attribute name="attendence_period" optional="YES" attributeType="Transformable"/>
-        <attribute name="class_id" optional="YES" attributeType="Transformable"/>
-        <attribute name="class_total" optional="YES" attributeType="Transformable"/>
-        <attribute name="created_at" optional="YES" attributeType="Transformable"/>
-        <attribute name="created_by" optional="YES" attributeType="Transformable"/>
-        <attribute name="no_of_absent" optional="YES" attributeType="Transformable"/>
-        <attribute name="no_of_present" optional="YES" attributeType="Transformable"/>
-        <attribute name="status" optional="YES" attributeType="Transformable"/>
+    <entity name="ClassAttendanceHistory" representedClassName="ClassAttendanceHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="a_status" optional="YES" attributeType="String"/>
+        <attribute name="a_taken_by" optional="YES" attributeType="String"/>
+        <attribute name="a_val" optional="YES" attributeType="String"/>
+        <attribute name="abs_date" optional="YES" attributeType="String"/>
+        <attribute name="attend_id" optional="YES" attributeType="String"/>
+        <attribute name="attend_period" optional="YES" attributeType="String"/>
+        <attribute name="class_id" optional="YES" attributeType="String"/>
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="server_attend_id" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="student_id" optional="YES" attributeType="String"/>
+        <attribute name="sync_status" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="String"/>
+        <attribute name="updated_by" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ClassAttendances" representedClassName="ClassAttendances" syncable="YES" codeGenerationType="class">
+        <attribute name="ac_year" optional="YES" attributeType="String"/>
+        <attribute name="attendence_period" optional="YES" attributeType="String"/>
+        <attribute name="class_id" optional="YES" attributeType="String"/>
+        <attribute name="class_total" optional="YES" attributeType="String"/>
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="created_by" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="no_of_absent" optional="YES" attributeType="String"/>
+        <attribute name="no_of_present" optional="YES" attributeType="String"/>
+        <attribute name="server_at_id" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="sync_status" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="String"/>
+        <attribute name="updated_by" optional="YES" attributeType="String"/>
     </entity>
     <entity name="ClassSubjects" representedClassName="ClassSubjects" syncable="YES" codeGenerationType="class">
         <attribute name="class_master_id" optional="YES" attributeType="Transformable"/>
@@ -120,6 +142,7 @@
         <element name="Reminders" positionX="-18" positionY="171" width="128" height="179"/>
         <element name="StudentDetails" positionX="-54" positionY="126" width="128" height="164"/>
         <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
-        <element name="ClassAttenadance" positionX="-9" positionY="153" width="128" height="164"/>
+        <element name="ClassAttendances" positionX="-9" positionY="153" width="128" height="14"/>
+        <element name="ClassAttendanceHistory" positionX="0" positionY="162" width="128" height="254"/>
     </elements>
 </model>

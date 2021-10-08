@@ -340,6 +340,7 @@
 		79F0ED2526D37A4B00DFDE61 /* AdminDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */; };
 		79F0ED3C26D3AF8800DFDE61 /* AdminStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79F0ED3B26D3AF8800DFDE61 /* AdminStudents.storyboard */; };
 		79F179E0270C614A00F969D1 /* AttendanceTakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F179DF270C614A00F969D1 /* AttendanceTakeCell.swift */; };
+		79F31E6B27106F5C00ECCAD3 /* StudentAtendenceHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F31E6A27106F5C00ECCAD3 /* StudentAtendenceHistoryModel.swift */; };
 		79FC8C7426F5B2E10041A54B /* AdminExamResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FC8C7326F5B2E10041A54B /* AdminExamResults.storyboard */; };
 		79FC8C7D26F5C7470041A54B /* ExamResultsStudentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC8C7C26F5C7470041A54B /* ExamResultsStudentsListVC.swift */; };
 		79FE1B1726D4A93500E62F00 /* SudentsAdminInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1B1626D4A93500E62F00 /* SudentsAdminInteracter.swift */; };
@@ -723,6 +724,7 @@
 		79F0ED2426D37A4B00DFDE61 /* AdminDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardVC.swift; sourceTree = "<group>"; };
 		79F0ED3B26D3AF8800DFDE61 /* AdminStudents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStudents.storyboard; sourceTree = "<group>"; };
 		79F179DF270C614A00F969D1 /* AttendanceTakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTakeCell.swift; sourceTree = "<group>"; };
+		79F31E6A27106F5C00ECCAD3 /* StudentAtendenceHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAtendenceHistoryModel.swift; sourceTree = "<group>"; };
 		79FC8C7326F5B2E10041A54B /* AdminExamResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminExamResults.storyboard; sourceTree = "<group>"; };
 		79FC8C7C26F5C7470041A54B /* ExamResultsStudentsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsStudentsListVC.swift; sourceTree = "<group>"; };
 		79FE1B1626D4A93500E62F00 /* SudentsAdminInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudentsAdminInteracter.swift; sourceTree = "<group>"; };
@@ -1896,6 +1898,7 @@
 			children = (
 				79EDE96F270AE1A100B85ADB /* TeacherAttendanceVC.swift */,
 				79EDE974270B295C00B85ADB /* TakeAttendanceVC.swift */,
+				79F31E6A27106F5C00ECCAD3 /* StudentAtendenceHistoryModel.swift */,
 			);
 			path = TeacherAttendance;
 			sourceTree = "<group>";
@@ -2270,6 +2273,7 @@
 				7904AD1D26D9F18300D6F2C2 /* StudentsDetailsPresenter.swift in Sources */,
 				7948E1702704946D004DB4D4 /* ExamTimeTablePresenter.swift in Sources */,
 				79956C5326CF7FE900E012BB /* ShadowEffectForUIView.swift in Sources */,
+				79F31E6B27106F5C00ECCAD3 /* StudentAtendenceHistoryModel.swift in Sources */,
 				79C33ED026E245DE006341E9 /* SubEventsModel.swift in Sources */,
 				79A6453C2702EAE600E7F83C /* AdminSettings.swift in Sources */,
 				79BAB7EE26E1E61800DEE3C3 /* FatherDetailsPresenter.swift in Sources */,
