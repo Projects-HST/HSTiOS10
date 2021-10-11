@@ -53,6 +53,9 @@
                                                                         <real key="value" value="0.69999999999999996"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <segue destination="IlV-RV-iJ1" kind="show" id="Ziy-4b-GA7"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEn-lx-Q6A">
                                                                 <rect key="frame" x="190" y="0.0" width="184" height="40"/>
@@ -98,20 +101,20 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attendance" translatesAutoresizingMaskIntoConstraints="NO" id="69V-qJ-Er8">
-                                                                        <rect key="frame" x="50.5" y="41" width="80" height="80"/>
+                                                                        <rect key="frame" x="60.5" y="51" width="60" height="60"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="VYy-iX-ffD"/>
-                                                                            <constraint firstAttribute="height" constant="80" id="oC8-wR-ZzM"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="VYy-iX-ffD"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="oC8-wR-ZzM"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATTENDANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMs-3f-Q6b">
-                                                                        <rect key="frame" x="4" y="135" width="173" height="19"/>
+                                                                        <rect key="frame" x="4" y="125" width="173" height="29"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIJ-1q-Ay8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="135"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="125"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <connections>
                                                                             <segue destination="65g-Y3-3xU" kind="show" id="hLn-vh-6v0"/>
@@ -142,14 +145,14 @@
                                                                 <rect key="frame" x="182" y="0.0" width="181" height="161.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exam" translatesAutoresizingMaskIntoConstraints="NO" id="CG1-xQ-Qev">
-                                                                        <rect key="frame" x="50.5" y="41" width="80" height="80"/>
+                                                                        <rect key="frame" x="60.5" y="51" width="60" height="60"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="Rpl-H2-tWC"/>
-                                                                            <constraint firstAttribute="height" constant="80" id="m4e-8S-ecw"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="Rpl-H2-tWC"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="m4e-8S-ecw"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMEWORKS/CLASSTESTS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-Te-UOw">
-                                                                        <rect key="frame" x="4" y="123" width="173" height="39"/>
+                                                                        <rect key="frame" x="4" y="113" width="173" height="49"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -201,16 +204,19 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e05-Fn-d6d">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="M7M-XB-d3J" kind="show" id="JqC-Zw-q8t"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result" translatesAutoresizingMaskIntoConstraints="NO" id="W9b-TC-IZw">
-                                                                        <rect key="frame" x="50.5" y="41" width="80" height="80"/>
+                                                                        <rect key="frame" x="60.5" y="51" width="60" height="60"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="80" id="53S-kp-1bS"/>
-                                                                            <constraint firstAttribute="width" constant="80" id="Qqe-Au-80I"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="53S-kp-1bS"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="Qqe-Au-80I"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXAMS &amp; RESULTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doG-gQ-PTx">
-                                                                        <rect key="frame" x="4" y="135" width="173" height="19"/>
+                                                                        <rect key="frame" x="4" y="125" width="173" height="29"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -235,14 +241,14 @@
                                                                 <rect key="frame" x="182" y="0.0" width="181" height="161.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timetable" translatesAutoresizingMaskIntoConstraints="NO" id="AuG-X3-9L7">
-                                                                        <rect key="frame" x="50.5" y="41" width="80" height="80"/>
+                                                                        <rect key="frame" x="60.5" y="51" width="60" height="60"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="80" id="8Hg-hR-MeS"/>
-                                                                            <constraint firstAttribute="width" constant="80" id="n4i-67-jef"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="8Hg-hR-MeS"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="n4i-67-jef"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMETABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exm-gl-Wly">
-                                                                        <rect key="frame" x="4" y="136" width="173" height="18"/>
+                                                                        <rect key="frame" x="4" y="126" width="173" height="28"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -281,16 +287,19 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brf-hz-1xy">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="CeJ-Ej-Kec" kind="show" id="4RU-Yd-uKa"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event" translatesAutoresizingMaskIntoConstraints="NO" id="AUK-rT-SKE">
-                                                                        <rect key="frame" x="50.5" y="41" width="80" height="80"/>
+                                                                        <rect key="frame" x="60.5" y="51" width="60" height="60"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="DmG-pp-xCF"/>
-                                                                            <constraint firstAttribute="height" constant="80" id="RyY-nB-GVJ"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="DmG-pp-xCF"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="RyY-nB-GVJ"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqw-KK-SHw">
-                                                                        <rect key="frame" x="4" y="135" width="173" height="19"/>
+                                                                        <rect key="frame" x="4" y="125" width="173" height="29"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -315,14 +324,14 @@
                                                                 <rect key="frame" x="182" y="0.0" width="181" height="161.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circular" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-IP-0WG">
-                                                                        <rect key="frame" x="50.5" y="41" width="80" height="80"/>
+                                                                        <rect key="frame" x="60.5" y="51" width="60" height="60"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="80" id="W7p-cD-SSL"/>
-                                                                            <constraint firstAttribute="width" constant="80" id="YbN-2m-t6F"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="W7p-cD-SSL"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="YbN-2m-t6F"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIRCULARS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbd-OB-eof">
-                                                                        <rect key="frame" x="4" y="136" width="173" height="18"/>
+                                                                        <rect key="frame" x="4" y="126" width="173" height="28"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -330,6 +339,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdK-dx-SoK">
                                                                         <rect key="frame" x="0.0" y="0.0" width="181" height="161.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <connections>
+                                                                            <segue destination="XgV-Zo-lTS" kind="show" id="64P-zI-rky"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -504,6 +516,9 @@
                                                         <state key="normal" title="Exams &amp; Results">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="M7M-XB-d3J" kind="show" id="cdf-NY-ebk"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-Es-0z2">
                                                         <rect key="frame" x="0.0" y="306" width="90" height="30"/>
@@ -802,6 +817,26 @@
             </objects>
             <point key="canvasLocation" x="2863" y="230"/>
         </scene>
+        <!--Exams_ResultsVC-->
+        <scene sceneID="F4B-0d-Hf6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TeachersExamResults" referencedIdentifier="Exams_ResultsVC" id="M7M-XB-d3J" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iWI-M7-kZ5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKF-ta-ioa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2846" y="265"/>
+        </scene>
+        <!--DisplayAttendanceListVC-->
+        <scene sceneID="0uJ-MG-Qas">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DisplayAttendance" referencedIdentifier="DisplayAttendanceListVC" id="IlV-RV-iJ1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jYh-Yv-yJw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jrJ-py-gOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2878" y="303"/>
+        </scene>
         <!--circularVC-->
         <scene sceneID="eMh-Kf-fCk">
             <objects>
@@ -824,7 +859,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="64P-zI-rky"/>
+        <segue reference="JqC-Zw-q8t"/>
         <segue reference="BB2-7d-9hO"/>
+        <segue reference="4RU-Yd-uKa"/>
         <segue reference="hLn-vh-6v0"/>
     </inferredMetricsTieBreakers>
     <resources>

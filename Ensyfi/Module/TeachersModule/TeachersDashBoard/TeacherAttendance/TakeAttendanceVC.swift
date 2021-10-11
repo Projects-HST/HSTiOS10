@@ -32,6 +32,7 @@ class TakeAttendanceVC: UIViewController {
     var serialNoArr = [Int]()
     
 //    syncDatas
+    var selectedattendance = Bool()
     var ac_year = String()
     var class_id = String()
     var class_total = String()
@@ -49,6 +50,7 @@ class TakeAttendanceVC: UIViewController {
     var updated_by = String()
     var studentCount = [String]()
     var studentIncrementID = String()
+    var studentaddId = String()
     var studentID = [String]()
     var atendanceCountId = [String]()
     var AttendanceStatus = String()
@@ -78,6 +80,7 @@ class TakeAttendanceVC: UIViewController {
         for i in 1...10000 {
             self.serialNoArr.append(i)
         }
+        self.selectedattendance = false
         selectedstudentStatus = [String](repeating: "", count:100)
     }
    
@@ -134,8 +137,14 @@ class TakeAttendanceVC: UIViewController {
         self.server_at_id = ""
         self.updated_by = ""
         self.updated_at = ""
-        self.saveDataClassAttendance()
-        self.saveStudentAttendance()
+        
+        if self.selectedattendance == true {
+            self.saveDataClassAttendance()
+            self.saveStudentAttendance()
+        }
+        else {
+            print("Not_Selected")
+        }
     }
     
     func saveDataClassAttendance() {
@@ -226,13 +235,13 @@ extension TakeAttendanceVC {
                 let crted = data.created_by
                 atendanceCountId.append(crted!)
             }
-            attendanceTakeid = String(atendanceCountId.count + 1)
+            attendanceTakeid = String(atendanceCountId.count)
         } catch let err as NSError {
             print(err.debugDescription)
         }
     }
     
-    func fethStudenttendHistory () {
+    func fethStudenttendHistory() {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ClassAttendanceHistory")
@@ -244,7 +253,7 @@ extension TakeAttendanceVC {
                 let idCount = dataa.a_taken_by
                 studentCount.append(idCount!)
             }
-            studentIncrementID = String(studentCount.count + 1)
+            studentaddId = String(studentCount.count)
         } catch let err as NSError {
             print(err.debugDescription)
         }
@@ -302,13 +311,16 @@ extension TakeAttendanceVC: UITableViewDelegate,UITableViewDataSource {
                 print("Already exists")
         }
         else {
+            let res = Int(studentaddId)! + studentID.count
             studentID.append(sel)
+            studentIncrementID = String(res)
             let dataas = AttendanceHistory(atendStatus:self.AttendanceStatus, TakeBy: GlobalVariables.shared.user_id, A_val: "", AbsentDate: self.dateLbl.text!, AtendId: self.attendanceTakeid, AtendPeriod: "", ClasID:self.class_id, CretedAt:self.dateLbl.text!, ID: self.studentIncrementID, ServerAtendID: "", Status: "A", SyncStatus: "NS", UpdatedAT:"", UpdatedBY: "", StudentID:self.studentID.first! )
             self.atendHistory.append(dataas)
+            self.selectedattendance = true
         }
         print(studentID)
+        print(studentIncrementID)
         self.tableView.reloadData()
-            
         }
     }
     
@@ -362,6 +374,8 @@ extension TakeAttendanceVC: UITableViewDelegate,UITableViewDataSource {
         do {
             try context?.save()
                 print(" Attendance Saved suucess")
+//                self.fetchAttendancetaken()
+//                self.fethStudenttendHistory()
             }
         catch {
             print("error")

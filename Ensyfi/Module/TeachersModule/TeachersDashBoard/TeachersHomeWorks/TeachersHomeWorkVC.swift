@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import CoreData
 
 class TeachersHomeWorkVC: UIViewController {
 
@@ -15,6 +16,8 @@ class TeachersHomeWorkVC: UIViewController {
     @IBOutlet weak var classBtnOutlet: UIButton!
     @IBOutlet weak var homeWorkOutlet: UIButton!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var context : NSManagedObjectContext?
     let dropDown = DropDown()
     var className = [String]()
     var classId = [String]()
@@ -29,6 +32,7 @@ class TeachersHomeWorkVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
     }
     

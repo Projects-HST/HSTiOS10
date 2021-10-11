@@ -65,7 +65,6 @@ class TeacherAttendanceVC: UIViewController {
         dropDown.dataSource = academicMonthArr
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
         self.date_month.text = item
-            
         }
     }
     
@@ -74,7 +73,6 @@ class TeacherAttendanceVC: UIViewController {
         if segmentedControl.selectedSegmentIndex == 0 {
             
             self.selectedType = "Dview"
-            self.classBtnOutlet.isEnabled = false
             self.img2.image = UIImage(named:"unselected1")
             self.img1.image = UIImage(named:"selected")
             self.date_month.text = "Select Date"
@@ -82,19 +80,18 @@ class TeacherAttendanceVC: UIViewController {
         else {
          
             self.selectedType = "Mview"
-            self.classBtnOutlet.isEnabled = true
             self.img2.image = UIImage(named:"selected")
             self.img1.image = UIImage(named:"unselected1")
             self.date_month.text = "Select Month"
         }
     }
     
-    func showDatePicker(){
+    func showDatePicker() {
        //Formate Date
        datePicker.datePickerMode = .date
        datePicker.backgroundColor = UIColor.white
        datePicker.setValue(UIColor.black, forKeyPath: "textColor")
-        datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+       datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
        //ToolBar
        let toolbar = UIToolbar();
        toolbar.sizeToFit()
@@ -104,10 +101,8 @@ class TeacherAttendanceVC: UIViewController {
        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
-
         date_month.inputAccessoryView = toolbar
         date_month.inputView = datePicker
-      
     }
     
     func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
@@ -142,7 +137,6 @@ class TeacherAttendanceVC: UIViewController {
        self.view.endEditing(true)
      }
     
-    
     func fetchData() {
     
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -160,7 +154,6 @@ class TeacherAttendanceVC: UIViewController {
                 let ziped = zip(className, secName)
                 let result = ziped.map { $0.0 + " " + $0.1 }
                 zipedArr = result
-                
             }
         } catch let err as NSError {
             print(err.debugDescription)
@@ -179,7 +172,6 @@ class TeacherAttendanceVC: UIViewController {
             for data in classSubData {
                 academicMonthArr = data.academic_month as! [String]
                 print(academicMonthArr)
-                
             }
         } catch let err as NSError {
             print(err.debugDescription)
