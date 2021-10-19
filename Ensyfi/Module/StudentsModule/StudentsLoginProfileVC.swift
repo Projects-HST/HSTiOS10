@@ -9,21 +9,29 @@ import UIKit
 
 class StudentsLoginProfileVC: UIViewController {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var admissionNo: UILabel!
+    @IBOutlet weak var className: UILabel!
+    @IBOutlet weak var profilePic: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func continueAction(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "to_DashBoard", sender: self)
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "to_DashBoard")
+        {
+        let vc = segue.destination as! UINavigationController
+        }
+    }
 }
+ 

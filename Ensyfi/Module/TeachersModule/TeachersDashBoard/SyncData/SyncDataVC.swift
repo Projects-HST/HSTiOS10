@@ -14,7 +14,7 @@ protocol SyncAttendanceDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: SyncAttendanceModel.Fetch.ViewModel)
 }
 
-class SyncDataVC: UIViewController, SyncAttendanceDisplayLogic {
+class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic {
     
     @IBOutlet weak var attendanceCount: UILabel!
     @IBOutlet weak var assignmentCount: UILabel!

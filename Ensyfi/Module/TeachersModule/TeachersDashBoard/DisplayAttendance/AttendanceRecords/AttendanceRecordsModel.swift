@@ -15,7 +15,6 @@ struct AttendanceRecordListModel{
         {
             var class_id : String?
             var attend_id : String?
-            
         }
         
         struct Response
@@ -29,20 +28,12 @@ struct AttendanceRecordListModel{
         {
            struct DisplayedAttendanceRecordListData
            {
-            var ac_year : String?
-            var at_id : String?
-            var attendence_period : String?
-            var class_id : String?
-            var class_total : String?
-            var created_at : String?
-            var created_by : String?
+            var sex : String?
+            var a_status : String?
+            var enroll_id : String?
+            var admission_id : String?
             var name : String?
-            var no_of_absent : String?
-            var no_of_present : String?
-            var sent_status : String?
-            var status : String?
-            var updated_at : String?
-            var updated_by : String?
+            
             
             }
               var displayedAttendanceRecordListData: [DisplayedAttendanceRecordListData]

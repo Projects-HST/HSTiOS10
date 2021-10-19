@@ -22,10 +22,11 @@ class AttendanceRecordListPresenter: AttendanceRecordListPresentationLogic
         var displayedAttendanceRecordListData: [AttendanceRecordListModel.Fetch.ViewModel.DisplayedAttendanceRecordListData] = []
        
         for data in resp.testObj {
-        let displayedAttendanceRecordListDatas = AttendanceRecordListModel.Fetch.ViewModel.DisplayedAttendanceRecordListData(ac_year: data.ac_year!,at_id: data.at_id!,attendence_period: data.attendence_period!,class_id: data.class_id!,class_total: data.class_total!,created_at: data.created_at!,created_by: data.created_by!,name: data.name!,no_of_absent: data.no_of_absent!,no_of_present: data.no_of_present!,sent_status: data.sent_status!,status: data.status!,updated_at: data.updated_at!,updated_by: data.updated_by!)
+        let displayedAttendanceRecordListDatas = AttendanceRecordListModel.Fetch.ViewModel.DisplayedAttendanceRecordListData(sex: data.sex!,a_status: data.a_status!,enroll_id: data.enroll_id!,admission_id: data.admission_id!,name: data.name!)
             displayedAttendanceRecordListData.append(displayedAttendanceRecordListDatas)
         }
         let viewModel = AttendanceRecordListModel.Fetch.ViewModel(displayedAttendanceRecordListData: displayedAttendanceRecordListData)
         viewController?.successFetchedItems(viewModel: viewModel)
     }
 }
+

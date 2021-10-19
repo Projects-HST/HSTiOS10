@@ -78,13 +78,11 @@ extension AttendanceRecordListVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayAttendanceCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AttendanceRecordListCell
             
             let data = displayedAttendanceRecordListData[indexPath.row]
-            cell.Atendate.text = data.created_at
-            cell.classStrength.text = "Class strength : \(data.class_total!)"
-            cell.noAbsent.text = "No.of absent : \(data.no_of_absent!)"
-            cell.noPresent.text = "No.of present : \(data.no_of_present!)"
+        cell.name.text = data.name
+        cell.status.text = data.a_status
         
         return cell
     }

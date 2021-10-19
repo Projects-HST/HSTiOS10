@@ -74,6 +74,9 @@
                                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <segue destination="Gaz-qH-vzO" kind="show" id="vG8-KO-NML"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.27522898835771892" green="0.13500172006271924" blue="0.29363153846591417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -825,7 +828,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKF-ta-ioa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2846" y="265"/>
+            <point key="canvasLocation" x="2846" y="263"/>
         </scene>
         <!--DisplayAttendanceListVC-->
         <scene sceneID="0uJ-MG-Qas">
@@ -836,6 +839,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrJ-py-gOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2878" y="303"/>
+        </scene>
+        <!--AssignmentListVC-->
+        <scene sceneID="hSN-Sj-sNJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TeachersAssignment" referencedIdentifier="AssignmentListVC" id="Gaz-qH-vzO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BQF-2K-kRK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hj4-w8-axW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844" y="338"/>
         </scene>
         <!--circularVC-->
         <scene sceneID="eMh-Kf-fCk">

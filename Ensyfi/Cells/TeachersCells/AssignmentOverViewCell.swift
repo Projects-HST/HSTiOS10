@@ -1,16 +1,19 @@
 //
-//  AttendanceRecordListCell.swift
+//  AssignmentOverViewCell.swift
 //  EnsyfiApp
 //
-//  Created by HappysanziMac on 11/10/21.
+//  Created by HappysanziMac on 13/10/21.
 //
 
 import UIKit
 
-class AttendanceRecordListCell: UITableViewCell {
+class AssignmentOverViewCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var subject: UILabel!
+    @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var sentImg: UIImageView!
+    @IBOutlet weak var sentStatus: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,4 +25,5 @@ class AttendanceRecordListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 }

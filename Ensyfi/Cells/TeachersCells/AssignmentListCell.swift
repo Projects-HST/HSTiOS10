@@ -1,16 +1,17 @@
 //
-//  AttendanceRecordListCell.swift
+//  AssignmentListCell.swift
 //  EnsyfiApp
 //
-//  Created by HappysanziMac on 11/10/21.
+//  Created by HappysanziMac on 12/10/21.
 //
 
 import UIKit
 
-class AttendanceRecordListCell: UITableViewCell {
+class AssignmentListCell: UITableViewCell {
 
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var asignmentDate: UILabel!
+    @IBOutlet weak var classTest: UILabel!
+    @IBOutlet weak var homeWork: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,4 +23,5 @@ class AttendanceRecordListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 }

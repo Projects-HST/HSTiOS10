@@ -1,52 +1,41 @@
 //
-//  OverViewAttendanceVC.swift
+//  SendAttendanceVC.swift
 //  EnsyfiApp
 //
-//  Created by HappysanziMac on 11/10/21.
+//  Created by HappysanziMac on 13/10/21.
 //
 
 import UIKit
 import MBProgressHUD
 
-protocol SendAttendanceDisplayLogic: AnyObject
+protocol SendAssignmentDisplayLogic: AnyObject
 {
-    func successFetchedItems(viewModel:SendAttendanceModel.Fetch.ViewModel)
-    func errorFetchingItems(viewModel: SendAttendanceModel.Fetch.ViewModel)
+    func successFetchedItems(viewModel:SendAssignmentModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: SendAssignmentModel.Fetch.ViewModel)
 }
 
-class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
-   
-    @IBOutlet weak var dateLbl: UILabel!
-    @IBOutlet weak var classStrength: UILabel!
-    @IBOutlet weak var noPresent: UILabel!
-    @IBOutlet weak var noAbsent: UILabel!
-    @IBOutlet weak var takenby: UILabel!
+protocol SendAssignmentDelegate
+{
+    func saveText(strText : String)
+}
+
+class SendAttendanceVC: UIViewController, SendAssignmentDisplayLogic {
+
     @IBOutlet weak var smsOutlet: UIButton!
     @IBOutlet weak var mailOutlet: UIButton!
     @IBOutlet weak var notificationOutlet: UIButton!
     @IBOutlet weak var notificationView: UIView!
     
-    var interactor: SendAttendanceBusinessLogic?
-    
-    var selectedDate = String()
-    var selectedClassTotale = String()
-    var selectednoOfPresent = String()
-    var selectednoOfAbsent = String()
-    var selectedTakenby = String()
-    var selectedid = String()
+    var interactor: SendAssignmentBusinessLogic?
     var selectedType = String()
     var selectedClassid = String()
+    var delegate : ClassSectionListDelegate?
+    var strSaveText : NSString!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.notificationView.alpha = 0
-        self.classStrength.text = self.selectedClassTotale
-        self.noPresent.text = self.selectednoOfPresent
-        self.noAbsent.text = self.selectednoOfAbsent
-        self.takenby.text = self.selectedTakenby
-        self.dateLbl.text = self.selectedDate
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -64,33 +53,13 @@ class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
     private func setup()
     {
         let viewController = self
-        let interactor = SendAttendanceInteractor()
-        let presenter = SendAttendancePresenter()
+        let interactor = SendAssignmentInteractor()
+        let presenter = SendAssignmentPresenter()
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = viewController
     }
-    
-    @IBAction func sendAttendance(_ sender: Any) {
-        self.notificationView.alpha = 1
-    }
-    
-    @IBAction func viewAttendance(_ sender: Any) {
-       
-        self.performSegue(withIdentifier: "to_attendanceRecord", sender: self)
-    }
-    
-    @IBAction func sendNotification(_ sender: Any) {
-        
-        if selectedType == "" {
-            
-        }
-        else {
-            interactor?.fetchItems(request: SendAttendanceModel.Fetch.Request(attend_id :self.selectedid,msg_type:self.selectedType))
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-        }
-    }
-    
+
     @IBAction func selectedSMS(_ sender: Any) {
         
         let image1 = UIImage(named: "sms")
@@ -101,6 +70,7 @@ class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
         self.smsOutlet.setImage(image1, for: .normal)
         self.mailOutlet.setImage(image2, for: .normal)
         self.notificationOutlet.setImage(image3, for: .normal)
+        delegate?.saveText(strText: (selectedType as NSString) as String)
     }
     
     @IBAction func selectedmail(_ sender: Any) {
@@ -113,6 +83,7 @@ class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
         self.smsOutlet.setImage(image1, for: .normal)
         self.mailOutlet.setImage(image2, for: .normal)
         self.notificationOutlet.setImage(image3, for: .normal)
+        delegate?.saveText(strText: (selectedType as NSString) as String)
     }
     
     @IBAction func selectednotification(_ sender: Any) {
@@ -125,29 +96,32 @@ class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
         self.smsOutlet.setImage(image1, for: .normal)
         self.mailOutlet.setImage(image2, for: .normal)
         self.notificationOutlet.setImage(image3, for: .normal)
+        delegate?.saveText(strText: (selectedType as NSString) as String)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func sendAction(_ sender: Any) {
         
-        if (segue.identifier == "to_attendanceRecord")
-        {
-        let vc = segue.destination as! AttendanceRecordListVC
-            vc.selectedid = self.selectedid
-            vc.selectedClassid = self.selectedClassid
+        if selectedType == "" {
+            
+        }
+        else {
+            interactor?.fetchItems(request: SendAssignmentModel.Fetch.Request(attend_id :self.selectedClassid,msg_type:self.selectedType))
+            MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }
 }
 
-extension OverViewAttendanceVC {
+extension SendAttendanceVC {
     
-    func successFetchedItems(viewModel: SendAttendanceModel.Fetch.ViewModel) {
+    func successFetchedItems(viewModel: SendAssignmentModel.Fetch.ViewModel) {
         MBProgressHUD.hide(for: self.view, animated: true)
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
         })
     }
     
-    func errorFetchingItems(viewModel: SendAttendanceModel.Fetch.ViewModel) {
-        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Error Occured", complition: {
+    func errorFetchingItems(viewModel: SendAssignmentModel.Fetch.ViewModel) {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:Globals.errorAlertMsg, complition: {
         })
     }
 }
