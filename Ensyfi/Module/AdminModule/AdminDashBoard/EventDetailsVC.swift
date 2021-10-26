@@ -14,7 +14,8 @@ class EventDetailsVC: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var decription: UILabel!
     @IBOutlet weak var viewOrgBtn: UIButton!
-
+    @IBOutlet weak var bgView: UIView!
+    
     var selectedEventId = String()
     var selectedEventName = String()
     var selectedEventDetails = String()
@@ -26,7 +27,7 @@ class EventDetailsVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.bgView.dropShadow()
         self.titleLbl.text = selectedEventName
         self.date.text = selectedEventDate
         self.decription.text = selectedEventDetails

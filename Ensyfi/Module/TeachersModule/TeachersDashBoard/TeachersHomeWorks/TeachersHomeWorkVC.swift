@@ -14,6 +14,7 @@ class TeachersHomeWorkVC: UIViewController {
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var homeWorkType: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var homeWorkOutlet: UIButton!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -46,6 +47,18 @@ class TeachersHomeWorkVC: UIViewController {
     var class_name = [String]()
     var sec_name = [String]()
     var class_id = [String]()
+    
+    var filteredTitle = [String]()
+    var filteredSubject = [String]()
+    var filteredDate = [String]()
+    var filteredDetails = [String]()
+    var filteredType = [String]()
+    var filteredHwID = [String]()
+    
+    var selectedTopic = String()
+    var selectedTitle = String()
+    var selectedDate = String()
+    var selectedDescription = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,12 +99,29 @@ class TeachersHomeWorkVC: UIViewController {
                 else {
                     selectedHwType = "HW"
                 }
+                let classIDIndex = class_id.enumerated().filter {
+                    $0.element == selectedClassId
+                    }.map{$0.offset}
+                
+                let hwTypeIndex = hw_type.enumerated().filter {
+                    $0.element == selectedHwType
+                    }.map{$0.offset}
+                
+                let resultIndex = classIDIndex.filter () { hwTypeIndex.contains($0) }
+                
+                self.filteredTitle = resultIndex.map { titleArr[$0] }
+                self.filteredSubject = resultIndex.map { subject_name[$0] }
+                self.filteredDate = resultIndex.map { due_date[$0] }
+                self.filteredDetails = resultIndex.map { hw_details[$0] }
+                self.filteredType = resultIndex.map { hw_type[$0] }
+                self.filteredHwID = resultIndex.map { hw_id[$0] }
+                self.tableView.reloadData()
           }
+    }
+    
+    @IBAction func assignHW_CTest(_ sender: Any) {
         
-        for data in homeWorkTestArr {
-            
-            
-        }
+        self.performSegue(withIdentifier: "to_assignHW/Test", sender: self)
     }
     
     func fetchData() {
@@ -128,25 +158,84 @@ class TeachersHomeWorkVC: UIViewController {
     
             for data in homeWorkTestArr {
                
-                hw_id = data.hw_id as! [String]
-                hw_type = data.hw_type as! [String]
-                titleArr = data.title as! [String]
-                test_date = data.test_date as! [String]
-                due_date = data.due_date as! [String]
-                teacher_id = data.times as! [String]
-                hw_details = data.hw_details as! [String]
-                mark_status = data.mark_status as! [String]
-                subject_id = data.subject_id as! [String]
-                subject_name = data.subject_name as! [String]
-                sec_name = data.sec_name as! [String]
-                class_id = data.class_id as! [String]
-                
+                self.hw_id = data.hw_id as! [String]
+                self.hw_type = data.hw_type as! [String]
+                self.titleArr = data.title as! [String]
+                self.test_date = data.test_date as! [String]
+                self.due_date = data.due_date as! [String]
+                self.teacher_id = data.times as! [String]
+                self.hw_details = data.hw_details as! [String]
+                self.mark_status = data.mark_status as! [String]
+                self.subject_id = data.subject_id as! [String]
+                self.subject_name = data.subject_name as! [String]
+                self.sec_name = data.sec_name as! [String]
+                self.class_id = data.class_id as! [String]
             }
         } catch let err as NSError {
             print(err.debugDescription)
         }
     }
 }
-          
-  
+
+extension TeachersHomeWorkVC: UITableViewDelegate,UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return filteredTitle.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeWorkListCell
+                
+        cell.title.text = filteredTitle[indexPath.row]
+        cell.date.text = " Due Date : \(filteredDate[indexPath.row])"
+        if filteredType[indexPath.row] == "HT" {
+            cell.subName.text = "\(filteredSubject[indexPath.row]) - CLASS TEST"
+        }
+        else {
+            cell.subName.text = "\(filteredSubject[indexPath.row]) - HOME WORK"
+        }
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        if selectedHwType == "HW" {
+            self.selectedTopic = filteredTitle[indexPath.row]
+            self.selectedTitle = filteredSubject[indexPath.row]
+            self.selectedDate = filteredDate[indexPath.row]
+            self.selectedDescription = filteredDetails[indexPath.row]
+            self.performSegue(withIdentifier: "to_HWDetails", sender: self)
+        }
+        else {
+            self.selectedTopic = filteredTitle[indexPath.row]
+            self.selectedTitle = filteredSubject[indexPath.row]
+            self.selectedDate = filteredDate[indexPath.row]
+            self.selectedDescription = filteredDetails[indexPath.row]
+            self.performSegue(withIdentifier: "to_ClassTestDetails", sender: self)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "to_HWDetails")
+        {
+        let vc = segue.destination as! TeachersHWDetailsVC
+            vc.selectedTopic = self.selectedTopic
+            vc.selectedTitle = self.selectedTitle
+            vc.selectedDate = self.selectedDate
+            vc.selectedDescription = self.selectedDescription
+        }
+        if (segue.identifier == "to_ClassTestDetails")
+        {
+        let vc = segue.destination as! TeachersClassTestDetails
+            vc.selectedTopic = self.selectedTopic
+            vc.selectedTitle = self.selectedTitle
+            vc.selectedDate = self.selectedDate
+            vc.selectedDescription = self.selectedDescription
+        }
+    }
+}
+//to_ClassTestDetails

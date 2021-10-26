@@ -11,9 +11,11 @@ class EventListCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.dropShadow()
         // Initialization code
     }
 

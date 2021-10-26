@@ -33,6 +33,7 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
     var selectedMark = String()
     var selectedTopic = String()
     var selectedDescription = String()
+    var from = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,12 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
         // Do any additional setup after loading the view.
         self.dropDownData = ["Class Test","Home Work"]
         self.TestTextField.text = "Class Test"
-        interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT"))
+        if from == "Student" {
+            interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HT"))
+        }
+        else {
+            interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT"))
+        }
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
@@ -77,12 +83,21 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
             
             if dropDown.indexForSelectedRow == 0 {
                 
+                if from == "Student" {
+                    interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HT"))
+                }
+                else {
                 interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT"))
+                }
             }
             
             else if dropDown.indexForSelectedRow == 1 {
-                
+                if from == "Student" {
+                    interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HW"))
+                }
+                else {
                 interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HW"))
+                }
             }
         }
     }

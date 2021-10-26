@@ -475,10 +475,20 @@ class APIManager: NSObject {
     
     func callAPIExamResults(class_id:String,section_id:String, onSuccess successCallback: ((_ resp: [ExamResultsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-        let url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
+//        let url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id,"section_id": section_id]
-      
+        let parameters: Parameters
+        var url = String()
+        
+        if section_id == "Students" {
+            parameters = ["class_id": class_id]
+            url = APIURL.base_URL  + APIFunctionName.studentExamReslutListUrl
+        }
+        else {
+           parameters = ["class_id": class_id,"section_id": section_id]
+            url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
+        }
+//
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary

@@ -56,6 +56,7 @@ class Exams_ResultsVC: UIViewController, TeachersExamsListDisplayLogic {
     var examFromdate = [String]()
     var examTodate = [String]()
     var markStatus = [String]()
+    var isInternalExternalStatus = [String]()
     
     var filteredExamName = [String]()
     var filteredExamId = [String]()
@@ -63,7 +64,9 @@ class Exams_ResultsVC: UIViewController, TeachersExamsListDisplayLogic {
     var filteredTodate = [String]()
     var filteredFromdate = [String]()
     var filteredExamClassId = [String]()
+    var filteredInternalExternal = [String]()
     
+    var selectednternalExternal = String()
     var selectedExamName = String()
     var selectedExamId = String()
     var selectedStatus = String()
@@ -142,6 +145,8 @@ class Exams_ResultsVC: UIViewController, TeachersExamsListDisplayLogic {
                 self.examTodate = data.todate as! [String]
                 self.examFromdate = data.fromdate as! [String]
                 self.examClassId = data.classmaster_id as! [String]
+                self.examClassId = data.classmaster_id as! [String]
+                self.isInternalExternalStatus = data.is_internal_external as! [String]
                
             }
             let examIndexes = examClassId.enumerated().filter {
@@ -154,6 +159,7 @@ class Exams_ResultsVC: UIViewController, TeachersExamsListDisplayLogic {
             self.filteredTodate = examIndexes.map { examTodate[$0] }
             self.filteredExamClassId = examIndexes.map { examClassId[$0] }
             self.filteredMarkStatus = examIndexes.map { markStatus[$0] }
+            self.filteredInternalExternal = examIndexes.map { isInternalExternalStatus[$0] }
             print(filteredMarkStatus)
             self.tableView.reloadData()
         }
@@ -221,20 +227,39 @@ extension Exams_ResultsVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        self.selectedExamName = filteredExamName[indexPath.row]
-//        self.selectedExamId = filteredExamId[indexPath.row]
-//        self.selectedStatus = filteredMarkStatus[indexPath.row]
-//        self.selectedTodate = filteredTodate[indexPath.row]
-//
-//        self.performSegue(withIdentifier: "to_ExamResultsVC", sender: self)
+        self.selectedExamName = filteredExamName[indexPath.row]
+        self.selectedExamId = filteredExamId[indexPath.row]
+        self.selectedStatus = filteredMarkStatus[indexPath.row]
+        self.selectedTodate = filteredTodate[indexPath.row]
+        self.selectednternalExternal = filteredInternalExternal[indexPath.row]
+        print(selectednternalExternal)
+        
+        if selectedStatus == "1" {
+            self.performSegue(withIdentifier: "to_examResultsDetails", sender: self)
+        }
+        else if selectedStatus == "0"{
+            
+            self.performSegue(withIdentifier: "to_examMarkEntry", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (segue.identifier == "to_ExamResultsVC")
+        if (segue.identifier == "to_examResultsDetails")
         {
         let vc = segue.destination as! ExamResultsDetailsVC
-            
+            vc.selectedClassId = self.selectedClassId
+            vc.selectedExamId = self.selectedExamId
+            vc.selectedsubId = self.selectedSubId
+            vc.selectedInternalExternal = self.selectednternalExternal
+        }
+        else if (segue.identifier == "to_examMarkEntry")
+        {
+            let vc = segue.destination as! ExamMarkEntryVC
+            vc.selectedClassId = self.selectedClassId
+            vc.selectedExamId = self.selectedExamId
+            vc.selectedsubId = self.selectedSubId
+            vc.selectedInternalExternal = self.selectednternalExternal
         }
     }
 }

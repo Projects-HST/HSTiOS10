@@ -61,5 +61,7 @@ struct APIFunctionName {
 //    password
     static let changePasswordUrl = "/apimain/change_Password/"
     static let boardMemListUrl = "/apiadmin/get_all_board_members/"
+    
+    static let studentExamReslutListUrl = "/apistudent/disp_Exams/"
 }
 

@@ -90,3 +90,14 @@ extension UIView {
           }
      }
 }
+
+extension UIView {
+    
+    func dropShadow() {
+        // drop shadow
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOpacity = 0.6
+        layer.shadowRadius = 2.0
+        layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+    }
+}

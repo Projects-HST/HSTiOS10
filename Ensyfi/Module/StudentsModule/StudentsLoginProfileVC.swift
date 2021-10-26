@@ -14,11 +14,16 @@ class StudentsLoginProfileVC: UIViewController {
     @IBOutlet weak var className: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
     
+    @IBOutlet weak var bgView: UIView!
+    let userdata = UserDefaults.standard.getStudentRegDetails()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.name.text = userdata?.name
+        self.admissionNo.text = userdata?.admission_no
+        self.className.text = userdata?.class_name
+        self.bgView.dropShadow()
     }
 
     @IBAction func continueAction(_ sender: Any) {
@@ -30,7 +35,7 @@ class StudentsLoginProfileVC: UIViewController {
         
         if (segue.identifier == "to_DashBoard")
         {
-        let vc = segue.destination as! UINavigationController
+            _ = segue.destination as! UINavigationController
         }
     }
 }

@@ -77,5 +77,4 @@ extension StudentsAttendanceVC {
         
         MBProgressHUD.hide(for: self.view, animated: true)
     }
-    
 }

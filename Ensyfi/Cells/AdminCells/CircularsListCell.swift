@@ -18,6 +18,7 @@ class CircularsListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        
+        bgView.dropShadow()
         // Initialization code
     }
 

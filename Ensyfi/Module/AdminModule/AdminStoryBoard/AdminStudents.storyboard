@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -205,7 +206,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="eSl-fd-4HW" customClass="StudentsListCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSl-fd-4HW" id="MIc-0l-ktF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1148,9 +1149,9 @@
         <!--Home Work-->
         <scene sceneID="Uan-Ju-ES0">
             <objects>
-                <viewController id="Sgy-UL-fEO" customClass="HomeWorkTestVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeWorkTestVC" id="Sgy-UL-fEO" customClass="HomeWorkTestVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XM5-9h-LP0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcy-xT-NMf">
@@ -1239,7 +1240,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="115" id="cl9-x0-3NP" customClass="HomeWorkListCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="115"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="115"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cl9-x0-3NP" id="f42-JU-FNc">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
@@ -1382,7 +1383,7 @@
         <!--Attendance Details-->
         <scene sceneID="d9K-Na-DiQ">
             <objects>
-                <viewController id="Ijj-1z-NpA" customClass="StudentsAttendanceVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentsAttendanceVC" id="Ijj-1z-NpA" customClass="StudentsAttendanceVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KA6-lo-dWf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1804,7 +1805,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="L3j-tg-dX3" customClass="ExamsCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L3j-tg-dX3" id="9fu-Fw-16J">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>

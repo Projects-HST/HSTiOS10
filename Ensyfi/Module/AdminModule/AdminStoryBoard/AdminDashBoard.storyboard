@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="luM-Jl-bi1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="luM-Jl-bi1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,11 +22,11 @@
             <objects>
                 <viewController storyboardIdentifier="AdminDashboard" modalPresentationStyle="fullScreen" id="D7u-yM-fwU" customClass="AdminDashboardVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gF-5o-oFu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsX-Md-9z2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSh-Nz-HHD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
@@ -494,11 +495,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="896"/>
+                    <size key="freeformSize" width="414" height="808"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQ5-De-4Pq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676.8115942028987" y="351.5625"/>
+            <point key="canvasLocation" x="1676.8115942028987" y="410.49107142857139"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="fwV-Y1-vyK">
@@ -1024,7 +1025,7 @@
         <!--Navigation Controller-->
         <scene sceneID="0NK-C5-1Jm">
             <objects>
-                <navigationController storyboardIdentifier="adminNavVc" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="luM-Jl-bi1" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="adminNavVc" automaticallyAdjustsScrollViewInsets="NO" id="luM-Jl-bi1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UcU-wf-eId">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1050,7 +1051,7 @@
         <segue reference="RiB-kz-Zki"/>
         <segue reference="Om8-Oe-RPX"/>
         <segue reference="AMj-lA-6IA"/>
-        <segue reference="iKe-6H-52a"/>
+        <segue reference="fDh-CO-dK1"/>
         <segue reference="PGR-qi-yJ5"/>
         <segue reference="Ivw-Cb-0EY"/>
         <segue reference="gvM-BY-QNx"/>

@@ -109,7 +109,9 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var examsDetilsDataArr = [ExamDetailsData]()
     var hwDetailsArr = [HomeWorksData]()
     var remindersArr = [RemindersData]()
+    var studentsRegDetailsArr = [StudentsRegDetails]()
     var acadaamicMonthDataArr = [AdcademicMonthData]()
+    var studentProfileDataArr = [StudentsProfileDetas]()
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -278,7 +280,6 @@ extension InstituteLoginVC {
                                 
                                 self.academicMonthArr = stringArr
                             }
-                            print(academicMonthArr)
                             saveAcadamicMonthData(academic_month:academicMonthArr)
                             
                             let academic_marks = json["academic_marks"]["academic_marks"].stringValue
@@ -461,7 +462,6 @@ extension InstituteLoginVC {
                                 self.sec_nameDetailsArr.append(sec_name!)
                                 
                             }
-                         
 
                             self.saveExamsDetailsData(exam_id:self.exam_idDetailsArr,exam_name:self.exam_nameDetailsArr,subject_name:self.subject_nameDetailsArr,subject_id:self.subject_idDetailsdArr,exam_date:self.exam_dateDetailsArr,times:self.timesDetailsArr,is_internal_external:self.is_internal_externalDetailsArr,subject_total:self.subject_totalDetailsArr,internal_mark:self.internal_markDetailsArr,external_mark:self.external_markDetailsArr,classmaster_id:self.classmaster_idDetailsArr,class_name:self.class_nameDetailsArr, sec_name:self.sec_nameDetailsArr)
                       
@@ -477,7 +477,7 @@ extension InstituteLoginVC {
                                 self.hw_idArr.append(hw_id!)
                                 
                                 let hw_type = HWDetails.hw_type
-                                self.hw_idArr.append(hw_type!)
+                                self.hw_typeArr.append(hw_type!)
                                 
                                 let title = HWDetails.title
                                 self.titleArr.append(title!)
@@ -556,8 +556,123 @@ extension InstituteLoginVC {
                             saveRemindersDatasData(id:reminderIddArr,user_id:reminderUser_idArr,to_do_date:to_do_dateArr,to_do_title:to_do_titleeArr,to_do_description:to_do_descriptionArr,status:remindersStatusArr,created_by:created_byArr,created_at:created_atArr,updated_by:updated_byArr,updated_at:updated_atArr)
 //
                             }
+                        
+                        if json["registeredDetails"].count > 0 {
+                            
+                            for i in 0..<json["registeredDetails"].count {
+                                let studentDetail = StudentsRegDetails.init(json: json["registeredDetails"][i])
+                                self.studentsRegDetailsArr.append(studentDetail)
+                                UserDefaults.standard.saveStudentRegDetails(StudentRegDetails: studentDetail)
+                             }
+                        }
                   
-                      
+                        if json["studentProfile"].count > 0 {
+                            
+                            for i in 0..<json["studentProfile"].count {
+                                let studentprofile = StudentsProfileDetas.init(json: json["studentProfile"][i])
+                                self.studentProfileDataArr.append(studentprofile)
+                                let admission_id = studentprofile.admission_id
+                                let admisn_year = studentprofile.admisn_year
+                                let admisn_no = studentprofile.admisn_no
+                                let emsi_num = studentprofile.emsi_num
+                                let admisn_date = studentprofile.admisn_date
+                                let name = studentprofile.name
+                                let sex = studentprofile.sex
+                                let dob = studentprofile.dob
+                                let age = studentprofile.age
+                                let nationality = studentprofile.nationality
+                                let religion = studentprofile.religion
+                                let community_class = studentprofile.community_class
+                                let community = studentprofile.community
+                                let parnt_guardn = studentprofile.parnt_guardn
+                                let parnt_guardn_id = studentprofile.parnt_guardn_id
+                                let mother_tongue = studentprofile.mother_tongue
+                                let language = studentprofile.language
+                                let mobile = studentprofile.mobile
+                                let sec_mobile = studentprofile.sec_mobile
+                                let email = studentprofile.email
+                                let sec_email = studentprofile.sec_email
+                                let student_pic = studentprofile.student_pic
+                                let last_sch_name = studentprofile.last_sch_name
+                                let last_studied = studentprofile.last_studied
+                                let qualified_promotion = studentprofile.qualified_promotion
+                                let transfer_certificate = studentprofile.transfer_certificate
+                                let tccopy = studentprofile.tccopy
+                                let record_sheet = studentprofile.record_sheet
+                                let status = studentprofile.status
+                                let parents_status = studentprofile.parents_status
+                                let enrollment = studentprofile.enrollment
+                                let blood_group = studentprofile.blood_group
+                                let created_by = studentprofile.created_by
+                                let created_at = studentprofile.created_at
+                                let updated_by = studentprofile.updated_by
+                                let updated_at = studentprofile.updated_at
+                                
+                                self.saveStudentProfileData(admission_id:admission_id!,admisn_year:admisn_year!,admisn_no:admisn_no!,emsi_num:emsi_num!,admisn_date:admisn_date!,name:name!,sex:sex!,dob:dob!,age:age!,nationality:nationality!,religion:religion!,community_class:community_class!,community:community!,parnt_guardn:parnt_guardn!,parnt_guardn_id:parnt_guardn_id!,mother_tongue:mother_tongue!,language:language!,mobile:mobile!,sec_mobile:sec_mobile!,email:email!,sec_email:sec_email!,student_pic:student_pic!,last_sch_name:last_sch_name!,last_studied:last_studied!,qualified_promotion:qualified_promotion!,transfer_certificate:transfer_certificate!,tccopy:tccopy!,record_sheet:record_sheet!,status:status!,parents_status:parents_status!,enrollment:enrollment!,blood_group:blood_group!,created_by:created_by!,created_at:created_at!,updated_by:updated_by!,updated_at:updated_at!)
+                                                        
+                             }
+                        }
+                        
+//                        if json["parentProfile"]["motherProfile"].count > 0 {
+//                            
+//                            for i in 0..<json["parentProfile"]["motherProfile"].count {
+//                                let studentprofile = StudentsMotherDetails.init(json: json["parentProfile"]["motherProfile"][i])
+//                                let id  = ["parentProfile"]["motherProfile"][""].stringValue
+//                                let name = studentprofile.name
+//                                let occupation = studentprofile.occupation
+//                                let income = studentprofile.income
+//                                let home_address = studentprofile.home_address
+//                                let email = studentprofile.email
+//                                let mobile = studentprofile.mobile
+//                                let home_phone = studentprofile.home_phone
+//                                let office_phone = studentprofile.office_phone
+//                                let relationship = studentprofile.relationship
+//                                let user_pic = studentprofile.user_pic
+//
+//                                saveStudentMotherProfileData(id:id!,name:name!,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
+//
+//                             }
+//                        }
+//                        if json["parentProfile"]["fatherProfile"].count > 0 {
+//
+//                            for i in 0..<json["parentProfile"]["fatherProfile"].count {
+//                                let studentprofile = StudentsFatherDetails.init(json: json["parentProfile"]["fatherProfile"][i])
+//                                let id = studentprofile.id
+//                                let name = studentprofile.name
+//                                let occupation = studentprofile.occupation
+//                                let income = studentprofile.income
+//                                let home_address = studentprofile.home_address
+//                                let email = studentprofile.email
+//                                let mobile = studentprofile.mobile
+//                                let home_phone = studentprofile.home_phone
+//                                let office_phone = studentprofile.office_phone
+//                                let relationship = studentprofile.relationship
+//                                let user_pic = studentprofile.user_pic
+//
+//                                saveStudentFatherProfileData(id:id!,name:name! ,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
+//
+//                             }
+//                        }
+//                        if json["parentProfile"]["guardianProfile"].count > 0 {
+//
+//                            for i in 0..<json["parentProfile"]["guardianProfile"].count {
+//                                let studentprofile = StudentsGuardianDetails.init(json: json["parentProfile"]["guardianProfile"][i])
+//                                let id = studentprofile.id
+//                                let name = studentprofile.name
+//                                let occupation = studentprofile.occupation
+//                                let income = studentprofile.income
+//                                let home_address = studentprofile.home_address
+//                                let email = studentprofile.email
+//                                let mobile = studentprofile.mobile
+//                                let home_phone = studentprofile.home_phone
+//                                let office_phone = studentprofile.office_phone
+//                                let relationship = studentprofile.relationship
+//                                let user_pic = studentprofile.user_pic
+//
+//                                saveStudentGuardianProfileData(id:id!,name:name! ,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
+//
+//                             }
+//                        }
                        }) {
                            (error) -> Void in
                            print(error)
@@ -567,7 +682,7 @@ extension InstituteLoginVC {
                    {
                        print("Unable to load data: \(error)")
                    }
-            }
+             }
       }
     
     func save(name:String,teacher_id:String,sex:String,nationality:String,age:String,religion:String,community_class:String,community:String,address:String,email:String,phone:String,sec_email:String,sec_phone:String,profile_pic:String,update_at:String,subject:String,class_taken:String,class_teacher:String) {
@@ -667,8 +782,7 @@ extension InstituteLoginVC {
             print("error")
         }
     }
- 
-   
+    
     func saveExamsDetailsData(exam_id:[String],exam_name:[String],subject_name:[String],subject_id:[String],exam_date:[String],times:[String],is_internal_external:[String],subject_total:[String],internal_mark:[String],external_mark:[String],classmaster_id:[String],class_name:[String],sec_name:[String]) {
         
         let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "ExamDetails", into: context!)
@@ -777,5 +891,129 @@ extension InstituteLoginVC {
             print("error")
         }
     }
-}
+    
+    func saveStudentProfileData(admission_id:String,admisn_year:String,admisn_no:String,emsi_num:String,admisn_date:String,name:String,sex:String,dob:String,age:String,nationality:String,religion:String,community_class:String,community:String,parnt_guardn:String,parnt_guardn_id:String,mother_tongue:String,language:String,mobile:String,sec_mobile:String,email:String,sec_email:String,student_pic:String,last_sch_name:String,last_studied:String,qualified_promotion:String,transfer_certificate:String,tccopy:String,record_sheet:String,status:String,parents_status:String,enrollment:String,blood_group:String,created_by:String,created_at:String,updated_by:String,updated_at:String) {
+        
+        let studentProfile = NSEntityDescription.insertNewObject(forEntityName: "StudentProfile", into: context!)
+        
+        studentProfile.setValue(admission_id, forKey: "admission_id")
+        studentProfile.setValue(admisn_year, forKey: "admisn_year")
+        studentProfile.setValue(admisn_no, forKey: "admisn_no")
+        studentProfile.setValue(emsi_num, forKey: "emsi_num")
+        studentProfile.setValue(admisn_date, forKey: "admisn_date")
+        studentProfile.setValue(name, forKey: "name")
+        studentProfile.setValue(sex, forKey: "sex")
+        studentProfile.setValue(dob, forKey: "dob")
+        studentProfile.setValue(age, forKey: "age")
+        studentProfile.setValue(nationality, forKey: "nationality")
+        studentProfile.setValue(religion, forKey: "religion")
+        studentProfile.setValue(community_class, forKey: "community_class")
+        studentProfile.setValue(community, forKey: "community")
+        studentProfile.setValue(parnt_guardn, forKey: "parnt_guardn")
+        studentProfile.setValue(parnt_guardn_id, forKey: "parnt_guardn_id")
+        studentProfile.setValue(mother_tongue, forKey: "mother_tongue")
+        studentProfile.setValue(language, forKey: "language")
+        studentProfile.setValue(mobile, forKey: "mobile")
+        studentProfile.setValue(sec_mobile, forKey: "sec_mobile")
+        studentProfile.setValue(email, forKey: "email")
+        studentProfile.setValue(sec_email, forKey: "sec_email")
+        studentProfile.setValue(student_pic, forKey: "student_pic")
+        studentProfile.setValue(last_sch_name, forKey: "last_sch_name")
+        studentProfile.setValue(last_studied, forKey: "last_studied")
+        studentProfile.setValue(qualified_promotion, forKey: "qualified_promotion")
+        studentProfile.setValue(transfer_certificate, forKey: "transfer_certificate")
+        studentProfile.setValue(tccopy, forKey: "tccopy")
+        studentProfile.setValue(record_sheet, forKey: "record_sheet")
+        studentProfile.setValue(status, forKey: "status")
+        studentProfile.setValue(parents_status, forKey: "parents_status")
+        studentProfile.setValue(enrollment, forKey: "enrollment")
+        studentProfile.setValue(blood_group, forKey: "blood_group")
+        studentProfile.setValue(created_by, forKey: "created_by")
+        studentProfile.setValue(created_at, forKey: "created_at")
+        studentProfile.setValue(updated_by, forKey: "updated_by")
+        studentProfile.setValue(updated_at, forKey: "updated_at")
 
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveStudentMotherProfileData(id:String,name:String,occupation:String,income:String,home_address:String,email:String,mobile:String,home_phone:String,office_phone:String,relationship:String,user_pic:String) {
+        
+        let studentProfile = NSEntityDescription.insertNewObject(forEntityName: "StudentMotherProfile", into: context!)
+        
+        studentProfile.setValue(id, forKey: "id")
+        studentProfile.setValue(name, forKey: "name")
+        studentProfile.setValue(occupation, forKey: "occupation")
+        studentProfile.setValue(income, forKey: "income")
+        studentProfile.setValue(home_address, forKey: "home_address")
+        studentProfile.setValue(email, forKey: "email")
+        studentProfile.setValue(mobile, forKey: "mobile")
+        studentProfile.setValue(home_phone, forKey: "home_phone")
+        studentProfile.setValue(office_phone, forKey: "office_phone")
+        studentProfile.setValue(relationship, forKey: "relationship")
+        studentProfile.setValue(user_pic, forKey: "user_pic")
+
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveStudentFatherProfileData(id:String,name:String,occupation:String,income:String,home_address:String,email:String,mobile:String,home_phone:String,office_phone:String,relationship:String,user_pic:String) {
+        
+        let studentProfile = NSEntityDescription.insertNewObject(forEntityName: "StudentFatherProfile", into: context!)
+        
+        studentProfile.setValue(id, forKey: "id")
+        studentProfile.setValue(name, forKey: "name")
+        studentProfile.setValue(occupation, forKey: "occupation")
+        studentProfile.setValue(income, forKey: "income")
+        studentProfile.setValue(home_address, forKey: "home_address")
+        studentProfile.setValue(email, forKey: "email")
+        studentProfile.setValue(mobile, forKey: "mobile")
+        studentProfile.setValue(home_phone, forKey: "home_phone")
+        studentProfile.setValue(office_phone, forKey: "office_phone")
+        studentProfile.setValue(relationship, forKey: "relationship")
+        studentProfile.setValue(user_pic, forKey: "user_pic")
+       
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveStudentGuardianProfileData(id:String,name:String,occupation:String,income:String,home_address:String,email:String,mobile:String,home_phone:String,office_phone:String,relationship:String,user_pic:String) {
+        
+        let studentProfile = NSEntityDescription.insertNewObject(forEntityName: "StudentGuardianProfile", into: context!)
+        
+        studentProfile.setValue(id, forKey: "id")
+        studentProfile.setValue(name, forKey: "name")
+        studentProfile.setValue(occupation, forKey: "occupation")
+        studentProfile.setValue(income, forKey: "income")
+        studentProfile.setValue(home_address, forKey: "home_address")
+        studentProfile.setValue(email, forKey: "email")
+        studentProfile.setValue(mobile, forKey: "mobile")
+        studentProfile.setValue(home_phone, forKey: "home_phone")
+        studentProfile.setValue(office_phone, forKey: "office_phone")
+        studentProfile.setValue(relationship, forKey: "relationship")
+        studentProfile.setValue(user_pic, forKey: "user_pic")
+
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+}

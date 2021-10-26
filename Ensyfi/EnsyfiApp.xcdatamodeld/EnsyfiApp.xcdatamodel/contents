@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AcademicMarks" representedClassName="AcademicMarks" syncable="YES" codeGenerationType="class">
         <attribute name="academic_marks" optional="YES" attributeType="String"/>
         <attribute name="externals" optional="YES" attributeType="String"/>
@@ -62,6 +62,21 @@
         <attribute name="subject_name" optional="YES" attributeType="Transformable"/>
         <attribute name="subject_total" optional="YES" attributeType="Transformable"/>
         <attribute name="times" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="ExamMarkEntry" representedClassName="ExamMarkEntry" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="created_by" optional="YES" attributeType="String"/>
+        <attribute name="exam_id" optional="YES" attributeType="String"/>
+        <attribute name="external_grade" optional="YES" attributeType="String"/>
+        <attribute name="internal_mark" optional="YES" attributeType="String"/>
+        <attribute name="stu_id" optional="YES" attributeType="String"/>
+        <attribute name="subject_id" optional="YES" attributeType="String"/>
+        <attribute name="sync_status" optional="YES" attributeType="String"/>
+        <attribute name="teacher_id" optional="YES" attributeType="String"/>
+        <attribute name="total_grade" optional="YES" attributeType="String"/>
+        <attribute name="total_marks" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="String"/>
+        <attribute name="updated_by" optional="YES" attributeType="String"/>
     </entity>
     <entity name="ExamsDatas" representedClassName="ExamsDatas" syncable="YES" codeGenerationType="class">
         <attribute name="class_name" optional="YES" attributeType="Transformable"/>
@@ -133,6 +148,83 @@
         <attribute name="sex" optional="YES" attributeType="Transformable"/>
         <attribute name="status" optional="YES" attributeType="Transformable"/>
     </entity>
+    <entity name="StudentFatherProfile" representedClassName="StudentFatherProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="home_address" optional="YES" attributeType="String"/>
+        <attribute name="home_phone" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="income" optional="YES" attributeType="String"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="occupation" optional="YES" attributeType="String"/>
+        <attribute name="office_phone" optional="YES" attributeType="String"/>
+        <attribute name="relationship" optional="YES" attributeType="String"/>
+        <attribute name="user_pic" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StudentGuardianProfile" representedClassName="StudentGuardianProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="home_address" optional="YES" attributeType="String"/>
+        <attribute name="home_phone" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="income" optional="YES" attributeType="String"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="occupation" optional="YES" attributeType="String"/>
+        <attribute name="office_phone" optional="YES" attributeType="String"/>
+        <attribute name="relationship" optional="YES" attributeType="String"/>
+        <attribute name="user_pic" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StudentMotherProfile" representedClassName="StudentMotherProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="home_address" optional="YES" attributeType="String"/>
+        <attribute name="home_phone" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="income" optional="YES" attributeType="String"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="occupation" optional="YES" attributeType="String"/>
+        <attribute name="office_phone" optional="YES" attributeType="String"/>
+        <attribute name="relationship" optional="YES" attributeType="String"/>
+        <attribute name="user_pic" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StudentProfile" representedClassName="StudentProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="admisn_date" optional="YES" attributeType="String"/>
+        <attribute name="admisn_no" optional="YES" attributeType="String"/>
+        <attribute name="admisn_year" optional="YES" attributeType="String"/>
+        <attribute name="admission_id" optional="YES" attributeType="String"/>
+        <attribute name="age" optional="YES" attributeType="String"/>
+        <attribute name="blood_group" optional="YES" attributeType="String"/>
+        <attribute name="community" optional="YES" attributeType="String"/>
+        <attribute name="community_class" optional="YES" attributeType="String"/>
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="created_by" optional="YES" attributeType="String"/>
+        <attribute name="dob" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="emsi_num" optional="YES" attributeType="String"/>
+        <attribute name="enrollment" optional="YES" attributeType="String"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="last_sch_name" optional="YES" attributeType="String"/>
+        <attribute name="last_studied" optional="YES" attributeType="String"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
+        <attribute name="mother_tongue" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nationality" optional="YES" attributeType="String"/>
+        <attribute name="parents_status" optional="YES" attributeType="String"/>
+        <attribute name="parnt_guardn" optional="YES" attributeType="String"/>
+        <attribute name="parnt_guardn_id" optional="YES" attributeType="String"/>
+        <attribute name="qualified_promotion" optional="YES" attributeType="String"/>
+        <attribute name="record_sheet" optional="YES" attributeType="String"/>
+        <attribute name="religion" optional="YES" attributeType="String"/>
+        <attribute name="sec_email" optional="YES" attributeType="String"/>
+        <attribute name="sec_mobile" optional="YES" attributeType="String"/>
+        <attribute name="sex" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="student_pic" optional="YES" attributeType="String"/>
+        <attribute name="tccopy" optional="YES" attributeType="String"/>
+        <attribute name="transfer_certificate" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="String"/>
+        <attribute name="updated_by" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="TeacherProfile" representedClassName="TeacherProfile" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="age" optional="YES" attributeType="String"/>
@@ -160,11 +252,16 @@
         <element name="ClassAttendances" positionX="-9" positionY="153" width="128" height="14"/>
         <element name="ClassSubjects" positionX="-54" positionY="126" width="128" height="119"/>
         <element name="ExamDetails" positionX="-18" positionY="162" width="128" height="224"/>
+        <element name="ExamMarkEntry" positionX="-9" positionY="153" width="128" height="224"/>
         <element name="ExamsDatas" positionX="-45" positionY="135" width="128" height="164"/>
+        <element name="Homework_class_test" positionX="-9" positionY="153" width="128" height="314"/>
         <element name="HomeWorkDetails" positionX="-36" positionY="135" width="128" height="224"/>
         <element name="Reminders" positionX="-18" positionY="171" width="128" height="179"/>
         <element name="StudentDetails" positionX="-54" positionY="126" width="128" height="164"/>
         <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
-        <element name="Homework_class_test" positionX="-9" positionY="153" width="128" height="314"/>
+        <element name="StudentProfile" positionX="-9" positionY="153" width="128" height="569"/>
+        <element name="StudentMotherProfile" positionX="0" positionY="162" width="128" height="194"/>
+        <element name="StudentFatherProfile" positionX="9" positionY="171" width="128" height="194"/>
+        <element name="StudentGuardianProfile" positionX="18" positionY="180" width="128" height="194"/>
     </elements>
 </model>

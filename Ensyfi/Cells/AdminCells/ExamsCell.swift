@@ -13,9 +13,11 @@ class ExamsCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.dropShadow()
         // Initialization code
     }
 
@@ -24,5 +26,4 @@ class ExamsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
