@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="luM-Jl-bi1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -22,11 +22,11 @@
             <objects>
                 <viewController storyboardIdentifier="AdminDashboard" modalPresentationStyle="fullScreen" id="D7u-yM-fwU" customClass="AdminDashboardVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gF-5o-oFu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsX-Md-9z2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="720"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSh-Nz-HHD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
@@ -664,6 +664,9 @@
                                                         <state key="normal" title="Special Class">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="znT-yV-9Un" kind="show" id="7Sa-w9-1fF"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnd-Jq-pa2">
                                                         <rect key="frame" x="0.0" y="510" width="57" height="30"/>
@@ -962,6 +965,16 @@
             </objects>
             <point key="canvasLocation" x="3751" y="724"/>
         </scene>
+        <!--AdminSpecialClassVC-->
+        <scene sceneID="ivT-Lw-K9w">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminSpecialClass" referencedIdentifier="AdminSpecialClassVC" id="znT-yV-9Un" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fRy-WG-cm4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4q-qS-Y1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3824" y="47"/>
+        </scene>
         <!--boardMembersVC-->
         <scene sceneID="bpa-h0-dCf">
             <objects>
@@ -1023,39 +1036,47 @@
             <point key="canvasLocation" x="3794" y="275"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="0NK-C5-1Jm">
+        <scene sceneID="YC8-7n-ye8">
             <objects>
-                <navigationController storyboardIdentifier="adminNavVc" automaticallyAdjustsScrollViewInsets="NO" id="luM-Jl-bi1" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="adminNavVc" automaticallyAdjustsScrollViewInsets="NO" id="hmB-0N-cuU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UcU-wf-eId">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vJF-9Q-HBi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.39945374020000002" green="0.19603468430000001" blue="0.42394216219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.1960784314" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.1960784314" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="D7u-yM-fwU" kind="relationship" relationship="rootViewController" id="tJj-fE-lP7"/>
+                        <segue destination="D7u-yM-fwU" kind="relationship" relationship="rootViewController" id="Jb0-zo-jq9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KpS-1B-DwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhu-ay-aXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913.04347826086962" y="351.5625"/>
+            <point key="canvasLocation" x="974" y="440"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RiB-kz-Zki"/>
-        <segue reference="Om8-Oe-RPX"/>
-        <segue reference="AMj-lA-6IA"/>
-        <segue reference="fDh-CO-dK1"/>
-        <segue reference="PGR-qi-yJ5"/>
-        <segue reference="Ivw-Cb-0EY"/>
-        <segue reference="gvM-BY-QNx"/>
-        <segue reference="PoF-jv-NTc"/>
+        <segue reference="3GT-qK-jN6"/>
+        <segue reference="4gJ-dw-B8o"/>
+        <segue reference="deQ-QV-COS"/>
+        <segue reference="iKe-6H-52a"/>
+        <segue reference="p1W-pU-VsK"/>
+        <segue reference="n79-cd-bCB"/>
+        <segue reference="ze0-Dp-xun"/>
+        <segue reference="J1i-kC-S7T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Parents" width="100" height="100"/>

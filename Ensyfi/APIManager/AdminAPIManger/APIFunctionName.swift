@@ -63,5 +63,9 @@ struct APIFunctionName {
     static let boardMemListUrl = "/apiadmin/get_all_board_members/"
     
     static let studentExamReslutListUrl = "/apistudent/disp_Exams/"
+    static let adminSpecialClassListUrl = "/apiadmin/get_special_list/"
+
 }
+
+
 

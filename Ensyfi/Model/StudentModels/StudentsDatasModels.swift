@@ -18,7 +18,6 @@ class StudentsRegDetails: Codable {
     var name : String?
     var class_name : String?
     var sec_name : String?
-  
     
     init(json:JSON) {
         

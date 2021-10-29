@@ -11,22 +11,14 @@ class StudentDashBoardVC: UIViewController {
 
     @IBOutlet weak var bgView: UIView!
     
-    let userdata = UserDefaults.standard.getStudentRegDetails()
     var from = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        UINavigationBar.appearance().barTintColor = UIColor.white
+        
         self.bgView.dropShadow()
-        GlobalVariables.shared.registered_id = (userdata?.registered_id)!
-        GlobalVariables.shared.admission_id = (userdata?.admission_id)!
-        GlobalVariables.shared.admission_no = (userdata?.admission_no)!
-        GlobalVariables.shared.class_id = (userdata?.class_id)!
-        GlobalVariables.shared.name = (userdata?.name)!
-        GlobalVariables.shared.class_name = (userdata?.class_name)!
-        GlobalVariables.shared.sec_name = (userdata?.sec_name)!
-
         from = "Student"
         
         let user_loginType = UserDefaults.standard.object(forKey: UserDefaultsKey.user_login_type_Key.rawValue) ?? ""
@@ -35,18 +27,36 @@ class StudentDashBoardVC: UIViewController {
         let user_id = UserDefaults.standard.object(forKey: UserDefaultsKey.user_idkey.rawValue) ?? ""
         let userName = UserDefaults.standard.object(forKey: UserDefaultsKey.namekey.rawValue) ?? ""
         
+        let registered_idKey = UserDefaults.standard.object(forKey: UserDefaultsKey.registered_idKey.rawValue) ?? ""
+        let admission_idKey = UserDefaults.standard.object(forKey: UserDefaultsKey.admission_idKey.rawValue) ?? ""
+        let admission_noKey = UserDefaults.standard.object(forKey: UserDefaultsKey.admission_noKey.rawValue) ?? ""
+        let class_idKey = UserDefaults.standard.object(forKey: UserDefaultsKey.class_idKey.rawValue) ?? ""
+        let regnameKey = UserDefaults.standard.object(forKey: UserDefaultsKey.regnameKey.rawValue) ?? ""
+        let class_nameKey = UserDefaults.standard.object(forKey: UserDefaultsKey.class_nameKey.rawValue) ?? ""
+        let sec_nameKey = UserDefaults.standard.object(forKey: UserDefaultsKey.sec_nameKey.rawValue) ?? ""
+        
         if user_loginType as! String == "" {
             
         }
         else {
             GlobalVariables.shared.user_loginType = user_loginType as! String
             GlobalVariables.shared.Institute_Code = institute_code as! String
-            print(user_loginType)
             GlobalVariables.shared.userName = userName as! String
             GlobalVariables.shared.user_type = userType as! String
             GlobalVariables.shared.user_id = user_id as! String
-            print(GlobalVariables.shared.userName)
-            print(GlobalVariables.shared.user_type)
+            
+            GlobalVariables.shared.registered_id = registered_idKey as! String
+            GlobalVariables.shared.admission_id = admission_idKey as! String
+            GlobalVariables.shared.admission_no = admission_noKey as! String
+            GlobalVariables.shared.class_id = class_idKey as! String
+            GlobalVariables.shared.regName = regnameKey as! String
+            GlobalVariables.shared.class_name = class_nameKey as! String
+            GlobalVariables.shared.sec_name = sec_nameKey as! String
+            
+            print(GlobalVariables.shared.regName)
+            print(GlobalVariables.shared.registered_id)
+            print(GlobalVariables.shared.admission_no)
+            print(GlobalVariables.shared.sec_name)
         }
     }
     
@@ -64,3 +74,5 @@ class StudentDashBoardVC: UIViewController {
         }
     }
 }
+//studentsDashboardVC
+//to_DashBoard

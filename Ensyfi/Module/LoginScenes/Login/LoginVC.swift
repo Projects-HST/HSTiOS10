@@ -89,6 +89,9 @@ extension LoginVC {
     
     func successFetchedItems(viewModel: LoginModel.Fetch.ViewModel) {
         
+//        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:viewModel.msg!, complition: {
+//        })
+//        
         MBProgressHUD.hide(for: self.view, animated: true)
         self.institute_code = viewModel.institute_code!
         UserDefaults.standard.set(institute_code, forKey: UserDefaultsKey.institude_Code_Key.rawValue)

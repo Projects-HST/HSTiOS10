@@ -19,6 +19,7 @@ class TeachersClassTestDetails: UIViewController {
     var selectedTitle = String()
     var selectedDate = String()
     var selectedDescription = String()
+    var selectedClassId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,5 +29,21 @@ class TeachersClassTestDetails: UIViewController {
         self.topicLbl.text = self.selectedTopic
         self.testDate.text = self.selectedDate
         self.descriptionLbl.text = self.selectedDescription
+    }
+    
+    @IBAction func AddClassTestMark(_ sender: Any) {
+        self.performSegue(withIdentifier: "to_viewCTestMarks", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "to_viewCTestMarks")
+        {
+        let vc = segue.destination as! UpdateClassTestListVC
+//            vc.selectedClassId = self.selectedClassId
+//            vc.selectedTitle = self.selectedTitle
+//            vc.selectedDate = self.selectedDate
+//            vc.selectedDescription = self.selectedDescription
+        }
     }
 }

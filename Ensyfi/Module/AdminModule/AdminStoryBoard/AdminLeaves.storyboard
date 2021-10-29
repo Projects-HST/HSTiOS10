@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Leave Application-->
+        <!--Leave Applications-->
         <scene sceneID="AFf-RB-dBm">
             <objects>
                 <viewController storyboardIdentifier="leavesListVc" id="x9h-RC-GH5" customClass="LeaveApplicationListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +27,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="3gk-dM-XRo" customClass="LeavesListCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="105"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gk-dM-XRo" id="iYY-VH-1SL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
@@ -139,6 +140,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bgView" destination="nds-aM-cTW" id="qFw-ul-SbS"/>
                                             <outlet property="date" destination="mZf-UM-BKO" id="6P9-Rc-rPH"/>
                                             <outlet property="status" destination="yET-Ho-Ypk" id="YWH-mr-IRU"/>
                                             <outlet property="statusImg" destination="knQ-vX-PR3" id="VaB-Dm-1aH"/>
@@ -162,8 +164,8 @@
                             <constraint firstItem="gBH-0n-hF4" firstAttribute="top" secondItem="3OX-32-8eP" secondAttribute="top" id="xIM-9b-Eut"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Leave Application" id="7Hz-1p-v60">
-                        <barButtonItem key="backBarButtonItem" title=" " id="zlP-wy-QUU"/>
+                    <navigationItem key="navigationItem" title="Leave Applications" id="G4G-Oe-pgU">
+                        <barButtonItem key="backBarButtonItem" title="  " id="tYx-d1-VXU"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="gBH-0n-hF4" id="giK-fJ-EST"/>
@@ -174,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="-230.43478260869566" y="56.919642857142854"/>
         </scene>
-        <!--Leave Approval-->
+        <!--Leave Request-->
         <scene sceneID="Rit-BK-0Yw">
             <objects>
                 <viewController id="eGO-WD-GMW" customClass="LeaveApprovalVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -407,8 +409,8 @@
                             <constraint firstItem="JGc-3y-FR8" firstAttribute="centerX" secondItem="zV1-Ac-kdO" secondAttribute="centerX" id="vS3-iJ-Kmg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Leave Approval" id="uZl-wH-vAB">
-                        <barButtonItem key="backBarButtonItem" title=" " id="5OQ-et-0dF"/>
+                    <navigationItem key="navigationItem" title="Leave Request" id="uZl-wH-vAB">
+                        <barButtonItem key="backBarButtonItem" title="  " id="5OQ-et-0dF"/>
                     </navigationItem>
                     <connections>
                         <outlet property="date" destination="9k4-DB-TL2" id="fEG-sB-xa5"/>

@@ -125,3 +125,67 @@ extension InstituteLoginVC {
 //        print(err.debugDescription)
 //    }
 //}
+
+
+
+
+//                        if json["parentProfile"]["motherProfile"].count > 0 {
+//
+//                            for i in 0..<json["parentProfile"]["motherProfile"].count {
+//                                let studentprofile = StudentsMotherDetails.init(json: json["parentProfile"]["motherProfile"][i])
+//                                let id  = ["parentProfile"]["motherProfile"][""].stringValue
+//                                let name = studentprofile.name
+//                                let occupation = studentprofile.occupation
+//                                let income = studentprofile.income
+//                                let home_address = studentprofile.home_address
+//                                let email = studentprofile.email
+//                                let mobile = studentprofile.mobile
+//                                let home_phone = studentprofile.home_phone
+//                                let office_phone = studentprofile.office_phone
+//                                let relationship = studentprofile.relationship
+//                                let user_pic = studentprofile.user_pic
+//
+//                                saveStudentMotherProfileData(id:id!,name:name!,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
+//
+//                             }
+//                        }
+//                        if json["parentProfile"]["fatherProfile"].count > 0 {
+//
+//                            for i in 0..<json["parentProfile"]["fatherProfile"].count {
+//                                let studentprofile = StudentsFatherDetails.init(json: json["parentProfile"]["fatherProfile"][i])
+//                                let id = studentprofile.id
+//                                let name = studentprofile.name
+//                                let occupation = studentprofile.occupation
+//                                let income = studentprofile.income
+//                                let home_address = studentprofile.home_address
+//                                let email = studentprofile.email
+//                                let mobile = studentprofile.mobile
+//                                let home_phone = studentprofile.home_phone
+//                                let office_phone = studentprofile.office_phone
+//                                let relationship = studentprofile.relationship
+//                                let user_pic = studentprofile.user_pic
+//
+//                                saveStudentFatherProfileData(id:id!,name:name! ,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
+//
+//                             }
+//                        }
+//                        if json["parentProfile"]["guardianProfile"].count > 0 {
+//
+//                            for i in 0..<json["parentProfile"]["guardianProfile"].count {
+//                                let studentprofile = StudentsGuardianDetails.init(json: json["parentProfile"]["guardianProfile"][i])
+//                                let id = studentprofile.id
+//                                let name = studentprofile.name
+//                                let occupation = studentprofile.occupation
+//                                let income = studentprofile.income
+//                                let home_address = studentprofile.home_address
+//                                let email = studentprofile.email
+//                                let mobile = studentprofile.mobile
+//                                let home_phone = studentprofile.home_phone
+//                                let office_phone = studentprofile.office_phone
+//                                let relationship = studentprofile.relationship
+//                                let user_pic = studentprofile.user_pic
+//
+//                                saveStudentGuardianProfileData(id:id!,name:name! ,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
+//
+//                             }
+//                        }

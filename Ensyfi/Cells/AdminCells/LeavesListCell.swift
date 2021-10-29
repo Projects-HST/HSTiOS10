@@ -14,11 +14,12 @@ class LeavesListCell: UITableViewCell {
     @IBOutlet weak var statusImg: UIImageView!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var statusView: UIView!
-    
+    @IBOutlet weak var bgView: UIView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.dropShadow()
         // Initialization code
     }
 

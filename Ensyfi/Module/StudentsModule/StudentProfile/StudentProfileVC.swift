@@ -36,9 +36,9 @@ class StudentProfileVC: UIViewController {
         self.view4.dropShadow()
         self.bgView.dropShadow()
         
-        self.name.text =  GlobalVariables.shared.name
+        self.name.text =  GlobalVariables.shared.regName
         self.type.text =  "Students"
-        self.userName.text =  GlobalVariables.shared.name
+        self.userName.text =  GlobalVariables.shared.regName
         
     }
     

@@ -132,7 +132,7 @@ extension ExamMarkEntryVC : UITableViewDelegate,UITableViewDataSource {
         self.enteredMarkText.removeAll()
         CollectionOfCell.forEach { cell in
         self.enteredMarkText.append(cell.markField.text!)
-        }
+    }
         
         let sequence = zip(enteredMarkText, filteredStudentID)
         

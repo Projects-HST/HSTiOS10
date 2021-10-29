@@ -10,6 +10,8 @@ import CoreData
 
 class TeachersDashBoardVC: UIViewController {
 
+    @IBOutlet weak var bgView : UIView!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
     
@@ -43,7 +45,7 @@ class TeachersDashBoardVC: UIViewController {
             GlobalVariables.shared.user_type = userType as! String
             GlobalVariables.shared.user_id = user_id as! String
             print(GlobalVariables.shared.userName)
-            print(GlobalVariables.shared.user_type)
+            print(GlobalVariables.shared.user_id)
         }
     }
 }

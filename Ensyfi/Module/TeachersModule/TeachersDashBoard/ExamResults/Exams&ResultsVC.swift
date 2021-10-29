@@ -18,7 +18,6 @@ protocol TeachersExamsListDisplayLogic: AnyObject
 
 class Exams_ResultsVC: UIViewController, TeachersExamsListDisplayLogic {
     
-
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var subTextField: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
@@ -71,7 +70,6 @@ class Exams_ResultsVC: UIViewController, TeachersExamsListDisplayLogic {
     var selectedExamId = String()
     var selectedStatus = String()
     var selectedTodate = String()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

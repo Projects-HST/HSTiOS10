@@ -61,6 +61,8 @@ class AssignHW_TestsVC: UIViewController {
         self.fetchSubjectData()
         self.fetchHWData()
         self.setDate()
+        self.hideKeyboardWhenTappedAround()
+//        jqvjkhwgljqwgcljeglk jshci posdiosid s;csbcliuwhe;onf.m cljehj]eq
     }
     
     @IBAction func selectClass(_ sender: Any) {
@@ -90,6 +92,7 @@ class AssignHW_TestsVC: UIViewController {
         self.dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
           print("Selected item: \(item) at index: \(index)")
             self.subjectTextField.text = item
+            self.titleLbl.text = item
             self.selectedSubName = self.selectedSubjectName[index]
             self.selectedSubId = self.selectedSubjectName[index]
         }

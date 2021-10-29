@@ -71,7 +71,6 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var classmaster_idDetailsArr = [String]()
     var class_nameDetailsArr = [String]()
     var sec_nameDetailsArr = [String]()
-
     
     //    HWDetails
     var hw_idArr = [String]()
@@ -101,6 +100,15 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var updated_atArr = [String]()
     
     var academicMonthArr = [String]()
+//    StudentRegDetailsArr
+    
+    var registered_idRegArr = [String]()
+    var admission_idRegArr = [String]()
+    var admission_noRegArr = [String]()
+    var class_idRegArr = [String]()
+    var nameRegArr = [String]()
+    var class_nameRegArr = [String]()
+    var sec_nameRegArr = [String]()
    
     var teachersDataArr = [TeachersDataList]()
     var teachersClassSubjectArr = [ClassSubjectData]()
@@ -218,15 +226,22 @@ extension InstituteLoginVC {
         self.name = viewModel.name!
         UserDefaults.standard.set(name, forKey: UserDefaultsKey.namekey.rawValue)
         GlobalVariables.shared.userName = name
-
+       
+        _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(InstituteLoginVC.callFuncToNav), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func callFuncToNav()
+    {
+        MBProgressHUD.hide(for: self.view, animated: true)
         if login_type == "Admin" {
-        self.performSegue(withIdentifier: "to_AdminDashboard", sender: self)
+           self.performSegue(withIdentifier: "to_AdminDashboard", sender: self)
         }
-        else if login_type == "Students" {
-        self.performSegue(withIdentifier: "to_studentsDashboard", sender: self)
+        else if login_type == "Students" || login_type == "Parents"  {
+           self.performSegue(withIdentifier: "to_studentsDashboard", sender: self)
         }
         else if login_type == "Teachers" {
-        self.performSegue(withIdentifier: "to_TeachersDashBoard", sender: self)
+           self.performSegue(withIdentifier: "to_TeachersDashBoard", sender: self)
         }
     }
 
@@ -265,7 +280,6 @@ extension InstituteLoginVC {
                    {
                     try AFWrapper.requestPOSTURL(APIURL.base_URL + APIFunctionName.instituteLoginUrl, params: parameters, headers: nil, success: { [self]
                            (JSONResponse) -> Void in
-                           MBProgressHUD.hide(for: self.view, animated: true)
                            print(JSONResponse)
                            let json = JSON(JSONResponse)
                                                 
@@ -555,16 +569,40 @@ extension InstituteLoginVC {
                             }
                             saveRemindersDatasData(id:reminderIddArr,user_id:reminderUser_idArr,to_do_date:to_do_dateArr,to_do_title:to_do_titleeArr,to_do_description:to_do_descriptionArr,status:remindersStatusArr,created_by:created_byArr,created_at:created_atArr,updated_by:updated_byArr,updated_at:updated_atArr)
 //
-                            }
+                        }
                         
                         if json["registeredDetails"].count > 0 {
                             
                             for i in 0..<json["registeredDetails"].count {
                                 let studentDetail = StudentsRegDetails.init(json: json["registeredDetails"][i])
                                 self.studentsRegDetailsArr.append(studentDetail)
-                                UserDefaults.standard.saveStudentRegDetails(StudentRegDetails: studentDetail)
+//                                UserDefaults.standard.saveStudentRegDetails(StudentRegDetails: studentDetail)
+                                
+                                let registered_id = studentDetail.registered_id
+                                self.registered_idRegArr.append(registered_id!)
+                                
+                                let admission_id = studentDetail.admission_id
+                                self.admission_idRegArr.append(admission_id!)
+                                
+                                let admission_no = studentDetail.admission_no
+                                self.admission_noRegArr.append(admission_no!)
+                                
+                                let class_id = studentDetail.class_id
+                                self.class_idRegArr.append(class_id!)
+                                
+                                let name = studentDetail.name
+                                self.nameRegArr.append(name!)
+                                
+                                let class_name = studentDetail.class_name
+                                self.class_nameRegArr.append(class_name!)
+                                
+                                let sec_name = studentDetail.sec_name
+                                self.sec_nameRegArr.append(sec_name!)
+                    
                              }
+                            saveStudentRegDetails(registered_id:registered_idRegArr,admission_id:admission_idRegArr,admission_no:admission_noRegArr,class_id:class_idRegArr,name:nameRegArr,class_name:class_nameRegArr,sec_name:sec_nameRegArr)
                         }
+//
                   
                         if json["studentProfile"].count > 0 {
                             
@@ -613,66 +651,6 @@ extension InstituteLoginVC {
                              }
                         }
                         
-//                        if json["parentProfile"]["motherProfile"].count > 0 {
-//                            
-//                            for i in 0..<json["parentProfile"]["motherProfile"].count {
-//                                let studentprofile = StudentsMotherDetails.init(json: json["parentProfile"]["motherProfile"][i])
-//                                let id  = ["parentProfile"]["motherProfile"][""].stringValue
-//                                let name = studentprofile.name
-//                                let occupation = studentprofile.occupation
-//                                let income = studentprofile.income
-//                                let home_address = studentprofile.home_address
-//                                let email = studentprofile.email
-//                                let mobile = studentprofile.mobile
-//                                let home_phone = studentprofile.home_phone
-//                                let office_phone = studentprofile.office_phone
-//                                let relationship = studentprofile.relationship
-//                                let user_pic = studentprofile.user_pic
-//
-//                                saveStudentMotherProfileData(id:id!,name:name!,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
-//
-//                             }
-//                        }
-//                        if json["parentProfile"]["fatherProfile"].count > 0 {
-//
-//                            for i in 0..<json["parentProfile"]["fatherProfile"].count {
-//                                let studentprofile = StudentsFatherDetails.init(json: json["parentProfile"]["fatherProfile"][i])
-//                                let id = studentprofile.id
-//                                let name = studentprofile.name
-//                                let occupation = studentprofile.occupation
-//                                let income = studentprofile.income
-//                                let home_address = studentprofile.home_address
-//                                let email = studentprofile.email
-//                                let mobile = studentprofile.mobile
-//                                let home_phone = studentprofile.home_phone
-//                                let office_phone = studentprofile.office_phone
-//                                let relationship = studentprofile.relationship
-//                                let user_pic = studentprofile.user_pic
-//
-//                                saveStudentFatherProfileData(id:id!,name:name! ,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
-//
-//                             }
-//                        }
-//                        if json["parentProfile"]["guardianProfile"].count > 0 {
-//
-//                            for i in 0..<json["parentProfile"]["guardianProfile"].count {
-//                                let studentprofile = StudentsGuardianDetails.init(json: json["parentProfile"]["guardianProfile"][i])
-//                                let id = studentprofile.id
-//                                let name = studentprofile.name
-//                                let occupation = studentprofile.occupation
-//                                let income = studentprofile.income
-//                                let home_address = studentprofile.home_address
-//                                let email = studentprofile.email
-//                                let mobile = studentprofile.mobile
-//                                let home_phone = studentprofile.home_phone
-//                                let office_phone = studentprofile.office_phone
-//                                let relationship = studentprofile.relationship
-//                                let user_pic = studentprofile.user_pic
-//
-//                                saveStudentGuardianProfileData(id:id!,name:name! ,occupation:occupation!,income:income!,home_address:home_address!,email:email!,mobile:mobile!,home_phone:home_phone!,office_phone:office_phone!,relationship:relationship!,user_pic:user_pic!)
-//
-//                             }
-//                        }
                        }) {
                            (error) -> Void in
                            print(error)
@@ -1008,6 +986,28 @@ extension InstituteLoginVC {
         studentProfile.setValue(relationship, forKey: "relationship")
         studentProfile.setValue(user_pic, forKey: "user_pic")
 
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveStudentRegDetails(registered_id:[String],admission_id:[String],admission_no:[String],class_id:[String],name:[String],class_name:[String],sec_name:[String]){
+        
+        let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "StudentRegDatas", into: context!)
+        
+        teacherProfile.setValue(registered_idRegArr, forKey: "registered_id")
+        teacherProfile.setValue(admission_idRegArr, forKey: "admission_id")
+        teacherProfile.setValue(admission_noRegArr, forKey: "admission_no")
+        teacherProfile.setValue(class_idRegArr, forKey: "class_id")
+        teacherProfile.setValue(nameRegArr, forKey: "name")
+        teacherProfile.setValue(class_nameRegArr, forKey: "class_name")
+        teacherProfile.setValue(sec_nameRegArr, forKey: "sec_name")
+   
+        print("KKK \(nameRegArr)")
         do {
             try context?.save()
                 print(" suucess")

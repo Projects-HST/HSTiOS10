@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
         }
-        else if user_loginType as! String == "Students"
+        else if user_loginType as! String == "Students" || user_loginType as! String == "Parents"
         {
             let storyboard = UIStoryboard.init(name: "StudentsDashBoard", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "studentsDashboardVC") as! UINavigationController

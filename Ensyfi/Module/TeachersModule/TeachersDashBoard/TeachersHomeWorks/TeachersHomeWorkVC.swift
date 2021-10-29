@@ -54,6 +54,7 @@ class TeachersHomeWorkVC: UIViewController {
     var filteredDetails = [String]()
     var filteredType = [String]()
     var filteredHwID = [String]()
+    var filteredMarkStatus = [String]()
     
     var selectedTopic = String()
     var selectedTitle = String()
@@ -115,6 +116,7 @@ class TeachersHomeWorkVC: UIViewController {
                 self.filteredDetails = resultIndex.map { hw_details[$0] }
                 self.filteredType = resultIndex.map { hw_type[$0] }
                 self.filteredHwID = resultIndex.map { hw_id[$0] }
+                self.filteredMarkStatus = resultIndex.map { mark_status[$0] }
                 self.tableView.reloadData()
           }
     }
@@ -214,7 +216,13 @@ extension TeachersHomeWorkVC: UITableViewDelegate,UITableViewDataSource {
             self.selectedTitle = filteredSubject[indexPath.row]
             self.selectedDate = filteredDate[indexPath.row]
             self.selectedDescription = filteredDetails[indexPath.row]
-            self.performSegue(withIdentifier: "to_ClassTestDetails", sender: self)
+            
+            if filteredMarkStatus[indexPath.row] == "0"{
+                self.performSegue(withIdentifier: "to_ClassTestDetails", sender: self)
+            }
+            else {
+                self.performSegue(withIdentifier: "to_updateMarkDetails", sender: self)
+            }
         }
     }
 
@@ -228,14 +236,25 @@ extension TeachersHomeWorkVC: UITableViewDelegate,UITableViewDataSource {
             vc.selectedDate = self.selectedDate
             vc.selectedDescription = self.selectedDescription
         }
-        if (segue.identifier == "to_ClassTestDetails")
+        else if (segue.identifier == "to_ClassTestDetails")
         {
         let vc = segue.destination as! TeachersClassTestDetails
             vc.selectedTopic = self.selectedTopic
             vc.selectedTitle = self.selectedTitle
             vc.selectedDate = self.selectedDate
             vc.selectedDescription = self.selectedDescription
+            vc.selectedClassId = self.selectedClassId
+        }
+        else if (segue.identifier == "to_updateMarkDetails")
+        {
+        let vc = segue.destination as! UpdateCTestDetailsVC
+            vc.selectedTopic = self.selectedTopic
+            vc.selectedTitle = self.selectedTitle
+            vc.selectedDate = self.selectedDate
+            vc.selectedDescription = self.selectedDescription
+            vc.selectedClassId = self.selectedClassId
         }
     }
 }
 //to_ClassTestDetails
+//UpdateCTestDetailsVC

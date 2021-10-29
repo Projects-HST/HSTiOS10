@@ -65,7 +65,7 @@ class StudentsMenu: UIViewController {
         GlobalVariables.shared.admission_id = ""
         GlobalVariables.shared.admission_no = ""
         GlobalVariables.shared.class_id = ""
-        GlobalVariables.shared.name = ""
+        GlobalVariables.shared.regName = ""
         GlobalVariables.shared.class_name = ""
         GlobalVariables.shared.sec_name = ""
         GlobalVariables.shared.NAME = ""

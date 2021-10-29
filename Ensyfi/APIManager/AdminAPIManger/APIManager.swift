@@ -1715,4 +1715,42 @@ class APIManager: NSObject {
       )
    }
     
+    func callAPISpecialClassList(user_id:String,onSuccess successCallback: ((_ resp: [SpecialClassListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.adminSpecialClassListUrl
+         // Set Parameters
+        let parameters: Parameters = ["user_id": user_id]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+            
+          if let responseDict = responseObject["special_details"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [SpecialClassListModels]()
+                  for item in toModel {
+                      let single = SpecialClassListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
 }
+
