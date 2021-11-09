@@ -26,8 +26,8 @@ class TeachersDashBoardVC: UIViewController {
         
 //        navigationController?.view.backgroundColor = .green
         // Do any additional setup after loading the view.
-        context = appDelegate.persistentContainer.viewContext
-        
+        self.context = appDelegate.persistentContainer.viewContext
+        self.bgView.dropShadow()
         let user_loginType = UserDefaults.standard.object(forKey: UserDefaultsKey.user_login_type_Key.rawValue) ?? ""
         let institute_code = UserDefaults.standard.object(forKey: UserDefaultsKey.institude_Code_Key.rawValue) ?? ""
         let userType = UserDefaults.standard.object(forKey: UserDefaultsKey.userTypeKey.rawValue) ?? ""
@@ -46,6 +46,8 @@ class TeachersDashBoardVC: UIViewController {
             GlobalVariables.shared.user_id = user_id as! String
             print(GlobalVariables.shared.userName)
             print(GlobalVariables.shared.user_id)
+            print(GlobalVariables.shared.user_type)
         }
     }
 }
+//{"status":"success","msg":"View Groups","groupDetails":[{"id":"8","group_title":"Culturals"}]}

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -70,7 +71,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="LMg-dr-PDZ" customClass="TeacherListCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LMg-dr-PDZ" id="y6Z-fh-uie">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
@@ -566,7 +567,7 @@
                                                     <constraint firstItem="yZf-Ls-LUo" firstAttribute="top" secondItem="hj6-Tz-anl" secondAttribute="top" constant="24" id="xI5-Gi-Esn"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
@@ -618,6 +619,7 @@
                         <outlet property="address" destination="Ffj-YK-CWb" id="XBl-f3-BF6"/>
                         <outlet property="age" destination="l9f-pH-Ezc" id="kmG-kg-PGq"/>
                         <outlet property="alternateEmailId" destination="SDr-zV-BfX" id="yne-0M-Fe3"/>
+                        <outlet property="bgView" destination="hj6-Tz-anl" id="LgB-3U-irj"/>
                         <outlet property="claasTeacherFor" destination="0As-gR-D3o" id="FbI-bE-VuP"/>
                         <outlet property="commmunityCLass" destination="mxC-zl-LeQ" id="B2a-D9-s6b"/>
                         <outlet property="community" destination="j8j-TE-ldQ" id="kSC-rf-qvb"/>

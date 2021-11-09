@@ -16,14 +16,16 @@ class AttendanceVC: UIViewController,UIPopoverPresentationControllerDelegate, Cl
     var selectedClassID = String()
     
     @IBOutlet weak var dateTextfield: UITextField!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var classTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        classTextfield.delegate = self
-        showDatePicker()
+        self.classTextfield.delegate = self
+        self.showDatePicker()
+        self.bgView.dropShadow()
     }
     
     @IBAction func selectClassAction(_ sender: Any) {

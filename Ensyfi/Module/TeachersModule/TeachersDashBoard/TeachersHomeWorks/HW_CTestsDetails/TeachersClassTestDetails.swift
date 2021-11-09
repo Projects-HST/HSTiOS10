@@ -32,14 +32,14 @@ class TeachersClassTestDetails: UIViewController {
     }
     
     @IBAction func AddClassTestMark(_ sender: Any) {
-        self.performSegue(withIdentifier: "to_viewCTestMarks", sender: self)
+        self.performSegue(withIdentifier: "to_AddClasstestMark", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if (segue.identifier == "to_viewCTestMarks")
+        if (segue.identifier == "to_AddClasstestMark")
         {
-        let vc = segue.destination as! UpdateClassTestListVC
+        let vc = segue.destination as! AddClassTestMarkVC
 //            vc.selectedClassId = self.selectedClassId
 //            vc.selectedTitle = self.selectedTitle
 //            vc.selectedDate = self.selectedDate

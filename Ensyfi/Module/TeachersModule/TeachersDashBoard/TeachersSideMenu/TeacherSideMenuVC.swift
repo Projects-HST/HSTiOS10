@@ -15,13 +15,18 @@ class TeacherSideMenuVC: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
-    
+    var from = String()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.name.text = "Hi \(GlobalVariables.shared.userName)"
         context = appDelegate.persistentContainer.viewContext
+        self.from = "Teachers"
+    }
+    
+    @IBAction func specialClassAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "techaerSpecialClass", sender: self)
     }
     
     @IBAction func signOutAction(_ sender: Any) {
@@ -47,6 +52,7 @@ class TeacherSideMenuVC: UIViewController {
             deleteAllData(entity:"TeacherProfile")
             deleteAllData(entity:"ClassAttendances")
             deleteAllData(entity:"ClassAttendanceHistory")
+            deleteAllData(entity:"TimeTables")
             
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
@@ -87,5 +93,15 @@ class TeacherSideMenuVC: UIViewController {
         do { try context!.execute(DelAllReqVar) }
         catch { print(error) }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "techaerSpecialClass")
+        {
+        let vc = segue.destination as! AdminSpecialClassVC
+         vc.from = self.from
+       }
+    }
 }
+
 

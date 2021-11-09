@@ -148,9 +148,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vcB-rL-yA5">
@@ -253,7 +253,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="5fn-3t-FzW" secondAttribute="trailing" id="xeu-8h-7Du"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
@@ -268,6 +268,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bgView" destination="Fbr-yx-hx7" id="whL-3P-s3h"/>
                                             <outlet property="date" destination="zK4-n5-1DC" id="JRJ-As-sJO"/>
                                             <outlet property="status" destination="G4J-5W-MJa" id="4XU-HI-IkG"/>
                                             <outlet property="statusImage" destination="Vgo-Aq-2ws" id="4zg-d5-6JA"/>
@@ -298,6 +299,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="fZu-aU-d9J"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bgView" destination="byY-ji-Ezu" id="gOs-4O-rOv"/>
                         <outlet property="classBtnOutlet" destination="eU7-rE-wTd" id="gtQ-kz-gE2"/>
                         <outlet property="classTextfield" destination="fm6-rW-o1v" id="Tbd-ud-4aN"/>
                         <outlet property="sectionBtnOutlet" destination="7Tg-PF-el1" id="r5B-jL-rBj"/>

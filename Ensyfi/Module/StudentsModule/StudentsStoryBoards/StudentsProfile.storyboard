@@ -20,7 +20,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Student ProfileVC-->
+        <!--Profile-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="StudentProfileVC" id="Y6W-OH-hqX" customClass="StudentProfileVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -406,6 +406,9 @@
                             <constraint firstItem="wtR-Zc-w7I" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="LYz-ot-S7A"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile" id="pmr-ja-lCz">
+                        <barButtonItem key="backBarButtonItem" title="  " id="4BN-eh-5ba"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bgView" destination="wtR-Zc-w7I" id="NDT-x9-skl"/>
                         <outlet property="name" destination="mY8-lV-dQJ" id="31n-fX-oPc"/>
@@ -422,16 +425,16 @@
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="93.75"/>
         </scene>
-        <!--Student Profile DetailsVC-->
+        <!-- Student Details-->
         <scene sceneID="Pre-hJ-CaP">
             <objects>
                 <viewController id="QXx-yr-Dtn" customClass="StudentProfileDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVn-L2-5UX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1092"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlV-Bj-GXL">
-                                <rect key="frame" x="0.0" y="184" width="414" height="945"/>
+                                <rect key="frame" x="0.0" y="224" width="414" height="851"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0l-fy-omh">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1153"/>
@@ -1071,7 +1074,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="5C9-v1-zmZ">
-                                <rect key="frame" x="152" y="20" width="110" height="110"/>
+                                <rect key="frame" x="152" y="60" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="5nd-Qm-0Eg"/>
                                     <constraint firstAttribute="height" constant="110" id="URh-Q0-FC0"/>
@@ -1086,11 +1089,13 @@
                             <constraint firstItem="vlV-Bj-GXL" firstAttribute="leading" secondItem="OVn-L2-5UX" secondAttribute="leading" id="T0k-WX-Pcw"/>
                             <constraint firstItem="5C9-v1-zmZ" firstAttribute="centerX" secondItem="OVn-L2-5UX" secondAttribute="centerX" id="axx-ao-jG4"/>
                             <constraint firstItem="f7U-SG-GLh" firstAttribute="trailing" secondItem="vlV-Bj-GXL" secondAttribute="trailing" id="fo4-eo-tMk"/>
-                            <constraint firstItem="5C9-v1-zmZ" firstAttribute="top" secondItem="OVn-L2-5UX" secondAttribute="top" constant="20" id="klZ-RL-zhL"/>
+                            <constraint firstItem="5C9-v1-zmZ" firstAttribute="top" secondItem="OVn-L2-5UX" secondAttribute="top" constant="60" id="klZ-RL-zhL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UTw-4N-4fP"/>
-                    <size key="freeformSize" width="414" height="1200"/>
+                    <navigationItem key="navigationItem" title=" Student Details" id="UTw-4N-4fP">
+                        <barButtonItem key="backBarButtonItem" title="  " id="a9O-Df-Hhm"/>
+                    </navigationItem>
+                    <size key="freeformSize" width="414" height="1146"/>
                     <connections>
                         <outlet property="EmsiNo" destination="l5f-nx-BUk" id="Kwd-Wk-OpU"/>
                         <outlet property="admissionDate" destination="N67-5J-dOn" id="YeL-C6-Br5"/>
@@ -1126,7 +1131,7 @@
             </objects>
             <point key="canvasLocation" x="666.66666666666674" y="96.428571428571431"/>
         </scene>
-        <!--Parent Profile DetailsVC-->
+        <!--Parent Profile-->
         <scene sceneID="4pD-T8-ULs">
             <objects>
                 <viewController id="aY3-9b-rTt" customClass="ParentProfileDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1462,7 +1467,9 @@
                             <constraint firstAttribute="trailing" secondItem="1h7-Hv-IaL" secondAttribute="trailing" id="m6D-Q9-Afl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MXF-j7-FEX"/>
+                    <navigationItem key="navigationItem" title="Parent Profile" id="MXF-j7-FEX">
+                        <barButtonItem key="backBarButtonItem" title=" " id="MKQ-Dn-aUm"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addres" destination="HQC-SW-Fbt" id="TKw-06-UOl"/>
                         <outlet property="bgView" destination="Tp8-cJ-qyW" id="WPU-7J-3C2"/>
@@ -1481,7 +1488,7 @@
             </objects>
             <point key="canvasLocation" x="1394.2028985507247" y="93.75"/>
         </scene>
-        <!--Guardian Profile DetailsVC-->
+        <!--Guardian Profile-->
         <scene sceneID="9vV-en-IO1">
             <objects>
                 <viewController id="QLf-wm-bO1" customClass="GuardianProfileDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1769,7 +1776,9 @@
                             <constraint firstItem="JsA-Ec-nVN" firstAttribute="bottom" secondItem="fp2-bK-Ttx" secondAttribute="bottom" id="aIs-Fa-mtS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="I0i-ey-rZ0"/>
+                    <navigationItem key="navigationItem" title="Guardian Profile" id="I0i-ey-rZ0">
+                        <barButtonItem key="backBarButtonItem" title="  " id="HaH-W8-1iD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addres" destination="sgz-GH-3Oc" id="H4K-3u-Hf0"/>
                         <outlet property="bgView" destination="84W-73-MIg" id="I3F-G4-HqX"/>

@@ -109,6 +109,21 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var nameRegArr = [String]()
     var class_nameRegArr = [String]()
     var sec_nameRegArr = [String]()
+    
+    var table_idTTableArr = [String]()
+    var class_idTTableArr = [String]()
+    var class_nameTTableArr = [String]()
+    var sec_nameTTableArr = [String]()
+    var subject_idTTableArr = [String]()
+    var day_idTTableArr = [String]()
+    var periodTTableArr = [String]()
+    var nameTTableArr = [String]()
+    var subject_nameTTableArr = [String]()
+    var from_timeTTableArr = [String]()
+    var to_timeTTableArr = [String]()
+    var break_nameTTableArr = [String]()
+    var is_breakTTableArr = [String]()
+    
    
     var teachersDataArr = [TeachersDataList]()
     var teachersClassSubjectArr = [ClassSubjectData]()
@@ -120,6 +135,8 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var studentsRegDetailsArr = [StudentsRegDetails]()
     var acadaamicMonthDataArr = [AdcademicMonthData]()
     var studentProfileDataArr = [StudentsProfileDetas]()
+    var timeTableDataArr = [TimeTableDatas]()
+    var timeTableDaysDataArr = [TimeTableDaysDatas]()
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -131,7 +148,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
         // Do any additional setup after loading the view.
         self.setupView ()
         self.hideKeyboardWhenTappedAround()
-        context = appDelegate.persistentContainer.viewContext
+        self.context = appDelegate.persistentContainer.viewContext
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -227,7 +244,7 @@ extension InstituteLoginVC {
         UserDefaults.standard.set(name, forKey: UserDefaultsKey.namekey.rawValue)
         GlobalVariables.shared.userName = name
        
-        _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(InstituteLoginVC.callFuncToNav), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(InstituteLoginVC.callFuncToNav), userInfo: nil, repeats: false)
         
     }
     
@@ -650,7 +667,44 @@ extension InstituteLoginVC {
                                                         
                              }
                         }
+                       
+                        if json["timeTable"]["data"].count > 0 {
+                            
+                            for i in 0..<json["timeTable"]["data"].count {
+                                let remainderList = TimeTableDatas.init(json: json["timeTable"]["data"][i])
+                                self.timeTableDataArr.append(remainderList)
+                                
+                                let table_id = remainderList.table_id
+                                let class_id = remainderList.class_id
+                                let class_name = remainderList.class_name
+                                let sec_name = remainderList.sec_name
+                                let subject_id = remainderList.subject_id
+                                let day_id = remainderList.day_id
+                                let period = remainderList.period
+                                let name = remainderList.name
+                                let subject_name = remainderList.subject_name
+                                let from_time = remainderList.from_time
+                                let to_time = remainderList.to_time
+                                let break_name = remainderList.break_name
+                                let is_break = remainderList.is_break
+                                let teacher_id = remainderList.teacher_id
+                                
+                                self.saveTimeTableDatas(table_id:table_id!,class_id:class_id!,class_name:class_name!,sec_name:sec_name!,subject_id:subject_id!,day_id:day_id!,period:period!,name:name!,subject_name:subject_name!,from_time:from_time!,to_time:to_time!,break_name:break_name!,is_break:is_break!,teacher_id:teacher_id!)
+                            }
+                        }
                         
+                        if json["timeTabledays"]["data"].count > 0 {
+                            
+                            for i in 0..<json["timeTabledays"]["data"].count {
+                                let remainderList = TimeTableDaysDatas.init(json: json["timeTabledays"]["data"][i])
+                                self.timeTableDaysDataArr.append(remainderList)
+                                
+                                let day_id = remainderList.day_id
+                                let day_name = remainderList.day_name
+                                
+                                self.saveTimeTableDaysDatas(day_id:day_id!,day_name:day_name!)
+                            }
+                        }
                        }) {
                            (error) -> Void in
                            print(error)
@@ -1008,6 +1062,50 @@ extension InstituteLoginVC {
         teacherProfile.setValue(sec_nameRegArr, forKey: "sec_name")
    
         print("KKK \(nameRegArr)")
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveTimeTableDatas(table_id:String,class_id:String,class_name:String,sec_name:String,subject_id:String,day_id:String,period:String,name:String,subject_name:String,from_time:String,to_time:String,break_name:String,is_break:String,teacher_id:String){
+        
+        let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "TimeTables", into: context!)
+        
+        teacherProfile.setValue(table_id, forKey: "table_id")
+        teacherProfile.setValue(class_id, forKey: "class_id")
+        teacherProfile.setValue(class_name, forKey: "class_name")
+        teacherProfile.setValue(sec_name, forKey: "sec_name")
+        teacherProfile.setValue(subject_id, forKey: "subject_id")
+        teacherProfile.setValue(day_id, forKey: "day_id")
+        teacherProfile.setValue(period, forKey: "period")
+        teacherProfile.setValue(name, forKey: "name")
+        teacherProfile.setValue(subject_name, forKey: "subject_name")
+        teacherProfile.setValue(from_time, forKey: "from_time")
+        teacherProfile.setValue(to_time, forKey: "to_time")
+        teacherProfile.setValue(break_name, forKey: "break_name")
+        teacherProfile.setValue(is_break, forKey: "is_break")
+        teacherProfile.setValue(teacher_id, forKey: "teacher_id")
+   
+        do {
+            try context?.save()
+                print(" suucess")
+            }
+        catch {
+            print("error")
+        }
+    }
+    
+    func saveTimeTableDaysDatas(day_id:String,day_name:String){
+        
+        let teacherProfile = NSEntityDescription.insertNewObject(forEntityName: "TimeTableDays", into: context!)
+        
+        teacherProfile.setValue(day_id, forKey: "day_id")
+        teacherProfile.setValue(day_name, forKey: "day_name")
+   
         do {
             try context?.save()
                 print(" suucess")

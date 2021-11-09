@@ -21,10 +21,10 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var reason: UILabel!
     
     var interactor: LeaveApprovalBusinessLogic?
-    
     var selectedLeaveType = String()
     var selectedfromDate = String()
     var selectedtoDate = String()
@@ -40,6 +40,7 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
         self.date.text = "\(selectedfromDate) To : \(selectedtoDate)"
         self.typeLbl.text = selectedLeaveType
         self.reason.text = selectedDescription
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

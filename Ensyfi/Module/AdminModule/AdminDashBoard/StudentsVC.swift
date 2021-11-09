@@ -34,6 +34,7 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
     @IBOutlet weak var classBtnOutlet: UIButton!
     @IBOutlet weak var sectionBtnOutlet: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bgView: UIView!
     
     let dropDown = DropDown()
     var interactor: ClassViewBusinessLogic?
@@ -59,6 +60,7 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
 
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

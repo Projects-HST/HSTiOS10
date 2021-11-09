@@ -15,6 +15,7 @@ class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayL
     @IBOutlet weak var sectionTextfield: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
     @IBOutlet weak var sectionBtnOutlet: UIButton!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     let dropDown = DropDown()
@@ -40,6 +41,7 @@ class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayL
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.bgView.dropShadow()
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }

@@ -20,11 +20,15 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic {
     @IBOutlet weak var assignmentCount: UILabel!
     @IBOutlet weak var classtestCount: UILabel!
     @IBOutlet weak var examMarkseCount: UILabel!
+    @IBOutlet weak var bgView1: UIView!
+    @IBOutlet weak var bgView2: UIView!
+    @IBOutlet weak var bgView3: UIView!
+    @IBOutlet weak var bgView4: UIView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
     var interactor: SyncAttendanceBusinessLogic?
-    var classAtendance = [ClassAttendances]()
+    var classAtendance = [TimeTables]()
     var classAtendanceHistory = [ClassAttendanceHistory]()
     
     var syncArray = ["karan","Minesh","bhuganesh","karthi"]
@@ -46,9 +50,13 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        context = appDelegate.persistentContainer.viewContext
+        self.context = appDelegate.persistentContainer.viewContext
         self.fetchClassAttendanceHistory()
         self.fetchClassAttendance()
+        self.bgView1.dropShadow()
+        self.bgView2.dropShadow()
+        self.bgView3.dropShadow()
+        self.bgView4.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -75,30 +83,30 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic {
     
     @IBAction func attendanceSync(_ sender: Any) {
         
-        for data in classAtendance {
-            
-            let id = data.id
-            let ac_year = data.ac_year
-            let attendence_period = data.attendence_period
-            let class_id = data.class_id
-            let class_total = data.class_total
-            let no_of_present = data.no_of_present
-            let no_of_absent = data.no_of_absent
-            let created_at = data.created_at
-            let created_by = data.created_by
-            let status = data.status
-            
-            self.id.append(id!)
-            self.ac_year.append(ac_year!)
-            self.attendence_period.append(attendence_period!)
-            self.class_id.append(class_id!)
-            self.class_total.append(class_total!)
-            self.no_of_present.append(no_of_present!)
-            self.no_of_absent.append(no_of_absent!)
-            self.created_at.append(created_at!)
-            self.created_by.append(created_by!)
-            self.status.append(status!)
-        }
+//        for data in classAtendance {
+//
+//            let id = data.id
+//            let ac_year = data.ac_year
+//            let attendence_period = data.attendence_period
+//            let class_id = data.class_id
+//            let class_total = data.class_total
+//            let no_of_present = data.no_of_present
+//            let no_of_absent = data.no_of_absent
+//            let created_at = data.created_at
+//            let created_by = data.created_by
+//            let status = data.status
+//
+//            self.id.append(id!)
+//            self.ac_year.append(ac_year!)
+//            self.attendence_period.append(attendence_period!)
+//            self.class_id.append(class_id!)
+//            self.class_total.append(class_total!)
+//            self.no_of_present.append(no_of_present!)
+//            self.no_of_absent.append(no_of_absent!)
+//            self.created_at.append(created_at!)
+//            self.created_by.append(created_by!)
+//            self.status.append(status!)
+//        }
     }
     
     @IBAction func assignmentSync(_ sender: Any) {
@@ -134,14 +142,14 @@ extension SyncDataVC {
     func fetchClassAttendance() {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ClassAttendances")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TimeTables")
         do {
             let results = try context.fetch(fetchRequest)
-            classAtendance = results as! [ClassAttendances]
+            classAtendance = results as! [TimeTables]
             
             for dataa in classAtendance {
-                let id = dataa.id
-                print(id!)
+                let name = dataa.subject_name
+                print(name!)
             }
         } catch let err as NSError {
             print(err.debugDescription)

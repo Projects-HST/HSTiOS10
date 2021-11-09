@@ -9,6 +9,9 @@ import UIKit
 
 class AdminDashboardVC: UIViewController {
 
+    @IBOutlet weak var bgView: UIView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,5 +35,7 @@ class AdminDashboardVC: UIViewController {
             print(GlobalVariables.shared.userName)
             print(GlobalVariables.shared.user_type)
         }
+        self.bgView.dropShadow()
     }
 }
+//adminNavV

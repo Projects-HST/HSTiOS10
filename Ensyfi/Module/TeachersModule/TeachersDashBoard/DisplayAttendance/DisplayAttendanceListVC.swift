@@ -18,6 +18,7 @@ protocol DisplayAttenddanceListDisplayLogic: AnyObject
 class DisplayAttendanceListVC: UIViewController, DisplayAttenddanceListDisplayLogic {
    
     @IBOutlet weak var tableView: UITableView!
+   
     
     var interactor: DisplayAttenddanceListBusinessLogic?
     var displayedDisplayAttenddanceListData: [DisplayAttenddanceListModel.Fetch.ViewModel.DisplayedDisplayAttenddanceListData] = []

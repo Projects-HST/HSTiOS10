@@ -12,6 +12,7 @@ class GroupDetailsVC: UIViewController {
 
     @IBOutlet weak var grptitle: UILabel!
     @IBOutlet weak var grpAdmin: UILabel!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var status: UILabel!
     
     var selectedTitle = String()
@@ -27,6 +28,7 @@ class GroupDetailsVC: UIViewController {
         self.grptitle.text = self.selectedTitle
         self.grpAdmin.text = self.selectedGrpAdmin
         self.status.text = self.selectedStatus
+        self.bgView.dropShadow()
     }
 
     @IBAction func viewMemAction(_ sender: Any) {

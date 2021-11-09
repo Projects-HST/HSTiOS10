@@ -117,7 +117,7 @@
                                     <constraint firstItem="1e1-r9-vuh" firstAttribute="centerX" secondItem="aTA-oo-U8d" secondAttribute="centerX" id="ySy-tW-NFV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
@@ -218,9 +218,9 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="1"/>
+                                                            <real key="value" value="3"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -264,6 +264,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="rJD-3n-DCU"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bgView" destination="aTA-oo-U8d" id="tzW-0Q-T1T"/>
                         <outlet property="img1" destination="mtQ-oa-xO4" id="LeK-wb-79r"/>
                         <outlet property="img2" destination="Yse-Dg-rf3" id="Ojm-ir-e8B"/>
                         <outlet property="segmentedControl" destination="VhV-FO-7jO" id="rZ7-ae-Hho"/>
@@ -367,6 +368,7 @@
                                             <constraint firstAttribute="bottom" secondItem="ftq-8R-PhT" secondAttribute="bottom" constant="26" id="A5P-z3-GLb"/>
                                             <constraint firstAttribute="bottom" secondItem="rCm-Pb-xMz" secondAttribute="bottom" constant="21" id="HDI-lv-d1E"/>
                                             <constraint firstAttribute="bottom" secondItem="LgL-Xu-xRO" secondAttribute="bottom" constant="26" id="J9R-KD-cuk"/>
+                                            <constraint firstItem="rCm-Pb-xMz" firstAttribute="leading" secondItem="xZZ-Nb-br9" secondAttribute="leading" constant="40" id="KDW-mv-O1s"/>
                                             <constraint firstItem="ftq-8R-PhT" firstAttribute="leading" secondItem="DFa-jf-pFM" secondAttribute="trailing" constant="7.5" id="L2j-h9-Hwy"/>
                                             <constraint firstItem="LgL-Xu-xRO" firstAttribute="leading" secondItem="ftq-8R-PhT" secondAttribute="trailing" constant="8" symbolic="YES" id="Qjg-Tg-7Gv"/>
                                             <constraint firstItem="DFa-jf-pFM" firstAttribute="leading" secondItem="hnY-XI-f6A" secondAttribute="trailing" constant="12.5" id="Vns-z3-rnl"/>
@@ -376,6 +378,7 @@
                                             <constraint firstItem="hnY-XI-f6A" firstAttribute="leading" secondItem="28f-0Q-FBS" secondAttribute="trailing" constant="6" id="aRb-QU-tN5"/>
                                             <constraint firstAttribute="width" constant="344" id="c48-6W-XXl"/>
                                             <constraint firstItem="28f-0Q-FBS" firstAttribute="top" secondItem="xZZ-Nb-br9" secondAttribute="top" constant="25" id="fqC-iF-JGH"/>
+                                            <constraint firstAttribute="trailing" secondItem="rCm-Pb-xMz" secondAttribute="trailing" constant="40" id="gqs-SG-mKJ"/>
                                             <constraint firstItem="LgL-Xu-xRO" firstAttribute="top" secondItem="xZZ-Nb-br9" secondAttribute="top" constant="25" id="iA6-yi-dRK"/>
                                             <constraint firstAttribute="height" constant="70" id="k5P-v1-cG4"/>
                                             <constraint firstItem="DFa-jf-pFM" firstAttribute="centerX" secondItem="xZZ-Nb-br9" secondAttribute="centerX" id="kxI-iG-hjA"/>
@@ -499,7 +502,7 @@
                                     <constraint firstAttribute="trailing" secondItem="rhO-Wa-gcX" secondAttribute="trailing" constant="4" id="nVz-kW-gjk"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
@@ -519,6 +522,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="QZV-Ld-j0u"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bgView" destination="opI-eh-sTX" id="AfO-a6-e2j"/>
                         <outlet property="date" destination="TpT-Jn-Qz5" id="0zz-rk-KAx"/>
                         <outlet property="img1" destination="ftq-8R-PhT" id="jHm-D7-lsm"/>
                         <outlet property="img2" destination="28f-0Q-FBS" id="7i2-4q-QA3"/>

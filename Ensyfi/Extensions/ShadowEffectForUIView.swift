@@ -95,9 +95,19 @@ extension UIView {
     
     func dropShadow() {
         // drop shadow
+//        layer.shadowColor = UIColor.darkGray.cgColor
+//        layer.shadowOpacity = 0.6
+//        layer.shadowRadius = 2.0
+//        layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        
         layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOpacity = 0.6
-        layer.shadowRadius = 2.0
-        layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 4, height: 4)
+        layer.shadowRadius = 5.0
+
+        // Set masksToBounds to false, otherwise the shadow
+        // will be clipped and will not appear outside of
+        // the view’s frame
+        layer.masksToBounds = false
     }
 }

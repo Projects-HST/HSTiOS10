@@ -254,6 +254,29 @@
         <attribute name="teacher_id" optional="YES" attributeType="String"/>
         <attribute name="update_at" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="TimeTableDays" representedClassName="TimeTableDays" syncable="YES" codeGenerationType="class">
+        <attribute name="day_id" optional="YES" attributeType="String"/>
+        <attribute name="day_name" optional="YES" attributeType="String"/>
+        <fetchedProperty name="fetchedProperty" optional="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="TimeTableDays"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="TimeTables" representedClassName="TimeTables" syncable="YES" codeGenerationType="class">
+        <attribute name="break_name" optional="YES" attributeType="String"/>
+        <attribute name="class_id" optional="YES" attributeType="String"/>
+        <attribute name="class_name" optional="YES" attributeType="String"/>
+        <attribute name="day_id" optional="YES" attributeType="String"/>
+        <attribute name="from_time" optional="YES" attributeType="String"/>
+        <attribute name="is_break" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="period" optional="YES" attributeType="String"/>
+        <attribute name="sec_name" optional="YES" attributeType="String"/>
+        <attribute name="subject_id" optional="YES" attributeType="String"/>
+        <attribute name="subject_name" optional="YES" attributeType="String"/>
+        <attribute name="table_id" optional="YES" attributeType="String"/>
+        <attribute name="teacher_id" optional="YES" attributeType="String"/>
+        <attribute name="to_time" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="AcademicMarks" positionX="9" positionY="189" width="128" height="59"/>
         <element name="AcademicMonths" positionX="27" positionY="198" width="128" height="44"/>
@@ -271,7 +294,9 @@
         <element name="StudentGuardianProfile" positionX="18" positionY="180" width="128" height="194"/>
         <element name="StudentMotherProfile" positionX="0" positionY="162" width="128" height="194"/>
         <element name="StudentProfile" positionX="-9" positionY="153" width="128" height="569"/>
-        <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
         <element name="StudentRegDatas" positionX="-9" positionY="153" width="128" height="134"/>
+        <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
+        <element name="TimeTables" positionX="-9" positionY="153" width="128" height="239"/>
+        <element name="TimeTableDays" positionX="0" positionY="162" width="128" height="80"/>
     </elements>
 </model>

@@ -25,6 +25,7 @@ class TeacherPersonalInfoVC: UIViewController {
     @IBOutlet weak var emailId: UILabel!
     @IBOutlet weak var alternateEmailId: UILabel!
     @IBOutlet weak var techerImage: UIImageView!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var classSection: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -36,6 +37,7 @@ class TeacherPersonalInfoVC: UIViewController {
         // Do any additional setup after loading the view.
         context = appDelegate.persistentContainer.viewContext
         self.fetchData()
+        self.bgView.dropShadow()
     }
     
     func fetchData(){

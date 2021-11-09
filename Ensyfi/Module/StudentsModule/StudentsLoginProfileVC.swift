@@ -25,7 +25,7 @@ class StudentsLoginProfileVC: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
     let dropDown = DropDown()
-    
+     
     var registered_idRegArr = [String]()
     var admission_idRegArr = [String]()
     var admission_noRegArr = [String]()
@@ -77,7 +77,6 @@ class StudentsLoginProfileVC: UIViewController {
             self.className.text = slectedClassName
         }
     }
-
 
     @IBAction func continueAction(_ sender: Any) {
         

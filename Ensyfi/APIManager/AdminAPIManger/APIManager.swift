@@ -1715,12 +1715,21 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPISpecialClassList(user_id:String,onSuccess successCallback: ((_ resp: [SpecialClassListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
-         // Build URL
-        let url = APIURL.base_URL  + APIFunctionName.adminSpecialClassListUrl
-         // Set Parameters
+    func callAPISpecialClassList(user_id:String,from:String,onSuccess successCallback: ((_ resp: [SpecialClassListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+
+        var url = String()
         let parameters: Parameters = ["user_id": user_id]
-      
+        
+        if from == "Students" {
+            url = APIURL.base_URL  + StudentAPIFunctionName.studentSpecialClasListUrl
+        }
+        else if from == "Admin" {
+            url = APIURL.base_URL  + APIFunctionName.adminSpecialClassListUrl
+        }
+        else if from == "Teachers" {
+            url = APIURL.base_URL  + TeachersAPIFunctionName.teacherSpecialClassListUrl
+        }
+        
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1753,4 +1762,3 @@ class APIManager: NSObject {
       )
    }
 }
-

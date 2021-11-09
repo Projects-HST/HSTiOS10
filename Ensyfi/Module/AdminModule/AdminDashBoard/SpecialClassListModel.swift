@@ -14,6 +14,7 @@ struct SpecialClassListModel{
         struct Request
         {
             var user_id : String?
+            var from : String?
         }
         
         struct Response

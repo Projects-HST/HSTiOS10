@@ -13,10 +13,12 @@ class FeesStatusListCell: UITableViewCell {
     @IBOutlet weak var quota: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bgView.dropShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -36,7 +36,7 @@ struct LeavesListModel{
             var leave_type : String?
             var status : String?
             var from_leave_date : String?
-            var to_leave_date : String?
+//            var to_leave_date : String?
             var leave_description : String?
             var frm_time : String?
             var to_time : String?

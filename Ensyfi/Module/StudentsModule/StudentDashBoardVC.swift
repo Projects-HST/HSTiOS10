@@ -17,16 +17,14 @@ class StudentDashBoardVC: UIViewController {
         super.viewDidLoad()
         
         UINavigationBar.appearance().barTintColor = UIColor.white
-        
         self.bgView.dropShadow()
-        from = "Student"
+        self.from = "Student"
         
         let user_loginType = UserDefaults.standard.object(forKey: UserDefaultsKey.user_login_type_Key.rawValue) ?? ""
         let institute_code = UserDefaults.standard.object(forKey: UserDefaultsKey.institude_Code_Key.rawValue) ?? ""
         let userType = UserDefaults.standard.object(forKey: UserDefaultsKey.userTypeKey.rawValue) ?? ""
         let user_id = UserDefaults.standard.object(forKey: UserDefaultsKey.user_idkey.rawValue) ?? ""
         let userName = UserDefaults.standard.object(forKey: UserDefaultsKey.namekey.rawValue) ?? ""
-        
         let registered_idKey = UserDefaults.standard.object(forKey: UserDefaultsKey.registered_idKey.rawValue) ?? ""
         let admission_idKey = UserDefaults.standard.object(forKey: UserDefaultsKey.admission_idKey.rawValue) ?? ""
         let admission_noKey = UserDefaults.standard.object(forKey: UserDefaultsKey.admission_noKey.rawValue) ?? ""
@@ -44,7 +42,6 @@ class StudentDashBoardVC: UIViewController {
             GlobalVariables.shared.userName = userName as! String
             GlobalVariables.shared.user_type = userType as! String
             GlobalVariables.shared.user_id = user_id as! String
-            
             GlobalVariables.shared.registered_id = registered_idKey as! String
             GlobalVariables.shared.admission_id = admission_idKey as! String
             GlobalVariables.shared.admission_no = admission_noKey as! String
@@ -57,6 +54,7 @@ class StudentDashBoardVC: UIViewController {
             print(GlobalVariables.shared.registered_id)
             print(GlobalVariables.shared.admission_no)
             print(GlobalVariables.shared.sec_name)
+            print(GlobalVariables.shared.user_id)
         }
     }
     
@@ -76,3 +74,4 @@ class StudentDashBoardVC: UIViewController {
 }
 //studentsDashboardVC
 //to_DashBoard
+ 

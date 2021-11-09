@@ -15,9 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        Thread.sleep(forTimeInterval: 4.0)\
 //        UINavigationBar.appearance().barTintColor = UIColor.green
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        UIApplication.shared.statusBarView?.backgroundColor = .red
+        configureNavigationBarAppearance()
         return true
+    }
+    
+    func configureNavigationBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 102.0/255.0, green: 50.0/255.0, blue: 108.0/255.0, alpha: 1.0)
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 
     // MARK: UISceneSession Lifecycle
@@ -38,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
             // Saves changes in the application's managed object context before the application terminates.
             self.saveContext()
-        }
+    }
 
     lazy var persistentContainer: NSPersistentContainer = {
         /*

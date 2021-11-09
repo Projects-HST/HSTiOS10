@@ -16,6 +16,7 @@ class TakeAttendanceVC: UIViewController {
     @IBOutlet weak var classBtnOutlet: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var bgView: UIView!
     
     let dropDown = DropDown()
     let date = Date()
@@ -72,6 +73,7 @@ class TakeAttendanceVC: UIViewController {
         
         context = appDelegate.persistentContainer.viewContext
         self.fetchData()
+        self.bgView.dropShadow()
         self.fetchStudentData()
         self.SetDate()
         self.fetchAttendancetaken()

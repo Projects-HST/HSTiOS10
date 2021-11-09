@@ -86,7 +86,7 @@ extension LeaveApplicationListVC : UITableViewDataSource,UITableViewDelegate {
         
             let data = displayedLeavesListData[indexPath.row]
             cell.title.text = "\(data.name!) - \(data.leave_title!)"
-            cell.date.text = "\(data.from_leave_date!) - \(data.to_leave_date!)"
+            cell.date.text = "\(data.from_leave_date!) - \(data.from_leave_date!)"
             cell.status.text = data.status
             
             if data.status == "Approved" {
@@ -113,7 +113,7 @@ extension LeaveApplicationListVC : UITableViewDataSource,UITableViewDelegate {
         let data = displayedLeavesListData[indexPath.row]
             self.selectedLeaveType = data.leave_title!
             self.selectedfromDate = data.from_leave_date!
-            self.selectedtoDate = data.to_leave_date!
+            self.selectedtoDate = data.from_leave_date!
             self.selectedStatus = data.status!
             self.selectedId = data.leave_id!
             self.selectedDescription = data.leave_description!

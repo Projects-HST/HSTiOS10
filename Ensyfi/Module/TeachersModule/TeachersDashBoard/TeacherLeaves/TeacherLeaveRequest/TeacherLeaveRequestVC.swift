@@ -67,6 +67,7 @@ class TeacherLeaveRequestVC: UIViewController, TeacherLeavesRequestDisplayLogic,
         self.timePicker.datePickerMode = .time
         self.fromTime.isEnabled = false
         self.toTime.isEnabled = false
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

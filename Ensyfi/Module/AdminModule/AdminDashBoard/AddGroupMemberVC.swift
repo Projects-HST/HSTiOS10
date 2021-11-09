@@ -46,6 +46,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     @IBOutlet weak var selectTypeTextfield: UITextField!
     @IBOutlet weak var selectSecTextfield: UITextField!
     @IBOutlet weak var secTextView: UIView!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     var interactor: RoleListBusinessLogic?
@@ -97,6 +98,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
         print("\(selectedleadId)")
         print("\(selectedGrpAdmin)")
         self.secTextView.alpha = 0
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -147,7 +149,6 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
         viewController4.interactor4 = interactor4
         interactor4.presenter4 = presenter4
         presenter4.viewController4 = viewController4
-        
     }
     
     @IBAction func selectTypeAction(_ sender: Any) {
@@ -161,10 +162,8 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
             let slectedId = self.roleIdArr[index]
             self.selectedRoleId = String(slectedId)
             print(selectedRoleId)
-            
             if selectTypeTextfield.text == "Teachers" || selectTypeTextfield.text == "Board Members" {
                 self.secTextView.alpha = 0
-                
                 interactor3?.fetchItems(request: StaffGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId))
                 selectedRoleType = "Staffs"
             }
@@ -185,7 +184,6 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
             let slectedId = self.sectionIdArr[index]
             self.selectedSectionId = String(slectedId)
             print(selectedSectionId)
-            
             interactor2?.fetchItems(request: StudentGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId))
             selectedRoleType = "Students"
         }
@@ -197,7 +195,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     }
 }
 
-extension AddGroupMemberVC{
+extension AddGroupMemberVC {
     
 //    RoleListDisplayLogic
     func successFetchedItems(viewModel: RoleListModel.Fetch.ViewModel) {

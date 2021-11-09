@@ -25,6 +25,7 @@ class HomeWorkDetailsVC: UIViewController, HomeWorkDetailsDisplayLogic {
     @IBOutlet weak var commentLbl: UILabel!
     @IBOutlet weak var commentDetLbl: UILabel!
     @IBOutlet weak var lineLbl2: UILabel!
+    @IBOutlet weak var bgView: UIView!
     
     var selectedMark = String()
     var selectedTopic = String()
@@ -40,6 +41,7 @@ class HomeWorkDetailsVC: UIViewController, HomeWorkDetailsDisplayLogic {
         print(selectedHomeWorkType)
 
         // Do any additional setup after loading the view.
+        self.bgView.dropShadow()
         self.titleLbl.text = selectedTopic
         self.markDetLbl.text = selectedMark
         self.commentDetLbl.text = ""

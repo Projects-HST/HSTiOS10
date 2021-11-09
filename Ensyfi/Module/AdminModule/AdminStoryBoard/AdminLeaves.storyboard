@@ -126,9 +126,9 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="2"/>
+                                                            <real key="value" value="3"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -398,6 +398,11 @@
                                     <constraint firstItem="9WG-Ai-5as" firstAttribute="leading" secondItem="JGc-3y-FR8" secondAttribute="leading" constant="8" id="z3c-7b-smi"/>
                                     <constraint firstItem="9k4-DB-TL2" firstAttribute="leading" secondItem="4RC-GM-j9C" secondAttribute="trailing" constant="3" id="zMW-ER-dkH"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hmR-mr-wyl"/>
@@ -413,6 +418,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="5OQ-et-0dF"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bgView" destination="JGc-3y-FR8" id="RNu-Z0-6Jf"/>
                         <outlet property="date" destination="9k4-DB-TL2" id="fEG-sB-xa5"/>
                         <outlet property="img1" destination="pSC-qz-6h3" id="jwU-Cc-TIi"/>
                         <outlet property="img2" destination="Lkl-Nm-azW" id="FKW-Fv-rNF"/>

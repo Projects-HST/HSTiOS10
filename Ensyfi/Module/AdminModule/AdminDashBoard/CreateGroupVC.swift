@@ -23,6 +23,7 @@ protocol CreateGroupDisplayLogic: AnyObject
 
 class CreateGroupVC: UIViewController, TeacherListIDDisplayLogic, CreateGroupDisplayLogic {
    
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var titleTextfield: UITextField!
     @IBOutlet weak var grpAdminTextfield: UITextField!
     @IBOutlet weak var switchOutlet: UISwitch!
@@ -42,6 +43,7 @@ class CreateGroupVC: UIViewController, TeacherListIDDisplayLogic, CreateGroupDis
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.bgView.dropShadow()
         interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :""))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }

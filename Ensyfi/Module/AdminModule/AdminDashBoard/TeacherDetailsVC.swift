@@ -32,6 +32,7 @@ class TeacherDetailsVC: UIViewController, TeacherDetailsDisplayLogic {
     @IBOutlet weak var alternateEmailId: UILabel!
     @IBOutlet weak var handlingClasses: UILabel!
     @IBOutlet weak var techerImage: UIImageView!
+    @IBOutlet weak var bgView: UIView!
     
     var interactor: TeacherDetailsBusinessLogic?
     var displayedTeacherDetailsData: [TeacherDetailsModel.Fetch.ViewModel.DisplayedTeacherDetailsData] = []
@@ -44,6 +45,7 @@ class TeacherDetailsVC: UIViewController, TeacherDetailsDisplayLogic {
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: TeacherDetailsModel.Fetch.Request(teacher_id :self.teacher_ID))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.bgView.dropShadow()
 
     }
     

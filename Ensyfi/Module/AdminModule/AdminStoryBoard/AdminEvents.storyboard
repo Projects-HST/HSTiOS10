@@ -203,6 +203,11 @@
                                         <state key="normal" title="View Organiser">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="viewOrgAction:" destination="azd-dJ-b7B" eventType="touchUpInside" id="21A-uN-0uY"/>
                                             <action selector="viewOrgBtn:" destination="pru-Oh-dDy" eventType="touchUpInside" id="YfH-bB-mqk"/>

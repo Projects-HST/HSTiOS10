@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -251,7 +252,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -277,6 +278,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bgView" destination="6wc-qB-P4Q" id="9Jf-mE-B1E"/>
                         <outlet property="classBtnOutlet" destination="Fog-Xm-zeC" id="Bi1-yk-Tfa"/>
                         <outlet property="classTextfield" destination="6iw-OF-mao" id="sEk-qX-vDu"/>
                         <outlet property="date_month" destination="5iX-Nq-gfD" id="kaK-W2-E7o"/>
@@ -289,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </scene>
-        <!--Take AttendanceVC-->
+        <!--Take Attendance-->
         <scene sceneID="mv4-na-Aqn">
             <objects>
                 <viewController id="RQP-gX-67O" customClass="TakeAttendanceVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -375,7 +377,7 @@
                                     <constraint firstAttribute="trailing" secondItem="mcf-BI-lMR" secondAttribute="trailing" constant="20" id="oMH-8d-Obb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
@@ -386,7 +388,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="39" id="JGR-5O-N9g" customClass="AttendanceTakeCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="394" height="39"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="39"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JGR-5O-N9g" id="ekr-da-Tln">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="39"/>
@@ -557,7 +559,8 @@
                             <constraint firstItem="xPC-AP-YSg" firstAttribute="leading" secondItem="BAM-2i-675" secondAttribute="trailing" id="s9I-41-lxm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R9x-FO-Hl8">
+                    <navigationItem key="navigationItem" title="Take Attendance" id="R9x-FO-Hl8">
+                        <barButtonItem key="backBarButtonItem" title="  " id="nBm-lh-U4m"/>
                         <barButtonItem key="rightBarButtonItem" image="approve" id="c3M-fZ-vG8">
                             <connections>
                                 <action selector="saveAttendance:" destination="RQP-gX-67O" id="bGv-w3-hHj"/>
@@ -565,6 +568,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bgView" destination="PY7-VX-wqt" id="LKd-P7-NZR"/>
                         <outlet property="classBtnOutlet" destination="V4r-m8-ojQ" id="tCw-Ok-pZt"/>
                         <outlet property="classTextfield" destination="oHA-rb-rXH" id="dPc-DN-yYl"/>
                         <outlet property="dateLbl" destination="ahS-6L-g04" id="Vzh-0O-noQ"/>

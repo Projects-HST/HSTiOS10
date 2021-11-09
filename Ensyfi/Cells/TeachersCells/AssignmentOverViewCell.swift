@@ -14,9 +14,12 @@ class AssignmentOverViewCell: UITableViewCell {
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var sentImg: UIImageView!
     @IBOutlet weak var sentStatus: UILabel!
+    @IBOutlet weak var bgView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.dropShadow()
         // Initialization code
     }
 

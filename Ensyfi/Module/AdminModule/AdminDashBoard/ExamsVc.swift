@@ -21,6 +21,7 @@ class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, E
     @IBOutlet weak var sectionTextfield: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
     @IBOutlet weak var sectionBtnOutlet: UIButton!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     let dropDown = DropDown()
@@ -51,6 +52,7 @@ class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, E
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

@@ -21,6 +21,7 @@ class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplay
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var sectionBtnOutlet: UIButton!
   
     let dropDown = DropDown()
@@ -46,6 +47,7 @@ class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplay
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        self.bgView.dropShadow()
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }

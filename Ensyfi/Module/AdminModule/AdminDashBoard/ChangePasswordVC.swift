@@ -18,6 +18,7 @@ class ChangePasswordVC: UIViewController, ChangePasswordDisplayLogic {
     
     @IBOutlet weak var currentPassword: UITextField!
     @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var confirmPassword: UITextField!
     
     var interactor: ChangePasswordBusinessLogic?
@@ -26,6 +27,7 @@ class ChangePasswordVC: UIViewController, ChangePasswordDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.bgView.dropShadow()
     }
 
     @IBAction func saveAction(_ sender: Any) {

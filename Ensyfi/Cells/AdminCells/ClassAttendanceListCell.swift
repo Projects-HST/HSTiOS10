@@ -17,6 +17,7 @@ class ClassAttendanceListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bgView.dropShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Sync DataVC-->
+        <!--Sync -->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="SyncDataVC" id="Y6W-OH-hqX" customClass="SyncDataVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,8 +102,9 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb3-vr-bPF">
@@ -153,7 +155,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -214,7 +216,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -267,8 +269,9 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -294,9 +297,16 @@
                             <constraint firstItem="89y-rr-mS9" firstAttribute="leading" secondItem="00h-br-Crw" secondAttribute="trailing" constant="8" id="yRy-K1-E3n"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Sync " id="NOJ-At-ieR">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ChR-gD-I7g"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="assignmentCount" destination="aL4-xL-Hz6" id="cMT-8F-EJ1"/>
                         <outlet property="attendanceCount" destination="o8z-Q8-l9E" id="iL0-w1-E8j"/>
+                        <outlet property="bgView1" destination="qb3-vr-bPF" id="AgQ-YB-xHw"/>
+                        <outlet property="bgView2" destination="89y-rr-mS9" id="CNG-uJ-bcC"/>
+                        <outlet property="bgView3" destination="cNs-ff-HDc" id="HmT-kW-HW9"/>
+                        <outlet property="bgView4" destination="0aJ-bn-Tfk" id="ZZu-Kq-y6M"/>
                         <outlet property="classtestCount" destination="hRu-Vc-zTT" id="pQK-D5-7zK"/>
                         <outlet property="examMarkseCount" destination="1NV-s6-XYi" id="Blj-tv-SVr"/>
                     </connections>

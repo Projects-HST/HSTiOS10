@@ -13,6 +13,7 @@ class AssignmentDetailVC: UIViewController {
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var Description: UILabel!
     
     var SelTitle = String()
@@ -30,5 +31,6 @@ class AssignmentDetailVC: UIViewController {
         self.name.text = selTeacherName
         self.type.text = selType
         self.Description.text = selDescription
+        self.bgView.dropShadow()
     }
 }

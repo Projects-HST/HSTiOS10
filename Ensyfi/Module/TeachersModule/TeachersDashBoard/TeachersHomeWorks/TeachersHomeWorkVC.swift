@@ -15,6 +15,7 @@ class TeachersHomeWorkVC: UIViewController {
     @IBOutlet weak var homeWorkType: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var homeWorkOutlet: UIButton!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -68,6 +69,7 @@ class TeachersHomeWorkVC: UIViewController {
         self.hwhtType = ["Class Test","Home Work"]
         self.fetchHWData()
         self.fetchData()
+        self.bgView.dropShadow()
         // Do any additional setup after loading the view.
     }
     

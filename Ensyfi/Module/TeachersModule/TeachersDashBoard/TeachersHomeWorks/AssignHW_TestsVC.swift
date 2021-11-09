@@ -20,11 +20,13 @@ class AssignHW_TestsVC: UIViewController {
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var dateLbl: UILabel!
+//    @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var detailsField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var asignOutlet: UIButton!
+    @IBOutlet weak var bgView1: UIView!
+    @IBOutlet weak var bgView: UIView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
@@ -62,7 +64,9 @@ class AssignHW_TestsVC: UIViewController {
         self.fetchHWData()
         self.setDate()
         self.hideKeyboardWhenTappedAround()
-//        jqvjkhwgljqwgcljeglk jshci posdiosid s;csbcliuwhe;onf.m cljehj]eq
+        self.bgView.dropShadow()
+        self.bgView1.dropShadow()
+        view.bindToKeyboard()
     }
     
     @IBAction func selectClass(_ sender: Any) {

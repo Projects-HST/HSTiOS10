@@ -13,10 +13,10 @@ typealias SpecialClassListresponseHandler = (_ response:SpecialClassListModel.Fe
 class SpecialClassListWorker{
     
    var respData = [SpecialClassListModels]()
-    func fetch(user_id:String, onSuccess successCallback:(SpecialClassListresponseHandler)?,onFailure failureCallback: @escaping(SpecialClassListresponseHandler)) {
+    func fetch(user_id:String,from:String, onSuccess successCallback:(SpecialClassListresponseHandler)?,onFailure failureCallback: @escaping(SpecialClassListresponseHandler)) {
        let manager = APIManager()
        manager.callAPISpecialClassList(
-        user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id,from:from, onSuccess: { (resp)  in
                successCallback?(SpecialClassListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

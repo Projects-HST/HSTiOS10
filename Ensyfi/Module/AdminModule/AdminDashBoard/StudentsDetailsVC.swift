@@ -44,6 +44,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var parentStatus: UILabel!
     @IBOutlet weak var studentPic: UIImageView!
+    @IBOutlet weak var bgView: UIView!
     
     var studentEnroolId = String()
     var selectedClassId = String()
@@ -56,6 +57,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: StudentDetailsModel.Fetch.Request(student_id :self.studentEnroolId))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

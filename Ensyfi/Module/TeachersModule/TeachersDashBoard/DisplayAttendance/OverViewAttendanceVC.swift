@@ -25,6 +25,7 @@ class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
     @IBOutlet weak var mailOutlet: UIButton!
     @IBOutlet weak var notificationOutlet: UIButton!
     @IBOutlet weak var notificationView: UIView!
+    @IBOutlet weak var bgView: UIView!
     
     var interactor: SendAttendanceBusinessLogic?
     
@@ -47,6 +48,7 @@ class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
         self.noAbsent.text = self.selectednoOfAbsent
         self.takenby.text = self.selectedTakenby
         self.dateLbl.text = self.selectedDate
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

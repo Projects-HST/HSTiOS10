@@ -16,7 +16,7 @@ class LeavesListModels : NSObject {
        var leave_type : String?
        var status : String?
        var from_leave_date : String?
-       var to_leave_date : String?
+//       var to_leave_date : String?
        var leave_description : String?
        var frm_time : String?
        var to_time : String?
@@ -45,9 +45,9 @@ class LeavesListModels : NSObject {
         if let data = dict["from_leave_date"] as? String {
           self.from_leave_date = data
         }
-        if let data = dict["to_leave_date"] as? String {
-          self.to_leave_date = data
-        }
+//        if let data = dict["to_leave_date"] as? String {
+//          self.to_leave_date = data
+//        }
         if let data = dict["leave_description"] as? String {
           self.leave_description = data
         }

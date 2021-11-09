@@ -12,4 +12,5 @@ platform :ios, '10.0'
    pod 'MBProgressHUD', '~> 1.2.0'
    pod 'DropDown'
    pod 'FSCalendar'
+   pod 'ScrollableSegmentedControl', '~> 1.5.0'
    end

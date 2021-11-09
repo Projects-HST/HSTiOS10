@@ -21,6 +21,7 @@ class ODApprovalVC: UIViewController, ODApprovalDisplayLogic {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var reason: UILabel!
     
     var interactor: ODApprovalBusinessLogic?
@@ -39,6 +40,7 @@ class ODApprovalVC: UIViewController, ODApprovalDisplayLogic {
         self.date.text = "\(selectedFromDate) To : \(selectedToDate)"
         self.typeLbl.text = selectedTitle
         self.reason.text = selectedDescription
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

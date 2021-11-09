@@ -19,6 +19,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
     @IBOutlet weak var titleTextfield: UITextField!
     @IBOutlet weak var grpAdminTextfield: UITextField!
     @IBOutlet weak var switchOutlet: UISwitch!
+    @IBOutlet weak var bgView: UIView!
     
     var interactor: TeacherListIDBusinessLogic?
     var interactor1: UpdateGroupBusinessLogic?
@@ -46,6 +47,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
         
         self.titleTextfield.text = selectedTitle
         self.grpAdminTextfield.text = selectedGrpAdmin
+        self.bgView.dropShadow()
         
     }
     
@@ -112,7 +114,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
               })
              return false
          }
-        
+         
         guard self.grpAdminTextfield.text?.count != 0  else {
             AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Grp Admin is Empty", complition: {
                 

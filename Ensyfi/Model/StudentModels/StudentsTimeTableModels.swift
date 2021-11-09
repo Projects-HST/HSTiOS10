@@ -38,10 +38,10 @@ class TimeTableListModels : NSObject {
     var day_id : String?
     var teacher_id : String?
     var class_name : String?
-    var name : String?
+//    var name : String?
     var break_name : String?
     var from_time : String?
-    var subject_name : String?
+//    var subject_name : String?
     var subject_id : String?
     var is_break : String?
     var table_id : String?
@@ -65,19 +65,18 @@ class TimeTableListModels : NSObject {
          if let data = dict["class_name"] as? String {
             self.class_name = data
          }
-         if let data = dict["name"] as? String {
-             self.name = data
-         }
+//         if let data = dict["name"] as? String {
+//             self.name = data
+//         }
          if let data = dict["break_name"] as? String {
             self.break_name = data
          }
          if let data = dict["from_time"] as? String {
             self.from_time = data
          }
-         
-         if let data = dict["subject_name"] as? String {
-             self.subject_name = data
-         }
+//         if let data = dict["subject_name"] as? String {
+//             self.subject_name = data
+//         }
          if let data = dict["subject_id"] as? String {
             self.subject_id = data
          }

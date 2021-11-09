@@ -240,3 +240,52 @@ class AdcademicMonthData: Codable {
    
     }
 }
+
+class TimeTableDatas: Codable {
+    
+    var table_id : String?
+    var class_id : String?
+    var class_name : String?
+    var teacher_id : String?
+    var sec_name : String?
+    var subject_id : String?
+    var day_id : String?
+    var period : String?
+    var name : String?
+    var subject_name : String?
+    var from_time : String?
+    var to_time : String?
+    var break_name : String?
+    var is_break : String?
+    
+    init(json:JSON) {
+        
+        self.table_id = json["table_id"].stringValue
+        self.teacher_id = json["teacher_id"].stringValue
+        self.class_id = json["class_id"].stringValue
+        self.class_name = json["class_name"].stringValue
+        self.sec_name = json["sec_name"].stringValue
+        self.subject_id = json["subject_id"].stringValue
+        self.day_id = json["day_id"].stringValue
+        self.period = json["period"].stringValue
+        self.name = json["name"].stringValue
+        self.subject_name = json["subject_name"].stringValue
+        self.from_time = json["ufrom_timepdated_at"].stringValue
+        self.to_time = json["to_time"].stringValue
+        self.break_name = json["break_name"].stringValue
+        self.is_break = json["is_break"].stringValue
+       
+    }
+}
+
+class TimeTableDaysDatas: Codable {
+    
+    var day_id : String?
+    var day_name : String?
+    
+    init(json:JSON) {
+        
+        self.day_id = json["day_id"].stringValue
+        self.day_name = json["day_name"].stringValue
+    }
+}

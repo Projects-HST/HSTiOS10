@@ -33,10 +33,10 @@ struct TimeTableListModel{
                var day_id : String?
                var teacher_id : String?
                var class_name : String?
-               var name : String?
+//               var name : String?
                var break_name : String?
                var from_time : String?
-               var subject_name : String?
+//               var subject_name : String?
                var subject_id : String?
                var is_break : String?
                var table_id : String?

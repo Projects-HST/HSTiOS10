@@ -19,6 +19,7 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
  
     @IBOutlet weak var selectBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var TestTextField: UITextField!
     
     var displayedHomeWorkTestListData: [HomeWorkTestListModel.Fetch.ViewModel.DisplayedHomeWorkTestListData] = []
@@ -39,6 +40,7 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.bgView.dropShadow()
         self.dropDownData = ["Class Test","Home Work"]
         self.TestTextField.text = "Class Test"
         if from == "Student" {
@@ -166,7 +168,6 @@ extension HomeWorkTestVC: UITableViewDelegate,UITableViewDataSource {
             vc.selectedDescription = self.selectedDescription
             vc.selectedTopic = self.selectedTopic
             vc.selectedMark = self.selectedMark
-            
         }
     }
 }

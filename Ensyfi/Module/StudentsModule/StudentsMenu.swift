@@ -12,11 +12,18 @@ class StudentsMenu: UIViewController {
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+    var from = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.name.text = "Hi \(GlobalVariables.shared.userName)"
+        self.from = "Students"
+    }
+    
+    @IBAction func specialClassAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "to_specialClass", sender: self)
     }
     
     @IBAction func signOutAction(_ sender: Any) {
@@ -69,5 +76,14 @@ class StudentsMenu: UIViewController {
         GlobalVariables.shared.class_name = ""
         GlobalVariables.shared.sec_name = ""
         GlobalVariables.shared.NAME = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "to_specialClass")
+        {
+        let vc = segue.destination as! AdminSpecialClassVC
+         vc.from = self.from
+       }
     }
 }

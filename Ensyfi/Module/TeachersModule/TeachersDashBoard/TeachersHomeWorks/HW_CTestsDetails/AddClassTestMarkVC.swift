@@ -15,7 +15,6 @@ class AddClassTestMarkVC: UIViewController {
     var selectedClassId = String()
     var selectedTopic = String()
     var selectedDate = String()
-    
     var selectedExamId = String()
     var selectedsubId = String()
     var selectedInternalExternal = String()

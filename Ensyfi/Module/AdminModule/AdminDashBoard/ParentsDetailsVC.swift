@@ -36,6 +36,7 @@ class ParentsDetailsVC: UIViewController, FatherDeatilsDisplayLogic, MotherDetai
     @IBOutlet weak var income: UILabel!
     @IBOutlet weak var mobile: UILabel!
     @IBOutlet weak var telephone: UILabel!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var officePhone: UILabel!
     
     var selectedStudentId = String()
@@ -48,6 +49,7 @@ class ParentsDetailsVC: UIViewController, FatherDeatilsDisplayLogic, MotherDetai
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.bgView.dropShadow()
         interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:self.selectedStudentId))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
@@ -88,17 +90,38 @@ class ParentsDetailsVC: UIViewController, FatherDeatilsDisplayLogic, MotherDetai
         presenter3.viewController3 = viewController3
     }
     
+//    Father
+//    Mother
+//    Guardian light
+    
+//    Mother light
+//    Guardian light -1
+//    Father light
+    
+    
     @IBAction func motherDetails(_ sender: Any) {
         interactor2?.fetchItems(request: MotherDetailsModel.Fetch.Request(admission_id:self.selectedStudentId))
+        
+        self.motherImg.image = UIImage(named:"Mother")
+        self.guardianImg.image = UIImage(named:"Guardian light")
+        self.fatherImg.image = UIImage(named:"Father")
     }
     
     @IBAction func guardianDetails(_ sender: Any) {
         
         interactor3?.fetchItems(request: GuardianDetailsModel.Fetch.Request(admission_id:self.selectedStudentId))
+        
+        self.motherImg.image = UIImage(named:"Mother light")
+        self.guardianImg.image = UIImage(named:"Guardian light")
+        self.fatherImg.image = UIImage(named:"Father light")
     }
     
     @IBAction func fatherDetails(_ sender: Any) {
         interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:self.selectedStudentId))
+        
+        self.motherImg.image = UIImage(named:"Mother light")
+        self.guardianImg.image = UIImage(named:"Guardian light -1")
+        self.fatherImg.image = UIImage(named:"Father")
     }
     
     @IBAction func viewTableAction(_ sender: Any) {

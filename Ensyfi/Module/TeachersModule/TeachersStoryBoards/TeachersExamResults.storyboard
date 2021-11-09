@@ -20,7 +20,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Exams ResultsVC-->
+        <!--Exam Results-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="Exams_ResultsVC" id="Y6W-OH-hqX" customClass="Exams_ResultsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,6 +295,9 @@
                             <constraint firstItem="urY-eb-dUW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="vM3-jM-gd9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Exam Results" id="fMb-Fd-0na">
+                        <barButtonItem key="backBarButtonItem" title="   " id="71h-IL-VqH"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="classBtnOutlet" destination="Fb6-mW-Uic" id="gai-bN-MHS"/>
                         <outlet property="classTextfield" destination="qzP-bB-prR" id="n18-gq-c1Y"/>
@@ -309,7 +312,7 @@
             </objects>
             <point key="canvasLocation" x="187" y="84"/>
         </scene>
-        <!--Exam Results DetailsVC-->
+        <!--Exam Details-->
         <scene sceneID="RFx-do-Ljn">
             <objects>
                 <viewController id="tls-Gk-kcC" customClass="ExamResultsDetailsVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -446,7 +449,9 @@
                             <constraint firstItem="fF7-UI-eA7" firstAttribute="trailing" secondItem="fcL-Ft-FQJ" secondAttribute="trailing" constant="20" id="xMM-BF-IHw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8mp-Va-QbF"/>
+                    <navigationItem key="navigationItem" title="Exam Details" id="8mp-Va-QbF">
+                        <barButtonItem key="backBarButtonItem" title="  " id="kX5-GF-xGm"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="re4-qk-gHJ" id="u60-dq-qZ5"/>
                     </connections>
@@ -455,7 +460,7 @@
             </objects>
             <point key="canvasLocation" x="869.56521739130437" y="83.705357142857139"/>
         </scene>
-        <!--Exam Mark EntryVC-->
+        <!--Exam Mark Entry-->
         <scene sceneID="Ieo-gc-YQN">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="nCj-2y-ToU" customClass="ExamMarkEntryVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -634,7 +639,8 @@
                             <constraint firstItem="zPL-zS-nEs" firstAttribute="trailing" secondItem="tWf-Sh-mHK" secondAttribute="trailing" constant="20" id="xJU-0d-XRr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="s5l-LK-T4o">
+                    <navigationItem key="navigationItem" title="Exam Mark Entry" id="s5l-LK-T4o">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Te4-NP-4QP"/>
                         <barButtonItem key="rightBarButtonItem" image="approve" id="f3F-aM-X7o">
                             <connections>
                                 <action selector="save_Marks:" destination="nCj-2y-ToU" id="C16-dz-UF5"/>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +20,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Display Attendance ListVC-->
+        <!--Attendance-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="DisplayAttendanceListVC" id="Y6W-OH-hqX" customClass="DisplayAttendanceListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +33,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="155" id="jZI-6A-4wa" customClass="DisplayAttendanceCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="155"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jZI-6A-4wa" id="GtI-aV-eOl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
@@ -159,9 +160,9 @@
                                                         <constraint firstAttribute="trailing" secondItem="xZp-Dp-BCM" secondAttribute="trailing" constant="5" id="zqT-Q4-VSV"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                            <real key="value" value="4"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -175,6 +176,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="Atendate" destination="EiK-X1-H5W" id="GxW-q3-ufg"/>
+                                            <outlet property="bgView" destination="8cm-jg-0rE" id="Nhj-p8-MmY"/>
                                             <outlet property="classStrength" destination="5eY-1q-9iK" id="VtW-h8-kyJ"/>
                                             <outlet property="noAbsent" destination="BhO-Tm-uW2" id="orr-wF-rsJ"/>
                                             <outlet property="noPresent" destination="mGD-GN-k1j" id="afD-hp-LSp"/>
@@ -198,6 +200,9 @@
                             <constraint firstItem="7qc-nM-1SF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="V7H-66-6SX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Attendance" id="ZYC-K1-TmU">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0BP-aS-DDS"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7qc-nM-1SF" id="vuU-U8-5Ea"/>
                         <segue destination="bBr-ZI-gi0" kind="show" identifier="to_overViewAttendance" id="QkF-nO-egJ"/>
@@ -207,7 +212,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </scene>
-        <!--Over View AttendanceVC-->
+        <!--Send Attendance-->
         <scene sceneID="5lV-MD-KOP">
             <objects>
                 <viewController id="bBr-ZI-gi0" customClass="OverViewAttendanceVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -353,7 +358,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="VEV-Cc-eYw" firstAttribute="leading" secondItem="bwg-cB-u54" secondAttribute="leading" constant="8" id="1Hf-wT-oHd"/>
                                     <constraint firstItem="IEX-fk-Zet" firstAttribute="leading" secondItem="hDa-D8-kTx" secondAttribute="trailing" constant="7.5" id="3WR-on-KQv"/>
@@ -380,6 +385,11 @@
                                     <constraint firstItem="Tpb-Hv-lUR" firstAttribute="leading" secondItem="VEV-Cc-eYw" secondAttribute="trailing" constant="10" id="uIL-gl-p6u"/>
                                     <constraint firstItem="Zut-xz-7SC" firstAttribute="leading" secondItem="hDa-D8-kTx" secondAttribute="trailing" constant="8.5" id="wOr-Cp-Lha"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgc-zQ-Xbw">
                                 <rect key="frame" x="20" y="323" width="374" height="134"/>
@@ -501,7 +511,7 @@
                                     <constraint firstItem="GoH-ct-duR" firstAttribute="centerX" secondItem="rgc-zQ-Xbw" secondAttribute="centerX" id="wJf-sE-bVj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
@@ -520,8 +530,11 @@
                             <constraint firstItem="r6L-hi-vNs" firstAttribute="trailing" secondItem="bwg-cB-u54" secondAttribute="trailing" constant="20" id="bhp-0F-gzU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="heu-8n-RYq"/>
+                    <navigationItem key="navigationItem" title="Send Attendance" id="heu-8n-RYq">
+                        <barButtonItem key="backBarButtonItem" title="  " id="m0Q-Y1-EeK"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="bgView" destination="bwg-cB-u54" id="Xzq-bw-ZXS"/>
                         <outlet property="classStrength" destination="gSQ-nf-j28" id="5Dd-dc-lgI"/>
                         <outlet property="dateLbl" destination="oG7-uU-Fp9" id="WKB-vc-Rqs"/>
                         <outlet property="mailOutlet" destination="EMO-FM-42f" id="ImG-22-EAj"/>
@@ -538,7 +551,7 @@
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="83.705357142857139"/>
         </scene>
-        <!--Attendance Record ListVC-->
+        <!--View Attendance-->
         <scene sceneID="8BM-63-ELc">
             <objects>
                 <viewController id="eul-5M-0Fm" customClass="AttendanceRecordListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -584,7 +597,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="55" id="j9f-e9-lFi" customClass="AttendanceRecordListCell" customModule="EnsyfiApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="55"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j9f-e9-lFi" id="mxX-Zo-Ovf">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -660,7 +673,9 @@
                             <constraint firstItem="YQG-Gf-kmB" firstAttribute="leading" secondItem="ggf-SA-LzO" secondAttribute="leading" constant="20" id="ccQ-I3-hdu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="to5-31-Bca"/>
+                    <navigationItem key="navigationItem" title="View Attendance" id="to5-31-Bca">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dHj-lK-MVY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YQG-Gf-kmB" id="FgD-Ng-VYd"/>
                     </connections>
@@ -681,9 +696,6 @@
         <image name="sms-2" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

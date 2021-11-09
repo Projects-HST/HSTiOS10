@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -161,7 +162,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -177,6 +178,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="cyM-mI-hos"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bgView" destination="dny-dg-5C6" id="9KP-Hc-BNg"/>
                         <outlet property="moduleType" destination="qLk-Ic-3VN" id="79Q-OA-Dp9"/>
                         <outlet property="titleName" destination="2Do-zk-fap" id="WJJ-6A-PAn"/>
                         <outlet property="userNmae" destination="JQe-tp-uyh" id="92B-hA-gMe"/>
@@ -184,18 +186,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+            <point key="canvasLocation" x="152" y="74"/>
         </scene>
         <!-- Teacher Details-->
         <scene sceneID="dXT-8S-Rnc">
             <objects>
                 <viewController storyboardIdentifier="TeacherPersonalInfoVC" id="8zX-HC-QX8" customClass="TeacherPersonalInfoVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Keg-TX-VDH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="866"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USN-bP-2Rf">
-                                <rect key="frame" x="0.0" y="143" width="414" height="653"/>
+                                <rect key="frame" x="0.0" y="183" width="414" height="649"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuT-qM-RbD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="707"/>
@@ -543,7 +545,7 @@
                                                     <constraint firstItem="ZWM-E5-3Fy" firstAttribute="leading" secondItem="1qX-6N-zKz" secondAttribute="trailing" constant="34" id="u0Y-ur-EGZ"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
@@ -560,8 +562,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TuT-qM-RbD" firstAttribute="height" secondItem="USN-bP-2Rf" secondAttribute="height" priority="250" id="JY1-8P-Xdk"/>
-                                    <constraint firstAttribute="bottom" secondItem="TuT-qM-RbD" secondAttribute="bottom" id="LiT-oW-5Qz"/>
+                                    <constraint firstItem="TuT-qM-RbD" firstAttribute="height" secondItem="USN-bP-2Rf" secondAttribute="height" priority="250" constant="58" id="JY1-8P-Xdk"/>
+                                    <constraint firstAttribute="bottom" secondItem="TuT-qM-RbD" secondAttribute="bottom" constant="-58" id="LiT-oW-5Qz"/>
                                     <constraint firstAttribute="trailing" secondItem="TuT-qM-RbD" secondAttribute="trailing" id="LoH-r5-KGh"/>
                                     <constraint firstItem="TuT-qM-RbD" firstAttribute="leading" secondItem="USN-bP-2Rf" secondAttribute="leading" id="RBK-SR-SEn"/>
                                     <constraint firstItem="TuT-qM-RbD" firstAttribute="top" secondItem="USN-bP-2Rf" secondAttribute="top" id="nee-zD-GIH"/>
@@ -569,7 +571,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="gZt-d1-dhB">
-                                <rect key="frame" x="152" y="20" width="110" height="110"/>
+                                <rect key="frame" x="152" y="60" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="9lb-Rq-e7u"/>
                                     <constraint firstAttribute="height" constant="110" id="x1p-d8-wfW"/>
@@ -581,8 +583,8 @@
                         <constraints>
                             <constraint firstItem="gZt-d1-dhB" firstAttribute="centerX" secondItem="Keg-TX-VDH" secondAttribute="centerX" id="3cC-Qe-lCL"/>
                             <constraint firstItem="LQq-H0-V0M" firstAttribute="trailing" secondItem="USN-bP-2Rf" secondAttribute="trailing" id="6PM-Er-4pm"/>
-                            <constraint firstItem="USN-bP-2Rf" firstAttribute="top" secondItem="Keg-TX-VDH" secondAttribute="top" constant="143" id="N4s-FS-4uA"/>
-                            <constraint firstItem="gZt-d1-dhB" firstAttribute="top" secondItem="Keg-TX-VDH" secondAttribute="top" constant="20" id="TUZ-hd-5SH"/>
+                            <constraint firstItem="USN-bP-2Rf" firstAttribute="top" secondItem="Keg-TX-VDH" secondAttribute="top" constant="183" id="N4s-FS-4uA"/>
+                            <constraint firstItem="gZt-d1-dhB" firstAttribute="top" secondItem="Keg-TX-VDH" secondAttribute="top" constant="60" id="TUZ-hd-5SH"/>
                             <constraint firstItem="LQq-H0-V0M" firstAttribute="bottom" secondItem="USN-bP-2Rf" secondAttribute="bottom" id="ekU-rV-9zJ"/>
                             <constraint firstItem="USN-bP-2Rf" firstAttribute="leading" secondItem="Keg-TX-VDH" secondAttribute="leading" id="w6D-o5-Go7"/>
                         </constraints>
@@ -590,11 +592,12 @@
                     <navigationItem key="navigationItem" title=" Teacher Details" id="haR-jW-C4r">
                         <barButtonItem key="backBarButtonItem" title="  " id="VTc-QR-CqJ"/>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="850"/>
+                    <size key="freeformSize" width="414" height="920"/>
                     <connections>
                         <outlet property="address" destination="sb0-WI-MKd" id="JHE-3a-U3u"/>
                         <outlet property="age" destination="Nxf-V6-K43" id="WFv-fa-OH6"/>
                         <outlet property="alternateEmailId" destination="wJd-7p-Ulj" id="J60-T8-eOF"/>
+                        <outlet property="bgView" destination="dM5-8y-ZYj" id="fLG-4V-kI2"/>
                         <outlet property="claasTeacherFor" destination="45a-pU-7mo" id="Jwv-j9-na8"/>
                         <outlet property="classSection" destination="izR-VF-WkL" id="a6M-Oz-KFx"/>
                         <outlet property="commmunityCLass" destination="lx3-tK-ypQ" id="2jR-eO-Hyr"/>
@@ -612,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPr-HY-9PQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="82"/>
+            <point key="canvasLocation" x="902.89855072463774" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>

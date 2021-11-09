@@ -24,6 +24,7 @@ class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersList
   
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img1: UIImageView!
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,6 +46,7 @@ class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersList
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ODStudentsListModel.Fetch.Request(user_type :"1"))
         self.selectedType = "ST"
+        self.bgView.dropShadow()
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

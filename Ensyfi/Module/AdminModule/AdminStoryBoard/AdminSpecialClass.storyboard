@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Admin Special ClassVC-->
+        <!--Special Class-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="AdminSpecialClassVC" id="Y6W-OH-hqX" customClass="AdminSpecialClassVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -264,6 +264,9 @@
                             <constraint firstItem="rGQ-sm-Cm3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uLT-h5-L7U"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Special Class" id="1HP-Il-QQ4">
+                        <barButtonItem key="backBarButtonItem" title="  " id="bBu-Ou-S6z"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="teableView" destination="rGQ-sm-Cm3" id="ssz-A9-nB0"/>
                     </connections>

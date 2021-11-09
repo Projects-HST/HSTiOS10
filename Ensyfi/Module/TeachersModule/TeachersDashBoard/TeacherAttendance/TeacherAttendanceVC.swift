@@ -18,6 +18,8 @@ class TeacherAttendanceVC: UIViewController {
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var date_month: UITextField!
+    @IBOutlet weak var bgView: UIView!
+    
     
     let datePicker = UIDatePicker()
     var dateFormatted = String()
@@ -43,6 +45,7 @@ class TeacherAttendanceVC: UIViewController {
         self.classBtnOutlet.isEnabled = false
         self.fetchMonthData()
         self.showDatePicker()
+        self.bgView.dropShadow()
     }
     
     @IBAction func selectClass(_ sender: Any) {

@@ -43,6 +43,7 @@ class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,F
     var selectedFeesId = String()
     
     
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
     @IBOutlet weak var classBtnOutlet: UIButton!
@@ -55,6 +56,7 @@ class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,F
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.bgView.dropShadow()
        
     }
     
