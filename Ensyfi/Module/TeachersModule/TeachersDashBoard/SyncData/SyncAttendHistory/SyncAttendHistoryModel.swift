@@ -1,33 +1,34 @@
 //
-//  SyncAttendanceModel.swift
+//  SyncAttendHistoryModel.swift
 //  EnsyfiApp
 //
-//  Created by HappysanziMac on 06/10/21.
+//  Created by HappysanziMac on 09/11/21.
 //
 
 
 import Foundation
 import UIKit
 
-struct SyncAttendanceModel{
+struct SyncAttendanceHistoryModel{
     struct Fetch {
         
         struct Request
         {
-            var ac_year : String?
+            var attend_id : String?
             var class_id : String?
-            var class_total : String?
-            var no_of_present : String?
-            var no_of_absent : String?
-            var attendence_period : String?
-            var created_by : String?
+            var student_id : String?
+            var abs_date : String?
+            var a_status : String?
+            var attend_period : String?
+            var a_val : String?
+            var a_taken_by : String?
             var created_at : String?
             var status : String?
         }
         
         struct Response
         {
-            var testObj: SyncAttendanceModels?
+            var testObj: SyncAttendanceHistoryModels?
             var isError: Bool
             var message: String?
         }
@@ -36,7 +37,7 @@ struct SyncAttendanceModel{
         {
             var status : String?
             var msg: String?
-            var attendance_id: String?
+            var last_attendance_history_id: String?
             var isError: Bool
             var message: String?
         }

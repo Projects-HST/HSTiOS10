@@ -48,6 +48,20 @@
         <attribute name="subject_name" optional="YES" attributeType="Transformable"/>
         <attribute name="teacher_id" optional="YES" attributeType="Transformable"/>
     </entity>
+    <entity name="ClassTestMarkEntry" representedClassName="ClassTestMarkEntry" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Transformable"/>
+        <attribute name="created_by" optional="YES" attributeType="Transformable"/>
+        <attribute name="id" optional="YES" attributeType="Transformable"/>
+        <attribute name="local_hw_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="marks" optional="YES" attributeType="Transformable"/>
+        <attribute name="remarks" optional="YES" attributeType="Transformable"/>
+        <attribute name="server_hw_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="status" optional="YES" attributeType="Transformable"/>
+        <attribute name="student_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="sync_status" optional="YES" attributeType="Transformable"/>
+        <attribute name="updated_at" optional="YES" attributeType="Transformable"/>
+        <attribute name="updated_by" optional="YES" attributeType="Transformable"/>
+    </entity>
     <entity name="ExamDetails" representedClassName="ExamDetails" syncable="YES" codeGenerationType="class">
         <attribute name="class_name" optional="YES" attributeType="Transformable"/>
         <attribute name="classmaster_id" optional="YES" attributeType="Transformable"/>
@@ -283,6 +297,7 @@
         <element name="ClassAttendanceHistory" positionX="0" positionY="162" width="128" height="254"/>
         <element name="ClassAttendances" positionX="-9" positionY="153" width="128" height="14"/>
         <element name="ClassSubjects" positionX="-54" positionY="126" width="128" height="119"/>
+        <element name="ClassTestMarkEntry" positionX="-9" positionY="153" width="128" height="209"/>
         <element name="ExamDetails" positionX="-18" positionY="162" width="128" height="224"/>
         <element name="ExamMarkEntry" positionX="-9" positionY="153" width="128" height="224"/>
         <element name="ExamsDatas" positionX="-45" positionY="135" width="128" height="164"/>
@@ -296,7 +311,7 @@
         <element name="StudentProfile" positionX="-9" positionY="153" width="128" height="569"/>
         <element name="StudentRegDatas" positionX="-9" positionY="153" width="128" height="134"/>
         <element name="TeacherProfile" positionX="-54" positionY="-9" width="128" height="299"/>
-        <element name="TimeTables" positionX="-9" positionY="153" width="128" height="239"/>
         <element name="TimeTableDays" positionX="0" positionY="162" width="128" height="80"/>
+        <element name="TimeTables" positionX="-9" positionY="153" width="128" height="239"/>
     </elements>
 </model>

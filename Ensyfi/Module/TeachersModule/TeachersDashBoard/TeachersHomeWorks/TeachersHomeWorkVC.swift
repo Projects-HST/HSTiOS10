@@ -61,6 +61,7 @@ class TeachersHomeWorkVC: UIViewController {
     var selectedTitle = String()
     var selectedDate = String()
     var selectedDescription = String()
+    var selectedHwId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -211,6 +212,7 @@ extension TeachersHomeWorkVC: UITableViewDelegate,UITableViewDataSource {
             self.selectedTitle = filteredSubject[indexPath.row]
             self.selectedDate = filteredDate[indexPath.row]
             self.selectedDescription = filteredDetails[indexPath.row]
+            self.selectedHwId = filteredHwID[indexPath.row]
             self.performSegue(withIdentifier: "to_HWDetails", sender: self)
         }
         else {
@@ -218,7 +220,7 @@ extension TeachersHomeWorkVC: UITableViewDelegate,UITableViewDataSource {
             self.selectedTitle = filteredSubject[indexPath.row]
             self.selectedDate = filteredDate[indexPath.row]
             self.selectedDescription = filteredDetails[indexPath.row]
-            
+            self.selectedHwId = filteredHwID[indexPath.row]
             if filteredMarkStatus[indexPath.row] == "0"{
                 self.performSegue(withIdentifier: "to_ClassTestDetails", sender: self)
             }
@@ -255,6 +257,7 @@ extension TeachersHomeWorkVC: UITableViewDelegate,UITableViewDataSource {
             vc.selectedDate = self.selectedDate
             vc.selectedDescription = self.selectedDescription
             vc.selectedClassId = self.selectedClassId
+            vc.selectedHwId = self.selectedHwId
         }
     }
 }

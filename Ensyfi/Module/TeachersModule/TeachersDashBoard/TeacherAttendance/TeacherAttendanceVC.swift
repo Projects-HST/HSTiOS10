@@ -20,7 +20,6 @@ class TeacherAttendanceVC: UIViewController {
     @IBOutlet weak var date_month: UITextField!
     @IBOutlet weak var bgView: UIView!
     
-    
     let datePicker = UIDatePicker()
     var dateFormatted = String()
     var className = [String]()

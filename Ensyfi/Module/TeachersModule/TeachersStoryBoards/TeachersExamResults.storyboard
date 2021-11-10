@@ -594,18 +594,6 @@
                                     <outlet property="delegate" destination="nCj-2y-ToU" id="hp5-5r-8w1"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LJ-ZG-fl6">
-                                <rect key="frame" x="347" y="129" width="67" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="1uK-D6-wPe"/>
-                                    <constraint firstAttribute="width" constant="67" id="zJj-1m-pjY"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="save:" destination="nCj-2y-ToU" eventType="touchUpInside" id="2pp-ZJ-roN"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Please ensure to sync after mark entry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-P8-zD2">
                                 <rect key="frame" x="20" y="108" width="374" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -624,12 +612,10 @@
                             <constraint firstItem="tWf-Sh-mHK" firstAttribute="leading" secondItem="INm-6T-xCo" secondAttribute="trailing" id="4Sd-ch-Rc7"/>
                             <constraint firstItem="INm-6T-xCo" firstAttribute="leading" secondItem="Q0B-Nm-cRa" secondAttribute="trailing" id="8U7-iu-za9"/>
                             <constraint firstItem="Q0B-Nm-cRa" firstAttribute="top" secondItem="cUz-P8-zD2" secondAttribute="bottom" constant="20" id="9Ur-D5-vSL"/>
-                            <constraint firstItem="2LJ-ZG-fl6" firstAttribute="trailing" secondItem="zPL-zS-nEs" secondAttribute="trailing" id="Hrf-Y6-VwT"/>
                             <constraint firstItem="zPL-zS-nEs" firstAttribute="trailing" secondItem="cUz-P8-zD2" secondAttribute="trailing" constant="20" id="IG5-CQ-DVy"/>
                             <constraint firstItem="cUz-P8-zD2" firstAttribute="leading" secondItem="zPL-zS-nEs" secondAttribute="leading" constant="20" id="Ivc-AB-0q4"/>
                             <constraint firstItem="INm-6T-xCo" firstAttribute="top" secondItem="cUz-P8-zD2" secondAttribute="bottom" constant="20" id="KgP-R1-XCs"/>
                             <constraint firstItem="tWf-Sh-mHK" firstAttribute="top" secondItem="cUz-P8-zD2" secondAttribute="bottom" constant="20" id="MDZ-FY-ClQ"/>
-                            <constraint firstItem="2LJ-ZG-fl6" firstAttribute="top" secondItem="cUz-P8-zD2" secondAttribute="bottom" id="fpc-7O-hOp"/>
                             <constraint firstAttribute="bottom" secondItem="ekr-b0-16t" secondAttribute="bottom" id="gLe-y1-OoI"/>
                             <constraint firstItem="zPL-zS-nEs" firstAttribute="trailing" secondItem="ekr-b0-16t" secondAttribute="trailing" constant="20" id="gZR-VP-mQP"/>
                             <constraint firstItem="Q0B-Nm-cRa" firstAttribute="leading" secondItem="zPL-zS-nEs" secondAttribute="leading" constant="20" id="lF1-zd-ZIq"/>

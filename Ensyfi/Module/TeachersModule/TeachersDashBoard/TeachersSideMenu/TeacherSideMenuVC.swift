@@ -52,6 +52,7 @@ class TeacherSideMenuVC: UIViewController {
             deleteAllData(entity:"TeacherProfile")
             deleteAllData(entity:"ClassAttendances")
             deleteAllData(entity:"ClassAttendanceHistory")
+            deleteAllData(entity:"Homework_class_test")
             deleteAllData(entity:"TimeTables")
             
         }

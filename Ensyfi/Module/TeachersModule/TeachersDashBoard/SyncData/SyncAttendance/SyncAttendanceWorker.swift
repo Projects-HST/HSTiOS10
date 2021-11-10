@@ -12,10 +12,10 @@ typealias SyncAttendanceresponseHandler = (_ response:SyncAttendanceModel.Fetch.
 
 class SyncAttendanceWorker{
 
-   func fetch(user_id:String,group_title:String,group_lead_id:String,status:String,group_id:String, onSuccess successCallback:(SyncAttendanceresponseHandler)?,onFailure failureCallback: @escaping(SyncAttendanceresponseHandler)) {
+   func fetch(ac_year:String,class_id:String,class_total:String,no_of_present:String,no_of_absent:String,attendence_period:String,created_by:String,created_at:String,status:String, onSuccess successCallback:(SyncAttendanceresponseHandler)?,onFailure failureCallback: @escaping(SyncAttendanceresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPISyncAttendance(
-        user_id:user_id, group_title:group_title,group_lead_id:group_lead_id, status:status,group_id:group_id, onSuccess: { (resp)  in
+        ac_year:ac_year, class_id:class_id,class_total:class_total, no_of_present:no_of_present,no_of_absent:no_of_absent,attendence_period:attendence_period, created_by:created_by,created_at:created_at, status:status, onSuccess: { (resp)  in
                successCallback?(SyncAttendanceModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -24,5 +24,3 @@ class SyncAttendanceWorker{
        )
    }
 }
-
-

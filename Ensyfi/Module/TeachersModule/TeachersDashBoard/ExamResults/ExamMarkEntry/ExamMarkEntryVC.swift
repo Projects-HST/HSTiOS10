@@ -123,10 +123,6 @@ extension ExamMarkEntryVC : UITableViewDelegate,UITableViewDataSource {
             
     }
     
-    @IBAction func save(_ sender: Any) {
-        
-    }
-    
     @IBAction func save_Marks(_ sender: Any) {
         
         self.enteredMarkText.removeAll()
@@ -137,17 +133,17 @@ extension ExamMarkEntryVC : UITableViewDelegate,UITableViewDataSource {
         let sequence = zip(enteredMarkText, filteredStudentID)
         
         for datas in sequence {
-            let dataas = ExamMarksEntryData(Exam_id:self.selectedExamId, Teacher_id: GlobalVariables.shared.user_id, Subject_id: "", Stu_id:datas.1,Internal_mark: "", External_grade: "", Total_marks:datas.0, Total_grade:"", Created_by:GlobalVariables.shared.user_id,Created_at: self.selectedDate,Updated_by: "",Updated_at: "",Sync_status: "NS")
+            let dataas = ExamMarksEntryData(Exam_id:self.selectedExamId, Teacher_id: GlobalVariables.shared.user_id, Subject_id: self.selectedsubId, Stu_id:datas.1,Internal_mark: "", External_grade: "", Total_grade:"", Created_by:GlobalVariables.shared.user_id,Created_at: self.selectedDate,Updated_by: "",Updated_at: "",Sync_status: "NS",ID:"")
                 self.examMarkEntryData.append(dataas)
            }
         
         for data in examMarkEntryData {
 
-            saveStudentsMark(exam_id:data.exam_id!,teacher_id:data.teacher_id!,subject_id:data.subject_id!,stu_id:data.stu_id!,internal_mark:data.internal_mark!,external_grade:data.external_grade!,total_marks:data.total_marks!,total_grade:data.total_grade!,created_by:data.created_by!,created_at:data.created_at!,updated_by:data.updated_at!,updated_at:data.updated_at!,sync_status:data.sync_status!,id:data.id!)
+            saveStudentsMark(exam_id:data.exam_id!,teacher_id:data.teacher_id!,subject_id:data.subject_id!,stu_id:data.stu_id!,internal_mark:data.internal_mark!,external_grade:data.external_grade!,total_grade:data.total_grade!,created_by:data.created_by!,created_at:data.created_at!,updated_by:data.updated_at!,updated_at:data.updated_at!,sync_status:data.sync_status!,id:data.id!)
         }
     }
     
-    func saveStudentsMark(exam_id:String,teacher_id:String,subject_id:String,stu_id:String,internal_mark:String,external_grade:String,total_marks:String,total_grade:String,created_by:String,created_at:String,updated_by:String,updated_at:String,sync_status:String,id:String) {
+    func saveStudentsMark(exam_id:String,teacher_id:String,subject_id:String,stu_id:String,internal_mark:String,external_grade:String,total_grade:String,created_by:String,created_at:String,updated_by:String,updated_at:String,sync_status:String,id:String) {
         
         let studentAttendance = NSEntityDescription.insertNewObject(forEntityName: "ExamMarkEntry", into: context!)
       
@@ -157,7 +153,7 @@ extension ExamMarkEntryVC : UITableViewDelegate,UITableViewDataSource {
         studentAttendance.setValue(stu_id, forKey: "stu_id")
         studentAttendance.setValue(internal_mark, forKey: "internal_mark")
         studentAttendance.setValue(external_grade, forKey: "external_grade")
-        studentAttendance.setValue(total_marks, forKey: "total_marks")
+        studentAttendance.setValue(self.enteredMarkText, forKey: "total_marks")
         studentAttendance.setValue(total_grade, forKey: "total_grade")
         studentAttendance.setValue(created_by, forKey: "created_by")
         studentAttendance.setValue(created_at, forKey: "created_at")
@@ -187,7 +183,7 @@ struct ExamMarksEntryData {
     var stu_id : String?
     var internal_mark : String?
     var external_grade : String?
-    var total_marks : String?
+//    var total_marks : String?
     var total_grade : String?
     var created_by : String?
     var created_at : String?
@@ -196,7 +192,7 @@ struct ExamMarksEntryData {
     var sync_status : String?
     var id : String?
     
-    init(Exam_id:String,Teacher_id:String,Subject_id:String,Stu_id:String,Internal_mark:String,External_grade:String,Total_marks:String,Total_grade:String,Created_by:String,Created_at:String,Updated_by:String,Updated_at:String,Sync_status:String){
+    init(Exam_id:String,Teacher_id:String,Subject_id:String,Stu_id:String,Internal_mark:String,External_grade:String,Total_grade:String,Created_by:String,Created_at:String,Updated_by:String,Updated_at:String,Sync_status:String,ID:String){
         
         self.exam_id = Exam_id
         self.teacher_id = Exam_id
@@ -204,12 +200,13 @@ struct ExamMarksEntryData {
         self.stu_id = Stu_id
         self.internal_mark = Internal_mark
         self.external_grade = External_grade
-        self.total_marks = Total_marks
+//        self.total_marks = Total_marks
         self.total_grade = Total_grade
         self.created_by = Created_by
         self.created_at = Created_at
         self.updated_by = Updated_by
         self.updated_at = Updated_at
         self.sync_status = Sync_status
+        self.id = Sync_status
     }
 }

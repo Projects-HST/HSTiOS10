@@ -20,6 +20,7 @@ class UpdateCTestDetailsVC: UIViewController {
     var selectedDate = String()
     var selectedDescription = String()
     var selectedClassId = String()
+    var selectedHwId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class UpdateCTestDetailsVC: UIViewController {
             vc.selectedClassId = self.selectedClassId
 //            vc.selectedTitle = self.selectedTitle
             vc.selectedDate = self.selectedDate
+            vc.selectedHwId = self.selectedHwId
 //            vc.selectedDescription = self.selectedDescription
         }
     }

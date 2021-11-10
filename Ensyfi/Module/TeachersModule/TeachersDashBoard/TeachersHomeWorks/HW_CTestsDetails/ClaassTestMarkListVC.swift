@@ -7,8 +7,15 @@
 
 import UIKit
 import CoreData
+import MBProgressHUD
 
-class ClaassTestMarkListVC: UIViewController {
+protocol ClassTestMarkListDisplayLogic: AnyObject
+{
+    func successFetchedItems(viewModel:ClassTestMarkListModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel:ClassTestMarkListModel.Fetch.ViewModel)
+}
+
+class ClaassTestMarkListVC: UIViewController, ClassTestMarkListDisplayLogic {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,10 +25,14 @@ class ClaassTestMarkListVC: UIViewController {
     var selectedExamId = String()
     var selectedsubId = String()
     var selectedInternalExternal = String()
-    
+    var selectedHwId = String()
+     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
     var dataArr = [StudentDetails]()
+    var interactor: ClassTestMarkListBusinessLogic?
+    var displayedClassTestMarkListData: [ClassTestMarkListModel.Fetch.ViewModel.DisplayedClassTestMarkListData] = []
+    
     let date = Date()
     let formatter = DateFormatter()
     var dummy = [String]()
@@ -32,6 +43,7 @@ class ClaassTestMarkListVC: UIViewController {
     var studentId = [String]()
     var classSection = [String]()
     var classID = [String]()
+    var markArr = [String]()
     
     var filteredStudentName = [String]()
     var filteredSubject = [String]()
@@ -48,9 +60,32 @@ class ClaassTestMarkListVC: UIViewController {
         // Do any additional setup after loading the view.
         print(selectedClassId)
         self.hideKeyboardWhenTappedAround()
-        self.fetchStudentData()
         self.context = appDelegate.persistentContainer.viewContext
-        self.marksText = [String](repeating: "", count:100)
+        
+        interactor?.fetchItems(request: ClassTestMarkListModel.Fetch.Request(hw_id :self.selectedHwId))
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ClassTestMarkListInteractor()
+        let presenter = ClassTestMarkListPresenter()
+        viewController.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = viewController
     }
     
     @IBAction func editAction(_ sender: Any) {
@@ -79,8 +114,8 @@ class ClaassTestMarkListVC: UIViewController {
                     }.map{$0.offset}
                 
                 self.filteredStudentName = examIndexes.map { studentName[$0] }
-                self.filteredSubject = examIndexes.map { studentSubject[$0] }
                 self.filteredStudentID = examIndexes.map { studentId[$0] }
+                self.filteredSubject = examIndexes.map { studentSubject[$0] }
                 self.filteredClassSec = examIndexes.map { classSection[$0] }
                 self.filteredClassId = examIndexes.map { classID[$0] }
                 
@@ -98,6 +133,22 @@ class ClaassTestMarkListVC: UIViewController {
 
 extension ClaassTestMarkListVC : UITableViewDelegate,UITableViewDataSource {
     
+    func successFetchedItems(viewModel: ClassTestMarkListModel.Fetch.ViewModel) {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        displayedClassTestMarkListData = viewModel.displayedClassTestMarkListData
+        for data in displayedClassTestMarkListData{
+            let mark = data.marks
+            self.markArr.append(mark!)
+        }
+        
+        self.fetchStudentData()
+//        self.tableView.reloadData()
+    }
+    
+    func errorFetchingItems(viewModel: ClassTestMarkListModel.Fetch.ViewModel) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return filteredStudentName.count
@@ -106,11 +157,10 @@ extension ClaassTestMarkListVC : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentMarkListCell
-//        let name = zip(filteredStudentName,filteredSubject).map { "\($0)-\($1)" }
-//        cell.SerialNo.text = String(serialNoArr[indexPath.row])
+        
+//        let data = displayedClassTestMarkListData[indexPath.row]
         cell.name.text = filteredStudentName[indexPath.row]
-//        cell.marks.text = marksText[indexPath.row]
-//        cell.markField.tag = indexPath.row
+        cell.marks.text = markArr[indexPath.row]
         cell.selectionStyle = .none
         return cell
         
@@ -118,13 +168,14 @@ extension ClaassTestMarkListVC : UITableViewDelegate,UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
    
-           if (segue.identifier == "to_updateMarkList")
-           {
-           let vc = segue.destination as! UpdateClassTestMarkVC
-               vc.selectedClassId = self.selectedClassId
-//               vc.selectedTitle = self.selectedTitle
-               vc.selectedDate = self.selectedDate
-//               vc.selectedDescription = self.selectedDescription
-           }
-       }
+        if (segue.identifier == "to_updateMarkList")
+        {
+        let vc = segue.destination as! UpdateClassTestMarkVC
+            vc.selectedClassId = self.selectedClassId
+//              vc.selectedTitle = self.selectedTitle
+            vc.selectedDate = self.selectedDate
+            vc.selectedHwId = self.selectedHwId
+        }
+    }
 }
+

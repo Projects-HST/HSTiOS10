@@ -1,33 +1,33 @@
 //
-//  SyncAttendanceModel.swift
+//  SyncAssignmentsModel.swift
 //  EnsyfiApp
 //
-//  Created by HappysanziMac on 06/10/21.
+//  Created by HappysanziMac on 10/11/21.
 //
-
 
 import Foundation
 import UIKit
 
-struct SyncAttendanceModel{
+struct SyncAssignmentModel{
     struct Fetch {
         
         struct Request
         {
-            var ac_year : String?
             var class_id : String?
-            var class_total : String?
-            var no_of_present : String?
-            var no_of_absent : String?
-            var attendence_period : String?
+            var teacher_id : String?
+            var homeWork_type : String?
+            var subject_id : String?
+            var title : String?
+            var test_date : String?
+            var due_date : String?
+            var homework_details : String?
             var created_by : String?
             var created_at : String?
-            var status : String?
         }
         
         struct Response
         {
-            var testObj: SyncAttendanceModels?
+            var testObj: SyncAssignmentModels?
             var isError: Bool
             var message: String?
         }

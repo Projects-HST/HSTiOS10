@@ -23,11 +23,11 @@ class SyncAttendanceInteractor:SyncAttendanceBusinessLogic,SyncAttendanceDataSto
     var worker:SyncAttendanceWorker?
  
     func fetchItems(request: SyncAttendanceModel.Fetch.Request) {
-        if request.user_id == nil {
+        if request.class_id == nil {
            self.presenter?.presentFetchResults(resp: SyncAttendanceModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = SyncAttendanceWorker()
-        worker!.fetch(user_id:request.user_id!, group_title:request.group_title!,group_lead_id:request.group_lead_id!, status:request.status!, group_id:request.group_id!, onSuccess: { (resp) in
+        worker!.fetch(ac_year:request.ac_year!, class_id:request.class_id!,class_total:request.class_total!, no_of_present:request.no_of_present!, no_of_absent:request.no_of_absent!,attendence_period:request.attendence_period!, created_by:request.created_by!,created_at:request.created_at!, status:request.status!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: SyncAttendanceModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: SyncAttendanceModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

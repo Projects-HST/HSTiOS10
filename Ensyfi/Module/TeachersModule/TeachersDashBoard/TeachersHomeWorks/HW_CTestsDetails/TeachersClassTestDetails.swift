@@ -40,9 +40,9 @@ class TeachersClassTestDetails: UIViewController {
         if (segue.identifier == "to_AddClasstestMark")
         {
         let vc = segue.destination as! AddClassTestMarkVC
-//            vc.selectedClassId = self.selectedClassId
+            vc.selectedClassId = self.selectedClassId
 //            vc.selectedTitle = self.selectedTitle
-//            vc.selectedDate = self.selectedDate
+            vc.selectedDate = self.selectedDate
 //            vc.selectedDescription = self.selectedDescription
         }
     }

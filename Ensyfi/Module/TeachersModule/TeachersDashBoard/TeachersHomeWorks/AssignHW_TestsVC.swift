@@ -66,6 +66,7 @@ class AssignHW_TestsVC: UIViewController {
         self.hideKeyboardWhenTappedAround()
         self.bgView.dropShadow()
         self.bgView1.dropShadow()
+        self.selectedType = "HT"
         view.bindToKeyboard()
     }
     
@@ -105,12 +106,12 @@ class AssignHW_TestsVC: UIViewController {
     @IBAction func sementAction(_ sender: Any) {
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            self.selectedType = "ST"
+            self.selectedType = "HT"
             self.img2.image = UIImage(named:"unselected1")
             self.img1.image = UIImage(named:"selected")
         }
         else {
-            self.selectedType = "TC"
+            self.selectedType = "HW"
             self.img2.image = UIImage(named:"selected")
             self.img1.image = UIImage(named:"unselected1")
         }
@@ -119,16 +120,19 @@ class AssignHW_TestsVC: UIViewController {
     @IBAction func assign(_ sender: Any) {
         
         if titleField.text!.isEmpty == true {
-            
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Enter title", complition: {
+            })
         }
         else if detailsField.text!.isEmpty == true {
-            
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Enter details", complition: {
+            })
         }
         else if dateField.text!.isEmpty == true{
-            
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"select date", complition: {
+            })
         }
         else {
-            saveHWTest(sync_status:"NS",class_id:self.selectedClassId,created_at:self.todayDate,due_date:"",created_by:GlobalVariables.shared.user_id,hw_details:self.detailsField.text!,hw_type:"",mark_status:"",server_hw_id:"",status:"",subject_id:self.selectedSubId,subject_name:self.subjectTextField.text!,test_date:"",title:self.titleField.text!,updated_at:"",updated_by:"",year_id:"1",teacher_id:GlobalVariables.shared.user_id,id:"")
+            saveHWTest(sync_status:"NS",class_id:self.selectedClassId,created_at:self.todayDate,due_date:self.dateField.text!,created_by:GlobalVariables.shared.user_id,hw_details:self.detailsField.text!,hw_type:self.selectedType,mark_status:"",server_hw_id:"",status:"A",subject_id:self.selectedSubId,subject_name:self.subjectTextField.text!,test_date:self.dateField.text!,title:self.titleField.text!,updated_at:"",updated_by:"",year_id:"1",teacher_id:GlobalVariables.shared.user_id,id:"1")
         }
     }
 }
@@ -216,6 +220,9 @@ extension AssignHW_TestsVC {
         do {
             try context?.save()
                 print(" HomeWork_test Saved suucess")
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Saved success", complition: {
+                self.navigationController?.popViewController(animated: true)
+            })
             }
         catch {
             print("error")
