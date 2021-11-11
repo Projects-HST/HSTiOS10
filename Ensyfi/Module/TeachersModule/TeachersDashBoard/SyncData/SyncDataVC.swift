@@ -33,8 +33,14 @@ protocol SyncCTestMarksDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: SyncCTestMarksModel.Fetch.ViewModel)
 }
 
+protocol SyncExamMarksDisplayLogic: AnyObject
+{
+    func successFetchedItems(viewModel:SyncExamMarksModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: SyncExamMarksModel.Fetch.ViewModel)
+}
 
-class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHistoryDisplayLogic,SyncAssignmentDisplayLogic, SyncCTestMarksDisplayLogic {
+class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHistoryDisplayLogic,SyncAssignmentDisplayLogic, SyncCTestMarksDisplayLogic, SyncExamMarksDisplayLogic {
+    
    
     @IBOutlet weak var attendanceCount: UILabel!
     @IBOutlet weak var assignmentCount: UILabel!
@@ -52,12 +58,15 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
     var interactor1: SyncAttendanceHistoryBusinessLogic?
     var interactor2: SyncAssignmentBusinessLogic?
     var interactor3: SyncCTestMarksBusinessLogic?
+    var interactor4: SyncExamMarksBusinessLogic?
     
     var classAtendance = [ClassAttendances]()
     var classAtendanceHistory = [ClassAttendanceHistory]()
     var assignmentDataArr = [Homework_class_test]()
-    var arraysss = [String]()
+    var c_TestMarkEntryArr = [ClassTestMarkEntry]()
+    var examMarkEntryArr = [ExamMarkEntry]()
     
+    var arraysss = [String]()
 //    Sync Attendance
     var id = [String]()
     var ac_year = [String]()
@@ -132,7 +141,46 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
     var FiltHWcreated_by = [String]()
     var FiltHWcreated_at = [String]()
     var FiltHWsyncStatus = [String]()
+//
+    var CTesthw_masterid = [String]()
+    var CTeststudent_id = [String]()
+    var CTestmarks = [String]()
+    var CTestremarks = [String]()
+    var CTestcreated_by = [String]()
+    var CTestcreated_at = [String]()
+    var CTestSyncStatus = [String]()
     
+    var FiltCTesthw_masterid = [String]()
+    var FiltCTeststudent_id = [String]()
+    var FiltCTestmarks = [String]()
+    var FiltCTestremarks = [String]()
+    var FiltCTestcreated_by = [String]()
+    var FiltCTestcreated_at = [String]()
+    var FiltCTestSyncStatus = [String]()
+    
+    var ExamMarkexam_id = [String]()
+    var ExamMarkteacher_id = [String]()
+    var ExamMarksubject_id = [String]()
+    var ExamMarkstu_id = [String]()
+    var ExamMarkclassmaster_id = [String]()
+    var ExamMarkinternal_mark = [String]()
+    var ExamMarkexternal_mark = [String]()
+    var ExamMarkmarks = [String]()
+    var ExamMarkis_internal_external = [String]()
+    var ExamMarkcreated_by = [String]()
+    var ExamMarkSyncStatus = [String]()
+    
+    var FiltExamMarkexam_id = [String]()
+    var FiltExamMarkteacher_id = [String]()
+    var FiltExamMarksubject_id = [String]()
+    var FiltExamMarkstu_id = [String]()
+    var FiltExamMarkclassmaster_id = [String]()
+    var FiltExamMarkinternal_mark = [String]()
+    var FiltExamMarkexternal_mark = [String]()
+    var FiltExamMarkmarks = [String]()
+    var FiltExamMarkis_internal_external = [String]()
+    var FiltExamMarkcreated_by = [String]()
+    var FiltExamMarkSyncStatus = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,6 +190,8 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
         self.fetchClassAttendanceHistory()
         self.fetchClassAttendance()
         self.fetchAssignmentDetails()
+        self.fetchCtestMarks()
+        self.fetchExamMarkEntryDetails()
         self.bgView1.dropShadow()
         self.bgView2.dropShadow()
         self.bgView3.dropShadow()
@@ -189,6 +239,13 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
         viewController3.interactor3 = interactor3
         interactor3.presenter3 = presenter3
         presenter3.viewController3 = viewController3
+        
+        let viewController4 = self
+        let interactor4 = SyncExamMarksInteractor()
+        let presenter4 = SyncExamMarksPresenter()
+        viewController4.interactor4 = interactor4
+        interactor4.presenter4 = presenter4
+        presenter4.viewController4 = viewController4
     }
     
     @IBAction func attendanceSync(_ sender: Any) {
@@ -281,31 +338,66 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
         }
     }
     
+    func syncCTestMarks() {
+        
+        if FiltCTeststudent_id.count >= 1 {
+            
+            let HwMasterId = FiltCTesthw_masterid.last
+            self.FiltCTesthw_masterid.removeLast()
+            let StudentId = FiltCTeststudent_id.last
+            self.FiltCTeststudent_id.removeLast()
+            let CTetsMarks = FiltCTestmarks.last
+            self.FiltCTestmarks.removeLast()
+            let Remarks = FiltCTestremarks.last
+            self.FiltCTestremarks.removeLast()
+            let CreatedBy = FiltCTestcreated_by.last
+            self.FiltCTestcreated_by.removeLast()
+            let CreatedAt = FiltCTestcreated_at.last
+            self.FiltCTestcreated_at.removeLast()
+           
+            interactor3?.fetchItems(request: SyncCTestMarksModel.Fetch.Request(hw_masterid:HwMasterId!,student_id:StudentId!,marks:CTetsMarks!,remarks:Remarks!,created_by:CreatedBy!,created_at:CreatedAt!))
+        }
+    }
+    
+    func syncExamMarks() {
+        
+        if FiltExamMarkstu_id.count >= 1 {
+            
+            let examId = FiltExamMarkexam_id.last
+            self.FiltExamMarkexam_id.removeLast()
+            let teacherId = FiltExamMarkteacher_id.last
+            self.FiltExamMarkteacher_id.removeLast()
+            let subjectId = FiltExamMarksubject_id.last
+            self.FiltExamMarksubject_id.removeLast()
+            let studentId = FiltExamMarkstu_id.last
+            self.FiltExamMarkstu_id.removeLast()
+            let classId = FiltExamMarkclassmaster_id.last
+            self.FiltExamMarkclassmaster_id.removeLast()
+            let internalMark = FiltExamMarkinternal_mark.last
+            self.FiltExamMarkinternal_mark.removeLast()
+            let externalMark = FiltExamMarkexternal_mark.last
+            self.FiltExamMarkexternal_mark.removeLast()
+            let marks = FiltExamMarkmarks.last
+            self.FiltExamMarkmarks.removeLast()
+            let isInternal_external = FiltExamMarkis_internal_external.last
+            self.FiltExamMarkis_internal_external.removeLast()
+            let createdBy = FiltExamMarkcreated_by.last
+            self.FiltExamMarkcreated_by.removeLast()
+           
+            interactor4?.fetchItems(request: SyncExamMarksModel.Fetch.Request(exam_id: examId!, teacher_id: teacherId!, subject_id: subjectId!, stu_id: studentId!, classmaster_id: classId!, internal_mark: internalMark!, external_mark: externalMark!, marks: marks!, is_internal_external: isInternal_external!, created_by: createdBy!))
+        }
+    }
+    
     @IBAction func assignmentSync(_ sender: Any) {
         self.syncAssignment()
     }
     
     @IBAction func classTestSync(_ sender: Any) {
-        
-        interactor3?.fetchItems(request: SyncCTestMarksModel.Fetch.Request(hw_masterid: "", student_id: "", marks:"" , remarks: "", created_by:"" , created_at: ""))
+        self.syncCTestMarks()
     }
     
     @IBAction func examMarksSync(_ sender: Any) {
-      
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ClassTestMarkEntry")
-            do {
-                let results = try context.fetch(fetchRequest)
-                let data = results as! [ClassTestMarkEntry]
-                
-                for datas in data {
-                    let name = datas.student_id as! [String]
-                    print(name)
-                }
-                 
-            } catch let err as NSError {
-                print(err.debugDescription)
-            }
+        self.syncExamMarks()
     }
     
     @IBAction func refreshAction(_ sender: Any) {
@@ -360,9 +452,25 @@ extension SyncDataVC {
 //    ClassTestMarks
     func successFetchedItems(viewModel: SyncCTestMarksModel.Fetch.ViewModel) {
         
+        self.syncCTestMarks()
+        if FiltCTeststudent_id.count == 0 {
+            self.deleteAllData(entity:"ClassTestMarkEntry")
+        }
     }
     
     func errorFetchingItems(viewModel: SyncCTestMarksModel.Fetch.ViewModel) {
+        self.deleteAllData(entity:"ClassTestMarkEntry")
+    }
+    
+//  ExamMarks
+    func successFetchedItems(viewModel: SyncExamMarksModel.Fetch.ViewModel) {
+        self.syncExamMarks()
+        if FiltExamMarkstu_id.count == 0 {
+            self.deleteAllData(entity:"ExamMarkEntry")
+        }
+    }
+    
+    func errorFetchingItems(viewModel: SyncExamMarksModel.Fetch.ViewModel) {
         
     }
 }
@@ -517,6 +625,97 @@ extension SyncDataVC {
         }
     }
     
+    func fetchExamMarkEntryDetails() {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ExamMarkEntry")
+        do {
+            let results = try context.fetch(fetchRequest)
+            examMarkEntryArr = results as! [ExamMarkEntry]
+            
+            for data in examMarkEntryArr {
+                
+                self.ExamMarkexam_id = data.exam_id as! [String]
+                self.ExamMarkteacher_id = data.teacher_id as! [String]
+                self.ExamMarksubject_id = data.subject_id as! [String]
+                self.ExamMarkstu_id = data.stu_id as! [String]
+                self.ExamMarkclassmaster_id = data.classmaster_id as! [String]
+                self.ExamMarkinternal_mark = data.internal_mark as! [String]
+                self.ExamMarkexternal_mark = data.external_grade as! [String]
+                self.ExamMarkmarks = data.total_marks as! [String]
+                self.ExamMarkis_internal_external = data.internal_mark as! [String]
+                self.ExamMarkcreated_by = data.created_by as! [String]
+                self.ExamMarkSyncStatus = data.sync_status as! [String]
+                
+            }
+            
+            let SyncStatusIndex = ExamMarkSyncStatus.enumerated().filter {
+                $0.element == "NS"
+                }.map{$0.offset}
+            
+            self.FiltExamMarkexam_id = SyncStatusIndex.map { ExamMarkexam_id[$0] }
+            self.FiltExamMarkteacher_id = SyncStatusIndex.map { ExamMarkteacher_id[$0] }
+            self.FiltExamMarksubject_id = SyncStatusIndex.map { ExamMarksubject_id[$0] }
+            self.FiltExamMarkstu_id = SyncStatusIndex.map { ExamMarkstu_id[$0] }
+            self.FiltExamMarkclassmaster_id = SyncStatusIndex.map { ExamMarkclassmaster_id[$0] }
+            self.FiltExamMarkinternal_mark = SyncStatusIndex.map { ExamMarkinternal_mark[$0] }
+            self.FiltExamMarkexternal_mark = SyncStatusIndex.map { ExamMarkexternal_mark[$0] }
+            self.FiltExamMarkmarks = SyncStatusIndex.map { ExamMarkmarks[$0] }
+            self.FiltExamMarkis_internal_external = SyncStatusIndex.map { ExamMarkis_internal_external[$0] }
+            self.FiltExamMarkcreated_by = SyncStatusIndex.map { ExamMarkcreated_by[$0] }
+            self.FiltExamMarkSyncStatus = SyncStatusIndex.map { ExamMarkSyncStatus[$0] }
+           
+            self.examMarkseCount.text = String(FiltExamMarkstu_id.count)
+            print(FiltExamMarkexam_id)
+            print(FiltExamMarkmarks)
+            print(FiltExamMarkstu_id)
+            print(FiltExamMarkstu_id)
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
+    
+    func fetchCtestMarks() {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ClassTestMarkEntry")
+        do {
+            let results = try context.fetch(fetchRequest)
+            c_TestMarkEntryArr = results as! [ClassTestMarkEntry]
+            
+            for data in c_TestMarkEntryArr {
+               
+                self.CTesthw_masterid = data.local_hw_id as! [String]
+                self.CTeststudent_id = data.student_id as! [String]
+                self.CTestmarks = data.marks as! [String]
+                self.CTestremarks = data.remarks as! [String]
+                self.CTestcreated_by = data.created_by as! [String]
+                self.CTestcreated_at = data.created_at as! [String]
+                self.CTestSyncStatus = data.sync_status as! [String]
+                
+                let SyncStatusIndex = CTestSyncStatus.enumerated().filter {
+                    $0.element == "NS"
+                    }.map{$0.offset}
+                
+                self.FiltCTesthw_masterid = SyncStatusIndex.map { CTesthw_masterid[$0] }
+                self.FiltCTeststudent_id = SyncStatusIndex.map { CTeststudent_id[$0] }
+                self.FiltCTestmarks = SyncStatusIndex.map { CTestmarks[$0] }
+                self.FiltCTestremarks = SyncStatusIndex.map { CTestremarks[$0] }
+                self.FiltCTestcreated_by = SyncStatusIndex.map { CTestcreated_by[$0] }
+                self.FiltCTestcreated_at = SyncStatusIndex.map { CTestcreated_at[$0] }
+                self.FiltCTestSyncStatus = SyncStatusIndex.map { CTestSyncStatus[$0] }
+               
+            }
+            print(FiltCTesthw_masterid)
+            print(FiltCTestmarks)
+            self.classtestCount.text = String(FiltCTestSyncStatus.count)
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
+    
     func deleteAllData(entity: String)
     {
         let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
@@ -525,4 +724,3 @@ extension SyncDataVC {
         catch { print(error) }
     }
 }
-

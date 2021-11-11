@@ -32,6 +32,8 @@ class ExamMarkEntryVC: UIViewController,UITextFieldDelegate {
     var studentId = [String]()
     var classSection = [String]()
     var classID = [String]()
+    var ArrayCount = Int()
+    var todayDate = String()
     
     var filteredStudentName = [String]()
     var filteredSubject = [String]()
@@ -44,12 +46,26 @@ class ExamMarkEntryVC: UIViewController,UITextFieldDelegate {
     var CollectionOfCell = [ExamMarkEntryCell]()
     var examMarkEntryData = [ExamMarksEntryData]()
     
+    var exam_id = [String]()
+    var teacher_id = [String]()
+    var subject_id = [String]()
+    var class_id = [String]()
+    var stu_id = [String]()
+    var internal_mark = [String]()
+    var external_grade = [String]()
+    var total_grade = [String]()
+    var created_by = [String]()
+    var created_at = [String]()
+    var updated_by = [String]()
+    var updated_at = [String]()
+    var sync_status = [String]()
+    var id = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.fetchStudentData()
         self.context = appDelegate.persistentContainer.viewContext
-        // Do any additional setup after loading the view.
         self.marksText = [String](repeating: "", count:100)
         self.hideKeyboardWhenTappedAround()
     }
@@ -60,7 +76,51 @@ class ExamMarkEntryVC: UIViewController,UITextFieldDelegate {
         let result = formatter.string(from: date)
         self.selectedDate = String(result)
     }
+    
+    @IBAction func save_Marks(_ sender: Any) {
+        
+        self.enteredMarkText.removeAll()
+        CollectionOfCell.forEach { cell in
+        self.enteredMarkText.append(cell.markField.text!)
+        }
+        
+        if enteredMarkText.contains(""){
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Enter all student marks", complition: {
+            })
+        }
+        else {
+            let datas = ExamMarksEntryData(Exam_id: self.exam_id, Teacher_id: self.teacher_id, Class_id: class_id, TotalMarks:self.enteredMarkText, Subject_id:  self.subject_id, Stu_id: self.filteredStudentID, Internal_mark: self.internal_mark, External_grade: self.external_grade, Total_grade:self.total_grade, Created_by:self.created_by, Created_at: self.created_at, Updated_by:self.updated_by, Updated_at: self.updated_at, Sync_status: self.sync_status,ID:self.id)
+            self.examMarkEntryData.append(datas)
+            self.saveStudentsMark()
+        }
+    }
+}
 
+extension ExamMarkEntryVC : UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return filteredSubject.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ExamMarkEntryCell
+        CollectionOfCell.append(cell)
+        let name = zip(filteredStudentName,filteredSubject).map { "\($0)-\($1)" }
+        cell.SerialNo.text = String(serialNoArr[indexPath.row])
+        cell.name.text = name[indexPath.row]
+//        cell.markField.text = marksText[indexPath.row]
+        cell.markField.addTarget(self, action: #selector(textChanged(textField:)), for: .editingChanged)
+        cell.markField.tag = indexPath.row
+        cell.selectionStyle = .none
+        return cell
+        }
+
+    @objc func textChanged(textField: UITextField) {
+            
+    }
+  
     func fetchStudentData() {
         
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -87,6 +147,27 @@ class ExamMarkEntryVC: UIViewController,UITextFieldDelegate {
                 self.filteredClassSec = examIndexes.map { classSection[$0] }
                 self.filteredClassId = examIndexes.map { classID[$0] }
                 
+                self.ArrayCount = filteredStudentID.count
+                
+                self.exam_id = [String](repeating: selectedExamId, count:ArrayCount)
+                self.teacher_id = [String](repeating: GlobalVariables.shared.user_id, count:ArrayCount)
+                self.class_id = [String](repeating: selectedClassId, count:ArrayCount)
+                self.subject_id = [String](repeating: selectedsubId, count:ArrayCount)
+                self.internal_mark = [String](repeating: "", count:ArrayCount)
+                self.external_grade = [String](repeating: "", count:ArrayCount)
+                self.total_grade = [String](repeating: "", count:ArrayCount)
+                self.created_by = [String](repeating: GlobalVariables.shared.user_id, count:ArrayCount)
+                self.created_at = [String](repeating: selectedDate, count:ArrayCount)
+                self.updated_by = [String](repeating: "", count:ArrayCount)
+                self.sync_status = [String](repeating: "NS", count:ArrayCount)
+                self.updated_at = [String](repeating: "", count:ArrayCount)
+//                self.id = [String](repeating: serialNoArr, count:ArrayCount)
+                
+                print(exam_id)
+                print(class_id)
+                print(subject_id)
+                print(created_at)
+               
                 for i in 1...10000 {
                     self.serialNoArr.append(i)
                 }
@@ -96,77 +177,35 @@ class ExamMarkEntryVC: UIViewController,UITextFieldDelegate {
                 print(err.debugDescription)
             }
       }
-}
-
-extension ExamMarkEntryVC : UITableViewDelegate,UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return filteredSubject.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ExamMarkEntryCell
-        CollectionOfCell.append(cell)
-        let name = zip(filteredStudentName,filteredSubject).map { "\($0)-\($1)" }
-        cell.SerialNo.text = String(serialNoArr[indexPath.row])
-        cell.name.text = name[indexPath.row]
-        cell.markField.text = marksText[indexPath.row]
-        cell.markField.addTarget(self, action: #selector(textChanged(textField:)), for: .editingChanged)
-        cell.markField.tag = indexPath.row
-        cell.selectionStyle = .none
-        return cell
-        }
-
-    @objc func textChanged(textField: UITextField) {
-            
-    }
-    
-    @IBAction func save_Marks(_ sender: Any) {
-        
-        self.enteredMarkText.removeAll()
-        CollectionOfCell.forEach { cell in
-        self.enteredMarkText.append(cell.markField.text!)
-    }
-        
-        let sequence = zip(enteredMarkText, filteredStudentID)
-        
-        for datas in sequence {
-            let dataas = ExamMarksEntryData(Exam_id:self.selectedExamId, Teacher_id: GlobalVariables.shared.user_id, Subject_id: self.selectedsubId, Stu_id:datas.1,Internal_mark: "", External_grade: "", Total_grade:"", Created_by:GlobalVariables.shared.user_id,Created_at: self.selectedDate,Updated_by: "",Updated_at: "",Sync_status: "NS",ID:"")
-                self.examMarkEntryData.append(dataas)
-           }
-        
-        for data in examMarkEntryData {
-
-            saveStudentsMark(exam_id:data.exam_id!,teacher_id:data.teacher_id!,subject_id:data.subject_id!,stu_id:data.stu_id!,internal_mark:data.internal_mark!,external_grade:data.external_grade!,total_grade:data.total_grade!,created_by:data.created_by!,created_at:data.created_at!,updated_by:data.updated_at!,updated_at:data.updated_at!,sync_status:data.sync_status!,id:data.id!)
-        }
-    }
-    
-    func saveStudentsMark(exam_id:String,teacher_id:String,subject_id:String,stu_id:String,internal_mark:String,external_grade:String,total_grade:String,created_by:String,created_at:String,updated_by:String,updated_at:String,sync_status:String,id:String) {
+    func saveStudentsMark() {
         
         let studentAttendance = NSEntityDescription.insertNewObject(forEntityName: "ExamMarkEntry", into: context!)
       
-        studentAttendance.setValue(exam_id, forKey: "exam_id")
-        studentAttendance.setValue(teacher_id, forKey: "teacher_id")
-        studentAttendance.setValue(subject_id, forKey: "subject_id")
-        studentAttendance.setValue(stu_id, forKey: "stu_id")
-        studentAttendance.setValue(internal_mark, forKey: "internal_mark")
-        studentAttendance.setValue(external_grade, forKey: "external_grade")
-        studentAttendance.setValue(self.enteredMarkText, forKey: "total_marks")
-        studentAttendance.setValue(total_grade, forKey: "total_grade")
-        studentAttendance.setValue(created_by, forKey: "created_by")
-        studentAttendance.setValue(created_at, forKey: "created_at")
-        studentAttendance.setValue(updated_by, forKey: "updated_by")
-        studentAttendance.setValue(updated_at, forKey: "updated_at")
-        studentAttendance.setValue(sync_status, forKey: "sync_status")
-        studentAttendance.setValue(id, forKey: "id")
-        
+        for data in examMarkEntryData {
+            
+            studentAttendance.setValue(data.exam_id, forKey: "exam_id")
+            studentAttendance.setValue(data.teacher_id, forKey: "teacher_id")
+            studentAttendance.setValue(data.subject_id, forKey: "subject_id")
+            studentAttendance.setValue(data.stu_id, forKey: "stu_id")
+            studentAttendance.setValue(data.internal_mark, forKey: "internal_mark")
+            studentAttendance.setValue(data.external_grade, forKey: "external_grade")
+            studentAttendance.setValue(data.totalMarks, forKey: "total_marks")
+            studentAttendance.setValue(data.total_grade, forKey: "total_grade")
+            studentAttendance.setValue(data.created_by, forKey: "created_by")
+            studentAttendance.setValue(data.created_at, forKey: "created_at")
+            studentAttendance.setValue(data.updated_by, forKey: "updated_by")
+            studentAttendance.setValue(data.updated_at, forKey: "updated_at")
+            studentAttendance.setValue(data.sync_status, forKey: "sync_status")
+            studentAttendance.setValue(data.id, forKey: "id")
+            studentAttendance.setValue(data.class_id, forKey: "classmaster_id")
+        }
         do {
             try context?.save()
-                print(" Attendance Saved suucess")
-//                self.fetchAttendancetaken()
-//                self.fethStudenttendHistory()
+                print("Exam Marks Saved suucess")
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Saved success", complition: {
+                self.navigationController?.popViewController(animated: true)
+            })
             }
         catch {
             print("error")
@@ -177,22 +216,24 @@ extension ExamMarkEntryVC : UITableViewDelegate,UITableViewDataSource {
   
 struct ExamMarksEntryData {
     
-    var exam_id : String?
-    var teacher_id : String?
-    var subject_id : String?
-    var stu_id : String?
-    var internal_mark : String?
-    var external_grade : String?
-//    var total_marks : String?
-    var total_grade : String?
-    var created_by : String?
-    var created_at : String?
-    var updated_by : String?
-    var updated_at : String?
-    var sync_status : String?
-    var id : String?
+    var exam_id : [String]?
+    var teacher_id : [String]?
+    var subject_id : [String]?
+    var stu_id : [String]?
+    var internal_mark : [String]?
+    var totalMarks : [String]?
+    var external_grade : [String]?
+    var total_grade : [String]?
+    var created_by : [String]?
+    var created_at : [String]?
+    var updated_by : [String]?
+    var updated_at : [String]?
+    var sync_status : [String]?
+    var id : [String]?
+    var class_id : [String]?
     
-    init(Exam_id:String,Teacher_id:String,Subject_id:String,Stu_id:String,Internal_mark:String,External_grade:String,Total_grade:String,Created_by:String,Created_at:String,Updated_by:String,Updated_at:String,Sync_status:String,ID:String){
+    
+    init(Exam_id:[String],Teacher_id:[String],Class_id:[String],TotalMarks:[String],Subject_id:[String],Stu_id:[String],Internal_mark:[String],External_grade:[String],Total_grade:[String],Created_by:[String],Created_at:[String],Updated_by:[String],Updated_at:[String],Sync_status:[String],ID:[String]){
         
         self.exam_id = Exam_id
         self.teacher_id = Exam_id
@@ -200,7 +241,6 @@ struct ExamMarksEntryData {
         self.stu_id = Stu_id
         self.internal_mark = Internal_mark
         self.external_grade = External_grade
-//        self.total_marks = Total_marks
         self.total_grade = Total_grade
         self.created_by = Created_by
         self.created_at = Created_at
@@ -208,5 +248,8 @@ struct ExamMarksEntryData {
         self.updated_at = Updated_at
         self.sync_status = Sync_status
         self.id = Sync_status
+        self.totalMarks = TotalMarks
+        self.class_id = Class_id
+        
     }
 }

@@ -78,19 +78,21 @@
         <attribute name="times" optional="YES" attributeType="Transformable"/>
     </entity>
     <entity name="ExamMarkEntry" representedClassName="ExamMarkEntry" syncable="YES" codeGenerationType="class">
-        <attribute name="created_at" optional="YES" attributeType="String"/>
-        <attribute name="created_by" optional="YES" attributeType="String"/>
-        <attribute name="exam_id" optional="YES" attributeType="String"/>
-        <attribute name="external_grade" optional="YES" attributeType="String"/>
-        <attribute name="internal_mark" optional="YES" attributeType="String"/>
-        <attribute name="stu_id" optional="YES" attributeType="String"/>
-        <attribute name="subject_id" optional="YES" attributeType="String"/>
-        <attribute name="sync_status" optional="YES" attributeType="String"/>
-        <attribute name="teacher_id" optional="YES" attributeType="String"/>
-        <attribute name="total_grade" optional="YES" attributeType="String"/>
-        <attribute name="total_marks" optional="YES" attributeType="String"/>
-        <attribute name="updated_at" optional="YES" attributeType="String"/>
-        <attribute name="updated_by" optional="YES" attributeType="String"/>
+        <attribute name="classmaster_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="created_at" optional="YES" attributeType="Transformable"/>
+        <attribute name="created_by" optional="YES" attributeType="Transformable"/>
+        <attribute name="exam_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="external_grade" optional="YES" attributeType="Transformable"/>
+        <attribute name="id" optional="YES" attributeType="Transformable"/>
+        <attribute name="internal_mark" optional="YES" attributeType="Transformable"/>
+        <attribute name="stu_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="subject_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="sync_status" optional="YES" attributeType="Transformable"/>
+        <attribute name="teacher_id" optional="YES" attributeType="Transformable"/>
+        <attribute name="total_grade" optional="YES" attributeType="Transformable"/>
+        <attribute name="total_marks" optional="YES" attributeType="Transformable"/>
+        <attribute name="updated_at" optional="YES" attributeType="Transformable"/>
+        <attribute name="updated_by" optional="YES" attributeType="Transformable"/>
     </entity>
     <entity name="ExamsDatas" representedClassName="ExamsDatas" syncable="YES" codeGenerationType="class">
         <attribute name="class_name" optional="YES" attributeType="Transformable"/>
@@ -299,7 +301,7 @@
         <element name="ClassSubjects" positionX="-54" positionY="126" width="128" height="119"/>
         <element name="ClassTestMarkEntry" positionX="-9" positionY="153" width="128" height="209"/>
         <element name="ExamDetails" positionX="-18" positionY="162" width="128" height="224"/>
-        <element name="ExamMarkEntry" positionX="-9" positionY="153" width="128" height="224"/>
+        <element name="ExamMarkEntry" positionX="-9" positionY="153" width="128" height="254"/>
         <element name="ExamsDatas" positionX="-45" positionY="135" width="128" height="164"/>
         <element name="Homework_class_test" positionX="-9" positionY="153" width="128" height="314"/>
         <element name="HomeWorkDetails" positionX="-36" positionY="135" width="128" height="224"/>

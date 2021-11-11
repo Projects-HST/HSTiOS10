@@ -27,6 +27,7 @@ class LoginVC: UIViewController,LoginDisplayLogic {
         // Do any additional setup after loading the view.
         self.setupView ()
         self.hideKeyboardWhenTappedAround()
+        view.bindToKeyboard()
         print("1234")
     }
     

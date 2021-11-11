@@ -15,6 +15,7 @@ class TeachersClassTestDetails: UIViewController {
     @IBOutlet weak var testDate: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     
+    var selectedHwId = String()
     var selectedTopic = String()
     var selectedTitle = String()
     var selectedDate = String()
@@ -43,6 +44,7 @@ class TeachersClassTestDetails: UIViewController {
             vc.selectedClassId = self.selectedClassId
 //            vc.selectedTitle = self.selectedTitle
             vc.selectedDate = self.selectedDate
+            vc.selectedHwId = self.selectedHwId
 //            vc.selectedDescription = self.selectedDescription
         }
     }

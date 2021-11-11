@@ -248,6 +248,7 @@ extension TeachersHomeWorkVC: UITableViewDelegate,UITableViewDataSource {
             vc.selectedDate = self.selectedDate
             vc.selectedDescription = self.selectedDescription
             vc.selectedClassId = self.selectedClassId
+            vc.selectedHwId = self.selectedHwId
         }
         else if (segue.identifier == "to_updateMarkDetails")
         {

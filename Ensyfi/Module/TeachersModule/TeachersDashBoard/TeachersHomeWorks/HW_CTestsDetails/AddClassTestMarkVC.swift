@@ -12,6 +12,7 @@ class AddClassTestMarkVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var selectedHwId = String()
     var selectedClassId = String()
     var selectedTopic = String()
     var selectedDate = String()
@@ -61,6 +62,7 @@ class AddClassTestMarkVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(selectedHwId)
         self.hideKeyboardWhenTappedAround()
         self.fetchStudentData()
         self.context = appDelegate.persistentContainer.viewContext
@@ -125,7 +127,7 @@ class AddClassTestMarkVC: UIViewController {
                 self.ArrayCount = filteredStudentID.count
                 
                 self.Status = [String](repeating: "A", count:ArrayCount)
-                self.localHWID = [String](repeating: "", count:ArrayCount)
+                self.localHWID = [String](repeating: selectedHwId, count:ArrayCount)
                 self.serverHWID = [String](repeating: "", count:ArrayCount)
                 self.remarks = [String](repeating: "", count:ArrayCount)
                 self.createdBy = [String](repeating: GlobalVariables.shared.user_id, count:ArrayCount)
@@ -136,7 +138,7 @@ class AddClassTestMarkVC: UIViewController {
                 self.Id = [String](repeating: "1", count:ArrayCount)
                 print(Status)
                 
-                for i in 1...10000 {
+                for i in 1...ArrayCount {
                     self.serialNoArr.append(i)
                 }
                 self.tableView.reloadData()
@@ -185,7 +187,7 @@ extension AddClassTestMarkVC : UITableViewDelegate,UITableViewDataSource {
             studentAttendance.setValue(data.updated_by, forKey: "updated_by")
             studentAttendance.setValue(data.updated_at, forKey: "updated_at")
             studentAttendance.setValue(data.sync_status, forKey: "sync_status")
-            studentAttendance.setValue(data.id, forKey: "id")
+            studentAttendance.setValue(serialNoArr, forKey: "id")
         }
       
         do {

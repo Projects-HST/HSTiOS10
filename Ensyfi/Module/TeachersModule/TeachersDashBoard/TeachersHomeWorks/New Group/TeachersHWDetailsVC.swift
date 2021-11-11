@@ -15,6 +15,7 @@ class TeachersHWDetailsVC: UIViewController {
     @IBOutlet weak var dueDate: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     
+    var selectedHwId = String()
     var selectedTopic = String()
     var selectedTitle = String()
     var selectedDate = String()

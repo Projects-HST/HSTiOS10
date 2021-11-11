@@ -14,7 +14,54 @@ struct  APIURL {
 //    static let base_URL = "http://ensyfi.com/liveapp"
         static let appBase_URL = "https://happysanz.in/admin/admin_api/api.php/"
         static let base_URL = "http://happysanz.in/ensyfi"
+
+    
+//    static let appBase_URL = "https://ensyfi.com/liveapp/apimain/chk_institute_code/"
+//    static let base_URL = "https://ensyfi.com/liveapp"
+
 }
+
+//    func callAPILogin(institue_id:String,onSuccess successCallback: ((_ login: LoginModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+//   // Build URL
+//        let url = APIURL.appBase_URL
+//   // Set Parameters
+//         let parameters: Parameters =  ["institute_code": institue_id]
+//   // call API
+//         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+//   // Create dictionary
+//         print(responseObject)
+//
+//         guard let msg = responseObject["msg"].string, msg == "Login Successfully" else{
+//         failureCallback?(responseObject["msg"].string!)
+//         return
+//       }
+//          let institute_code =  responseObject["instituteData"]["0"]["institute_code"].string
+//          let institute_id =  responseObject["instituteData"]["0"]["institute_id"].string
+//          let institute_logo =  responseObject["instituteData"]["0"]["institute_logo"].string
+//          let institute_name =  responseObject["instituteData"]["0"]["institute_name"].string
+//          let status =  responseObject["status"].string
+//
+//             if let dynamicDB = responseObject["dynamic_db"].string
+//             {
+//             UserDefaults.standard.setValue(dynamicDB, forKey: "dynamic_dbKey")
+//             GlobalVariables.shared.dynamic_dbKey = dynamicDB
+//             }
+//
+//          let sendToModel = LoginModels()
+//
+//          sendToModel.institute_code = institute_code
+//          sendToModel.institute_id = institute_id
+//          sendToModel.institute_logo = institute_logo
+//          sendToModel.institute_name = institute_name
+//          sendToModel.status = status
+//
+//          successCallback?(sendToModel)
+//       },
+//         onFailure: {(errorMessage: String) -> Void in
+//         failureCallback?(errorMessage)
+//       }
+//     )
+//  }
 
 //
 //import Foundation

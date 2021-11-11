@@ -167,6 +167,10 @@
 		793503FA26E39C3800B4FDFA /* GuardianDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793503F926E39C3800B4FDFA /* GuardianDetailsWorker.swift */; };
 		793503FF26E39C5100B4FDFA /* GuardianDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793503FE26E39C5100B4FDFA /* GuardianDetailsModel.swift */; };
 		7935040426E39C9500B4FDFA /* GuardianDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935040326E39C9500B4FDFA /* GuardianDetailsPresenter.swift */; };
+		794117A6273D1F010077640C /* SyncExamMarksInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794117A5273D1F010077640C /* SyncExamMarksInteracter.swift */; };
+		794117A8273D201E0077640C /* SyncExamMarksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794117A7273D201E0077640C /* SyncExamMarksWorker.swift */; };
+		794117AA273D20250077640C /* SyncExamMarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794117A9273D20250077640C /* SyncExamMarksModel.swift */; };
+		794117AC273D202C0077640C /* SyncExamMarksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794117AB273D202C0077640C /* SyncExamMarksPresenter.swift */; };
 		79458DE82711B13B00108C1E /* TeachersExamResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79458DE72711B13B00108C1E /* TeachersExamResults.storyboard */; };
 		79458DEB2711B39700108C1E /* Exams&ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79458DEA2711B39700108C1E /* Exams&ResultsVC.swift */; };
 		7948E168270493E2004DB4D4 /* ExamTimeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948E167270493E2004DB4D4 /* ExamTimeTableVC.swift */; };
@@ -708,6 +712,10 @@
 		793503F926E39C3800B4FDFA /* GuardianDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianDetailsWorker.swift; sourceTree = "<group>"; };
 		793503FE26E39C5100B4FDFA /* GuardianDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianDetailsModel.swift; sourceTree = "<group>"; };
 		7935040326E39C9500B4FDFA /* GuardianDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianDetailsPresenter.swift; sourceTree = "<group>"; };
+		794117A5273D1F010077640C /* SyncExamMarksInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncExamMarksInteracter.swift; path = Ensyfi/Module/TeachersModule/TeachersDashBoard/SyncData/SyncAssignments/SyncExamMarksInteracter.swift; sourceTree = SOURCE_ROOT; };
+		794117A7273D201E0077640C /* SyncExamMarksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncExamMarksWorker.swift; path = ../../../../../../../../../SyncExamMarksWorker.swift; sourceTree = "<group>"; };
+		794117A9273D20250077640C /* SyncExamMarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncExamMarksModel.swift; path = ../../../../../../../../../SyncExamMarksModel.swift; sourceTree = "<group>"; };
+		794117AB273D202C0077640C /* SyncExamMarksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncExamMarksPresenter.swift; sourceTree = "<group>"; };
 		79458DE72711B13B00108C1E /* TeachersExamResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeachersExamResults.storyboard; sourceTree = "<group>"; };
 		79458DEA2711B39700108C1E /* Exams&ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exams&ResultsVC.swift"; sourceTree = "<group>"; };
 		7948E167270493E2004DB4D4 /* ExamTimeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTimeTableVC.swift; sourceTree = "<group>"; };
@@ -1547,6 +1555,17 @@
 				7935040326E39C9500B4FDFA /* GuardianDetailsPresenter.swift */,
 			);
 			name = GuardianDeatils;
+			sourceTree = "<group>";
+		};
+		794117A4273D1E980077640C /* SyncExamMarks */ = {
+			isa = PBXGroup;
+			children = (
+				794117A5273D1F010077640C /* SyncExamMarksInteracter.swift */,
+				794117A7273D201E0077640C /* SyncExamMarksWorker.swift */,
+				794117A9273D20250077640C /* SyncExamMarksModel.swift */,
+				794117AB273D202C0077640C /* SyncExamMarksPresenter.swift */,
+			);
+			path = SyncExamMarks;
 			sourceTree = "<group>";
 		};
 		79458DE92711B36000108C1E /* ExamResults */ = {
@@ -2562,6 +2581,7 @@
 				799E664A273A8E3500B36284 /* SyncAttendHistory */,
 				799E6653273A8F3200B36284 /* SyncCTestMarks */,
 				790F1464273B81B90012E6EF /* SyncAssignments */,
+				794117A4273D1E980077640C /* SyncExamMarks */,
 			);
 			path = SyncData;
 			sourceTree = "<group>";
@@ -3078,6 +3098,7 @@
 				798DE47826CE79A30017C5FD /* APIUrl.swift in Sources */,
 				7904AD1826D9F11600D6F2C2 /* StudentsDetailsModel.swift in Sources */,
 				79BAB7DA26E1E5C900DEE3C3 /* ParentsDetailsVC.swift in Sources */,
+				794117AC273D202C0077640C /* SyncExamMarksPresenter.swift in Sources */,
 				79BEF57126F076100056DCBF /* GroupListPresenter.swift in Sources */,
 				79174BDC271D3C37001E6C88 /* SendAssignmentModel.swift in Sources */,
 				799532D226E8BCCC0033A49B /* ODApprovallWorker.swift in Sources */,
@@ -3232,6 +3253,7 @@
 				79045D862701AEC2009A3084 /* ClassSectionListModel.swift in Sources */,
 				79F0ECFF26D362DD00DFDE61 /* ForgotPswdInteracter.swift in Sources */,
 				7910A0C627043F02009B06BC /* BoardMembersModel.swift in Sources */,
+				794117A8273D201E0077640C /* SyncExamMarksWorker.swift in Sources */,
 				79C33E9E26E22A6C006341E9 /* EventsListInteracter.swift in Sources */,
 				79E51FF626E0B5D700991D34 /* ExamResultsInteracter.swift in Sources */,
 				799E6657273A8FB400B36284 /* SyncC_TestMarksWorker.swift in Sources */,
@@ -3398,6 +3420,7 @@
 				79FF79DD26F891F7007E86A6 /* LeaveListPresenter.swift in Sources */,
 				796401AB2703451900D7B5BE /* FeesStatusListModel.swift in Sources */,
 				79045D822701AE34009A3084 /* ClassSectionListInteracter.swift in Sources */,
+				794117AA273D20250077640C /* SyncExamMarksModel.swift in Sources */,
 				7990186F2705BFA700A6CED2 /* TeachersDetailsModels.swift in Sources */,
 				79A6453F2703137B00E7F83C /* AboutEducationAppVC.swift in Sources */,
 				7949932B26E0F8940013A38C /* TeacherDetailsInteracter.swift in Sources */,
@@ -3498,6 +3521,7 @@
 				792147252714636200AB0460 /* AttendanceRecordListCell.swift in Sources */,
 				79BEF58326F07B3D0056DCBF /* GroupListCell.swift in Sources */,
 				79CC460926F3429600448486 /* RoleListWorker.swift in Sources */,
+				794117A6273D1F010077640C /* SyncExamMarksInteracter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
