@@ -14,7 +14,7 @@ struct TeachersExamsListModel{
         struct Request
         {
             var teacher_id : String?
-            
+            var dynamic_db : String?
         }
         
         struct Response
@@ -48,3 +48,4 @@ struct TeachersExamsListModel{
         }
     }
 }
+

@@ -15,7 +15,7 @@ struct SendAttendanceModel{
         {
             var attend_id : String?
             var msg_type : String?
-           
+            var dynamic_db : String?
         }
         
         struct Response

@@ -13,10 +13,10 @@ typealias BoardMembersListresponseHandler = (_ response:BoardMembersListModel.Fe
 class BoardMembersListWorker{
     
    var respData = [BoardMembersListModels]()
-   func fetch(user_id:String, onSuccess successCallback:(BoardMembersListresponseHandler)?,onFailure failureCallback: @escaping(BoardMembersListresponseHandler)) {
+   func fetch(user_id:String,dynamic_db:String, onSuccess successCallback:(BoardMembersListresponseHandler)?,onFailure failureCallback: @escaping(BoardMembersListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIBoardMembersList(
-        user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id, dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(BoardMembersListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,6 +25,7 @@ class BoardMembersListWorker{
        )
    }
 }
+
 
 
 

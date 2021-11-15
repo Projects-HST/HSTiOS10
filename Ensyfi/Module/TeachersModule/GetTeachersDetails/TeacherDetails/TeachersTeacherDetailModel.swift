@@ -16,7 +16,7 @@ struct GetTeacherDetailsModel{
             var institue_code : String?
             var userName : String?
             var password : String?
-            
+            var dynamic_db : String?
         }
         
         struct Response

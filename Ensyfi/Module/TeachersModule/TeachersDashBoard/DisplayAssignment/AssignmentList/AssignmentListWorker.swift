@@ -13,10 +13,10 @@ typealias AssignmentListresponseHandler = (_ response:AssignmentListModel.Fetch.
 class AssignmentListWorker{
     
    var respData = [AssignmentListModels]()
-    func fetch(class_id:String,onSuccess successCallback:(AssignmentListresponseHandler)?,onFailure failureCallback: @escaping(AssignmentListresponseHandler)) {
+    func fetch(class_id:String,dynamic_db:String,onSuccess successCallback:(AssignmentListresponseHandler)?,onFailure failureCallback: @escaping(AssignmentListresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPIAssignmentList(
-        class_id:class_id,onSuccess: { (resp)  in
+        class_id:class_id,dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(AssignmentListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class AssignmentListWorker{
        )
    }
 }
+

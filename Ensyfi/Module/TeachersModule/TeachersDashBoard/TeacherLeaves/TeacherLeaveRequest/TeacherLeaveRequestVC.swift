@@ -58,7 +58,7 @@ class TeacherLeaveRequestVC: UIViewController, TeacherLeavesRequestDisplayLogic,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: TeacherLeavesRequestModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        interactor?.fetchItems(request: TeacherLeavesRequestModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         self.SetDate()
         self.showDatePicker()
         self.hideKeyboardWhenTappedAround()
@@ -142,7 +142,7 @@ class TeacherLeaveRequestVC: UIViewController, TeacherLeavesRequestDisplayLogic,
         guard CheckValuesAreEmpty () else {
                    return
         }
-        interactor1?.fetchItems(request: ApplyLeaveRequestModel.Fetch.Request(user_type:GlobalVariables.shared.user_type , user_id: GlobalVariables.shared.user_id, leave_master_id: self.selectedleaveID, leave_type: self.selectedleave_type, date_from: self.fromDateField.text!, date_to:self.toDateField.text!, fromTime: self.fromTime.text!, toTime:self.toTime.text!, description: self.desTextField.text!))
+        interactor1?.fetchItems(request: ApplyLeaveRequestModel.Fetch.Request(user_type:GlobalVariables.shared.user_type , user_id: GlobalVariables.shared.user_id, leave_master_id: self.selectedleaveID, leave_type: self.selectedleave_type, date_from: self.fromDateField.text!, date_to:self.toDateField.text!, fromTime: self.fromTime.text!, toTime:self.toTime.text!, description: self.desTextField.text!,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

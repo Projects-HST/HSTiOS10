@@ -13,10 +13,10 @@ typealias FeesSectionListresponseHandler = (_ response:FeesSectionListModel.Fetc
 class FeesSectionListWorker{
     
    var respData = [FeesSectionListModels]()
-   func fetch(class_id:String, onSuccess successCallback:(FeesSectionListresponseHandler)?,onFailure failureCallback: @escaping(FeesSectionListresponseHandler)) {
+   func fetch(class_id:String,dynamic_db:String, onSuccess successCallback:(FeesSectionListresponseHandler)?,onFailure failureCallback: @escaping(FeesSectionListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIFeesSectionList(
-        class_id:class_id, onSuccess: { (resp)  in
+        class_id:class_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(FeesSectionListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class FeesSectionListWorker{
        )
    }
 }
+
 

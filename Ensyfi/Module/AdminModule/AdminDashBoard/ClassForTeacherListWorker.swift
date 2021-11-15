@@ -13,10 +13,10 @@ typealias ClassForTeacherListresponseHandler = (_ response:ClassForTeacherListMo
 class ClassForTeacherListWorker{
     
    var respData = [ClassForTeacherListModels]()
-   func fetch(class_id:String,section_id:String, onSuccess successCallback:(ClassForTeacherListresponseHandler)?,onFailure failureCallback: @escaping(ClassForTeacherListresponseHandler)) {
+   func fetch(class_id:String,section_id:String,dynamic_db:String, onSuccess successCallback:(ClassForTeacherListresponseHandler)?,onFailure failureCallback: @escaping(ClassForTeacherListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIClassForTeacherList(
-        class_id:class_id,section_id:section_id, onSuccess: { (resp)  in
+        class_id:class_id,section_id:section_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(ClassForTeacherListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

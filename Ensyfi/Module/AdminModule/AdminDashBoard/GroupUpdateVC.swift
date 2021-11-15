@@ -42,7 +42,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :"1", user_type :""))
+        interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :"1", user_type :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
         self.titleTextfield.text = selectedTitle
@@ -96,7 +96,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
     
     @IBAction func updateAction(_ sender: Any) {
     
-        interactor1?.fetchItems(request: UpdateGroupModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, group_title: self.titleTextfield.text, group_lead_id: self.selectedTecherId, status: "Active",group_id:self.selectedID))
+        interactor1?.fetchItems(request: UpdateGroupModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, group_title: self.titleTextfield.text, group_lead_id: self.selectedTecherId, status: "Active",group_id:self.selectedID,dynamic_db: GlobalVariables.shared.dynamic_db))
     }
     
     func CheckValuesAreEmpty () -> Bool{

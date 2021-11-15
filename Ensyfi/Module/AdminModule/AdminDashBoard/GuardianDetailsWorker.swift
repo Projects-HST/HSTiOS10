@@ -12,10 +12,10 @@ typealias GuardianDetailsresponseHandler = (_ response:GuardianDetailsModel.Fetc
 
 class GuardianDetailsWorker{
 
-   func fetch(admission_id:String, onSuccess successCallback:(GuardianDetailsresponseHandler)?,onFailure failureCallback: @escaping(GuardianDetailsresponseHandler)) {
+   func fetch(admission_id:String,dynamic_db:String, onSuccess successCallback:(GuardianDetailsresponseHandler)?,onFailure failureCallback: @escaping(GuardianDetailsresponseHandler)) {
        let manager = APIManager()
        manager.callAPIGuardianDetails(
-        admission_id:admission_id, onSuccess: { (resp)  in
+        admission_id:admission_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(GuardianDetailsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

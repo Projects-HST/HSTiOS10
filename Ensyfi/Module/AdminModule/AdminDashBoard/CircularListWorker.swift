@@ -13,10 +13,10 @@ typealias CircularsListresponseHandler = (_ response:CircularsListModel.Fetch.Re
 class CircularsListWorker{
     
    var respData = [CircularsListModels]()
-    func fetch(user_id:String, onSuccess successCallback:(CircularsListresponseHandler)?,onFailure failureCallback: @escaping(CircularsListresponseHandler)) {
+    func fetch(user_id:String,dynamic_db:String,  onSuccess successCallback:(CircularsListresponseHandler)?,onFailure failureCallback: @escaping(CircularsListresponseHandler)) {
        let manager = APIManager()
        manager.callAPICircularsList(
-        user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(CircularsListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class CircularsListWorker{
        )
    }
 }
+
 

@@ -14,6 +14,7 @@ struct ClassTestMarkListModel{
         struct Request
         {
             var hw_id : String?
+            var dynamic_db : String?
         }
         
         struct Response

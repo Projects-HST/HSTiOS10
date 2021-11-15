@@ -13,7 +13,7 @@ struct ODTeachersListModel{
         struct Request
         {
             var user_type : String?
-           
+            var dynamic_db : String?
         }
         
         struct Response

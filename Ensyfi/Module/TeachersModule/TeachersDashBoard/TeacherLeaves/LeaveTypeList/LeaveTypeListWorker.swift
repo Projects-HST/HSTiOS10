@@ -13,10 +13,10 @@ typealias TeacherLeavesRequestresponseHandler = (_ response:TeacherLeavesRequest
 class TeacherLeavesRequestWorker{
     
    var respData = [TeacherLeavesRequestModels]()
-    func fetch(user_id:String, onSuccess successCallback:(TeacherLeavesRequestresponseHandler)?,onFailure failureCallback: @escaping(TeacherLeavesRequestresponseHandler)) {
+    func fetch(user_id:String,dynamic_db:String,onSuccess successCallback:(TeacherLeavesRequestresponseHandler)?,onFailure failureCallback: @escaping(TeacherLeavesRequestresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPITeacherLeavesRequest(
-        user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id,dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(TeacherLeavesRequestModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -27,3 +27,4 @@ class TeacherLeavesRequestWorker{
 }
 
                                   
+

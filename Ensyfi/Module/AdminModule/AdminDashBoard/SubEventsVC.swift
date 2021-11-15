@@ -26,7 +26,7 @@ class SubEventsVC: UIViewController, SubEventsDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: SubEventsModel.Fetch.Request(event_id :self.selectedEventId))
+        interactor?.fetchItems(request: SubEventsModel.Fetch.Request(event_id :self.selectedEventId,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

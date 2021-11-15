@@ -28,11 +28,10 @@ class GuardianDetailsInteractor: GuardianDetailsBusinessLogic, GuardianDetailsDa
            self.presenter3?.presentFetchResults(resp: GuardianDetailsModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = GuardianDetailsWorker()
-        worker!.fetch(admission_id:request.admission_id!, onSuccess: { (resp) in
+        worker!.fetch(admission_id:request.admission_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter3?.presentFetchResults(resp: GuardianDetailsModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter3?.presentFetchResults(resp: GuardianDetailsModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
-

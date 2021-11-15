@@ -26,7 +26,7 @@ class ExamResultsStudentsListVC: UIViewController, StudentsListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+        interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

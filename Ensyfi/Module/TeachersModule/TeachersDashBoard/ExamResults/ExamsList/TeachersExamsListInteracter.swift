@@ -28,10 +28,11 @@ class TeachersExamsListInteractor:TeachersExamsListBusinessLogic,TeachersExamsLi
         self.presenter?.presentFetchResults(resp: TeachersExamsListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = TeachersExamsListWorker()
-        worker!.fetch(teacher_id:request.teacher_id!, onSuccess: { (resp) in
+        worker!.fetch(teacher_id:request.teacher_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp:TeachersExamsListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp:TeachersExamsListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

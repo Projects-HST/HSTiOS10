@@ -23,6 +23,7 @@ struct SyncAssignmentModel{
             var homework_details : String?
             var created_by : String?
             var created_at : String?
+            var dynamic_db : String?
         }
         
         struct Response

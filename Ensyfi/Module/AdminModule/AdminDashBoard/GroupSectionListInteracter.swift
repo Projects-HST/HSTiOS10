@@ -28,10 +28,11 @@ class GroupSectionListInteractor:GroupSectionListBusinessLogic,GroupSectionListD
         self.presenter1?.presentFetchResults(resp: GroupSectionListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = GroupSectionListWorker()
-        worker!.fetch(user_id:request.user_id!, onSuccess: { (resp) in
+        worker!.fetch(user_id:request.user_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter1?.presentFetchResults(resp: GroupSectionListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter1?.presentFetchResults(resp: GroupSectionListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

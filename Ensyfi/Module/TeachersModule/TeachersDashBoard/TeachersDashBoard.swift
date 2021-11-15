@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreData
+import SideMenu
 
-class TeachersDashBoardVC: UIViewController {
+class TeachersDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate {
 
     @IBOutlet weak var bgView : UIView!
     
@@ -48,6 +49,14 @@ class TeachersDashBoardVC: UIViewController {
             print(GlobalVariables.shared.user_id)
             print(GlobalVariables.shared.user_type)
         }
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
 }
 //{"status":"success","msg":"View Groups","groupDetails":[{"id":"8","group_title":"Culturals"}]}

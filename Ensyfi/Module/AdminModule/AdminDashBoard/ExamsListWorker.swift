@@ -13,10 +13,10 @@ typealias ExamListresponseHandler = (_ response:ExamListModel.Fetch.Response) ->
 class ExamListWorker{
     
    var respData = [ExamListModels]()
-    func fetch(class_id:String,section_id:String, onSuccess successCallback:(ExamListresponseHandler)?,onFailure failureCallback: @escaping(ExamListresponseHandler)) {
+    func fetch(class_id:String,section_id:String,dynamic_db:String, onSuccess successCallback:(ExamListresponseHandler)?,onFailure failureCallback: @escaping(ExamListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIExamList(
-        class_id:class_id,section_id:section_id, onSuccess: { (resp)  in
+        class_id:class_id,section_id:section_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(ExamListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

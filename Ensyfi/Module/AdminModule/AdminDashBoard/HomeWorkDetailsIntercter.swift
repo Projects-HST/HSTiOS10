@@ -28,10 +28,11 @@ class HomeWorkDetailsInteractor: HomeWorkDetailsBusinessLogic, HomeWorkDetailsDa
         self.presenter?.presentFetchResults(resp: HomeWorkDetailsModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = HomeWorkDetailsWorker()
-        worker!.fetch(class_id:request.class_id!,hw_type:request.hw_type!, onSuccess: { (resp) in
+        worker!.fetch(class_id:request.class_id!,hw_type:request.hw_type!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: HomeWorkDetailsModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: HomeWorkDetailsModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

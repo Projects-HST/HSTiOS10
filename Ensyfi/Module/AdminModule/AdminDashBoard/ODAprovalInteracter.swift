@@ -27,10 +27,11 @@ class ODApprovalInteractor: ODApprovalBusinessLogic, ODApprovalDataStore
            self.presenter?.presentFetchResults(resp: ODApprovalModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = ODApprovalWorker()
-        worker!.fetch(status:request.status!, od_id:request.od_id!, onSuccess: { (resp) in
+        worker!.fetch(status:request.status!, od_id:request.od_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: ODApprovalModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: ODApprovalModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

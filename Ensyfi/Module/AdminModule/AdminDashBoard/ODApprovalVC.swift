@@ -91,7 +91,7 @@ class ODApprovalVC: UIViewController, ODApprovalDisplayLogic {
         }
         else {
             
-        interactor?.fetchItems(request:ODApprovalModel.Fetch.Request(status:self.SelectedODStatus, od_id:self.selectedODId))
+        interactor?.fetchItems(request:ODApprovalModel.Fetch.Request(status:self.SelectedODStatus, od_id:self.selectedODId,dynamic_db: GlobalVariables.shared.dynamic_db))
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }

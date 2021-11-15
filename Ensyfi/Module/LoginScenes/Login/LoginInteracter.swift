@@ -28,10 +28,11 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
            self.presenter?.presentFetchResults(resp: LoginModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = LoginWorker()
-        worker!.fetch(institue_id:request.institue_id!, onSuccess: { (resp) in
+        worker!.fetch(institue_id:request.institue_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: LoginModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: LoginModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

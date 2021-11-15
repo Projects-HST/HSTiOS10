@@ -13,10 +13,10 @@ typealias ClassTestMarkListresponseHandler = (_ response:ClassTestMarkListModel.
 class ClassTestMarkListWorker{
     
    var respData = [ClassTestMarkListModels]()
-    func fetch(hw_id:String,onSuccess successCallback:(ClassTestMarkListresponseHandler)?,onFailure failureCallback: @escaping(ClassTestMarkListresponseHandler)) {
+    func fetch(hw_id:String,dynamic_db:String,onSuccess successCallback:(ClassTestMarkListresponseHandler)?,onFailure failureCallback: @escaping(ClassTestMarkListresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPIClassTestMarkList(
-        hw_id:hw_id,onSuccess: { (resp)  in
+        hw_id:hw_id,dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(ClassTestMarkListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class ClassTestMarkListWorker{
        )
    }
 }
+

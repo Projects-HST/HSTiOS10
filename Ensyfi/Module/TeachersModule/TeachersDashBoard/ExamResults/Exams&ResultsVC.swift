@@ -78,7 +78,7 @@ class Exams_ResultsVC: UIViewController, TeachersExamsListDisplayLogic {
         self.fetchDataClassSubject()
         self.fetchExamDetails()
         self.context = appDelegate.persistentContainer.viewContext
-        interactor?.fetchItems(request: TeachersExamsListModel.Fetch.Request(teacher_id :"1"))
+        interactor?.fetchItems(request: TeachersExamsListModel.Fetch.Request(teacher_id :"1",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

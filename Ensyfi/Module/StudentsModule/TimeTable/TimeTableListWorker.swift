@@ -14,10 +14,10 @@ typealias TimeTableListresponseHandler = (_ response:TimeTableListModel.Fetch.Re
 class TimeTableListWorker{
     
    var respData = [TimeTableListModels]()
-   func fetch(class_id:String, onSuccess successCallback:(TimeTableListresponseHandler)?,onFailure failureCallback: @escaping(TimeTableListresponseHandler)) {
+   func fetch(class_id:String,dynamic_db:String, onSuccess successCallback:(TimeTableListresponseHandler)?,onFailure failureCallback: @escaping(TimeTableListresponseHandler)) {
        let manager = StudentsAPIManager()
        manager.callAPITimeTableList(
-        class_id:class_id, onSuccess: { (resp)  in
+        class_id:class_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(TimeTableListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -26,3 +26,4 @@ class TimeTableListWorker{
        )
    }
 }
+

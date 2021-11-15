@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SideMenu
 
-class StudentDashBoardVC: UIViewController {
+class StudentDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate {
 
     @IBOutlet weak var bgView: UIView!
     
@@ -56,6 +57,14 @@ class StudentDashBoardVC: UIViewController {
             print(GlobalVariables.shared.sec_name)
             print(GlobalVariables.shared.user_id)
         }
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     @IBAction func toClassTestHW(_ sender: Any) {

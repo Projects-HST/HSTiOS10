@@ -27,11 +27,12 @@ class TeacherGroupTypleListInteractor: TeacherGroupTypleListBusinessLogic,Teache
         self.presenter?.presentFetchResults(resp: TeacherGroupTypleListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy"))
         }
         worker = TeacherGroupTypleListWorker()
-        worker!.fetch(user_id:request.user_id!,user_type:request.user_type!,  onSuccess: { (resp) in
+        worker!.fetch(user_id:request.user_id!,user_type:request.user_type!,dynamic_db:request.dynamic_db!,  onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: TeacherGroupTypleListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp:TeacherGroupTypleListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+
 

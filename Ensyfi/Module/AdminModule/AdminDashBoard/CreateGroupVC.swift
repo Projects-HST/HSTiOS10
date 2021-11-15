@@ -44,7 +44,7 @@ class CreateGroupVC: UIViewController, TeacherListIDDisplayLogic, CreateGroupDis
 
         // Do any additional setup after loading the view.
         self.bgView.dropShadow()
-        interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :""))
+        interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
@@ -97,7 +97,7 @@ class CreateGroupVC: UIViewController, TeacherListIDDisplayLogic, CreateGroupDis
             return
         }
         
-        interactor1?.fetchItems(request: CreateGroupModel.Fetch.Request(user_id: "1", group_title: self.titleTextfield.text, group_lead_id: self.selectedTecherId, status: "Active"))
+        interactor1?.fetchItems(request: CreateGroupModel.Fetch.Request(user_id: "1", group_title: self.titleTextfield.text, group_lead_id: self.selectedTecherId, status: "Active",dynamic_db: GlobalVariables.shared.dynamic_db))
     }
     
     @IBAction func switchAction(_ sender: Any) {

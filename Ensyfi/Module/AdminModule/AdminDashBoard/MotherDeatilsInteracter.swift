@@ -27,11 +27,12 @@ class MotherDetailsInteractor: MotherDetailsBusinessLogic, FatherDeatilsDataStor
            self.presenter2?.presentFetchResults(resp: MotherDetailsModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = MotherDetailsWorker()
-        worker!.fetch(admission_id:request.admission_id!, onSuccess: { (resp) in
+        worker!.fetch(admission_id:request.admission_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter2?.presentFetchResults(resp: MotherDetailsModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter2?.presentFetchResults(resp: MotherDetailsModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+
 

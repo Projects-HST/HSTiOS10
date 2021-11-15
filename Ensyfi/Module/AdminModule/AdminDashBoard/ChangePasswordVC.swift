@@ -36,7 +36,7 @@ class ChangePasswordVC: UIViewController, ChangePasswordDisplayLogic {
                    return
         }
         
-        interactor?.fetchItems(request: ChangePasswordModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, old_password: self.currentPassword.text, password: self.confirmPassword.text))
+        interactor?.fetchItems(request: ChangePasswordModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, old_password: self.currentPassword.text, password: self.confirmPassword.text,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

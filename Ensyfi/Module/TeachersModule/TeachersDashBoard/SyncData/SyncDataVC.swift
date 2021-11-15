@@ -41,7 +41,6 @@ protocol SyncExamMarksDisplayLogic: AnyObject
 
 class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHistoryDisplayLogic,SyncAssignmentDisplayLogic, SyncCTestMarksDisplayLogic, SyncExamMarksDisplayLogic {
     
-   
     @IBOutlet weak var attendanceCount: UILabel!
     @IBOutlet weak var assignmentCount: UILabel!
     @IBOutlet weak var classtestCount: UILabel!
@@ -276,7 +275,7 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
             let classTotal = filteredAttendclass_total.last
             self.filteredAttendclass_total.removeLast()
             
-            interactor?.fetchItems(request: SyncAttendanceModel.Fetch.Request(ac_year:acYear!,class_id:clasId!,class_total:classTotal!,no_of_present:presentCount!,no_of_absent:absentCount!,attendence_period:atendPeriod!,created_by:cretedBy!,created_at:createdAt!,status:atendStatus!))
+            interactor?.fetchItems(request: SyncAttendanceModel.Fetch.Request(ac_year:acYear!,class_id:clasId!,class_total:classTotal!,no_of_present:presentCount!,no_of_absent:absentCount!,attendence_period:atendPeriod!,created_by:cretedBy!,created_at:createdAt!,status:atendStatus!,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -305,7 +304,7 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
             let Status = FiltA_Historystatus.last
             self.FiltA_Historystatus.removeLast()
            
-            interactor1?.fetchItems(request: SyncAttendanceHistoryModel.Fetch.Request(attend_id: attendId!, class_id: classId!, student_id: studenentId!, abs_date: absDate!, a_status: absentStatus!, attend_period: attendPeriod!, a_val: a_val!, a_taken_by: takenBy!, created_at: createdAt!, status: Status!))
+            interactor1?.fetchItems(request: SyncAttendanceHistoryModel.Fetch.Request(attend_id: attendId!, class_id: classId!, student_id: studenentId!, abs_date: absDate!, a_status: absentStatus!, attend_period: attendPeriod!, a_val: a_val!, a_taken_by: takenBy!, created_at: createdAt!, status: Status!,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -334,7 +333,7 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
             let createdAt = FiltHWcreated_at.last
             self.FiltHWcreated_at.removeLast()
            
-            interactor2?.fetchItems(request: SyncAssignmentModel.Fetch.Request(class_id: classId!, teacher_id: teacherId!, homeWork_type: hwType!, subject_id: subjectId!, title: HWTitle!, test_date: testData!, due_date: dueDate!, homework_details: HWDetails!, created_by: createdBy!, created_at: createdAt!))
+            interactor2?.fetchItems(request: SyncAssignmentModel.Fetch.Request(class_id: classId!, teacher_id: teacherId!, homeWork_type: hwType!, subject_id: subjectId!, title: HWTitle!, test_date: testData!, due_date: dueDate!, homework_details: HWDetails!, created_by: createdBy!, created_at: createdAt!,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -355,7 +354,7 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
             let CreatedAt = FiltCTestcreated_at.last
             self.FiltCTestcreated_at.removeLast()
            
-            interactor3?.fetchItems(request: SyncCTestMarksModel.Fetch.Request(hw_masterid:HwMasterId!,student_id:StudentId!,marks:CTetsMarks!,remarks:Remarks!,created_by:CreatedBy!,created_at:CreatedAt!))
+            interactor3?.fetchItems(request: SyncCTestMarksModel.Fetch.Request(hw_masterid:HwMasterId!,student_id:StudentId!,marks:CTetsMarks!,remarks:Remarks!,created_by:CreatedBy!,created_at:CreatedAt!,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -384,7 +383,7 @@ class SyncDataVC: UIViewController,SyncAttendanceDisplayLogic,SyncAttendanceHist
             let createdBy = FiltExamMarkcreated_by.last
             self.FiltExamMarkcreated_by.removeLast()
            
-            interactor4?.fetchItems(request: SyncExamMarksModel.Fetch.Request(exam_id: examId!, teacher_id: teacherId!, subject_id: subjectId!, stu_id: studentId!, classmaster_id: classId!, internal_mark: internalMark!, external_mark: externalMark!, marks: marks!, is_internal_external: isInternal_external!, created_by: createdBy!))
+            interactor4?.fetchItems(request: SyncExamMarksModel.Fetch.Request(exam_id: examId!, teacher_id: teacherId!, subject_id: subjectId!, stu_id: studentId!, classmaster_id: classId!, internal_mark: internalMark!, external_mark: externalMark!, marks: marks!, is_internal_external: isInternal_external!, created_by: createdBy!,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -646,7 +645,6 @@ extension SyncDataVC {
                 self.ExamMarkis_internal_external = data.internal_mark as! [String]
                 self.ExamMarkcreated_by = data.created_by as! [String]
                 self.ExamMarkSyncStatus = data.sync_status as! [String]
-                
             }
             
             let SyncStatusIndex = ExamMarkSyncStatus.enumerated().filter {

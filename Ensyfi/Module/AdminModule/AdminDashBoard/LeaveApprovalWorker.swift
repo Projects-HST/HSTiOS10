@@ -12,10 +12,10 @@ typealias LeaveApprovalresponseHandler = (_ response:LeaveApprovalModel.Fetch.Re
 
 class LeaveApprovalWorker{
 
-   func fetch(status:String,leave_id:String, onSuccess successCallback:(LeaveApprovalresponseHandler)?,onFailure failureCallback: @escaping(LeaveApprovalresponseHandler)) {
+   func fetch(status:String,leave_id:String,dynamic_db:String, onSuccess successCallback:(LeaveApprovalresponseHandler)?,onFailure failureCallback: @escaping(LeaveApprovalresponseHandler)) {
        let manager = APIManager()
        manager.callAPILeaveApproval(
-        status:status, leave_id:leave_id, onSuccess: { (resp)  in
+        status:status, leave_id:leave_id,dynamic_db:dynamic_db,  onSuccess: { (resp)  in
                successCallback?(LeaveApprovalModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -24,3 +24,4 @@ class LeaveApprovalWorker{
        )
    }
 }
+

@@ -12,10 +12,10 @@ typealias responseHandler = (_ response:LoginModel.Fetch.Response) ->()
 
 class LoginWorker{
 
-   func fetch(institue_id:String, onSuccess successCallback:(responseHandler)?,onFailure failureCallback: @escaping(responseHandler)) {
+   func fetch(institue_id:String,dynamic_db:String, onSuccess successCallback:(responseHandler)?,onFailure failureCallback: @escaping(responseHandler)) {
        let manager = APIManager()
        manager.callAPILogin(
-        institue_id:institue_id, onSuccess: { (resp)  in
+        institue_id:institue_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(LoginModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -24,3 +24,4 @@ class LoginWorker{
        )
    }
 }
+

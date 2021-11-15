@@ -13,10 +13,10 @@ typealias HomeWorkTestListresponseHandler = (_ response:HomeWorkTestListModel.Fe
 class HomeWorkTestListWorker{
     
    var respData = [HomeWorkTestListModels]()
-   func fetch(class_id:String,hw_type:String, onSuccess successCallback:(HomeWorkTestListresponseHandler)?,onFailure failureCallback: @escaping(HomeWorkTestListresponseHandler)) {
+   func fetch(class_id:String,hw_type:String,dynamic_db:String, onSuccess successCallback:(HomeWorkTestListresponseHandler)?,onFailure failureCallback: @escaping(HomeWorkTestListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIHomeWorkTestList(
-        class_id:class_id,hw_type:hw_type, onSuccess: { (resp)  in
+        class_id:class_id,hw_type:hw_type,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(HomeWorkTestListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class HomeWorkTestListWorker{
        )
    }
 }
+
 

@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 import MBProgressHUD
+import SideMenu
 
 protocol FeesListDisplayLogic: AnyObject
 {
@@ -21,8 +22,7 @@ protocol FeesSectionListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: FeesSectionListModel.Fetch.ViewModel)
 }
 
-class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,FeesSectionListDisplayLogic {
-   
+class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,FeesSectionListDisplayLogic,SideMenuNavigationControllerDelegate {
  
     let dropDown = DropDown()
     var interactor2: FeesListBusinessLogic?
@@ -42,7 +42,6 @@ class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,F
     var selectedSecId = String()
     var selectedFeesId = String()
     
-    
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
@@ -54,10 +53,17 @@ class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,F
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.bgView.dropShadow()
-       
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -107,7 +113,7 @@ class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,F
             let slecteId = classId[index]
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
-            interactor1?.fetchItems(request: FeesSectionListModel.Fetch.Request(class_id :self.selectedClassId))
+            interactor1?.fetchItems(request: FeesSectionListModel.Fetch.Request(class_id :self.selectedClassId,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -122,7 +128,7 @@ class FeesListVC: UIViewController, FeesListDisplayLogic,ClassViewDisplayLogic,F
                 let slecteId = secId[index]
                 self.selectedSecId = String(slecteId)
                 print(selectedSecId)
-                interactor2?.fetchItems(request: FeesListModel.Fetch.Request(class_id:self.selectedClassId , section_id: self.selectedSecId))
+                interactor2?.fetchItems(request: FeesListModel.Fetch.Request(class_id:self.selectedClassId , section_id: self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
 }

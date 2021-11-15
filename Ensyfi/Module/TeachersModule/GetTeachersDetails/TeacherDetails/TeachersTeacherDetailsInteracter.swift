@@ -28,10 +28,11 @@ class GetTeacherDetailsInteractor: GetTeacherDetailsBusinessLogic, GetTeacherDet
         self.presenter1?.presentFetchResults(resp: GetTeacherDetailsModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = GetTeacherDetailsWorker()
-        worker!.fetch(institue_code:request.institue_code!,userName:request.userName!,password:request.password!, onSuccess: { (resp) in
+        worker!.fetch(institue_code:request.institue_code!,userName:request.userName!,password:request.password!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter1?.presentFetchResults(resp: GetTeacherDetailsModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter1?.presentFetchResults(resp: GetTeacherDetailsModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

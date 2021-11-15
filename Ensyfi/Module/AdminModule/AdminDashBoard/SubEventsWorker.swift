@@ -13,10 +13,10 @@ typealias SubEventsresponseHandler = (_ response:SubEventsModel.Fetch.Response) 
 class SubEventsWorker{
     
    var respData = [SubEventsModels]()
-    func fetch(event_id:String, onSuccess successCallback:(SubEventsresponseHandler)?,onFailure failureCallback: @escaping(SubEventsresponseHandler)) {
+    func fetch(event_id:String,dynamic_db:String,onSuccess successCallback:(SubEventsresponseHandler)?,onFailure failureCallback: @escaping(SubEventsresponseHandler)) {
        let manager = APIManager()
        manager.callAPISubEvents(
-        event_id:event_id, onSuccess: { (resp)  in
+        event_id:event_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(SubEventsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class SubEventsWorker{
        )
    }
 }
+

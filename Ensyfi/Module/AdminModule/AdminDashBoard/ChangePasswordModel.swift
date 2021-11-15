@@ -17,7 +17,7 @@ struct ChangePasswordModel{
             var user_id : String?
             var old_password : String?
             var password : String?
-            
+            var dynamic_db : String?
         }
         
         struct Response

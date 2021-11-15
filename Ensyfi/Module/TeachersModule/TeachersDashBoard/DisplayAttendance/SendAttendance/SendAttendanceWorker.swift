@@ -12,10 +12,10 @@ typealias SendAttendanceresponseHandler = (_ response:SendAttendanceModel.Fetch.
 
 class SendAttendanceWorker{
 
-   func fetch(attend_id:String,msg_type:String, onSuccess successCallback:(SendAttendanceresponseHandler)?,onFailure failureCallback: @escaping(SendAttendanceresponseHandler)) {
+   func fetch(attend_id:String,msg_type:String,dynamic_db:String, onSuccess successCallback:(SendAttendanceresponseHandler)?,onFailure failureCallback: @escaping(SendAttendanceresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPISendAttendance(
-        attend_id:attend_id, msg_type:msg_type,onSuccess: { (resp)  in
+        attend_id:attend_id, msg_type:msg_type, dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(SendAttendanceModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -24,4 +24,5 @@ class SendAttendanceWorker{
        )
    }
 }
+
 

@@ -35,7 +35,7 @@ class DisplayAttendanceListVC: UIViewController, DisplayAttenddanceListDisplayLo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: DisplayAttenddanceListModel.Fetch.Request(class_id :"1"))
+        interactor?.fetchItems(request: DisplayAttenddanceListModel.Fetch.Request(class_id :"1",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

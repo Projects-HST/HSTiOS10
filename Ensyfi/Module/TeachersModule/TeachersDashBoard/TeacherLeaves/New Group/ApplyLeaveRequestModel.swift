@@ -22,9 +22,9 @@ struct ApplyLeaveRequestModel{
             var fromTime : String?
             var toTime : String?
             var description : String?
-           
+            var dynamic_db : String?
         }
-
+        
         struct Response
         {
             var testObj: ApplyLeaveRequestModels?

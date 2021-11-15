@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 import MBProgressHUD
+import SideMenu
 
 protocol ClassForTeacherListDisplayLogic: AnyObject
 {
@@ -15,7 +16,7 @@ protocol ClassForTeacherListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: ClassForTeacherListModel.Fetch.ViewModel)
 }
 
-class AdminClassVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, StudentsListDisplayLogic, ClassForTeacherListDisplayLogic {
+class AdminClassVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, StudentsListDisplayLogic, ClassForTeacherListDisplayLogic,SideMenuNavigationControllerDelegate {
     
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
@@ -56,9 +57,17 @@ class AdminClassVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLog
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         self.categoryArr = ["Student","Teacher"]
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -115,7 +124,7 @@ class AdminClassVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLog
             let slecteId = classId[index]
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
-            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId))
+            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -137,7 +146,7 @@ class AdminClassVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLog
                 self.selectedSecId = String(slecteId)
                 print(selectedSecId)
                 self.categoryType = "student"
-                interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+                interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
             }
         }
     }
@@ -160,12 +169,12 @@ class AdminClassVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLog
                 if dropDown.indexForSelectedRow == 0 {
                     self.categoryType = "student"
                     
-                    interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+                    interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
                 }
                 else if dropDown.indexForSelectedRow == 1 {
                     self.categoryType = "teacher"
                     
-                    interactor3?.fetchItems(request: ClassForTeacherListModel.Fetch.Request(class_id :self.selectedClassId,section_id :self.selectedSecId))
+                    interactor3?.fetchItems(request: ClassForTeacherListModel.Fetch.Request(class_id :self.selectedClassId,section_id :self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
                 }
             }
         }

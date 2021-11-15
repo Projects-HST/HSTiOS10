@@ -29,7 +29,7 @@ class ExamTimeTableInteractor: ExamTimeTableBusinessLogic,ExamTimeTableDataStore
         self.presenter?.presentFetchResults(resp: ExamTimeTableModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = ExamTimeTableWorker()
-        worker!.fetch(class_id:request.class_id!,exam_id:request.exam_id!, onSuccess: { (resp) in
+        worker!.fetch(class_id:request.class_id!,exam_id:request.exam_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: ExamTimeTableModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: ExamTimeTableModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

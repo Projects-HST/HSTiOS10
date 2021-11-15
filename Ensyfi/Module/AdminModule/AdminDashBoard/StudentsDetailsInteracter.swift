@@ -28,10 +28,11 @@ class StudentDetailsInteractor: StudentDetailsBusinessLogic, StudentDetailsDataS
         self.presenter?.presentFetchResults(resp: StudentDetailsModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = StudentDetailsWorker()
-        worker!.fetch(student_id:request.student_id!, onSuccess: { (resp) in
+        worker!.fetch(student_id:request.student_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: StudentDetailsModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: StudentDetailsModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

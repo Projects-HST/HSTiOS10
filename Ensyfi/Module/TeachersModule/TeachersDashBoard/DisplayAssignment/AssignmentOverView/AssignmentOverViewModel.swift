@@ -15,7 +15,7 @@ struct AssignmentOverViewModel{
         {
             var class_id : String?
             var hw_date : String?
-            
+            var dynamic_db : String?
         }
         
         struct Response

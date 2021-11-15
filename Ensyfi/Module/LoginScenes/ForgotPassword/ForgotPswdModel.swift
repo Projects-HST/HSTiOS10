@@ -13,6 +13,7 @@ struct ForgotPasswordModel{
         struct Request
         {
             var userName : String?
+            var dynamic_db : String?
         }
         
         struct Response

@@ -19,6 +19,7 @@ struct UpdateGroupModel{
             var group_lead_id : String?
             var status : String?
             var group_id : String?
+            var dynamic_db : String?
             
         }
         

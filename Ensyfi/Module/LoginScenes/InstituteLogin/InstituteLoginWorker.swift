@@ -12,10 +12,10 @@ typealias InstituteLoginresponseHandler = (_ response:InstituteLoginModel.Fetch.
 
 class InstituteLoginWorker{
 
-   func fetch(institue_code:String,userName:String,password:String, onSuccess successCallback:(InstituteLoginresponseHandler)?,onFailure failureCallback: @escaping(InstituteLoginresponseHandler)) {
+   func fetch(institue_code:String,userName:String,password:String,dynamic_db:String, onSuccess successCallback:(InstituteLoginresponseHandler)?,onFailure failureCallback: @escaping(InstituteLoginresponseHandler)) {
        let manager = APIManager()
        manager.callAPIInstituteLogin(
-        institue_code:institue_code,userName:userName,password:password, onSuccess: { (resp)  in
+        institue_code:institue_code,userName:userName,password:password,dynamic_db:dynamic_db,  onSuccess: { (resp)  in
                successCallback?(InstituteLoginModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -24,3 +24,4 @@ class InstituteLoginWorker{
        )
    }
 }
+

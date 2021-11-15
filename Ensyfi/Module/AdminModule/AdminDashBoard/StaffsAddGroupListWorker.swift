@@ -13,10 +13,10 @@ typealias StaffGroupAddListresponseHandler = (_ response:StaffGroupAddListModel.
 class StaffGroupAddListWorker{
     
    var respData = [StaffGroupAddListModels]()
-    func fetch(group_id:String,group_user_type:String,class_id:String, onSuccess successCallback:(StaffGroupAddListresponseHandler)?,onFailure failureCallback: @escaping(StaffGroupAddListresponseHandler)) {
+    func fetch(group_id:String,group_user_type:String,class_id:String,dynamic_db:String, onSuccess successCallback:(StaffGroupAddListresponseHandler)?,onFailure failureCallback: @escaping(StaffGroupAddListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIStaffGroupAddList(
-        group_id:group_id,group_user_type:group_user_type,class_id:class_id, onSuccess: { (resp)  in
+        group_id:group_id,group_user_type:group_user_type,class_id:class_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(StaffGroupAddListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class StaffGroupAddListWorker{
        )
    }
 }
+

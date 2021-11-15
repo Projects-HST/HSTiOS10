@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 import MBProgressHUD
+import SideMenu
 
 protocol StudentAttendanceDisplayLogic: AnyObject
 {
@@ -15,7 +16,7 @@ protocol StudentAttendanceDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: StudentAttendanceModel.Fetch.ViewModel)
 }
 
-class StudentsAttendanceVC: UIViewController, StudentAttendanceDisplayLogic {
+class StudentsAttendanceVC: UIViewController, StudentAttendanceDisplayLogic,SideMenuNavigationControllerDelegate {
 
     @IBOutlet weak var workingDays: UILabel!
     @IBOutlet weak var daysPresent: UILabel!
@@ -33,8 +34,16 @@ class StudentsAttendanceVC: UIViewController, StudentAttendanceDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: StudentAttendanceModel.Fetch.Request(class_id :self.selectedClassId,stud_id :self.stsudentId))
+        interactor?.fetchItems(request: StudentAttendanceModel.Fetch.Request(class_id :self.selectedClassId,stud_id :self.stsudentId,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

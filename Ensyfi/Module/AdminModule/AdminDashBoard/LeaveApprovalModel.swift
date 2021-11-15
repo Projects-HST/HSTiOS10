@@ -15,6 +15,7 @@ struct LeaveApprovalModel{
         {
             var status : String?
             var leave_id : String?
+            var dynamic_db : String?
         }
         
         struct Response

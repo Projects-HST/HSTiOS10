@@ -17,6 +17,7 @@ struct CreateGroupModel{
             var group_title : String?
             var group_lead_id : String?
             var status : String?
+            var dynamic_db : String?
         }
         
         struct Response

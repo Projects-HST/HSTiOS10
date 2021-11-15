@@ -13,10 +13,10 @@ typealias GroupSectionListresponseHandler = (_ response:GroupSectionListModel.Fe
 class GroupSectionListWorker{
     
    var respData = [GroupSectionListModels]()
-    func fetch(user_id:String, onSuccess successCallback:(GroupSectionListresponseHandler)?,onFailure failureCallback: @escaping(GroupSectionListresponseHandler)) {
+    func fetch(user_id:String,dynamic_db:String, onSuccess successCallback:(GroupSectionListresponseHandler)?,onFailure failureCallback: @escaping(GroupSectionListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIGroupSectionList(
-        user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(GroupSectionListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class GroupSectionListWorker{
        )
     }
 }
+

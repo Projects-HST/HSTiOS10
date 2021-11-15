@@ -27,7 +27,7 @@ class Class_SectionInteractor: Class_SectionBusinessLogic, Class_SectionDataStor
         self.presenter?.presentFetchResults(resp: Class_SectionModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = Class_SectionWorker()
-        worker!.fetch(user_id:request.user_id!, onSuccess: { (resp) in
+        worker!.fetch(user_id:request.user_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: Class_SectionModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: Class_SectionModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

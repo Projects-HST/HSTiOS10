@@ -18,7 +18,7 @@ struct AddGroupMemberModel{
             var group_user_type : String?
             var status : String?
             var group_id : String?
-            
+            var dynamic_db : String?
         }
         
         struct Response

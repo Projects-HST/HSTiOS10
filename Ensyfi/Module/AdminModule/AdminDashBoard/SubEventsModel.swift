@@ -14,8 +14,8 @@ struct SubEventsModel{
         struct Request
         {
             var event_id : String?
-          
-           
+            var dynamic_db : String?
+            
         }
         
         struct Response

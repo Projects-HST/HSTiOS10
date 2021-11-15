@@ -29,7 +29,7 @@ class FeesStatusListVC: UIViewController, FeesStatusListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: FeesStatusListModel.Fetch.Request(class_id:self.selectedClassId , section_id: self.selectedSecId,fees_id:self.selectedFeesId))
+        interactor?.fetchItems(request: FeesStatusListModel.Fetch.Request(class_id:self.selectedClassId , section_id: self.selectedSecId,fees_id:self.selectedFeesId,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

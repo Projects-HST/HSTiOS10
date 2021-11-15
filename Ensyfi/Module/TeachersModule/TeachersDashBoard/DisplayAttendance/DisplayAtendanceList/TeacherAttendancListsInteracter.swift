@@ -29,10 +29,11 @@ class DisplayAttenddanceListInteractor: DisplayAttenddanceListBusinessLogic,Disp
         self.presenter?.presentFetchResults(resp: DisplayAttenddanceListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = DisplayAttenddanceListWorker()
-        worker!.fetch(class_id:request.class_id!, onSuccess: { (resp) in
+        worker!.fetch(class_id:request.class_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: DisplayAttenddanceListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp:DisplayAttenddanceListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

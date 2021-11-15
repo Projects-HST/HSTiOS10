@@ -13,10 +13,10 @@ typealias StudentsONDutyresponseHandler = (_ response:StudentsONDutyModel.Fetch.
 class StudentsONDutyWorker{
     
    var respData = [StudentsONDutyModels]()
-   func fetch(user_id:String,user_type:String, onSuccess successCallback:(StudentsONDutyresponseHandler)?,onFailure failureCallback: @escaping(StudentsONDutyresponseHandler)) {
+   func fetch(user_id:String,user_type:String,dynamic_db:String, onSuccess successCallback:(StudentsONDutyresponseHandler)?,onFailure failureCallback: @escaping(StudentsONDutyresponseHandler)) {
        let manager = StudentsAPIManager()
        manager.callAPIStudentsONDuty(
-        user_id:user_id,user_type:user_type, onSuccess: { (resp)  in
+        user_id:user_id,user_type:user_type, dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(StudentsONDutyModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class StudentsONDutyWorker{
        )
    }
 }
+

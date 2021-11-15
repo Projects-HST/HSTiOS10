@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
 protocol TeachersListDisplayLogic: AnyObject
 {
@@ -14,7 +15,7 @@ protocol TeachersListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: TeachersListModel.Fetch.ViewModel)
 }
 
-class TeachersVC: UIViewController,TeachersListDisplayLogic {
+class TeachersVC: UIViewController,TeachersListDisplayLogic,SideMenuNavigationControllerDelegate {
    
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,9 +28,17 @@ class TeachersVC: UIViewController,TeachersListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: TeachersListModel.Fetch.Request(user_id :""))
+        interactor?.fetchItems(request: TeachersListModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         print("1234")
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -72,6 +81,7 @@ extension TeachersVC {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
+
 extension TeachersVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,7 +92,6 @@ extension TeachersVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TeacherListCell
-        
         let data = displayedTeachersListData[indexPath.row]
         
         cell.SerialNo.text = String(serialNoArr[indexPath.row])
@@ -107,7 +116,6 @@ extension TeachersVC: UITableViewDelegate,UITableViewDataSource {
         {
         let vc = segue.destination as! TeacherDetailsVC
             vc.teacher_ID = self.selectedStaffId
-           
         }
     }
 }

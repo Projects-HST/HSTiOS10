@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,10 +53,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsd-3o-zCo">
-                                                            <rect key="frame" x="14" y="41" width="347" height="26"/>
+                                                            <rect key="frame" x="14" y="41" width="347" height="23"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="26" id="Gx4-5U-oFZ"/>
+                                                                <constraint firstAttribute="height" constant="23" id="Gx4-5U-oFZ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,7 +91,7 @@
                                                     <constraints>
                                                         <constraint firstItem="lrK-YE-UK0" firstAttribute="top" secondItem="bo2-gN-mwp" secondAttribute="bottom" constant="4" id="3n2-Ye-V85"/>
                                                         <constraint firstAttribute="trailing" secondItem="lrK-YE-UK0" secondAttribute="trailing" constant="8" id="AYO-bO-91j"/>
-                                                        <constraint firstItem="bo2-gN-mwp" firstAttribute="top" secondItem="Qsd-3o-zCo" secondAttribute="bottom" constant="5" id="Gfo-mG-zLX"/>
+                                                        <constraint firstItem="bo2-gN-mwp" firstAttribute="top" secondItem="Qsd-3o-zCo" secondAttribute="bottom" constant="8" id="Gfo-mG-zLX"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qsd-3o-zCo" secondAttribute="trailing" constant="13" id="HSR-ca-fNB"/>
                                                         <constraint firstItem="Qsd-3o-zCo" firstAttribute="top" secondItem="7uP-dP-BgI" secondAttribute="bottom" constant="7" id="Mds-Ua-Ah2"/>
                                                         <constraint firstAttribute="trailing" secondItem="bo2-gN-mwp" secondAttribute="trailing" constant="8" id="S2D-MF-1eh"/>
@@ -102,7 +101,7 @@
                                                         <constraint firstItem="7uP-dP-BgI" firstAttribute="top" secondItem="hyr-V6-Pag" secondAttribute="top" constant="8" id="djO-K1-D1V"/>
                                                         <constraint firstItem="lrK-YE-UK0" firstAttribute="top" secondItem="bGl-ZZ-X7q" secondAttribute="bottom" constant="5" id="j37-Q3-vRm"/>
                                                         <constraint firstItem="Qsd-3o-zCo" firstAttribute="leading" secondItem="hyr-V6-Pag" secondAttribute="leading" constant="14" id="lns-cV-QbC"/>
-                                                        <constraint firstItem="bGl-ZZ-X7q" firstAttribute="top" secondItem="Qsd-3o-zCo" secondAttribute="bottom" constant="12" id="m5O-Mf-SLE"/>
+                                                        <constraint firstItem="bGl-ZZ-X7q" firstAttribute="top" secondItem="Qsd-3o-zCo" secondAttribute="bottom" constant="15" id="m5O-Mf-SLE"/>
                                                         <constraint firstAttribute="bottom" secondItem="lrK-YE-UK0" secondAttribute="bottom" constant="4" id="sO5-2k-0Bb"/>
                                                         <constraint firstItem="bo2-gN-mwp" firstAttribute="leading" secondItem="hyr-V6-Pag" secondAttribute="leading" constant="39" id="tNN-2N-N69"/>
                                                         <constraint firstItem="H1n-pt-JKh" firstAttribute="leading" secondItem="hyr-V6-Pag" secondAttribute="leading" constant="8" id="viT-g0-tyh"/>

@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
 protocol GroupListDisplayLogic: AnyObject
 {
@@ -14,7 +15,7 @@ protocol GroupListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: GroupListModel.Fetch.ViewModel)
 }
 
-class GroupListVC: UIViewController, GroupListDisplayLogic {
+class GroupListVC: UIViewController, GroupListDisplayLogic,SideMenuNavigationControllerDelegate {
   
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,8 +32,16 @@ class GroupListVC: UIViewController, GroupListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: GroupListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :"1"))
+        interactor?.fetchItems(request: GroupListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :"1",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

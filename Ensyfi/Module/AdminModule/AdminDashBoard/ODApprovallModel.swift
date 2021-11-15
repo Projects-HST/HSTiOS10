@@ -15,6 +15,7 @@ struct ODApprovalModel{
         {
             var status : String?
             var od_id : String?
+            var dynamic_db : String?
         }
         
         struct Response

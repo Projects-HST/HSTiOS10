@@ -16,6 +16,7 @@ struct HomeWorkTestListModel{
         {
             var class_id : String?
             var hw_type : String?
+            var dynamic_db : String?
         }
         
         struct Response

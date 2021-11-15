@@ -13,10 +13,10 @@ typealias SectionListresponseHandler = (_ response:SectionListModel.Fetch.Respon
 class SectionListWorker{
     
    var respData = [SectionListModels]()
-   func fetch(class_id:String, onSuccess successCallback:(SectionListresponseHandler)?,onFailure failureCallback: @escaping(SectionListresponseHandler)) {
+   func fetch(class_id:String,dynamic_db:String,onSuccess successCallback:(SectionListresponseHandler)?,onFailure failureCallback: @escaping(SectionListresponseHandler)) {
        let manager = APIManager()
        manager.callAPISectionList(
-        class_id:class_id, onSuccess: { (resp)  in
+        class_id:class_id,dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(SectionListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class SectionListWorker{
        )
    }
 }
+
 

@@ -16,6 +16,7 @@ struct StaffGroupAddListModel{
             var group_id : String?
             var group_user_type : String?
             var class_id : String?
+            var dynamic_db : String?
         }
         
         struct Response

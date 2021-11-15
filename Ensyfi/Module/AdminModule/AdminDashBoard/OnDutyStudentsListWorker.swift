@@ -13,10 +13,10 @@ typealias ODStudentsListresponseHandler = (_ response:ODStudentsListModel.Fetch.
 class ODStudentsListWorker{
     
    var respData = [ODStudentsListModels]()
-   func fetch(user_type:String,onSuccess successCallback:(ODStudentsListresponseHandler)?,onFailure failureCallback: @escaping(ODStudentsListresponseHandler)) {
+   func fetch(user_type:String,dynamic_db:String,onSuccess successCallback:(ODStudentsListresponseHandler)?,onFailure failureCallback: @escaping(ODStudentsListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIODStudentsList(
-        user_type:user_type, onSuccess: { (resp)  in
+        user_type:user_type,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(ODStudentsListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class ODStudentsListWorker{
        )
    }
 }
+
 

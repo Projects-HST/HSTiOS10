@@ -87,8 +87,8 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: RoleListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
-        interactor1?.fetchItems(request: GroupSectionListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        interactor?.fetchItems(request: RoleListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
+        interactor1?.fetchItems(request: GroupSectionListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
         self.groupName.text = self.selectedTitle
@@ -164,7 +164,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
             print(selectedRoleId)
             if selectTypeTextfield.text == "Teachers" || selectTypeTextfield.text == "Board Members" {
                 self.secTextView.alpha = 0
-                interactor3?.fetchItems(request: StaffGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId))
+                interactor3?.fetchItems(request: StaffGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId,dynamic_db: GlobalVariables.shared.dynamic_db))
                 selectedRoleType = "Staffs"
             }
             else {
@@ -184,14 +184,14 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
             let slectedId = self.sectionIdArr[index]
             self.selectedSectionId = String(slectedId)
             print(selectedSectionId)
-            interactor2?.fetchItems(request: StudentGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId))
+            interactor2?.fetchItems(request: StudentGroupAddListModel.Fetch.Request(group_id:self.selectedID,group_user_type:self.selectedRoleId,class_id:self.selectedSectionId,dynamic_db: GlobalVariables.shared.dynamic_db))
             selectedRoleType = "Students"
         }
     }
    
     @IBAction func addAction(_ sender: Any) {
         
-        interactor4?.fetchItems(request: AddGroupMemberModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, group_member_id: slectedIDforAdd, group_user_type: selectedRoleId, status: selectedStatus, group_id: selectedID))
+        interactor4?.fetchItems(request: AddGroupMemberModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, group_member_id: slectedIDforAdd, group_user_type: selectedRoleId, status: selectedStatus, group_id: selectedID,dynamic_db: GlobalVariables.shared.dynamic_db))
     }
 }
 

@@ -13,10 +13,10 @@ typealias HomeWorkDetailsresponseHandler = (_ response:HomeWorkDetailsModel.Fetc
 class HomeWorkDetailsWorker{
     
    var respData = [HomeWorkDetailsModels]()
-   func fetch(class_id:String,hw_type:String, onSuccess successCallback:(HomeWorkDetailsresponseHandler)?,onFailure failureCallback: @escaping(HomeWorkDetailsresponseHandler)) {
+   func fetch(class_id:String,hw_type:String,dynamic_db:String, onSuccess successCallback:(HomeWorkDetailsresponseHandler)?,onFailure failureCallback: @escaping(HomeWorkDetailsresponseHandler)) {
        let manager = APIManager()
        manager.callAPIHomeWorkDetails(
-        class_id:class_id,hw_type:hw_type, onSuccess: { (resp)  in
+        class_id:class_id,hw_type:hw_type,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(HomeWorkDetailsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class HomeWorkDetailsWorker{
        )
    }
 }
+
 

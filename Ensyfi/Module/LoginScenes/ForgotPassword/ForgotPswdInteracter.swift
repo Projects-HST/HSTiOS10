@@ -27,7 +27,7 @@ class ForgotPasswordInteractor: ForgotPasswordBusinessLogic, ForgotPasswordDataS
            self.presenter?.presentFetchResults(resp: ForgotPasswordModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = ForgotPasswordWorker()
-        worker!.fetch(userName:request.userName!, onSuccess: { (resp) in
+        worker!.fetch(userName:request.userName!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: ForgotPasswordModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: ForgotPasswordModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

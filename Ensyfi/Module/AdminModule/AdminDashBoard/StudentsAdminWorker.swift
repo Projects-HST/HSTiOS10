@@ -13,10 +13,10 @@ typealias ClassViewresponseHandler = (_ response:ClassViewModel.Fetch.Response) 
 class ClassViewWorker{
     
    var respData = [ClassViewModels]()
-   func fetch(user_id:String, onSuccess successCallback:(ClassViewresponseHandler)?,onFailure failureCallback: @escaping(ClassViewresponseHandler)) {
+   func fetch(user_id:String,dynamic_db:String,onSuccess successCallback:(ClassViewresponseHandler)?,onFailure failureCallback: @escaping(ClassViewresponseHandler)) {
        let manager = APIManager()
        manager.callAPIClassView(
-        user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(ClassViewModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class ClassViewWorker{
        )
    }
 }
+
 

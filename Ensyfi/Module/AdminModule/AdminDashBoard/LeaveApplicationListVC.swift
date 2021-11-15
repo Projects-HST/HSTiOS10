@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
 protocol LeavesListDisplayLogic: AnyObject
 {
@@ -14,7 +15,7 @@ protocol LeavesListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: LeavesListModel.Fetch.ViewModel)
 }
 
-class LeaveApplicationListVC: UIViewController, LeavesListDisplayLogic {
+class LeaveApplicationListVC: UIViewController, LeavesListDisplayLogic,SideMenuNavigationControllerDelegate {
    
     var interactor: LeavesListBusinessLogic?
     var displayedLeavesListData: [LeavesListModel.Fetch.ViewModel.DisplayedLeavesListData] = []
@@ -32,8 +33,16 @@ class LeaveApplicationListVC: UIViewController, LeavesListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: LeavesListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        interactor?.fetchItems(request: LeavesListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

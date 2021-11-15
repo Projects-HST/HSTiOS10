@@ -14,10 +14,10 @@ typealias TeacherGroupTypleListresponseHandler = (_ response:TeacherGroupTypleLi
 class TeacherGroupTypleListWorker{
     
    var respData = [TeacherGroupTypleListModels]()
-    func fetch(user_id:String,user_type:String,onSuccess successCallback:(TeacherGroupTypleListresponseHandler)?,onFailure failureCallback: @escaping(TeacherGroupTypleListresponseHandler)) {
+    func fetch(user_id:String,user_type:String,dynamic_db:String,onSuccess successCallback:(TeacherGroupTypleListresponseHandler)?,onFailure failureCallback: @escaping(TeacherGroupTypleListresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPITeacherGroupTypleList(
-        user_id:user_id,user_type:user_type,onSuccess: { (resp)  in
+        user_id:user_id,user_type:user_type, dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(TeacherGroupTypleListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -26,3 +26,4 @@ class TeacherGroupTypleListWorker{
        )
    }
 }
+

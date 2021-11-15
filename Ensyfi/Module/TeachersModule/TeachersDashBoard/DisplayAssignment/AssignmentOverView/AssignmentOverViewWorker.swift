@@ -13,10 +13,10 @@ typealias AssignmentOverViewresponseHandler = (_ response:AssignmentOverViewMode
 class AssignmentOverViewWorker{
     
    var respData = [AssignmentOverViewModels]()
-    func fetch(class_id:String,hw_date:String, onSuccess successCallback:(AssignmentOverViewresponseHandler)?,onFailure failureCallback: @escaping(AssignmentOverViewresponseHandler)) {
+    func fetch(class_id:String,hw_date:String,dynamic_db:String, onSuccess successCallback:(AssignmentOverViewresponseHandler)?,onFailure failureCallback: @escaping(AssignmentOverViewresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPIAssignmentOverView(
-        class_id:class_id,hw_date:hw_date,  onSuccess: { (resp)  in
+        class_id:class_id,hw_date:hw_date,dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(AssignmentOverViewModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class AssignmentOverViewWorker{
        )
    }
 }
+
 

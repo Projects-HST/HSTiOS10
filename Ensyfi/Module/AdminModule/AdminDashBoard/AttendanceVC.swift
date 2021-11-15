@@ -7,8 +7,9 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
-class AttendanceVC: UIViewController,UIPopoverPresentationControllerDelegate, ClassSectionListDelegate,UITextFieldDelegate {
+class AttendanceVC: UIViewController,UIPopoverPresentationControllerDelegate, ClassSectionListDelegate,UITextFieldDelegate,SideMenuNavigationControllerDelegate {
     
     let datePicker = UIDatePicker()
     var selectedDate = Date()
@@ -26,6 +27,16 @@ class AttendanceVC: UIViewController,UIPopoverPresentationControllerDelegate, Cl
         self.classTextfield.delegate = self
         self.showDatePicker()
         self.bgView.dropShadow()
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+           print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           print("SideMenu Disappearing! (animated: \(animated))")
+           view.alpha = 1
     }
     
     @IBAction func selectClassAction(_ sender: Any) {

@@ -88,7 +88,7 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
         }
         else {
             
-        interactor?.fetchItems(request:LeaveApprovalModel.Fetch.Request(status:self.selectedLeaveStatus, leave_id:self.selectedLeaveStatus))
+        interactor?.fetchItems(request:LeaveApprovalModel.Fetch.Request(status:self.selectedLeaveStatus, leave_id:self.selectedLeaveStatus,dynamic_db: GlobalVariables.shared.dynamic_db))
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }

@@ -13,10 +13,10 @@ typealias StudentAttendanceresponseHandler = (_ response:StudentAttendanceModel.
 class StudentAttendanceWorker{
     
    var respData = [StudentAttendanceModels]()
-   func fetch(class_id:String,stud_id:String, onSuccess successCallback:(StudentAttendanceresponseHandler)?,onFailure failureCallback: @escaping(StudentAttendanceresponseHandler)) {
+   func fetch(class_id:String,stud_id:String,dynamic_db:String, onSuccess successCallback:(StudentAttendanceresponseHandler)?,onFailure failureCallback: @escaping(StudentAttendanceresponseHandler)) {
        let manager = APIManager()
        manager.callAPIStudentAttendance(
-        class_id:class_id,stud_id:stud_id, onSuccess: { (resp)  in
+        class_id:class_id,stud_id:stud_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(StudentAttendanceModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class StudentAttendanceWorker{
        )
    }
 }
+
 

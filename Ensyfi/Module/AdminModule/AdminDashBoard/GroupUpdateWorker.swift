@@ -12,10 +12,10 @@ typealias UpdateGroupresponseHandler = (_ response:UpdateGroupModel.Fetch.Respon
 
 class UpdateGroupWorker{
 
-   func fetch(user_id:String,group_title:String,group_lead_id:String,status:String,group_id:String, onSuccess successCallback:(UpdateGroupresponseHandler)?,onFailure failureCallback: @escaping(UpdateGroupresponseHandler)) {
+   func fetch(user_id:String,group_title:String,group_lead_id:String,status:String,group_id:String,dynamic_db:String, onSuccess successCallback:(UpdateGroupresponseHandler)?,onFailure failureCallback: @escaping(UpdateGroupresponseHandler)) {
        let manager = APIManager()
        manager.callAPIUpdateGroup(
-        user_id:user_id, group_title:group_title,group_lead_id:group_lead_id, status:status,group_id:group_id, onSuccess: { (resp)  in
+        user_id:user_id, group_title:group_title,group_lead_id:group_lead_id, status:status,group_id:group_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(UpdateGroupModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

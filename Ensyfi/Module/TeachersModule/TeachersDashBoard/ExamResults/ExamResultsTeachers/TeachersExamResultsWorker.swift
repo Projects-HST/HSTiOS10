@@ -13,10 +13,10 @@ typealias TeachersExamsResultsresponseHandler = (_ response:TeachersExamsResults
 class TeachersExamsResultsWorker{
     
    var respData = [TeachersExamsResultsModels]()
-    func fetch(class_id:String,exam_id:String,subject_id:String,is_internal_external:String,onSuccess successCallback:(TeachersExamsResultsresponseHandler)?,onFailure failureCallback: @escaping(TeachersExamsResultsresponseHandler)) {
+    func fetch(class_id:String,exam_id:String,subject_id:String,is_internal_external:String,dynamic_db:String,onSuccess successCallback:(TeachersExamsResultsresponseHandler)?,onFailure failureCallback: @escaping(TeachersExamsResultsresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPITeachersExamsResult(
-        class_id:class_id,exam_id:exam_id,subject_id:subject_id,is_internal_external:is_internal_external,onSuccess: { (resp)  in
+        class_id:class_id,exam_id:exam_id,subject_id:subject_id,is_internal_external:is_internal_external,dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(TeachersExamsResultsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class TeachersExamsResultsWorker{
        )
    }
 }
+

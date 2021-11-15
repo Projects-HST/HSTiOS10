@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 import MBProgressHUD
+import SideMenu
 
 protocol ExamResultsDisplayLogic: AnyObject
 {
@@ -15,7 +16,7 @@ protocol ExamResultsDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: ExamResultsModel.Fetch.ViewModel)
 }
 
-class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplayLogic, SectionListDisplayLogic {
+class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplayLogic, SectionListDisplayLogic,SideMenuNavigationControllerDelegate {
  
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var classTextfield: UITextField!
@@ -48,8 +49,16 @@ class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplay
 
         // Do any additional setup after loading the view.
 //        self.bgView.dropShadow()
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -100,7 +109,7 @@ class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplay
             let slecteId = classId[index]
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
-            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId))
+            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -121,7 +130,7 @@ class ExamResultsVC: UIViewController, ExamResultsDisplayLogic, ClassViewDisplay
                 let slecteId = secId[index]
                 self.selectedSecId = String(slecteId)
                 print(selectedSecId)
-                interactor2?.fetchItems(request: ExamResultsModel.Fetch.Request(class_id:self.selectedClassId,section_id:self.selectedSecId))
+                interactor2?.fetchItems(request: ExamResultsModel.Fetch.Request(class_id:self.selectedClassId,section_id:self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
             }
         }
     }

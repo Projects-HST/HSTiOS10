@@ -34,7 +34,7 @@ class AssignmentOverViewVC: UIViewController, AssignmentOverViewDisplayLogic,UIP
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: AssignmentOverViewModel.Fetch.Request(class_id :"1",hw_date:self.hw_date ))
+        interactor?.fetchItems(request: AssignmentOverViewModel.Fetch.Request(class_id :"1",hw_date:self.hw_date,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

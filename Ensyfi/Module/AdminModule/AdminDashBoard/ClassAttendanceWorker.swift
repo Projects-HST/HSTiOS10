@@ -12,10 +12,10 @@ typealias ClassAttendanceListresponseHandler = (_ response:ClassAttendanceListMo
 class ClassAttendanceListWorker{
     
    var respData = [ClassAttendanceListModels]()
-   func fetch(date:String,class_ids:String, onSuccess successCallback:(ClassAttendanceListresponseHandler)?,onFailure failureCallback: @escaping(ClassAttendanceListresponseHandler)) {
+   func fetch(date:String,class_ids:String,dynamic_db:String, onSuccess successCallback:(ClassAttendanceListresponseHandler)?,onFailure failureCallback: @escaping(ClassAttendanceListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIClassAttendanceList(
-        date:date,class_ids:class_ids, onSuccess: { (resp)  in
+        date:date,class_ids:class_ids,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(ClassAttendanceListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

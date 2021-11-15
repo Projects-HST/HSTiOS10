@@ -15,6 +15,7 @@ struct ClassAttendanceListModel{
         {
             var date : String?
             var class_ids : String?
+            var dynamic_db : String?
         }
         
         struct Response
@@ -40,3 +41,4 @@ struct ClassAttendanceListModel{
         }
     }
 }
+

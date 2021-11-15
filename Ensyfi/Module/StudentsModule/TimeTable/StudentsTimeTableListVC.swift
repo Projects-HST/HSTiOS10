@@ -57,8 +57,8 @@ class StudentsTimeTableListVC: UIViewController,DayListDisplayLogic, TimeTableLi
 
         // Do any additional setup after loading the view.
         
-        interactor?.fetchItems(request: DayListModel.Fetch.Request(class_id:GlobalVariables.shared.class_id))
-        interactor1?.fetchItems(request: TimeTableListModel.Fetch.Request(class_id:GlobalVariables.shared.class_id))
+        interactor?.fetchItems(request: DayListModel.Fetch.Request(class_id:GlobalVariables.shared.class_id,dynamic_db: GlobalVariables.shared.dynamic_db))
+        interactor1?.fetchItems(request: TimeTableListModel.Fetch.Request(class_id:GlobalVariables.shared.class_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

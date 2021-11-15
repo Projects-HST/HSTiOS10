@@ -28,11 +28,12 @@ class StudentGroupAddListInteractor:StudentGroupAddListBusinessLogic,StudentGrou
         self.presenter2?.presentFetchResults(resp: StudentGroupAddListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = StudentGroupAddListWorker()
-        worker!.fetch(group_id:request.group_id!,group_user_type:request.group_user_type!, class_id:request.class_id!, onSuccess: { (resp) in
+        worker!.fetch(group_id:request.group_id!,group_user_type:request.group_user_type!, class_id:request.class_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter2?.presentFetchResults(resp:StudentGroupAddListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter2?.presentFetchResults(resp: StudentGroupAddListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+
 

@@ -27,7 +27,7 @@ class ChangePasswordInteractor:ChangePasswordBusinessLogic,ChangePasswordDataSto
            self.presenter?.presentFetchResults(resp: ChangePasswordModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = ChangePasswordWorker()
-        worker!.fetch(user_id:request.user_id!, old_password:request.old_password!,password:request.password!, onSuccess: { (resp) in
+        worker!.fetch(user_id:request.user_id!, old_password:request.old_password!,password:request.password!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: ChangePasswordModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: ChangePasswordModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

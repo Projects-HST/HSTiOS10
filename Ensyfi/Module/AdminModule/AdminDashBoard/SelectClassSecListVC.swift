@@ -38,7 +38,7 @@ class SelectClassSecListVC: UIViewController,Class_SectionDisplayLogic {
         super.viewDidLoad()
         tableView.allowsSelection = false
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: Class_SectionModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        interactor?.fetchItems(request: Class_SectionModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

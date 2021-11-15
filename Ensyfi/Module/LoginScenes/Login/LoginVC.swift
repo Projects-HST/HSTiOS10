@@ -63,7 +63,7 @@ class LoginVC: UIViewController,LoginDisplayLogic {
         guard CheckValuesAreEmpty () else {
                    return
         }
-        interactor?.fetchItems(request: LoginModel.Fetch.Request(institue_id :self.InstituteIdTextfield.text))
+        interactor?.fetchItems(request: LoginModel.Fetch.Request(institue_id :self.InstituteIdTextfield.text,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

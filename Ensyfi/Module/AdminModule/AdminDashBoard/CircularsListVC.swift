@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
 protocol CircularsListDisplayLogic: AnyObject
 {
@@ -14,7 +15,7 @@ protocol CircularsListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: CircularsListModel.Fetch.ViewModel)
 }
 
-class CircularsListVC: UIViewController, CircularsListDisplayLogic {
+class CircularsListVC: UIViewController, CircularsListDisplayLogic,SideMenuNavigationControllerDelegate {
   
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,8 +26,16 @@ class CircularsListVC: UIViewController, CircularsListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: CircularsListModel.Fetch.Request(user_id :""))
+        interactor?.fetchItems(request: CircularsListModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

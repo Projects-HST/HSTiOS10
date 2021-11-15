@@ -8,6 +8,7 @@
 import UIKit
 import MBProgressHUD
 import DropDown
+import SideMenu
 
 protocol ClassViewDisplayLogic: AnyObject
 {
@@ -27,7 +28,7 @@ protocol StudentsListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: StudentsListModel.Fetch.ViewModel)
 }
 
-class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, StudentsListDisplayLogic {
+class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, StudentsListDisplayLogic,SideMenuNavigationControllerDelegate {
   
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
@@ -58,10 +59,19 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.bgView.dropShadow()
     }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
+    }
+
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
@@ -110,7 +120,7 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
             let slecteId = classId[index]
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
-            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId))
+            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId,dynamic_db: GlobalVariables.shared.dynamic_db))
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }
@@ -132,7 +142,7 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
                 let slecteId = secId[index]
                 self.selectedSecId = String(slecteId)
                 print(selectedSecId)
-                interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+                interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
                 MBProgressHUD.showAdded(to: self.view, animated: true)
             }
         }

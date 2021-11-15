@@ -14,6 +14,7 @@ struct LoginModel{
         struct Request
         {
             var institue_id : String?
+            var dynamic_db : String?
         }
         
         struct Response
@@ -36,3 +37,4 @@ struct LoginModel{
         }
     }
 }
+

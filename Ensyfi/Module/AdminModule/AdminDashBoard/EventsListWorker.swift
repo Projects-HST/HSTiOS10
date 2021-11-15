@@ -13,10 +13,10 @@ typealias EventsListresponseHandler = (_ response:EventsListModel.Fetch.Response
 class EventsListWorker{
     
    var respData = [EventsListModels]()
-    func fetch(class_id:String,section_id:String, onSuccess successCallback:(EventsListresponseHandler)?,onFailure failureCallback: @escaping(EventsListresponseHandler)) {
+    func fetch(class_id:String,section_id:String,dynamic_db:String, onSuccess successCallback:(EventsListresponseHandler)?,onFailure failureCallback: @escaping(EventsListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIEventsList(
-        class_id:class_id,section_id:section_id, onSuccess: { (resp)  in
+        class_id:class_id,section_id:section_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(EventsListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,4 +25,5 @@ class EventsListWorker{
        )
    }
 }
+
 

@@ -28,10 +28,11 @@ class StudentsONDutyInteractor: StudentsONDutyBusinessLogic, StudentsONDutyDataS
         self.presenter1?.presentFetchResults(resp: StudentsONDutyModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = StudentsONDutyWorker()
-        worker!.fetch(user_id:request.user_id!,user_type:request.user_type!,onSuccess: { (resp) in
+        worker!.fetch(user_id:request.user_id!,user_type:request.user_type!,dynamic_db:request.dynamic_db!,onSuccess: { (resp) in
             self.presenter1?.presentFetchResults(resp: StudentsONDutyModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter1?.presentFetchResults(resp: StudentsONDutyModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

@@ -28,10 +28,11 @@ class SubEventsInteractor: SubEventsBusinessLogic, SubEventsDataStore
         self.presenter?.presentFetchResults(resp: SubEventsModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = SubEventsWorker()
-        worker!.fetch(event_id:request.event_id!, onSuccess: { (resp) in
+        worker!.fetch(event_id:request.event_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: SubEventsModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: SubEventsModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

@@ -12,10 +12,10 @@ typealias SendAssignmentresponseHandler = (_ response:SendAssignmentModel.Fetch.
 
 class SendAssignmentWorker{
 
-   func fetch(attend_id:String,msg_type:String, onSuccess successCallback:(SendAssignmentresponseHandler)?,onFailure failureCallback: @escaping(SendAssignmentresponseHandler)) {
+   func fetch(attend_id:String,msg_type:String,dynamic_db:String, onSuccess successCallback:(SendAssignmentresponseHandler)?,onFailure failureCallback: @escaping(SendAssignmentresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPISendAssignment(
-        attend_id:attend_id, msg_type:msg_type,onSuccess: { (resp)  in
+        attend_id:attend_id, msg_type:msg_type, dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(SendAssignmentModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -24,4 +24,5 @@ class SendAssignmentWorker{
        )
    }
 }
+
 

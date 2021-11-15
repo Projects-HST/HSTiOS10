@@ -15,6 +15,7 @@ struct ExamTimeTableModel{
         {
             var class_id : String?
             var exam_id : String?
+            var dynamic_db : String?
 
         }
         
@@ -41,3 +42,7 @@ struct ExamTimeTableModel{
         }
     }
 }
+
+
+
+

@@ -27,7 +27,7 @@ class ExamTimeTableVC: UIViewController, ExamTimeTableDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: ExamTimeTableModel.Fetch.Request(class_id:self.selectedClassId, exam_id:self.selectedExamId))
+        interactor?.fetchItems(request: ExamTimeTableModel.Fetch.Request(class_id:self.selectedClassId, exam_id:self.selectedExamId,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

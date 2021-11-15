@@ -15,6 +15,7 @@ struct SpecialClassListModel{
         {
             var user_id : String?
             var from : String?
+            var dynamic_db : String?
         }
         
         struct Response

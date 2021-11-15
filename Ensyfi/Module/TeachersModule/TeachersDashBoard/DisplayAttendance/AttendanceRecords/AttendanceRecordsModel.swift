@@ -15,6 +15,7 @@ struct AttendanceRecordListModel{
         {
             var class_id : String?
             var attend_id : String?
+            var dynamic_db : String?
         }
         
         struct Response

@@ -50,7 +50,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="7PU-SD-wmw"/>
                                                 </constraints>
                                                 <connections>
-                                                    <action selector="selectClass:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tga-16-d3y"/>
+                                                    <action selector="selectClass:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sUp-n9-c1W"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -149,7 +149,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="sementAction:" destination="Y6W-OH-hqX" eventType="valueChanged" id="UIf-l8-WBe"/>
+                                                    <action selector="segmentAction:" destination="Y6W-OH-hqX" eventType="valueChanged" id="ncJ-HZ-9CP"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -182,7 +182,7 @@
                                         <rect key="frame" x="90" y="137" width="180" height="48"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-Nq-gfD">
-                                                <rect key="frame" x="8" y="0.0" width="131" height="48"/>
+                                                <rect key="frame" x="8" y="0.0" width="75" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -193,32 +193,31 @@
                                                     <constraint firstAttribute="width" constant="31" id="c2j-Z3-NQB"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gir-BU-bgj">
-                                                <rect key="frame" x="140" y="0.0" width="40" height="48"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhh-sc-tyP">
+                                                <rect key="frame" x="127" y="0.0" width="53" height="48"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="I6l-Sa-18q"/>
+                                                    <constraint firstAttribute="width" constant="53" id="Yt0-B7-YgD"/>
+                                                    <constraint firstAttribute="height" constant="48" id="vJX-kl-i23"/>
                                                 </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="selectClass:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TKK-c8-41v"/>
-                                                    <action selector="selectDataMonth:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ehg-xD-qVz"/>
+                                                    <action selector="selectDataMonth:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Yz-Ml-5z8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="gir-BU-bgj" firstAttribute="top" secondItem="2Q4-on-iFe" secondAttribute="top" id="BYX-Xf-NHq"/>
+                                            <constraint firstItem="Fhh-sc-tyP" firstAttribute="top" secondItem="2Q4-on-iFe" secondAttribute="top" id="8Vb-To-W0E"/>
                                             <constraint firstItem="5iX-Nq-gfD" firstAttribute="leading" secondItem="2Q4-on-iFe" secondAttribute="leading" constant="8" id="E3S-9L-rqc"/>
                                             <constraint firstAttribute="bottom" secondItem="l8U-oW-fdR" secondAttribute="bottom" constant="12" id="MTh-xD-KGG"/>
                                             <constraint firstAttribute="bottom" secondItem="5iX-Nq-gfD" secondAttribute="bottom" id="XQ3-s3-tCh"/>
-                                            <constraint firstItem="gir-BU-bgj" firstAttribute="leading" secondItem="5iX-Nq-gfD" secondAttribute="trailing" constant="1" id="aIv-eg-XfN"/>
-                                            <constraint firstAttribute="trailing" secondItem="gir-BU-bgj" secondAttribute="trailing" id="aa9-n1-wod"/>
                                             <constraint firstAttribute="trailing" secondItem="l8U-oW-fdR" secondAttribute="trailing" constant="8" id="cOm-ae-Vfv"/>
                                             <constraint firstAttribute="height" constant="48" id="l1o-Qh-ehm"/>
                                             <constraint firstItem="l8U-oW-fdR" firstAttribute="top" secondItem="2Q4-on-iFe" secondAttribute="top" constant="11" id="rNd-je-C1q"/>
                                             <constraint firstItem="5iX-Nq-gfD" firstAttribute="top" secondItem="2Q4-on-iFe" secondAttribute="top" id="uHs-kw-BrC"/>
-                                            <constraint firstAttribute="bottom" secondItem="gir-BU-bgj" secondAttribute="bottom" id="wny-8X-IhR"/>
                                             <constraint firstAttribute="width" constant="180" id="xKY-di-zuZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fhh-sc-tyP" secondAttribute="trailing" id="yeg-vI-hOb"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">

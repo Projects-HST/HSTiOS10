@@ -27,7 +27,7 @@ class ClassAttendanceListInteractor: ClassAttendanceListBusinessLogic, ClassAtte
         self.presenter?.presentFetchResults(resp: ClassAttendanceListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = ClassAttendanceListWorker()
-        worker!.fetch(date:request.date!,class_ids:request.class_ids!, onSuccess: { (resp) in
+        worker!.fetch(date:request.date!,class_ids:request.class_ids!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp:ClassAttendanceListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: ClassAttendanceListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

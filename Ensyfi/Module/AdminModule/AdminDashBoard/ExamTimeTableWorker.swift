@@ -13,10 +13,10 @@ typealias ExamTimeTableresponseHandler = (_ response:ExamTimeTableModel.Fetch.Re
 class ExamTimeTableWorker{
     
    var respData = [ExamTimeTableModels]()
-    func fetch(class_id:String,exam_id:String, onSuccess successCallback:(ExamTimeTableresponseHandler)?,onFailure failureCallback: @escaping(ExamTimeTableresponseHandler)) {
+    func fetch(class_id:String,exam_id:String,dynamic_db:String, onSuccess successCallback:(ExamTimeTableresponseHandler)?,onFailure failureCallback: @escaping(ExamTimeTableresponseHandler)) {
        let manager = APIManager()
        manager.callAPIExamTimeTable(
-        class_id:class_id,exam_id:exam_id, onSuccess: { (resp)  in
+        class_id:class_id,exam_id:exam_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(ExamTimeTableModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

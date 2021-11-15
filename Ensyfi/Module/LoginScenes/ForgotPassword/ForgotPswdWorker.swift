@@ -13,10 +13,10 @@ typealias ForgotPasswordresponseHandler = (_ response:ForgotPasswordModel.Fetch.
 
 class ForgotPasswordWorker{
 
-   func fetch(userName:String, onSuccess successCallback:(ForgotPasswordresponseHandler)?,onFailure failureCallback: @escaping(ForgotPasswordresponseHandler)) {
+   func fetch(userName:String,dynamic_db:String, onSuccess successCallback:(ForgotPasswordresponseHandler)?,onFailure failureCallback: @escaping(ForgotPasswordresponseHandler)) {
        let manager = APIManager()
        manager.callAPIForgotPassword(
-        userName:userName, onSuccess: { (resp)  in
+        userName:userName,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(ForgotPasswordModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class ForgotPasswordWorker{
        )
    }
 }
+

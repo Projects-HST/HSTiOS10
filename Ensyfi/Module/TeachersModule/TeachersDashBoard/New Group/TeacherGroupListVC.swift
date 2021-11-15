@@ -25,7 +25,7 @@ class TeacherGroupListVC: UIViewController, TeacherGroupListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: TeacherGroupListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,user_type:GlobalVariables.shared.user_type))
+        interactor?.fetchItems(request: TeacherGroupListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,user_type:GlobalVariables.shared.user_type,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

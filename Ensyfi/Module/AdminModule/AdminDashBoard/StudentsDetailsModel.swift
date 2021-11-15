@@ -14,6 +14,7 @@ struct StudentDetailsModel{
         struct Request
         {
             var student_id : String?
+            var dynamic_db : String?
             
         }
         

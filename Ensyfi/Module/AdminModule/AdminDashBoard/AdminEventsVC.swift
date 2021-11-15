@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
 protocol EventsListDisplayLogic: AnyObject
 {
@@ -14,7 +15,7 @@ protocol EventsListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: EventsListModel.Fetch.ViewModel)
 }
 
-class AdminEventsVC: UIViewController, EventsListDisplayLogic {
+class AdminEventsVC: UIViewController, EventsListDisplayLogic,SideMenuNavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,8 +33,16 @@ class AdminEventsVC: UIViewController, EventsListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: EventsListModel.Fetch.Request(class_id :"",section_id:""))
+        interactor?.fetchItems(request: EventsListModel.Fetch.Request(class_id :"",section_id:"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

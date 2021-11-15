@@ -14,6 +14,7 @@ struct SectionListModel{
         struct Request
         {
             var class_id : String?
+            var dynamic_db : String?
         }
         
         struct Response
@@ -36,3 +37,4 @@ struct SectionListModel{
         }
     }
 }
+

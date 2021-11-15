@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import SideMenu
 
-class AdminDashboardVC: UIViewController {
+class AdminDashboardVC: UIViewController,SideMenuNavigationControllerDelegate {
 
     @IBOutlet weak var bgView: UIView!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,5 +37,36 @@ class AdminDashboardVC: UIViewController {
         }
         self.bgView.dropShadow()
     }
+    
+//    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+//           print("SideMenu Appearing! (animated: \(animated))")
+//        view.alpha = 0.8
+//    }
+//
+//    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+//           print("SideMenu Disappearing! (animated: \(animated))")
+//           view.alpha = 1
+//    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+           print("SideMenu Appearing! (animated: \(animated))")
+        
+    }
+
+    func sideMenuDidAppear(menu: SideMenuNavigationController, animated: Bool) {
+           print("SideMenu Appeared! (animated: \(animated))")
+        view.alpha = 0.8
+    }
+
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           print("SideMenu Disappearing! (animated: \(animated))")
+          
+    }
+
+    func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           print("SideMenu Disappeared! (animated: \(animated))")
+        view.alpha = 1
+    }
+
 }
 //adminNavV

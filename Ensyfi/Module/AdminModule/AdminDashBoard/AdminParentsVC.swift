@@ -8,8 +8,9 @@
 import UIKit
 import DropDown
 import MBProgressHUD
+import SideMenu
 
-class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, StudentsListDisplayLogic {
+class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, StudentsListDisplayLogic,SideMenuNavigationControllerDelegate {
 
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
@@ -42,8 +43,16 @@ class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayL
         super.viewDidLoad()
         
         self.bgView.dropShadow()
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -93,7 +102,7 @@ class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayL
             let slecteId = classId[index]
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
-            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId))
+            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -114,7 +123,7 @@ class AdminParentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayL
                 let slecteId = secId[index]
                 self.selectedSecId = String(slecteId)
                 print(selectedSecId)
-                interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+                interactor2?.fetchItems(request: StudentsListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
             }
         }
     }

@@ -55,7 +55,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: StudentDetailsModel.Fetch.Request(student_id :self.studentEnroolId))
+        interactor?.fetchItems(request: StudentDetailsModel.Fetch.Request(student_id :self.studentEnroolId,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.bgView.dropShadow()
     }

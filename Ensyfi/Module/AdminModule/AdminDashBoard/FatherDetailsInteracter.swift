@@ -28,11 +28,14 @@ class FatherDeatilsInteractor: FatherDeatilsBusinessLogic, FatherDeatilsDataStor
            self.presenter?.presentFetchResults(resp: FatherDeatilsModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = FatherDeatilsWorker()
-        worker!.fetch(admission_id:request.admission_id!, onSuccess: { (resp) in
+        worker!.fetch(admission_id:request.admission_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: FatherDeatilsModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: FatherDeatilsModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+
+
+
 

@@ -14,7 +14,7 @@ struct GroupMembersListModel{
         struct Request
         {
             var group_id : String?
-           
+            var dynamic_db : String?
         }
         
         struct Response
@@ -38,3 +38,4 @@ struct GroupMembersListModel{
         }
     }
 }
+

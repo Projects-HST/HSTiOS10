@@ -13,10 +13,10 @@ typealias TeachersExamsListresponseHandler = (_ response:TeachersExamsListModel.
 class TeachersExamsListWorker{
     
    var respData = [TeachersExamsListModels]()
-    func fetch(teacher_id:String,onSuccess successCallback:(TeachersExamsListresponseHandler)?,onFailure failureCallback: @escaping(TeachersExamsListresponseHandler)) {
+    func fetch(teacher_id:String,dynamic_db:String,onSuccess successCallback:(TeachersExamsListresponseHandler)?,onFailure failureCallback: @escaping(TeachersExamsListresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPITeachersExamsList(
-        teacher_id:teacher_id,onSuccess: { (resp)  in
+        teacher_id:teacher_id,dynamic_db:dynamic_db,onSuccess: { (resp)  in
                successCallback?(TeachersExamsListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class TeachersExamsListWorker{
        )
    }
 }
+

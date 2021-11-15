@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 import MBProgressHUD
+import SideMenu
 
 protocol ExamListDisplayLogic: AnyObject
 {
@@ -15,7 +16,7 @@ protocol ExamListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: ExamListModel.Fetch.ViewModel)
 }
 
-class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, ExamListDisplayLogic {
+class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, ExamListDisplayLogic,SideMenuNavigationControllerDelegate {
 
     @IBOutlet weak var classTextfield: UITextField!
     @IBOutlet weak var sectionTextfield: UITextField!
@@ -50,9 +51,17 @@ class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, E
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :""))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.bgView.dropShadow()
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -102,7 +111,7 @@ class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, E
             let slecteId = classId[index]
             self.selectedClassId = String(slecteId)
             print(selectedClassId)
-            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId))
+            interactor1?.fetchItems(request: SectionListModel.Fetch.Request(class_id :self.selectedClassId,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
     
@@ -123,7 +132,7 @@ class ExamsVc: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic, E
                 let slecteId = secId[index]
                 self.selectedSecId = String(slecteId)
                 print(selectedSecId)
-                interactor2?.fetchItems(request: ExamListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId))
+                interactor2?.fetchItems(request: ExamListModel.Fetch.Request(class_id :self.selectedClassId,section_id: self.selectedSecId,dynamic_db: GlobalVariables.shared.dynamic_db))
             }
         }
     }

@@ -19,7 +19,7 @@ struct SendTecherGroupModel{
             var messagetype_notification : String?
             var message_details : String?
             var created_by : String?
-           
+            var dynamic_db : String?
         }
         
         struct Response

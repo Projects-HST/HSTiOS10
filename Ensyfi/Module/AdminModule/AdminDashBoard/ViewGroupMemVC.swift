@@ -26,7 +26,7 @@ class ViewGroupMemVC: UIViewController, GroupMembersListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: GroupMembersListModel.Fetch.Request(group_id :self.selectedID))
+        interactor?.fetchItems(request: GroupMembersListModel.Fetch.Request(group_id :self.selectedID,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

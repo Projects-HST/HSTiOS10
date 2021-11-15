@@ -105,7 +105,7 @@ class SendAttendanceVC: UIViewController, SendAssignmentDisplayLogic {
             
         }
         else {
-            interactor?.fetchItems(request: SendAssignmentModel.Fetch.Request(attend_id :self.selectedClassid,msg_type:self.selectedType))
+            interactor?.fetchItems(request: SendAssignmentModel.Fetch.Request(attend_id :self.selectedClassid,msg_type:self.selectedType,dynamic_db: GlobalVariables.shared.dynamic_db))
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }

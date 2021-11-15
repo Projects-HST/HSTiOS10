@@ -27,10 +27,11 @@ class SyncCTestMarksInteractor:SyncCTestMarksBusinessLogic,SyncCTestMarksDataSto
            self.presenter3?.presentFetchResults(resp: SyncCTestMarksModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = SyncCTestMarksWorker()
-        worker!.fetch(hw_masterid:request.hw_masterid!, student_id:request.student_id!,marks:request.marks!, remarks:request.remarks!, created_by:request.created_by!,created_at:request.created_at!, onSuccess: { (resp) in
+        worker!.fetch(hw_masterid:request.hw_masterid!, student_id:request.student_id!,marks:request.marks!, remarks:request.remarks!, created_by:request.created_by!,created_at:request.created_at!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter3?.presentFetchResults(resp: SyncCTestMarksModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter3?.presentFetchResults(resp: SyncCTestMarksModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

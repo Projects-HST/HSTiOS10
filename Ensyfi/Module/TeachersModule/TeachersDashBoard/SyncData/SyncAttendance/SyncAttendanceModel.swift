@@ -23,6 +23,7 @@ struct SyncAttendanceModel{
             var created_by : String?
             var created_at : String?
             var status : String?
+            var dynamic_db : String?
         }
         
         struct Response

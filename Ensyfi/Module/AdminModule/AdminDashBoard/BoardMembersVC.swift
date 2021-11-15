@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
 protocol BoardMembersListDisplayLogic: AnyObject
 {
@@ -14,7 +15,7 @@ protocol BoardMembersListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: BoardMembersListModel.Fetch.ViewModel)
 }
 
-class BoardMembersVC: UIViewController, BoardMembersListDisplayLogic {
+class BoardMembersVC: UIViewController, BoardMembersListDisplayLogic,SideMenuNavigationControllerDelegate {
    
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,8 +27,16 @@ class BoardMembersVC: UIViewController, BoardMembersListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: BoardMembersListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id))
+        interactor?.fetchItems(request: BoardMembersListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

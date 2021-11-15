@@ -15,6 +15,7 @@ struct GuardianDetailsModel{
         struct Request
         {
             var admission_id : String?
+            var dynamic_db : String?
         }
         
         struct Response

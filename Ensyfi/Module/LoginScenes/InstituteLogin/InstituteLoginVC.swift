@@ -185,7 +185,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
                    return
         }
         
-        interactor?.fetchItems(request: InstituteLoginModel.Fetch.Request(institue_code :self.institute_code,userName:self.userName.text!,password:self.password.text!))
+        interactor?.fetchItems(request: InstituteLoginModel.Fetch.Request(institue_code :self.institute_code,userName:self.userName.text!,password:self.password.text!,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         callAPILogin(userName:self.userName.text!,password:password.text!)
     }

@@ -29,7 +29,7 @@ class ParentProfileDetailsVC: UIViewController, FatherDeatilsDisplayLogic, Mothe
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id))
+        interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.bgView.dropShadow()
     }
@@ -66,14 +66,14 @@ class ParentProfileDetailsVC: UIViewController, FatherDeatilsDisplayLogic, Mothe
     
     @IBAction func motherDetails(_ sender: Any){
     
-        interactor2?.fetchItems(request: MotherDetailsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id))
+        interactor2?.fetchItems(request: MotherDetailsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.fatherImg.image = UIImage(named:"Father light")
         self.motherImg.image = UIImage(named:"Mother")
     }
     
     @IBAction func fatherDetails(_ sender: Any) {
-        interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id))
+        interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         self.motherImg.image = UIImage(named:"Mother light")
         self.fatherImg.image = UIImage(named:"Father")
         MBProgressHUD.showAdded(to: self.view, animated: true)

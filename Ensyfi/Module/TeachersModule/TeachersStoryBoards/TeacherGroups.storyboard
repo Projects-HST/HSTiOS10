@@ -43,10 +43,10 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d66-2C-dUJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="25"/>
+                                                                    <rect key="frame" x="8" y="0.0" width="141" height="25"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="140" id="k2G-3G-d4F"/>
+                                                                        <constraint firstAttribute="width" constant="141" id="k2G-3G-d4F"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,11 +81,11 @@
                                                                 <constraint firstItem="7vc-3Z-jDv" firstAttribute="top" secondItem="HDP-IQ-XFc" secondAttribute="top" id="UTi-W7-FTN"/>
                                                                 <constraint firstAttribute="bottom" secondItem="7vc-3Z-jDv" secondAttribute="bottom" constant="5" id="jJV-vf-8N2"/>
                                                                 <constraint firstAttribute="bottom" secondItem="d66-2C-dUJ" secondAttribute="bottom" constant="5" id="q8v-XP-Ajd"/>
-                                                                <constraint firstItem="d66-2C-dUJ" firstAttribute="leading" secondItem="HDP-IQ-XFc" secondAttribute="leading" id="vJ5-qK-U15"/>
+                                                                <constraint firstItem="d66-2C-dUJ" firstAttribute="leading" secondItem="HDP-IQ-XFc" secondAttribute="leading" constant="8" id="vJ5-qK-U15"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fo-tp-mvX">
-                                                            <rect key="frame" x="2" y="34" width="380" height="24"/>
+                                                            <rect key="frame" x="8" y="34" width="374" height="24"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,7 +102,7 @@
                                                         <constraint firstItem="HDP-IQ-XFc" firstAttribute="top" secondItem="xnH-gx-DPA" secondAttribute="top" id="DUF-qI-BFC"/>
                                                         <constraint firstItem="0Fo-tp-mvX" firstAttribute="top" secondItem="HDP-IQ-XFc" secondAttribute="bottom" constant="4" id="Se0-TZ-wC8"/>
                                                         <constraint firstAttribute="trailing" secondItem="0Fo-tp-mvX" secondAttribute="trailing" constant="2" id="WOe-i9-00S"/>
-                                                        <constraint firstItem="0Fo-tp-mvX" firstAttribute="leading" secondItem="xnH-gx-DPA" secondAttribute="leading" constant="2" id="Xl3-Z0-EmC"/>
+                                                        <constraint firstItem="0Fo-tp-mvX" firstAttribute="leading" secondItem="xnH-gx-DPA" secondAttribute="leading" constant="8" id="Xl3-Z0-EmC"/>
                                                         <constraint firstAttribute="bottom" secondItem="0Fo-tp-mvX" secondAttribute="bottom" constant="17" id="bdF-g6-lrY"/>
                                                         <constraint firstAttribute="trailing" secondItem="HDP-IQ-XFc" secondAttribute="trailing" id="hSD-hc-yFo"/>
                                                         <constraint firstItem="HDP-IQ-XFc" firstAttribute="leading" secondItem="xnH-gx-DPA" secondAttribute="leading" id="khU-Gx-7Jj"/>
@@ -243,7 +243,7 @@
                                                     <constraint firstAttribute="height" constant="23" id="7kZ-e5-9vI"/>
                                                     <constraint firstAttribute="width" constant="23" id="tD0-et-QqX"/>
                                                 </constraints>
-                                                <state key="normal" image="mail"/>
+                                                <state key="normal" image="notification-1"/>
                                                 <connections>
                                                     <action selector="selectednotification:" destination="M5y-jU-yuS" eventType="touchUpInside" id="qX7-P8-cLs"/>
                                                 </connections>
@@ -418,6 +418,7 @@
     <resources>
         <image name="Downarrow" width="50.5" height="50.5"/>
         <image name="mail" width="50" height="50"/>
+        <image name="notification-1" width="50" height="50"/>
         <image name="send white" width="50.5" height="50.5"/>
         <image name="sms-2" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">

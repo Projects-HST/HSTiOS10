@@ -28,7 +28,7 @@ class EventsListInteractor: EventsListBusinessLogic, EventsListDataStore
         self.presenter?.presentFetchResults(resp: EventsListModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = EventsListWorker()
-        worker!.fetch(class_id:request.class_id!,section_id:request.section_id!, onSuccess: { (resp) in
+        worker!.fetch(class_id:request.class_id!,section_id:request.section_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: EventsListModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: EventsListModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

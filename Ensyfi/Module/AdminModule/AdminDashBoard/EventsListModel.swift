@@ -15,7 +15,8 @@ struct EventsListModel{
         {
             var class_id : String?
             var section_id : String?
-           
+            var dynamic_db : String?
+            
         }
         
         struct Response

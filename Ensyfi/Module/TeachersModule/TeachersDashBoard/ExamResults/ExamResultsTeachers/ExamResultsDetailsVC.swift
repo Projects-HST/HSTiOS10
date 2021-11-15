@@ -28,7 +28,7 @@ class ExamResultsDetailsVC: UIViewController, TeachersExamsResultsDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: TeachersExamsResultsModel.Fetch.Request(class_id :self.selectedClassId,exam_id :self.selectedExamId,subject_id :self.selectedsubId,is_internal_external :self.selectedInternalExternal))
+        interactor?.fetchItems(request: TeachersExamsResultsModel.Fetch.Request(class_id :self.selectedClassId,exam_id :self.selectedExamId,subject_id :self.selectedsubId,is_internal_external :self.selectedInternalExternal,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
    

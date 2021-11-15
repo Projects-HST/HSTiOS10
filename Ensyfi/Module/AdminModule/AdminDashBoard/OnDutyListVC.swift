@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SideMenu
 
 protocol ODStudentsListDisplayLogic: AnyObject
 {
@@ -20,7 +21,7 @@ protocol ODTeachersListDisplayLogic: AnyObject
     func errorFetchingItems(viewModel: ODTeachersListModel.Fetch.ViewModel)
 }
 
-class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersListDisplayLogic {
+class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersListDisplayLogic,SideMenuNavigationControllerDelegate {
   
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img1: UIImageView!
@@ -44,10 +45,18 @@ class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersList
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: ODStudentsListModel.Fetch.Request(user_type :"1"))
+        interactor?.fetchItems(request: ODStudentsListModel.Fetch.Request(user_type :"1",dynamic_db: GlobalVariables.shared.dynamic_db))
         self.selectedType = "ST"
         self.bgView.dropShadow()
         MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.alpha = 0.8
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+           view.alpha = 1
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -83,13 +92,13 @@ class OnDutyListVC: UIViewController, ODStudentsListDisplayLogic, ODTeachersList
         
         if segmentedControl.selectedSegmentIndex == 0 {
             
-            interactor?.fetchItems(request: ODStudentsListModel.Fetch.Request(user_type :"1"))
+            interactor?.fetchItems(request: ODStudentsListModel.Fetch.Request(user_type :"1",dynamic_db: GlobalVariables.shared.dynamic_db))
             self.selectedType = "ST"
             self.img2.image = UIImage(named:"unselected1")
             self.img1.image = UIImage(named:"selected")
         }
         else {
-            interactor1?.fetchItems(request: ODTeachersListModel.Fetch.Request(user_type :"1"))
+            interactor1?.fetchItems(request: ODTeachersListModel.Fetch.Request(user_type :"1",dynamic_db: GlobalVariables.shared.dynamic_db))
             self.selectedType = "TC"
          
             self.img2.image = UIImage(named:"selected")

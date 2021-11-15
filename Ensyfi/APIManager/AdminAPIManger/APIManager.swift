@@ -61,7 +61,7 @@ class APIManager: NSObject {
       }
     }
 
-    func callAPILogin(institue_id:String,onSuccess successCallback: ((_ login: LoginModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPILogin(institue_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: LoginModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.appBase_URL
    // Set Parameters
@@ -98,7 +98,7 @@ class APIManager: NSObject {
      )
   }
 
-    func callAPIInstituteLogin(institue_code:String,userName:String,password:String,onSuccess successCallback: ((_ login: InstituteLoginModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIInstituteLogin(institue_code:String,userName:String,password:String,dynamic_db:String,onSuccess successCallback: ((_ login: InstituteLoginModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.instituteLoginUrl
    // Set Parameters
@@ -143,7 +143,7 @@ class APIManager: NSObject {
      )
   }
 
-    func callAPIForgotPassword(userName:String,onSuccess successCallback: ((_ login: ForgotPasswordModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIForgotPassword(userName:String,dynamic_db:String,onSuccess successCallback: ((_ login: ForgotPasswordModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.forgotPswdUrl
    // Set Parameters
@@ -173,7 +173,7 @@ class APIManager: NSObject {
      )
   }
 
-    func callAPIClassView(user_id:String, onSuccess successCallback: ((_ resp: [ClassViewModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIClassView(user_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [ClassViewModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = "http://happysanz.in/ensyfi/apiadmin/get_all_classes/"
          // Set Parameters
@@ -210,7 +210,7 @@ class APIManager: NSObject {
        )
     }
 
-    func callAPISectionList(class_id:String, onSuccess successCallback: ((_ resp: [SectionListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPISectionList(class_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [SectionListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = "http://happysanz.in/ensyfi/apiadmin/get_all_sections/"
          // Set Parameters
@@ -245,12 +245,11 @@ class APIManager: NSObject {
        )
     }
 
-    func callAPIStudentsList(class_id:String,section_id:String, onSuccess successCallback: ((_ resp: [StudentsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIStudentsList(class_id:String,section_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [StudentsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentsListUrl
          // Set Parameters
         let parameters: Parameters = ["class_id": class_id,"section_id":section_id]
-        print(class_id)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -282,7 +281,7 @@ class APIManager: NSObject {
       )
    }
 
-    func callAPITeachersList(user_id:String, onSuccess successCallback: ((_ resp: [TeachersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPITeachersList(user_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [TeachersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.teacherListUrl
          // Set Parameters
@@ -319,7 +318,7 @@ class APIManager: NSObject {
       )
    }
 
-    func callAPIStudentDetails(student_id:String, onSuccess successCallback: ((_ resp: [StudentDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIStudentDetails(student_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [StudentDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentsDetailsUrl
          // Set Parameters
@@ -356,7 +355,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIHomeWorkTestList(class_id:String,hw_type:String, onSuccess successCallback: ((_ resp: [HomeWorkTestListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIHomeWorkTestList(class_id:String,hw_type:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [HomeWorkTestListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.HomeWorkTestListUrl
          // Set Parameters
@@ -393,7 +392,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIHomeWorkDetails(class_id:String,hw_type:String, onSuccess successCallback: ((_ resp: [HomeWorkDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIHomeWorkDetails(class_id:String,hw_type:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [HomeWorkDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.HomeWorkTestListUrl
          // Set Parameters
@@ -430,7 +429,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIStudentAttendance(class_id:String,stud_id:String, onSuccess successCallback: ((_ resp: [StudentAttendanceModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIStudentAttendance(class_id:String,stud_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [StudentAttendanceModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentAttendanceUrl
          // Set Parameters
@@ -456,7 +455,7 @@ class APIManager: NSObject {
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
-                  var data = [StudentAttendanceModels]()
+                  var data = [StudentAttendanceModels]()                                                                                                                                                                           
                   for item in toModel {
                       let single = StudentAttendanceModels.build(item)
                       data.append(single)
@@ -473,7 +472,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIExamResults(class_id:String,section_id:String, onSuccess successCallback: ((_ resp: [ExamResultsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIExamResults(class_id:String,section_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [ExamResultsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
 //        let url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
          // Set Parameters
@@ -521,7 +520,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPITeacherDetails(teacher_id:String, onSuccess successCallback: ((_ resp: [TeacherDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPITeacherDetails(teacher_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [TeacherDetailsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.teacherDetailUrl
          // Set Parameters
@@ -558,7 +557,7 @@ class APIManager: NSObject {
       )
    }
   
-    func callAPIClassForTeacherList(class_id:String,section_id:String, onSuccess successCallback: ((_ resp: [ClassForTeacherListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIClassForTeacherList(class_id:String,section_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [ClassForTeacherListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.clasForTeacherListurl
          // Set Parameters
@@ -595,7 +594,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIExamList(class_id:String,section_id:String,onSuccess successCallback: ((_ resp: [ExamListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIExamList(class_id:String,section_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [ExamListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
          // Set Parameters
@@ -634,7 +633,7 @@ class APIManager: NSObject {
         
    }
     
-    func callAPIEventsList(class_id:String,section_id:String,onSuccess successCallback: ((_ resp: [EventsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIEventsList(class_id:String,section_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [EventsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.eventsListUrl
          // Set Parameters
@@ -672,7 +671,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPISubEvents(event_id:String,onSuccess successCallback: ((_ resp: [SubEventsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPISubEvents(event_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [SubEventsModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.subEventsListUrl
          // Set Parameters
@@ -709,7 +708,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPICircularsList(user_id:String,onSuccess successCallback: ((_ resp: [CircularsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPICircularsList(user_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [CircularsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.adminCircularListUrl
          // Set Parameters
@@ -747,7 +746,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIExamTimeTable(class_id:String,exam_id:String,onSuccess successCallback: ((_ resp: [ExamTimeTableModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIExamTimeTable(class_id:String,exam_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [ExamTimeTableModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.examDetailsTableListUrl
          // Set Parameters
@@ -786,7 +785,7 @@ class APIManager: NSObject {
    }
 //
     
-    func callAPIFatherDeatils(admission_id:String,onSuccess successCallback: ((_ login: FatherDeatilsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIFatherDeatils(admission_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: FatherDeatilsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.getParentDetailsUrl
    // Set Parameters
@@ -839,7 +838,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIMotherDetails(admission_id:String,onSuccess successCallback: ((_ login: MotherDetailsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIMotherDetails(admission_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: MotherDetailsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.getParentDetailsUrl
    // Set Parameters
@@ -892,7 +891,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIGuardianDetails(admission_id:String,onSuccess successCallback: ((_ login: GuardianDetailsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIGuardianDetails(admission_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: GuardianDetailsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.getParentDetailsUrl
    // Set Parameters
@@ -945,7 +944,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIFeesList(class_id:String,section_id:String, onSuccess successCallback: ((_ resp: [FeesListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIFeesList(class_id:String,section_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [FeesListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL + APIFunctionName.feesListUrl
          // Set Parameters
@@ -983,7 +982,7 @@ class APIManager: NSObject {
        )
     }
     
-    func callAPIFeesStatusList(class_id:String,section_id:String,fees_id:String, onSuccess successCallback: ((_ resp: [FeesStatusListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIFeesStatusList(class_id:String,section_id:String,fees_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [FeesStatusListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL + APIFunctionName.feesStatusListUrl
          // Set Parameters
@@ -1021,7 +1020,7 @@ class APIManager: NSObject {
        )
     }
     
-    func callAPIFeesSectionList(class_id:String, onSuccess successCallback: ((_ resp: [FeesSectionListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIFeesSectionList(class_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [FeesSectionListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL + APIFunctionName.feesSectionListUrl
          // Set Parameters
@@ -1059,7 +1058,7 @@ class APIManager: NSObject {
        )
     }
     
-    func callAPIODStudentsList(user_type:String, onSuccess successCallback: ((_ resp: [ODStudentsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIODStudentsList(user_type:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [ODStudentsListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.ODstudentsListUrl
          // Set Parameters
@@ -1096,7 +1095,7 @@ class APIManager: NSObject {
       )
    }
 
-    func callAPIODTeachersList(user_type:String, onSuccess successCallback: ((_ resp: [ODTeachersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIODTeachersList(user_type:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [ODTeachersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.ODteachersListUrl
          // Set Parameters
@@ -1133,7 +1132,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIODApproval(status:String,od_id:String,onSuccess successCallback: ((_ login: ODApprovalModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIODApproval(status:String,od_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: ODApprovalModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.ODApprovalUrl
    // Set Parameters
@@ -1163,7 +1162,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIGroupList(user_id:String,user_type:String,onSuccess successCallback: ((_ resp: [GroupListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIGroupList(user_id:String,user_type:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [GroupListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.groupListUrl
          // Set Parameters
@@ -1200,7 +1199,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPITeacherListID(user_id:String,user_type:String,onSuccess successCallback: ((_ resp: [TeacherListIDModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPITeacherListID(user_id:String,user_type:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [TeacherListIDModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.techerIDnameListUrl
          // Set Parameters
@@ -1237,7 +1236,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPICreateGroup(user_id:String,group_title:String,group_lead_id:String,status:String,onSuccess successCallback: ((_ login: CreateGroupModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPICreateGroup(user_id:String,group_title:String,group_lead_id:String,status:String,dynamic_db:String,onSuccess successCallback: ((_ login: CreateGroupModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.createGroupUrl
    // Set Parameters
@@ -1267,7 +1266,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIGroupMembersList(group_id:String,onSuccess successCallback: ((_ resp: [GroupMembersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIGroupMembersList(group_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [GroupMembersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.groupMembersListUrl
          // Set Parameters
@@ -1302,7 +1301,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIUpdateGroup(user_id:String,group_title:String,group_lead_id:String,status:String,group_id:String,onSuccess successCallback: ((_ login: UpdateGroupModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIUpdateGroup(user_id:String,group_title:String,group_lead_id:String,status:String,group_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: UpdateGroupModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.updategroupUrl
    // Set Parameters
@@ -1331,7 +1330,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIRoleList(user_id:String,onSuccess successCallback: ((_ resp: [RoleListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIRoleList(user_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [RoleListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.roleListUrl
          // Set Parameters
@@ -1368,7 +1367,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIGroupSectionList(user_id:String,onSuccess successCallback: ((_ resp: [GroupSectionListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIGroupSectionList(user_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [GroupSectionListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.groupSectionUrl
          // Set Parameters
@@ -1405,7 +1404,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIStudentGroupAddList(group_id:String,group_user_type:String,class_id:String,onSuccess successCallback: ((_ resp: [StudentGroupAddListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIStudentGroupAddList(group_id:String,group_user_type:String,class_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [StudentGroupAddListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentListGroupAddUrl
          // Set Parameters
@@ -1442,7 +1441,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIStaffGroupAddList(group_id:String,group_user_type:String,class_id:String,onSuccess successCallback: ((_ resp: [StaffGroupAddListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIStaffGroupAddList(group_id:String,group_user_type:String,class_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [StaffGroupAddListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.staffListGroupAddUrl
          // Set Parameters
@@ -1479,7 +1478,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPIAddGroupMember(user_id:String,group_member_id:String,group_user_type:String,status:String,group_id:String,onSuccess successCallback: ((_ login: AddGroupMemberModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIAddGroupMember(user_id:String,group_member_id:String,group_user_type:String,status:String,group_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: AddGroupMemberModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.AddGroupMemberUrl
    // Set Parameters
@@ -1509,7 +1508,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPILeavesList(user_id:String,onSuccess successCallback: ((_ resp: [LeavesListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPILeavesList(user_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [LeavesListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.leaveListUrl
          // Set Parameters
@@ -1547,7 +1546,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPILeaveApproval(status:String,leave_id:String,onSuccess successCallback: ((_ login: LeaveApprovalModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPILeaveApproval(status:String,leave_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: LeaveApprovalModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.leaveApprovalUrl
    // Set Parameters
@@ -1577,7 +1576,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIClass_Section(user_id:String, onSuccess successCallback: ((_ resp: [Class_SectionModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIClass_Section(user_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [Class_SectionModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL + APIFunctionName.classSectionListUrl
          // Set Parameters
@@ -1614,7 +1613,7 @@ class APIManager: NSObject {
        )
     }
     
-    func callAPIClassAttendanceList(date:String,class_ids:String, onSuccess successCallback: ((_ resp: [ClassAttendanceListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIClassAttendanceList(date:String,class_ids:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [ClassAttendanceListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL + APIFunctionName.classAttendanceListUrl
          // Set Parameters
@@ -1650,7 +1649,7 @@ class APIManager: NSObject {
        )
     }
     
-    func callAPIChangePassword(user_id:String,old_password:String,password:String,onSuccess successCallback: ((_ login: ChangePasswordModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIChangePassword(user_id:String,old_password:String,password:String,dynamic_db:String,onSuccess successCallback: ((_ login: ChangePasswordModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.changePasswordUrl
    // Set Parameters
@@ -1679,7 +1678,7 @@ class APIManager: NSObject {
      )
   }
     
-    func callAPIBoardMembersList(user_id:String, onSuccess successCallback: ((_ resp: [BoardMembersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIBoardMembersList(user_id:String,dynamic_db:String, onSuccess successCallback: ((_ resp: [BoardMembersListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.boardMemListUrl
          // Set Parameters
@@ -1715,7 +1714,7 @@ class APIManager: NSObject {
       )
    }
     
-    func callAPISpecialClassList(user_id:String,from:String,onSuccess successCallback: ((_ resp: [SpecialClassListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPISpecialClassList(user_id:String,from:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [SpecialClassListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
 
         var url = String()
         let parameters: Parameters = ["user_id": user_id]

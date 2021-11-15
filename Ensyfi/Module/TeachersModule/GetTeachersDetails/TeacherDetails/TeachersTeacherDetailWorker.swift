@@ -14,10 +14,10 @@ typealias GetTeacherDetailsresponseHandler = (_ response:GetTeacherDetailsModel.
 class GetTeacherDetailsWorker{
     
    var respData = [GetTeacherDetailsModels]()
-   func fetch(institue_code:String,userName:String,password:String, onSuccess successCallback:(GetTeacherDetailsresponseHandler)?,onFailure failureCallback: @escaping(GetTeacherDetailsresponseHandler)) {
+   func fetch(institue_code:String,userName:String,password:String,dynamic_db:String, onSuccess successCallback:(GetTeacherDetailsresponseHandler)?,onFailure failureCallback: @escaping(GetTeacherDetailsresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPIGetTeacherDetails(
-        institue_code:institue_code,userName:userName,password:password, onSuccess: { (resp)  in
+        institue_code:institue_code,userName:userName,password:password,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(GetTeacherDetailsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

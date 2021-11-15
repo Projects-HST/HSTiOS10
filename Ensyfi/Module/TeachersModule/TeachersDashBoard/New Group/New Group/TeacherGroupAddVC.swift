@@ -47,7 +47,7 @@ class TeacherGroupAddVC: UIViewController,TeacherGroupTypleListDisplayLogic,Send
         // Do any additional setup after loading the view.
         hideKeyboardWhenTappedAround()
         self.bgView.dropShadow()
-        interactor?.fetchItems(request: TeacherGroupTypleListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,user_type:GlobalVariables.shared.user_type))
+        interactor?.fetchItems(request: TeacherGroupTypleListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,user_type:GlobalVariables.shared.user_type,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
@@ -136,7 +136,7 @@ class TeacherGroupAddVC: UIViewController,TeacherGroupTypleListDisplayLogic,Send
             })
         }
         else {
-            interactor1?.fetchItems(request: SendTecherGroupModel.Fetch.Request(group_title_id:self.selectedId,messagetype_sms:self.selectedType,messagetype_mail:self.selectedType,messagetype_notification:self.selectedType,message_details:self.detailsField.text!,created_by:GlobalVariables.shared.user_id))
+            interactor1?.fetchItems(request: SendTecherGroupModel.Fetch.Request(group_title_id:self.selectedId,messagetype_sms:self.selectedType,messagetype_mail:self.selectedType,messagetype_notification:self.selectedType,message_details:self.detailsField.text!,created_by:GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         }
     }
 }

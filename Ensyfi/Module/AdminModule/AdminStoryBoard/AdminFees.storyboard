@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -348,7 +347,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOQ-DK-0N0">
-                                                            <rect key="frame" x="369" y="0.0" width="5" height="73"/>
+                                                            <rect key="frame" x="369" y="0.0" width="5" height="70"/>
                                                             <color key="backgroundColor" systemColor="systemRedColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="5" id="elK-cm-75o"/>
@@ -364,7 +363,7 @@
                                                         <constraint firstAttribute="height" constant="70" id="VxM-tW-Q3R"/>
                                                         <constraint firstItem="m0m-M1-NEP" firstAttribute="centerY" secondItem="V4M-es-Gf9" secondAttribute="centerY" constant="1.5" id="ZqT-Nb-1h0"/>
                                                         <constraint firstItem="eQ3-aY-sRd" firstAttribute="top" secondItem="V4M-es-Gf9" secondAttribute="top" constant="5" id="doR-Jr-Bab"/>
-                                                        <constraint firstAttribute="bottom" secondItem="hOQ-DK-0N0" secondAttribute="bottom" constant="-3" id="fYX-SU-3RZ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hOQ-DK-0N0" secondAttribute="bottom" id="fYX-SU-3RZ"/>
                                                         <constraint firstItem="k2e-hX-mL3" firstAttribute="leading" secondItem="V4M-es-Gf9" secondAttribute="leading" constant="5" id="hgk-z6-m6f"/>
                                                         <constraint firstAttribute="trailing" secondItem="hOQ-DK-0N0" secondAttribute="trailing" id="zj1-xB-Zcg"/>
                                                     </constraints>

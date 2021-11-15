@@ -88,7 +88,7 @@ class OverViewAttendanceVC: UIViewController, SendAttendanceDisplayLogic {
             
         }
         else {
-            interactor?.fetchItems(request: SendAttendanceModel.Fetch.Request(attend_id :self.selectedid,msg_type:self.selectedType))
+            interactor?.fetchItems(request: SendAttendanceModel.Fetch.Request(attend_id :self.selectedid,msg_type:self.selectedType,dynamic_db: GlobalVariables.shared.dynamic_db))
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }

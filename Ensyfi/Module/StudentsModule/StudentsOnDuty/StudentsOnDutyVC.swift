@@ -25,7 +25,7 @@ class StudentsOnDutyVC: UIViewController, StudentsONDutyDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor1?.fetchItems(request: StudentsONDutyModel.Fetch.Request(user_id:GlobalVariables.shared.user_id,user_type:GlobalVariables.shared.user_type))
+        interactor1?.fetchItems(request: StudentsONDutyModel.Fetch.Request(user_id:GlobalVariables.shared.user_id,user_type:GlobalVariables.shared.user_type,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

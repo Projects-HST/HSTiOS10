@@ -17,7 +17,7 @@ struct TeachersExamsResultsModel{
             var exam_id : String?
             var subject_id : String?
             var is_internal_external : String?
-           
+            var dynamic_db : String?
         }
         
         struct Response

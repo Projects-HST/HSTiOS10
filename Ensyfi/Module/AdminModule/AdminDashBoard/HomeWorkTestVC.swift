@@ -44,10 +44,10 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
         self.dropDownData = ["Class Test","Home Work"]
         self.TestTextField.text = "Class Test"
         if from == "Student" {
-            interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HT"))
+            interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HT",dynamic_db: GlobalVariables.shared.dynamic_db))
         }
         else {
-            interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT"))
+            interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT",dynamic_db: GlobalVariables.shared.dynamic_db))
         }
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
@@ -86,19 +86,23 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
             if dropDown.indexForSelectedRow == 0 {
                 
                 if from == "Student" {
-                    interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HT"))
+                    interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HT",dynamic_db: GlobalVariables.shared.dynamic_db))
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
                 }
                 else {
-                interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT"))
+                interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HT",dynamic_db: GlobalVariables.shared.dynamic_db))
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
                 }
             }
             
             else if dropDown.indexForSelectedRow == 1 {
                 if from == "Student" {
-                    interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HW"))
+                    interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HW",dynamic_db: GlobalVariables.shared.dynamic_db))
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
                 }
                 else {
-                interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HW"))
+                interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HW",dynamic_db: GlobalVariables.shared.dynamic_db))
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
                 }
             }
         }

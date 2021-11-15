@@ -41,10 +41,11 @@ class TeacherAttendanceVC: UIViewController {
         // Do any additional setup after loading the view.
         context = appDelegate.persistentContainer.viewContext
         self.fetchData()
-        self.classBtnOutlet.isEnabled = false
+//        self.classBtnOutlet.isEnabled = false
         self.fetchMonthData()
-        self.showDatePicker()
+//        self.showDatePicker()
         self.bgView.dropShadow()
+        self.selectedType = "Dview"
     }
     
     @IBAction func selectClass(_ sender: Any) {
@@ -63,14 +64,20 @@ class TeacherAttendanceVC: UIViewController {
     
     @IBAction func selectDataMonth(_ sender: Any) {
         
-        dropDown.anchorView = date_month
-        dropDown.dataSource = academicMonthArr
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-        self.date_month.text = item
+        if self.selectedType == "Dview"{
+          
+        }
+        else {
+            dropDown.show()
+            dropDown.anchorView = date_month
+            dropDown.dataSource = academicMonthArr
+            dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.date_month.text = item
+            }
         }
     }
     
-    @IBAction func sementAction(_ sender: Any) {
+    @IBAction func segmentAction(_ sender: Any) {
         
         if segmentedControl.selectedSegmentIndex == 0 {
             
@@ -79,8 +86,7 @@ class TeacherAttendanceVC: UIViewController {
             self.img1.image = UIImage(named:"selected")
             self.date_month.text = "Select Date"
         }
-        else {
-         
+        else if segmentedControl.selectedSegmentIndex == 1{
             self.selectedType = "Mview"
             self.img2.image = UIImage(named:"selected")
             self.img1.image = UIImage(named:"unselected1")
@@ -93,7 +99,11 @@ class TeacherAttendanceVC: UIViewController {
        datePicker.datePickerMode = .date
        datePicker.backgroundColor = UIColor.white
        datePicker.setValue(UIColor.black, forKeyPath: "textColor")
-       datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+        } else {
+            // Fallback on earlier versions
+        }
        //ToolBar
        let toolbar = UIToolbar();
        toolbar.sizeToFit()

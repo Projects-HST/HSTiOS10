@@ -27,7 +27,7 @@ class InstituteLoginInteractor: InstituteLoginBusinessLogic, InstituteLoginDataS
            self.presenter?.presentFetchResults(resp: InstituteLoginModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = InstituteLoginWorker()
-        worker!.fetch(institue_code:request.institue_code!,userName:request.userName!,password:request.password!, onSuccess: { (resp) in
+        worker!.fetch(institue_code:request.institue_code!,userName:request.userName!,password:request.password!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: InstituteLoginModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: InstituteLoginModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))

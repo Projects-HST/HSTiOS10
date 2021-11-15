@@ -28,7 +28,7 @@ class GuardianProfileDetailsVC: UIViewController, GuardianDetailsDisplayLogic {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        interactor3?.fetchItems(request: GuardianDetailsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id))
+        interactor3?.fetchItems(request: GuardianDetailsModel.Fetch.Request(admission_id:GlobalVariables.shared.admission_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         bgView.dropShadow()
     }

@@ -27,10 +27,11 @@ class LeaveApprovalInteractor: LeaveApprovalBusinessLogic, LeaveApprovalDataStor
            self.presenter?.presentFetchResults(resp:LeaveApprovalModel.Fetch.Response(testObj: nil, isError:true, message: "emptyyy" ))
         }
         worker = LeaveApprovalWorker()
-        worker!.fetch(status:request.status!, leave_id:request.leave_id!, onSuccess: { (resp) in
+        worker!.fetch(status:request.status!,leave_id:request.leave_id!,dynamic_db:request.dynamic_db!, onSuccess: { (resp) in
             self.presenter?.presentFetchResults(resp: LeaveApprovalModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
             self.presenter?.presentFetchResults(resp: LeaveApprovalModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }
+

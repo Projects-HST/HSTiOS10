@@ -13,10 +13,10 @@ typealias GroupMembersListresponseHandler = (_ response:GroupMembersListModel.Fe
 class GroupMembersListWorker{
     
    var respData = [GroupMembersListModels]()
-    func fetch(group_id:String, onSuccess successCallback:(GroupMembersListresponseHandler)?,onFailure failureCallback: @escaping(GroupMembersListresponseHandler)) {
+    func fetch(group_id:String, dynamic_db:String, onSuccess successCallback:(GroupMembersListresponseHandler)?,onFailure failureCallback: @escaping(GroupMembersListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIGroupMembersList(
-        group_id:group_id, onSuccess: { (resp)  in
+        group_id:group_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(GroupMembersListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class GroupMembersListWorker{
        )
    }
 }
+

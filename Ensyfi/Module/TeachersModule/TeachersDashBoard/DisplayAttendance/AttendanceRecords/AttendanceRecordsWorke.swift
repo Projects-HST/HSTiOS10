@@ -13,10 +13,10 @@ typealias AttendanceRecordListresponseHandler = (_ response:AttendanceRecordList
 class AttendanceRecordListWorker{
     
    var respData = [AttendanceRecordListModels]()
-    func fetch(class_id:String,attend_id:String, onSuccess successCallback:(AttendanceRecordListresponseHandler)?,onFailure failureCallback: @escaping(AttendanceRecordListresponseHandler)) {
+    func fetch(class_id:String,attend_id:String,dynamic_db:String, onSuccess successCallback:(AttendanceRecordListresponseHandler)?,onFailure failureCallback: @escaping(AttendanceRecordListresponseHandler)) {
        let manager = TeachersAPIManager()
        manager.callAPIAttendanceRecordList(
-        class_id:class_id,attend_id:attend_id, onSuccess: { (resp)  in
+        class_id:class_id,attend_id:attend_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(AttendanceRecordListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class AttendanceRecordListWorker{
        )
    }
 }
+

@@ -27,7 +27,7 @@ class ClassAttendanceListVC: UIViewController, ClassAttendanceListDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: ClassAttendanceListModel.Fetch.Request(date:self.selectedDate, class_ids:self.selectedClassID))
+        interactor?.fetchItems(request: ClassAttendanceListModel.Fetch.Request(date:self.selectedDate, class_ids:self.selectedClassID,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

@@ -13,10 +13,10 @@ typealias StudentGroupAddListresponseHandler = (_ response:StudentGroupAddListMo
 class StudentGroupAddListWorker{
     
    var respData = [StudentGroupAddListModels]()
-    func fetch(group_id:String,group_user_type:String,class_id:String, onSuccess successCallback:(StudentGroupAddListresponseHandler)?,onFailure failureCallback: @escaping(StudentGroupAddListresponseHandler)) {
+    func fetch(group_id:String,group_user_type:String,class_id:String,dynamic_db:String, onSuccess successCallback:(StudentGroupAddListresponseHandler)?,onFailure failureCallback: @escaping(StudentGroupAddListresponseHandler)) {
        let manager = APIManager()
        manager.callAPIStudentGroupAddList(
-        group_id:group_id,group_user_type:group_user_type,class_id:class_id, onSuccess: { (resp)  in
+        group_id:group_id,group_user_type:group_user_type,class_id:class_id,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(StudentGroupAddListModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
@@ -25,3 +25,4 @@ class StudentGroupAddListWorker{
        )
    }
 }
+

@@ -55,7 +55,7 @@ class UpdateClassTestMarkVC: UIViewController, ClassTestMarkListDisplayLogic {
         self.hideKeyboardWhenTappedAround()
         self.context = appDelegate.persistentContainer.viewContext
         self.marksText = [String](repeating: "", count:100)
-        interactor?.fetchItems(request: ClassTestMarkListModel.Fetch.Request(hw_id :self.selectedHwId))
+        interactor?.fetchItems(request: ClassTestMarkListModel.Fetch.Request(hw_id :self.selectedHwId,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     

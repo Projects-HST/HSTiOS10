@@ -13,10 +13,10 @@ typealias CreateGroupresponseHandler = (_ response:CreateGroupModel.Fetch.Respon
 
 class CreateGroupWorker{
 
-   func fetch(user_id:String,group_title:String,group_lead_id:String,status:String, onSuccess successCallback:(CreateGroupresponseHandler)?,onFailure failureCallback: @escaping(CreateGroupresponseHandler)) {
+   func fetch(user_id:String,group_title:String,group_lead_id:String,status:String,dynamic_db:String, onSuccess successCallback:(CreateGroupresponseHandler)?,onFailure failureCallback: @escaping(CreateGroupresponseHandler)) {
        let manager = APIManager()
        manager.callAPICreateGroup(
-        user_id:user_id, group_title:group_title,group_lead_id:group_lead_id, status:status, onSuccess: { (resp)  in
+        user_id:user_id, group_title:group_title,group_lead_id:group_lead_id, status:status,dynamic_db:dynamic_db, onSuccess: { (resp)  in
                successCallback?(CreateGroupModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in
