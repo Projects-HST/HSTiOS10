@@ -135,3 +135,127 @@ class SendAttendanceModels {
      }
    }
 }
+
+class DayMonthAttendanceListModels : NSObject {
+
+       var enroll_id : String?
+       var sec_name : String?
+       var at_id : String?
+       var a_status : String?
+       var count : String?
+       var class_id : String?
+       var abs_date : String?
+       var name : String?
+       var class_name : String?
+       var attend_period : String?
+ 
+     // MARK: Instance Method
+   func loadFromDictionary(_ dict: [String: AnyObject])
+       {
+        if let data = dict["enroll_id"] as? String {
+          self.enroll_id = data
+        }
+        if let data = dict["sec_name"] as? String {
+          self.sec_name = data
+        }
+        if let data = dict["at_id"] as? String {
+          self.at_id = data
+        }
+        if let data = dict["a_status"] as? String {
+          self.a_status = data
+        }
+        if let data = dict["count"] as? String {
+          self.count = data
+        }
+        if let data = dict["class_id"] as? String {
+          self.class_id = data
+        }
+        if let data = dict["abs_date"] as? String {
+          self.abs_date = data
+        }
+        if let data = dict["name"] as? String {
+          self.name = data
+        }
+        if let data = dict["class_name"] as? String {
+          self.class_name = data
+        }
+        if let data = dict["attend_period"] as? String {
+          self.attend_period = data
+        }
+   }
+    
+      // MARK: Class Method
+class func build(_ dict: [String: AnyObject]) -> DayMonthAttendanceListModels{
+    
+       let model = DayMonthAttendanceListModels()
+       model.loadFromDictionary(dict)
+       return model
+   }
+}
+
+//"abs_date" : "",
+//"enroll_id" : "2",
+//"sec_name" : "A",
+//"a_status" : "P",
+//"" : "",
+//"class_name" : "XII",
+//"class_id" : "1",
+//"at_id" : "",
+//"leaves" : "1",
+//"name" : "maran"
+class MonthAttendanceListModels : NSObject {
+
+       var abs_date : String?
+       var enroll_id : String?
+       var sec_name : String?
+       var a_status : String?
+       var attend_period : String?
+       var class_name : String?
+       var class_id : String?
+       var at_id : String?
+       var leaves : String?
+       var name : String?
+ 
+     // MARK: Instance Method
+   func loadFromDictionary(_ dict: [String: AnyObject])
+       {
+        if let data = dict["abs_date"] as? String {
+          self.abs_date = data
+        }
+        if let data = dict["enroll_id"] as? String {
+          self.enroll_id = data
+        }
+        if let data = dict["sec_name"] as? String {
+          self.sec_name = data
+        }
+        if let data = dict["a_status"] as? String {
+          self.a_status = data
+        }
+        if let data = dict["attend_period"] as? String {
+          self.attend_period = data
+        }
+        if let data = dict["class_name"] as? String {
+          self.class_name = data
+        }
+        if let data = dict["class_id"] as? String {
+          self.class_id = data
+        }
+        if let data = dict["at_id"] as? String {
+          self.at_id = data
+        }
+        if let data = dict["leaves"] as? String {
+          self.leaves = data
+        }
+        if let data = dict["name"] as? String {
+          self.name = data
+        }
+   }
+    
+      // MARK: Class Method
+class func build(_ dict: [String: AnyObject]) -> MonthAttendanceListModels{
+    
+       let model = MonthAttendanceListModels()
+       model.loadFromDictionary(dict)
+       return model
+   }
+}

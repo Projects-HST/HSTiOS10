@@ -33,6 +33,7 @@ class StudentDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate 
         let regnameKey = UserDefaults.standard.object(forKey: UserDefaultsKey.regnameKey.rawValue) ?? ""
         let class_nameKey = UserDefaults.standard.object(forKey: UserDefaultsKey.class_nameKey.rawValue) ?? ""
         let sec_nameKey = UserDefaults.standard.object(forKey: UserDefaultsKey.sec_nameKey.rawValue) ?? ""
+        let dynamicDB = UserDefaults.standard.object(forKey: UserDefaultsKey.dynamic_dbKey.rawValue) ?? ""
         
         if user_loginType as! String == "" {
             
@@ -50,12 +51,14 @@ class StudentDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate 
             GlobalVariables.shared.regName = regnameKey as! String
             GlobalVariables.shared.class_name = class_nameKey as! String
             GlobalVariables.shared.sec_name = sec_nameKey as! String
+            GlobalVariables.shared.dynamic_db = dynamicDB as! String
             
             print(GlobalVariables.shared.regName)
             print(GlobalVariables.shared.registered_id)
             print(GlobalVariables.shared.admission_no)
             print(GlobalVariables.shared.sec_name)
             print(GlobalVariables.shared.user_id)
+            print(GlobalVariables.shared.dynamic_db)
         }
     }
     

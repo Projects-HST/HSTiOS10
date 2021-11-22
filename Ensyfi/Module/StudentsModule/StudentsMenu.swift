@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class StudentsMenu: UIViewController {
 
@@ -13,6 +14,8 @@ class StudentsMenu: UIViewController {
     @IBOutlet weak var name: UILabel!
     
     var from = String()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var context : NSManagedObjectContext?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class StudentsMenu: UIViewController {
         // Do any additional setup after loading the view.
         self.name.text = "Hi \(GlobalVariables.shared.userName)"
         self.from = "Students"
+        self.context = appDelegate.persistentContainer.viewContext
     }
     
     @IBAction func specialClassAction(_ sender: Any) {
@@ -38,6 +42,7 @@ class StudentsMenu: UIViewController {
             UserDefaults.standard.clearUserData()
             self.clearGlobalVariables ()
             self.reNew()
+            self.deleteAllData(entity:"StudentRegDatas")
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
             UIAlertAction in
@@ -55,6 +60,15 @@ class StudentsMenu: UIViewController {
             //reload application data (renew root view )
         UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "loginVC")
     }
+    
+    func deleteAllData(entity: String)
+    {
+        let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
+        do { try context!.execute(DelAllReqVar) }
+        catch { print(error) }
+    }
+    
  
     func clearGlobalVariables () {
         

@@ -25,8 +25,6 @@ class TeachersDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationController?.view.backgroundColor = .green
-        // Do any additional setup after loading the view.
         self.context = appDelegate.persistentContainer.viewContext
         self.bgView.dropShadow()
         let user_loginType = UserDefaults.standard.object(forKey: UserDefaultsKey.user_login_type_Key.rawValue) ?? ""
@@ -34,6 +32,7 @@ class TeachersDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate
         let userType = UserDefaults.standard.object(forKey: UserDefaultsKey.userTypeKey.rawValue) ?? ""
         let user_id = UserDefaults.standard.object(forKey: UserDefaultsKey.user_idkey.rawValue) ?? ""
         let userName = UserDefaults.standard.object(forKey: UserDefaultsKey.namekey.rawValue) ?? ""
+        let dynamicDB = UserDefaults.standard.object(forKey: UserDefaultsKey.dynamic_dbKey.rawValue) ?? ""
         
         if user_loginType as! String == "" {
         
@@ -45,9 +44,11 @@ class TeachersDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate
             GlobalVariables.shared.userName = userName as! String
             GlobalVariables.shared.user_type = userType as! String
             GlobalVariables.shared.user_id = user_id as! String
+            GlobalVariables.shared.dynamic_db = dynamicDB as! String
+            print(GlobalVariables.shared.user_type)
             print(GlobalVariables.shared.userName)
             print(GlobalVariables.shared.user_id)
-            print(GlobalVariables.shared.user_type)
+            print(GlobalVariables.shared.dynamic_db)
         }
     }
     
@@ -59,4 +60,3 @@ class TeachersDashBoardVC: UIViewController,SideMenuNavigationControllerDelegate
            view.alpha = 1
     }
 }
-//{"status":"success","msg":"View Groups","groupDetails":[{"id":"8","group_title":"Culturals"}]}

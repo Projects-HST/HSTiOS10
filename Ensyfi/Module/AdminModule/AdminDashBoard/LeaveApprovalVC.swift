@@ -88,7 +88,7 @@ class LeaveApprovalVC: UIViewController, LeaveApprovalDisplayLogic {
         }
         else {
             
-        interactor?.fetchItems(request:LeaveApprovalModel.Fetch.Request(status:self.selectedLeaveStatus, leave_id:self.selectedLeaveStatus,dynamic_db: GlobalVariables.shared.dynamic_db))
+        interactor?.fetchItems(request:LeaveApprovalModel.Fetch.Request(status:self.selectedLeaveStatus, leave_id:self.selectedId,dynamic_db: GlobalVariables.shared.dynamic_db))
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
     }
@@ -98,6 +98,9 @@ extension  LeaveApprovalVC {
     
     func successFetchedItems(viewModel: LeaveApprovalModel.Fetch.ViewModel) {
         MBProgressHUD.hide(for: self.view, animated: true)
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Changes Saved", complition: {
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     func errorFetchingItems(viewModel: LeaveApprovalModel.Fetch.ViewModel) {

@@ -10,7 +10,7 @@ import MBProgressHUD
 import SideMenu
 
 class AttendanceVC: UIViewController,UIPopoverPresentationControllerDelegate, ClassSectionListDelegate,UITextFieldDelegate,SideMenuNavigationControllerDelegate {
-    
+  
     let datePicker = UIDatePicker()
     var selectedDate = Date()
     var dateFormatted = String()
@@ -61,10 +61,10 @@ class AttendanceVC: UIViewController,UIPopoverPresentationControllerDelegate, Cl
         }
     }
     
-    func saveText(strText: String) {
+    func saveText(strText: String,strTextCName: String) {
          self.selectedClassID = strText
         print(selectedClassID)
-        self.classTextfield.text = ""
+        self.classTextfield.text = strTextCName
      }
     
     func popOverButtonClick (sender: UITextField)

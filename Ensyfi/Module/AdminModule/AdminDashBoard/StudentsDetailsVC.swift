@@ -48,6 +48,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
     
     var studentEnroolId = String()
     var selectedClassId = String()
+    var selectedSecId = String()
     var interactor: StudentDetailsBusinessLogic?
     var displayedStudentDetailsData: [StudentDetailsModel.Fetch.ViewModel.DisplayedStudentDetailsData] = []
     
@@ -88,7 +89,7 @@ class StudentsDetailsVC: UIViewController, StudentDetailsDisplayLogic {
     }
     
     @IBAction func feesAction(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "to_FeesDetailsList", sender: self)
     }
     
     @IBAction func attendanceAction(_ sender: Any) {
@@ -161,6 +162,12 @@ extension StudentsDetailsVC  {
         {
         let vc = segue.destination as! ExamResultsVC
             vc.selectedClassId = self.selectedClassId
+        }
+        else if (segue.identifier == "to_FeesDetailsList")
+        {
+        let vc = segue.destination as! StudentDetailsFeesListVC
+            vc.selectedClassId = self.selectedClassId
+            vc.selectedSecId = self.selectedSecId
         }
     }
 }

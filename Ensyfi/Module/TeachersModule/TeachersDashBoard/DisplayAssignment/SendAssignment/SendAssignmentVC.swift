@@ -70,7 +70,7 @@ class SendAttendanceVC: UIViewController, SendAssignmentDisplayLogic {
         self.smsOutlet.setImage(image1, for: .normal)
         self.mailOutlet.setImage(image2, for: .normal)
         self.notificationOutlet.setImage(image3, for: .normal)
-        delegate?.saveText(strText: (selectedType as NSString) as String)
+//        delegate?.saveText(strText: (selectedType as NSString) as String)
     }
     
     @IBAction func selectedmail(_ sender: Any) {
@@ -83,7 +83,7 @@ class SendAttendanceVC: UIViewController, SendAssignmentDisplayLogic {
         self.smsOutlet.setImage(image1, for: .normal)
         self.mailOutlet.setImage(image2, for: .normal)
         self.notificationOutlet.setImage(image3, for: .normal)
-        delegate?.saveText(strText: (selectedType as NSString) as String)
+//        delegate?.saveText(strText: (selectedType as NSString) as String)
     }
     
     @IBAction func selectednotification(_ sender: Any) {
@@ -96,7 +96,7 @@ class SendAttendanceVC: UIViewController, SendAssignmentDisplayLogic {
         self.smsOutlet.setImage(image1, for: .normal)
         self.mailOutlet.setImage(image2, for: .normal)
         self.notificationOutlet.setImage(image3, for: .normal)
-        delegate?.saveText(strText: (selectedType as NSString) as String)
+//        delegate?.saveText(strText: (selectedType as NSString) as String)
     }
     
     @IBAction func sendAction(_ sender: Any) {

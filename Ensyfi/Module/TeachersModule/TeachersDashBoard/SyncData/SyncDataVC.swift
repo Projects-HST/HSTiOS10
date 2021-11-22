@@ -430,6 +430,9 @@ extension SyncDataVC {
         if FiltA_Historyattend_id.count == 0 {
             self.deleteAllData(entity:"ClassAttendanceHistory")
         }
+        else {
+            self.syncAttendanceHistory()
+        }
     }
     
     func errorFetchingItems(viewModel: SyncAttendanceHistoryModel.Fetch.ViewModel) {

@@ -37,7 +37,6 @@ class StudentsExamResultsVC: UIViewController, ExamResultsDisplayLogic {
 
     private func setup()
     {
-        
         let viewController2 = self
         let interactor2 = ExamResultsInteractor()
         let presenter2 = ExamResultsPresenter()

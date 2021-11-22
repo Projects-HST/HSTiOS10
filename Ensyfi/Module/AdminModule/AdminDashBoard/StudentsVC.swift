@@ -250,6 +250,8 @@ extension StudentsVC: UITableViewDelegate,UITableViewDataSource {
         let vc = segue.destination as! StudentsDetailsVC
             vc.studentEnroolId = self.selectedStudentId
             vc.selectedClassId = self.selectedClassId
+            vc.selectedSecId = self.selectedSecId
         }
     }
 }
+

@@ -153,6 +153,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     
     @IBAction func selectTypeAction(_ sender: Any) {
         
+        self.selectedIdArr.removeAll()
         dropDown.show()
         dropDown.anchorView = selectTypeTextfield
         dropDown.dataSource = self.roleTypeArr
@@ -175,6 +176,7 @@ class AddGroupMemberVC: UIViewController, RoleListDisplayLogic,GroupSectionListD
     
     @IBAction func selectSecAction(_ sender: Any) {
         
+        self.selectedIdArr.removeAll()
         dropDown.show()
         dropDown.anchorView = selectSecTextfield
         dropDown.dataSource = self.sectionArr
@@ -332,13 +334,12 @@ extension AddGroupMemberVC : UITableViewDelegate,UITableViewDataSource {
         
             cell.name.text = data.name
             cell.id.text = data.user_id
-            cell.addBtn.tag = indexPath.row
             cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
             if selectedRows.contains(indexPath){
                  cell.addBtn.setImage(UIImage(named:"tick"), for: .normal)
             }
             else{
-                 cell.addBtn.setImage(UIImage(named:"unselected1"), for: .normal)
+                 cell.addBtn.setImage(UIImage(named:"unselected"), for: .normal)
             }
             cell.addBtn.tag = indexPath.row
             cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
@@ -349,6 +350,13 @@ extension AddGroupMemberVC : UITableViewDelegate,UITableViewDataSource {
             
             cell.name.text = data.name
             cell.id.text = data.user_id
+            cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
+            if selectedRows.contains(indexPath){
+                 cell.addBtn.setImage(UIImage(named:"tick"), for: .normal)
+            }
+            else{
+                 cell.addBtn.setImage(UIImage(named:"unselected"), for: .normal)
+            }
             cell.addBtn.tag = indexPath.row
             cell.addBtn.addTarget(self, action: #selector(addBtnClicked(sender:)), for: .touchUpInside)
             cell.selectionStyle = .none

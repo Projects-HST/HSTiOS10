@@ -15,6 +15,7 @@ protocol AssignmentOverViewDisplayLogic: AnyObject
 }
 
 class AssignmentOverViewVC: UIViewController, AssignmentOverViewDisplayLogic,UIPopoverPresentationControllerDelegate, ClassSectionListDelegate {
+    
   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendAttendanceOutlet: UIBarButtonItem!
@@ -64,12 +65,11 @@ class AssignmentOverViewVC: UIViewController, AssignmentOverViewDisplayLogic,UIP
         
         self.popOverButtonClick(sender: self.sendAttendanceOutlet)
     }
+
+    func saveText(strText: String, strTextCName: String) {
+        
+    }
     
-    func saveText(strText: String) {
-//         self.selectedClassID = strText
-//        print(selectedClassID)
-//        self.classTextfield.text = ""
-     }
     
     func popOverButtonClick (sender: UIBarButtonItem)
     {

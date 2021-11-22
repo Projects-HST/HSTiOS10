@@ -125,6 +125,13 @@
 		7919664D271ED33A0042E845 /* TeachersExamResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7919664C271ED33A0042E845 /* TeachersExamResultsPresenter.swift */; };
 		7919664F271EE4AC0042E845 /* ExamResultsMarksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7919664E271EE4AC0042E845 /* ExamResultsMarksCell.swift */; };
 		79196652271EF0200042E845 /* ExamMarkEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79196651271EF0200042E845 /* ExamMarkEntryVC.swift */; };
+		791AFFD0274631CC00FEE316 /* TeachersOnDuty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791AFFCF274631CB00FEE316 /* TeachersOnDuty.storyboard */; };
+		791AFFD3274632AD00FEE316 /* TeachersOnDutyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791AFFD2274632AD00FEE316 /* TeachersOnDutyVC.swift */; };
+		791AFFD6274638B700FEE316 /* TecahersAddOndutyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791AFFD5274638B700FEE316 /* TecahersAddOndutyVC.swift */; };
+		791AFFD8274638FF00FEE316 /* AddOnDutyInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791AFFD7274638FF00FEE316 /* AddOnDutyInteracter.swift */; };
+		791AFFDA2746394300FEE316 /* AddOnDutyWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791AFFD92746394300FEE316 /* AddOnDutyWorker.swift */; };
+		791AFFDC2746396400FEE316 /* AddOnDutyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791AFFDB2746396400FEE316 /* AddOnDutyModel.swift */; };
+		791AFFDE2746398700FEE316 /* AddOnDutyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791AFFDD2746398600FEE316 /* AddOnDutyPresenter.swift */; };
 		79214702271416D800AB0460 /* DisplayAttendanceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79214701271416D700AB0460 /* DisplayAttendanceListVC.swift */; };
 		79214704271417A200AB0460 /* DisplayAttendance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79214703271417A200AB0460 /* DisplayAttendance.storyboard */; };
 		7921470C271418B300AB0460 /* TecaherAttendanceListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921470B271418B300AB0460 /* TecaherAttendanceListWorker.swift */; };
@@ -186,6 +193,11 @@
 		7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949933426E0F8A90013A38C /* TeacherDetailsModel.swift */; };
 		7949933A26E0F8B20013A38C /* TeacherDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7949933926E0F8B20013A38C /* TeacherDetailsPresenter.swift */; };
 		79531F6526DE5B4F000BE78A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79531F6426DE5B4F000BE78A /* APIManager.swift */; };
+		7953E76727450BCD00754D85 /* DayMonthAtendListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953E76627450BCC00754D85 /* DayMonthAtendListInteracter.swift */; };
+		7953E76927450C2C00754D85 /* DayMonthAttendListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953E76827450C2C00754D85 /* DayMonthAttendListWorker.swift */; };
+		7953E76B27450C6C00754D85 /* DayMonthAttendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953E76A27450C6C00754D85 /* DayMonthAttendListModel.swift */; };
+		7953E76D27450C8200754D85 /* DayMonthAttendListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953E76C27450C8200754D85 /* DayMonthAttendListPresenter.swift */; };
+		7953E76F274526E100754D85 /* AttendanceMonthDateListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953E76E274526E100754D85 /* AttendanceMonthDateListCell.swift */; };
 		7956CD8126DCCE2B001D0A41 /* StudentsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956CD8026DCCE2B001D0A41 /* StudentsListCell.swift */; };
 		7960638126E77999000F972E /* CircularsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960638026E77999000F972E /* CircularsListCell.swift */; };
 		796401A5270344EB00D7B5BE /* FeesStatusListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796401A4270344EB00D7B5BE /* FeesStatusListVC.swift */; };
@@ -243,6 +255,11 @@
 		798DE4E926CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798DE4E826CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf */; };
 		798DE4EE26CE830D0017C5FD /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798DE4ED26CE830D0017C5FD /* SF-Pro-Text-Medium.otf */; };
 		798DE4F326CE83230017C5FD /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798DE4F226CE83230017C5FD /* SF-Pro-Display-Bold.otf */; };
+		798EA0BF274910DA0016D332 /* GroupNotificationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798EA0BE274910D90016D332 /* GroupNotificationListVC.swift */; };
+		798EA0C12749119A0016D332 /* GroupNotificationListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798EA0C02749119A0016D332 /* GroupNotificationListInteracter.swift */; };
+		798EA0C3274911C80016D332 /* GroupNotificationListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798EA0C2274911C80016D332 /* GroupNotificationListWorker.swift */; };
+		798EA0C5274911FF0016D332 /* GroupNotificationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798EA0C4274911FF0016D332 /* GroupNotificationListModel.swift */; };
+		798EA0C72749122E0016D332 /* GroupNotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798EA0C62749122E0016D332 /* GroupNotificationListPresenter.swift */; };
 		7990184F27058D2200A6CED2 /* TeachersDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7990184E27058D2200A6CED2 /* TeachersDashBoard.swift */; };
 		7990185127058D9500A6CED2 /* TeachersDashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7990185027058D9500A6CED2 /* TeachersDashBoard.storyboard */; };
 		799018542705919400A6CED2 /* TeacherSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799018532705919400A6CED2 /* TeacherSideMenuVC.swift */; };
@@ -395,6 +412,19 @@
 		79BEF58326F07B3D0056DCBF /* GroupListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BEF58226F07B3D0056DCBF /* GroupListCell.swift */; };
 		79BEF58826F0892F0056DCBF /* GroupUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BEF58726F0892F0056DCBF /* GroupUpdateVC.swift */; };
 		79BEF59226F089BC0056DCBF /* GroupDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BEF59126F089BC0056DCBF /* GroupDetailsVC.swift */; };
+		79C11F09274764430007ED8E /* MonthAttendanceListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F08274764430007ED8E /* MonthAttendanceListInteracter.swift */; };
+		79C11F0B2747644F0007ED8E /* MonthAttendanceListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F0A2747644F0007ED8E /* MonthAttendanceListWorker.swift */; };
+		79C11F0D274764560007ED8E /* MonthAttendanceListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F0C274764560007ED8E /* MonthAttendanceListModel.swift */; };
+		79C11F0F2747645F0007ED8E /* MonthAttendanceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F0E2747645F0007ED8E /* MonthAttendanceListPresenter.swift */; };
+		79C11F1127477E100007ED8E /* TeacherExamDuty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C11F1027477E0F0007ED8E /* TeacherExamDuty.storyboard */; };
+		79C11F14274780E10007ED8E /* TeacherExamDutyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F13274780E10007ED8E /* TeacherExamDutyVC.swift */; };
+		79C11F19274785ED0007ED8E /* ExamDutyListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F18274785ED0007ED8E /* ExamDutyListInteracter.swift */; };
+		79C11F1B274785F90007ED8E /* ExamDutyListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F1A274785F90007ED8E /* ExamDutyListWorker.swift */; };
+		79C11F1D274786040007ED8E /* ExamDutyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F1C274786040007ED8E /* ExamDutyListModel.swift */; };
+		79C11F1F2747860B0007ED8E /* ExamDutyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F1E2747860B0007ED8E /* ExamDutyListPresenter.swift */; };
+		79C11F212747861E0007ED8E /* ExamDutyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F202747861E0007ED8E /* ExamDutyModels.swift */; };
+		79C11F2327478A6F0007ED8E /* TeacherExamDutysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F2227478A6F0007ED8E /* TeacherExamDutysCell.swift */; };
+		79C11F262747B0D60007ED8E /* StudentDetailsFeesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C11F252747B0D50007ED8E /* StudentDetailsFeesListVC.swift */; };
 		79C33E9326E2293D006341E9 /* AdminEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C33E9226E2293D006341E9 /* AdminEvents.storyboard */; };
 		79C33E9926E22A59006341E9 /* AdminEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33E9826E22A59006341E9 /* AdminEventsVC.swift */; };
 		79C33E9E26E22A6C006341E9 /* EventsListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C33E9D26E22A6C006341E9 /* EventsListInteracter.swift */; };
@@ -437,6 +467,16 @@
 		79CC462F26F361C900448486 /* StudentAddGroupListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC462E26F361C900448486 /* StudentAddGroupListModel.swift */; };
 		79CC463126F361D100448486 /* StudentAddGroupListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC463026F361D100448486 /* StudentAddGroupListPresenter.swift */; };
 		79CC463326F361E800448486 /* GroupMembersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC463226F361E800448486 /* GroupMembersModels.swift */; };
+		79E1FB40274B4D97004BAE7E /* GroupNotificationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB3F274B4D97004BAE7E /* GroupNotificationListCell.swift */; };
+		79E1FB43274B6E42004BAE7E /* GroupTitleListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB42274B6E42004BAE7E /* GroupTitleListInteracter.swift */; };
+		79E1FB45274B6E4E004BAE7E /* GroupTitleListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB44274B6E4E004BAE7E /* GroupTitleListWorker.swift */; };
+		79E1FB47274B6E58004BAE7E /* GroupTitleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB46274B6E58004BAE7E /* GroupTitleListModel.swift */; };
+		79E1FB49274B6E61004BAE7E /* GroupTitleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB48274B6E61004BAE7E /* GroupTitleListPresenter.swift */; };
+		79E1FB4E274B6EB1004BAE7E /* SendGroupNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB4D274B6EB1004BAE7E /* SendGroupNotificationVC.swift */; };
+		79E1FB51274B6EE7004BAE7E /* SendGrpNoticationInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB50274B6EE7004BAE7E /* SendGrpNoticationInteracter.swift */; };
+		79E1FB53274B6EFF004BAE7E /* SendGrpNoticationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB52274B6EFF004BAE7E /* SendGrpNoticationWorker.swift */; };
+		79E1FB55274B6F13004BAE7E /* SendGrpNoticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB54274B6F13004BAE7E /* SendGrpNoticationModel.swift */; };
+		79E1FB57274B6F1C004BAE7E /* SendGrpNoticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FB56274B6F1C004BAE7E /* SendGrpNoticationPresenter.swift */; };
 		79E36A4C2729144700079F47 /* AddClassTestMarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E36A4B2729144600079F47 /* AddClassTestMarkVC.swift */; };
 		79E36A4E27292E0800079F47 /* UpdateCTestDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E36A4D27292E0800079F47 /* UpdateCTestDetailsVC.swift */; };
 		79E36A502729317800079F47 /* ClaassTestMarkListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E36A4F2729317800079F47 /* ClaassTestMarkListVC.swift */; };
@@ -669,6 +709,13 @@
 		7919664C271ED33A0042E845 /* TeachersExamResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersExamResultsPresenter.swift; sourceTree = "<group>"; };
 		7919664E271EE4AC0042E845 /* ExamResultsMarksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsMarksCell.swift; sourceTree = "<group>"; };
 		79196651271EF0200042E845 /* ExamMarkEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamMarkEntryVC.swift; sourceTree = "<group>"; };
+		791AFFCF274631CB00FEE316 /* TeachersOnDuty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeachersOnDuty.storyboard; sourceTree = "<group>"; };
+		791AFFD2274632AD00FEE316 /* TeachersOnDutyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersOnDutyVC.swift; sourceTree = "<group>"; };
+		791AFFD5274638B700FEE316 /* TecahersAddOndutyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecahersAddOndutyVC.swift; sourceTree = "<group>"; };
+		791AFFD7274638FF00FEE316 /* AddOnDutyInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnDutyInteracter.swift; sourceTree = "<group>"; };
+		791AFFD92746394300FEE316 /* AddOnDutyWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnDutyWorker.swift; sourceTree = "<group>"; };
+		791AFFDB2746396400FEE316 /* AddOnDutyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnDutyModel.swift; sourceTree = "<group>"; };
+		791AFFDD2746398600FEE316 /* AddOnDutyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnDutyPresenter.swift; sourceTree = "<group>"; };
 		791DD01F26CE93DB00B94D9D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		79214701271416D700AB0460 /* DisplayAttendanceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAttendanceListVC.swift; sourceTree = "<group>"; };
 		79214703271417A200AB0460 /* DisplayAttendance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisplayAttendance.storyboard; sourceTree = "<group>"; };
@@ -731,6 +778,11 @@
 		7949933426E0F8A90013A38C /* TeacherDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsModel.swift; sourceTree = "<group>"; };
 		7949933926E0F8B20013A38C /* TeacherDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsPresenter.swift; sourceTree = "<group>"; };
 		79531F6426DE5B4F000BE78A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		7953E76627450BCC00754D85 /* DayMonthAtendListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DayMonthAtendListInteracter.swift; path = ../../../../../../../../../Desktop/DayMonthAtendListInteracter.swift; sourceTree = "<group>"; };
+		7953E76827450C2C00754D85 /* DayMonthAttendListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMonthAttendListWorker.swift; sourceTree = "<group>"; };
+		7953E76A27450C6C00754D85 /* DayMonthAttendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMonthAttendListModel.swift; sourceTree = "<group>"; };
+		7953E76C27450C8200754D85 /* DayMonthAttendListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMonthAttendListPresenter.swift; sourceTree = "<group>"; };
+		7953E76E274526E100754D85 /* AttendanceMonthDateListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceMonthDateListCell.swift; sourceTree = "<group>"; };
 		7956CD8026DCCE2B001D0A41 /* StudentsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsListCell.swift; sourceTree = "<group>"; };
 		7960638026E77999000F972E /* CircularsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularsListCell.swift; sourceTree = "<group>"; };
 		796401A4270344EB00D7B5BE /* FeesStatusListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeesStatusListVC.swift; sourceTree = "<group>"; };
@@ -794,6 +846,11 @@
 		798DE4E826CE82FF0017C5FD /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		798DE4ED26CE830D0017C5FD /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		798DE4F226CE83230017C5FD /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		798EA0BE274910D90016D332 /* GroupNotificationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNotificationListVC.swift; sourceTree = "<group>"; };
+		798EA0C02749119A0016D332 /* GroupNotificationListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNotificationListInteracter.swift; sourceTree = "<group>"; };
+		798EA0C2274911C80016D332 /* GroupNotificationListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNotificationListWorker.swift; sourceTree = "<group>"; };
+		798EA0C4274911FF0016D332 /* GroupNotificationListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNotificationListModel.swift; sourceTree = "<group>"; };
+		798EA0C62749122E0016D332 /* GroupNotificationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNotificationListPresenter.swift; sourceTree = "<group>"; };
 		7990184E27058D2200A6CED2 /* TeachersDashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersDashBoard.swift; sourceTree = "<group>"; };
 		7990185027058D9500A6CED2 /* TeachersDashBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeachersDashBoard.storyboard; sourceTree = "<group>"; };
 		799018532705919400A6CED2 /* TeacherSideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSideMenuVC.swift; sourceTree = "<group>"; };
@@ -945,6 +1002,19 @@
 		79BEF58226F07B3D0056DCBF /* GroupListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupListCell.swift; path = ../../../../../../GroupListCell.swift; sourceTree = "<group>"; };
 		79BEF58726F0892F0056DCBF /* GroupUpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUpdateVC.swift; sourceTree = "<group>"; };
 		79BEF59126F089BC0056DCBF /* GroupDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsVC.swift; sourceTree = "<group>"; };
+		79C11F08274764430007ED8E /* MonthAttendanceListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAttendanceListInteracter.swift; sourceTree = "<group>"; };
+		79C11F0A2747644F0007ED8E /* MonthAttendanceListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAttendanceListWorker.swift; sourceTree = "<group>"; };
+		79C11F0C274764560007ED8E /* MonthAttendanceListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAttendanceListModel.swift; sourceTree = "<group>"; };
+		79C11F0E2747645F0007ED8E /* MonthAttendanceListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAttendanceListPresenter.swift; sourceTree = "<group>"; };
+		79C11F1027477E0F0007ED8E /* TeacherExamDuty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeacherExamDuty.storyboard; sourceTree = "<group>"; };
+		79C11F13274780E10007ED8E /* TeacherExamDutyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeacherExamDutyVC.swift; path = Ensyfi/Module/TeachersModule/TeachersStoryBoards/TeacherExamDutyVC.swift; sourceTree = SOURCE_ROOT; };
+		79C11F18274785ED0007ED8E /* ExamDutyListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamDutyListInteracter.swift; path = Ensyfi/Module/TeachersModule/TeachersDashBoard/TeacherExamDuty/ExamDutyListInteracter.swift; sourceTree = SOURCE_ROOT; };
+		79C11F1A274785F90007ED8E /* ExamDutyListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamDutyListWorker.swift; path = Ensyfi/Module/TeachersModule/TeachersDashBoard/TeacherExamDuty/ExamDutyListWorker.swift; sourceTree = SOURCE_ROOT; };
+		79C11F1C274786040007ED8E /* ExamDutyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamDutyListModel.swift; path = ../../../../../../../../ExamDutyListModel.swift; sourceTree = "<group>"; };
+		79C11F1E2747860B0007ED8E /* ExamDutyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamDutyListPresenter.swift; path = ../../../../../../../../ExamDutyListPresenter.swift; sourceTree = "<group>"; };
+		79C11F202747861E0007ED8E /* ExamDutyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDutyModels.swift; sourceTree = "<group>"; };
+		79C11F2227478A6F0007ED8E /* TeacherExamDutysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherExamDutysCell.swift; sourceTree = "<group>"; };
+		79C11F252747B0D50007ED8E /* StudentDetailsFeesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailsFeesListVC.swift; sourceTree = "<group>"; };
 		79C33E9226E2293D006341E9 /* AdminEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminEvents.storyboard; sourceTree = "<group>"; };
 		79C33E9826E22A59006341E9 /* AdminEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEventsVC.swift; sourceTree = "<group>"; };
 		79C33E9D26E22A6C006341E9 /* EventsListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListInteracter.swift; sourceTree = "<group>"; };
@@ -987,6 +1057,16 @@
 		79CC462E26F361C900448486 /* StudentAddGroupListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListModel.swift; sourceTree = "<group>"; };
 		79CC463026F361D100448486 /* StudentAddGroupListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddGroupListPresenter.swift; sourceTree = "<group>"; };
 		79CC463226F361E800448486 /* GroupMembersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersModels.swift; sourceTree = "<group>"; };
+		79E1FB3F274B4D97004BAE7E /* GroupNotificationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNotificationListCell.swift; sourceTree = "<group>"; };
+		79E1FB42274B6E42004BAE7E /* GroupTitleListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupTitleListInteracter.swift; path = ../../../../../../../GroupTitleListInteracter.swift; sourceTree = "<group>"; };
+		79E1FB44274B6E4E004BAE7E /* GroupTitleListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTitleListWorker.swift; sourceTree = "<group>"; };
+		79E1FB46274B6E58004BAE7E /* GroupTitleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTitleListModel.swift; sourceTree = "<group>"; };
+		79E1FB48274B6E61004BAE7E /* GroupTitleListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTitleListPresenter.swift; sourceTree = "<group>"; };
+		79E1FB4D274B6EB1004BAE7E /* SendGroupNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGroupNotificationVC.swift; sourceTree = "<group>"; };
+		79E1FB50274B6EE7004BAE7E /* SendGrpNoticationInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGrpNoticationInteracter.swift; sourceTree = "<group>"; };
+		79E1FB52274B6EFF004BAE7E /* SendGrpNoticationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGrpNoticationWorker.swift; sourceTree = "<group>"; };
+		79E1FB54274B6F13004BAE7E /* SendGrpNoticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGrpNoticationModel.swift; sourceTree = "<group>"; };
+		79E1FB56274B6F1C004BAE7E /* SendGrpNoticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGrpNoticationPresenter.swift; sourceTree = "<group>"; };
 		79E36A4B2729144600079F47 /* AddClassTestMarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassTestMarkVC.swift; sourceTree = "<group>"; };
 		79E36A4D27292E0800079F47 /* UpdateCTestDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCTestDetailsVC.swift; sourceTree = "<group>"; };
 		79E36A4F2729317800079F47 /* ClaassTestMarkListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaassTestMarkListVC.swift; sourceTree = "<group>"; };
@@ -1321,6 +1401,7 @@
 				7904AD1226D9F0A100D6F2C2 /* StudentsDetailsWorker.swift */,
 				7904AD1726D9F11600D6F2C2 /* StudentsDetailsModel.swift */,
 				7904AD1C26D9F18300D6F2C2 /* StudentsDetailsPresenter.swift */,
+				79C11F242747B0150007ED8E /* StudentFeesDetailsList */,
 			);
 			name = StudentsDetails;
 			sourceTree = "<group>";
@@ -1438,6 +1519,27 @@
 				79196651271EF0200042E845 /* ExamMarkEntryVC.swift */,
 			);
 			path = ExamMarkEntry;
+			sourceTree = "<group>";
+		};
+		791AFFD12746326600FEE316 /* TeacherOnDuty */ = {
+			isa = PBXGroup;
+			children = (
+				791AFFD2274632AD00FEE316 /* TeachersOnDutyVC.swift */,
+				791AFFD42746361200FEE316 /* AddOnDuty */,
+			);
+			path = TeacherOnDuty;
+			sourceTree = "<group>";
+		};
+		791AFFD42746361200FEE316 /* AddOnDuty */ = {
+			isa = PBXGroup;
+			children = (
+				791AFFD5274638B700FEE316 /* TecahersAddOndutyVC.swift */,
+				791AFFD7274638FF00FEE316 /* AddOnDutyInteracter.swift */,
+				791AFFD92746394300FEE316 /* AddOnDutyWorker.swift */,
+				791AFFDB2746396400FEE316 /* AddOnDutyModel.swift */,
+				791AFFDD2746398600FEE316 /* AddOnDutyPresenter.swift */,
+			);
+			path = AddOnDuty;
 			sourceTree = "<group>";
 		};
 		791DD01E26CE93B300B94D9D /* StoryBoards */ = {
@@ -1603,6 +1705,17 @@
 			name = TeacherDetails;
 			sourceTree = "<group>";
 		};
+		7953E76527450B0B00754D85 /* DayMonthAtendList */ = {
+			isa = PBXGroup;
+			children = (
+				7953E76627450BCC00754D85 /* DayMonthAtendListInteracter.swift */,
+				7953E76827450C2C00754D85 /* DayMonthAttendListWorker.swift */,
+				7953E76A27450C6C00754D85 /* DayMonthAttendListModel.swift */,
+				7953E76C27450C8200754D85 /* DayMonthAttendListPresenter.swift */,
+			);
+			path = DayMonthAtendList;
+			sourceTree = "<group>";
+		};
 		7956CD7B26DCCDDF001D0A41 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1620,6 +1733,7 @@
 				79A82E5326DFACBA00EA4FEF /* HomeWorkListCell.swift */,
 				79E5201426E0D07400991D34 /* ExamsCell.swift */,
 				7948E17127049D6D004DB4D4 /* ExamTimeTableCell.swift */,
+				79E1FB3F274B4D97004BAE7E /* GroupNotificationListCell.swift */,
 				7949931C26E0F41F0013A38C /* TeacherListCell.swift */,
 				79C33EB626E239CF006341E9 /* EventListCell.swift */,
 				7900625026E332A100C43D94 /* SubEventListCell.swift */,
@@ -1920,6 +2034,18 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		798EA0BD274910190016D332 /* GroupNotificationList */ = {
+			isa = PBXGroup;
+			children = (
+				798EA0BE274910D90016D332 /* GroupNotificationListVC.swift */,
+				798EA0C02749119A0016D332 /* GroupNotificationListInteracter.swift */,
+				798EA0C2274911C80016D332 /* GroupNotificationListWorker.swift */,
+				798EA0C4274911FF0016D332 /* GroupNotificationListModel.swift */,
+				798EA0C62749122E0016D332 /* GroupNotificationListPresenter.swift */,
+			);
+			name = GroupNotificationList;
+			sourceTree = "<group>";
+		};
 		7990184B27058CE500A6CED2 /* TeachersStoryBoards */ = {
 			isa = PBXGroup;
 			children = (
@@ -1928,8 +2054,10 @@
 				79214703271417A200AB0460 /* DisplayAttendance.storyboard */,
 				79EDE967270AD75800B85ADB /* TeacherProfile.storyboard */,
 				79EDE971270AE1F800B85ADB /* TeacherAttendanceVC.storyboard */,
+				79C11F1027477E0F0007ED8E /* TeacherExamDuty.storyboard */,
 				79E42925270D681000967951 /* SyncDatas.storyboard */,
 				79E42937270DC74300967951 /* TeachersHomeWork.storyboard */,
+				791AFFCF274631CB00FEE316 /* TeachersOnDuty.storyboard */,
 				79458DE72711B13B00108C1E /* TeachersExamResults.storyboard */,
 				79CC2EEB27154F9D009F100E /* TeachersAssignment.storyboard */,
 				79E36A5327296EC700079F47 /* TeacherLeaves.storyboard */,
@@ -1943,6 +2071,8 @@
 			isa = PBXGroup;
 			children = (
 				7990184E27058D2200A6CED2 /* TeachersDashBoard.swift */,
+				79C11F12274780AD0007ED8E /* TeacherExamDuty */,
+				791AFFD12746326600FEE316 /* TeacherOnDuty */,
 				79E69B512730025600C5B656 /* TeacherTimeTable */,
 				7900FB08272D6B9F004977EB /* TeacherSubstitution */,
 				7900FADD272D2CE4004977EB /* TeacherGroups */,
@@ -1999,6 +2129,7 @@
 				7900FAF2272D2F78004977EB /* TeacherGroupAddModels.swift */,
 				7900FB13272D6D8F004977EB /* TeacherSubstitutionModels.swift */,
 				799E6648273A750500B36284 /* TeacherC_TestMarksModels.swift */,
+				79C11F202747861E0007ED8E /* ExamDutyModels.swift */,
 			);
 			path = TeacherModels;
 			sourceTree = "<group>";
@@ -2382,6 +2513,8 @@
 		79BEF55726F0758C0056DCBF /* Groups */ = {
 			isa = PBXGroup;
 			children = (
+				79E1FB4B274B6E6E004BAE7E /* SendGroupNotification */,
+				798EA0BD274910190016D332 /* GroupNotificationList */,
 				79BEF56026F075C80056DCBF /* GroupList */,
 				79BEF59026F089A60056DCBF /* GroupDetailsVC */,
 				79BB8CDC26F0A8A10015C088 /* CreateGroup */,
@@ -2423,6 +2556,45 @@
 				79BEF59126F089BC0056DCBF /* GroupDetailsVC.swift */,
 			);
 			name = GroupDetailsVC;
+			sourceTree = "<group>";
+		};
+		79C11F072747638A0007ED8E /* MonthAttendanceList */ = {
+			isa = PBXGroup;
+			children = (
+				79C11F08274764430007ED8E /* MonthAttendanceListInteracter.swift */,
+				79C11F0A2747644F0007ED8E /* MonthAttendanceListWorker.swift */,
+				79C11F0C274764560007ED8E /* MonthAttendanceListModel.swift */,
+				79C11F0E2747645F0007ED8E /* MonthAttendanceListPresenter.swift */,
+			);
+			path = MonthAttendanceList;
+			sourceTree = "<group>";
+		};
+		79C11F12274780AD0007ED8E /* TeacherExamDuty */ = {
+			isa = PBXGroup;
+			children = (
+				79C11F13274780E10007ED8E /* TeacherExamDutyVC.swift */,
+				79C11F17274785CF0007ED8E /* ExamDutyList */,
+			);
+			path = TeacherExamDuty;
+			sourceTree = "<group>";
+		};
+		79C11F17274785CF0007ED8E /* ExamDutyList */ = {
+			isa = PBXGroup;
+			children = (
+				79C11F18274785ED0007ED8E /* ExamDutyListInteracter.swift */,
+				79C11F1A274785F90007ED8E /* ExamDutyListWorker.swift */,
+				79C11F1C274786040007ED8E /* ExamDutyListModel.swift */,
+				79C11F1E2747860B0007ED8E /* ExamDutyListPresenter.swift */,
+			);
+			path = ExamDutyList;
+			sourceTree = "<group>";
+		};
+		79C11F242747B0150007ED8E /* StudentFeesDetailsList */ = {
+			isa = PBXGroup;
+			children = (
+				79C11F252747B0D50007ED8E /* StudentDetailsFeesListVC.swift */,
+			);
+			name = StudentFeesDetailsList;
 			sourceTree = "<group>";
 		};
 		79C33E9726E22A35006341E9 /* Events */ = {
@@ -2561,6 +2733,38 @@
 			name = StudentAddGroupList;
 			sourceTree = "<group>";
 		};
+		79E1FB41274B6E26004BAE7E /* GroupTitleList */ = {
+			isa = PBXGroup;
+			children = (
+				79E1FB42274B6E42004BAE7E /* GroupTitleListInteracter.swift */,
+				79E1FB44274B6E4E004BAE7E /* GroupTitleListWorker.swift */,
+				79E1FB46274B6E58004BAE7E /* GroupTitleListModel.swift */,
+				79E1FB48274B6E61004BAE7E /* GroupTitleListPresenter.swift */,
+			);
+			name = GroupTitleList;
+			sourceTree = "<group>";
+		};
+		79E1FB4B274B6E6E004BAE7E /* SendGroupNotification */ = {
+			isa = PBXGroup;
+			children = (
+				79E1FB4D274B6EB1004BAE7E /* SendGroupNotificationVC.swift */,
+				79E1FB4F274B6EBD004BAE7E /* SendGRPNotification */,
+				79E1FB41274B6E26004BAE7E /* GroupTitleList */,
+			);
+			name = SendGroupNotification;
+			sourceTree = "<group>";
+		};
+		79E1FB4F274B6EBD004BAE7E /* SendGRPNotification */ = {
+			isa = PBXGroup;
+			children = (
+				79E1FB50274B6EE7004BAE7E /* SendGrpNoticationInteracter.swift */,
+				79E1FB54274B6F13004BAE7E /* SendGrpNoticationModel.swift */,
+				79E1FB52274B6EFF004BAE7E /* SendGrpNoticationWorker.swift */,
+				79E1FB56274B6F1C004BAE7E /* SendGrpNoticationPresenter.swift */,
+			);
+			name = SendGRPNotification;
+			sourceTree = "<group>";
+		};
 		79E36A5527296F2700079F47 /* TeacherLeaves */ = {
 			isa = PBXGroup;
 			children = (
@@ -2679,6 +2883,8 @@
 				79EDE96F270AE1A100B85ADB /* TeacherAttendanceVC.swift */,
 				79EDE974270B295C00B85ADB /* TakeAttendanceVC.swift */,
 				79F31E6A27106F5C00ECCAD3 /* StudentAtendenceHistoryModel.swift */,
+				7953E76527450B0B00754D85 /* DayMonthAtendList */,
+				79C11F072747638A0007ED8E /* MonthAttendanceList */,
 			);
 			path = TeacherAttendance;
 			sourceTree = "<group>";
@@ -2701,6 +2907,7 @@
 			isa = PBXGroup;
 			children = (
 				79F179DF270C614A00F969D1 /* AttendanceTakeCell.swift */,
+				7953E76E274526E100754D85 /* AttendanceMonthDateListCell.swift */,
 				79214715271420FD00AB0460 /* DisplayAttendanceCell.swift */,
 				792147242714636100AB0460 /* AttendanceRecordListCell.swift */,
 				79CC2EF82715539A009F100E /* AssignmentListCell.swift */,
@@ -2711,6 +2918,7 @@
 				7900FAF4272D4440004977EB /* TeacherGroupListCell.swift */,
 				7900FB15272D761A004977EB /* TeacherSubstitutionCell.swift */,
 				79E69B562730034800C5B656 /* TecaherTimeTableCell.swift */,
+				79C11F2227478A6F0007ED8E /* TeacherExamDutysCell.swift */,
 			);
 			path = TeachersCells;
 			sourceTree = "<group>";
@@ -2960,12 +3168,14 @@
 				798DE4EE26CE830D0017C5FD /* SF-Pro-Text-Medium.otf in Resources */,
 				796F2F6B2722A29D008189FC /* StudentsProfile.storyboard in Resources */,
 				79A645392702EA4E00E7F83C /* AdminSettings.storyboard in Resources */,
+				791AFFD0274631CC00FEE316 /* TeachersOnDuty.storyboard in Resources */,
 				798DE4D226CE82980017C5FD /* SFUIText-Regular.otf in Resources */,
 				798DE4E126CE82D50017C5FD /* SF-Pro-Text-Light.otf in Resources */,
 				79BAB7CB26E1E34600DEE3C3 /* AdminParents.storyboard in Resources */,
 				792DBE47272BAED50087B80C /* AdminSpecialClass.storyboard in Resources */,
 				79BEF57E26F0763E0056DCBF /* AdminGroups.storyboard in Resources */,
 				79BAB82426E2082800DEE3C3 /* AdminExaminations.storyboard in Resources */,
+				79C11F1127477E100007ED8E /* TeacherExamDuty.storyboard in Resources */,
 				79FC8C7426F5B2E10041A54B /* AdminExamResults.storyboard in Resources */,
 				79E42926270D681000967951 /* SyncDatas.storyboard in Resources */,
 				796F2F6427228FF6008189FC /* StudentsExamResults.storyboard in Resources */,
@@ -3050,6 +3260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79FF7A0826F8A123007E86A6 /* LeaveApprovalPresenter.swift in Sources */,
+				7953E76F274526E100754D85 /* AttendanceMonthDateListCell.swift in Sources */,
 				7904AD3526DA0FF400D6F2C2 /* TeachersModel.swift in Sources */,
 				79E36A52272936AD00079F47 /* StudentMarkListCell.swift in Sources */,
 				799018772705D56D00A6CED2 /* AFWrapper.swift in Sources */,
@@ -3071,6 +3282,7 @@
 				7995328726E888A10033A49B /* FeesClassListWorker.swift in Sources */,
 				7904AD3A26DA0FFD00D6F2C2 /* TeachersPresenter.swift in Sources */,
 				79956C3126CF7FDA00E012BB /* BottomBorder.swift in Sources */,
+				79C11F14274780E10007ED8E /* TeacherExamDutyVC.swift in Sources */,
 				79214710271418CE00AB0460 /* TecaherAttendanceListPresenter.swift in Sources */,
 				79214719271435BA00AB0460 /* OverViewAttendanceVC.swift in Sources */,
 				79A645372702D4BD00E7F83C /* ClassAttendanceListCell.swift in Sources */,
@@ -3100,6 +3312,7 @@
 				79BAB7DA26E1E5C900DEE3C3 /* ParentsDetailsVC.swift in Sources */,
 				794117AC273D202C0077640C /* SyncExamMarksPresenter.swift in Sources */,
 				79BEF57126F076100056DCBF /* GroupListPresenter.swift in Sources */,
+				79C11F09274764430007ED8E /* MonthAttendanceListInteracter.swift in Sources */,
 				79174BDC271D3C37001E6C88 /* SendAssignmentModel.swift in Sources */,
 				799532D226E8BCCC0033A49B /* ODApprovallWorker.swift in Sources */,
 				79C680C92716DC1A00DD8ABE /* SendAssignmentVC.swift in Sources */,
@@ -3129,6 +3342,7 @@
 				7900FAF1272D2F56004977EB /* TeacherGroupAddPresenter.swift in Sources */,
 				798A1B1B26D62A4B0081105B /* StudentListInteracter.swift in Sources */,
 				79CC462526F361AC00448486 /* StudentAddGroupListInteracter.swift in Sources */,
+				79E1FB47274B6E58004BAE7E /* GroupTitleListModel.swift in Sources */,
 				79A6454627031BAC00E7F83C /* ChangePasswordWorker.swift in Sources */,
 				7900FB00272D4936004977EB /* TeacherGroupTypeListModel.swift in Sources */,
 				793503EB26E39BE800B4FDFA /* MotherDeatilsModel.swift in Sources */,
@@ -3164,6 +3378,7 @@
 				799633572724351800479A40 /* StudentsONDutyWorker.swift in Sources */,
 				79F31E6B27106F5C00ECCAD3 /* StudentAtendenceHistoryModel.swift in Sources */,
 				79C33ED026E245DE006341E9 /* SubEventsModel.swift in Sources */,
+				79E1FB55274B6F13004BAE7E /* SendGrpNoticationModel.swift in Sources */,
 				79A6453C2702EAE600E7F83C /* AdminSettings.swift in Sources */,
 				79BAB7EE26E1E61800DEE3C3 /* FatherDetailsPresenter.swift in Sources */,
 				79E42934270DBFAA00967951 /* SyncAttendancePresenter.swift in Sources */,
@@ -3175,6 +3390,7 @@
 				799274E526D6143600CBB8AC /* SectionListModel.swift in Sources */,
 				7948E16A27049420004DB4D4 /* ExamTimeTableInteracter.swift in Sources */,
 				7900FB0E272D6C74004977EB /* TeacherSubstWorker.swift in Sources */,
+				791AFFDE2746398700FEE316 /* AddOnDutyPresenter.swift in Sources */,
 				79045D6A27018207009A3084 /* UserDefaults.swift in Sources */,
 				796F2F6E2722A453008189FC /* StudentProfileVC.swift in Sources */,
 				799E6652273A8F1100B36284 /* SyncAttendHistoryPresenter.swift in Sources */,
@@ -3183,9 +3399,11 @@
 				79956C4B26CF7FE900E012BB /* NavigationBarTitleOnLeftSide.swift in Sources */,
 				79174BDA271D3C32001E6C88 /* SendAssignmentWorker.swift in Sources */,
 				79E51FCF26E0A1D800991D34 /* StudentsAttendanceVC.swift in Sources */,
+				79E1FB45274B6E4E004BAE7E /* GroupTitleListWorker.swift in Sources */,
 				79BB8D0626F0CF250015C088 /* CreateGroupModel.swift in Sources */,
 				793503F526E39C2600B4FDFA /* GuardianDetailsInteracter.swift in Sources */,
 				79FF7A0326F8A115007E86A6 /* LeaveApprovalModel.swift in Sources */,
+				798EA0C12749119A0016D332 /* GroupNotificationListInteracter.swift in Sources */,
 				799E665D273AA09700B36284 /* SyncAttendanceDatasModels.swift in Sources */,
 				7900FB0A272D6BF7004977EB /* TeacherSubstInteracter.swift in Sources */,
 				79CC460426F3428F00448486 /* RoleListIntercter.swift in Sources */,
@@ -3205,6 +3423,7 @@
 				7995329326E888F30033A49B /* FeesSectionListInteracter.swift in Sources */,
 				79F179E0270C614A00F969D1 /* AttendanceTakeCell.swift in Sources */,
 				7995329D26E888FF0033A49B /* FeesSectionListModel.swift in Sources */,
+				79C11F212747861E0007ED8E /* ExamDutyModels.swift in Sources */,
 				799E6650273A8EF200B36284 /* SyncAttendHistoryModel.swift in Sources */,
 				79CC2EEA27154F65009F100E /* AssignmentListVC.swift in Sources */,
 				7904AD2326DA0FC700D6F2C2 /* TeachersVC.swift in Sources */,
@@ -3212,6 +3431,7 @@
 				792DBE54272BB1D70087B80C /* SpecialClassListPresenter.swift in Sources */,
 				79CC463326F361E800448486 /* GroupMembersModels.swift in Sources */,
 				799274EA26D6144F00CBB8AC /* SectionListPresenter.swift in Sources */,
+				79C11F0F2747645F0007ED8E /* MonthAttendanceListPresenter.swift in Sources */,
 				79E5201026E0B63000991D34 /* ExamModels.swift in Sources */,
 				7900FAE3272D2D80004977EB /* TeacherGroupListWorker.swift in Sources */,
 				79C33EC626E242F5006341E9 /* SubEventsInteracter.swift in Sources */,
@@ -3239,6 +3459,7 @@
 				79956C4C26CF7FE900E012BB /* HexToUIColor.swift in Sources */,
 				79E4292D270DBEFB00967951 /* SyncAttendanceInteracter.swift in Sources */,
 				790C21FF26F1BBE800B9A318 /* GroupMembersListModel.swift in Sources */,
+				79E1FB57274B6F1C004BAE7E /* SendGrpNoticationPresenter.swift in Sources */,
 				7949932626E0F7DC0013A38C /* TeacherDetailsVC.swift in Sources */,
 				7900FAF3272D2F78004977EB /* TeacherGroupAddModels.swift in Sources */,
 				79BB8CEC26F0AD9A0015C088 /* GetTeachersListIDWorker.swift in Sources */,
@@ -3294,6 +3515,7 @@
 				798DE3DE26CE61A90017C5FD /* AppDelegate.swift in Sources */,
 				79963355272434FF00479A40 /* StudentsONDutyInteracter.swift in Sources */,
 				79A82E4026DFA65700EA4FEF /* HomeWorkTestWorker.swift in Sources */,
+				79C11F19274785ED0007ED8E /* ExamDutyListInteracter.swift in Sources */,
 				790C221826F1F23E00B9A318 /* GroupUpdateModel.swift in Sources */,
 				7996335F2724359100479A40 /* StudentAPIManager.swift in Sources */,
 				7900FADA272D0AE9004977EB /* TimeTableListCell.swift in Sources */,
@@ -3302,6 +3524,7 @@
 				7921471D271436D200AB0460 /* AttendanceRecordsWorke.swift in Sources */,
 				79045D6D270186F7009A3084 /* AttendanceVC.swift in Sources */,
 				79C680C62716BEFC00DD8ABE /* AssignmentDetailVC.swift in Sources */,
+				7953E76727450BCD00754D85 /* DayMonthAtendListInteracter.swift in Sources */,
 				79FF79FE26F8A109007E86A6 /* LeaveApprovalWorker.swift in Sources */,
 				79F0ED1326D3635C00DFDE61 /* ForgotPswdModels.swift in Sources */,
 				79EDE96B270AD94A00B85ADB /* TeacherProfileVC.swift in Sources */,
@@ -3314,6 +3537,7 @@
 				792DBE6C272C27320087B80C /* DayListWorker.swift in Sources */,
 				798DE3E026CE61A90017C5FD /* SceneDelegate.swift in Sources */,
 				79045D842701AE71009A3084 /* ClassSectionListWorker.swift in Sources */,
+				79E1FB43274B6E42004BAE7E /* GroupTitleListInteracter.swift in Sources */,
 				7910A0C827043F12009B06BC /* BoardMembersPresenter.swift in Sources */,
 				79F463BB272A65140087BEFB /* LeaveTypeListModel.swift in Sources */,
 				799018622705BC8500A6CED2 /* InstituteLoginConfigurator.swift in Sources */,
@@ -3324,14 +3548,17 @@
 				796401A72703450200D7B5BE /* FeesStatusListInteracter.swift in Sources */,
 				79CC45FE26F32D1700448486 /* AddGroupMemberVC.swift in Sources */,
 				796401AD2703452000D7B5BE /* FeesStatusListPresenter.swift in Sources */,
+				79C11F1D274786040007ED8E /* ExamDutyListModel.swift in Sources */,
 				7900628A26E353E600C43D94 /* OnDutyStudentsListInteracter.swift in Sources */,
 				79CC462F26F361C900448486 /* StudentAddGroupListModel.swift in Sources */,
 				7900625C26E3386700C43D94 /* CircularsListVC.swift in Sources */,
 				79BAB83C26E21EA000DEE3C3 /* ExamListPresnetr.swift in Sources */,
 				79E51FFE26E0B60100991D34 /* ExamResultsWorker.swift in Sources */,
 				796F2F6227227C54008189FC /* StudentsDatasModels.swift in Sources */,
+				79E1FB4E274B6EB1004BAE7E /* SendGroupNotificationVC.swift in Sources */,
 				792DBE52272BB1CA0087B80C /* SpecialClassListModel.swift in Sources */,
 				79EBC86A26F49E0500CF9FAF /* AddGroupMemberIntercater.swift in Sources */,
+				79E1FB53274B6EFF004BAE7E /* SendGrpNoticationWorker.swift in Sources */,
 				796F4F2E2701F02F00E78465 /* ClassAttendanceListVC.swift in Sources */,
 				7910A0CE2704462C009B06BC /* BoardMembersListCell.swift in Sources */,
 				79EDE970270AE1A100B85ADB /* TeacherAttendanceVC.swift in Sources */,
@@ -3344,10 +3571,12 @@
 				798DE4CC26CE7C020017C5FD /* LoginModels.swift in Sources */,
 				79C33EF826E2480F006341E9 /* EventDetailsVC.swift in Sources */,
 				799018792705D7E800A6CED2 /* TeachersDataModels.swift in Sources */,
+				79C11F2327478A6F0007ED8E /* TeacherExamDutysCell.swift in Sources */,
 				79045D7F2701AA69009A3084 /* StudentsLoginProfileVC.swift in Sources */,
 				79174BD6271D3BEA001E6C88 /* SendAttendancePresenter.swift in Sources */,
 				79196640271EA83E0042E845 /* TeachersExamsListModel.swift in Sources */,
 				79E69B572730034900C5B656 /* TecaherTimeTableCell.swift in Sources */,
+				7953E76D27450C8200754D85 /* DayMonthAttendListPresenter.swift in Sources */,
 				7996334E2723E97A00479A40 /* ParentProfileDetailsVC.swift in Sources */,
 				7900626F26E3389800C43D94 /* CircularListModel.swift in Sources */,
 				79EBC85D26F47ABE00CF9FAF /* StaffsAddGroupListPresenter.swift in Sources */,
@@ -3360,7 +3589,9 @@
 				7900626A26E3389300C43D94 /* CircularListWorker.swift in Sources */,
 				7900625126E332A100C43D94 /* SubEventListCell.swift in Sources */,
 				7900627426E338A000C43D94 /* CircularListPresenter.swift in Sources */,
+				7953E76927450C2C00754D85 /* DayMonthAttendListWorker.swift in Sources */,
 				7900FAE1272D2D65004977EB /* TeacherGroupListInteracter.swift in Sources */,
+				79C11F1B274785F90007ED8E /* ExamDutyListWorker.swift in Sources */,
 				798DE49C26CE7B5F0017C5FD /* InstituteLoginVC.swift in Sources */,
 				79E36A502729317800079F47 /* ClaassTestMarkListVC.swift in Sources */,
 				79EBC85826F47AB900CF9FAF /* StaffsAddGroupListModel.swift in Sources */,
@@ -3370,6 +3601,7 @@
 				7995324B26E87E3F0033A49B /* FeesListCell.swift in Sources */,
 				79BB8D0B26F0CF320015C088 /* CreateGroupPresenter.swift in Sources */,
 				790F1466273B82130012E6EF /* SyncAssignmentsInteracter.swift in Sources */,
+				79C11F262747B0D60007ED8E /* StudentDetailsFeesListVC.swift in Sources */,
 				798A1B2D26D62A900081105B /* StudentListPresenter.swift in Sources */,
 				790C221D26F1F24700B9A318 /* GroupUpdatePresenter.swift in Sources */,
 				79BAB82A26E208F900DEE3C3 /* ExamsVc.swift in Sources */,
@@ -3383,13 +3615,18 @@
 				79A645422703139B00E7F83C /* ChangePasswordVC.swift in Sources */,
 				792DBE49272BAF210087B80C /* SpecialClassCell.swift in Sources */,
 				790F1468273B821F0012E6EF /* SyncAssignmentsWorker.swift in Sources */,
+				791AFFDA2746394300FEE316 /* AddOnDutyWorker.swift in Sources */,
 				79956C8626CFDA5B00E012BB /* ForgotPasswordVC.swift in Sources */,
 				79F0ED0E26D3630F00DFDE61 /* ForgotPswdPresenter.swift in Sources */,
 				790C220E26F1F22500B9A318 /* GroupUpdateIntercter.swift in Sources */,
+				791AFFDC2746396400FEE316 /* AddOnDutyModel.swift in Sources */,
 				7990186C2705BE5A00A6CED2 /* TeachersTeacherDetailPresenter.swift in Sources */,
 				7904AD0926D9EFC300D6F2C2 /* StudentsDetailsVC.swift in Sources */,
+				798EA0C5274911FF0016D332 /* GroupNotificationListModel.swift in Sources */,
+				79C11F1F2747860B0007ED8E /* ExamDutyListPresenter.swift in Sources */,
 				7900626526E3388A00C43D94 /* CircularListInteracter.swift in Sources */,
 				799274E026D6142900CBB8AC /* SectionListWorker.swift in Sources */,
+				79E1FB51274B6EE7004BAE7E /* SendGrpNoticationInteracter.swift in Sources */,
 				7968240D27156C8D007ACCC8 /* AssignmentOverViewInteracter.swift in Sources */,
 				79F463CD272A9B6D0087BEFB /* ApplyLeaveRequestPresenter.swift in Sources */,
 				79BAB83026E21E5C00DEE3C3 /* ExamsListInteracter.swift in Sources */,
@@ -3405,6 +3642,7 @@
 				79A82E5426DFACBA00EA4FEF /* HomeWorkListCell.swift in Sources */,
 				79214721271436E600AB0460 /* AttendanceRecordsPresenter.swift in Sources */,
 				7995329826E888FA0033A49B /* FeesSectionListWorker.swift in Sources */,
+				791AFFD6274638B700FEE316 /* TecahersAddOndutyVC.swift in Sources */,
 				792DBE60272C257C0087B80C /* TimeTableListInteracter.swift in Sources */,
 				7900FAEB272D2EB5004977EB /* TeacherGroupAddInteracter.swift in Sources */,
 				796401A5270344EB00D7B5BE /* FeesStatusListVC.swift in Sources */,
@@ -3434,6 +3672,7 @@
 				79956C4926CF7FE900E012BB /* ViewController.swift in Sources */,
 				7990184F27058D2200A6CED2 /* TeachersDashBoard.swift in Sources */,
 				796F4F342701FC4A00E78465 /* ClassAttendanceModel.swift in Sources */,
+				791AFFD3274632AD00FEE316 /* TeachersOnDutyVC.swift in Sources */,
 				798DE4A126CE7B730017C5FD /* InstituteLoginWorker.swift in Sources */,
 				79174BD4271D3BE1001E6C88 /* SendAttendanceModel.swift in Sources */,
 				79A82E3026DF984600EA4FEF /* HomeWorkTestVC.swift in Sources */,
@@ -3444,7 +3683,9 @@
 				79EDE96D270ADA0D00B85ADB /* TeacherPersonalInfoVC.swift in Sources */,
 				793503F026E39C0200B4FDFA /* MotherDeatilsPresenter.swift in Sources */,
 				79956C5226CF7FE900E012BB /* CustomNavigationBackButtonTitle.swift in Sources */,
+				798EA0C3274911C80016D332 /* GroupNotificationListWorker.swift in Sources */,
 				7995323B26E87D700033A49B /* FeesModels.swift in Sources */,
+				79E1FB49274B6E61004BAE7E /* GroupTitleListPresenter.swift in Sources */,
 				792DBE68272C25E50087B80C /* StudentsTimeTableModels.swift in Sources */,
 				7904AD3F26DA103000D6F2C2 /* TeachersAdminModels.swift in Sources */,
 				79BAB7E426E1E60200DEE3C3 /* FatherDetailsWorker.swift in Sources */,
@@ -3471,6 +3712,7 @@
 				799018732705C01700A6CED2 /* TeacherAPIFunctionName.swift in Sources */,
 				79174BD8271D3C24001E6C88 /* SendAssignmentInteracter.swift in Sources */,
 				79045D882701AF04009A3084 /* ClassSectionListPresenter.swift in Sources */,
+				79E1FB40274B4D97004BAE7E /* GroupNotificationListCell.swift in Sources */,
 				796F2F692722979A008189FC /* StudentsExamResultsVC.swift in Sources */,
 				7949933526E0F8A90013A38C /* TeacherDetailsModel.swift in Sources */,
 				7900FB16272D761A004977EB /* TeacherSubstitutionCell.swift in Sources */,
@@ -3492,12 +3734,16 @@
 				79CC461326F34C6900448486 /* GroupSectionListInteracter.swift in Sources */,
 				79CC45D726F3187600448486 /* AdminMenuVC.swift in Sources */,
 				793503E926E39BCC00B4FDFA /* MotherDeatilsWorker.swift in Sources */,
+				79C11F0B2747644F0007ED8E /* MonthAttendanceListWorker.swift in Sources */,
+				7953E76B27450C6C00754D85 /* DayMonthAttendListModel.swift in Sources */,
 				79BEF56226F075EE0056DCBF /* GroupListInteracter.swift in Sources */,
 				792DBE64272C25B50087B80C /* TimeTableListModel.swift in Sources */,
 				79BEF57926F0761F0056DCBF /* GroupsModels.swift in Sources */,
 				79F463B9272A64F90087BEFB /* LeaveTypeListWorker.swift in Sources */,
+				798EA0C72749122E0016D332 /* GroupNotificationListPresenter.swift in Sources */,
 				799532DC26E8BCED0033A49B /* ODApprovallPresenter.swift in Sources */,
 				7900627F26E3494B00C43D94 /* OnDutyListVC.swift in Sources */,
+				798EA0BF274910DA0016D332 /* GroupNotificationListVC.swift in Sources */,
 				7968241127156CF3007ACCC8 /* AssignmentOverViewModel.swift in Sources */,
 				79531F6526DE5B4F000BE78A /* APIManager.swift in Sources */,
 				79956C3626CF7FDA00E012BB /* Reachability.swift in Sources */,
@@ -3506,6 +3752,7 @@
 				7910A0D127044AEF009B06BC /* HomeWorkDetailsVC.swift in Sources */,
 				79BAB80426E1FE5800DEE3C3 /* ClassForTeacherListInteracter.swift in Sources */,
 				7910A0D527044E85009B06BC /* HomeWorkDetailsWorker.swift in Sources */,
+				79C11F0D274764560007ED8E /* MonthAttendanceListModel.swift in Sources */,
 				796F4F322701FC3F00E78465 /* ClassAttendanceWorker.swift in Sources */,
 				7921471F271436DB00AB0460 /* AttendanceRecordsModel.swift in Sources */,
 				798DE48D26CE7B2F0017C5FD /* LoginWorker.swift in Sources */,
@@ -3517,6 +3764,7 @@
 				799E6649273A750500B36284 /* TeacherC_TestMarksModels.swift in Sources */,
 				79C33EAF26E22D60006341E9 /* EvenetsModels.swift in Sources */,
 				7900FAFC272D48F5004977EB /* TeacherGroupTypeListInteracter.swift in Sources */,
+				791AFFD8274638FF00FEE316 /* AddOnDutyInteracter.swift in Sources */,
 				793503FF26E39C5100B4FDFA /* GuardianDetailsModel.swift in Sources */,
 				792147252714636200AB0460 /* AttendanceRecordListCell.swift in Sources */,
 				79BEF58326F07B3D0056DCBF /* GroupListCell.swift in Sources */,
@@ -3700,14 +3948,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				INFOPLIST_FILE = Ensyfi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.Ensyfi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hst.EduApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -3723,14 +3971,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				INFOPLIST_FILE = Ensyfi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.Ensyfi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hst.EduApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

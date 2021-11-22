@@ -53,42 +53,47 @@ class APIManager: NSObject {
             successCallback?(resJson)
         }
 
-        if responseObject.result.isFailure
-        {
-           let error : Error = responseObject.result.error!
-            failureCallback!(error.localizedDescription)
-        }
-      }
+         if responseObject.result.isFailure
+         {
+            let error : Error = responseObject.result.error!
+             failureCallback!(error.localizedDescription)
+         }
+       }
     }
 
     func callAPILogin(institue_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: LoginModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
         let url = APIURL.appBase_URL
    // Set Parameters
-         let parameters: Parameters =  ["InstituteID": institue_id]
+         let parameters: Parameters =  ["institute_code": institue_id]
    // call API
+        print(parameters)
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
    // Create dictionary
          print(responseObject)
 
-         guard let msg = responseObject["msg"].string, msg == "Institute code is valid." else{
+         guard let msg = responseObject["msg"].string, msg == "Login Successfully" else{
          failureCallback?(responseObject["msg"].string!)
          return
        }
-          let institute_code =  responseObject["userData"]["institute_code"].string
-          let institute_id =  responseObject["userData"]["institute_id"].string
-          let institute_logo =  responseObject["userData"]["institute_logo"].string
-          let institute_name =  responseObject["userData"]["institute_name"].string
-          let status =  responseObject["status"].string
-
-          let sendToModel = LoginModels()
-
-          sendToModel.institute_code = institute_code
-          sendToModel.institute_id = institute_id
-          sendToModel.institute_logo = institute_logo
-          sendToModel.institute_name = institute_name
-          sendToModel.status = status
-          sendToModel.msg = msg
+            let institute_code =  responseObject["instituteData"]["0"]["enc_institute_code"].string
+            let institute_id =  responseObject["instituteData"]["0"]["institute_id"].string
+            let institute_logo =  responseObject["instituteData"]["0"]["institute_logo"].string
+            let institute_name =  responseObject["instituteData"]["0"]["institute_name"].string
+            let status =  responseObject["status"].string
+           
+            if let dynamicDB = responseObject["instituteData"]["dynamic_db"].string
+            {
+                UserDefaults.standard.setValue(dynamicDB, forKey: "dynamic_dbKey")
+                GlobalVariables.shared.dynamic_db = dynamicDB
+            }
+            let sendToModel = LoginModels()
+           
+                sendToModel.institute_code = institute_code
+                sendToModel.institute_id = institute_id
+                sendToModel.institute_logo = institute_logo
+                sendToModel.institute_name = institute_name
+                sendToModel.status = status
 
           successCallback?(sendToModel)
        },
@@ -102,7 +107,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.instituteLoginUrl
    // Set Parameters
-         let parameters: Parameters =  ["username": userName,"password": password]
+         let parameters: Parameters =  ["username": userName,"password":password,"dynamic_db":dynamic_db]
         print(parameters)
         print(url)
    // call API
@@ -147,7 +152,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.forgotPswdUrl
    // Set Parameters
-         let parameters: Parameters =  ["user_name": userName]
+         let parameters: Parameters =  ["user_name":userName,"dynamic_db":dynamic_db]
         print(parameters)
    // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -175,10 +180,11 @@ class APIManager: NSObject {
 
     func callAPIClassView(user_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [ClassViewModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-        let url = "http://happysanz.in/ensyfi/apiadmin/get_all_classes/"
+//        let url = "http://happysanz.in/ensyfi/apiadmin/get_all_classes/"
+        let url = APIURL.base_URL + APIFunctionName.studentClassUrl
          // Set Parameters
         print(url)
-         let parameters: Parameters =  ["": ""]
+         let parameters: Parameters =  ["": "","dynamic_db":dynamic_db]
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -212,9 +218,10 @@ class APIManager: NSObject {
 
     func callAPISectionList(class_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [SectionListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-        let url = "http://happysanz.in/ensyfi/apiadmin/get_all_sections/"
+//        let url = "http://happysanz.in/ensyfi/apiadmin/get_all_sections/"
+        let url = APIURL.base_URL + APIFunctionName.sectionListUrl
          // Set Parameters
-         let parameters: Parameters =  ["class_id": class_id]
+         let parameters: Parameters =  ["class_id": class_id,"dynamic_db":dynamic_db]
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -235,9 +242,9 @@ class APIManager: NSObject {
                   }
                   // Fire callback
                   successCallback?(data)
-          } else {
-              failureCallback?("An error has occured.")
-          }
+            } else {
+               failureCallback?("An error has occured.")
+           }
          },
          onFailure: {(errorMessage: String) -> Void in
              failureCallback?(errorMessage)
@@ -249,14 +256,15 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentsListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id,"section_id":section_id]
+        let parameters: Parameters = ["class_id": class_id,"section_id":section_id,"dynamic_db":dynamic_db]
+        print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
 
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "success" else{
+           guard let status = responseObject["status"].string, status == "success" else {
                failureCallback?(responseObject["msg"].string!)
                return
          }
@@ -285,7 +293,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.teacherListUrl
          // Set Parameters
-        let parameters: Parameters = ["":""]
+        let parameters: Parameters = ["":"","dynamic_db":dynamic_db]
         print(user_id)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -322,7 +330,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentsDetailsUrl
          // Set Parameters
-        let parameters: Parameters = ["student_id": student_id]
+        let parameters: Parameters = ["student_id": student_id,"dynamic_db":dynamic_db]
         print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -359,7 +367,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.HomeWorkTestListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id,"hw_type":hw_type]
+        let parameters: Parameters = ["class_id": class_id,"hw_type":hw_type,"dynamic_db":dynamic_db]
         print(hw_type)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -396,7 +404,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.HomeWorkTestListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id,"hw_type":hw_type]
+        let parameters: Parameters = ["class_id": class_id,"hw_type":hw_type,"dynamic_db":dynamic_db]
         print(hw_type)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -433,7 +441,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentAttendanceUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id,"stud_id":stud_id]
+        let parameters: Parameters = ["class_id": class_id,"stud_id":stud_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -480,11 +488,11 @@ class APIManager: NSObject {
         var url = String()
         
         if section_id == "Students" {
-            parameters = ["class_id": class_id]
+            parameters = ["class_id": class_id,"dynamic_db":dynamic_db]
             url = APIURL.base_URL  + APIFunctionName.studentExamReslutListUrl
         }
         else {
-           parameters = ["class_id": class_id,"section_id": section_id]
+           parameters = ["class_id": class_id,"section_id": section_id,"dynamic_db":dynamic_db]
             url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
         }
 //
@@ -524,7 +532,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.teacherDetailUrl
          // Set Parameters
-        let parameters: Parameters = ["teacher_id": teacher_id]
+        let parameters: Parameters = ["teacher_id": teacher_id,"dynamic_db":dynamic_db]
         print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -561,7 +569,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.clasForTeacherListurl
          // Set Parameters
-        let parameters: Parameters = ["class_id":class_id,"section_id":section_id]
+        let parameters: Parameters = ["class_id":class_id,"section_id":section_id,"dynamic_db":dynamic_db]
         print(class_id)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -598,7 +606,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.examsRsultsListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id,"section_id": section_id]
+        let parameters: Parameters = ["class_id": class_id,"section_id": section_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -637,7 +645,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.eventsListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id]
+        let parameters: Parameters = ["class_id": class_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -675,7 +683,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.subEventsListUrl
          // Set Parameters
-        let parameters: Parameters = ["event_id": event_id]
+        let parameters: Parameters = ["event_id": event_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -712,7 +720,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.adminCircularListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -750,7 +758,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.examDetailsTableListUrl
          // Set Parameters
-        let parameters: Parameters = ["class_id": class_id,"exam_id": exam_id]
+        let parameters: Parameters = ["class_id": class_id,"exam_id": exam_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -789,7 +797,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.getParentDetailsUrl
    // Set Parameters
-         let parameters: Parameters =  ["admission_id": admission_id]
+         let parameters: Parameters =  ["admission_id": admission_id,"dynamic_db":dynamic_db]
         print(parameters)
         print(url)
    // call API
@@ -842,7 +850,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.getParentDetailsUrl
    // Set Parameters
-         let parameters: Parameters =  ["admission_id": admission_id]
+         let parameters: Parameters =  ["admission_id": admission_id,"dynamic_db":dynamic_db]
         print(parameters)
         print(url)
    // call API
@@ -895,7 +903,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.getParentDetailsUrl
    // Set Parameters
-         let parameters: Parameters =  ["admission_id": admission_id]
+         let parameters: Parameters =  ["admission_id": admission_id,"dynamic_db":dynamic_db]
         print(parameters)
         print(url)
    // call API
@@ -949,7 +957,7 @@ class APIManager: NSObject {
         let url = APIURL.base_URL + APIFunctionName.feesListUrl
          // Set Parameters
         print(url)
-         let parameters: Parameters =  ["class_id": class_id,"section_id": section_id]
+         let parameters: Parameters =  ["class_id": class_id,"section_id": section_id,"dynamic_db":dynamic_db]
         print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -987,7 +995,7 @@ class APIManager: NSObject {
         let url = APIURL.base_URL + APIFunctionName.feesStatusListUrl
          // Set Parameters
         print(url)
-         let parameters: Parameters =  ["class_id": class_id,"section_id": section_id,"fees_id": fees_id]
+         let parameters: Parameters =  ["class_id": class_id,"section_id": section_id,"fees_id": fees_id,"dynamic_db":dynamic_db]
         print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1025,7 +1033,7 @@ class APIManager: NSObject {
         let url = APIURL.base_URL + APIFunctionName.feesSectionListUrl
          // Set Parameters
         print(url)
-         let parameters: Parameters =  ["class_id": class_id]
+         let parameters: Parameters =  ["class_id": class_id,"dynamic_db":dynamic_db]
         print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1062,7 +1070,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.ODstudentsListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_type": user_type]
+        let parameters: Parameters = ["user_type": user_type,"dynamic_db":dynamic_db]
        
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1099,7 +1107,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.ODteachersListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_type": user_type]
+        let parameters: Parameters = ["user_type": user_type,"dynamic_db":dynamic_db]
        
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1136,7 +1144,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.ODApprovalUrl
    // Set Parameters
-         let parameters: Parameters =  ["status": status,"od_id": od_id]
+         let parameters: Parameters =  ["status": status,"od_id": od_id,"dynamic_db":dynamic_db]
         print(parameters)
    // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1166,7 +1174,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.groupListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1203,7 +1211,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.techerIDnameListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1240,7 +1248,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.createGroupUrl
    // Set Parameters
-         let parameters: Parameters =  ["user_id": user_id,"group_title": group_title,"group_lead_id": group_lead_id,"status": status]
+         let parameters: Parameters =  ["user_id": user_id,"group_title": group_title,"group_lead_id": group_lead_id,"status": status,"dynamic_db":dynamic_db]
         print(parameters)
    // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1270,7 +1278,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.groupMembersListUrl
          // Set Parameters
-        let parameters: Parameters = ["group_id": group_id]
+        let parameters: Parameters = ["group_id": group_id,"dynamic_db":dynamic_db]
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1305,7 +1313,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.updategroupUrl
    // Set Parameters
-        let parameters: Parameters =  ["user_id": user_id,"group_title": group_title,"group_lead_id": group_lead_id,"status": status,"group_id":group_id]
+        let parameters: Parameters =  ["user_id": user_id,"group_title": group_title,"group_lead_id": group_lead_id,"status": status,"group_id":group_id,"dynamic_db":dynamic_db]
         print(parameters)
    // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1334,7 +1342,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.roleListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1371,7 +1379,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.groupSectionUrl
          // Set Parameters
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1408,7 +1416,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.studentListGroupAddUrl
          // Set Parameters
-        let parameters: Parameters = ["group_id": group_id,"group_user_type": group_user_type,"class_id": class_id]
+        let parameters: Parameters = ["group_id": group_id,"group_user_type": group_user_type,"class_id": class_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1445,7 +1453,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.staffListGroupAddUrl
          // Set Parameters
-        let parameters: Parameters = ["group_id": group_id,"group_user_type": group_user_type]
+        let parameters: Parameters = ["group_id": group_id,"group_user_type": group_user_type,"dynamic_db":dynamic_db]
       print(parameters)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1482,7 +1490,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.AddGroupMemberUrl
    // Set Parameters
-         let parameters: Parameters =  ["user_id": user_id,"group_member_id": group_member_id,"group_user_type": group_user_type,"status": status,"group_id": group_id]
+         let parameters: Parameters =  ["user_id": user_id,"group_member_id": group_member_id,"group_user_type": group_user_type,"status": status,"group_id": group_id,"dynamic_db":dynamic_db]
         print(parameters)
    // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1512,7 +1520,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.leaveListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
       
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1550,7 +1558,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.leaveApprovalUrl
    // Set Parameters
-         let parameters: Parameters =  ["status": status,"leave_id": leave_id]
+         let parameters: Parameters =  ["status": status,"leave_id": leave_id,"dynamic_db":dynamic_db]
         print(parameters)
    // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1581,7 +1589,7 @@ class APIManager: NSObject {
         let url = APIURL.base_URL + APIFunctionName.classSectionListUrl
          // Set Parameters
         print(url)
-         let parameters: Parameters =  ["": ""]
+         let parameters: Parameters =  ["": "","dynamic_db":dynamic_db]
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1618,7 +1626,7 @@ class APIManager: NSObject {
         let url = APIURL.base_URL + APIFunctionName.classAttendanceListUrl
          // Set Parameters
         print(url)
-        let parameters: Parameters =  ["date":date,"class_ids":class_ids ]
+        let parameters: Parameters =  ["date":date,"class_ids":class_ids,"dynamic_db":dynamic_db]
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1653,7 +1661,7 @@ class APIManager: NSObject {
    // Build URL
         let url = APIURL.base_URL + APIFunctionName.changePasswordUrl
    // Set Parameters
-        let parameters: Parameters =  ["user_id": user_id,"old_password": old_password,"password": password]
+        let parameters: Parameters =  ["user_id": user_id,"old_password": old_password,"password": password,"dynamic_db":dynamic_db]
         print(parameters)
    // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
@@ -1682,7 +1690,7 @@ class APIManager: NSObject {
          // Build URL
         let url = APIURL.base_URL  + APIFunctionName.boardMemListUrl
          // Set Parameters
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1717,7 +1725,7 @@ class APIManager: NSObject {
     func callAPISpecialClassList(user_id:String,from:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [SpecialClassListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
 
         var url = String()
-        let parameters: Parameters = ["user_id": user_id]
+        let parameters: Parameters = ["user_id": user_id,"dynamic_db":dynamic_db]
         
         if from == "Students" {
             url = APIURL.base_URL  + StudentAPIFunctionName.studentSpecialClasListUrl
@@ -1728,7 +1736,6 @@ class APIManager: NSObject {
         else if from == "Teachers" {
             url = APIURL.base_URL  + TeachersAPIFunctionName.teacherSpecialClassListUrl
         }
-        
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1747,6 +1754,43 @@ class APIManager: NSObject {
                   var data = [SpecialClassListModels]()
                   for item in toModel {
                       let single = SpecialClassListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPIGroupNotificationList(group_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [GroupNotificationListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.grpNotificationList
+         // Set Parameters
+        let parameters: Parameters = ["group_id": group_id,"dynamic_db":dynamic_db]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["msg_history"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [GroupNotificationListModels]()
+                  for item in toModel {
+                      let single = GroupNotificationListModels.build(item)
                       data.append(single)
                   }
                   // Fire callback

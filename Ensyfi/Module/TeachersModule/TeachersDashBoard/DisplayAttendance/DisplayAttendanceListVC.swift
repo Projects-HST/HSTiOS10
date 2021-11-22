@@ -19,7 +19,6 @@ class DisplayAttendanceListVC: UIViewController, DisplayAttenddanceListDisplayLo
    
     @IBOutlet weak var tableView: UITableView!
    
-    
     var interactor: DisplayAttenddanceListBusinessLogic?
     var displayedDisplayAttenddanceListData: [DisplayAttenddanceListModel.Fetch.ViewModel.DisplayedDisplayAttenddanceListData] = []
     

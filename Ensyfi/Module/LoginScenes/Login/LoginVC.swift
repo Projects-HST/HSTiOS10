@@ -18,6 +18,7 @@ class LoginVC: UIViewController,LoginDisplayLogic {
     
     var interactor: LoginBusinessLogic?
     var institute_code = String()
+    var institute_name = String()
     
     @IBOutlet weak var InstituteIdTextfield: UITextField!
     
@@ -97,6 +98,7 @@ extension LoginVC {
         self.institute_code = viewModel.institute_code!
         UserDefaults.standard.set(institute_code, forKey: UserDefaultsKey.institude_Code_Key.rawValue)
         GlobalVariables.shared.Institute_Code = institute_code
+        self.institute_name = viewModel.institute_name!
         self.performSegue(withIdentifier: "to_instituteLogin", sender: self)
     }
     
@@ -113,6 +115,7 @@ extension LoginVC {
         {
         let vc = segue.destination as! InstituteLoginVC
             vc.institute_code = self.institute_code
+            vc.institute_name = self.institute_name
         }
     }
 }

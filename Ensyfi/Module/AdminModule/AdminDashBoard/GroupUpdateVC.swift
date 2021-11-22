@@ -42,13 +42,13 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :"1", user_type :"",dynamic_db: GlobalVariables.shared.dynamic_db))
+        interactor?.fetchItems(request: TeacherListIDModel.Fetch.Request(user_id :GlobalVariables.shared.user_id, user_type :"",dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
         self.titleTextfield.text = selectedTitle
         self.grpAdminTextfield.text = selectedGrpAdmin
         self.bgView.dropShadow()
-        
+        switchOutlet.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -80,6 +80,21 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
         presenter1.viewController1 = viewController1
     }
     
+    @IBAction func switchAction(_ sender: Any) {
+
+    }
+    
+    @objc func stateChanged(switchState: UISwitch) {
+        if switchOutlet.isOn {
+            print("The Switch is On")
+            self.switchStatus = "Active"
+        } else {
+            print("The Switch is Of")
+            self.switchStatus = "Deactive"
+        }
+    }
+    
+    
     @IBAction func selectClass(_ sender: Any) {
         
         dropDown.show()
@@ -96,7 +111,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
     
     @IBAction func updateAction(_ sender: Any) {
     
-        interactor1?.fetchItems(request: UpdateGroupModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, group_title: self.titleTextfield.text, group_lead_id: self.selectedTecherId, status: "Active",group_id:self.selectedID,dynamic_db: GlobalVariables.shared.dynamic_db))
+        interactor1?.fetchItems(request: UpdateGroupModel.Fetch.Request(user_id: GlobalVariables.shared.user_id, group_title: self.titleTextfield.text, group_lead_id: self.selectedTecherId, status: self.switchStatus,group_id:self.selectedID,dynamic_db: GlobalVariables.shared.dynamic_db))
     }
     
     func CheckValuesAreEmpty () -> Bool{

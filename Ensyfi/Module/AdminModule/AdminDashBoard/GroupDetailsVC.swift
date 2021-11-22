@@ -34,24 +34,21 @@ class GroupDetailsVC: UIViewController {
     @IBAction func viewMemAction(_ sender: Any) {
         
         self.performSegue(withIdentifier: "view_members", sender: self)
-        
     }
     
     @IBAction func updateAction(_ sender: Any) {
         
         self.performSegue(withIdentifier: "toUpdateGroup", sender: self)
-        
     }
     
     @IBAction func addAction(_ sender: Any) {
         
         self.performSegue(withIdentifier: "to_addgroupMember", sender: self)
-        
     }
     
     @IBAction func notificationAction(_ sender: Any) {
         
-        
+        self.performSegue(withIdentifier: "to_grpNotificationList", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,5 +79,12 @@ class GroupDetailsVC: UIViewController {
             vc.selectedID = self.selectedID
             vc.selectedleadId = self.selectedleadId
         }
+        else if (segue.identifier == "to_grpNotificationList")
+        {
+         let vc = segue.destination as! GroupNotificationListVC
+             
+             vc.groupId = self.selectedID
+        }
     }
 }
+

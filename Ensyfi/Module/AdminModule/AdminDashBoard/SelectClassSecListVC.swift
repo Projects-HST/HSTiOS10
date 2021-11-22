@@ -10,7 +10,7 @@ import MBProgressHUD
 
 protocol ClassSectionListDelegate
 {
-    func saveText(strText : String)
+    func saveText(strText:String,strTextCName:String)
 }
 
 protocol Class_SectionDisplayLogic: AnyObject
@@ -21,15 +21,18 @@ protocol Class_SectionDisplayLogic: AnyObject
 
 class SelectClassSecListVC: UIViewController,Class_SectionDisplayLogic {
    
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     var delegate : ClassSectionListDelegate?
     var strSaveText : NSString!
+    var strSaveTextCName : NSString!
     var interactor: Class_SectionBusinessLogic?
     var selectedRows:[IndexPath] = []
     var classNameArr = [String]()
     var classIdArr = [String]()
     var selectedId = String()
+    var selectedClassName = String()
     var selectedIdArr = [String]()
     
     var displayedClass_SectionData: [Class_SectionModel.Fetch.ViewModel.DisplayedClass_SectionData] = []
@@ -40,6 +43,7 @@ class SelectClassSecListVC: UIViewController,Class_SectionDisplayLogic {
         // Do any additional setup after loading the view.
         interactor?.fetchItems(request: Class_SectionModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.bgView.dropShadow()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -114,7 +118,7 @@ extension SelectClassSecListVC : UITableViewDelegate,UITableViewDataSource {
         if selectedRows.contains(indexPath)
            {
              cell.checkBox.setImage(UIImage(named:"tick"), for: .normal)
-           }
+             }
         else
            {
              cell.checkBox.setImage(UIImage(named:"unselected1"), for: .normal)
@@ -126,6 +130,7 @@ extension SelectClassSecListVC : UITableViewDelegate,UITableViewDataSource {
 
      @objc func checkBoxSelection(sender: UIButton){
         
+         self.selectedClassName = ""
          let selectedIndexPath = IndexPath(row: sender.tag, section: 0)
         
         if self.selectedRows.contains(selectedIndexPath)
@@ -143,8 +148,10 @@ extension SelectClassSecListVC : UITableViewDelegate,UITableViewDataSource {
           let sel = self.classIdArr[selectedIndex]
           self.selectedIdArr.append(sel)
           selectedId = selectedIdArr.joined(separator:",")
+          selectedClassName = self.classNameArr[selectedIndex]
           print(selectedId)
-          delegate?.saveText(strText: (selectedId as NSString) as String)
+          print(selectedClassName)
+         delegate?.saveText(strText: (selectedId as NSString) as String, strTextCName: (selectedClassName as NSString) as String)
         
         self.tableView.reloadData()
     }

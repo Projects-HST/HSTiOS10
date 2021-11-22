@@ -23,5 +23,5 @@ class ExamResultsWorker{
                    failureCallback(ExamResultsModel.Fetch.Response(testObj: self.respData , isError: true, message:nil))
            }
        )
-   }
+    }
 }

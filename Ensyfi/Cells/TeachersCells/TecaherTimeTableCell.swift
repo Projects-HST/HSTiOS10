@@ -9,6 +9,11 @@ import UIKit
 
 class TecaherTimeTableCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var secName: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var bgView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

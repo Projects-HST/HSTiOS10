@@ -30,6 +30,10 @@ class TeacherLeaveRequestVC: UIViewController, TeacherLeavesRequestDisplayLogic,
     @IBOutlet weak var toTime: UITextField!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var desTextField: UITextField!
+    @IBOutlet weak var timeImg1: UIImageView!
+    @IBOutlet weak var timeImg2: UIImageView!
+    @IBOutlet weak var fromTimeLbl: UILabel!
+    @IBOutlet weak var toTimeLbl: UILabel!
     
     var interactor: TeacherLeavesRequestBusinessLogic?
     var interactor1: ApplyLeaveRequestBusinessLogic?
@@ -68,6 +72,12 @@ class TeacherLeaveRequestVC: UIViewController, TeacherLeavesRequestDisplayLogic,
         self.fromTime.isEnabled = false
         self.toTime.isEnabled = false
         self.bgView.dropShadow()
+        self.fromTime.alpha = 0
+        self.toTime.alpha = 0
+        self.timeImg1.alpha = 0
+        self.timeImg2.alpha = 0
+        self.fromTimeLbl.alpha = 0
+        self.toTimeLbl.alpha = 0
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -125,14 +135,20 @@ class TeacherLeaveRequestVC: UIViewController, TeacherLeavesRequestDisplayLogic,
             if index == 0 || index == 3 || index == 3 {
                 self.fromTime.isEnabled = false
                 self.toTime.isEnabled = false
-                self.fromTime.alpha = 0.5
-                self.toTime.alpha = 0.5
+                self.fromTime.alpha = 0
+                self.toTime.alpha = 0
+                self.timeImg1.alpha = 0
+                self.timeImg2.alpha = 0
             }
             else {
                 self.fromTime.isEnabled = true
                 self.toTime.isEnabled = true
                 self.fromTime.alpha = 1
                 self.toTime.alpha = 1
+                self.timeImg1.alpha = 1
+                self.timeImg2.alpha = 1
+                self.fromTimeLbl.alpha = 1
+                self.toTimeLbl.alpha = 1
             }
         }
     }

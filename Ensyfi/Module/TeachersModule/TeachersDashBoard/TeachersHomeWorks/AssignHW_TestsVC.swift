@@ -33,7 +33,9 @@ class AssignHW_TestsVC: UIViewController {
     let dropDown = DropDown()
     
     let date = Date()
+    let datePicker = UIDatePicker()
     var todayDate = String()
+    var dateFormatted = String()
     let formatter = DateFormatter()
     var className = [String]()
     var classId = [String]()
@@ -67,7 +69,8 @@ class AssignHW_TestsVC: UIViewController {
         self.bgView.dropShadow()
         self.bgView1.dropShadow()
         self.selectedType = "HT"
-        view.bindToKeyboard()
+        self.showDatePicker()
+//        view.bindToKeyboard()
     }
     
     @IBAction func selectClass(_ sender: Any) {
@@ -135,6 +138,58 @@ class AssignHW_TestsVC: UIViewController {
             saveHWTest(sync_status:"NS",class_id:self.selectedClassId,created_at:self.todayDate,due_date:self.dateField.text!,created_by:GlobalVariables.shared.user_id,hw_details:self.detailsField.text!,hw_type:self.selectedType,mark_status:"",server_hw_id:"",status:"A",subject_id:self.selectedSubId,subject_name:self.subjectTextField.text!,test_date:self.dateField.text!,title:self.titleField.text!,updated_at:"",updated_by:"",year_id:"1",teacher_id:GlobalVariables.shared.user_id,id:"1")
         }
     }
+    
+    func showDatePicker() {
+       //Formate Date
+       datePicker.datePickerMode = .date
+       datePicker.backgroundColor = UIColor.white
+       datePicker.setValue(UIColor.black, forKeyPath: "textColor")
+       datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+      
+       //ToolBar
+       let toolbar = UIToolbar();
+       toolbar.sizeToFit()
+       toolbar.backgroundColor = UIColor.white
+       toolbar.tintColor = UIColor(red: 45/255.0, green: 148/255.0, blue: 235/255.0, alpha: 1.0)
+       let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+       let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+       let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+       toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+        dateField.inputAccessoryView = toolbar
+        dateField.inputView = datePicker
+    }
+    
+    func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
+
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+
+        if let date = inputFormatter.date(from: dateString) {
+
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = format
+
+            return outputFormatter.string(from: date)
+        }
+        return nil
+    }
+    
+     @objc func donedatePicker(){
+        if dateField.isFirstResponder
+        {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            dateFormatted = formatter.string(from: datePicker.date)
+//            dateFormatted = datePicker.date
+            let formatted = self.formattedDateFromString(dateString: dateFormatted, withFormat: "yyyy-MM-dd")
+            dateField.text = formatted
+            self.view.endEditing(true)
+        }
+    }
+        
+    @objc func cancelDatePicker() {
+       self.view.endEditing(true)
+     }
 }
 
 extension AssignHW_TestsVC {

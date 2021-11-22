@@ -133,3 +133,26 @@ class ODApprovalModels {
         }
     }
 }
+
+
+class AddONDutyModels {
+
+    var status : String?
+    var msg: String?
+    var attendance_id: String?
+
+// MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+     {
+       if let data = dict["status"] as? String {
+       self.status = data
+     }
+       if let data = dict["msg"] as? String {
+       self.msg = data
+     }
+       if let data = dict["attendance_id"] as? String {
+        self.attendance_id = data
+      }
+   }
+}
+

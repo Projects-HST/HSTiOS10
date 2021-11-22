@@ -20,6 +20,7 @@ class TakeAttendanceVC: UIViewController {
     
     let dropDown = DropDown()
     let date = Date()
+    var dateFormatted = String()
     let formatter = DateFormatter()
     var className = [String]()
     var classId = [String]()
@@ -118,6 +119,7 @@ class TakeAttendanceVC: UIViewController {
         }
     }
     
+    
     @IBAction func saveAttendance(_ sender: Any) {
 
         let presentIndexes = selectedstudentStatus.enumerated().filter {
@@ -178,10 +180,28 @@ class TakeAttendanceVC: UIViewController {
     }
     
     func SetDate() {
-        
-        formatter.dateFormat = "dd.MM.yyyy"
-        let result = formatter.string(from: date)
-        dateLbl.text = result
+    
+        let formatter = DateFormatter()
+           formatter.dateFormat = "yyyy-MM-dd"
+           dateFormatted = formatter.string(from:date)
+       //            dateFormatted = datePicker.date
+           let formatted = self.formattedDateFromString(dateString: dateFormatted, withFormat: "yyyy-MM-dd")
+        dateLbl.text = formatted
+    }
+    
+    func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
+
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+
+        if let date = inputFormatter.date(from: dateString) {
+
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = format
+
+            return outputFormatter.string(from: date)
+        }
+        return nil
     }
 }
     
@@ -347,6 +367,9 @@ extension TakeAttendanceVC: UITableViewDelegate,UITableViewDataSource {
         do {
             try context?.save()
                 print(" Attendance Saved sucess")
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: "Success", complition: {
+                self.navigationController?.popViewController(animated: true)
+            })
             }
         catch {
             print("error")

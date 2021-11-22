@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -594,6 +593,9 @@
                                                         <state key="normal" title="Exam Duty">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="rQd-NQ-v4b" kind="show" id="qob-4G-Rk1"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vs-Ys-XPy">
                                                         <rect key="frame" x="0.0" y="357" width="85" height="30"/>
@@ -643,6 +645,9 @@
                                                         <state key="normal" title="On Duty">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="Wq2-Hl-l6e" kind="show" id="J5R-D5-iEc"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otk-2s-5fq">
                                                         <rect key="frame" x="0.0" y="561" width="102" height="30"/>
@@ -924,6 +929,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUl-4M-ORg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4682" y="408"/>
+        </scene>
+        <!--TeacherExamDutyVC-->
+        <scene sceneID="y4v-wy-Sh4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TeacherExamDuty" referencedIdentifier="TeacherExamDutyVC" id="rQd-NQ-v4b" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ScP-wX-J9J"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TkS-2H-RZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4696" y="-185"/>
+        </scene>
+        <!--TeachersOnDutyVC-->
+        <scene sceneID="R1j-sn-xTx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TeachersOnDuty" referencedIdentifier="TeachersOnDutyVC" id="Wq2-Hl-l6e" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eGd-lh-dXN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baX-wZ-9XB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4686" y="-149"/>
         </scene>
         <!--circularVC-->
         <scene sceneID="eMh-Kf-fCk">

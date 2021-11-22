@@ -10,7 +10,7 @@ import MBProgressHUD
 import CoreData
 import SwiftyJSON
 
-class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
+class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic,UITextFieldDelegate {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
@@ -26,6 +26,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var profilePic = String()
     var name = String()
     var nameArr = [String]()
+    var institute_name = String()
     
 //    TeacherSubject
     var subNameArr = [String]()
@@ -123,6 +124,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var to_timeTTableArr = [String]()
     var break_nameTTableArr = [String]()
     var is_breakTTableArr = [String]()
+    var iconClick = Bool()
     
    
     var teachersDataArr = [TeachersDataList]()
@@ -139,7 +141,11 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
     var timeTableDaysDataArr = [TimeTableDaysDatas]()
     
     @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var instituteNameLbl: UILabel!
+    @IBOutlet weak var toggleImg: UIImageView!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var toggleButton: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
     
     override func viewDidLoad() {
@@ -149,6 +155,10 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
         self.setupView ()
         self.hideKeyboardWhenTappedAround()
         self.context = appDelegate.persistentContainer.viewContext
+        self.instituteNameLbl.text = institute_name
+        self.iconClick = true
+        self.password.delegate = self
+        self.password.isSecureTextEntry = true
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -175,8 +185,9 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
    
     func setupView () {
         
-        userName.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("", comment: "Username"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(1)])
-        password.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("", comment: "Password"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(1)])
+//        userName.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("", comment: "Username"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(1)])
+//        password.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("", comment: "Password"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(1)])
+        self.bgView.dropShadow()
     }
     
     @IBAction func signInAction(_ sender: Any) {
@@ -187,11 +198,23 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
         
         interactor?.fetchItems(request: InstituteLoginModel.Fetch.Request(institue_code :self.institute_code,userName:self.userName.text!,password:self.password.text!,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        callAPILogin(userName:self.userName.text!,password:password.text!)
+        callAPILogin(userName:self.userName.text!,password:password.text!,dynamic_db:GlobalVariables.shared.dynamic_db)
     }
   
     @IBAction func forgotPasswordAction(_ sender: Any) {
         
+    }
+    
+    @IBAction func toggleButtonAction(_ sender: Any) {
+        
+        if(iconClick == true) {
+            self.password.isSecureTextEntry = false
+            self.toggleImg.image = UIImage(named:"hide")
+        } else {
+            self.password.isSecureTextEntry = true
+            self.toggleImg.image = UIImage(named:"unhide")
+        }
+        iconClick = !iconClick
     }
     
     func CheckValuesAreEmpty () -> Bool{
@@ -219,6 +242,7 @@ class InstituteLoginVC: UIViewController, InstituteLoginDisplayLogic {
           return true
      }
 }
+
 extension InstituteLoginVC {
     
     func successFetchedItems(viewModel: InstituteLoginModel.Fetch.ViewModel) {
@@ -264,6 +288,9 @@ extension InstituteLoginVC {
 
     func errorFetchingItems(viewModel: InstituteLoginModel.Fetch.ViewModel) {
         MBProgressHUD.hide(for: self.view, animated: true)
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: "Error", complition: {
+            
+          })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -287,9 +314,9 @@ extension InstituteLoginVC {
 }
 extension InstituteLoginVC {
     
-    func callAPILogin (userName:String,password:String)
+    func callAPILogin (userName:String,password:String,dynamic_db:String)
        {
-           let parameters = ["username": userName,"password": password]
+           let parameters = ["username": userName,"password": password,"dynamic_db": dynamic_db]
            MBProgressHUD.showAdded(to: self.view, animated: true)
            DispatchQueue.global().async
                {
@@ -298,26 +325,21 @@ extension InstituteLoginVC {
                     try AFWrapper.requestPOSTURL(APIURL.base_URL + APIFunctionName.instituteLoginUrl, params: parameters, headers: nil, success: { [self]
                            (JSONResponse) -> Void in
                            print(JSONResponse)
+                        MBProgressHUD.hide(for: self.view, animated: true)
                            let json = JSON(JSONResponse)
                                                 
                            let status = json["status"].stringValue
                            if  status == "loggedIn"
                            {
                             let jsonArr:[JSON] = json["academic_month"].arrayValue
-                            
                             if jsonArr.count > 0 {
-                                
                                 let stringArr:[String] = json["academic_month"].arrayValue.map { $0.stringValue}
-                                
                                 self.academicMonthArr = stringArr
                             }
-                            saveAcadamicMonthData(academic_month:academicMonthArr)
-                            
+                               self.saveAcadamicMonthData(academic_month:academicMonthArr)
                             let academic_marks = json["academic_marks"]["academic_marks"].stringValue
                             let externals = json["academic_marks"]["externals"].stringValue
-                            
                             self.saveAcadamicMarksData(externals:academic_marks,academic_marks:externals)
-                            
                                if json["teacherProfile"].count > 0 {
                                    
                                    for i in 0..<json["teacherProfile"].count {
@@ -374,7 +396,7 @@ extension InstituteLoginVC {
                              print("karan\(subject_name!)")
                             }
                         }
-                        saveClassSubject(subject_name:self.subNameArr,class_master_id:self.class_master_idArr,subject_id:self.subject_idArr,sec_name:self.sec_nameArr,class_name:self.class_nameArr,teacher_id:self.teacher_idArr)
+                        self.saveClassSubject(subject_name:self.subNameArr,class_master_id:self.class_master_idArr,subject_id:self.subject_idArr,sec_name:self.sec_nameArr,class_name:self.class_nameArr,teacher_id:self.teacher_idArr)
                         
                         
                         if json["studDetails"]["data"].count > 0 {
@@ -408,7 +430,7 @@ extension InstituteLoginVC {
                                 self.class_sectionArr.append(class_section!)
                             }
                         }
-                        saveStudentDetailsData(enroll_id:self.enroll_idArr,status:self.statusArr,admission_id:self.admission_idArr,class_id:self.class_idArr,name:self.studentnameArr,sex:self.sexArr,pref_language:self.pref_languageArr,class_section:self.class_sectionArr)
+                        self.saveStudentDetailsData(enroll_id:self.enroll_idArr,status:self.statusArr,admission_id:self.admission_idArr,class_id:self.class_idArr,name:self.studentnameArr,sex:self.sexArr,pref_language:self.pref_languageArr,class_section:self.class_sectionArr)
                         
                         if json["Exams"]["data"].count > 0 {
                             
@@ -444,7 +466,6 @@ extension InstituteLoginVC {
                                 self.MarkStatusArr.append(MarkStatus!)
                             }
                             self.saveExamsData(exam_id:self.exam_idArr,exam_name:self.exam_nameArr,is_internal_external:self.is_internal_externalArr,classmaster_id:self.classmaster_idArr,sec_name:self.sec_nameExamsArr,class_name:self.class_nameExamsArr,Fromdate:self.FromdateArr,Todate:self.TodateArr,MarkStatus:self.MarkStatusArr)
-                            
                         }
                         
                         if json["examDetails"]["data"].count > 0 {
@@ -493,9 +514,7 @@ extension InstituteLoginVC {
                                 self.sec_nameDetailsArr.append(sec_name!)
                                 
                             }
-
                             self.saveExamsDetailsData(exam_id:self.exam_idDetailsArr,exam_name:self.exam_nameDetailsArr,subject_name:self.subject_nameDetailsArr,subject_id:self.subject_idDetailsdArr,exam_date:self.exam_dateDetailsArr,times:self.timesDetailsArr,is_internal_external:self.is_internal_externalDetailsArr,subject_total:self.subject_totalDetailsArr,internal_mark:self.internal_markDetailsArr,external_mark:self.external_markDetailsArr,classmaster_id:self.classmaster_idDetailsArr,class_name:self.class_nameDetailsArr, sec_name:self.sec_nameDetailsArr)
-                      
                         }
                        
                         if json["homeWork"]["data"].count > 0 {
@@ -543,8 +562,7 @@ extension InstituteLoginVC {
                                 let sec_name = HWDetails.sec_name
                                 self.hwSec_nameArr.append(sec_name!)
                             }
-                            saveHWDetailsData(hw_id:hw_idArr,hw_type:hw_typeArr,title:titleArr,test_date:test_datedArr,due_date:due_dateArr,times:timesArr,class_id:hWClass_idArr,hw_details:hw_detailsArr,mark_status:mark_statusArr,subject_id:hwSubject_idArr,subject_name:subject_nameArr,class_name:hwClass_nameArr,sec_name:hwSec_nameArr)
-                            
+                            self.saveHWDetailsData(hw_id:hw_idArr,hw_type:hw_typeArr,title:titleArr,test_date:test_datedArr,due_date:due_dateArr,times:timesArr,class_id:hWClass_idArr,hw_details:hw_detailsArr,mark_status:mark_statusArr,subject_id:hwSubject_idArr,subject_name:subject_nameArr,class_name:hwClass_nameArr,sec_name:hwSec_nameArr)
                             }
                         
                         if json["Reminders"]["data"].count > 0 {
@@ -584,7 +602,7 @@ extension InstituteLoginVC {
                                 self.updated_atArr.append(updated_at!)
 
                             }
-                            saveRemindersDatasData(id:reminderIddArr,user_id:reminderUser_idArr,to_do_date:to_do_dateArr,to_do_title:to_do_titleeArr,to_do_description:to_do_descriptionArr,status:remindersStatusArr,created_by:created_byArr,created_at:created_atArr,updated_by:updated_byArr,updated_at:updated_atArr)
+                            self.saveRemindersDatasData(id:reminderIddArr,user_id:reminderUser_idArr,to_do_date:to_do_dateArr,to_do_title:to_do_titleeArr,to_do_description:to_do_descriptionArr,status:remindersStatusArr,created_by:created_byArr,created_at:created_atArr,updated_by:updated_byArr,updated_at:updated_atArr)
 //
                         }
                         
@@ -617,7 +635,7 @@ extension InstituteLoginVC {
                                 self.sec_nameRegArr.append(sec_name!)
                     
                              }
-                            saveStudentRegDetails(registered_id:registered_idRegArr,admission_id:admission_idRegArr,admission_no:admission_noRegArr,class_id:class_idRegArr,name:nameRegArr,class_name:class_nameRegArr,sec_name:sec_nameRegArr)
+                            self.saveStudentRegDetails(registered_id:registered_idRegArr,admission_id:admission_idRegArr,admission_no:admission_noRegArr,class_id:class_idRegArr,name:nameRegArr,class_name:class_nameRegArr,sec_name:sec_nameRegArr)
                         }
 //
                   
@@ -664,7 +682,6 @@ extension InstituteLoginVC {
                                 let updated_at = studentprofile.updated_at
                                 
                                 self.saveStudentProfileData(admission_id:admission_id!,admisn_year:admisn_year!,admisn_no:admisn_no!,emsi_num:emsi_num!,admisn_date:admisn_date!,name:name!,sex:sex!,dob:dob!,age:age!,nationality:nationality!,religion:religion!,community_class:community_class!,community:community!,parnt_guardn:parnt_guardn!,parnt_guardn_id:parnt_guardn_id!,mother_tongue:mother_tongue!,language:language!,mobile:mobile!,sec_mobile:sec_mobile!,email:email!,sec_email:sec_email!,student_pic:student_pic!,last_sch_name:last_sch_name!,last_studied:last_studied!,qualified_promotion:qualified_promotion!,transfer_certificate:transfer_certificate!,tccopy:tccopy!,record_sheet:record_sheet!,status:status!,parents_status:parents_status!,enrollment:enrollment!,blood_group:blood_group!,created_by:created_by!,created_at:created_at!,updated_by:updated_by!,updated_at:updated_at!)
-                                                        
                              }
                         }
                        

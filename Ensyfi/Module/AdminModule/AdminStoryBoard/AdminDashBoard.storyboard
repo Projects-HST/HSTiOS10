@@ -514,6 +514,9 @@
                     </navigationBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="310"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="aID-hf-aHr" kind="relationship" relationship="rootViewController" id="Wd8-bf-tbY"/>
@@ -811,10 +814,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QY8-bD-SL8">
-                                        <rect key="frame" x="31" y="148" width="150" height="28"/>
+                                        <rect key="frame" x="31" y="148" width="263" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="H4M-91-YZo"/>
-                                            <constraint firstAttribute="width" constant="150" id="mlR-uj-eP2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -826,6 +828,7 @@
                                     <constraint firstItem="QY8-bD-SL8" firstAttribute="leading" secondItem="90R-Db-wjy" secondAttribute="leading" constant="31" id="3b5-eh-iW2"/>
                                     <constraint firstItem="QY8-bD-SL8" firstAttribute="top" secondItem="ce7-VY-H7p" secondAttribute="bottom" constant="8" symbolic="YES" id="AoY-a0-8rW"/>
                                     <constraint firstItem="ce7-VY-H7p" firstAttribute="leading" secondItem="90R-Db-wjy" secondAttribute="leading" constant="51" id="Azc-Vk-elW"/>
+                                    <constraint firstAttribute="trailing" secondItem="QY8-bD-SL8" secondAttribute="trailing" constant="120" id="HWK-91-8Dg"/>
                                     <constraint firstAttribute="height" constant="198" id="HXH-GH-f7D"/>
                                     <constraint firstItem="ce7-VY-H7p" firstAttribute="top" secondItem="90R-Db-wjy" secondAttribute="top" constant="30" id="NOb-0r-elf"/>
                                     <constraint firstAttribute="bottom" secondItem="QY8-bD-SL8" secondAttribute="bottom" constant="22" id="vxf-EA-FoW"/>
@@ -966,7 +969,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ1-RU-JHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4340" y="840"/>
+            <point key="canvasLocation" x="6482" y="48"/>
         </scene>
         <!--AdminSpecialClassVC-->
         <scene sceneID="ivT-Lw-K9w">
@@ -976,7 +979,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4q-qS-Y1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3824" y="47"/>
+            <point key="canvasLocation" x="6550" y="732"/>
         </scene>
         <!--boardMembersVC-->
         <scene sceneID="bpa-h0-dCf">
@@ -986,7 +989,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDY-Rm-o2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3807" y="84"/>
+            <point key="canvasLocation" x="6534" y="84"/>
         </scene>
         <!--adminSettingsVC-->
         <scene sceneID="ipK-9K-1jb">
@@ -1044,6 +1047,7 @@
                 <navigationController storyboardIdentifier="adminNavVc" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="4xs-SB-emI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mMW-NX-mcm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.40000000000000002" green="0.1960784314" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1068,14 +1072,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RiB-kz-Zki"/>
-        <segue reference="Om8-Oe-RPX"/>
-        <segue reference="AMj-lA-6IA"/>
-        <segue reference="fDh-CO-dK1"/>
-        <segue reference="PGR-qi-yJ5"/>
-        <segue reference="Ivw-Cb-0EY"/>
-        <segue reference="gvM-BY-QNx"/>
-        <segue reference="PoF-jv-NTc"/>
+        <segue reference="3GT-qK-jN6"/>
+        <segue reference="4gJ-dw-B8o"/>
+        <segue reference="deQ-QV-COS"/>
+        <segue reference="iKe-6H-52a"/>
+        <segue reference="p1W-pU-VsK"/>
+        <segue reference="n79-cd-bCB"/>
+        <segue reference="ze0-Dp-xun"/>
+        <segue reference="J1i-kC-S7T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Parents" width="100" height="100"/>

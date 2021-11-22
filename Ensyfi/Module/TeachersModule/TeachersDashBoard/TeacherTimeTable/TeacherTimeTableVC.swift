@@ -149,7 +149,6 @@ class TeacherTimeTableVC: UIViewController {
                 self.subNameArr.append(subName!)
                 self.day_idArr.append(dayID!)
                 self.is_breakArr.append(isBreak!)
-                
             }
 //            self.tableView.reloadData()
             print(nameArr)
@@ -174,7 +173,7 @@ extension TeacherTimeTableVC : UITableViewDelegate,UITableViewDataSource {
                 
         if selectedis_breakdArr[indexPath.row] == "0"{
             cell.timeLbl.text = "\(selectedfromTimeArr[indexPath.row]) - \(selectedtoTimeArr[indexPath.row])"
-              cell.secNmae.text = selectedSecNameArr[indexPath.row]
+            cell.secNmae.text = selectedSecNameArr[indexPath.row]
             cell.subNameLbl.text = selectedSubjectArr[indexPath.row]
         }
         

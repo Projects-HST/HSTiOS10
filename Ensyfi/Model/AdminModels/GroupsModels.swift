@@ -181,3 +181,48 @@ class GroupSectionListModels : NSObject {
        return model
     }
 }
+
+
+class GroupNotificationListModels : NSObject {
+    
+    var notes : String?
+    var name : String?
+    var group_title : String?
+    var group_title_id : String?
+    var created_by : String?
+    var created_at : String?
+    var notification_type : String?
+  
+     // MARK: Instance Method
+func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+    if let data = dict["notes"] as? String {
+        self.notes = data
+    }
+    if let data = dict["name"] as? String {
+        self.name = data
+    }
+    if let data = dict["group_title"] as? String {
+        self.group_title = data
+    }
+    if let data = dict["group_title_id"] as? String {
+        self.group_title_id = data
+    }
+    if let data = dict["created_by"] as? String {
+        self.created_by = data
+    }
+    if let data = dict["created_at"] as? String {
+        self.created_at = data
+    }
+    if let data = dict["notification_type"] as? String {
+        self.notification_type = data
+    }
+}
+    
+     // MARK: Class Method
+class func build(_ dict: [String: AnyObject]) -> GroupNotificationListModels{
+      let model = GroupNotificationListModels()
+      model.loadFromDictionary(dict)
+      return model
+   }
+}

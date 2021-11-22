@@ -282,7 +282,7 @@
         <!--Fees Status-->
         <scene sceneID="VzO-Tf-j3J">
             <objects>
-                <viewController id="THM-Cd-XEX" customClass="FeesStatusListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeesStatusListVC" id="THM-Cd-XEX" customClass="FeesStatusListVC" customModule="EnsyfiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IhV-Og-SzD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

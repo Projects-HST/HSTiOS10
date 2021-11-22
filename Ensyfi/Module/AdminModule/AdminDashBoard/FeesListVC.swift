@@ -234,5 +234,5 @@ extension FeesListVC: UITableViewDelegate,UITableViewDataSource {
             vc.selectedSecId = self.selectedSecId
             vc.selectedFeesId = self.selectedFeesId
         }
-    }
+    }    
 }

@@ -54,6 +54,11 @@ class TeacherSideMenuVC: UIViewController {
             deleteAllData(entity:"ClassAttendanceHistory")
             deleteAllData(entity:"Homework_class_test")
             deleteAllData(entity:"TimeTables")
+            deleteAllData(entity:"AcademicMonths")
+            deleteAllData(entity:"TimeTableDays")
+            deleteAllData(entity:"StudentMotherProfile")
+            deleteAllData(entity:"StudentGuardianProfile")
+            deleteAllData(entity:"StudentFatherProfile")
             
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
