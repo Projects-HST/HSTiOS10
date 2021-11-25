@@ -59,7 +59,7 @@ class StudentsVC: UIViewController,ClassViewDisplayLogic,SectionListDisplayLogic
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
+        interactor?.fetchItems(request: ClassViewModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.bgView.dropShadow()
     }

@@ -7,19 +7,17 @@
 
 import Foundation
 
-
 class TeachersListModels : NSObject {
     
     var subject : String?
-    var class_name : String?
+//    var class_name : String?
     var name : String?
-    var sec_name : String?
+//    var sec_name : String?
     var teacher_id : String?
     var sex : String?
 //    var subject_name : String?
     var age : String?
     var class_teacher : String?
- 
     
      // MARK: Instance Method
 func loadFromDictionary(_ dict: [String: AnyObject])
@@ -27,15 +25,15 @@ func loadFromDictionary(_ dict: [String: AnyObject])
     if let data = dict["subject"] as? String {
         self.subject = data
     }
-    if let data = dict["class_name"] as? String {
-        self.class_name = data
-    }
+//    if let data = dict["class_name"] as? String {
+//        self.class_name = data
+//    }
     if let data = dict["name"] as? String {
         self.name = data
     }
-    if let data = dict["sec_name"] as? String {
-        self.sec_name = data
-    }
+//    if let data = dict["sec_name"] as? String {
+//        self.sec_name = data
+//    }
     if let data = dict["teacher_id"] as? String {
         self.teacher_id = data
     }
@@ -51,15 +49,14 @@ func loadFromDictionary(_ dict: [String: AnyObject])
 //    if let data = dict["subject_name"] as? String {
 //        self.subject_name = data
 //    }
-   
 }
    
      // MARK: Class Method
 class func build(_ dict: [String: AnyObject]) -> TeachersListModels{
-    let model = TeachersListModels()
-    model.loadFromDictionary(dict)
-    return model
-  }
+     let model = TeachersListModels()
+        model.loadFromDictionary(dict)
+        return model
+    }
 }
 
 class TeacherDetailsModels : NSObject {
@@ -82,6 +79,7 @@ class TeacherDetailsModels : NSObject {
     var subject : String?
     var class_taken : String?
     var class_teacher : String?
+    var user_id : String?
 
          // MARK: Instance Method
     func loadFromDictionary(_ dict: [String: AnyObject])
@@ -141,6 +139,9 @@ class TeacherDetailsModels : NSObject {
         if let data = dict["class_teacher"] as? String {
             self.class_teacher = data
         }
+        if let data = dict["user_id"] as? String {
+            self.user_id = data
+        }
     }
         
          // MARK: Class Method
@@ -155,7 +156,6 @@ class TeacherListIDModels : NSObject {
     
     var name : String?
     var user_id : String?
-    
    
   
      // MARK: Instance Method
@@ -167,7 +167,6 @@ func loadFromDictionary(_ dict: [String: AnyObject])
     if let data = dict["user_id"] as? String {
         self.user_id = data
     }
-    
 }
     
      // MARK: Class Method

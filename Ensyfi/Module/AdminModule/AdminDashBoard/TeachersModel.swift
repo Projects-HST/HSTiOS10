@@ -29,9 +29,9 @@ struct TeachersListModel{
            struct DisplayedTeachersListData
            {
             var subject : String?
-            var class_name : String?
+//            var class_name : String?
             var name : String?
-            var sec_name : String?
+//            var sec_name : String?
             var teacher_id : String?
             var sex : String?
 //            var subject_name : String?

@@ -37,7 +37,8 @@ class TeacherDetailsVC: UIViewController, TeacherDetailsDisplayLogic {
     var interactor: TeacherDetailsBusinessLogic?
     var displayedTeacherDetailsData: [TeacherDetailsModel.Fetch.ViewModel.DisplayedTeacherDetailsData] = []
     var teacher_ID = String()
-    
+    var user_id = String()
+    var class_id = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,6 @@ class TeacherDetailsVC: UIViewController, TeacherDetailsDisplayLogic {
         interactor?.fetchItems(request: TeacherDetailsModel.Fetch.Request(teacher_id :self.teacher_ID,dynamic_db: GlobalVariables.shared.dynamic_db))
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.bgView.dropShadow()
-
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -69,6 +69,10 @@ class TeacherDetailsVC: UIViewController, TeacherDetailsDisplayLogic {
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = viewController
+    }
+    
+    @IBAction func viewT_tableAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "toTimeTableTeachers", sender: self)
     }
 }
 
@@ -96,7 +100,9 @@ extension TeacherDetailsVC {
             self.emailId.text = data.email
             self.alternateEmailId.text = data.sec_email
             self.handlingClasses.text = data.class_taken
-
+            self.user_id = data.user_id!
+//            self.class_id = data.class_id
+            print(user_id)
         }
     }
     
@@ -105,4 +111,13 @@ extension TeacherDetailsVC {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "toTimeTableTeachers")
+        {
+        let vc = segue.destination as! TimeTableTeacherListsVC
+            vc.user_id = self.user_id
+            vc.class_id = self.class_id
+        }
+    }
 }

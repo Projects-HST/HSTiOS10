@@ -73,7 +73,6 @@ extension ClassAttendanceListVC {
 
 extension ClassAttendanceListVC :UITableViewDelegate,UITableViewDataSource  {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return displayedClassAttendanceListData.count
@@ -88,10 +87,19 @@ extension ClassAttendanceListVC :UITableViewDelegate,UITableViewDataSource  {
           cell.selectionStyle = .none
         
         if data.status == "No"{
-            cell.status.text = "Attendance not taken"
+            cell.statusLbl.text = "Attendance not taken"
+            cell.absentLbl.alpha = 0
+            cell.presentLbl.alpha = 0
+            cell.classStrengthLbl.alpha = 0
+            cell.absentImg.alpha = 0
+            cell.presentImg.alpha = 0
+        }
+        else {
+            cell.statusLbl.alpha = 0
+            cell.absentLbl.text = "No.of absent: \(data.no_of_absent!)"
+            cell.presentLbl.text = "No.of present: \(data.no_of_present!)"
+            cell.classStrengthLbl.text = "Class Strength: \(data.class_total!)"
         }
         return cell
      }
 }
-
-

@@ -226,3 +226,45 @@ class func build(_ dict: [String: AnyObject]) -> GroupNotificationListModels{
       return model
    }
 }
+
+
+class GroupTitleListModels : NSObject {
+    
+    var group_title : String?
+    var id : String?
+    
+     // MARK: Instance Method
+func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+    if let data = dict["group_title"] as? String {
+        self.group_title = data
+    }
+    if let data = dict["id"] as? String {
+        self.id = data
+    }
+}
+    
+     // MARK: Class Method
+class func build(_ dict: [String: AnyObject]) -> GroupTitleListModels{
+      let model = GroupTitleListModels()
+      model.loadFromDictionary(dict)
+      return model
+   }
+}
+
+class SendGroupNotificationModels {
+
+    var status : String?
+    var msg: String?
+
+// MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+     {
+       if let data = dict["status"] as? String {
+       self.status = data
+     }
+       if let data = dict["msg"] as? String {
+       self.msg = data
+     }
+   }
+}

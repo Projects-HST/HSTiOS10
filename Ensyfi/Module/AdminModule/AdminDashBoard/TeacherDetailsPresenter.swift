@@ -22,7 +22,7 @@ class TeacherDetailsPresenter: TeacherDetailsPresentationLogic
         var displayedTeacherDetailsData: [TeacherDetailsModel.Fetch.ViewModel.DisplayedTeacherDetailsData] = []
        
         for data in resp.testObj {
-            let displayedTeacherDetailsDatas = TeacherDetailsModel.Fetch.ViewModel.DisplayedTeacherDetailsData(teacher_id: data.teacher_id!,name: data.name!,sex: data.sex!,age: data.age!,nationality: data.nationality!,religion: data.religion!,community_class: data.community_class!,community: data.community!,address: data.address!,email: data.email!,phone: data.phone!,sec_email: data.sec_email!,sec_phone: data.sec_phone!,profile_pic: data.profile_pic!,update_at: data.update_at!,subject: data.subject!,class_taken: data.class_taken!,class_teacher: data.class_teacher!)
+            let displayedTeacherDetailsDatas = TeacherDetailsModel.Fetch.ViewModel.DisplayedTeacherDetailsData(teacher_id: data.teacher_id!,name: data.name!,sex: data.sex!,age: data.age!,nationality: data.nationality!,religion: data.religion!,community_class: data.community_class!,community: data.community!,address: data.address!,email: data.email!,phone: data.phone!,sec_email: data.sec_email!,sec_phone: data.sec_phone!,profile_pic: data.profile_pic!,update_at: data.update_at!,subject: data.subject!,class_taken: data.class_taken!,class_teacher: data.class_teacher!,user_id: data.user_id!)
             displayedTeacherDetailsData.append(displayedTeacherDetailsDatas)
         }
         
@@ -30,3 +30,4 @@ class TeacherDetailsPresenter: TeacherDetailsPresentationLogic
         viewController?.successFetchedItems(viewModel: viewModel)
     }
 }
+

@@ -22,10 +22,11 @@ class TeachersListPresenter: TeachersListPresentationLogic
         var displayedTeachersListData: [TeachersListModel.Fetch.ViewModel.DisplayedTeachersListData] = []
        
         for data in resp.testObj {
-        let displayedTeachersListDatas = TeachersListModel.Fetch.ViewModel.DisplayedTeachersListData(subject: data.subject!,class_name: data.class_name!,name: data.name!,sec_name: data.sec_name!,teacher_id: data.teacher_id!,sex: data.sex!,age: data.age!,class_teacher: data.class_teacher!)
+            let displayedTeachersListDatas = TeachersListModel.Fetch.ViewModel.DisplayedTeachersListData(subject: data.subject!,name: data.name!,teacher_id: data.teacher_id!,sex: data.sex!,age: data.age!,class_teacher: data.class_teacher!)
             displayedTeachersListData.append(displayedTeachersListDatas)
         }
         let viewModel = TeachersListModel.Fetch.ViewModel(displayedTeachersListData: displayedTeachersListData)
         viewController?.successFetchedItems(viewModel: viewModel)
     }
 }
+//subject_name:data.subject_name!

@@ -90,7 +90,7 @@ class GroupUpdateVC: UIViewController, TeacherListIDDisplayLogic, UpdateGroupDis
             self.switchStatus = "Active"
         } else {
             print("The Switch is Of")
-            self.switchStatus = "Deactive"
+            self.switchStatus = "Inactive"
         }
     }
     

@@ -28,7 +28,7 @@ class TeachersVC: UIViewController,TeachersListDisplayLogic,SideMenuNavigationCo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        interactor?.fetchItems(request: TeachersListModel.Fetch.Request(user_id :"",dynamic_db: GlobalVariables.shared.dynamic_db))
+        interactor?.fetchItems(request: TeachersListModel.Fetch.Request(user_id :GlobalVariables.shared.user_id,dynamic_db: GlobalVariables.shared.dynamic_db))
         print("1234")
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
@@ -95,7 +95,7 @@ extension TeachersVC: UITableViewDelegate,UITableViewDataSource {
         let data = displayedTeachersListData[indexPath.row]
         
         cell.SerialNo.text = String(serialNoArr[indexPath.row])
-        cell.sub.text = data.subject
+//        cell.sub.text = data.subject_name
         cell.name.text = data.name
         cell.selectionStyle = .none
        

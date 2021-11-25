@@ -29,11 +29,11 @@ class AdminDashboardVC: UIViewController,SideMenuNavigationControllerDelegate {
         else {
             GlobalVariables.shared.user_loginType = user_loginType as! String
             GlobalVariables.shared.Institute_Code = institute_code as! String
-            print(user_loginType)
             GlobalVariables.shared.userName = userName as! String
             GlobalVariables.shared.user_type = userType as! String
             GlobalVariables.shared.user_id = user_id as! String
             GlobalVariables.shared.dynamic_db = dynamicDB as! String
+            print(user_loginType)
             print(GlobalVariables.shared.userName)
             print(GlobalVariables.shared.user_type)
             print(GlobalVariables.shared.dynamic_db)

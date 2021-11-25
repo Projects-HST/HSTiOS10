@@ -87,8 +87,8 @@ class StudentsListModels : NSObject {
             self.name = data
         }
     }
-        
-         // MARK: Class Method
+    
+        // MARK: Class Method
     class func build(_ dict: [String: AnyObject]) -> StudentsListModels{
         let model = StudentsListModels()
         model.loadFromDictionary(dict)

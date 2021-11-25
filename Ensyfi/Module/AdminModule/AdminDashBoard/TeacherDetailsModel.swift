@@ -46,7 +46,8 @@ struct TeacherDetailsModel{
             var subject : String?
             var class_taken : String?
             var class_teacher : String?
-            
+            var user_id : String?
+               
             }
               var displayedTeacherDetailsData: [DisplayedTeacherDetailsData]
 

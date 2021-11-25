@@ -4,7 +4,6 @@
 //
 //  Created by HappysanziMac on 01/11/21.
 //
-//
 
 import UIKit
 import CoreData
@@ -100,7 +99,7 @@ class TeacherTimeTableVC: UIViewController {
             print(selectedtoTimeArr)
             print(selectedfromTimeArr)
             self.tableView.reloadData()
-        }
+    }
     
     func fetchTimaTableDaysList() {
         
@@ -176,7 +175,6 @@ extension TeacherTimeTableVC : UITableViewDelegate,UITableViewDataSource {
             cell.secNmae.text = selectedSecNameArr[indexPath.row]
             cell.subNameLbl.text = selectedSubjectArr[indexPath.row]
         }
-        
         else {
             cell.bgView.backgroundColor = UIColor.orange
             cell.timeLbl.text = " break \(selectedfromTimeArr[indexPath.row]) - \(selectedtoTimeArr[indexPath.row])"

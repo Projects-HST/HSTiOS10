@@ -56,6 +56,8 @@ struct APIFunctionName {
     static let staffListGroupAddUrl = "/apiadmin/gn_stafflist/"
     static let AddGroupMemberUrl = "/apiadmin/add_gn_members/"
     static let grpNotificationList = "/apimain/grp_messsage_history/"
+    static let grpTitleList = "/apimain/disp_Grouplist/"
+    static let sendGrpNotificationUrl = "/apiadmin/group_msg_send/"
 //    Attendance
     static let classSectionListUrl = "/apimain/list_class_section/"
     static let classAttendanceListUrl = "/apimain/view_class_day_attendence/"
@@ -65,7 +67,6 @@ struct APIFunctionName {
     
     static let studentExamReslutListUrl = "/apistudent/disp_Exams/"
     static let adminSpecialClassListUrl = "/apiadmin/get_special_list/"
-
 }
 
 

@@ -99,7 +99,7 @@ class HomeWorkTestVC: UIViewController,HomeWorkTestListDisplayLogic {
                 if from == "Student" {
                     interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :GlobalVariables.shared.class_id,hw_type: "HW",dynamic_db: GlobalVariables.shared.dynamic_db))
                     MBProgressHUD.showAdded(to: self.view, animated: true)
-                }
+            }
                 else {
                 interactor?.fetchItems(request: HomeWorkTestListModel.Fetch.Request(class_id :self.selectedClassId,hw_type: "HW",dynamic_db: GlobalVariables.shared.dynamic_db))
                     MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -136,7 +136,6 @@ extension HomeWorkTestVC: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeWorkListCell
         
         let data = displayedHomeWorkTestListData[indexPath.row]
-        
         cell.title.text = data.title
         cell.date.text = " Due Date : \(data.test_date!)"
         
@@ -147,7 +146,6 @@ extension HomeWorkTestVC: UITableViewDelegate,UITableViewDataSource {
             cell.subName.text = "\(data.subject_name!) - HOME WORK"
         }
         cell.selectionStyle = .none
-        
         return cell
     }
     

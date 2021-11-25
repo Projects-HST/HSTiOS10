@@ -49,7 +49,7 @@ class TimeTableListModels : NSObject {
     var class_id : String?
     var sec_name : String?
     
-    
+  
      // MARK: Instance Method
      func loadFromDictionary(_ dict: [String: AnyObject])
      {

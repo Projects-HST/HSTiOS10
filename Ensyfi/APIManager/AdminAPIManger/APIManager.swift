@@ -1804,4 +1804,70 @@ class APIManager: NSObject {
          }
       )
    }
+    
+    func callAPIGroupTitleList(user_type:String,user_id:String,dynamic_db:String,onSuccess successCallback: ((_ resp: [GroupTitleListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+        let url = APIURL.base_URL  + APIFunctionName.grpTitleList
+         // Set Parameters
+        let parameters: Parameters = ["user_type": user_type,"user_id":user_id,"dynamic_db":dynamic_db]
+      
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+
+         print(responseObject)
+
+           guard let status = responseObject["status"].string, status == "success" else{
+               failureCallback?(responseObject["msg"].string!)
+               return
+         }
+          if let responseDict = responseObject["groupDetails"].arrayObject
+          {
+                  let toModel = responseDict as! [[String:AnyObject]]
+                  // Create object
+                  var data = [GroupTitleListModels]()
+                  for item in toModel {
+                      let single = GroupTitleListModels.build(item)
+                      data.append(single)
+                  }
+                  // Fire callback
+                  successCallback?(data)
+             } else {
+              failureCallback?("An error has occured.")
+           }
+         },
+         onFailure: {(errorMessage: String) -> Void in
+             failureCallback?(errorMessage)
+         }
+      )
+   }
+    
+    func callAPISendGroupNotification(group_id:String,notification_type:String,notes:String,user_id:String,dynamic_db:String,onSuccess successCallback: ((_ login: SendGroupNotificationModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+   // Build URL
+        let url = APIURL.base_URL + APIFunctionName.sendGrpNotificationUrl
+   // Set Parameters
+        let parameters: Parameters =  ["group_id": group_id,"notification_type": notification_type,"notes": notes,"dynamic_db": dynamic_db,"user_id":user_id]
+        print(parameters)
+   // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+   // Create dictionary
+         print(responseObject)
+
+         guard let status = responseObject["status"].string, status == "sucess" else {
+         failureCallback?(responseObject["msg"].string!)
+         return
+        }
+          let msg = responseObject["msg"].string
+          let sendToModel = SendGroupNotificationModels()
+
+          sendToModel.status = status
+          sendToModel.msg = msg
+
+          successCallback?(sendToModel)
+        },
+         onFailure: {(errorMessage: String) -> Void in
+         failureCallback?(errorMessage)
+        }
+      )
+   }
 }

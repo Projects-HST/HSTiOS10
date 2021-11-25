@@ -17,6 +17,7 @@ struct DayListModel{
         {
             var class_id : String?
             var dynamic_db : String?
+            var from : String?
         }
         
         struct Response

@@ -16,7 +16,8 @@ class TimeTableListCell: UITableViewCell {
     @IBOutlet weak var secNmae: UILabel!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var iconImg: UIImageView!
-    
+    @IBOutlet weak var fromToTimeLbl: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

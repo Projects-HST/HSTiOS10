@@ -79,7 +79,6 @@ extension StudentsAttendanceVC {
         self.onDuty.text = "  \(GlobalVariables.shared.od_days) Days"
         self.leaves.text = "  \(GlobalVariables.shared.leave_days) Days"
         self.daysAbsent.text = "  \(GlobalVariables.shared.absent_days) Days"
-        
     }
     
     func errorFetchingItems(viewModel: StudentAttendanceModel.Fetch.ViewModel) {

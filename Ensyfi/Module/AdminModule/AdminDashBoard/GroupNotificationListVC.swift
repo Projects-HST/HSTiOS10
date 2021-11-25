@@ -89,6 +89,7 @@ extension GroupNotificationListVC:UITableViewDelegate,UITableViewDataSource {
         cell.msgType.text = data.notification_type
         cell.desc.text = data.notes
         
+        cell.selectionStyle = .none
         return cell
     }
 }

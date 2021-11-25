@@ -89,22 +89,21 @@ class ParentsDetailsVC: UIViewController, FatherDeatilsDisplayLogic, MotherDetai
         interactor3.presenter3 = presenter3
         presenter3.viewController3 = viewController3
     }
-    
-//    Father
-//    Mother
-//    Guardian light
-    
-//    Mother light
-//    Guardian light -1
-//    Father light
-    
+        
+    @IBAction func fatherDetails(_ sender: Any) {
+        interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:self.selectedStudentId,dynamic_db: GlobalVariables.shared.dynamic_db))
+        
+        self.motherImg.image = UIImage(named:"Mother light")
+        self.guardianImg.image = UIImage(named:"Guardian light -1")
+        self.fatherImg.image = UIImage(named:"Father")
+    }
     
     @IBAction func motherDetails(_ sender: Any) {
         interactor2?.fetchItems(request: MotherDetailsModel.Fetch.Request(admission_id:self.selectedStudentId,dynamic_db: GlobalVariables.shared.dynamic_db))
         
         self.motherImg.image = UIImage(named:"Mother")
-        self.guardianImg.image = UIImage(named:"Guardian light")
-        self.fatherImg.image = UIImage(named:"Father")
+        self.guardianImg.image = UIImage(named:"Guardian light -1")
+        self.fatherImg.image = UIImage(named:"Father light")
     }
     
     @IBAction func guardianDetails(_ sender: Any) {
@@ -112,16 +111,8 @@ class ParentsDetailsVC: UIViewController, FatherDeatilsDisplayLogic, MotherDetai
         interactor3?.fetchItems(request: GuardianDetailsModel.Fetch.Request(admission_id:self.selectedStudentId,dynamic_db: GlobalVariables.shared.dynamic_db))
         
         self.motherImg.image = UIImage(named:"Mother light")
-        self.guardianImg.image = UIImage(named:"Guardian light")
+        self.guardianImg.image = UIImage(named:"Guardian light ")
         self.fatherImg.image = UIImage(named:"Father light")
-    }
-    
-    @IBAction func fatherDetails(_ sender: Any) {
-        interactor?.fetchItems(request: FatherDeatilsModel.Fetch.Request(admission_id:self.selectedStudentId,dynamic_db: GlobalVariables.shared.dynamic_db))
-        
-        self.motherImg.image = UIImage(named:"Mother light")
-        self.guardianImg.image = UIImage(named:"Guardian light -1")
-        self.fatherImg.image = UIImage(named:"Father")
     }
     
     @IBAction func viewTableAction(_ sender: Any) {

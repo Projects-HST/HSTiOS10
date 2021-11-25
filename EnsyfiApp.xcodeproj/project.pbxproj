@@ -174,6 +174,7 @@
 		793503FA26E39C3800B4FDFA /* GuardianDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793503F926E39C3800B4FDFA /* GuardianDetailsWorker.swift */; };
 		793503FF26E39C5100B4FDFA /* GuardianDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793503FE26E39C5100B4FDFA /* GuardianDetailsModel.swift */; };
 		7935040426E39C9500B4FDFA /* GuardianDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935040326E39C9500B4FDFA /* GuardianDetailsPresenter.swift */; };
+		794084EE274DF84900DA894F /* TimeTableTeacherListsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794084ED274DF84900DA894F /* TimeTableTeacherListsVC.swift */; };
 		794117A6273D1F010077640C /* SyncExamMarksInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794117A5273D1F010077640C /* SyncExamMarksInteracter.swift */; };
 		794117A8273D201E0077640C /* SyncExamMarksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794117A7273D201E0077640C /* SyncExamMarksWorker.swift */; };
 		794117AA273D20250077640C /* SyncExamMarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794117A9273D20250077640C /* SyncExamMarksModel.swift */; };
@@ -759,6 +760,7 @@
 		793503F926E39C3800B4FDFA /* GuardianDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianDetailsWorker.swift; sourceTree = "<group>"; };
 		793503FE26E39C5100B4FDFA /* GuardianDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianDetailsModel.swift; sourceTree = "<group>"; };
 		7935040326E39C9500B4FDFA /* GuardianDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianDetailsPresenter.swift; sourceTree = "<group>"; };
+		794084ED274DF84900DA894F /* TimeTableTeacherListsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableTeacherListsVC.swift; sourceTree = "<group>"; };
 		794117A5273D1F010077640C /* SyncExamMarksInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncExamMarksInteracter.swift; path = Ensyfi/Module/TeachersModule/TeachersDashBoard/SyncData/SyncAssignments/SyncExamMarksInteracter.swift; sourceTree = SOURCE_ROOT; };
 		794117A7273D201E0077640C /* SyncExamMarksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncExamMarksWorker.swift; path = ../../../../../../../../../SyncExamMarksWorker.swift; sourceTree = "<group>"; };
 		794117A9273D20250077640C /* SyncExamMarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncExamMarksModel.swift; path = ../../../../../../../../../SyncExamMarksModel.swift; sourceTree = "<group>"; };
@@ -1415,6 +1417,7 @@
 				7904AD3426DA0FF400D6F2C2 /* TeachersModel.swift */,
 				7904AD3926DA0FFD00D6F2C2 /* TeachersPresenter.swift */,
 				7949932126E0F79A0013A38C /* TeacherDetails */,
+				794084EC274DF7FF00DA894F /* TimeTable */,
 			);
 			name = Teachers;
 			sourceTree = "<group>";
@@ -1657,6 +1660,14 @@
 				7935040326E39C9500B4FDFA /* GuardianDetailsPresenter.swift */,
 			);
 			name = GuardianDeatils;
+			sourceTree = "<group>";
+		};
+		794084EC274DF7FF00DA894F /* TimeTable */ = {
+			isa = PBXGroup;
+			children = (
+				794084ED274DF84900DA894F /* TimeTableTeacherListsVC.swift */,
+			);
+			name = TimeTable;
 			sourceTree = "<group>";
 		};
 		794117A4273D1E980077640C /* SyncExamMarks */ = {
@@ -2513,8 +2524,6 @@
 		79BEF55726F0758C0056DCBF /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				79E1FB4B274B6E6E004BAE7E /* SendGroupNotification */,
-				798EA0BD274910190016D332 /* GroupNotificationList */,
 				79BEF56026F075C80056DCBF /* GroupList */,
 				79BEF59026F089A60056DCBF /* GroupDetailsVC */,
 				79BB8CDC26F0A8A10015C088 /* CreateGroup */,
@@ -2522,6 +2531,8 @@
 				79BB8CE526F0AD630015C088 /* GetTeachersListID */,
 				790C21EE26F1BA9100B9A318 /* ViewGroupMembers */,
 				79CC45F926F32ADE00448486 /* AddMember */,
+				798EA0BD274910190016D332 /* GroupNotificationList */,
+				79E1FB4B274B6E6E004BAE7E /* SendGroupNotification */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -3342,6 +3353,7 @@
 				7900FAF1272D2F56004977EB /* TeacherGroupAddPresenter.swift in Sources */,
 				798A1B1B26D62A4B0081105B /* StudentListInteracter.swift in Sources */,
 				79CC462526F361AC00448486 /* StudentAddGroupListInteracter.swift in Sources */,
+				794084EE274DF84900DA894F /* TimeTableTeacherListsVC.swift in Sources */,
 				79E1FB47274B6E58004BAE7E /* GroupTitleListModel.swift in Sources */,
 				79A6454627031BAC00E7F83C /* ChangePasswordWorker.swift in Sources */,
 				7900FB00272D4936004977EB /* TeacherGroupTypeListModel.swift in Sources */,

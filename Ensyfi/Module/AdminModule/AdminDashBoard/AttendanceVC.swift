@@ -123,7 +123,7 @@ class AttendanceVC: UIViewController,UIPopoverPresentationControllerDelegate, Cl
            formatter.dateFormat = "yyyy-MM-dd"
            dateFormatted = formatter.string(from: datePicker.date)
            selectedDate = datePicker.date
-           let formatted = self.formattedDateFromString(dateString: dateFormatted, withFormat: "dd-MM-YYYY")
+           let formatted = self.formattedDateFromString(dateString: dateFormatted, withFormat: "yyyy-MM-dd")
            dateTextfield.text = formatted
            self.view.endEditing(true)
     }
